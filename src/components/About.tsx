@@ -1,22 +1,54 @@
 "use client";
 
-import { Layout, Server, Cpu } from "lucide-react";
+import { BookOpen, Monitor, FlaskConical, Thermometer } from "lucide-react";
 
 const SKILL_CATEGORIES = [
   {
-    title: "Frontend Development",
-    icon: <Layout className="w-5 h-5 text-primary" />,
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5 & CSS3", "State Management (Redux/Zustand)", "Responsive Web Design"],
+    title: "Curriculum & Instruction",
+    icon: <BookOpen className="w-5 h-5 text-primary" />,
+    skills: [
+      "IBDP Biology & ESS",
+      "Inquiry-Based Learning",
+      "Differentiated Assessment",
+      "Group 4 Project Leadership",
+      "IA & EE Mentorship",
+      "Curriculum Development",
+    ],
   },
   {
-    title: "Backend & Databases",
-    icon: <Server className="w-5 h-5 text-primary" />,
-    skills: ["Node.js", "Express", "RESTful APIs", "GraphQL", "PostgreSQL", "MongoDB", "Prisma ORM"],
+    title: "Educational Technology",
+    icon: <Monitor className="w-5 h-5 text-primary" />,
+    skills: [
+      "ManageBac",
+      "Nearpod & Pear Deck",
+      "Padlet & Trello",
+      "Powtoon & Flipgrid",
+      "Google Suite for Education",
+      "Distance Learning Integration",
+    ],
   },
   {
-    title: "Tools & DevOps",
-    icon: <Cpu className="w-5 h-5 text-primary" />,
-    skills: ["Git & GitHub", "Cloudflare Pages & Workers", "Docker", "Vercel", "npm & pnpm", "CI/CD Pipelines", "Linux & Shell Scripting"],
+    title: "Laboratory Expertise",
+    icon: <FlaskConical className="w-5 h-5 text-primary" />,
+    skills: [
+      "PCR (Polymerase Chain Reaction)",
+      "Western Blot & ELISA",
+      "Chromatography",
+      "Spectrophotometry",
+      "Gel Electrophoresis",
+      "Cell Line & Tissue Culture",
+    ],
+  },
+  {
+    title: "Environmental Sensors",
+    icon: <Thermometer className="w-5 h-5 text-primary" />,
+    skills: [
+      "Vernier Sensors (CO2, O2)",
+      "pH & Dissolved Oxygen Sensors",
+      "Soil Moisture & Turbidimeter",
+      "Field Data Acquisition",
+      "Experimental Science Projects",
+    ],
   },
 ];
 
@@ -31,7 +63,7 @@ export default function About() {
           </h2>
           <div className="w-12 h-1 bg-primary rounded-full" />
           <p className="text-muted-foreground max-w-xl text-center">
-            My background, philosophy, and the tools I use to bring ideas to life.
+            My background, teaching philosophy, and core scientific competencies.
           </p>
         </div>
 
@@ -40,47 +72,49 @@ export default function About() {
           {/* Professional Bio */}
           <div className="lg:col-span-5 space-y-6">
             <h3 className="text-2xl font-bold tracking-tight text-foreground">
-              Who I Am
+              Professional Biography
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              I am a dedicated software engineer with a strong passion for building web applications that combine clean, maintainable architecture with intuitive, premium user experiences. I thrive at the intersection of design and engineering.
+              I am a dedicated Science Educator and Biotechnology professional with over 9 years of experience bridging academic research, university lecturing, IBDP (International Baccalaureate Diploma Programme) instruction, and industrial quality control.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              With experience in the React and Next.js ecosystem, I specialize in crafting fast, accessible, and responsive interfaces. I enjoy writing clean code, solving complex performance bottlenecks, and optimizing applications for zero-overhead static hosting like Cloudflare Pages.
+              As an expert in IBDP Biology and Environmental Systems and Societies (ESS), I have a proven track record of successfully mentoring students through Internal Assessments (IA) and Extended Essays (EE), guiding them to build rigorous research designs and write scholarly articles.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              When I&apos;m not coding, I&apos;m exploring new web standards, designing user interfaces, or contributing to open-source software.
+              Additionally, my background in industrial QA and university-level instruction provides me with deep expertise in molecular biology protocols (including PCR, Western Blot, ELISA, and Cell Line maintenance). I strive to integrate technology and hands-on laboratory experience to cultivate a deep curiosity for the life sciences.
             </p>
           </div>
 
           {/* Core Technical Toolkit */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="text-2xl font-bold tracking-tight text-foreground">
-              Technical Toolkit
+              Skills & Expertise
             </h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {SKILL_CATEGORIES.map((category) => (
                 <div
                   key={category.title}
-                  className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/20 transition-all duration-300 shadow-sm"
+                  className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/20 transition-all duration-300 shadow-sm flex flex-col justify-between"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 rounded-lg bg-secondary border border-border">
-                      {category.icon}
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 rounded-lg bg-secondary border border-border">
+                        {category.icon}
+                      </div>
+                      <h4 className="font-semibold text-base text-foreground leading-tight">
+                        {category.title}
+                      </h4>
                     </div>
-                    <h4 className="font-semibold text-lg text-foreground">
-                      {category.title}
-                    </h4>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 rounded-xl text-sm font-medium bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground border border-border/60 transition-all duration-200"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-1.5">
+                      {category.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground border border-border/60 transition-all duration-150"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}

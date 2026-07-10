@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Send, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -36,17 +36,8 @@ export default function Contact() {
     setStatus("submitting");
 
     try {
-      // Simulate form submission (e.g., to a backend or serverless handler)
-      // To connect to a live backend, change this destination to Web3Forms, Formspree, etc.
-      // Example:
-      // const res = await fetch("https://api.web3forms.com/submit", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     access_key: "YOUR_ACCESS_KEY_HERE",
-      //     ...formData
-      //   })
-      // });
+      // Simulate form submission
+      // To connect to a live backend (e.g. Formspree or Web3Forms), replace this block
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       setStatus("success");
@@ -72,7 +63,7 @@ export default function Contact() {
           </h2>
           <div className="w-12 h-1 bg-primary rounded-full" />
           <p className="text-muted-foreground max-w-xl text-center">
-            Have a project in mind, want to collaborate, or just say hello? Drop a message below!
+            Have a question about my teaching methodology, want to collaborate on biotechnology research, or hire me? Drop a message below!
           </p>
         </div>
 
@@ -81,14 +72,15 @@ export default function Contact() {
           <div className="md:col-span-5 flex flex-col justify-between p-8 rounded-2xl border border-border bg-card/40 backdrop-blur-sm space-y-8">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold tracking-tight text-foreground">
-                Let&apos;s build something together
+                Let&apos;s collaborate
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                I am currently open to new opportunities, freelance work, and open-source collaborations. Feel free to contact me directly via email or use the contact form.
+                I am currently based in California, USA and open to new opportunities in science education, research lecturing, and biotech consultation. Feel free to contact me directly.
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
+              {/* Email item */}
               <div className="flex items-center gap-3">
                 <span className="p-3 rounded-xl bg-secondary border border-border text-primary">
                   <Mail className="w-5 h-5" />
@@ -98,10 +90,28 @@ export default function Contact() {
                     Email Me
                   </p>
                   <a
-                    href="mailto:monikamehta@example.com"
+                    href="mailto:monikamehta610@gmail.com"
+                    className="text-sm font-semibold hover:text-primary transition-colors break-all"
+                  >
+                    monikamehta610@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Phone item */}
+              <div className="flex items-center gap-3">
+                <span className="p-3 rounded-xl bg-secondary border border-border text-primary">
+                  <Phone className="w-5 h-5" />
+                </span>
+                <div>
+                  <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">
+                    Call Me
+                  </p>
+                  <a
+                    href="tel:+16692646035"
                     className="text-sm font-semibold hover:text-primary transition-colors"
                   >
-                    monikamehta@example.com
+                    +1 (669) 264-6035
                   </a>
                 </div>
               </div>
@@ -184,7 +194,7 @@ export default function Contact() {
                       disabled={status === "submitting"}
                       rows={4}
                       className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm transition-all duration-200 resize-none disabled:opacity-50"
-                      placeholder="Describe your project or role..."
+                      placeholder="Type your message here..."
                       required
                     />
                   </div>

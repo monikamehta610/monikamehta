@@ -5,39 +5,60 @@ import { Briefcase, Calendar } from "lucide-react";
 interface Job {
   title: string;
   company: string;
+  location: string;
   period: string;
   bullets: string[];
 }
 
 const EXPERIENCES: Job[] = [
   {
-    title: "Senior Frontend Engineer",
-    company: "PixelForge Technologies",
-    period: "Jan 2024 - Present",
+    title: "IBDP Biology & ESS Educator",
+    company: "Fountainhead School",
+    location: "Gujarat, India",
+    period: "Aug 2019 – Feb 2025",
     bullets: [
-      "Architected next-gen Next.js (App Router) SaaS frontend, improving Core Web Vitals (LCP) by 40% and reducing Webpack build bundle sizes by 25%.",
-      "Led a team of 4 frontend engineers, defining clean coding standards, linting rules, and automated unit testing methodologies (Vitest & React Testing Library).",
-      "Collaborated closely with visual designers to deploy a highly extensible, tokenized design system using Tailwind CSS, supporting multiple light/dark branding themes.",
+      "Delivered IBDP Biology and ESS curriculum, consistently revising materials to enhance student engagement and performance.",
+      "Mentored 100+ students annually through the complete IBDP Biology and ESS internal assessment (IA) cycle, providing structured feedback on research design, data analysis, and critical evaluation.",
+      "Supervised Extended Essays (EE) and provided expert guidance on External Assessments, ensuring alignment with IBO marking schemes.",
+      "Led the IBDP Group 4 Project, managing research themes, experimental content, field trips, and guest speaker sessions.",
+      "Evaluated student progress using diverse assessment methods, including mastery skill checklists and criterion-referenced tests.",
+      "Integrated advanced EdTech tools (Nearpod, Padlet, Trello) to facilitate interactive and distance learning environments."
     ],
   },
   {
-    title: "Software Engineer",
-    company: "CloudScale Systems",
-    period: "Jun 2022 - Dec 2023",
+    title: "Online IBDP Tutor (Biology & ESS)",
+    company: "Freelance (Remote)",
+    location: "Global",
+    period: "March 2020 – March 2025",
     bullets: [
-      "Built and maintained scalable Node.js/Express API servers, processing over 1.2 million daily requests with optimized PostgreSQL queries and Redis caches.",
-      "Successfully migrated a legacy multi-page application to a dynamic, client-side React SPA, improving mobile user session times by 30%.",
-      "Reduced infrastructure and hosting overhead by 15% through refactoring endpoints to AWS Lambda serverless functions and optimizing Cloudfront CDN caching.",
+      "Provide personalized, one-on-one global tutoring focused on mastering complex biological concepts and improving IA/EE scores.",
+      "Supervised Extended Essays in Biology and ESS, guiding students in developing high-level research questions and academic writing skills that meet IBO criteria.",
+      "Deliver strategic feedback on assessment drafts aligned with IBDP command terms to push academic performance."
     ],
   },
   {
-    title: "Web Developer (Freelance)",
-    company: "Independent Practice",
-    period: "Sep 2020 - May 2022",
+    title: "Teaching Assistant",
+    company: "Uka Tarsadia University",
+    location: "India",
+    period: "Aug 2016 – July 2019",
     bullets: [
-      "Designed and launched responsive portfolio websites and marketing landing pages for local and international small businesses using Gatsby and React.",
-      "Built custom payment gateways and store integrations utilizing Stripe Checkout, Mailchimp marketing APIs, and the Shopify Storefront API.",
-      "Optimized pages to achieve perfect 100/100 Lighthouse performance and accessibility scores using semantic HTML5 elements and WCAG-compliant attributes.",
+      "Large-Scale Undergraduate Instruction: Delivered lectures and supervised laboratory practicals for 180+ first-year Biotechnology and Microbiology students annually across three rotating cohorts.",
+      "Postgraduate Mentorship: Provided specialized instruction and academic support to classes of 30+ Master’s students, focusing on advanced biotechnology applications.",
+      "Research & Thesis Supervision: Directly assisted professors in guiding the theses and research projects of 15+ students annually, ensuring rigorous scientific methodology and data integrity.",
+      "Academic Coordination: Actively organized national and international seminars, workshops, and conferences, managing logistics and participant engagement.",
+      "Departmental Service: Served as an active member of the women's grievance redressal committee, contributing to a supportive and equitable campus environment."
+    ],
+  },
+  {
+    title: "Quality Control Chemist",
+    company: "Arkray Healthcare Pvt. Ltd.",
+    location: "India",
+    period: "July 2015 – July 2016",
+    bullets: [
+      "Quality Assurance: Conducted qualitative and quantitative analysis of raw materials and finished products to ensure 100% compliance with GMP/GLP standards.",
+      "Analytical Testing: Validated biochemical and microbiological assays using PCR, ELISA, Spectroscopy, and Chromatography.",
+      "Molecular Techniques: Executed high-level protocols including Western Blot, Gel Electrophoresis, and maintenance of Cell Line/Tissue Cultures.",
+      "Lab Operations: Managed daily equipment calibration and water treatment analysis to ensure laboratory precision and safety."
     ],
   },
 ];
@@ -53,7 +74,7 @@ export default function Experience() {
           </h2>
           <div className="w-12 h-1 bg-primary rounded-full" />
           <p className="text-muted-foreground max-w-xl text-center">
-            My professional career path and key contributions across full-time and freelance roles.
+            My professional career path in science education, research lecturing, and healthcare quality assurance.
           </p>
         </div>
 
@@ -74,7 +95,7 @@ export default function Experience() {
                       {job.title}
                     </h3>
                     <p className="text-sm font-semibold text-primary">
-                      {job.company}
+                      {job.company} <span className="text-xs text-muted-foreground font-normal">| {job.location}</span>
                     </p>
                   </div>
 

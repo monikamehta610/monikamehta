@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/icons";
+import { ArrowRight, Mail, Phone } from "lucide-react";
+import { LinkedinIcon } from "@/components/icons";
 
 export default function Hero() {
   return (
@@ -21,24 +21,24 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 animate-fade-in-up">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-accent text-primary border border-primary/20">
               <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
-              Available for Freelance & Full-time
+              Science Educator & Biotech Professional
             </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-foreground">
-              Building digital experiences <br className="hidden sm:inline" />
-              that <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-500">matter.</span>
+              Inspiring the next <br className="hidden sm:inline" />
+              generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-500">scientists.</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl">
-              Hi, I&apos;m Monika Mehta. I&apos;m a software engineer specializing in building modern, high-performance, and visually stunning web applications. Let&apos;s create something exceptional.
+              Hi, I&apos;m Monika Mehta. I am a dedicated Science Educator and Biotechnology professional with over 9 years of experience spanning University lecturing, IBDP instruction, and Industrial Quality Control.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <a
-                href="#projects"
+                href="#experience"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/95 transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 w-full sm:w-auto cursor-pointer"
               >
-                View My Work
+                View Experience
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
@@ -50,19 +50,10 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Social Links */}
+            {/* Social & Contact Links */}
             <div className="flex items-center gap-4 pt-4">
               <a
-                href="https://github.com/monikamehta610"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-secondary hover:bg-muted text-muted-foreground hover:text-foreground border border-border transition-all duration-200"
-                aria-label="GitHub Profile"
-              >
-                <GithubIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/monikapmehtabiotech"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-secondary hover:bg-muted text-muted-foreground hover:text-foreground border border-border transition-all duration-200"
@@ -71,13 +62,18 @@ export default function Hero() {
                 <LinkedinIcon className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:monikamehta610@gmail.com"
                 className="p-3 rounded-xl bg-secondary hover:bg-muted text-muted-foreground hover:text-foreground border border-border transition-all duration-200"
-                aria-label="Twitter Profile"
+                aria-label="Email Address"
               >
-                <TwitterIcon className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
+              </a>
+              <a
+                href="tel:+16692646035"
+                className="p-3 rounded-xl bg-secondary hover:bg-muted text-muted-foreground hover:text-foreground border border-border transition-all duration-200"
+                aria-label="Phone Number"
+              >
+                <Phone className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -93,7 +89,7 @@ export default function Hero() {
                 {/* Techy grid line decoration */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-                {/* Styled SVG avatar / coder illustration */}
+                {/* Styled DNA double helix and laboratory vector illustration */}
                 <svg
                   className="w-4/5 h-4/5 text-primary/80 dark:text-primary/60 animate-float"
                   viewBox="0 0 200 200"
@@ -101,16 +97,21 @@ export default function Hero() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6" />
-                  <path
-                    d="M60 140C60 117.909 77.9086 100 100 100C122.091 100 140 117.909 140 140"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="100" cy="65" r="25" stroke="currentColor" strokeWidth="4" />
-                  {/* Floating abstract code brackets */}
-                  <path d="M45 75L35 85L45 95" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M155 75L165 85L155 95" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                  
+                  {/* DNA strands */}
+                  <path d="M60 60 C80 90, 120 110, 140 140" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                  <path d="M140 60 C120 90, 80 110, 60 140" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                  
+                  {/* DNA base pairs */}
+                  <line x1="72" y1="78" x2="128" y2="78" stroke="currentColor" strokeWidth="2" />
+                  <line x1="85" y1="92" x2="115" y2="92" stroke="currentColor" strokeWidth="2" />
+                  <line x1="100" y1="100" x2="100" y2="100" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                  <line x1="85" y1="108" x2="115" y2="108" stroke="currentColor" strokeWidth="2" />
+                  <line x1="72" y1="122" x2="128" y2="122" stroke="currentColor" strokeWidth="2" />
+                  
+                  {/* Surrounding lab motifs */}
+                  <circle cx="100" cy="65" r="8" fill="currentColor" fillOpacity="0.3" />
+                  <circle cx="100" cy="135" r="8" fill="currentColor" fillOpacity="0.3" />
                 </svg>
 
                 {/* Interactive corner markers */}
