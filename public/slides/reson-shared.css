@@ -1587,3 +1587,139 @@ hr,
   font-variant-numeric: tabular-nums;
   color: var(--bw-text-2);
 }
+
+
+/* ── Slide Deck Core Presentation CSS ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#1a5cd6;--orange:#e85d3a;--bg:#ffffff;--card:#ffffff;--text:#111111;--muted:#555555;--border:#d4d4d4;--radius:10px;--max-w:820px;--shadow:0 1px 4px rgba(0,0,0,.08)}
+body{font-family:'Sora',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#ffffff;color:#111111;line-height:1.65;overflow:hidden;height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+/* Progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--blue);transition:width .3s ease;z-index:100}
+/* Navigation */
+body #prevBtn, body #nextBtn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent !important;
+  border: none !important;
+  color: #2f2a24 !important;
+  font-size: 56px !important;
+  font-weight: 300 !important;
+  cursor: pointer;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  opacity: 0.45 !important;
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+  width: 64px;
+  height: 64px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  user-select: none;
+  box-shadow: none !important;
+}
+body #prevBtn:hover:not(:disabled), body #nextBtn:hover:not(:disabled) {
+  opacity: 0.95 !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+body #prevBtn:disabled, body #nextBtn:disabled {
+  opacity: 0.03 !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+body #prevBtn { left: 8px; }
+body #nextBtn { right: 8px; }
+
+/* Slide container */
+#deck {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 24px 60px;
+  scroll-behavior: smooth;
+}
+.slide {
+  display: none;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  animation: fadeIn .25s ease;
+}
+.slide.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* Typography */
+.section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:#eef2fa;padding:4px 10px;border-radius:6px;margin-bottom:8px}
+.section-tag.hl{color:var(--orange);background:#fef0ec}
+h1{font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.15;margin-bottom:12px}
+h1 span{font-weight:300;opacity:.6}
+h2{font-size:clamp(20px,3.5vw,28px);font-weight:600;line-height:1.25;margin-bottom:12px}
+h3{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--blue)}
+p,.desc{font-size:15px;line-height:1.7;margin-bottom:12px}
+.subtitle{font-size:17px;color:var(--muted);margin-bottom:20px}
+.lead{font-size:18px;font-weight:500;line-height:1.65;margin-bottom:16px}
+/* Cards & boxes */
+.card{background:#ffffff;border:1px solid #e0e0e0;border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card-grid{display:grid;gap:12px}
+.card-grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card-grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+/* Key term */
+.kt{background:#f5f7fa;border-left:3px solid var(--blue);padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:14px;font-size:14px}
+.kt strong{color:var(--blue);display:block;margin-bottom:4px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.kt.hl-accent{background:#fef7f5;border-left-color:var(--orange)}
+.kt.hl-accent strong{color:var(--orange)}
+/* Equation box */
+.eq{background:#f9fafb;border:1.5px solid #d0d0d0;border-radius:var(--radius);padding:18px 24px;margin:14px 0;text-align:center;font-size:17px;font-weight:500;letter-spacing:.02em}
+.eq .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:block;margin-bottom:6px}
+.eq .arrow{color:var(--blue);font-weight:700;margin:0 6px}
+/* Diagram: energy flow */
+.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px 0}
+.flow-node{background:#ffffff;border:1.5px solid #ccc;border-radius:10px;padding:10px 16px;text-align:center;font-size:13px;font-weight:500;min-width:80px}
+.flow-node.sun{background:#fff9e6;border-color:#e6b800;color:#6b4d00}
+.flow-node.producer{background:#e8f8ee;border-color:#2e9e5a;color:#1a5c34}
+.flow-node.consumer{background:#e8f0fa;border-color:#3b82f6;color:#1a3a6b}
+.flow-node.decomp{background:#f3eefa;border-color:#8b5cf6;color:#4c1d8f}
+.flow-arrow{font-size:20px;color:var(--muted);font-weight:700}
+/* Pyramid CSS */
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:4px;margin:16px 0}
+.pyramid-level{display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-size:13px;font-weight:500;border-radius:6px;color:#fff;transition:width .3s}
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{padding:10px 12px;text-align:left;border-bottom:1px solid #e8e8e8}
+.tbl th{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#666;background:#f5f5f5}
+.tbl tr:last-child td{border-bottom:none}
+/* Bullet list */
+.bullets{list-style:none;padding:0;margin:8px 0 14px}
+.bullets li{padding:6px 0 6px 22px;position:relative;font-size:14.5px;line-height:1.6}
+.bullets li::before{content:'';position:absolute;left:0;top:13px;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.bullets.hl li::before{background:var(--orange)}
+/* Exam tip */
+.tip{background:#f5f7fa;border:1px solid #d8dce2;border-radius:var(--radius);padding:16px 20px;margin:14px 0}
+.tip::before{content:'💡 Exam Tip';display:block;font-size:12px;font-weight:700;color:var(--orange);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+/* Formula */
+.formula{display:inline-block;background:#fff;border:1.5px solid var(--blue);border-radius:8px;padding:8px 16px;font-size:16px;font-weight:600;margin:8px 0;letter-spacing:.02em}
+
+/* Scrollbar */
+#deck::-webkit-scrollbar{width:5px}
+#deck::-webkit-scrollbar-thumb{background:#d0d0d0;border-radius:10px}
+/* HL badge */
+.hl-badge{display:inline-block;background:var(--orange);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;vertical-align:middle;margin-left:6px}
+/* Responsive */
+@media(max-width:600px){
+  #deck{padding:50px 14px 80px}
+  .card{padding:14px}
+  .eq{padding:14px;font-size:15px}
+  .flow{flex-direction:column}
+}
