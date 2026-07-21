@@ -123,3 +123,37 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
 }
+
+/* ── Course Platform: Warm Light Scope ────────────────────────────────────── */
+/* Mirrors the Bloome/Reson slide design system — always light, never dark.    */
+/* Applied via the courses layout wrapper regardless of the user's theme.      */
+.course-light {
+  --cl-bg:             #fbfaf8;
+  --cl-bg-subtle:      #f5f3f0;
+  --cl-card:           #ffffff;
+  --cl-card-border:    #ece7e2;
+  --cl-fg:             #2f2a24;
+  --cl-fg-muted:       #6f6a64;
+  --cl-fg-subtle:      #9e9890;
+  --cl-accent-bio:     #16a34a;
+  --cl-accent-bio-bg:  rgba(22, 163, 74, 0.09);
+  --cl-accent-ess:     #0891b2;
+  --cl-accent-ess-bg:  rgba(8, 145, 178, 0.09);
+  --cl-accent-neutral: #5a7d65;
+  --cl-shadow:         0 2px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
+  --cl-shadow-md:      0 4px 20px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  --cl-radius:         12px;
+  --cl-radius-lg:      18px;
+
+  color-scheme: light;
+  background-color: var(--cl-bg);
+  color: var(--cl-fg);
+}
+
+@keyframes course-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.course-animate-in          { animation: course-fade-up 0.5s cubic-bezier(0.16,1,0.3,1) both; }
+.course-animate-in-delay    { animation: course-fade-up 0.5s cubic-bezier(0.16,1,0.3,1) 0.12s both; }
+.course-animate-in-delay-2  { animation: course-fade-up 0.5s cubic-bezier(0.16,1,0.3,1) 0.22s both; }
