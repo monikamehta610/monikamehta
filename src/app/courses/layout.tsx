@@ -116,7 +116,7 @@ export default function CoursesLayout({ children }: { children: React.ReactNode 
       >
         © {new Date().getFullYear()} Monika Mehta · IBDP Science Educator ·{" "}
         <Link href="/" style={{ color: "#5a7d65", textDecoration: "none" }}>
-          monikamehta.com
+          monikamehta.pages.dev
         </Link>
       </footer>
     </div>
