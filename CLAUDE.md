@@ -37,7 +37,7 @@ curl -s "https://bloome.im/api/widgets/YOUR-WIDGET-UUID" \
   -o public/slides/ess-3-1.html
 ```
 
-### Step 2 — Strip shared CSS and replace with a `<link>`
+### Step 2 — Strip all inline CSS and link to the shared stylesheet
 
 Run this script (or adapt it) to refactor the downloaded file:
 
@@ -50,6 +50,9 @@ with open('public/slides/ess-3-1.html', 'r', encoding='utf-8') as f:
 # Remove the two shared style blocks (reson-widget-base and reson-widget-bw)
 html = re.sub(r'<style id="reson-widget-base">.*?</style>', '', html, flags=re.DOTALL)
 html = re.sub(r'<style id="reson-widget-bw">.*?</style>',  '', html, flags=re.DOTALL)
+
+# Empty the slide-specific style block (all slide deck presentation CSS is in reson-shared.css)
+html = re.sub(r'<style>.*?</style>', '<style>\\n    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */\\n  </style>', html, flags=re.DOTALL)
 
 # Remove the inlined base64 @font-face for Sora (already in reson-shared.css)
 html = re.sub(
@@ -105,9 +108,9 @@ Every slide HTML file should follow this structure:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- ③ Slide-specific styles (layout, colors, slide-deck CSS) -->
+  <!-- ③ Empty Style block (all general slide deck layouts load from /slides/reson-shared.css) -->
   <style>
-    /* slide-specific CSS here */
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
   </style>
 
   <!-- ④ Reson widget bridge (postMessage, state sync) -->
