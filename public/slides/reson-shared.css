@@ -1801,3 +1801,36 @@ li{margin:6px 0;font-size:15px}
 .formula{background:#f5f5f7;border:1px solid #e8e8ed;border-radius:10px;padding:16px 24px;margin:16px 0;text-align:center;font-size:17px;font-weight:600;font-family:'SF Mono',Menlo,monospace}
 .glossary td:first-child{font-weight:600;color:#0071e3;white-space:nowrap}
 @media(max-width:640px){.wrap{padding:32px 16px 60px}.flow{flex-direction:column}.flow .arr{transform:rotate(90deg)}}
+
+
+/* ── Slide 1.1 specific styles ── */
+@media(max-width:600px){}
+.section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#1a5cd6;background:#eef2fa;padding:4px 10px;border-radius:6px;margin-bottom:8px}
+h1{font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.15;margin-bottom:12px}
+h2{font-size:clamp(20px,3.5vw,28px);font-weight:600;line-height:1.25;margin:48px 0 12px;padding-top:24px;border-top:1px solid #eee}
+h2:first-of-type{margin-top:0;border-top:none;padding-top:0}
+h3{font-size:16px;font-weight:600;margin-bottom:8px;color:#1a5cd6}
+p{font-size:15px;line-height:1.7;margin-bottom:12px}
+.subtitle{font-size:17px;color:#555;margin-bottom:20px}
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card-grid{display:grid;gap:12px}
+.card-grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card-grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.kt{background:#f5f7fa;border-left:3px solid #1a5cd6;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:14px;font-size:14px}
+.kt strong{color:#1a5cd6;display:block;margin-bottom:4px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.kt.hl-accent{background:#fef7f5;border-left-color:#e85d3a}
+.kt.hl-accent strong{color:#e85d3a}
+.eq{background:#f9fafb;border:1.5px solid #d0d0d0;border-radius:10px;padding:18px 24px;margin:14px 0;text-align:center;font-size:17px;font-weight:500}
+.eq .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#555;display:block;margin-bottom:6px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{padding:10px 12px;text-align:left;border-bottom:1px solid #e8e8e8}
+.tbl th{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#666;background:#f5f5f5}
+.tbl tr:last-child td{border-bottom:none}
+.bullets{list-style:none;padding:0;margin:8px 0 14px}
+.bullets li{padding:6px 0 6px 22px;position:relative;font-size:14.5px;line-height:1.6}
+.bullets li::before{content:'';position:absolute;left:0;top:13px;width:8px;height:8px;border-radius:50%;background:#1a5cd6}
+.bullets.hl li::before{background:#e85d3a}
+.tip{background:#f5f7fa;border:1px solid #d8dce2;border-radius:10px;padding:16px 20px;margin:14px 0}
+.tip::before{content:'💡 Exam Tip';display:block;font-size:12px;font-weight:700;color:#e85d3a;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+.hl-badge{display:inline-block;background:#e85d3a;color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;vertical-align:middle;margin-left:6px}
+hr{border:none;border-top:1px solid #eee;margin:48px 0}
