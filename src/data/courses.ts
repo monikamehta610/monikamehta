@@ -11,6 +11,7 @@ export interface Slide {
   title: string;         // Display title
   subtitle: string;      // Short descriptor shown on card
   htmlFile?: string;     // Path relative to /public, e.g. "/slides/ess-2-2.html" (absent if coming-soon)
+  youtubeUrl?: string;   // Companion YouTube video
   level: string;         // e.g. "SL & HL", "HL Only"
   unit: string;          // IB unit label, e.g. "Unit 2"
   status?: "published" | "coming-soon";
@@ -40,6 +41,7 @@ export const COURSES: Course[] = [
         title: "Topic 1.1",
         subtitle: "Perspectives",
         htmlFile: "/slides/ess-1-1.html",
+        youtubeUrl: "https://www.youtube.com/watch?v=NiF5Yfp3Fns",
         level: "SL",
         unit: "Unit 1: Foundations of ESS",
       },
@@ -48,6 +50,7 @@ export const COURSES: Course[] = [
         title: "Topic 1.2",
         subtitle: "Systems Thinking",
         htmlFile: "/slides/ess-1-2.html",
+        youtubeUrl: "https://www.youtube.com/watch?v=WGdslettM9k",
         level: "SL & HL",
         unit: "Unit 1: Foundations of ESS",
       },
@@ -56,6 +59,7 @@ export const COURSES: Course[] = [
         title: "Topic 1.3",
         subtitle: "Sustainability",
         htmlFile: "/slides/ess-1-3.html",
+        youtubeUrl: "https://www.youtube.com/watch?v=nkun-Rk5YL0",
         level: "SL & HL",
         unit: "Unit 1: Foundations of ESS",
       },
@@ -64,6 +68,7 @@ export const COURSES: Course[] = [
         title: "Topic 2.1",
         subtitle: "Ecology & Organization",
         htmlFile: "/slides/ess-2-1.html",
+        youtubeUrl: "https://www.youtube.com/watch?v=l_qYLmm9C0s",
         level: "SL & HL",
         unit: "Unit 2: Ecology",
       },

@@ -38,6 +38,29 @@ export default function CoursesHubPage() {
         <p style={{ color: "#6f6a64", fontSize: "1rem", maxWidth: 480, margin: "0 auto", lineHeight: 1.65 }}>
           Slide-based study resources created by Monika Mehta — Science Educator with 9+ years of IBDP teaching experience.
         </p>
+        <div style={{ marginTop: "1rem" }}>
+          <a
+            href="https://www.youtube.com/@monikamehta6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-[rgba(196,48,43,0.15)]"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              fontSize: "0.8375rem",
+              fontWeight: 600,
+              color: "#c4302b",
+              textDecoration: "none",
+              padding: "6px 16px",
+              borderRadius: 9999,
+              background: "rgba(196,48,43,0.08)",
+              transition: "background 0.15s",
+            }}
+          >
+            Subscribe on YouTube
+          </a>
+        </div>
       </div>
 
       {/* Course cards */}

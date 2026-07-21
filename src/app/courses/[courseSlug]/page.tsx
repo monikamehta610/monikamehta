@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getCourse, COURSES, Slide } from "@/data/courses";
+import { YouTubeLink } from "@/components/YouTubeLink";
 
 export function generateStaticParams() {
   return COURSES.map((c) => ({ courseSlug: c.slug }));
@@ -127,24 +128,28 @@ export default async function CourseIndexPage({
                           </span>
                         </div>
                       </div>
-                      {isComingSoon ? (
-                        <span
-                          style={{
-                            fontSize: "0.65rem",
-                            fontWeight: 700,
-                            color: "#9e9890",
-                            background: "#f5f3f0",
-                            padding: "3px 10px",
-                            borderRadius: 9999,
-                            whiteSpace: "nowrap",
-                            flexShrink: 0,
-                          }}
-                        >
-                          Coming Soon
-                        </span>
-                      ) : (
-                        <ArrowRight size={16} style={{ color: course.accentColor, flexShrink: 0 }} />
-                      )}
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 }}>
+                        {slide.youtubeUrl && !isComingSoon && (
+                          <YouTubeLink url={slide.youtubeUrl} />
+                        )}
+                        {isComingSoon ? (
+                          <span
+                            style={{
+                              fontSize: "0.65rem",
+                              fontWeight: 700,
+                              color: "#9e9890",
+                              background: "#f5f3f0",
+                              padding: "3px 10px",
+                              borderRadius: 9999,
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            Coming Soon
+                          </span>
+                        ) : (
+                          <ArrowRight size={16} style={{ color: course.accentColor }} />
+                        )}
+                      </div>
                     </div>
                   );
 
