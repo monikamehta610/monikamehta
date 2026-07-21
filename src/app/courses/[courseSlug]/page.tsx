@@ -92,7 +92,9 @@ export default async function CourseIndexPage({
           {course.slides.map((slide, i) => (
             <Link
               key={slide.slug}
-              href={`/courses/${course.slug}/${slide.slug}`}
+              href={slide.htmlFile}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ textDecoration: "none" }}
             >
               <div

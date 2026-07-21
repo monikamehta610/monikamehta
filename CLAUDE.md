@@ -22,9 +22,7 @@ src/
       layout.tsx            ← Warm-light sticky nav (back to portfolio, ESS/Bio links)
       page.tsx              ← Course hub (cards for ESS and Biology)
       [courseSlug]/
-        page.tsx            ← Slide index for a course
-        [slideSlug]/
-          page.tsx          ← Full-height iframe slide viewer
+        page.tsx            ← Slide index for a course, links directly to public/slides/
   components/
     CoursesTeaser.tsx       ← Teaser section on the main portfolio page
 ```
@@ -85,8 +83,6 @@ with open('public/slides/ess-3-1.html', 'w', encoding='utf-8') as f:
 },
 ```
 
-That's it. The course index page and the slide viewer are generated automatically.
-
 ---
 
 ## Slide HTML Template (for future reference)
@@ -145,12 +141,12 @@ The shared CSS defines the following key tokens that slide-specific CSS can over
 
 ---
 
-## Slide Viewer URL pattern
+## Direct Slide URLs
 
-`/courses/[courseSlug]/[slideSlug]`
+Slide paths are hosted directly in the static `public/slides` folder:
 
 | URL | File served |
 |-----|-------------|
-| `/courses/ess/2-2` | `public/slides/ess-2-2.html` |
-| `/courses/biology/2-2` | `public/slides/bio-2-2.html` |
-| `/courses/ess/3-1` | `public/slides/ess-3-1.html` |
+| `/slides/ess-2-2.html` | `public/slides/ess-2-2.html` |
+| `/slides/ess-3-1.html` | `public/slides/ess-3-1.html` |
+| `/slides/bio-2-2.html` | `public/slides/bio-2-2.html` |
