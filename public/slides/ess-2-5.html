@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 2.5</title>
+
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+  </style>
+
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems & Societies</div>
+    <h1>Zonation, Succession<br/>&amp; Change in Ecosystems</h1>
+    <p class="subtitle">Subtopic 2.5 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:28px;margin-bottom:4px">🌱</div>
+        <div style="font-size:13px;font-weight:600">8 SL Syllabus Points</div>
+        <div style="font-size:12px;color:var(--muted)">2.5.1 – 2.5.8</div>
+      </div>
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:28px;margin-bottom:4px">🔥</div>
+        <div style="font-size:13px;font-weight:600">5 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">2.5.9 – 2.5.13</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic examines how ecosystems change over space (zonation) and time (succession), from pioneer communities to climax ecosystems, and how human activities and natural disturbances alter these processes.</p>
+  <h3>Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How do ecological systems change over time and over space?</li>
+    <li>How do abiotic and biotic factors influence the process of zonation in an ecosystem?</li>
+    <li>What are the stages of ecological succession, and how do pioneer species contribute to ecosystem development?</li>
+    <li>How do human activities impact the natural processes of zonation and succession in various ecosystems?</li>
+  </ul>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card"><strong style="color:var(--blue)">A. Zonation</strong><br/><span style="font-size:13px;color:var(--muted)">Environmental gradients, transect sampling, kite diagrams</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Succession</strong><br/><span style="font-size:13px;color:var(--muted)">Primary vs secondary succession, seral communities, climax communities, r- and K-strategists</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Change &amp; Resilience</strong><br/><span style="font-size:13px;color:var(--muted)">Ecosystem resilience, human impacts, plagioclimax, alternative stable states</span></div>
+  </div>
+  <div class="tip" style="margin-top:16px">Time Allocation: Minimum 4.5 hours for SL; additional 5–6 hours for HL. This subtopic connects directly to energy flow (2.2) and biomes (2.4).</div>
+</div>
+
+<!-- ==================== SLIDE 3: 2.5.1 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.5.1</div>
+  <h2>Zonation</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Zonation</em> refers to changes in community along an <em>environmental gradient</em>.</div>
+  <p>Zonation is the observable change in species composition as you move across an area where one or more environmental factors change gradually. The distinct bands (zones) reflect the tolerance limits of different species.</p>
+  <h3>Examples of Zonation</h3>
+  <table class="tbl">
+    <tr><th>Gradient</th><th>Example</th><th>What Changes</th></tr>
+    <tr><td><strong>Tidal level</strong></td><td>Rocky seashore — bands of seaweed and barnacles from splash zone to subtidal</td><td>Immersion time, salinity, temperature fluctuation</td></tr>
+    <tr><td><strong>Altitude</strong></td><td>Mountain — forest → shrubland → alpine meadow → bare rock</td><td>Temperature, oxygen, UV radiation, wind exposure</td></tr>
+    <tr><td><strong>Distance from shore</strong></td><td>Lake — littoral → limnetic → profundal zones</td><td>Light penetration, temperature, oxygen levels</td></tr>
+    <tr><td><strong>Soil moisture</strong></td><td>River bank — wetland species → terrestrial species</td><td>Water table depth, soil aeration</td></tr>
+  </table>
+  <div class="card" style="margin-top:12px">
+    <p><strong>Key insight:</strong> Spatial zonation can mirror temporal succession — the sequence of communities you see along a beach from water to dunes often reflects the same stages you'd see over time during primary succession on newly formed land.</p>
+  </div>
+  <div class="tip">When asked to describe zonation, always name the environmental gradient (e.g. "tidal level") and the specific community changes you observe along it.</div>
+</div>
+
+<!-- ==================== SLIDE 4: 2.5.2 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.5.2</div>
+  <h2>Transects &amp; Environmental Gradients</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Transects</em> can be used to measure biotic and abiotic factors along an environmental gradient in order to determine the variables that affect the distribution of species.</div>
+  <h3>Types of Transects</h3>
+  <table class="tbl">
+    <tr><th>Type</th><th>Method</th><th>Best For</th></tr>
+    <tr><td><strong>Line transect</strong></td><td>A line is laid out; organisms are recorded where they touch or cross the line at set intervals</td><td>Quick survey; species presence/absence along a gradient</td></tr>
+    <tr><td><strong>Belt transect</strong></td><td>A strip (e.g. 1 m wide) is marked either side of the line; <em>all</em> organisms within the strip are recorded</td><td>Quantitative data; abundance and % cover along a gradient</td></tr>
+  </table>
+  <h3 style="margin-top:16px">What to Measure</h3>
+  <div class="card">
+    <p><strong>Biotic factors:</strong> Species identity, abundance, % cover, population density<br/>
+    <strong>Abiotic factors:</strong> Temperature, light intensity, soil moisture, pH, salinity, wind speed — measured at each sampling point along the transect</p>
+  </div>
+  <h3 style="margin-top:16px">Kite Diagrams</h3>
+  <p>Kite diagrams show the distribution of species along a transect. The width of each "kite" represents the abundance or % cover at each distance. Multiple species can be stacked to show how communities change.</p>
+  <div class="card" style="border:2px dashed var(--border);text-align:center;color:var(--muted)">
+    <p><strong>Kite diagram:</strong> Species A widens near the water's edge; Species B peaks mid-shore; Species C dominates the upper shore — visually showing zonation.</p>
+  </div>
+  <div class="tip">Skill: You should be able to create and interpret kite diagrams from transect data. Width = abundance; symmetry around the central line is a convention, not a real axis.</div>
+</div>
+
+<!-- ==================== SLIDE 5: 2.5.3 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.5.3</div>
+  <h2>What Is Succession?</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Succession</em> is the replacement of one community by another in an area over time due to changes in biotic and abiotic variables.</div>
+  <p>Succession is a <strong>directional, non-seasonal, cumulative</strong> change in the species occupying an area. It begins when disturbance removes vegetation and ends when a stable climax community is reached.</p>
+  <h3>Types of Succession</h3>
+  <div class="flow">
+    <div class="flow-node">🌊 Freshwater → Forest<br/><small>(Hydrosere)</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🏖️ Sand dunes stabilizing<br/><small>(Psammosere)</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🌋 Bare lava rock<br/><small>(Lithosere)</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🏜️ Dry areas<br/><small>(Xerosere)</small></div>
+  </div>
+  <h3 style="margin-top:16px">Key Features of Succession</h3>
+  <ul class="bullets">
+    <li><strong>Directional:</strong> Follows a predictable sequence of community types</li>
+    <li><strong>Driven by organisms:</strong> Each community modifies the environment (soil, light, microclimate), making it suitable for the next</li>
+    <li><strong>Involves the whole community:</strong> As plants change, so do associated fungi, insects, birds, and mammals</li>
+    <li><strong>Ends at climax:</strong> Species composition stabilizes — no further directional change (though small-scale secondary succession continues within gaps)</li>
+  </ul>
+  <div class="tip">Common confusion: Succession involves the <em>entire</em> community — not just plants. Changes in plant species drive changes in herbivores, which in turn influence which predators are present.</div>
+</div>
+
+<!-- ==================== SLIDE 6: 2.5.4 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.5.4</div>
+  <h2>Seral Communities &amp; the Climax</h2>
+  <div class="kt"><strong>Key Understanding</strong>Each <em>seral community (sere)</em> in a succession causes changes in environmental conditions that allow the next community to replace it through competition until a stable <em>climax community</em> is reached.</div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin:18px 0">
+    <div class="flow-node" style="background:#e8f5e9;border-color:#4caf50;min-width:240px">🌱 Pioneer community</div>
+    <div class="flow-arrow" style="transform:rotate(90deg);margin:4px 0">↓</div>
+    <div class="flow-node" style="min-width:240px">🌿 Early seral community</div>
+    <div class="flow-arrow" style="transform:rotate(90deg);margin:4px 0">↓</div>
+    <div class="flow-node" style="min-width:240px">🌳 Intermediate seral community</div>
+    <div class="flow-arrow" style="transform:rotate(90deg);margin:4px 0">↓</div>
+    <div class="flow-node" style="min-width:240px">🌲 Late seral community</div>
+    <div class="flow-arrow" style="transform:rotate(90deg);margin:4px 0">↓</div>
+    <div class="flow-node" style="background:#e8eaf6;border-color:#3f51b5;min-width:240px">🏔️ Climax community</div>
+  </div>
+  <h3 style="margin-top:16px">How Each Sere Facilitates the Next</h3>
+  <table class="tbl">
+    <tr><th>Stage</th><th>What Dominates</th><th>How It Changes the Environment</th></tr>
+    <tr><td><strong>Pioneer</strong></td><td>Lichens, mosses (primary) or grasses (secondary)</td><td>Break down rock / add organic matter → soil begins to form</td></tr>
+    <tr><td><strong>Early sere</strong></td><td>Grasses, herbaceous plants</td><td>Roots stabilize soil; leaf litter increases organic content</td></tr>
+    <tr><td><strong>Intermediate sere</strong></td><td>Shrubs, small trees</td><td>Shade creates new microclimates; deeper roots improve soil structure</td></tr>
+    <tr><td><strong>Late sere</strong></td><td>Fast-growing trees (e.g. birch, pine)</td><td>Canopy reduces light at ground level; thick humus layer develops</td></tr>
+    <tr><td><strong>Climax</strong></td><td>Slow-growing, shade-tolerant trees (e.g. oak, beech)</td><td>Self-sustaining; efficient nutrient cycling; stable community composition</td></tr>
+  </table>
+  <div class="tip">Key idea: Each sere is temporary — it exists only until the organisms within it modify the environment enough for better-adapted competitors to take over.</div>
+</div>
+
+<!-- ==================== SLIDE 7: 2.5.5 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.5.5</div>
+  <h2>Primary Succession</h2>
+  <div class="kt"><strong>Key Understanding</strong>Primary successions happen on newly formed substratum where there is no soil or preexisting community, such as rock newly formed by volcanism, moraines revealed by retreating glaciers, wind-blown sand or waterborne silt.</div>
+  <div class="flow">
+    <div class="flow-node">🪨 Bare rock</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🦠 Lichens colonize</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🌱 Mosses + soil</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🌿 Grasses</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🌳 Shrubs → Trees</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🏔️ Climax</div>
+  </div>
+  <h3 style="margin-top:16px">The Pioneer Stage</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li><strong>Pioneer species</strong> (lichens, mosses) are the first to colonize bare rock</li>
+      <li>They secrete acids that chemically weather rock → begin soil formation</li>
+      <li>When they die and decompose, organic matter accumulates → shallow soil layer</li>
+      <li>This thin soil is enough for grass seeds to germinate → succession advances</li>
+    </ul>
+  </div>
+  <h3 style="margin-top:16px">Case Study: Surtsey Island (Iceland)</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li><strong>1963:</strong> Volcanic island emerges from the ocean — bare lava rock, no soil, no life</li>
+      <li><strong>1965:</strong> First lichens and mosses colonize the rock surface</li>
+      <li><strong>1970s:</strong> Soil develops; grasses and flowering plants establish</li>
+      <li><strong>2000s:</strong> Shrubs and small trees; nesting seabirds bring nutrients via guano</li>
+      <li><strong>Today:</strong> 60+ plant species, self-sustaining ecosystem — still progressing toward climax</li>
+    </ul>
+    <p style="margin-top:8px;font-size:13px;color:var(--muted)"><em>Surtsey is a UNESCO World Heritage Site — a living laboratory of primary succession.</em></p>
+  </div>
+  <div class="tip">Exam skill: Distinguish primary from secondary by asking: "Was there soil before the disturbance?" If no → primary. If yes → secondary.</div>
+</div>
+
+<!-- ==================== SLIDE 8: 2.5.6 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.5.6</div>
+  <h2>Secondary Succession</h2>
+  <div class="kt"><strong>Key Understanding</strong>Secondary successions happen on bare soil where there has been a preexisting community, such as a field where agriculture has ceased or a forest after an intense firestorm.</div>
+  <h3>Primary vs Secondary — Key Differences</h3>
+  <table class="tbl">
+    <tr><th>Feature</th><th>Primary Succession</th><th>Secondary Succession</th></tr>
+    <tr><td><strong>Starting point</strong></td><td>Bare rock / new substratum</td><td>Soil already present</td></tr>
+    <tr><td><strong>Soil formation</strong></td><td>Must be created from scratch</td><td>Soil + seed bank already exist</td></tr>
+    <tr><td><strong>Speed</strong></td><td>Slow (centuries to millennia)</td><td>Faster (decades to centuries)</td></tr>
+    <tr><td><strong>Pioneer species</strong></td><td>Lichens, mosses</td><td>Grasses, fast-growing herbs, weeds</td></tr>
+    <tr><td><strong>Example</strong></td><td>Volcanic island, glacial moraine</td><td>Abandoned farmland, post-fire forest</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Case Study: Fort McMurray Wildfire (2016, Canada)</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li><strong>May 2016:</strong> Massive wildfire burns ~590,000 hectares of boreal forest; 90,000 people evacuated</li>
+      <li><strong>Pioneer stage:</strong> Fireweed, grasses, jack pine seedlings (fire-adapted species) colonize within 1 year</li>
+      <li><strong>Intermediate:</strong> Shrubs (willow) and perennial herbs establish; biodiversity increases</li>
+      <li><strong>Late stages:</strong> Black spruce, white spruce, aspen re-establish; boreal forest expected to recover over ~60–80 years</li>
+    </ul>
+    <p style="margin-top:8px"><strong>Why faster than primary?</strong> Soil, seed bank, and root systems survived the fire — the ecosystem had a head start.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: 2.5.7 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.5.7</div>
+  <h2>Changes During Succession</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Energy flow, productivity, species diversity, soil depth and nutrient cycling</em> change over time during succession.</div>
+  <table class="tbl">
+    <tr><th>Factor</th><th>Early Succession</th><th>Mid Succession</th><th>Climax Community</th></tr>
+    <tr>
+      <td><strong>Energy flow</strong></td>
+      <td>Simple; few trophic levels; low biomass storage</td>
+      <td>Increasingly complex; more food webs</td>
+      <td>Complex; multiple trophic levels; high energy storage in biomass</td>
+    </tr>
+    <tr>
+      <td><strong>Productivity</strong></td>
+      <td>High NPP (rapid pioneer growth); low secondary productivity</td>
+      <td>NPP stabilizes; secondary productivity increases</td>
+      <td>GPP high; NPP approaches zero (respiration ≈ photosynthesis)</td>
+    </tr>
+    <tr>
+      <td><strong>Species diversity</strong></td>
+      <td>Low; dominated by pioneer species</td>
+      <td>Increasing; more niches available</td>
+      <td>Peak diversity; stable species composition</td>
+    </tr>
+    <tr>
+      <td><strong>Soil depth</strong></td>
+      <td>Shallow; poor structure; low nutrients</td>
+      <td>Deepening; improving structure</td>
+      <td>Deep; rich humus; well-developed profile</td>
+    </tr>
+    <tr>
+      <td><strong>Nutrient cycling</strong></td>
+      <td>Simple and rapid; few species involved</td>
+      <td>Increasingly complex</td>
+      <td>Highly efficient; nutrients retained within system</td>
+    </tr>
+  </table>
+  <div class="tip">Critical insight: At climax, NPP ≈ 0 because nearly all energy fixed by photosynthesis is used by the community's own respiration. The ecosystem is in dynamic equilibrium — not static, but balanced.</div>
+</div>
+
+<!-- ==================== SLIDE 10: 2.5.8 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.5.8</div>
+  <h2>Ecosystem Resilience &amp; Diversity</h2>
+  <div class="kt"><strong>Key Understanding</strong>An ecosystem's <em>capacity to tolerate disturbances and maintain equilibrium</em> depends on its diversity and resilience.</div>
+  <h3>Key Definitions</h3>
+  <div class="card">
+    <p><strong>Resilience:</strong> The ability of an ecosystem to absorb disturbance and recover to its original state.</p>
+    <p style="margin-top:8px"><strong>Stability:</strong> The ability to remain relatively unchanged. Includes two components:</p>
+    <ul class="bullets">
+      <li><strong>Resistance:</strong> Withstanding disturbance without change</li>
+      <li><strong>Resilience:</strong> Recovering after change has occurred</li>
+    </ul>
+  </div>
+  <h3 style="margin-top:16px">How Diversity Drives Resilience</h3>
+  <table class="tbl">
+    <tr><th>Mechanism</th><th>Explanation</th></tr>
+    <tr><td><strong>Functional redundancy</strong></td><td>Multiple species perform the same role — if one is lost, others compensate</td></tr>
+    <tr><td><strong>Response diversity</strong></td><td>Different species respond differently to the same disturbance → overall impact is dampened</td></tr>
+    <tr><td><strong>Niche complementarity</strong></td><td>Diverse species use resources in different ways → more complete resource use → greater productivity and stability</td></tr>
+  </table>
+  <div class="flow" style="margin-top:16px">
+    <div class="flow-node consumer">↑ Species diversity</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">↑ Functional redundancy</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node consumer">↑ Ecosystem resilience</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">Faster recovery from disturbance</div>
+  </div>
+  <div class="tip">When asked about resilience, always link it to diversity. "A diverse coral reef recovers faster from bleaching than a species-poor reef because multiple coral species fill similar ecological roles."</div>
+</div>
+
+<!-- ==================== SLIDE 11: HL 2.5.9 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">2.5.9</div>
+  <h2>Factors Influencing Community Development <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The type of community that develops in a succession is influenced by <em>climatic factors</em>, the properties of the local <em>bedrock and soil</em>, <em>geomorphology</em>, together with <em>fire and weather-related events</em>. There can also be <em>top-down influences</em> from primary consumers or higher trophic levels.</div>
+  <table class="tbl">
+    <tr><th>Factor</th><th>Influence on Succession</th><th>Example</th></tr>
+    <tr><td><strong>Climatic factors</strong></td><td>Temperature &amp; precipitation determine the potential climax community</td><td>Same latitude → same climate → similar climax (e.g. temperate deciduous forest)</td></tr>
+    <tr><td><strong>Bedrock &amp; soil</strong></td><td>Soil pH, depth, nutrient content, drainage affect which species establish</td><td>Chalk grassland ≠ acidic heathland, even in same climate</td></tr>
+    <tr><td><strong>Geomorphology</strong></td><td>Slope, aspect, drainage patterns affect soil formation, sunlight, water availability</td><td>Steep slopes → thin soil → slower succession; south-facing slopes (NH) → more sun → different vegetation</td></tr>
+    <tr><td><strong>Fire &amp; weather</strong></td><td>Disturbance events reset succession or alter its trajectory</td><td>Regular wildfires maintain grassland (fire-climax); drought can shift forest → shrubland</td></tr>
+    <tr><td><strong>Top-down influences</strong></td><td>Consumers at higher trophic levels shape plant communities</td><td>Herbivore grazing prevents tree establishment; predator removal → herbivore explosion → overgrazing</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Case Study: Wolves in Yellowstone</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li><strong>Before (1926–1995):</strong> Wolves removed → elk populations exploded → overgrazed willow and aspen along rivers → riparian habitat degraded → fewer songbirds, beavers, and fish</li>
+      <li><strong>After reintroduction (1995):</strong> Wolves reduced elk → vegetation recovered → riverbanks stabilized → beavers returned → new ponds created → biodiversity surged</li>
+      <li><strong>This is a trophic cascade:</strong> Top predator influences the entire food web, shaping the plant community and even the physical landscape.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 12: HL 2.5.10 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">2.5.10</div>
+  <h2>Patterns of GP &amp; NP Through Succession <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Patterns of net productivity (NP) and gross productivity (GP)</em> change over time in a community undergoing succession.</div>
+  <table class="tbl">
+    <tr><th>Stage</th><th>GPP</th><th>R (Respiration)</th><th>NPP (GPP − R)</th><th>Why</th></tr>
+    <tr>
+      <td><strong>Pioneer</strong></td>
+      <td>Low</td>
+      <td>Low</td>
+      <td style="font-weight:700;color:#16a34a">High NPP</td>
+      <td>Few producers → low total photosynthesis, but very little biomass to respire → most energy captured is "new" growth</td>
+    </tr>
+    <tr>
+      <td><strong>Intermediate</strong></td>
+      <td>Rising</td>
+      <td>Rising</td>
+      <td>High, declining</td>
+      <td>More plants → more photosynthesis; but more biomass → more respiration</td>
+    </tr>
+    <tr>
+      <td><strong>Climax</strong></td>
+      <td>High</td>
+      <td>High (≈ GPP)</td>
+      <td style="font-weight:700;color:#dc2626">≈ Zero</td>
+      <td>Large biomass → massive respiration; nearly all energy fixed is consumed → dynamic equilibrium</td>
+    </tr>
+  </table>
+  <div class="eq">NPP<sub>climax</sub> = GPP − R → ≈ 0</div>
+  <div class="card" style="margin-top:12px">
+    <h3>Why Does NPP Approach Zero at Climax?</h3>
+    <ul class="bullets">
+      <li>The ecosystem accumulates massive biomass over centuries → enormous respiratory demand</li>
+      <li>Dead matter accumulates → decomposers respire heavily → recycle nutrients</li>
+      <li>Net community production (NCP) = 0 means the system is in <strong>dynamic equilibrium</strong> — not dead, but balanced</li>
+      <li>Energy still flows through the system — it just doesn't accumulate as net new biomass</li>
+    </ul>
+  </div>
+  <div class="tip">Common exam error: "NPP = 0 at climax" does NOT mean the ecosystem has zero productivity. It means gross productivity equals total respiration — energy input equals energy output.</div>
+</div>
+
+<!-- ==================== SLIDE 13: HL 2.5.11 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">2.5.11</div>
+  <h2>r- and K-Strategist Species <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>r- and K-strategist species</em> have reproductive strategies that are better adapted to <em>pioneer and climax communities</em>, respectively.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0">
+    <div class="card" style="border-left:4px solid var(--yellow);background:#fff8f0">
+      <h3 style="color:#b8860b">r-Strategists</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:8px">"Opportunists" — adapted to unstable, unpredictable environments</p>
+      <ul class="bullets" style="font-size:14px">
+        <li>Short life span</li>
+        <li>Rapid growth &amp; early maturity</li>
+        <li>Many small offspring</li>
+        <li>Little parental care</li>
+        <li>Niche generalists</li>
+        <li>Regulated by external factors (weather, disturbance)</li>
+        <li><strong>Role:</strong> Pioneer / colonizer species</li>
+      </ul>
+      <p style="font-size:13px;margin-top:8px"><em>Examples: bacteria, insects, dandelions, fireweed</em></p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--blue);background:#f0f5ff">
+      <h3 style="color:var(--blue)">K-Strategists</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:8px">"Competitors" — adapted to stable, predictable environments</p>
+      <ul class="bullets" style="font-size:14px">
+        <li>Long life span</li>
+        <li>Slow growth &amp; late maturity</li>
+        <li>Few, large offspring</li>
+        <li>High parental care</li>
+        <li>Niche specialists</li>
+        <li>Regulated by internal factors (competition, density)</li>
+        <li><strong>Role:</strong> Climax community species</li>
+      </ul>
+      <p style="font-size:13px;margin-top:8px"><em>Examples: elephants, whales, oak trees, humans</em></p>
+    </div>
+  </div>
+  <h3 style="margin-top:16px">How Strategies Shift During Succession</h3>
+  <div class="flow">
+    <div class="flow-node">🌱 Pioneer: r-strategists<br/><small>Reproduce fast, colonize gaps</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🌿 Mid: Mixed r &amp; K<br/><small>Competition increasing</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">🏔️ Climax: K-strategists<br/><small>Compete in stable niche</small></div>
+  </div>
+  <div class="tip">Memory aid: <strong>r</strong> = reproduction rate (high r = lots of babies); <strong>K</strong> = carrying capacity (K-strategists live near the environment's limit).</div>
+</div>
+
+<!-- ==================== SLIDE 14: HL 2.5.12 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">2.5.12</div>
+  <h2>Challenging the Climax Community <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The concept of a <em>climax community</em> has been challenged, and there is uncertainty over what ecosystems would develop naturally were there no human influences.</div>
+  <h3>Alternative Stable States</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li>There is <strong>no single predetermined climax</strong> for any given set of climate conditions</li>
+      <li>Multiple stable communities can exist under similar environmental conditions</li>
+      <li>Different successional paths may arise from different starting points or random events (historical contingency)</li>
+      <li>Evidence: Lake core samples and peat bogs show multiple vegetation types at the same site over time — not a linear march to one climax</li>
+    </ul>
+  </div>
+  <h3 style="margin-top:16px">The Vera Wood-Pasture Hypothesis</h3>
+  <div class="card">
+    <p><strong>Frans Vera</strong> proposed that post-Ice Age Europe was <em>not</em> covered by dense, closed-canopy forest as traditionally assumed. Instead:</p>
+    <ul class="bullets" style="margin-top:8px">
+      <li>The landscape was a <strong>mosaic of open grasslands, scattered trees, and wooded pastures</strong></li>
+      <li>Large herbivores (aurochs, tarpan) maintained open areas through grazing and browsing</li>
+      <li>This challenges the assumption that without humans, Europe would be entirely forested</li>
+      <li>Implications for <strong>rewilding</strong> — restoring large herbivores may create more diverse, open landscapes</li>
+    </ul>
+    <p style="margin-top:8px;font-size:13px;color:var(--muted)"><em>Not universally accepted, but has sparked significant debate and research into historical ecology.</em></p>
+  </div>
+  <div class="tip">You don't need to take a side — but you should be able to explain why the single-climax model is an oversimplification, using either alternative stable states or the Vera hypothesis as evidence.</div>
+</div>
+
+<!-- ==================== SLIDE 15: HL 2.5.13 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">2.5.13</div>
+  <h2>Plagioclimax &amp; Human Diversion <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Human activity can divert and change the progression of succession leading to a <em>plagioclimax</em>.</div>
+  <h3>What Is a Plagioclimax?</h3>
+  <div class="card">
+    <p>A <strong>plagioclimax community</strong> is a stage in succession that is maintained by regular human disturbance, preventing the natural progression to a climax community. These communities are typically less diverse than natural climax communities.</p>
+  </div>
+  <h3 style="margin-top:16px">How Humans Divert Succession</h3>
+  <table class="tbl">
+    <tr><th>Activity</th><th>Mechanism</th><th>Example</th></tr>
+    <tr><td><strong>Grazing</strong></td><td>Livestock prevent shrub/tree establishment → grassland maintained</td><td>Sheep pastures in the UK; maintained as grassland for centuries</td></tr>
+    <tr><td><strong>Mowing / burning</strong></td><td>Regular cutting removes woody species → early seral stage maintained</td><td>Meadows; heathland management</td></tr>
+    <tr><td><strong>Agriculture</strong></td><td>Plowing, planting, harvesting keep land in perpetual early succession</td><td>Cropland worldwide</td></tr>
+    <tr><td><strong>Deforestation</strong></td><td>Removes forest → forces regression to earlier seral stage</td><td>Amazon cattle pasture; Southeast Asian palm oil</td></tr>
+    <tr><td><strong>Urban development</strong></td><td>Permanent replacement of natural habitat</td><td>Cities, infrastructure</td></tr>
+    <tr><td><strong>Removing top predators</strong></td><td>Herbivore population explosion → overgrazing prevents forest regeneration</td><td>Deer overpopulation in Europe after wolf removal</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Permanent vs Temporary Diversion</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li><strong>Temporary:</strong> If human activity stops (e.g. farmland abandoned), succession resumes toward climax</li>
+      <li><strong>Permanent:</strong> If the ecosystem's resilience has been exceeded (e.g. soil completely degraded, seed bank destroyed), it may never recover to its original state — an alternative stable state</li>
+      <li>The more diverse and resilient the ecosystem, the more resistant it is to permanent diversion</li>
+    </ul>
+  </div>
+  <div class="tip">Key link: This connects to 2.5.8 (resilience) and 1.3 (sustainability). Human activities that simplify ecosystems reduce diversity → reduce resilience → make permanent plagioclimax more likely.</div>
+</div>
+
+<!-- ==================== SLIDE 16: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Zonation</strong></td><td>Changes in community composition along an environmental gradient (e.g. tidal level, altitude)</td></tr>
+      <tr><td><strong>Environmental gradient</strong></td><td>A gradual change in abiotic conditions over space (temperature, moisture, salinity, etc.)</td></tr>
+      <tr><td><strong>Transect</strong></td><td>A line or strip through a habitat along which observations are systematically recorded</td></tr>
+      <tr><td><strong>Kite diagram</strong></td><td>A chart showing species abundance or % cover against distance along a transect</td></tr>
+      <tr><td><strong>Succession</strong></td><td>The replacement of one community by another in an area over time due to changes in biotic and abiotic variables</td></tr>
+      <tr><td><strong>Seral community (sere)</strong></td><td>A temporary stage in succession, dominated by species adapted to those specific conditions</td></tr>
+      <tr><td><strong>Climax community</strong></td><td>A stable, mature community at the end of succession; species composition remains relatively constant</td></tr>
+      <tr><td><strong>Pioneer species</strong></td><td>First organisms to colonize a bare or disturbed area; adapted to harsh, resource-poor conditions</td></tr>
+      <tr><td><strong>Primary succession</strong></td><td>Succession on newly formed substratum with no soil or pre-existing community</td></tr>
+      <tr><td><strong>Secondary succession</strong></td><td>Succession on soil where a pre-existing community has been removed by disturbance</td></tr>
+      <tr><td><strong>Resilience</strong></td><td>The ability of an ecosystem to absorb disturbance and recover to its original state</td></tr>
+      <tr><td><strong>Stability</strong></td><td>The ability of an ecosystem to remain relatively unchanged; includes resistance and resilience</td></tr>
+      <tr><td><strong>Species diversity</strong></td><td>The number and relative abundance of different species in a community</td></tr>
+      <tr><td><strong>Disturbance</strong></td><td>An event (fire, flood, storm, human activity) that disrupts ecosystem structure and function</td></tr>
+      <tr><td><strong>Trophic cascade</strong></td><td>An indirect effect where top predators influence ecosystems through multiple trophic levels</td></tr>
+    </table>
+  </div>
+  <h3 style="margin-top:20px">HL Key Terms</h3>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>r-strategist</strong></td><td>Species with high reproductive rate; adapted to unstable environments; dominate early succession</td></tr>
+      <tr><td><strong>K-strategist</strong></td><td>Species adapted to stable environments near carrying capacity; dominate climax communities</td></tr>
+      <tr><td><strong>Geomorphology</strong></td><td>The study of landscape features (slopes, valleys, aspect) and how they influence ecology</td></tr>
+      <tr><td><strong>Plagioclimax</strong></td><td>A community maintained by regular human disturbance, preventing natural progression to climax</td></tr>
+      <tr><td><strong>Alternative stable states</strong></td><td>Multiple distinct stable communities possible under the same environmental conditions</td></tr>
+      <tr><td><strong>Allogenic factors</strong></td><td>External (non-biological) factors that drive changes in succession (fire, climate, geology)</td></tr>
+      <tr><td><strong>Vera hypothesis</strong></td><td>Frans Vera's proposal that post-Ice Age Europe was a mosaic of grassland and scattered trees, not closed forest</td></tr>
+      <tr><td><strong>Top-down influence</strong></td><td>Effects on lower trophic levels from organisms at higher trophic levels (predation, grazing)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 17: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <h3>Must-Know Relationships</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li><strong>Zonation (space) ↔ Succession (time):</strong> Spatial patterns often mirror temporal stages — seashore zones = successional stages viewed across a gradient.</li>
+      <li><strong>Pioneer → Seral → Climax:</strong> Each stage modifies the environment to facilitate the next through competition.</li>
+      <li><strong>Diversity → Resilience:</strong> More species = more functional redundancy = faster recovery from disturbance.</li>
+      <li><strong>NPP → 0 at climax:</strong> Not zero productivity — it means GPP = R. Dynamic equilibrium.</li>
+    </ul>
+  </div>
+  <h3 style="margin-top:16px">Common Exam Patterns</h3>
+  <table class="tbl">
+    <tr><th>Pattern</th><th>How to Answer</th></tr>
+    <tr><td><strong>Compare primary vs secondary succession</strong></td><td>Starting point (rock vs soil), speed, pioneer species, timescale, seed bank availability</td></tr>
+    <tr><td><strong>Describe zonation along a gradient</strong></td><td>Name the gradient → describe community change → link to abiotic factors</td></tr>
+    <tr><td><strong>Interpret a kite diagram or transect data</strong></td><td>Read abundance at each point → identify zones → correlate with abiotic measurements</td></tr>
+    <tr><td><strong>Explain changes during succession</strong></td><td>Use 5 factors: energy flow, productivity, diversity, soil depth, nutrient cycling</td></tr>
+    <tr><td><strong>Discuss human impact on succession</strong></td><td>Identify activity → explain mechanism → describe whether plagioclimax is temporary or permanent</td></tr>
+  </table>
+  <h3 style="margin-top:16px">HL-Specific Focus</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li>Graph GP and NP through succession — GP rises then plateaus; NPP starts high then approaches zero.</li>
+      <li>Compare r- and K-strategists with specific examples for each trait (offspring number, life span, parental care).</li>
+      <li>Explain trophic cascades using Yellowstone wolves or similar examples.</li>
+      <li>Discuss why "the climax community" is a simplification — alternative stable states, Vera hypothesis.</li>
+      <li>Distinguish temporary vs permanent plagioclimax based on soil/seed bank integrity and ecosystem resilience.</li>
+    </ul>
+  </div>
+  <div class="tip">For 9-mark structured essays: Always link succession to both biodiversity and ecosystem services. Use specific case studies (Surtsey, Fort McMurray, Yellowstone, UK grasslands). Connect to sustainability (1.3) and systems thinking (1.2).</div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
