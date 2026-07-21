@@ -28,14 +28,15 @@ body #prevBtn, body #nextBtn {
   background: transparent !important;
   border: none !important;
   color: #2f2a24 !important;
-  font-size: 48px !important;
+  font-size: 56px !important;
   font-weight: 300 !important;
   cursor: pointer;
-  z-index: 100;
-  opacity: 0.25;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  opacity: 0.45 !important;
   transition: opacity 0.2s, transform 0.2s, background 0.2s;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -46,16 +47,17 @@ body #prevBtn, body #nextBtn {
   box-shadow: none !important;
 }
 body #prevBtn:hover:not(:disabled), body #nextBtn:hover:not(:disabled) {
-  opacity: 0.8 !important;
-  background: rgba(0, 0, 0, 0.05) !important;
+  opacity: 0.95 !important;
+  background: rgba(0, 0, 0, 0.08) !important;
   transform: translateY(-50%) scale(1.08) !important;
 }
 body #prevBtn:disabled, body #nextBtn:disabled {
-  opacity: 0.02 !important;
+  opacity: 0.03 !important;
   cursor: default !important;
+  pointer-events: none !important;
 }
-body #prevBtn { left: 12px; }
-body #nextBtn { right: 12px; }
+body #prevBtn { left: 8px; }
+body #nextBtn { right: 8px; }
 
 /* Slide container */
 #deck {
