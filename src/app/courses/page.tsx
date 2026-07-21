@@ -41,55 +41,48 @@ export default function CoursesHubPage() {
       </div>
 
       {/* Course cards */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.25rem" }}>
-        {COURSES.map((course) => (
-          <Link
-            key={course.slug}
-            href={`/courses/${course.slug}`}
-            style={{ textDecoration: "none", display: "block" }}
-          >
-            <div
-              className="bg-white border border-[#ece7e2] rounded-[18px] overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 cursor-pointer"
+      <div style={{ display: "flex", justifyContent: "center", gap: "1.25rem", flexWrap: "wrap" }}>
+        {COURSES.map((course) => {
+          const published = course.slides.filter((s) => s.status !== "coming-soon");
+          const planned = course.slides.filter((s) => s.status === "coming-soon");
+          const total = course.slides.length;
+          const pct = total > 0 ? Math.round((published.length / total) * 100) : 0;
+
+          return (
+            <Link
+              key={course.slug}
+              href={`/courses/${course.slug}`}
+              style={{ textDecoration: "none", flex: "1 1 340px", maxWidth: 440 }}
             >
-              {/* Banner */}
               <div
-                style={{
-                  background: `linear-gradient(135deg, ${course.accentColor}14, ${course.accentColor}06)`,
-                  borderBottom: `1px solid ${course.accentColor}20`,
-                  padding: "1.5rem",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "1rem",
-                }}
+                className="bg-white border border-[#ece7e2] rounded-[18px] overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 cursor-pointer h-full"
               >
+                {/* Banner */}
                 <div
                   style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: 12,
-                    background: course.accentColor + "18",
-                    border: `1.5px solid ${course.accentColor}28`,
+                    background: `linear-gradient(135deg, ${course.accentColor}14, ${course.accentColor}06)`,
+                    borderBottom: `1px solid ${course.accentColor}20`,
+                    padding: "1.5rem",
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "1.5rem",
-                    flexShrink: 0,
+                    gap: "1rem",
                   }}
                 >
-                  {course.icon}
-                </div>
-                <div>
                   <div
                     style={{
-                      fontSize: "0.65rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase" as const,
-                      color: course.accentColor,
-                      marginBottom: "0.2rem",
+                      width: 48,
+                      height: 48,
+                      borderRadius: 12,
+                      background: course.accentColor + "18",
+                      border: `1.5px solid ${course.accentColor}28`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "1.5rem",
+                      flexShrink: 0,
                     }}
                   >
-                    IBDP Course
+                    {course.icon}
                   </div>
                   <h2
                     style={{
@@ -103,63 +96,94 @@ export default function CoursesHubPage() {
                     {course.shortTitle}
                   </h2>
                 </div>
-              </div>
 
-              {/* Body */}
-              <div style={{ padding: "1.25rem 1.5rem" }}>
-                <p style={{ fontSize: "0.8375rem", color: "#6f6a64", lineHeight: 1.6, marginBottom: "1rem" }}>
-                  {course.description}
-                </p>
+                {/* Body */}
+                <div style={{ padding: "1.25rem 1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+                  <p style={{ fontSize: "0.8375rem", color: "#6f6a64", lineHeight: 1.6, margin: 0 }}>
+                    {course.description}
+                  </p>
 
-                {/* Stats */}
-                <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem" }}>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: "#f5f3f0",
-                      borderRadius: 10,
-                      padding: "0.625rem",
-                      textAlign: "center" as const,
-                    }}
-                  >
-                    <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#2f2a24" }}>
-                      {course.slides.length}
+                  {/* Progress bar */}
+                  {total > 0 && (
+                    <div>
+                      <div
+                        style={{
+                          height: 4,
+                          background: "#efecea",
+                          borderRadius: 2,
+                          overflow: "hidden",
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: `${pct}%`,
+                            height: "100%",
+                            background: course.accentColor,
+                            borderRadius: 2,
+                            transition: "width 0.4s ease",
+                          }}
+                        />
+                      </div>
                     </div>
-                    <div style={{ fontSize: "0.7rem", color: "#9e9890" }}>slides available</div>
+                  )}
+
+                  {/* Stats row */}
+                  <div style={{ display: "flex", gap: "0.75rem" }}>
+                    <div
+                      style={{
+                        flex: 1,
+                        background: "#f5f3f0",
+                        borderRadius: 10,
+                        padding: "0.625rem",
+                        textAlign: "center" as const,
+                      }}
+                    >
+                      <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#2f2a24" }}>
+                        {published.length}
+                      </div>
+                      <div style={{ fontSize: "0.7rem", color: "#9e9890" }}>published</div>
+                    </div>
+                    <div
+                      style={{
+                        flex: 1,
+                        background: course.accentColor + "0e",
+                        borderRadius: 10,
+                        padding: "0.625rem",
+                        textAlign: "center" as const,
+                      }}
+                    >
+                      <div style={{ fontSize: "1.25rem", fontWeight: 800, color: course.accentColor }}>
+                        {planned.length}
+                      </div>
+                      <div style={{ fontSize: "0.7rem", color: "#9e9890" }}>planned</div>
+                    </div>
                   </div>
+
+                  {/* CTA */}
                   <div
                     style={{
-                      flex: 1,
-                      background: course.accentColor + "0e",
-                      borderRadius: 10,
-                      padding: "0.625rem",
-                      textAlign: "center" as const,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      color: published.length > 0 ? course.accentColor : "#9e9890",
+                      fontWeight: 600,
+                      fontSize: "0.8375rem",
                     }}
                   >
-                    <div style={{ fontSize: "1.25rem", fontWeight: 800, color: course.accentColor }}>IB</div>
-                    <div style={{ fontSize: "0.7rem", color: "#9e9890" }}>curriculum aligned</div>
+                    <span>
+                      {published.length > 0
+                        ? published.length === total
+                          ? "View all slides"
+                          : "View slides"
+                        : "View planned topics"}
+                    </span>
+                    <ArrowRight size={15} />
                   </div>
                 </div>
-
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    color: course.accentColor,
-                    fontWeight: 600,
-                    fontSize: "0.8375rem",
-                  }}
-                >
-                  <span>
-                    {course.slides.length > 0 ? "View slides" : "Coming soon"}
-                  </span>
-                  {course.slides.length > 0 && <ArrowRight size={15} />}
-                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
