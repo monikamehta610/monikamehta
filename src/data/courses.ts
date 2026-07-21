@@ -7,12 +7,13 @@
 //    (or copy an existing one and change the import path)
 
 export interface Slide {
-  slug: string;        // URL segment, e.g. "2-2"
-  title: string;       // Display title
-  subtitle: string;    // Short descriptor shown on card
-  htmlFile: string;    // Path relative to /public, e.g. "/slides/ess-2-2.html"
-  level: string;       // e.g. "SL & HL", "HL Only"
-  unit: string;        // IB unit label, e.g. "Unit 2"
+  slug: string;          // URL segment, e.g. "2-2"
+  title: string;         // Display title
+  subtitle: string;      // Short descriptor shown on card
+  htmlFile?: string;     // Path relative to /public, e.g. "/slides/ess-2-2.html" (absent if coming-soon)
+  level: string;         // e.g. "SL & HL", "HL Only"
+  unit: string;          // IB unit label, e.g. "Unit 2"
+  status?: "published" | "coming-soon";
 }
 
 export interface Course {
@@ -89,6 +90,14 @@ export const COURSES: Course[] = [
         htmlFile: "/slides/ess-2-4.html",
         level: "SL & HL",
         unit: "Unit 2",
+      },
+      {
+        slug: "2-5",
+        title: "Topic 2.5",
+        subtitle: "Zonation, Succession & Change",
+        level: "SL & HL",
+        unit: "Unit 2",
+        status: "coming-soon",
       },
     ],
   },
