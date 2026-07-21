@@ -1,4 +1,3 @@
-/* ── Reson Widget Base ───────────────────────────────────────────────────── */
 /*
  * Reson Widget Base CSS
  *
@@ -583,7 +582,6 @@ hr,
   padding: 20px;
 }
 
-/* ── Reson Widget BW (Bloome brand design tokens) ───────────────────────── */
 /*
  * Bloome Widget Design System — token layer  (scope: .bw)
  *
