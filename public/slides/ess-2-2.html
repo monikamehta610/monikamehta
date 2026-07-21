@@ -912,13 +912,17 @@ p,.desc{font-size:15px;line-height:1.7;margin-bottom:12px}
 </div><!-- /deck -->
 
 <!-- Navigation -->
-<button id="prevBtn" onclick="go(-1)" disabled aria-label="Previous slide">‹</button>
-<button id="nextBtn" onclick="go(1)" aria-label="Next slide">›</button>
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
 
 <script>
 const slides = document.querySelectorAll('.slide');
 const total = slides.length;
 let current = 0;
+
+// Click event listeners
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
 
 function goTo(idx) {
   if (idx < 0 || idx >= total) return;
