@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background glowing blobs */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-primary/20 blur-[80px] animate-pulse-slow" />
-        <div className="absolute bottom-[20%] right-[10%] w-[250px] h-[250px] rounded-full bg-violet-600/10 dark:bg-violet-500/20 blur-[100px] animate-pulse-slow [animation-delay:2s]" />
+        <div className="absolute bottom-[20%] right-[10%] w-[250px] h-[250px] rounded-full bg-emerald-600/10 blur-[100px] animate-pulse-slow [animation-delay:2s]" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -26,7 +26,7 @@ export default function Hero() {
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-foreground">
               Inspiring the next <br className="hidden sm:inline" />
-              generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-500">scientists.</span>
+              generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-700">scientists.</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl">
@@ -82,7 +82,7 @@ export default function Hero() {
           <div className="lg:col-span-5 flex justify-center items-center animate-fade-in-up [animation-delay:0.2s]">
             <div className="relative group w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               {/* Outer glowing border */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary to-violet-500 opacity-20 group-hover:opacity-30 blur-2xl transition-all duration-500 animate-float" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary to-emerald-700 opacity-20 group-hover:opacity-30 blur-2xl transition-all duration-500 animate-float" />
 
               {/* Main Container */}
               <div className="relative w-full h-full rounded-3xl border border-border bg-card/40 backdrop-blur-sm p-4 overflow-hidden shadow-2xl flex items-center justify-center">
