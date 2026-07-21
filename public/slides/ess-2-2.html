@@ -21,16 +21,87 @@ body{font-family:'Sora',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;ba
 /* Progress bar */
 #progress{position:fixed;top:0;left:0;height:3px;background:var(--blue);transition:width .3s ease;z-index:100}
 /* Navigation */
-#nav{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#ffffff;border-top:1px solid #e8e8e8;z-index:90}
-#nav button{background:#111111;color:#fff;border:none;border-radius:8px;padding:11px 24px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;min-height:44px;min-width:44px;transition:all .15s}
-#nav button:disabled{opacity:.35;cursor:default}
-#nav button:not(:disabled):hover{opacity:.85}
-#counter{font-size:13px;color:var(--muted);font-weight:500}
+#prevBtn, #nextBtn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  font-size: 36px;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0.15;
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  user-select: none;
+}
+#prevBtn:hover:not(:disabled), #nextBtn:hover:not(:disabled) {
+  opacity: 0.7;
+  background: rgba(0, 0, 0, 0.04);
+  transform: translateY(-50%) scale(1.08);
+}
+#prevBtn:disabled, #nextBtn:disabled {
+  opacity: 0.02;
+  cursor: default;
+}
+#prevBtn { left: 12px; }
+#nextBtn { right: 12px; }
+
+/* Progress dots */
+#dots {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0.25;
+  transition: opacity 0.2s, background 0.2s;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+#dots:hover {
+  opacity: 0.85;
+  background: rgba(255, 255, 255, 0.85);
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d4d4d4;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.dot:hover {
+  transform: scale(1.25);
+}
+.dot.active {
+  background: var(--blue);
+}
+.dot.visited {
+  background: rgba(26, 92, 214, 0.35);
+}
+
 /* Slide container */
-#deck{flex:1;overflow-y:auto;padding:60px 20px 90px;scroll-behavior:smooth}
-.slide{display:none;max-width:var(--max-w);margin:0 auto;animation:fadeIn .25s ease}
-.slide.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#deck {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 24px 60px;
+  scroll-behavior: smooth;
+}
 /* Typography */
 .section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:#eef2fa;padding:4px 10px;border-radius:6px;margin-bottom:8px}
 .section-tag.hl{color:var(--orange);background:#fef0ec}
@@ -81,11 +152,7 @@ p,.desc{font-size:15px;line-height:1.7;margin-bottom:12px}
 .tip::before{content:'💡 Exam Tip';display:block;font-size:12px;font-weight:700;color:var(--orange);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
 /* Formula */
 .formula{display:inline-block;background:#fff;border:1.5px solid var(--blue);border-radius:8px;padding:8px 16px;font-size:16px;font-weight:600;margin:8px 0;letter-spacing:.02em}
-/* Progress dots */
-#dots{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;padding:6px 0}
-.dot{width:8px;height:8px;border-radius:50%;background:#d4d4d4;cursor:pointer;transition:background .2s}
-.dot.active{background:var(--blue)}
-.dot.visited{background:rgba(26,92,214,.35)}
+
 /* Scrollbar */
 #deck::-webkit-scrollbar{width:5px}
 #deck::-webkit-scrollbar-thumb{background:#d0d0d0;border-radius:10px}
@@ -881,11 +948,9 @@ p,.desc{font-size:15px;line-height:1.7;margin-bottom:12px}
 </div><!-- /deck -->
 
 <!-- Navigation -->
-<div id="nav">
-  <button id="prevBtn" onclick="go(-1)" disabled>← Previous</button>
-  <div id="dots"></div>
-  <button id="nextBtn" onclick="go(1)">Next →</button>
-</div>
+<button id="prevBtn" onclick="go(-1)" disabled aria-label="Previous slide">‹</button>
+<div id="dots"></div>
+<button id="nextBtn" onclick="go(1)" aria-label="Next slide">›</button>
 
 <script>
 const slides = document.querySelectorAll('.slide');
