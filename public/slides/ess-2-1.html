@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 2.1</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+body #prevBtn, body #nextBtn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent !important;
+  border: none !important;
+  color: #2f2a24 !important;
+  font-size: 56px !important;
+  font-weight: 300 !important;
+  cursor: pointer;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  opacity: 0.45 !important;
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
+  width: 64px;
+  height: 64px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  user-select: none;
+  box-shadow: none !important;
+}
+body #prevBtn:hover:not(:disabled), body #nextBtn:hover:not(:disabled) {
+  opacity: 0.95 !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+body #prevBtn:disabled, body #nextBtn:disabled {
+  opacity: 0.03 !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+body #prevBtn { left: 8px; }
+body #nextBtn { right: 8px; }
+
+/* Slide container */
+#deck {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 24px 60px;
+  scroll-behavior: smooth;
+}
+.slide {
+  display: none;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  animation: fadeIn .25s ease;
+}
+.slide.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#1a5cd6;--orange:#e85d3a;--bg:#ffffff;--card:#ffffff;--text:#111111;--muted:#555555;--border:#d4d4d4;--radius:10px;--max-w:820px}
+body{font-family:'Sora',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#ffffff;color:#111111;line-height:1.65;-webkit-font-smoothing:antialiased;max-width:var(--max-w);margin:0 auto;padding:40px 20px 80px}
+@media(max-width:600px){body{padding:24px 14px 60px}}
+.section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:#eef2fa;padding:4px 10px;border-radius:6px;margin-bottom:8px}
+.section-tag.hl{color:var(--orange);background:#fef0ec}
+h1{font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.15;margin-bottom:12px}
+h1 span{font-weight:300;opacity:.55}
+h2{font-size:clamp(20px,3.5vw,28px);font-weight:600;line-height:1.25;margin:48px 0 12px;padding-top:24px;border-top:1px solid #eee}
+h2:first-of-type{margin-top:0;border-top:none;padding-top:0}
+h3{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--blue)}
+p{font-size:15px;line-height:1.7;margin-bottom:12px}
+.subtitle{font-size:17px;color:var(--muted);margin-bottom:20px}
+.lead{font-size:18px;font-weight:500;line-height:1.65;margin-bottom:16px}
+.card{background:#ffffff;border:1px solid #e0e0e0;border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card-grid{display:grid;gap:12px}
+.card-grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card-grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.kt{background:#f5f7fa;border-left:3px solid var(--blue);padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:14px;font-size:14px}
+.kt strong{color:var(--blue);display:block;margin-bottom:4px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.kt.hl-accent{background:#fef7f5;border-left-color:var(--orange)}
+.kt.hl-accent strong{color:var(--orange)}
+.eq{background:#f9fafb;border:1.5px solid #d0d0d0;border-radius:var(--radius);padding:18px 24px;margin:14px 0;text-align:center;font-size:17px;font-weight:500}
+.eq .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:block;margin-bottom:6px}
+.eq .arrow{color:var(--blue);font-weight:700;margin:0 6px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{padding:10px 12px;text-align:left;border-bottom:1px solid #e8e8e8}
+.tbl th{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#666;background:#f5f5f5}
+.tbl tr:last-child td{border-bottom:none}
+.bullets{list-style:none;padding:0;margin:8px 0 14px}
+.bullets li{padding:6px 0 6px 22px;position:relative;font-size:14.5px;line-height:1.6}
+.bullets li::before{content:'';position:absolute;left:0;top:13px;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.bullets.hl li::before{background:var(--orange)}
+.tip{background:#f5f7fa;border:1px solid #d8dce2;border-radius:var(--radius);padding:16px 20px;margin:14px 0}
+.tip::before{content:'💡 Exam Tip';display:block;font-size:12px;font-weight:700;color:var(--orange);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+.formula{display:inline-block;background:#fff;border:1.5px solid var(--blue);border-radius:8px;padding:8px 16px;font-size:16px;font-weight:600;margin:8px 0}
+.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px 0}
+.flow-node{background:#ffffff;border:1.5px solid #ccc;border-radius:10px;padding:10px 16px;text-align:center;font-size:13px;font-weight:500;min-width:80px}
+.flow-arrow{font-size:20px;color:var(--muted);font-weight:700}
+.hl-badge{display:inline-block;background:var(--orange);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;vertical-align:middle;margin-left:6px}
+hr{border:none;border-top:1px solid #eee;margin:48px 0}
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+<!-- TITLE -->
+<div style="text-align:center;padding:20px 0 30px">
+  <p style="font-size:13px;color:var(--muted);margin-bottom:4px">IB DP Environmental Systems &amp; Societies</p>
+  <h1>Individuals, Populations,<br/>Communities &amp; Ecosystems</h1>
+  <p class="subtitle">Subtopic 2.1 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+  <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+    <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+      <div style="font-size:13px;font-weight:600">25 SL Points</div>
+      <div style="font-size:12px;color:var(--muted)">2.1.1 – 2.1.25</div>
+    </div>
+    <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+      <div style="font-size:13px;font-weight:600">5 HL Extensions</div>
+      <div style="font-size:12px;color:var(--muted)">2.1.26 – 2.1.30</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 2: 2.1.1 ==================== -->
+<div class="slide" data-sec="intro">
+<h2 id="211"><span class="section-tag">2.1.1</span><br/>Levels of Ecological Organization</h2>
+<div class="kt"><strong>Key Understanding</strong>The biosphere is an ecological system composed of individuals, populations, communities, and ecosystems.</div>
+<div class="flow">
+  <div class="flow-node" style="background:#e8f0fa;border-color:#3b82f6">🧬 <strong>Individual</strong></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-node" style="background:#e8f8ee;border-color:#2e9e5a">👥 <strong>Population</strong></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-node" style="background:#f3eefa;border-color:#8b5cf6">🌿 <strong>Community</strong></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-node" style="background:#fff9e6;border-color:#d97706">🌍 <strong>Ecosystem</strong></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-node" style="background:#f5f7fa;border-color:#555">🌎 <strong>Biosphere</strong></div>
+</div>
+<div class="tip">Exam questions often ask you to classify organisms or populations into the correct organizational level. Know the difference between "community" (all living) and "ecosystem" (living + non-living).</div>
+</div>
+
+<!-- ==================== SLIDE 3: 2.1.2 ==================== -->
+<div class="slide" data-sec="intro">
+<h2 id="212"><span class="section-tag">2.1.2</span><br/>Individual Organisms</h2>
+<div class="kt"><strong>Key Understanding</strong>An individual organism is a member of a <em>species</em>.</div>
+<div class="card">
+  <h3>What Makes an Individual?</h3>
+  <ul class="bullets">
+    <li>A single, discrete living thing — one plant, one animal, one bacterium</li>
+    <li>Belongs to a particular <strong>species</strong> — a group of organisms that can interbreed and produce fertile offspring</li>
+    <li>Has unique characteristics (phenotype) influenced by its genetics (genotype) and environment</li>
+    <li>Interacts with its environment — responds to abiotic and biotic stimuli</li>
+  </ul>
+</div>
+<div class="kt"><strong>Species</strong> = a group of organisms that are capable of interbreeding and producing viable, fertile offspring under natural conditions.</div>
+<p style="font-size:14px;color:var(--muted)">Example: A single oak tree (<em>Quercus robur</em>) is an individual belonging to the species <em>Quercus robur</em>.</p>
+</div>
+
+<!-- ==================== SLIDE 4: 2.1.3 ==================== -->
+<div class="slide" data-sec="intro">
+<h2 id="213"><span class="section-tag">2.1.3</span><br/>Classification of Organisms</h2>
+<div class="kt"><strong>Key Understanding</strong>Classification of organisms allows for efficient identification and prediction of characteristics.</div>
+<div class="card">
+  <div class="eq" style="font-size:14px">
+    <span class="label">The Taxonomic Hierarchy (broadest → most specific)</span>
+    Kingdom → Phylum → Class → Order → Family → Genus → Species
+  </div>
+  <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:8px"><strong>Mnemonic:</strong> "King Philip Came Over For Good Spaghetti"</p>
+</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Why Classify?</h3>
+    <ul class="bullets">
+      <li>Organizes vast biodiversity into manageable groups</li>
+      <li>Predicts characteristics of new species based on relatives</li>
+      <li>Enables communication between scientists worldwide</li>
+      <li>Reveals evolutionary relationships</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Binomial Nomenclature</h3>
+    <p style="font-size:14px">Every species gets a two-part Latin name: <strong>Genus + species</strong></p>
+    <p style="font-size:13px">e.g., <em>Homo sapiens</em>, <em>Panthera leo</em>, <em>Rosa canina</em></p>
+    <p style="font-size:13px;color:var(--muted)">Genus is capitalized; species is lowercase. Both are italicized.</p>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 5: 2.1.4 ==================== -->
+<div class="slide" data-sec="intro">
+<h2 id="214"><span class="section-tag">2.1.4</span><br/>Tools for Identification</h2>
+<div class="kt"><strong>Key Understanding</strong>Taxonomists use a variety of tools to identify an organism.</div>
+<div class="card">
+  <table class="tbl">
+    <tr><th>Tool/Method</th><th>What It Does</th><th>Example</th></tr>
+    <tr><td><strong>Dichotomous keys</strong></td><td>Step-by-step decision tree based on observable traits</td><td>Leaf shape → flower colour → bark texture</td></tr>
+    <tr><td><strong>Morphological analysis</strong></td><td>Comparing physical structures</td><td>Skeleton comparison, wing venation</td></tr>
+    <tr><td><strong>Microscopy</strong></td><td>Examining cellular/microscopic features</td><td>Pollen grain structure, diatom shells</td></tr>
+    <tr><td><strong>DNA barcoding</strong></td><td>Comparing short genetic sequences to reference databases</td><td>COI gene for animals, rbcL for plants</td></tr>
+    <tr><td><strong>Chemical analysis</strong></td><td>Identifying unique biochemical markers</td><td>Protein electrophoresis, chromatography</td></tr>
+    <tr><td><strong>Ecological niche</strong></td><td>Role and habitat help narrow identification</td><td>Nocturnal raptor in tropical forest</td></tr>
+  </table>
+</div>
+<div class="tip">DNA barcoding has revolutionized taxonomy — it can identify species from fragments (e.g., poached ivory, illegal timber) where morphological identification is impossible.</div>
+</div>
+
+<!-- ==================== SLIDE 6: 2.1.5 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="215"><span class="section-tag">2.1.5</span><br/>What Is a Population?</h2>
+<div class="kt"><strong>Key Understanding</strong>A population is a group of organisms of the <em>same species</em> living in the <em>same area</em> at the <em>same time</em>, and which are <em>capable of interbreeding</em>.</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>The Four Criteria</h3>
+    <ol style="padding-left:20px;font-size:14px;line-height:2">
+      <li>Same <strong>species</strong></li>
+      <li>Same <strong>area</strong> (geographic location)</li>
+      <li>Same <strong>time</strong></li>
+      <li>Capable of <strong>interbreeding</strong></li>
+    </ol>
+  </div>
+  <div class="card">
+    <h3>Examples</h3>
+    <ul class="bullets">
+      <li>All blue whales in the Pacific Ocean</li>
+      <li>All dandelions in a school field</li>
+      <li>All bacteria of species <em>E. coli</em> in your gut right now</li>
+    </ul>
+  </div>
+</div>
+<div class="kt"><strong>Population size (N)</strong> = total number of individuals. <strong>Population density</strong> = number of individuals per unit area or volume.</div>
+</div>
+
+<!-- ==================== SLIDE 7: 2.1.6 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="216"><span class="section-tag">2.1.6</span><br/>Distribution: Abiotic &amp; Biotic Factors</h2>
+<div class="kt"><strong>Key Understanding</strong>Factors that determine the distribution of a population can be <em>abiotic</em> (non-living) or <em>biotic</em> (living).</div>
+<div class="card-grid cols-2">
+  <div class="card" style="border-left:4px solid #3b82f6">
+    <h3 style="color:#3b82f6">Abiotic Factors</h3>
+    <ul class="bullets">
+      <li><strong>Temperature</strong> — affects enzyme activity and metabolism</li>
+      <li><strong>Sunlight</strong> — energy for photosynthesis; drives behaviour</li>
+      <li><strong>pH</strong> — affects soil chemistry and aquatic life</li>
+      <li><strong>Salinity</strong> — freshwater vs marine species tolerance</li>
+      <li><strong>Dissolved oxygen</strong> — essential for aquatic organisms</li>
+      <li><strong>Soil texture</strong> — determines water retention, root growth</li>
+      <li><strong>Water availability</strong> — precipitation, humidity</li>
+    </ul>
+  </div>
+  <div class="card" style="border-left:4px solid #10b981">
+    <h3 style="color:#10b981">Biotic Factors</h3>
+    <ul class="bullets">
+      <li><strong>Food availability</strong> — predator/prey abundance</li>
+      <li><strong>Competition</strong> — for resources, territory, mates</li>
+      <li><strong>Predation</strong> — presence of predators</li>
+      <li><strong>Disease/parasites</strong> — population health</li>
+      <li><strong>Mutualism</strong> — beneficial relationships</li>
+      <li><strong>Human activity</strong> — habitat modification</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 8: 2.1.7 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="217"><span class="section-tag">2.1.7</span><br/>Abiotic Factors in Detail</h2>
+<div class="kt"><strong>Key Understanding</strong>Temperature, sunlight, pH, salinity, dissolved oxygen and soil texture are examples of many abiotic factors that affect species distributions in ecosystems.</div>
+<div class="card">
+  <h3>How Abiotic Factors Set Limits</h3>
+  <p style="font-size:14px">Every species has a <strong>tolerance range</strong> for each abiotic factor — the range within which it can survive, grow, and reproduce. Outside this range, the species cannot persist.</p>
+</div>
+<div class="card-grid cols-3">
+  <div class="card" style="text-align:center">
+    <div style="font-size:24px;margin-bottom:4px">🌡️</div>
+    <h3 style="font-size:14px">Temperature</h3>
+    <p style="font-size:12px;color:var(--muted)">Tropical corals: 23–29°C only. Beyond this → bleaching and death.</p>
+  </div>
+  <div class="card" style="text-align:center">
+    <div style="font-size:24px;margin-bottom:4px">🌊</div>
+    <h3 style="font-size:14px">Salinity</h3>
+    <p style="font-size:12px;color:var(--muted)">Freshwater fish (0–0.5 ppt) vs marine fish (30–40 ppt). Stenohaline species tolerate narrow ranges.</p>
+  </div>
+  <div class="card" style="text-align:center">
+    <div style="font-size:24px;margin-bottom:4px">🫧</div>
+    <h3 style="font-size:14px">Dissolved O₂</h3>
+    <p style="font-size:12px;color:var(--muted)">Cold water holds more O₂. Trout need >6 mg/L; carp tolerate >2 mg/L.</p>
+  </div>
+</div>
+<div class="tip">When explaining species distribution, always name the specific abiotic factor AND its effect on the organism's physiology or behaviour.</div>
+</div>
+
+<!-- ==================== SLIDE 9: 2.1.8 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="218"><span class="section-tag">2.1.8</span><br/>The Ecological Niche</h2>
+<div class="kt"><strong>Key Understanding</strong>A niche describes the particular set of <em>abiotic and biotic conditions and resources</em> upon which an organism or a population depends.</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>What a Niche Includes</h3>
+    <ul class="bullets">
+      <li><strong>Habitat:</strong> where the organism lives</li>
+      <li><strong>Diet:</strong> what it eats and what eats it</li>
+      <li><strong>Activity patterns:</strong> when it is active (diurnal/nocturnal)</li>
+      <li><strong>Reproduction:</strong> breeding season, mate selection</li>
+      <li><strong>Abiotic requirements:</strong> temperature, moisture, pH range</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Habitat vs Niche</h3>
+    <div style="background:#f5f7fa;padding:12px;border-radius:8px;font-size:14px">
+      <p><strong>Habitat</strong> = the "address" — where an organism lives</p>
+      <p style="margin-top:6px"><strong>Niche</strong> = the "job description" — the full role it plays in the ecosystem</p>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin-top:8px">Two species can share the same habitat but have different niches (e.g., a robin and a hawk both live in a forest, but eat different things).</p>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 10: 2.1.9 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="219"><span class="section-tag">2.1.9</span><br/>Population Interactions</h2>
+<div class="kt"><strong>Key Understanding</strong>Populations interact by herbivory, predation, parasitism, mutualism, disease, and competition — with ecological, behavioural, and evolutionary consequences.</div>
+<div class="card">
+  <table class="tbl">
+    <tr><th>Interaction</th><th>Type</th><th>Effect on A</th><th>Effect on B</th><th>Example</th></tr>
+    <tr><td><strong>Predation</strong></td><td>+/−</td><td>Predator gains energy</td><td>Prey killed</td><td>Lion → zebra</td></tr>
+    <tr><td><strong>Herbivory</strong></td><td>+/−</td><td>Herbivore gains energy</td><td>Plant tissue lost</td><td>Caterpillar → leaf</td></tr>
+    <tr><td><strong>Parasitism</strong></td><td>+/−</td><td>Parasite gains nutrients</td><td>Host harmed</td><td>Tick → deer</td></tr>
+    <tr><td><strong>Mutualism</strong></td><td>+/+</td><td>Both benefit</td><td>Both benefit</td><td>Bee ↔ flower</td></tr>
+    <tr><td><strong>Competition</strong></td><td>−/−</td><td>Reduced resources</td><td>Reduced resources</td><td>Lions vs hyenas</td></tr>
+    <tr><td><strong>Disease</strong></td><td>+/−</td><td>Pathogen reproduces</td><td>Host weakened/killed</td><td>Malaria → human</td></tr>
+  </table>
+</div>
+<div class="tip">In exams, you must identify the TYPE of interaction and explain the +/- effects on both species. "Competition" and "predation" are the most commonly tested.</div>
+</div>
+
+<!-- ==================== SLIDE 11: 2.1.10 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2110"><span class="section-tag">2.1.10</span><br/>Carrying Capacity</h2>
+<div class="kt"><strong>Key Understanding</strong>Carrying capacity (K) is the <em>maximum size of a population</em> determined by competition for limited resources.</div>
+<div class="card">
+  <h3>What Limits Population Size?</h3>
+  <ul class="bullets">
+    <li><strong>Food supply</strong> — limited energy available</li>
+    <li><strong>Water</strong> — especially in arid environments</li>
+    <li><strong>Shelter/nesting sites</strong> — physical space</li>
+    <li><strong>Predation pressure</strong> — more prey → more predators → population control</li>
+    <li><strong>Disease</strong> — spreads faster in dense populations</li>
+    <li><strong>Waste accumulation</strong> — toxic buildup in closed systems</li>
+  </ul>
+</div>
+<div class="eq">
+  <span class="label">Population growth slows as N approaches K</span>
+  When N = K → growth rate = 0 (equilibrium)
+</div>
+<div class="kt"><strong>Carrying capacity is not fixed</strong> — it changes with environmental conditions (seasonal food availability, habitat destruction, climate change).</div>
+</div>
+
+<!-- ==================== SLIDE 12: 2.1.11 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2111"><span class="section-tag">2.1.11</span><br/>Density-Dependent Regulation</h2>
+<div class="kt"><strong>Key Understanding</strong>Population size is regulated by <em>density-dependent factors</em> and <em>negative feedback mechanisms</em>.</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Density-Dependent Factors</h3>
+    <p style="font-size:14px">Effects that <strong>increase with population density</strong>:</p>
+    <ul class="bullets">
+      <li>Competition intensifies as density rises</li>
+      <li>Disease spreads faster in crowded populations</li>
+      <li>Predation increases with prey density</li>
+      <li>Waste/toxins accumulate faster</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Negative Feedback</h3>
+    <p style="font-size:14px">A stabilizing mechanism where the output <strong>counteracts</strong> the change:</p>
+    <div style="font-size:13px;background:#f5f7fa;padding:12px;border-radius:8px;margin-top:8px">
+      ↑ Population → ↑ Competition → ↑ Death rate → ↓ Population<br/><br/>
+      ↓ Population → ↓ Competition → ↓ Death rate → ↑ Population
+    </div>
+  </div>
+</div>
+<div class="kt"><strong>Density-independent factors</strong> (natural disasters, climate extremes, seasonal changes) affect populations regardless of density.</div>
+</div>
+
+<!-- ==================== SLIDE 13: 2.1.12 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2112"><span class="section-tag">2.1.12</span><br/>Exponential vs Logistic Growth</h2>
+<div class="kt"><strong>Key Understanding</strong>Population growth can either be <em>exponential</em> or limited by carrying capacity (<em>logistic growth</em>).</div>
+<div class="card-grid cols-2">
+  <div class="card" style="text-align:center">
+    <h3>Exponential Growth (J-curve)</h3>
+    <div style="font-size:32px;margin:8px 0">📈</div>
+    <p style="font-size:13px">Unlimited resources → constant growth rate → population explodes</p>
+    <div class="formula" style="font-size:13px">dN/dt = rN</div>
+    <p style="font-size:12px;color:var(--muted)">r = intrinsic rate of increase<br/>Only occurs temporarily</p>
+  </div>
+  <div class="card" style="text-align:center;border-color:var(--blue)">
+    <h3>Logistic Growth (S-curve)</h3>
+    <div style="font-size:32px;margin:8px 0">📊</div>
+    <p style="font-size:13px">Limited resources → growth slows as N → K → stabilizes</p>
+    <div class="formula" style="font-size:13px">dN/dt = rN(1 − N/K)</div>
+    <p style="font-size:12px;color:var(--muted)">(1 − N/K) = the braking factor<br/>Realistic model for most populations</p>
+  </div>
+</div>
+<div class="tip">The key difference: exponential = unlimited growth (J-curve); logistic = growth limited by carrying capacity (S-curve). In reality, all populations experience logistic growth eventually.</div>
+</div>
+
+<!-- ==================== SLIDE 14: 2.1.13 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2113"><span class="section-tag">2.1.13</span><br/>Human Population Growth</h2>
+<div class="kt"><strong>Key Understanding</strong>Limiting factors on the growth of human populations have <em>increasingly been eliminated</em>, resulting in consequences for sustainability of ecosystems.</div>
+<div class="card">
+  <table class="tbl">
+    <tr><th>Limiting Factor</th><th>How Humans Overcame It</th><th>Consequence</th></tr>
+    <tr><td><strong>Famine</strong></td><td>Agriculture, food technology, global trade</td><td>Population explosion</td></tr>
+    <tr><td><strong>Disease</strong></td><td>Medicine, vaccines, sanitation</td><td>Increased life expectancy</td></tr>
+    <tr><td><strong>Predation</strong></td><td>Technology, weapons, habitat dominance</td><td>No natural predators</td></tr>
+    <tr><td><strong>Natural disasters</strong></td><td>Engineering, early warning systems</td><td>Reduced mortality</td></tr>
+  </table>
+</div>
+<div class="kt"><strong>Consequences:</strong> Resource depletion, habitat destruction, pollution, climate change, biodiversity loss — all driven by a population that has largely escaped natural limiting factors.</div>
+</div>
+
+<!-- ==================== SLIDE 15: 2.1.14 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2114"><span class="section-tag">2.1.14</span><br/>Human Carrying Capacity</h2>
+<div class="kt"><strong>Key Understanding</strong>Carrying capacity <em>cannot be easily assessed</em> for human populations.</div>
+<div class="card">
+  <h3>Why Is It So Hard to Calculate?</h3>
+  <ul class="bullets">
+    <li><strong>Technology changes:</strong> Green revolution, fossil fuels, GMOs constantly shift what's "possible"</li>
+    <li><strong>Trade:</strong> Humans import resources globally, masking local overpopulation</li>
+    <li><strong>Inequality:</strong> 1 American uses as many resources as 30+ people in developing nations</li>
+    <li><strong>Time lag:</strong> Environmental degradation may not manifest for generations</li>
+    <li><strong>Complexity:</strong> Humans affect multiple ecosystems simultaneously</li>
+  </ul>
+</div>
+<div class="kt"><strong>Estimates of Earth's carrying capacity</strong> range from 2 billion (high-consumption) to 50+ billion (low-consumption), depending on assumptions.</div>
+</div>
+
+<!-- ==================== SLIDE 16: 2.1.15 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2115"><span class="section-tag">2.1.15</span><br/>Sampling Population Abundance</h2>
+<div class="kt"><strong>Key Understanding</strong>Population abundance can be estimated using <em>random sampling</em>, <em>systematic sampling</em>, or <em>transect sampling</em>.</div>
+<div class="card-grid cols-3">
+  <div class="card" style="text-align:center">
+    <h3 style="font-size:14px">Random Sampling</h3>
+    <p style="font-size:12px;color:var(--muted)">Quadrats placed at random coordinates. Each location has equal chance.</p>
+    <p style="font-size:12px"><strong>Use for:</strong> stationary organisms</p>
+  </div>
+  <div class="card" style="text-align:center">
+    <h3 style="font-size:14px">Systematic Sampling</h3>
+    <p style="font-size:12px;color:var(--muted)">Quadrats at regular intervals (e.g., every 5m). Covers area evenly.</p>
+    <p style="font-size:12px"><strong>Use for:</strong> uniform habitats</p>
+  </div>
+  <div class="card" style="text-align:center">
+    <h3 style="font-size:14px">Transect Sampling</h3>
+    <p style="font-size:12px;color:var(--muted)">Counted along a line or belt. Shows distribution changes along gradients.</p>
+    <p style="font-size:12px"><strong>Use for:</strong> zonation studies</p>
+  </div>
+</div>
+<div class="tip">For exams: know when to use each method, how to set up quadrats randomly, and how to calculate population estimates from sample data.</div>
+</div>
+
+<!-- ==================== SLIDE 17: 2.1.16 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2116"><span class="section-tag">2.1.16</span><br/>Random Quadrat Sampling</h2>
+<div class="kt"><strong>Key Understanding</strong>Random quadrat sampling can be used to estimate population size for <em>non-mobile organisms</em>.</div>
+<div class="card">
+  <h3>Procedure</h3>
+  <ol style="padding-left:20px;font-size:14px;line-height:2">
+    <li>Define the study area (e.g., a meadow of 100m × 100m)</li>
+    <li>Generate random coordinates using a random number table or calculator</li>
+    <li>Place a quadrat frame (e.g., 0.5m × 0.5m) at each random point</li>
+    <li>Count all individuals of the target species within each quadrat</li>
+    <li>Repeat for multiple quadrats (minimum 10 for reliability)</li>
+    <li>Calculate the mean per quadrat and extrapolate to the whole area</li>
+  </ol>
+</div>
+<div class="eq">
+  <span class="label">Population estimate</span>
+  Population size = (Mean count per quadrat ÷ Quadrat area) × Total study area
+</div>
+<div class="tip">Always use RANDOM placement — systematic placement introduces bias. Quadrat size must be appropriate for the organism.</div>
+</div>
+
+<!-- ==================== SLIDE 18: 2.1.17 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2117"><span class="section-tag">2.1.17</span><br/>Capture-Mark-Release-Recapture</h2>
+<div class="kt"><strong>Key Understanding</strong>Capture–mark–release–recapture and the <em>Lincoln index</em> can be used to estimate population size for <em>mobile organisms</em>.</div>
+<div class="card">
+  <h3>Lincoln Index Method</h3>
+  <ol style="padding-left:20px;font-size:14px;line-height:2">
+    <li><strong>Capture</strong> a sample of individuals (first catch)</li>
+    <li><strong>Mark</strong> them (non-harmful tags, paint, clip)</li>
+    <li><strong>Release</strong> them back into the population</li>
+    <li>Wait for them to <strong>mix</strong> with the population</li>
+    <li><strong>Recapture</strong> a second sample</li>
+    <li>Count how many in the second sample are <strong>marked</strong></li>
+  </ol>
+</div>
+<div class="eq">
+  <span class="label">Lincoln Index Formula</span>
+  N = (M × C) ÷ R
+</div>
+<div style="text-align:center;font-size:14px;margin-bottom:12px">
+  <strong>N</strong> = estimated population &nbsp;|&nbsp; <strong>M</strong> = first catch (marked) &nbsp;|&nbsp; <strong>C</strong> = second catch &nbsp;|&nbsp; <strong>R</strong> = recaptured (marked)
+</div>
+<div class="card" style="background:#f5f7fa">
+  <h3>Worked Example</h3>
+  <p style="font-size:14px">First catch: <strong>50</strong> marked and released. Second catch: <strong>40</strong> total, of which <strong>10</strong> are marked.</p>
+  <p style="font-size:14px">N = (50 × 40) ÷ 10 = <strong>200</strong> estimated individuals</p>
+</div>
+<div class="tip">Assumptions: no immigration/emigration, no births/deaths between catches, marks aren't lost, marks don't affect survival.</div>
+</div>
+
+<!-- ==================== SLIDE 19: 2.1.18 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2118"><span class="section-tag">2.1.18</span><br/>What Is a Community?</h2>
+<div class="kt"><strong>Key Understanding</strong>A community is a collection of <em>interacting populations</em> within the ecosystem.</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Community Properties</h3>
+    <ul class="bullets">
+      <li><strong>Species composition:</strong> which species are present</li>
+      <li><strong>Species diversity:</strong> richness + evenness</li>
+      <li><strong>Trophic structure:</strong> who eats whom</li>
+      <li><strong>Interaction web:</strong> all biotic interactions</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Community vs Ecosystem</h3>
+    <div style="background:#f5f7fa;padding:12px;border-radius:8px;font-size:14px">
+      <p><strong>Community</strong> = all living populations in an area</p>
+      <p style="margin-top:8px"><strong>Ecosystem</strong> = community + all non-living components</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 20: 2.1.19 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2119"><span class="section-tag">2.1.19</span><br/>Habitat</h2>
+<div class="kt"><strong>Key Understanding</strong>Habitat is the <em>location</em> in which a community, species, population or organism lives.</div>
+<div class="card">
+  <table class="tbl">
+    <tr><th>Term</th><th>Definition</th><th>Analogy</th></tr>
+    <tr><td><strong>Habitat</strong></td><td>The physical place where an organism lives</td><td>The "address"</td></tr>
+    <tr><td><strong>Niche</strong></td><td>The role and requirements of an organism</td><td>The "job description"</td></tr>
+    <tr><td><strong>Range</strong></td><td>The geographic area where a species is found</td><td>The "neighbourhood"</td></tr>
+  </table>
+</div>
+</div>
+
+<!-- ==================== SLIDE 21: 2.1.20 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2120"><span class="section-tag">2.1.20</span><br/>Ecosystems as Open Systems</h2>
+<div class="kt"><strong>Key Understanding</strong>Ecosystems are <em>open systems</em> in which both energy and matter can enter and exit.</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Energy Flows Through</h3>
+    <ul class="bullets">
+      <li><strong>Input:</strong> Solar radiation</li>
+      <li><strong>Through:</strong> Producers → Consumers → Decomposers</li>
+      <li><strong>Output:</strong> Heat (infrared radiation)</li>
+      <li>Energy is <strong>not recycled</strong></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Matter Cycles Within</h3>
+    <ul class="bullets">
+      <li><strong>Input:</strong> Atmospheric gases, precipitation</li>
+      <li><strong>Through:</strong> Biogeochemical cycles (C, N, P, H₂O)</li>
+      <li><strong>Output:</strong> Runoff, gas exchange</li>
+      <li>Matter is <strong>recycled</strong> via decomposition</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 22: 2.1.21 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2121"><span class="section-tag">2.1.21</span><br/>Sustainability as a Natural Property</h2>
+<div class="kt"><strong>Key Understanding</strong>Sustainability is a <em>natural property</em> of ecosystems — healthy ecosystems are self-maintaining through feedback loops and nutrient cycling.</div>
+<div class="card">
+  <ul class="bullets">
+    <li><strong>Negative feedback loops</strong> maintain equilibrium</li>
+    <li><strong>Nutrient cycling</strong> ensures matter is recycled</li>
+    <li><strong>Biodiversity</strong> provides resilience</li>
+    <li><strong>Succession</strong> allows recovery after disturbance</li>
+    <li><strong>Carrying capacity</strong> regulates population size naturally</li>
+  </ul>
+</div>
+<div class="kt"><strong>Key insight:</strong> Ecosystems have maintained themselves for billions of years without human management. It is human activity that has disrupted this natural sustainability.</div>
+</div>
+
+<!-- ==================== SLIDE 23: 2.1.22 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2122"><span class="section-tag">2.1.22</span><br/>Tipping Points in Ecosystems</h2>
+<div class="kt"><strong>Key Understanding</strong>Human activity can lead to <em>tipping points</em> in ecosystem stability — thresholds beyond which the ecosystem shifts to a fundamentally different state.</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Examples</h3>
+    <ul class="bullets">
+      <li><strong>Coral reef bleaching:</strong> sustained warming → coral death → algae-dominated reef</li>
+      <li><strong>Lake eutrophication:</strong> nutrient overload → algal bloom → oxygen depletion → fish death</li>
+      <li><strong>Amazon dieback:</strong> deforestation + drought → forest → savanna</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Why Tipping Points Matter</h3>
+    <ul class="bullets">
+      <li>Often <strong>irreversible</strong> on human timescales</li>
+      <li>Difficult to predict precisely</li>
+      <li>Can cascade through connected ecosystems</li>
+      <li>Loss of ecosystem services affects humans</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 24: 2.1.23 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2123"><span class="section-tag">2.1.23</span><br/>Keystone Species</h2>
+<div class="kt"><strong>Key Understanding</strong>Keystone species have a role in the <em>sustainability of ecosystems</em> — their impact is disproportionately large relative to their abundance.</div>
+<div class="card">
+  <h3>Classic Example: Sea Otters</h3>
+  <p style="font-size:14px">Sea otters prey on sea urchins. Without otters, urchin populations explode and destroy kelp forests.</p>
+  <div style="background:#f5f7fa;padding:12px;border-radius:8px;font-size:13px;margin-top:8px;text-align:center">
+    🦦 Otters present → urchins controlled → kelp forest thrives → ecosystem supported<br/><br/>
+    🦦 Otters removed → urchins overpopulate → kelp forest destroyed → ecosystem collapses
+  </div>
+</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Other Keystone Examples</h3>
+    <ul class="bullets">
+      <li><strong>Wolves in Yellowstone:</strong> controlled elk → vegetation recovered</li>
+      <li><strong>Elephants in savanna:</strong> maintain grassland by felling trees</li>
+      <li><strong>Beavers:</strong> create wetland habitats for countless species</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Conservation Implication</h3>
+    <p style="font-size:14px">Protecting keystone species can be <strong>more effective</strong> than protecting many less impactful species. Removing a keystone can trigger cascading extinctions.</p>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 25: 2.1.24 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2124"><span class="section-tag">2.1.24</span><br/>Planetary Boundaries</h2>
+<div class="kt"><strong>Key Understanding</strong>The planetary boundaries model indicates that changes to <em>biosphere integrity</em> have passed a <em>critical threshold</em>.</div>
+<div class="card">
+  <table class="tbl">
+    <tr><th>Boundary</th><th>Status</th></tr>
+    <tr><td><strong>Biosphere integrity</strong> (genetic diversity)</td><td style="color:var(--orange);font-weight:600">⚠️ CROSSED</td></tr>
+    <tr><td><strong>Biosphere integrity</strong> (functional diversity)</td><td style="color:var(--orange);font-weight:600">⚠️ CROSSED</td></tr>
+    <tr><td><strong>Biosphere integrity</strong> (land-system change)</td><td style="color:var(--orange);font-weight:600">⚠️ CROSSED</td></tr>
+    <tr><td><strong>Biosphere integrity</strong> (freshwater change)</td><td style="color:var(--orange);font-weight:600">⚠️ CROSSED</td></tr>
+    <tr><td><strong>Biosphere integrity</strong> (biogeochemical flows – N)</td><td style="color:var(--orange);font-weight:600">⚠️ CROSSED</td></tr>
+    <tr><td><strong>Biosphere integrity</strong> (biogeochemical flows – P)</td><td style="color:var(--orange);font-weight:600">⚠️ CROSSED</td></tr>
+    <tr><td>Climate change</td><td style="color:var(--orange);font-weight:600">⚠️ CROSSED</td></tr>
+    <tr><td>Novel entities (chemical pollution)</td><td style="color:var(--orange);font-weight:600">⚠️ CROSSED</td></tr>
+    <tr><td>Stratospheric ozone depletion</td><td style="color:#10b981;font-weight:600">✅ Within safe space</td></tr>
+  </table>
+</div>
+</div>
+
+<!-- ==================== SLIDE 26: 2.1.25 ==================== -->
+<div class="slide" data-sec="standard">
+<h2 id="2125"><span class="section-tag">2.1.25</span><br/>Reversing Biosphere Integrity Loss</h2>
+<div class="kt"><strong>Key Understanding</strong>To avoid critical tipping points, loss of <em>biosphere integrity</em> needs to be reversed.</div>
+<div class="card">
+  <ul class="bullets">
+    <li><strong>Halt biodiversity loss:</strong> protect endangered species and habitats</li>
+    <li><strong>Restore degraded ecosystems:</strong> reforestation, wetland restoration, coral rehabilitation</li>
+    <li><strong>Reduce pollution:</strong> limit chemical and plastic inputs</li>
+    <li><strong>Sustainable land use:</strong> reduce deforestation, promote regenerative agriculture</li>
+    <li><strong>Address climate change:</strong> reduce GHG emissions</li>
+  </ul>
+</div>
+<div class="card" style="border-left:4px solid var(--orange)">
+  <h3 style="color:var(--orange)">The Urgency</h3>
+  <p style="font-size:14px">Current extinction rates are <strong>100–1,000× higher</strong> than natural background rates. IPBES (2019) estimated ~1 million species face extinction within decades.</p>
+</div>
+</div>
+
+<!-- ==================== SLIDE 27: HL 2.1.26 ==================== -->
+<div class="slide" data-sec="hl">
+<h2 id="2126"><span class="section-tag hl">HL — 2.1.26</span><br/>Clade-Based Classification <span class="hl-badge">HL</span></h2>
+<div class="kt hl-accent"><strong>Key Understanding</strong>There are advantages of using a method of classification that illustrates <em>evolutionary relationships</em> in a <em>clade</em>.</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>What Is a Clade?</h3>
+    <p style="font-size:14px">A clade (monophyletic group) includes an ancestor and <strong>all</strong> of its descendants. It represents a single branch on the tree of life.</p>
+  </div>
+  <div class="card">
+    <h3>Advantages of Cladistics</h3>
+    <ul class="bullets hl">
+      <li>Shows <strong>evolutionary history</strong> and relatedness</li>
+      <li>Groups by <strong>shared ancestry</strong>, not just appearance</li>
+      <li>Reveals <strong>convergent evolution</strong></li>
+      <li>More <strong>predictive</strong> — genetic similarities predict shared traits</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 28: HL 2.1.27 ==================== -->
+<div class="slide" data-sec="hl">
+<h2 id="2127"><span class="section-tag hl">HL — 2.1.27</span><br/>Difficulties in Traditional Taxonomy <span class="hl-badge">HL</span></h2>
+<div class="kt hl-accent"><strong>Key Understanding</strong>There are <em>difficulties</em> in classifying organisms into the traditional hierarchy of taxa.</div>
+<div class="card">
+  <ul class="bullets hl">
+    <li><strong>Hybridization:</strong> some species interbreed, blurring boundaries (e.g., coyotes × wolves)</li>
+    <li><strong>Cryptic species:</strong> morphologically identical but genetically distinct</li>
+    <li><strong>Ring species:</strong> adjacent populations interbreed, but the two ends cannot</li>
+    <li><strong>Horizontal gene transfer:</strong> bacteria share genes across species boundaries</li>
+    <li><strong>Sexual dimorphism:</strong> males and females can look completely different</li>
+    <li><strong>Developmental stages:</strong> larvae vs adults may look like different species</li>
+  </ul>
+</div>
+</div>
+
+<!-- ==================== SLIDE 29: HL 2.1.28 ==================== -->
+<div class="slide" data-sec="hl">
+<h2 id="2128"><span class="section-tag hl">HL — 2.1.28</span><br/>Fundamental vs Realized Niche <span class="hl-badge">HL</span></h2>
+<div class="kt hl-accent"><strong>Key Understanding</strong>The niche of a species can be defined as <em>fundamental</em> or <em>realized</em>.</div>
+<div class="card-grid cols-2">
+  <div class="card" style="border-left:4px solid var(--blue)">
+    <h3>Fundamental Niche</h3>
+    <p style="font-size:14px">The <strong>full range of conditions</strong> in which a species <em>can potentially</em> survive — without competition or predation.</p>
+    <div style="background:#f5f7fa;padding:10px;border-radius:8px;font-size:13px;margin-top:8px"><strong>Theoretical maximum</strong></div>
+  </div>
+  <div class="card" style="border-left:4px solid var(--orange)">
+    <h3>Realized Niche</h3>
+    <p style="font-size:14px">The <strong>actual conditions</strong> a species uses — influenced by competition, predation, and other interactions.</p>
+    <div style="background:#fef7f5;padding:10px;border-radius:8px;font-size:13px;margin-top:8px"><strong>Real-world subset</strong></div>
+  </div>
+</div>
+<div class="kt hl-accent"><strong>Key concept:</strong> The realized niche is always equal to or smaller than the fundamental niche.</div>
+</div>
+
+<!-- ==================== SLIDE 30: HL 2.1.30 ==================== -->
+<div class="slide" data-sec="hl">
+<h2 id="2130"><span class="section-tag hl">HL — 2.1.30</span><br/>Understanding Human Impacts <span class="hl-badge">HL</span></h2>
+<div class="kt hl-accent"><strong>Key Understanding</strong>Knowledge of species' classifications, niche requirements and life cycles help us to understand the <em>extent of human impacts</em> upon them.</div>
+<div class="card">
+  <table class="tbl">
+    <tr><th>Knowledge Type</th><th>How It Helps</th></tr>
+    <tr><td><strong>Classification</strong></td><td>Reveals evolutionary uniqueness — sole surviving species in a clade is extra vulnerable</td></tr>
+    <tr><td><strong>Niche requirements</strong></td><td>Identifies which human activities threaten a species</td></tr>
+    <tr><td><strong>Life cycles</strong></td><td>Reveals critical stages vulnerable to disturbance</td></tr>
+  </table>
+</div>
+<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Example: Giant Panda</h3>
+    <ul class="bullets hl">
+      <li><strong>Classification:</strong> sole surviving member of subfamily Ailurinae</li>
+      <li><strong>Niche:</strong> depends on specific bamboo species (narrow diet)</li>
+      <li><strong>Life cycle:</strong> low reproductive rate → slow recovery</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Conservation Strategy</h3>
+    <p style="font-size:14px">Understanding a species' niche and life cycle allows targeted conservation: protect specific habitats, address particular threats, and time interventions to critical life stages.</p>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 31: KEY TERMS ==================== -->
+<div class="slide" data-sec="summary">
+<hr/>
+<h2 id="glossary"><span class="section-tag">Glossary</span><br/>Key Terms</h2>
+<div class="card">
+  <table class="tbl">
+    <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+    <tr><td><strong>Population</strong></td><td>Same-species organisms in the same area, capable of interbreeding</td></tr>
+    <tr><td><strong>Community</strong></td><td>All interacting populations in an ecosystem</td></tr>
+    <tr><td><strong>Ecosystem</strong></td><td>Community + abiotic components</td></tr>
+    <tr><td><strong>Niche</strong></td><td>The role and conditions an organism depends on</td></tr>
+    <tr><td><strong>Habitat</strong></td><td>The physical location where an organism lives</td></tr>
+    <tr><td><strong>Carrying capacity (K)</strong></td><td>Maximum population an environment can sustain</td></tr>
+    <tr><td><strong>Exponential growth</strong></td><td>Unrestricted growth (J-curve)</td></tr>
+    <tr><td><strong>Logistic growth</strong></td><td>Growth limited by carrying capacity (S-curve)</td></tr>
+    <tr><td><strong>Density-dependent</strong></td><td>Factors whose effect varies with population density</td></tr>
+    <tr><td><strong>Lincoln index</strong></td><td>N = (M × C) ÷ R — mobile population estimate</td></tr>
+    <tr><td><strong>Keystone species</strong></td><td>Disproportionate impact relative to abundance</td></tr>
+    <tr><td><strong>Tipping point</strong></td><td>Threshold for irreversible ecosystem shift</td></tr>
+    <tr><td><strong>Planetary boundaries</strong></td><td>Nine Earth system processes regulating stability</td></tr>
+    <tr><td><strong>Clade</strong></td><td>Monophyletic group: ancestor + all descendants</td></tr>
+    <tr><td><strong>Fundamental niche</strong></td><td>Potential range without biotic competition</td></tr>
+    <tr><td><strong>Realized niche</strong></td><td>Actual niche due to competition/predation</td></tr>
+  </table>
+</div>
+</div>
+
+<!-- ==================== SLIDE 32: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+<h2 id="exam"><span class="section-tag">Exam</span><br/>Key Takeaways</h2>
+<div class="card">
+  <h3>Must-Know Calculations</h3>
+  <div class="card-grid cols-2">
+    <div class="card"><p style="font-size:14px"><strong>Lincoln Index: N = (M × C) ÷ R</strong></p><p style="font-size:13px;color:var(--muted)">Mobile population estimate</p></div>
+    <div class="card"><p style="font-size:14px"><strong>Quadrat extrapolation</strong></p><p style="font-size:13px;color:var(--muted)">Mean per quadrat × total area</p></div>
+  </div>
+</div>
+<div class="card">
+  <h3>Common Exam Patterns</h3>
+  <ul class="bullets">
+    <li><strong>Classify interactions</strong> as +/+, +/−, −/− with named examples</li>
+    <li><strong>Explain carrying capacity</strong> using density-dependent factors and negative feedback</li>
+    <li><strong>Compare exponential vs logistic growth</strong> (J-curve vs S-curve)</li>
+    <li><strong>Describe sampling methods</strong> — setup, calculation, limitations</li>
+    <li><strong>Apply keystone species concept</strong> to real case studies</li>
+    <li><strong>Link planetary boundaries</strong> to human activities and propose solutions</li>
+    <li><strong>For HL:</strong> distinguish fundamental vs realized niche with examples</li>
+  </ul>
+</div>
+<div class="tip"><strong>For 9-mark essays:</strong> Use specific named examples. Define key terms. Show cause-and-effect chains. Link to the systems approach.</div>
+
+<p style="text-align:center;margin-top:40px;font-size:15px;font-weight:600">You've covered all 30 syllabus points ✅<br/><span style="font-size:13px;font-weight:400;color:var(--muted)">2.1.1 – 2.1.25 (SL) + 2.1.26 – 2.1.30 (HL)</span></p>
+</div>
+</div>
+
+<!-- Navigation -->
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+
+// Click event listeners
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  // Update buttons
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  // Progress
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  // Scroll to top
+  document.getElementById('deck').scrollTop = 0;
+}
+
+function go(dir) { goTo(current + dir); }
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+
+// Init
+goTo(0);
+</script>
+</body>
+</html>

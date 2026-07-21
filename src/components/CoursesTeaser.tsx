@@ -1,9 +1,13 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { COURSES } from "@/data/courses";
 
 export default function CoursesTeaser() {
+  const essCourse = COURSES.find((c) => c.slug === "ess");
+  const bioCourse = COURSES.find((c) => c.slug === "biology");
+  const essCount = essCourse ? essCourse.slides.length : 0;
+  const bioCount = bioCourse ? bioCourse.slides.length : 0;
+
   return (
     <section id="courses" style={{ padding: "5rem 0" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,7 +15,7 @@ export default function CoursesTeaser() {
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
             IBDP{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-700">
               Course Materials
             </span>
           </h2>
@@ -32,7 +36,7 @@ export default function CoursesTeaser() {
               desc: "Ecosystems, climate, biodiversity, water systems, and sustainability — all in interactive slides.",
               color: "#0891b2",
               href: "/courses/ess",
-              count: 1,
+              count: essCount,
             },
             {
               icon: "🧬",
@@ -41,7 +45,7 @@ export default function CoursesTeaser() {
               desc: "Cell biology, genetics, ecology, evolution, and human physiology — slides coming soon.",
               color: "#16a34a",
               href: "/courses/biology",
-              count: 0,
+              count: bioCount,
             },
           ].map((card) => (
             <Link key={card.label} href={card.href} style={{ textDecoration: "none" }}>
