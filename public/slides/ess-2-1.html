@@ -82,14 +82,12 @@ body #nextBtn { right: 8px; }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--blue:#1a5cd6;--orange:#e85d3a;--bg:#ffffff;--card:#ffffff;--text:#111111;--muted:#555555;--border:#d4d4d4;--radius:10px;--max-w:820px}
-body{font-family:'Sora',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#ffffff;color:#111111;line-height:1.65;-webkit-font-smoothing:antialiased;max-width:var(--max-w);margin:0 auto;padding:40px 20px 80px}
-@media(max-width:600px){body{padding:24px 14px 60px}}
+body{font-family:'Sora',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#ffffff;color:#111111;line-height:1.65;overflow:hidden;height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
 .section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:#eef2fa;padding:4px 10px;border-radius:6px;margin-bottom:8px}
 .section-tag.hl{color:var(--orange);background:#fef0ec}
 h1{font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.15;margin-bottom:12px}
 h1 span{font-weight:300;opacity:.55}
-h2{font-size:clamp(20px,3.5vw,28px);font-weight:600;line-height:1.25;margin:48px 0 12px;padding-top:24px;border-top:1px solid #eee}
-h2:first-of-type{margin-top:0;border-top:none;padding-top:0}
+h2{font-size:clamp(20px,3.5vw,28px);font-weight:600;line-height:1.25;margin-bottom:12px}
 h3{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--blue)}
 p{font-size:15px;line-height:1.7;margin-bottom:12px}
 .subtitle{font-size:17px;color:var(--muted);margin-bottom:20px}
