@@ -35,6 +35,14 @@ export const COURSES: Course[] = [
     accentColor: "#0891b2",
     slides: [
       {
+        slug: "1-2",
+        title: "Topic 1.2",
+        subtitle: "Systems Thinking",
+        htmlFile: "/slides/ess-1-2.html",
+        level: "SL & HL",
+        unit: "Unit 1",
+      },
+      {
         slug: "1-3",
         title: "Topic 1.3",
         subtitle: "Sustainability",
