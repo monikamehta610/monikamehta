@@ -54,47 +54,6 @@ body{font-family:'Sora',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;ba
 #prevBtn { left: 12px; }
 #nextBtn { right: 12px; }
 
-/* Progress dots */
-#dots {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  z-index: 100;
-  opacity: 0.25;
-  transition: opacity 0.2s, background 0.2s;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-}
-#dots:hover {
-  opacity: 0.85;
-  background: rgba(255, 255, 255, 0.85);
-}
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #d4d4d4;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-}
-.dot:hover {
-  transform: scale(1.25);
-}
-.dot.active {
-  background: var(--blue);
-}
-.dot.visited {
-  background: rgba(26, 92, 214, 0.35);
-}
-
 /* Slide container */
 #deck {
   flex: 1;
@@ -949,7 +908,6 @@ p,.desc{font-size:15px;line-height:1.7;margin-bottom:12px}
 
 <!-- Navigation -->
 <button id="prevBtn" onclick="go(-1)" disabled aria-label="Previous slide">‹</button>
-<div id="dots"></div>
 <button id="nextBtn" onclick="go(1)" aria-label="Next slide">›</button>
 
 <script>
@@ -957,24 +915,11 @@ const slides = document.querySelectorAll('.slide');
 const total = slides.length;
 let current = 0;
 
-// Build dots
-const dotsEl = document.getElementById('dots');
-for (let i = 0; i < total; i++) {
-  const d = document.createElement('div');
-  d.className = 'dot' + (i === 0 ? ' active' : '');
-  d.onclick = () => goTo(i);
-  dotsEl.appendChild(d);
-}
-
 function goTo(idx) {
   if (idx < 0 || idx >= total) return;
   slides[current].classList.remove('active');
   current = idx;
   slides[current].classList.add('active');
-  // Update dots
-  document.querySelectorAll('.dot').forEach((d, i) => {
-    d.className = 'dot' + (i === current ? ' active' : (i < current ? ' visited' : ''));
-  });
   // Update buttons
   document.getElementById('prevBtn').disabled = current === 0;
   document.getElementById('nextBtn').disabled = current === total - 1;
