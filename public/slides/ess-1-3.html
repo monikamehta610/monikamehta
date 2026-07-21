@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 1.3</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+<!-- ==================== SLIDE 1: HERO ==================== -->
+<div class="slide active" data-sec="intro">
+<div class="hero">
+  <h1>Sustainability</h1>
+  <p class="sub">Subtopic 1.3 — New Syllabus (First Assessment 2026) | Standard Level + Higher Level</p>
+  <div class="meta">
+    <span>22 SL Syllabus Points (1.3.1–1.3.22)</span>
+    <span>Pillars, SDGs &amp; Measuring Sustainability</span>
+  </div>
+</div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="summary">
+<span class="badge">OVERVIEW</span>
+  <h2>Guiding Question</h2>
+  <div class="ku">
+    <strong>Key Question:</strong> <em>How can the interconnectedness of environmental, social, and economic systems help us understand sustainability?</em>
+  </div>
+  <h3>Content Map</h3>
+  <div class="flow">
+    <div class="box"><strong>A. Sustainability</strong><br>1.3.1 – 1.3.7</div>
+    <span class="arr">→</span>
+    <div class="box"><strong>B. Measuring<br>Sustainability</strong><br>1.3.8 – 1.3.13</div>
+    <span class="arr">→</span>
+    <div class="box"><strong>C. Development<br>&amp; SDGs</strong><br>1.3.14 – 1.3.18</div>
+    <span class="arr">→</span>
+    <div class="box"><strong>D. Models</strong><br>1.3.19 – 1.3.22</div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Section</th><th>Syllabus Points</th><th>Focus</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>A</strong></td><td>1.3.1–1.3.7</td><td>Defining sustainability, three pillars, their interconnections</td></tr>
+      <tr><td><strong>B</strong></td><td>1.3.8–1.3.13</td><td>Indicators, ecological footprint, HDI, GPI, Limits to Growth</td></tr>
+      <tr><td><strong>C</strong></td><td>1.3.14–1.3.18</td><td>Development vs. growth, SDGs, MDGs</td></tr>
+      <tr><td><strong>D</strong></td><td>1.3.19–1.3.22</td><td>I=PAT, nested model, circular economy, doughnut economy</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 3: 1.3.1 ==================== -->
+<div class="slide" data-sec="intro">
+<span class="badge">1.3.1</span>
+  <h2>Definition of Sustainability</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Sustainability involves <em>maintaining the capacity of environmental, social, and economic systems</em> to meet the needs of the present without compromising the ability of future generations to meet their own needs.
+  </div>
+  <p>This is the widely cited <strong>Brundtland Definition</strong>, from the 1987 report <em>Our Common Future</em> by the World Commission on Environment and Development (WCED).</p>
+  <table>
+    <thead>
+      <tr><th>Element</th><th>Meaning</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>"Meet the needs of the present"</strong></td><td>Current populations must have access to resources, food, water, shelter, and opportunities</td></tr>
+      <tr><td><strong>"Without compromising… future generations"</strong></td><td>Resource use today must not deplete or degrade the environment so that future people cannot meet <em>their</em> needs</td></tr>
+      <tr><td><strong>"Environmental, social, and economic systems"</strong></td><td>Sustainability is not only environmental — it encompasses all three pillars</td></tr>
+    </tbody>
+  </table>
+  <div class="tip">
+    <strong>💡 Exam Tip:</strong> When asked to define sustainability, always mention <em>all three systems</em> (environmental, social, economic) — not just environmental.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 4: 1.3.2 ==================== -->
+<div class="slide" data-sec="intro">
+<span class="badge">1.3.2</span>
+  <h2>The Three Pillars of Sustainability</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Sustainability has three interconnected pillars: <em>environmental, social, and economic</em>. All three must be balanced for true sustainability. One cannot be achieved at the expense of others.
+  </div>
+
+  <div class="flow">
+    <div class="box" style="background:#e8f5e9;border-color:#4caf50">🌍 Environmental</div>
+    <div class="box" style="background:#e3f2fd;border-color:#2196f3">👥 Social</div>
+    <div class="box" style="background:#fff3e0;border-color:#ff9800">💰 Economic</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Pillar</th><th>Core Focus</th><th>Example Indicator</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="color:#2e7d32;font-weight:600">🌍 Environmental</td><td>Protection of natural systems, biodiversity, and resources</td><td>CO₂ emissions, biodiversity index</td></tr>
+      <tr><td style="color:#1565c0;font-weight:600">👥 Social</td><td>Equity, well-being, health, education, and justice</td><td>HDI, literacy rate, life expectancy</td></tr>
+      <tr><td style="color:#e65100;font-weight:600">💰 Economic</td><td>Long-term viability of economic systems and livelihoods</td><td>GDP per capita, employment rate</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>⚠️ Common Mistake:</strong> Students often equate sustainability with only environmental issues. Always remember the three-pillar model — true sustainability requires <em>balance</em>.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 5: 1.3.3 ==================== -->
+<div class="slide" data-sec="intro">
+<span class="badge">1.3.3</span>
+  <h2>Environmental Sustainability</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Environmental sustainability focuses on maintaining <em>natural capital</em>, <em>biodiversity</em>, and <em>ecosystem services</em>.
+  </div>
+  <h3>Key Concepts</h3>
+  <table>
+    <thead>
+      <tr><th>Concept</th><th>Definition</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Carrying capacity</strong></td><td>The maximum population size an environment can sustain indefinitely given available resources</td><td>Island ecosystem supporting a finite number of deer</td></tr>
+      <tr><td><strong>Renewable resources</strong></td><td>Resources that replenish on a human timescale</td><td>Solar energy, timber (if managed), freshwater</td></tr>
+      <tr><td><strong>Non-renewable resources</strong></td><td>Resources that exist in finite quantities and cannot be replaced within a human timescale</td><td>Fossil fuels, mineral ores, groundwater in aquifers</td></tr>
+      <tr><td><strong>Ecosystem services</strong></td><td>Benefits humans obtain from ecosystems</td><td>Pollination, water purification, carbon sequestration, flood control</td></tr>
+    </tbody>
+  </table>
+  <h3>Four Categories of Ecosystem Services (MEA Framework)</h3>
+  <div class="flow">
+    <div class="box">🌱 Provisioning<br><small>Food, water, timber</small></div>
+    <span class="arr">→</span>
+    <div class="box">🔄 Regulating<br><small>Climate, floods, disease</small></div>
+    <span class="arr">→</span>
+    <div class="box">🎭 Cultural<br><small>Recreation, spiritual</small></div>
+    <span class="arr">→</span>
+    <div class="box">⚙️ Supporting<br><small>Nutrient cycling, soil</small></div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 6: 1.3.4 ==================== -->
+<div class="slide" data-sec="intro">
+<span class="badge">1.3.4</span>
+  <h2>Social Sustainability</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Social sustainability focuses on maintaining <em>social systems, equity, and well-being</em>.
+  </div>
+  <h3>Key Concepts</h3>
+  <table>
+    <thead>
+      <tr><th>Concept</th><th>Definition</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Social capital</strong></td><td>The networks, norms, and trust that enable collective action in a community</td><td>Community cooperatives, mutual aid networks</td></tr>
+      <tr><td><strong>Cultural diversity</strong></td><td>The variety of cultural expressions within a society</td><td>Indigenous knowledge systems, language preservation</td></tr>
+      <tr><td><strong>Health</strong></td><td>Physical and mental well-being of a population</td><td>Access to healthcare, clean water, nutrition</td></tr>
+      <tr><td><strong>Education</strong></td><td>Access to quality learning opportunities</td><td>Literacy rates, school enrollment, gender parity in education</td></tr>
+      <tr><td><strong>Justice</strong></td><td>Fair treatment and equitable distribution of rights and resources</td><td>Gender equality, land rights, legal protections</td></tr>
+    </tbody>
+  </table>
+  <div class="tip">
+    <strong>💡 Exam Tip:</strong> Social sustainability is often the least discussed pillar. When analysing a case study, always consider social impacts — e.g., how does a mining project affect community health, education, and cultural practices?
+  </div>
+</div>
+
+<!-- ==================== SLIDE 7: 1.3.5 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.5</span>
+  <h2>Economic Sustainability</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Economic sustainability focuses on maintaining <em>economic systems that can function long-term</em>.
+  </div>
+  <h3>Key Concepts</h3>
+  <table>
+    <thead>
+      <tr><th>Concept</th><th>Definition</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Economic growth</strong></td><td>Increase in the production of goods and services (measured by GDP)</td><td>Country's GDP rising from $500B to $550B</td></tr>
+      <tr><td><strong>Economic development</strong></td><td>Improvement in quality of life, not just output — includes equity, health, education</td><td>Better healthcare, infrastructure, reduced poverty</td></tr>
+      <tr><td><strong>Natural capital accounting</strong></td><td>Assigning economic value to natural resources and ecosystem services</td><td>Valuing a mangrove forest for storm protection + fishery support</td></tr>
+      <tr><td><strong>Circular economy</strong></td><td>Economic system aimed at eliminating waste through continual resource use</td><td>Recycling electronics, remanufacturing tyres</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>⚠️ Key Distinction:</strong> Economic <em>growth</em> ≠ economic <em>development</em>. A country can have high GDP growth while poverty and inequality increase. Development encompasses broader well-being.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 8: 1.3.6 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.6</span>
+  <h2>Interconnections Between the Pillars</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> The three pillars are <em>interconnected</em> — changes in one affect the others.
+  </div>
+  <h3>Case Study: Deforestation in the Amazon</h3>
+  <div class="flow">
+    <div class="box" style="background:#ffebee;border-color:#e53935">🌳 Environmental<br><small>Loss of biodiversity,<br>reduced carbon<br>sequestration</small></div>
+    <span class="arr">→</span>
+    <div class="box" style="background:#e3f2fd;border-color:#1e88e5">👥 Social<br><small>Displacement of<br>indigenous communities,<br>loss of livelihoods</small></div>
+    <span class="arr">→</span>
+    <div class="box" style="background:#fff3e0;border-color:#fb8c00">💰 Economic<br><small>Short-term timber<br>revenue, but long-term<br>loss of ecosystem<br>services</small></div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Scenario</th><th>Environmental Effect</th><th>Social Effect</th><th>Economic Effect</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Overfishing</td><td>Fish stock collapse, marine ecosystem degradation</td><td>Fishing communities lose livelihoods and food source</td><td>Fishery industry revenue declines</td></tr>
+      <tr><td>Fast fashion</td><td>Textile pollution, water contamination, microplastics</td><td>Exploitation of garment workers in developing countries</td><td>Low prices for consumers but externalised costs</td></tr>
+      <tr><td>Urbanisation</td><td>Habitat loss, urban heat island effect</td><td>Improved access to services but potential for slums</td><td>Higher productivity and GDP but infrastructure costs</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 9: 1.3.7 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.7</span>
+  <h2>Triple Bottom Line &amp; Integration</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> True sustainability requires <em>integration of all three pillars</em>. The concept of the <em>"triple bottom line"</em> — people, planet, profit.
+  </div>
+  <p>The <strong>Triple Bottom Line (TBL)</strong>, coined by John Elkington (1994), argues that organisations should measure success not just by financial profit, but also by their social and environmental impact.</p>
+  <table>
+    <thead>
+      <tr><th>TBL Dimension</th><th>Equivalent Pillar</th><th>Business Metric Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🌿 <strong>Planet</strong></td><td>Environmental</td><td>Carbon footprint, waste reduction, water use</td></tr>
+      <tr><td>👥 <strong>People</strong></td><td>Social</td><td>Employee welfare, community investment, diversity</td></tr>
+      <tr><td>💵 <strong>Profit</strong></td><td>Economic</td><td>Revenue, profitability, shareholder return</td></tr>
+    </tbody>
+  </table>
+  <div class="flow">
+    <div class="box">🌿 Planet</div>
+    <span class="arr">+</span>
+    <div class="box">👥 People</div>
+    <span class="arr">+</span>
+    <div class="box">💵 Profit</div>
+    <span class="arr">=</span>
+    <div class="box" style="background:#e8f5e9;border-color:#4caf50"><strong>Sustainable Business</strong></div>
+  </div>
+  <div class="tip">
+    <strong>💡 Exam Tip:</strong> The TBL is excellent for business-related ESS questions. Example: "Evaluate the extent to which a TBL approach can ensure sustainability for a multinational corporation."
+  </div>
+</div>
+
+<!-- ==================== SLIDE 10: 1.3.8 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.8</span>
+  <h2>Measuring Sustainability — Indicators</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Sustainability can be measured using <em>indicators</em>. Different indicators cover the three pillars.
+  </div>
+  <table>
+    <thead>
+      <tr><th>Pillar</th><th>Indicator</th><th>What It Measures</th><th>Strengths / Limitations</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3"><strong>🌍 Environmental</strong></td>
+        <td>CO₂ emissions (per capita)</td>
+        <td>Greenhouse gas output per person</td>
+        <td>Doesn't account for imports/exports of goods</td>
+      </tr>
+      <tr><td>Biodiversity index</td><td>Species richness and abundance</td><td>Difficult to measure consistently across regions</td></tr>
+      <tr><td>Deforestation rates</td><td>Area of forest lost per year</td><td>Doesn't distinguish between types of forest or causes</td></tr>
+      <tr>
+        <td rowspan="3"><strong>👥 Social</strong></td>
+        <td>Human Development Index (HDI)</td><td>Life expectancy, education, income combined</td><td>Doesn't capture inequality within countries</td></tr>
+      <tr><td>Literacy rate</td><td>% of population who can read/write</td><td>Binary measure — doesn't reflect quality of education</td></tr>
+      <tr><td>Life expectancy</td><td>Average lifespan at birth</td><td>Doesn't capture quality of life or health equity</td></tr>
+      <tr>
+        <td rowspan="2"><strong>💰 Economic</strong></td>
+        <td>GDP per capita</td><td>Average economic output per person</td><td>Doesn't account for wealth distribution or environmental costs</td></tr>
+      <tr><td>Gini coefficient</td><td>Income inequality (0 = equal, 1 = unequal)</td><td>Doesn't capture wealth vs income or non-monetary factors</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>⚠️ Important:</strong> No single indicator can capture the full picture of sustainability. A combination of indicators across all three pillars is needed.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 11: 1.3.9 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.9</span>
+  <h2>Ecological Footprint &amp; Earth Overshoot Day</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Ecological footprint measures the <em>amount of biologically productive land/water</em> needed to support a population's consumption.
+  </div>
+  <h3>Ecological Footprint</h3>
+  <p>Measured in <strong>global hectares (gha)</strong> — the area of biologically productive land needed to regenerate the resources a person/country consumes and absorb their waste.</p>
+  <table>
+    <thead>
+      <tr><th>Country / Region</th><th>Ecological Footprint (gha/person)</th><th>Biocapacity (gha/person)</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🇺🇸 United States</td><td>~8.1</td><td>~3.4</td><td style="color:#ff3b30"><strong>Overshoot</strong> (uses ~2.4× available)</td></tr>
+      <tr><td>🇨🇳 China</td><td>~3.7</td><td>~0.9</td><td style="color:#ff3b30"><strong>Overshoot</strong> (uses ~4.1× available)</td></tr>
+      <tr><td>🇮🇳 India</td><td>~1.2</td><td>~0.4</td><td style="color:#ff3b30"><strong>Overshoot</strong> (uses ~3.0× available)</td></tr>
+      <tr><td>🌍 World Average</td><td>~2.7</td><td>~1.6</td><td style="color:#ff3b30"><strong>Overshoot</strong> — we use ~1.7 Earths</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Earth Overshoot Day</h3>
+  <p>The date each year when humanity has used all the biological resources Earth can regenerate in that year. In 2023, it fell on <strong>2 August</strong>.</p>
+  <div class="flow">
+    <div class="box">📅 Jan 1<br><small>Earth's annual<br>resource budget<br>resets</small></div>
+    <span class="arr">→</span>
+    <div class="box">⚠️ Aug 2<br><small><strong>Earth Overshoot<br>Day 2023</strong><br>Budget exhausted</small></div>
+    <span class="arr">→</span>
+    <div class="box">❌ Aug 3 – Dec 31<br><small>Living on<br>"ecological debt"</small></div>
+  </div>
+  <div class="tip">
+    <strong>💡 Exam Tip:</strong> Calculating an ecological footprint for a country given data is a common question type. Practice: <em>"Using the data, calculate the ecological deficit/surplus for Country X."</em>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 12: 1.3.10 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.10</span>
+  <h2>Human Development Index (HDI)</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> HDI combines <em>life expectancy, education, and income</em>. It's a broader measure than GDP alone.
+  </div>
+  <p>Developed by Pakistani economist <strong>Mahbub ul Haq</strong> with input from Indian Nobel laureate <strong>Amartya Sen</strong>. Published annually by the UNDP.</p>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Indicator</th><th>Minimum</th><th>Maximum</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Long and healthy life</strong></td><td>Life expectancy at birth</td><td>20 years</td><td>85 years</td></tr>
+      <tr><td><strong>Knowledge</strong></td><td>Mean years of schooling + Expected years of schooling</td><td>0 years</td><td>18 years (mean) / 20 years (expected)</td></tr>
+      <tr><td><strong>Decent standard of living</strong></td><td>GNI per capita (PPP US$)</td><td>$100</td><td>$75,000</td></tr>
+    </tbody>
+  </table>
+
+  <h3>HDI Categories</h3>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>HDI Range</th><th>Example Countries</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Very High</strong></td><td>0.800 – 1.000</td><td>Switzerland (0.962), Norway (0.961), Iceland (0.959)</td></tr>
+      <tr><td><strong>High</strong></td><td>0.700 – 0.799</td><td>Russia (0.822), Brazil (0.760), China (0.768)</td></tr>
+      <tr><td><strong>Medium</strong></td><td>0.550 – 0.699</td><td>India (0.633), Kenya (0.575), Bangladesh (0.661)</td></tr>
+      <tr><td><strong>Low</strong></td><td>0.000 – 0.549</td><td>Chad (0.394), Niger (0.394), South Sudan (0.385)</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>⚠️ Limitations:</strong> HDI doesn't measure inequality (see <strong>Inequality-adjusted HDI</strong>), poverty, human security, or political freedom. GDP per capita within HDI may mask significant internal inequality.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 13: 1.3.11 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.11</span>
+  <h2>Genuine Progress Indicator (GPI)</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> GPI adjusts GDP by accounting for <em>environmental costs and social factors</em>. Can be <em>negative</em> when environmental/social costs exceed economic gains.
+  </div>
+  <p>GPI starts with personal consumption expenditure (like GDP) and then adds value for household work, volunteering, and subtracts costs like crime, pollution, and resource depletion.</p>
+
+  <div class="formula">GPI = Personal Consumption + Non-market Benefits − Environmental &amp; Social Costs</div>
+
+  <table>
+    <thead>
+      <tr><th>Factor</th><th>GDP Treatment</th><th>GPI Treatment</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Household work / childcare</td><td>❌ Not counted</td><td>✅ Added as positive value</td></tr>
+      <tr><td>Volunteering</td><td>❌ Not counted</td><td>✅ Added as positive value</td></tr>
+      <tr><td>Pollution / environmental damage</td><td>❌ Not subtracted (may even add to GDP via cleanup)</td><td>✅ Subtracted as cost</td></tr>
+      <tr><td>Crime and family breakdown</td><td>❌ Not counted (may add to GDP via legal services)</td><td>✅ Subtracted as cost</td></tr>
+      <tr><td>Resource depletion</td><td>❌ Not subtracted</td><td>✅ Subtracted as cost</td></tr>
+      <tr><td>Income inequality</td><td>❌ Not accounted for</td><td>✅ Adjusted via distributional weighting</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">
+    <strong>🔴 Key Point:</strong> In many developed countries, GPI peaked in the 1970s and has stagnated or declined since, even as GDP continued to rise. This suggests GDP growth has not translated into genuine well-being improvements.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 14: 1.3.12 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.12</span>
+  <h2>Limits to Growth (Meadows et al., 1972)</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> The <em>Limits to Growth</em> computer model predicted that <em>unchecked population growth and resource consumption</em> would lead to collapse.
+  </div>
+  <p>Commissioned by the <strong>Club of Rome</strong>, this was one of the first major attempts to model global sustainability using computer simulations.</p>
+
+  <h3>Key Model Variables</h3>
+  <div class="flow">
+    <div class="box">👥 Population</div>
+    <span class="arr">↔</span>
+    <div class="box">🏭 Industrial<br>Output</div>
+    <span class="arr">↔</span>
+    <div class="box">🌾 Food<br>Production</div>
+    <span class="arr">↔</span>
+    <div class="box">⛏️ Non-renewable<br>Resources</div>
+    <span class="arr">↔</span>
+    <div class="box">🏭 Pollution</div>
+  </div>
+
+  <h3>Model Predictions (Business-as-Usual Scenario)</h3>
+  <table>
+    <thead>
+      <tr><th>Variable</th><th>Behaviour</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Population</td><td>Continues to grow until ~2040, then declines due to resource constraints</td></tr>
+      <tr><td>Food per capita</td><td>Peaks around 2020s, then declines sharply</td></tr>
+      <tr><td>Industrial output</td><td>Peaks and then falls as resources become scarce</td></tr>
+      <tr><td>Non-renewable resources</td><td>Continuously depleted, accelerating collapse</td></tr>
+      <tr><td>Pollution</td><td>Continues to rise even after industrial decline</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>⚠️ Debate:</strong> Critics argue the model oversimplifies and doesn't account for technological innovation. Supporters note that actual data through 2020 closely tracks the "business as usual" scenario. The model's core message — that infinite growth on a finite planet is impossible — remains widely accepted.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 15: 1.3.13 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge hl">1.3.13 — HL</span>
+  <h2>Quantitative vs. Qualitative Measurement (HL)</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Measuring sustainability requires considering both <em>quantitative indicators</em> and <em>qualitative assessments</em>. No single indicator captures full sustainability.
+  </div>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Description</th><th>Examples</th><th>Strengths</th><th>Limitations</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Quantitative</strong></td>
+        <td>Numerical data that can be statistically analysed</td>
+        <td>HDI, CO₂ emissions, ecological footprint, Gini coefficient</td>
+        <td>Objectively comparable, trend tracking, policy evaluation</td>
+        <td>May miss cultural/contextual factors, data quality varies</td>
+      </tr>
+      <tr>
+        <td><strong>Qualitative</strong></td>
+        <td>Non-numerical assessments based on observation, interviews, case studies</td>
+        <td>Community well-being surveys, stakeholder interviews, cultural assessments</td>
+        <td>Captures nuance, local knowledge, cultural dimensions</td>
+        <td>Subjective, difficult to compare across regions, harder to scale</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Multi-Indicator Approaches</h3>
+  <ul>
+    <li><strong>Dashboard approach:</strong> Multiple indicators displayed together (e.g., OECD Better Life Index) — no single summary number</li>
+    <li><strong>Composite indices:</strong> Combine multiple indicators into one score (e.g., HDI, GII) — easier to compare but loses detail</li>
+    <li><strong>Systems thinking:</strong> Considers feedback loops and interconnections between indicators</li>
+  </ul>
+  <div class="tip">
+    <strong>💡 HL Exam Tip:</strong> Be prepared to <em>critically evaluate</em> which indicators are most appropriate for measuring sustainability in a given context. Discuss trade-offs between simplicity (composite indices) and comprehensiveness (dashboards).
+  </div>
+</div>
+
+<!-- ==================== SLIDE 16: 1.3.14 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.14</span>
+  <h2>What Is Development?</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Development is the process of <em>improving quality of life</em>. It includes economic growth, social progress, and environmental improvement.
+  </div>
+  <p>Development goes far beyond GDP growth. It encompasses improvements in:</p>
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Indicators</th><th>Examples</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Economic</strong></td><td>GDP per capita, employment, infrastructure</td><td>Roads, electricity access, industry diversification</td></tr>
+      <tr><td><strong>Social</strong></td><td>HDI, literacy, life expectancy, gender equality</td><td>Schools, hospitals, social safety nets</td></tr>
+      <tr><td><strong>Environmental</strong></td><td>Air quality, water quality, forest cover</td><td>Clean energy, waste management, conservation</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>⚠️ Development vs. Growth:</strong> Economic growth is a <em>component</em> of development, but not equivalent to it. A country can have high GDP growth with increasing poverty, pollution, and inequality — meaning development is not occurring.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 17: 1.3.15 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.15</span>
+  <h2>Sustainable Development</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Sustainable development meets <em>present needs without compromising future generations</em>. Integration of economic growth, social inclusion, and environmental protection.
+  </div>
+
+  <div class="flow">
+    <div class="box">💰 Economic<br>Growth</div>
+    <span class="arr">+</span>
+    <div class="box">👥 Social<br>Inclusion</div>
+    <span class="arr">+</span>
+    <div class="box">🌍 Environmental<br>Protection</div>
+    <span class="arr">=</span>
+    <div class="box" style="background:#e8f5e9;border-color:#4caf50"><strong>Sustainable<br>Development</strong></div>
+  </div>
+
+  <h3>Examples of Sustainable Development in Practice</h3>
+  <table>
+    <thead>
+      <tr><th>Initiative</th><th>Economic</th><th>Social</th><th>Environmental</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Costa Rica's payment for ecosystem services</strong></td><td>Tourism revenue</td><td>Rural employment</td><td>Forest regeneration (doubled forest cover since 1980s)</td></tr>
+      <tr><td><strong>Bhutan's GNH policy</strong></td><td>Hydropower exports</td><td>Cultural preservation, free healthcare &amp; education</td><td>Constitution mandates 60% forest cover forever</td></tr>
+      <tr><td><strong>Copenhagen cycling infrastructure</strong></td><td>Healthcare savings, tourism</td><td>Improved public health, equity in transport</td><td>Reduced emissions, less air pollution</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 18: 1.3.16 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.16</span>
+  <h2>UN Sustainable Development Goals (SDGs)</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> The UN SDGs are <em>17 goals</em> adopted in 2015 as a universal call to action to end poverty, protect the planet, and ensure peace and prosperity.
+  </div>
+  <p>Adopted by all United Nations Member States in September 2015 as part of the <strong>2030 Agenda for Sustainable Development</strong>.</p>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Goal</th><th>#</th><th>Goal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>🔴 No Poverty</td><td>10</td><td>🟡 Reduced Inequalities</td></tr>
+      <tr><td>2</td><td>🟡 Zero Hunger</td><td>11</td><td>🟠 Sustainable Cities &amp; Communities</td></tr>
+      <tr><td>3</td><td>🟢 Good Health &amp; Well-being</td><td>12</td><td>🟤 Responsible Consumption &amp; Production</td></tr>
+      <tr><td>4</td><td>🔴 Quality Education</td><td>13</td><td>🟢 Climate Action</td></tr>
+      <tr><td>5</td><td>🔴 Gender Equality</td><td>14</td><td>🔵 Life Below Water</td></tr>
+      <tr><td>6</td><td>🔵 Clean Water &amp; Sanitation</td><td>15</td><td>🟢 Life on Land</td></tr>
+      <tr><td>7</td><td>🟡 Affordable &amp; Clean Energy</td><td>16</td><td>🔵 Peace, Justice &amp; Strong Institutions</td></tr>
+      <tr><td>8</td><td>🔴 Decent Work &amp; Economic Growth</td><td>17</td><td>🔵 Partnerships for the Goals</td></tr>
+      <tr><td colspan="2"><strong>9.</strong> Industry, Innovation &amp; Infrastructure</td><td colspan="2"></td></tr>
+    </tbody>
+  </table>
+  <div class="tip">
+    <strong>💡 Exam Tip:</strong> You don't need to memorise all 17 SDGs, but you should be able to <em>name and explain 6–8</em> key goals and discuss how they interconnect (see 1.3.17).
+  </div>
+</div>
+
+<!-- ==================== SLIDE 19: 1.3.17 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.17</span>
+  <h2>SDG Interconnections</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> The SDGs are <em>interconnected</em> — progress on one often affects others.
+  </div>
+
+  <h3>Example: How Clean Energy (SDG 7) Connects to Other Goals</h3>
+  <div class="flow">
+    <div class="box" style="background:#fff9c4;border-color:#f9a825">⚡ SDG 7<br>Clean Energy</div>
+    <span class="arr">→</span>
+    <div class="box">🌡️ SDG 13<br>Climate Action</div>
+    <span class="arr">→</span>
+    <div class="box">🏭 SDG 9<br>Industry &amp; Innovation</div>
+    <span class="arr">→</span>
+    <div class="box">💼 SDG 8<br>Economic Growth</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Primary Action</th><th>SDG</th><th>Positive Spillovers</th><th>Potential Tensions</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Expanding solar energy</td>
+        <td>SDG 7</td>
+        <td>SDG 13 (less emissions), SDG 3 (less air pollution), SDG 8 (new jobs), SDG 9 (innovation)</td>
+        <td>SDG 15 (land use for solar farms may affect ecosystems), SDG 12 (mining for materials)</td>
+      </tr>
+      <tr>
+        <td>Improving sanitation</td>
+        <td>SDG 6</td>
+        <td>SDG 3 (fewer waterborne diseases), SDG 5 (women's safety), SDG 4 (girls attend school)</td>
+        <td>SDG 9 (cost of infrastructure), SDG 17 (needs international funding)</td>
+      </tr>
+      <tr>
+        <td>Reducing hunger</td>
+        <td>SDG 2</td>
+        <td>SDG 1 (less poverty), SDG 3 (better nutrition), SDG 4 (children can learn)</td>
+        <td>SDG 15 (agricultural expansion may cause deforestation), SDG 14 (overfishing)</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="warn">
+    <strong>🔴 Important:</strong> Some SDG actions can create <em>trade-offs</em>. For example, building dams can provide clean energy (SDG 7) but displace communities (SDG 1, SDG 10) and harm river ecosystems (SDG 14, SDG 15). Evaluating these tensions is essential.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 20: 1.3.18 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.18</span>
+  <h2>Millennium Development Goals (MDGs) vs. SDGs</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> MDGs (2000–2015) <em>preceded</em> the SDGs. They focused on <em>developing countries</em>. SDGs are <em>universal</em> and more comprehensive.
+  </div>
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>MDGs (2000–2015)</th><th>SDGs (2015–2030)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Number of goals</strong></td><td>8</td><td>17</td></tr>
+      <tr><td><strong>Scope</strong></td><td>Mainly developing countries</td><td>Universal — all countries</td></tr>
+      <tr><td><strong>Pillars covered</strong></td><td>Mainly social and some economic</td><td>Environmental, social, and economic — all three pillars</td></tr>
+      <tr><td><strong>Stakeholders</strong></td><td>Primarily governments</td><td>Multi-stakeholder: governments, businesses, civil society, individuals</td></tr>
+      <tr><td><strong>Environmental focus</strong></td><td>Limited (only MDG 7: Environmental Sustainability)</td><td>Strong (SDGs 6, 7, 11, 12, 13, 14, 15)</td></tr>
+      <tr><td><strong>Participation</strong></td><td>Top-down from UN</td><td>Extensive global consultation process</td></tr>
+    </tbody>
+  </table>
+
+  <h3>MDG Successes and Failures</h3>
+  <ul>
+    <li><strong>Success:</strong> Halved the proportion of people living in extreme poverty (MDG 1)</li>
+    <li><strong>Success:</strong> Enrolment in primary education in developing countries increased from 83% to 91%</li>
+    <li><strong>Failure:</strong> Goal to halve the proportion of people without safe drinking water was narrowly missed</li>
+    <li><strong>Failure:</strong> Environmental sustainability (MDG 7) was largely not achieved</li>
+  </ul>
+</div>
+
+<!-- ==================== SLIDE 21: 1.3.19 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.19</span>
+  <h2>The I = PAT Equation</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> I = PAT shows how human <em>Impact</em> depends on three factors: <em>Population, Affluence, and Technology</em>.
+  </div>
+
+  <div class="formula">I = P × A × T</div>
+
+  <table>
+    <thead>
+      <tr><th>Variable</th><th>Meaning</th><th>Unit/Measure</th><th>Effect on Impact</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>I</strong> — Impact</td><td>Environmental impact (e.g., pollution, resource use, CO₂)</td><td>Varies (e.g., tonnes CO₂)</td><td>Dependent variable</td></tr>
+      <tr><td><strong>P</strong> — Population</td><td>Number of people</td><td>Number of individuals</td><td>↑ more people = ↑ more impact</td></tr>
+      <tr><td><strong>A</strong> — Affluence</td><td>Consumption per person</td><td>GDP per capita or resource use per capita</td><td>↑ more wealth/consumption = ↑ more impact</td></tr>
+      <tr><td><strong>T</strong> — Technology</td><td>Impact per unit of consumption</td><td>Environmental impact per unit of GDP</td><td>↑ more efficient tech = ↓ impact; ↑ polluting tech = ↑ impact</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Example Calculations</h3>
+  <div class="flow">
+    <div class="box">Country A<br><small>P = 100M<br>A = $5,000/capita<br>T = 0.5 kg CO₂/$</small></div>
+    <span class="arr">→</span>
+    <div class="box"><strong>I = 100M × $5,000 × 0.5</strong><br>= <strong>250 million kg CO₂</strong></div>
+  </div>
+  <div class="flow">
+    <div class="box">Country B<br><small>P = 10M<br>A = $50,000/capita<br>T = 0.05 kg CO₂/$</small></div>
+    <span class="arr">→</span>
+    <div class="box"><strong>I = 10M × $50,000 × 0.05</strong><br>= <strong>25 million kg CO₂</strong></div>
+  </div>
+  <div class="note">
+    <strong>⚠️ Limitations:</strong> I=PAT assumes the factors are independent and equally weighted, which is not always the case. Technology can be both <em>increasing</em> impact (e.g., SUVs) and <em>decreasing</em> it (e.g., solar panels). The equation is a conceptual model, not a precise calculator.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 22: 1.3.20 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.20</span>
+  <h2>The Ecological / Nested Model of Sustainability</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> The ecological model considers how <em>economic systems function within social systems, which function within environmental systems</em>.
+  </div>
+
+  <h3>Three Nested Ellipses Model</h3>
+  <p>This model shows that the economy is a <em>subset</em> of society, which is a <em>subset</em> of the environment. The environment is the largest and most fundamental system.</p>
+
+  <div style="background:#f5f5f7;border-radius:10px;padding:24px;margin:16px 0;text-align:center">
+    <div style="border:3px solid #34c759;border-radius:50%;padding:20px;max-width:500px;margin:0 auto">
+      <p style="font-weight:700;color:#34c759;font-size:14px;margin-bottom:8px">🌍 ENVIRONMENTAL SYSTEM</p>
+      <div style="border:3px solid #2196f3;border-radius:50%;padding:16px;margin:0 20px">
+        <p style="font-weight:700;color:#2196f3;font-size:14px;margin-bottom:8px">👥 SOCIAL SYSTEM</p>
+        <div style="border:3px solid #ff9800;border-radius:50%;padding:14px">
+          <p style="font-weight:700;color:#ff9800;font-size:14px">💰 ECONOMIC<br>SYSTEM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>System</th><th>Contains</th><th>Dependency</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🌍 <strong>Environment</strong> (outermost)</td><td>All natural resources, ecosystems, atmosphere</td><td>Self-sustaining (but vulnerable to damage)</td></tr>
+      <tr><td>👥 <strong>Society</strong> (middle)</td><td>Cultures, institutions, communities, governance</td><td>Depends entirely on the environment for resources and life support</td></tr>
+      <tr><td>💰 <strong>Economy</strong> (innermost)</td><td>Markets, trade, industry, financial systems</td><td>Depends on society for rules, labour, demand — and on the environment for raw materials and energy</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>💡 Key Difference from Three Pillars Model:</strong> The three pillars model shows them as <em>equal and overlapping</em>. The nested model argues that the economy is <em>wholly contained within</em> society and the environment — economic activity is impossible without a functioning society and a healthy environment.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 23: 1.3.21 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge">1.3.21</span>
+  <h2>Circular Economy</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> The circular economy aims to <em>eliminate waste</em> by keeping resources in use for as long as possible. It contrasts with the linear economy.
+  </div>
+
+  <h3>Linear vs. Circular Economy</h3>
+  <div class="flow">
+    <div class="box" style="background:#ffebee;border-color:#e53935"><strong>Linear Economy</strong><br><small>Take → Make → Use → Dispose</small></div>
+  </div>
+  <div class="flow">
+    <div class="box" style="background:#e8f5e9;border-color:#4caf50"><strong>Design Out Waste</strong></div>
+    <span class="arr">→</span>
+    <div class="box" style="background:#e8f5e9;border-color:#4caf50"><strong>Keep Products<br>in Use</strong></div>
+    <span class="arr">→</span>
+    <div class="box" style="background:#e8f5e9;border-color:#4caf50"><strong>Regenerate<br>Natural Systems</strong></div>
+  </div>
+
+  <h3>Three Principles of the Circular Economy</h3>
+  <table>
+    <thead>
+      <tr><th>Principle</th><th>Description</th><th>Examples</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>1. Design out waste and pollution</strong></td><td>Products designed from the start to minimise waste</td><td>Biodegradable packaging, modular electronics for easy repair</td></tr>
+      <tr><td><strong>2. Keep products and materials in use</strong></td><td>Extend product lifespan through repair, reuse, remanufacturing</td><td>Refurbished phones, clothing rental, car-sharing</td></tr>
+      <tr><td><strong>3. Regenerate natural systems</strong></td><td>Return biological nutrients to the earth; enhance rather than degrade ecosystems</td><td>Composting, reforestation, regenerative agriculture</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Real-World Examples</h3>
+  <table>
+    <thead>
+      <tr><th>Example</th><th>Sector</th><th>Circular Strategy</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Patagonia</strong></td><td>Clothing</td><td>Worn Wear programme — repair, reuse, resale of clothing</td></tr>
+      <tr><td><strong>Fairphone</strong></td><td>Electronics</td><td>Modular smartphone — replaceable parts, extended lifespan</td></tr>
+      <tr><td><strong>Interface</strong></td><td>Flooring</td><td>Carpet tiles designed for recycling; "Mission Zero" to eliminate waste</td></tr>
+      <tr><td><strong>Kamikatsu, Japan</strong></td><td>Waste management</td><td>Town with 45-category recycling system; near-zero waste</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>⚠️ Challenge:</strong> Transitioning to a circular economy requires systemic change — redesigning supply chains, changing consumer behaviour, and developing new business models. It is not just about recycling.
+  </div>
+</div>
+
+<!-- ==================== SLIDE 24: 1.3.22 ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge hl">1.3.22 — HL</span>
+  <h2>Critical Evaluation of Sustainability Models (HL)</h2>
+  <div class="ku">
+    <strong>Key Understanding:</strong> Critically evaluate different models of sustainability: the <em>Brundtland model, three pillars, nested model, and doughnut economy</em>. Each has strengths and limitations.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Model</th><th>Description</th><th>Strengths</th><th>Limitations</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Brundtland Definition</strong><br><small>(1987)</small></td>
+        <td>"Meeting present needs without compromising future generations"</td>
+        <td>Widely accepted; intergenerational equity; holistic</td>
+        <td>Vague — "needs" and "future generations" not clearly defined; hard to operationalise</td>
+      </tr>
+      <tr>
+        <td><strong>Three Pillars / Triple Bottom Line</strong></td>
+        <td>Three overlapping circles: environmental, social, economic</td>
+        <td>Simple, intuitive; encourages balance; widely adopted in policy and business</td>
+        <td>Implies the three are equal — in reality, environment underpins the other two; can be used for "greenwashing"</td>
+      </tr>
+      <tr>
+        <td><strong>Nested Model / Ecological Model</strong></td>
+        <td>Economy within society within environment (concentric circles)</td>
+        <td>Correctly shows dependency — economy cannot exist without society and environment; emphasizes biophysical limits</td>
+        <td>May oversimplify the bidirectional influence between systems; less intuitive for business applications</td>
+      </tr>
+      <tr>
+        <td><strong>Doughnut Economy</strong><br><small>(Kate Raworth, 2017)</small></td>
+        <td>A "safe and just space for humanity" between a social foundation (inner ring) and ecological ceiling (outer ring)</td>
+        <td>Balances social minimums with environmental maximums; visual and actionable; incorporates justice</td>
+        <td>Complex to measure all indicators simultaneously; doesn't fully address governance or geopolitical tensions</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>The Doughnut Economy Model — Visual</h3>
+  <div style="background:#f5f5f7;border-radius:10px;padding:24px;margin:16px 0;text-align:center">
+    <div style="width:220px;height:220px;border-radius:50%;background:conic-gradient(#ff5722 0% 10%,#ff9800 10% 20%,#ffc107 20% 30%,#8bc34a 30% 40%,#4caf50 40% 50%,#009688 50% 60%,#03a9f4 60% 70%,#3f51b5 70% 80%,#9c27b0 80% 90%,#e91e63 90% 100%);margin:0 auto;display:flex;align-items:center;justify-content:center">
+      <div style="width:130px;height:130px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column">
+        <p style="font-weight:700;font-size:13px;color:#1d1d1f;text-align:center;line-height:1.4">SAFE &amp; JUST<br>SPACE FOR<br>HUMANITY</p>
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <p style="font-size:13px;color:#86868b"><strong>Outer ring (red):</strong> Ecological ceiling — planetary boundaries (e.g., climate change, biodiversity loss, ocean acidification)</p>
+      <p style="font-size:13px;color:#86868b"><strong>Inner space (green):</strong> Social foundation — human needs (e.g., food, water, health, education, political voice)</p>
+    </div>
+  </div>
+
+  <h3>Key Planetary Boundaries (Outer Ring of Doughnut)</h3>
+  <table>
+    <thead>
+      <tr><th>Boundary</th><th>Status</th><th>Safe Limit</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Climate change</td><td style="color:#ff3b30"><strong>Exceeded</strong></td><td>350 ppm CO₂ (currently ~420 ppm)</td></tr>
+      <tr><td>Biosphere integrity (biodiversity loss)</td><td style="color:#ff3b30"><strong>Exceeded</strong></td><td>&lt;10 E/MSY</td></tr>
+      <tr><td>Nitrogen/phosphorus cycles</td><td style="color:#ff3b30"><strong>Exceeded</strong></td><td>Industrial N fixation &lt; 62 Tg N/yr</td></tr>
+      <tr><td>Ocean acidification</td><td style="color:#f5a623"><strong>Near limit</strong></td><td>≥ 80% of pre-industrial Ω aragonite</td></tr>
+      <tr><td>Freshwater use</td><td style="color:#34c759"><strong>Within bounds</strong></td><td>&lt; 4,000 km³/yr</td></tr>
+      <tr><td>Land-system change</td><td style="color:#ff3b30"><strong>Exceeded</strong></td><td>&lt; 75% forested land remaining</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>💡 HL Exam Tip:</strong> When asked to "critically evaluate" a sustainability model, you must discuss <em>both strengths and limitations</em>. Use specific examples. For example: "The three pillars model is widely used in business (strength) but may allow greenwashing because it treats economic and environmental concerns as equally important (limitation)."
+  </div>
+</div>
+
+<!-- ==================== SLIDE 25: GLOSSARY ==================== -->
+<div class="slide" data-sec="standard">
+<span class="badge term">GLOSSARY</span>
+  <h2>Key Terms</h2>
+  <table class="glossary">
+    <thead>
+      <tr><th>Term</th><th>Definition</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sustainability</td><td>Maintaining the capacity of environmental, social, and economic systems to meet present needs without compromising future generations</td></tr>
+      <tr><td>Three Pillars</td><td>The environmental, social, and economic dimensions that together constitute sustainability</td></tr>
+      <tr><td>Natural Capital</td><td>The world's stocks of natural assets — geology, soil, air, water, and all living things — from which humans derive ecosystem services</td></tr>
+      <tr><td>Ecosystem Services</td><td>The benefits humans obtain from ecosystems: provisioning, regulating, cultural, and supporting services</td></tr>
+      <tr><td>Ecological Footprint</td><td>The area of biologically productive land and water required to produce resources consumed and absorb waste generated by a population</td></tr>
+      <tr><td>Earth Overshoot Day</td><td>The date each year when humanity's demand for ecological resources exceeds what Earth can regenerate in that year</td></tr>
+      <tr><td>HDI</td><td>Human Development Index — a composite measure of life expectancy, education, and income</td></tr>
+      <tr><td>GPI</td><td>Genuine Progress Indicator — adjusts personal consumption for environmental and social costs/benefits</td></tr>
+      <tr><td>SDGs</td><td>Sustainable Development Goals — 17 UN goals (2015–2030) for global sustainable development</td></tr>
+      <tr><td>MDGs</td><td>Millennium Development Goals — 8 UN goals (2000–2015) focused on reducing poverty in developing countries</td></tr>
+      <tr><td>I = PAT</td><td>Impact = Population × Affluence × Technology — equation showing drivers of environmental impact</td></tr>
+      <tr><td>Circular Economy</td><td>An economic system aimed at eliminating waste through continual use of resources (design out waste, keep in use, regenerate)</td></tr>
+      <tr><td>Triple Bottom Line</td><td>Framework measuring organisational success by People, Planet, and Profit (TBL)</td></tr>
+      <tr><td>Sustainable Development</td><td>Development that meets present needs without compromising the ability of future generations to meet their own needs</td></tr>
+      <tr><td>Doughnut Economy</td><td>Model by Kate Raworth defining a "safe and just space" between social foundation and ecological ceiling</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 26: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+<section>
+  <span class="badge" style="background:#34c759">EXAM TIPS</span>
+  <h2>Exam Strategy &amp; Command Terms</h2>
+
+  <h3>Command Terms for Subtopic 1.3</h3>
+  <table>
+    <thead>
+      <tr><th>Command Term</th><th>What to Do</th><th>Example Question</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Evaluate</strong></td><td>Make a judgement supported by reasoning and evidence; discuss strengths and limitations</td><td>"Evaluate the effectiveness of the SDGs in achieving sustainable development."</td></tr>
+      <tr><td><strong>Discuss</strong></td><td>Present a balanced argument with multiple perspectives</td><td>"Discuss the extent to which economic growth is compatible with sustainability."</td></tr>
+      <tr><td><strong>Explain</strong></td><td>Give a detailed account with reasoning; show how/why something occurs</td><td>"Explain how the I=PAT equation can be used to analyse environmental impact."</td></tr>
+      <tr><td><strong>Compare</strong></td><td>Identify similarities and differences between two or more items</td><td>"Compare the three pillars model with the nested model of sustainability."</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Common Question Patterns</h3>
+  <div class="tip">
+    <strong>💡 Pattern 1: Apply the Three Pillars</strong><br>
+    "Using a case study, explain how the three pillars of sustainability are interconnected."
+    <br><br>
+    <strong>Strategy:</strong> Choose a clear case study (e.g., fast fashion, palm oil, mining). Discuss environmental, social, AND economic impacts. Show interconnections.
+  </div>
+
+  <div class="tip">
+    <strong>💡 Pattern 2: Analyse SDG Interconnections</strong><br>
+    "Analyse how progress towards one SDG can support or hinder progress towards others."
+    <br><br>
+    <strong>Strategy:</strong> Choose 2–3 specific SDGs. Show positive spillovers AND potential trade-offs. Use data or examples.
+  </div>
+
+  <div class="tip">
+    <strong>💡 Pattern 3: Calculate &amp; Interpret Ecological Footprint</strong><br>
+    "Using the data provided, calculate the ecological deficit/surplus for Country X and suggest one way to reduce it."
+    <br><br>
+    <strong>Strategy:</strong> Ecological Footprint − Biocapacity = Deficit (if negative) or Surplus (if positive). Always interpret the result and suggest a realistic solution.
+  </div>
+
+  <div class="tip">
+    <strong>💡 Pattern 4: Explain I=PAT</strong><br>
+    "Explain how changes in population, affluence, or technology can affect environmental impact, using the I=PAT equation."
+    <br><br>
+    <strong>Strategy:</strong> Define each variable. Give a numerical example showing how changing one variable changes I. Discuss that T can both increase and decrease impact.
+  </div>
+
+  <div class="tip">
+    <strong>💡 Pattern 5: Evaluate Sustainability Models</strong><br>
+    "Compare the three pillars model with the nested model. Which model better represents the relationship between the environment, society, and the economy? Justify your answer."
+    <br><br>
+    <strong>Strategy:</strong> Describe both models. Note that three pillars implies equality while nested shows dependency. Argue for one (usually nested is stronger environmentally) and justify with reasoning.
+  </div>
+
+  <h3>General Exam Advice</h3>
+  <ul>
+    <li><strong>Always use specific examples</strong> — countries, organisations, data, or case studies</li>
+    <li><strong>Address all three pillars</strong> — don't focus only on environmental aspects</li>
+    <li><strong>Use key terminology correctly</strong> — ecological footprint, carrying capacity, HDI, I=PAT, etc.</li>
+    <li><strong>For evaluation questions:</strong> always present both sides before making a judgement</li>
+    <li><strong>For HL questions:</strong> go beyond description to critical analysis — discuss strengths AND limitations</li>
+    <li><strong>Manage your time</strong> — don't spend too long on one question; allocate time based on marks</li>
+  </ul>
+</section>
+
+</div>
+</div>
+</div>
+
+<!-- Navigation -->
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+
+// Click event listeners
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  // Update buttons
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  // Progress
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  // Scroll to top
+  document.getElementById('deck').scrollTop = 0;
+}
+
+function go(dir) { goTo(current + dir); }
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+
+// Init
+goTo(0);
+</script>
+</body>
+</html>
