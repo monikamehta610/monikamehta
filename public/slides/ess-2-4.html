@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 2.4</title>
+
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+  </style>
+
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems & Societies</div>
+    <h1>Climate &amp; Biomes</h1>
+    <p class="subtitle">Subtopic 2.4 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:28px;margin-bottom:4px">☀️</div>
+        <div style="font-size:13px;font-weight:600">7 SL Syllabus Points</div>
+        <div style="font-size:12px;color:var(--muted)">2.4.1 – 2.4.7</div>
+      </div>
+      <div class="card" style="flex:1;min-width:180px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:28px;margin-bottom:4px">🌊</div>
+        <div style="font-size:13px;font-weight:600">6 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">2.4.8 – 2.4.13</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic examines how climate determines the distribution of biomes, how atmospheric and oceanic systems shape regional climates, and how climate change and human activities alter biome distribution worldwide.</p>
+  <h3>Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How does climate determine the distribution of natural systems?</li>
+    <li>How are changes in Earth systems affecting the distribution of biomes?</li>
+    <li>What role do human activities play in altering the distribution and characteristics of biomes?</li>
+    <li>How do ocean currents and atmospheric circulation patterns influence regional climates and biomes?</li>
+  </ul>
+  <div class="card-grid cols-3" style="margin-top:16px">
+    <div class="card"><strong style="color:var(--blue)">A. Climate Fundamentals</strong><br/><span style="font-size:13px;color:var(--muted)">Weather vs climate, biome definition, abiotic determinants, biome categories</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Circulation &amp; Distribution</strong><br/><span style="font-size:13px;color:var(--muted)">Tricellular model, ocean currents, planetary heat distribution</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Change &amp; Disruption</strong><br/><span style="font-size:13px;color:var(--muted)">Climate-driven biome shifts, human interventions, ENSO, tropical cyclones</span></div>
+  </div>
+  <div class="tip">Time Allocation: Minimum 6 hours for this subtopic. The exam frequently tests biome comparisons, ENSO effects, and the tricellular model's link to biome distribution.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 2.4.1 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.4.1</div>
+  <h2>Climate vs Weather</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Climate</em> describes atmospheric conditions over relatively long periods of time, whereas <em>weather</em> describes the conditions in the atmosphere over a short period of time.</div>
+  <table class="tbl">
+    <tr><th>Feature</th><th>Weather</th><th>Climate</th></tr>
+    <tr><td><strong>Timescale</strong></td><td>Minutes to days</td><td>30+ years (long-term average)</td></tr>
+    <tr><td><strong>Scope</strong></td><td>Local, specific place &amp; time</td><td>Regional or global patterns</td></tr>
+    <tr><td><strong>Variables</strong></td><td>Temperature, rain, wind, humidity, pressure — at a moment</td><td>Average temperature, precipitation patterns, seasonal trends</td></tr>
+    <tr><td><strong>Changes</strong></td><td>Rapid, unpredictable</td><td>Gradual, studied over decades</td></tr>
+    <tr><td><strong>Example</strong></td><td>"It rained in London today"</td><td>"London has a temperate maritime climate with mild winters"</td></tr>
+  </table>
+  <div class="tip">"Climate is what you expect; weather is what you get." If an exam question asks about long-term ecosystem patterns, you are discussing <em>climate</em>, not weather.</div>
+</div>
+
+<!-- ==================== SLIDE 4: 2.4.2 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.4.2</div>
+  <h2>What Is a Biome?</h2>
+  <div class="kt"><strong>Key Understanding</strong>A <em>biome</em> is a group of comparable ecosystems that have developed in similar climatic conditions, wherever they occur.</div>
+  <p>Biomes are determined by three key climate factors:</p>
+  <div class="flow" style="margin:18px 0">
+    <div class="flow-node sun">Insolation</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node consumer">Temperature</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">Precipitation</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Biome Type</div>
+  </div>
+  <div class="card">
+    <h3>How Each Factor Shapes Biomes</h3>
+    <ul class="bullets">
+      <li><strong>Insolation:</strong> Solar radiation drives photosynthesis — high insolation near the equator supports dense, biodiverse forests; low insolation at poles limits vegetation growth.</li>
+      <li><strong>Temperature:</strong> Affects metabolic rates, growing season length, and which organisms survive. Tropical biomes: consistently warm year-round. Polar biomes: extremely cold with short growing seasons.</li>
+      <li><strong>Precipitation:</strong> Determines soil moisture and water availability. Deserts (&lt;250 mm/yr) have sparse vegetation; tropical rainforests (&gt;2500 mm/yr) support lush growth.</li>
+    </ul>
+  </div>
+  <div class="tip">The same biome can appear on different continents — tropical rainforests occur in South America, Africa, and Southeast Asia because they share the same climatic conditions.</div>
+</div>
+
+<!-- ==================== SLIDE 5: 2.4.3 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.4.3</div>
+  <h2>Abiotic Factors &amp; Biome Distribution</h2>
+  <div class="kt"><strong>Key Understanding</strong>Abiotic factors are the determinants of terrestrial biome distribution.</div>
+  <table class="tbl">
+    <tr><th>Abiotic Factor</th><th>Effect on Biome Distribution</th></tr>
+    <tr><td><strong>Temperature</strong></td><td>Controls metabolic rates &amp; growing season length. Biomes classified along a gradient from cold polar to warm tropical.</td></tr>
+    <tr><td><strong>Rainfall</strong></td><td>Determines soil moisture &amp; vegetation type. Biomes classified from arid deserts to wet rainforests.</td></tr>
+    <tr><td><strong>Latitude</strong></td><td>Controls solar energy received → temperature &amp; daylight. Tropical (0°–23.5°) → Temperate (23.5°–66.5°) → Polar (66.5°–90°).</td></tr>
+    <tr><td><strong>Elevation</strong></td><td>Temperature drops ~6.5 °C per 1000 m. Altitude mimics latitude — mountaintops can support tundra-like biomes near the equator.</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Climate Graphs (Climatographs)</h3>
+  <p>Climate graphs plot monthly temperature (line) and precipitation (bars) for a location. They are used to identify and classify the biome at a given site.</p>
+  <div class="card" style="margin-top:12px">
+    <p><strong>Whittaker's Biome Classification Diagram</strong> — Robert Whittaker plotted mean annual temperature vs rainfall for sites worldwide and grouped biomes accordingly. If you know the average temperature and precipitation, you can predict the biome.</p>
+  </div>
+  <div class="tip">The IB may ask you to create or interpret a climate graph. Temperature on the line axis, precipitation on bar axis — the relationship between the two reveals the biome.</div>
+</div>
+
+<!-- ==================== SLIDE 6: 2.4.4 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.4.4</div>
+  <h2>Major Biome Groups</h2>
+  <div class="kt"><strong>Key Understanding</strong>Biomes can be categorized into groups that include freshwater, marine, forest, grassland, desert and tundra. Each has characteristic abiotic limiting factors, productivity and diversity.</div>
+  <div class="card-grid cols-3">
+    <div class="card" style="text-align:center"><div style="font-size:24px;margin-bottom:4px">🌲</div><div style="font-weight:600;font-size:14px">Forest</div><div style="font-size:12px;color:var(--muted)">Tropical rainforest, temperate forest, boreal (taiga)</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:24px;margin-bottom:4px">🌾</div><div style="font-weight:600;font-size:14px">Grassland</div><div style="font-size:12px;color:var(--muted)">Savanna, temperate grassland / prairie</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:24px;margin-bottom:4px">🏜️</div><div style="font-weight:600;font-size:14px">Desert</div><div style="font-size:12px;color:var(--muted)">Hot, cold, coastal</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:24px;margin-bottom:4px">❄️</div><div style="font-weight:600;font-size:14px">Tundra</div><div style="font-size:12px;color:var(--muted)">Arctic, alpine</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:24px;margin-bottom:4px">💧</div><div style="font-weight:600;font-size:14px">Freshwater</div><div style="font-size:12px;color:var(--muted)">Lakes, rivers, wetlands</div></div>
+    <div class="card" style="text-align:center"><div style="font-size:24px;margin-bottom:4px">🌊</div><div style="font-weight:600;font-size:14px">Marine</div><div style="font-size:12px;color:var(--muted)">Coral reefs, deep ocean, estuaries</div></div>
+  </div>
+  <h3 style="margin-top:16px">Comparing Four Contrasting Terrestrial Biomes</h3>
+  <table class="tbl">
+    <tr><th>Biome</th><th>Temperature</th><th>Rainfall</th><th>NPP</th><th>Biodiversity</th><th>Limiting Factor</th></tr>
+    <tr><td><strong>Tropical Rainforest</strong></td><td>~26 °C year-round</td><td>&gt;2500 mm/yr</td><td>Very high</td><td>Very high</td><td>Light competition (canopy)</td></tr>
+    <tr><td><strong>Desert</strong></td><td>45–49 °C day / cold night</td><td>&lt;250 mm/yr</td><td>Very low</td><td>Low</td><td>Water availability</td></tr>
+    <tr><td><strong>Tundra</strong></td><td>−30 to 10 °C</td><td>150–250 mm/yr</td><td>Very low</td><td>Low</td><td>Temperature, permafrost, short growing season</td></tr>
+    <tr><td><strong>Temperate Forest</strong></td><td>Seasonal (hot summer / cold winter)</td><td>500–1500 mm/yr</td><td>Moderate</td><td>Moderate</td><td>Seasonal temperature variation</td></tr>
+  </table>
+  <div class="tip">You may be asked to explain the distribution, structure, productivity, and biodiversity of at least four contrasting biomes. Know tropical rainforest, desert, tundra, and one other (temperate forest or savanna).</div>
+</div>
+
+<!-- ==================== SLIDE 7: 2.4.5 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.4.5</div>
+  <h2>The Tricellular Model of Atmospheric Circulation</h2>
+  <div class="kt"><strong>Key Understanding</strong>The tricellular model explains the behaviour of atmospheric systems and the distribution of precipitation and temperature at different latitudes. It also explains how these factors influence the structure and relative productivity of different terrestrial biomes.</div>
+  <p>Three circulation cells redistribute heat from the equator toward the poles:</p>
+  <table class="tbl">
+    <tr><th>Cell</th><th>Latitude</th><th>Mechanism</th><th>Effect on Climate</th></tr>
+    <tr><td><strong>Hadley Cell</strong></td><td>0° – 30°</td><td>Warm air rises at equator (low pressure) → flows poleward at altitude → cools, descends at ~30° (high pressure)</td><td>Equatorial rainfall (ITCZ); dry subtropical deserts at 30°</td></tr>
+    <tr><td><strong>Ferrel Cell</strong></td><td>30° – 60°</td><td>Mid-latitude westerlies; indirect circulation driven by Hadley &amp; Polar cells</td><td>Moderate temperatures; prevailing westerlies bring rain to west coasts</td></tr>
+    <tr><td><strong>Polar Cell</strong></td><td>60° – 90°</td><td>Cold, dense air descends at poles → flows equatorward → rises at ~60°</td><td>Cold, dry polar deserts; precipitation near subpolar low</td></tr>
+  </table>
+  <h3 style="margin-top:16px">The ITCZ (Intertropical Convergence Zone)</h3>
+  <div class="card">
+    <p>The meeting point of the NE and SE trade winds near the equator. Air is heated, becomes less dense, and rises by convection → forms massive cumulonimbus clouds → heavy, reliable rainfall. The ITCZ is the engine of tropical rainforest biomes.</p>
+  </div>
+  <div class="flow" style="margin-top:14px">
+    <div class="flow-node sun">Equatorial heat</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node consumer">Air rises (ITCZ)</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">Heavy rain</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Rainforest biome</div>
+  </div>
+  <div style="margin-top:18px">
+    <div class="flow">
+      <div class="flow-node consumer">Air descends 30°</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node sun">High pressure / dry</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">Desert biome</div>
+    </div>
+  </div>
+  <div class="tip">Link latitude → cell type → precipitation → biome. Equator (Hadley) = rainforest; 30° (Hadley descent) = desert; 45°–60° (Ferrel) = temperate forest; 60°+ (Polar) = tundra/boreal.</div>
+</div>
+
+<!-- ==================== SLIDE 8: 2.4.6 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.4.6</div>
+  <h2>Ocean Currents &amp; Heat Distribution</h2>
+  <div class="kt"><strong>Key Understanding</strong>The oceans absorb solar radiation and ocean currents distribute the resulting heat around the world.</div>
+  <div class="card">
+    <p><strong>Absorption:</strong> Oceans absorb ~90% of solar radiation reaching Earth's surface. Water has a high heat capacity → stores large amounts of heat. Oceans cover ~71% of Earth's surface.</p>
+  </div>
+  <h3>Types of Currents</h3>
+  <table class="tbl">
+    <tr><th>Type</th><th>Driver</th><th>Depth</th><th>Role</th></tr>
+    <tr><td><strong>Surface currents</strong></td><td>Wind</td><td>Top ~400 m</td><td>Move warm equatorial water toward poles</td></tr>
+    <tr><td><strong>Deep currents</strong></td><td>Density differences (thermohaline)</td><td>Abyssal depths</td><td>Return cold water toward equator; complete the "Global Conveyor Belt"</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Thermohaline Circulation (Global Conveyor Belt)</h3>
+  <div class="flow">
+    <div class="flow-node consumer">Warm surface → poles</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Cools, becomes dense</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">Sinks to deep ocean</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node consumer">Flows toward equator</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node sun">Upwells, warms</div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Key Currents &amp; Biome Influence</h3>
+    <ul class="bullets">
+      <li><strong>Gulf Stream:</strong> Carries warm water from Gulf of Mexico → NW Europe. Keeps UK &amp; Scandinavia 5–10 °C warmer than equivalent latitudes → supports temperate forests instead of tundra.</li>
+      <li><strong>California Current:</strong> Cold current along western North America → cooler coastal climate → supports coastal scrub and fog-dependent ecosystems.</li>
+      <li><strong>Peru (Humboldt) Current:</strong> Cold upwelling current → nutrient-rich waters → supports massive marine productivity (anchovy fishery).</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: 2.4.7 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">2.4.7</div>
+  <h2>Global Warming &amp; Biome Shifts</h2>
+  <div class="kt"><strong>Key Understanding</strong>Global warming is leading to changing climates and shifts in biomes.</div>
+  <p>Climate change threatens species and ecosystems because the distribution of species and biomes is largely determined by climate. As conditions shift, organisms must move, adapt, or perish.</p>
+  <h3>How Biomes Shift</h3>
+  <div class="flow">
+    <div class="flow-node sun">Temperature rises</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node consumer">Species move poleward / upward</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Biome boundaries shift</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">New community assemblages</div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Documented Examples</h3>
+    <ul class="bullets">
+      <li><strong>Sahel region (Africa):</strong> Woodlands converting to savanna due to reduced rainfall and rising temperatures.</li>
+      <li><strong>Boreal forest:</strong> Models project midwestern prairie climate migrating into current boreal zones — boreal forest shifts northward into tundra.</li>
+      <li><strong>Arctic tundra:</strong> Shrubs and trees advancing northward as permafrost thaws; tundra biome shrinking.</li>
+      <li><strong>Mountains:</strong> Alpine biomes compress upward as lower-elevation temperatures warm — "summit trap" for cold-adapted species.</li>
+    </ul>
+  </div>
+  <h3 style="margin-top:16px">Impacts of Biome Shifts</h3>
+  <table class="tbl">
+    <tr><th>Impact</th><th>Explanation</th></tr>
+    <tr><td><strong>Biodiversity loss</strong></td><td>Species unable to migrate fast enough face extinction</td></tr>
+    <tr><td><strong>Reduced NPP</strong></td><td>Drought stress decreases terrestrial primary productivity</td></tr>
+    <tr><td><strong>Carbon feedback</strong></td><td>Less NPP = less CO₂ absorption → accelerates warming</td></tr>
+    <tr><td><strong>Food web disruption</strong></td><td>Asynchrony between species at different trophic levels</td></tr>
+  </table>
+  <div class="tip">Organisms move toward poles (cooler), higher up mountains (cooler), or toward the equator where conditions are wetter. Barriers — urban areas, agriculture, oceans — prevent migration, causing local extinctions.</div>
+</div>
+
+<!-- ==================== SLIDE 10: HL 2.4.8 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 2.4.8</div>
+  <h2>Three General Climate Patterns<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>There are three general patterns of climate types that are connected to biome types — <em>tropical, temperate, and polar</em>.</div>
+  <p>The Köppen climate classification (developed 1884, still widely used) divides climates into five groups (A–E) based on rainfall and temperature. Three overarching patterns connect directly to biome types:</p>
+  <table class="tbl">
+    <tr><th>Climate Pattern</th><th>Location</th><th>Characteristics</th><th>Biomes</th></tr>
+    <tr>
+      <td><strong>Tropical (A)</strong></td>
+      <td>Near equator</td>
+      <td>High temperatures &amp; humidity year-round; equatorial type has constant rain, seasonal type has wet/dry seasons</td>
+      <td>Tropical rainforest, savanna, hot deserts</td>
+    </tr>
+    <tr>
+      <td><strong>Temperate (C/D)</strong></td>
+      <td>Mid-latitudes (23.5°–66.5°)</td>
+      <td>Moderate temps with distinct seasons; maritime (near coast) = mild; continental (inland) = extreme variation</td>
+      <td>Temperate forests, temperate grasslands</td>
+    </tr>
+    <tr>
+      <td><strong>Polar (E)</strong></td>
+      <td>Near poles (66.5°+)</td>
+      <td>Extremely cold year-round; long harsh winters, short cool summers; minimal precipitation (mostly snow)</td>
+      <td>Arctic tundra, boreal forest (taiga)</td>
+    </tr>
+  </table>
+  <div class="card" style="margin-top:16px">
+    <h3>Subtypes Within Each Pattern</h3>
+    <p><strong>Tropical subtypes:</strong> Equatorial (constant rain) vs Seasonal (monsoon — distinct wet/dry). Seasonal tropical climates support savanna and dry deciduous forest.</p>
+    <p style="margin-top:8px"><strong>Temperate subtypes:</strong> Maritime temperate (mild, wet — e.g. UK) vs Continental temperate (hot summers, cold winters — e.g. central Europe). Maritime supports temperate rainforest; continental supports mixed forests and grasslands.</p>
+    <p style="margin-top:8px"><strong>Polar subtypes:</strong> Tundra (permafrost, no trees) vs Ice cap (permanent ice). Alpine regions at high elevations mimic polar conditions at any latitude.</p>
+  </div>
+  <div class="tip">Given a climate description or climate graph, classify it into one of the three patterns, identify the subtype, and predict the likely biome.</div>
+</div>
+
+<!-- ==================== SLIDE 11: HL 2.4.9 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 2.4.9</div>
+  <h2>Secondary Influences &amp; Human Interventions<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The biome predicted by any given temperature and rainfall pattern may not develop in an area because of secondary influences or human interventions.</div>
+  <p>Temperature and rainfall are primary determinants, but human activities can prevent natural biome development or alter existing biomes:</p>
+  <table class="tbl">
+    <tr><th>Intervention</th><th>Mechanism</th><th>Consequences</th><th>Example</th></tr>
+    <tr>
+      <td><strong>Urbanization</strong></td>
+      <td>Replaces natural habitat with impermeable surfaces, buildings, infrastructure</td>
+      <td>Urban heat island effect; habitat fragmentation; disrupted water &amp; nutrient cycles</td>
+      <td>Tropical forest land → city; biome replaced regardless of climate prediction</td>
+    </tr>
+    <tr>
+      <td><strong>Agriculture</strong></td>
+      <td>Replaces diverse natural communities with monoculture crops</td>
+      <td>Simplified food webs; disrupted N &amp; P cycles; altered soil &amp; water availability</td>
+      <td>Amazon rainforest → cattle pasture; prairie → wheat fields</td>
+    </tr>
+    <tr>
+      <td><strong>Deforestation</strong></td>
+      <td>Removes tree cover, exposing soil and altering local climate</td>
+      <td>Reduced carbon fixation; increased erosion; changed precipitation patterns</td>
+      <td>Indonesian peat forest clearance → loss of carbon sink + fire risk</td>
+    </tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <p><strong>Key insight:</strong> In areas with high human population density (especially temperate and tropical zones), the "natural" biome that climate would produce may no longer exist. What you see is a human-modified landscape, not the climatic potential biome.</p>
+  </div>
+  <div class="tip">Questions may ask why a biome in a specific location differs from what temperature/rainfall would predict. Answer by identifying the human intervention and explaining its mechanism.</div>
+</div>
+
+<!-- ==================== SLIDE 12: HL 2.4.10 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 2.4.10</div>
+  <h2>The ENSO Cycle<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The El Niño Southern Oscillation (ENSO) cycle is the fluctuation in wind and sea surface temperatures that characterizes conditions in the tropical Pacific Ocean. The two opposite and extreme states are El Niño and La Niña, with transitional and neutral states between.</div>
+  <div class="card-grid cols-2" style="margin-top:12px">
+    <div class="card" style="border-left:4px solid #e85d3a">
+      <h3 style="color:#e85d3a">El Niño</h3>
+      <ul class="bullets hl" style="font-size:14px">
+        <li>Warmer-than-average SSTs in central &amp; eastern Pacific</li>
+        <li>Weakened or reversed trade winds</li>
+        <li>Reduced upwelling off Peru → reduced marine productivity</li>
+        <li>Flooding in South America; drought in Australia &amp; Indonesia</li>
+        <li>Warmer winters in North America</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">La Niña</h3>
+      <ul class="bullets" style="font-size:14px">
+        <li>Cooler-than-average SSTs in central &amp; eastern Pacific</li>
+        <li>Strengthened trade winds</li>
+        <li>Enhanced upwelling off Peru → increased marine productivity</li>
+        <li>Drier in South America; flooding in Australia &amp; Indonesia</li>
+        <li>Colder winters in northern US; more Atlantic hurricanes</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <h3>Neutral &amp; Transitional States</h3>
+    <p><strong>Neutral:</strong> SSTs and winds near long-term average; stable, predictable weather. <strong>Transitional:</strong> Gradual shifts between El Niño and La Niña — weather is variable and unpredictable.</p>
+  </div>
+  <div class="tip">ENSO involves complex ocean–atmosphere interactions. Frequency and intensity are irregular — some periods see frequent, intense events; others have long intervals with weak or no events. Climate models have improved but cannot yet predict exact timing, duration, or intensity.</div>
+</div>
+
+<!-- ==================== SLIDE 13: HL 2.4.11 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 2.4.11</div>
+  <h2>Walker Circulation &amp; Upwelling<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>El Niño is due to a weakening or reversal of the normal east–west (Walker) circulation, which increases surface stratification and decreases upwelling of cold, nutrient-rich water near the coast of NW South America. La Niña is due to a strengthening of the Walker circulation and reversal of other effects of El Niño.</div>
+  <h3>Normal Conditions (Walker Circulation)</h3>
+  <div class="flow">
+    <div class="flow-node consumer">Trade winds blow west</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node sun">Warm water piles up in western Pacific</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">Upwelling off Peru</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Cool, nutrient-rich → high marine productivity</div>
+  </div>
+  <h3 style="margin-top:18px">During El Niño</h3>
+  <div class="flow">
+    <div class="flow-node consumer">Trade winds weaken / reverse</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node sun">Warm water shifts eastward</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">Stratification, reduced upwelling</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Nutrient-poor surface → fishery collapse</div>
+  </div>
+  <h3 style="margin-top:18px">During La Niña</h3>
+  <div class="flow">
+    <div class="flow-node consumer">Trade winds strengthen</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node sun">Enhanced warm-water push west</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">Enhanced upwelling off Peru</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Nutrient-rich → boosted fisheries</div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Case Study: Peru</h3>
+    <p><strong>El Niño (1997–98):</strong> Collapse of the Peruvian anchovy fishery; severe flooding and landslides; billions in damage. <strong>La Niña:</strong> Enhanced upwelling restores fish stocks; drier coastal conditions.</p>
+  </div>
+  <div class="tip">Stratification = layering of warm water on top, preventing mixing with cold deep water. Upwelling = rising of deep, cold, nutrient-rich water to the surface.</div>
+</div>
+
+<!-- ==================== SLIDE 14: HL 2.4.12 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 2.4.12</div>
+  <h2>Tropical Cyclones<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Tropical cyclones are rapidly circulating storm systems with a low-pressure centre that originate in the tropics and are characterized by strong winds.</div>
+  <h3>Formation &amp; Structure</h3>
+  <div class="card">
+    <ul class="bullets hl">
+      <li>Form over warm ocean waters (&gt;26.5 °C) in the tropics</li>
+      <li>Feature a calm <strong>eye</strong> (centre), surrounded by an <strong>eyewall</strong> (most intense winds &amp; rain), and spiral <strong>rainbands</strong></li>
+      <li>Rotate counterclockwise (NH) / clockwise (SH) due to the <strong>Coriolis effect</strong></li>
+      <li>Classified as hurricane/typhoon/cyclone once sustained winds exceed <strong>119 km/hr</strong></li>
+    </ul>
+  </div>
+  <h3>Classification by Region</h3>
+  <table class="tbl">
+    <tr><th>Name</th><th>Region</th></tr>
+    <tr><td><strong>Hurricane</strong></td><td>Atlantic Ocean &amp; NE Pacific</td></tr>
+    <tr><td><strong>Typhoon</strong></td><td>NW Pacific</td></tr>
+    <tr><td><strong>Cyclone</strong></td><td>Indian Ocean &amp; South Pacific</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Impacts</h3>
+  <table class="tbl">
+    <tr><th>Hazard</th><th>Impact</th></tr>
+    <tr><td><strong>Strong winds</strong></td><td>Building damage, infrastructure destruction, debris as projectiles</td></tr>
+    <tr><td><strong>Heavy rainfall</strong></td><td>Flooding, landslides (saturated soils), crop destruction</td></tr>
+    <tr><td><strong>Storm surge</strong></td><td>Seawater pushed onto coast → coastal flooding &amp; erosion</td></tr>
+  </table>
+  <div class="card" style="margin-top:12px">
+    <h3>Case Studies</h3>
+    <ul class="bullets hl">
+      <li><strong>Typhoon Haiyan (2013):</strong> Philippines — one of the strongest ever recorded; sustained winds 315 km/hr; &gt;6,000 deaths.</li>
+      <li><strong>Hurricane Katrina (2005):</strong> US Gulf Coast — fueled by warm Gulf waters; &gt;$125 billion in damage; 1,800+ deaths.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 15: HL 2.4.13 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 2.4.13</div>
+  <h2>Rising Ocean Temperatures &amp; Storm Intensity<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Rises in ocean temperatures resulting from global warming are increasing the intensity and frequency of hurricanes and typhoons because warmer water and air have more energy.</div>
+  <h3>The Mechanism</h3>
+  <div class="flow">
+    <div class="flow-node sun">SST rises</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node consumer">Evaporation &amp; latent heat</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node producer">Energy for storms</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Stronger, longer-lasting cyclones</div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Evidence</h3>
+    <ul class="bullets hl">
+      <li>Proportion of Category 4 &amp; 5 hurricanes has increased in recent decades</li>
+      <li>North Atlantic has seen a significant rise in named storms since the 1970s</li>
+      <li>Accumulated Cyclone Energy (ACE) index shows increasing overall storm activity</li>
+      <li>NOAA records show consistent increases in SSTs over the past century, correlating with storm activity</li>
+      <li>IPCC reports confirm the link between global warming and increased cyclone intensity</li>
+    </ul>
+  </div>
+  <h3 style="margin-top:16px">Cascading Impacts</h3>
+  <table class="tbl">
+    <tr><th>Impact</th><th>Explanation</th></tr>
+    <tr><td><strong>Coastal damage</strong></td><td>Stronger storms → more structural damage, accelerated coastal erosion</td></tr>
+    <tr><td><strong>Human displacement</strong></td><td>Higher casualties, more evacuations, growing financial burden of recovery</td></tr>
+    <tr><td><strong>Ecosystem destruction</strong></td><td>Coral reefs, mangroves devastated → loss of coastal protection &amp; biodiversity</td></tr>
+    <tr><td><strong>Water contamination</strong></td><td>Flooding &amp; storm surges spread pollutants, contaminate water supplies</td></tr>
+  </table>
+  <div class="tip">When asked about climate change and extreme weather, always explain the mechanism (warmer water → more energy → stronger storms), cite evidence, and discuss both human and environmental impacts.</div>
+</div>
+
+<!-- ==================== SLIDE 16: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Weather</strong></td><td>Short-term atmospheric conditions at a specific time and place</td></tr>
+      <tr><td><strong>Climate</strong></td><td>Long-term average of weather conditions (typically 30+ years) for a region</td></tr>
+      <tr><td><strong>Biome</strong></td><td>A group of comparable ecosystems sharing similar climatic conditions wherever they occur</td></tr>
+      <tr><td><strong>Insolation</strong></td><td>The amount of solar radiation received at a given area</td></tr>
+      <tr><td><strong>Precipitation</strong></td><td>Rain, snow, sleet, or hail that falls from the atmosphere to Earth's surface</td></tr>
+      <tr><td><strong>Tricellular model</strong></td><td>Model of atmospheric circulation with three cells (Hadley, Ferrel, Polar) per hemisphere</td></tr>
+      <tr><td><strong>Hadley Cell</strong></td><td>Equatorial circulation cell — warm air rises at equator, descends at ~30° latitude</td></tr>
+      <tr><td><strong>Ferrel Cell</strong></td><td>Mid-latitude (30°–60°) indirect circulation cell driven by adjacent cells</td></tr>
+      <tr><td><strong>Polar Cell</strong></td><td>Polar (60°–90°) circulation cell — cold air descends at poles, rises at ~60°</td></tr>
+      <tr><td><strong>ITCZ</strong></td><td>Intertropical Convergence Zone — low-pressure band near the equator where trade winds meet</td></tr>
+      <tr><td><strong>Thermohaline circulation</strong></td><td>Deep ocean current driven by temperature (thermo-) and salinity (-haline) density differences</td></tr>
+      <tr><td><strong>Coriolis effect</strong></td><td>Deflection of moving objects (air, water) by Earth's rotation — right in NH, left in SH</td></tr>
+      <tr><td><strong>Biome shift</strong></td><td>Movement of biome boundaries due to changing climate conditions</td></tr>
+      <tr><td><strong>Köppen classification</strong></td><td>Climate classification system grouping climates into five types (A–E) based on temperature &amp; rainfall</td></tr>
+    </table>
+  </div>
+  <h3 style="margin-top:20px">HL Key Terms</h3>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>ENSO cycle</strong></td><td>El Niño Southern Oscillation — fluctuation in wind and SSTs across the tropical Pacific</td></tr>
+      <tr><td><strong>El Niño</strong></td><td>Warm phase of ENSO — weakened trade winds, warmer eastern Pacific, reduced upwelling</td></tr>
+      <tr><td><strong>La Niña</strong></td><td>Cool phase of ENSO — strengthened trade winds, cooler eastern Pacific, enhanced upwelling</td></tr>
+      <tr><td><strong>Walker circulation</strong></td><td>East–west atmospheric circulation across the tropical Pacific driven by SST differences</td></tr>
+      <tr><td><strong>Upwelling</strong></td><td>Rising of deep, cold, nutrient-rich water to the ocean surface</td></tr>
+      <tr><td><strong>Stratification</strong></td><td>Layering of ocean water by density; warm surface water sits atop cold deep water</td></tr>
+      <tr><td><strong>Tropical cyclone</strong></td><td>Rapidly circulating low-pressure storm system forming over warm tropical oceans</td></tr>
+      <tr><td><strong>Hurricane / Typhoon / Cyclone</strong></td><td>Regional names for tropical cyclones with sustained winds &gt;119 km/hr</td></tr>
+      <tr><td><strong>ACE index</strong></td><td>Accumulated Cyclone Energy — index quantifying total activity of a cyclone season</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 17: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <h3>Must-Know Relationships</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li><strong>Insolation → Temperature → Precipitation → Biome:</strong> The chain that determines biome distribution.</li>
+      <li><strong>Latitude → Cell type → Rainfall pattern → Biome:</strong> Link tricellular model to biome locations.</li>
+      <li><strong>SST → Walker circulation → Upwelling → Marine productivity:</strong> Link ocean dynamics to ecosystem health.</li>
+    </ul>
+  </div>
+  <h3 style="margin-top:16px">Common Exam Patterns</h3>
+  <table class="tbl">
+    <tr><th>Pattern</th><th>How to Answer</th></tr>
+    <tr><td><strong>Compare two biomes</strong></td><td>Use temperature, rainfall, insolation, NPP, biodiversity, limiting factors</td></tr>
+    <tr><td><strong>Interpret a climate graph</strong></td><td>Identify temperature range, precipitation pattern, seasonality → classify biome</td></tr>
+    <tr><td><strong>Explain tricellular model → biome</strong></td><td>Trace: cell type at latitude → air movement → rainfall → resulting biome</td></tr>
+    <tr><td><strong>ENSO effects on a region</strong></td><td>State phase (El Niño/La Niña) → SST change → upwelling effect → rainfall/weather impact → ecosystem consequence</td></tr>
+    <tr><td><strong>Human impact on biomes</strong></td><td>Identify intervention → explain mechanism → describe consequence on biome characteristics</td></tr>
+    <tr><td><strong>Cyclone formation / impact</strong></td><td>Conditions (&gt;26.5 °C SST) → structure (eye, eyewall, rainbands) → hazard impacts → case study</td></tr>
+  </table>
+  <h3 style="margin-top:16px">HL-Specific Focus</h3>
+  <div class="card">
+    <ul class="bullets hl">
+      <li>Classify climates using the Köppen system (A–E) and predict biomes.</li>
+      <li>Explain Walker circulation in normal, El Niño, and La Niña states.</li>
+      <li>Discuss how warming SSTs increase cyclone intensity — with evidence (ACE index, Category 4/5 trends).</li>
+      <li>Apply knowledge of secondary influences (urbanization, agriculture, deforestation) to explain why biomes differ from climatic predictions.</li>
+    </ul>
+  </div>
+  <div class="tip" style="margin-top:12px"><strong>For 9-mark structured essays:</strong> Always link back to the tricellular model or thermohaline circulation when explaining biome distribution. Use specific examples (Sahel, Amazon, Peru, Australia) and connect climate processes to both energy flow and matter cycling.</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 13 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">2.4.1 – 2.4.7 (SL) + 2.4.8 – 2.4.13 (HL)</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>

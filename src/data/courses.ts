@@ -82,6 +82,14 @@ export const COURSES: Course[] = [
         level: "SL & HL",
         unit: "Unit 2",
       },
+      {
+        slug: "2-4",
+        title: "Topic 2.4",
+        subtitle: "Climate & Biomes",
+        htmlFile: "/slides/ess-2-4.html",
+        level: "SL & HL",
+        unit: "Unit 2",
+      },
     ],
   },
   {
