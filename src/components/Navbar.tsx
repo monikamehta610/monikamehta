@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Home", href: "#home" },
@@ -16,22 +15,14 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   return (
     <header
@@ -64,39 +55,10 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
-
-            {/* Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-xl bg-secondary hover:bg-muted text-foreground transition-all duration-200 border border-border focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
-              aria-label="Toggle theme"
-            >
-              {!mounted ? (
-                <div className="w-5 h-5" />
-              ) : theme === "dark" ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-primary" />
-              )}
-            </button>
           </nav>
 
-          {/* Mobile menu button and theme toggle */}
-          <div className="flex md:hidden items-center space-x-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-xl bg-secondary hover:bg-muted text-foreground transition-all duration-200 border border-border focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
-              aria-label="Toggle theme"
-            >
-              {!mounted ? (
-                <div className="w-5 h-5" />
-              ) : theme === "dark" ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-primary" />
-              )}
-            </button>
-
+          {/* Mobile menu button */}
+          <div className="flex md:hidden items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-xl bg-secondary hover:bg-muted text-foreground transition-all duration-200 border border-border focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
