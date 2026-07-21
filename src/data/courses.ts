@@ -74,15 +74,14 @@ export const COURSES: Course[] = [
         level: "SL & HL",
         unit: "Unit 2",
       },
-      // ── Add more ESS slides here ────────────────────────────────────────────
-      // {
-      //   slug: "2-3",
-      //   title: "Topic 2.3",
-      //   subtitle: "Flows of Energy & Matter",
-      //   htmlFile: "/slides/ess-2-3.html",
-      //   level: "SL & HL",
-      //   unit: "Unit 2",
-      // },
+      {
+        slug: "2-3",
+        title: "Topic 2.3",
+        subtitle: "Flows of Energy & Matter",
+        htmlFile: "/slides/ess-2-3.html",
+        level: "SL & HL",
+        unit: "Unit 2",
+      },
     ],
   },
   {
