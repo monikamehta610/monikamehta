@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 3.1</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 3: Biodiversity &amp; Conservation</div>
+    <h1>Biodiversity<br/>&amp; Evolution</h1>
+    <p class="subtitle">Subtopic 3.1 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">9 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">3.1.1 – 3.1.9</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">10 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">3.1.10 – 3.1.19</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic defines biodiversity at multiple levels, explains how evolutionary processes generate and maintain it, introduces quantitative measures, and examines the role of human activity in both reducing and reshaping biodiversity across geological time.</p>
+  <div class="card-grid cols-2">
+    <div class="card"><strong style="color:var(--blue)">A. Biodiversity &amp; Its Importance</strong><br/><span style="font-size:13px;color:var(--muted)">Levels of diversity, resilience, ecosystem complexity</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Evolution &amp; Speciation</strong><br/><span style="font-size:13px;color:var(--muted)">Natural selection, mechanisms of evolution, speciation</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Measuring Biodiversity</strong><br/><span style="font-size:13px;color:var(--muted)">Richness, evenness, Simpson's reciprocal index</span></div>
+    <div class="card"><strong style="color:var(--blue)">D. Human Impacts &amp; Deep Time</strong><br/><span style="font-size:13px;color:var(--muted)">Artificial selection, geological epochs, mass extinctions</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How can diversity be explained and quantified, and why is this important?</li>
+    <li>How does the unsustainable use of natural resources impact biodiversity?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 3 hours SL + additional 5–6 hours HL. First subtopic in Topic 3: Biodiversity &amp; Conservation.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 3.1.1 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">3.1.1</div>
+  <h2>Levels of Biodiversity</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Biodiversity</em> is the total diversity of living systems and it exists at several levels.</div>
+  <img src="/slides/images/ess-3-1-biodiversity-levels.jpg" alt="Three Levels of Biodiversity: Genetic, Species, and Ecosystem" class="slide-img" />
+  <div class="flow">
+    <div class="flow-node" style="background:#e8f0fa;border-color:#3b82f6">🧬 Genetic<br/>Diversity</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee;border-color:#2e9e5a">🌿 Species<br/>Diversity</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fff9e6;border-color:#d97706">🌍 Habitat / Ecosystem<br/>Diversity</div>
+  </div>
+  <table class="tbl">
+    <tr><th>Level</th><th>Definition</th><th>Example</th></tr>
+    <tr><td><strong>Genetic diversity</strong></td><td>Variation of genes within individuals and populations of a species</td><td>Cheetahs: low genetic diversity → vulnerable to disease. Coral reefs: high genetic diversity → resilient to temperature changes</td></tr>
+    <tr><td><strong>Species diversity</strong></td><td>Number of species (richness) and relative abundance (evenness) in a community</td><td>Tropical rainforest: high richness (50% of world's species on 7% of land). Temperate forest: lower richness but critical for ecosystem services</td></tr>
+    <tr><td><strong>Habitat diversity</strong></td><td>Variety of physical environments (forests, wetlands, deserts, reefs) in a region</td><td>Estuaries: transition between marine and freshwater → many niches → high biodiversity</td></tr>
+  </table>
+  <div class="tip">The three levels are nested — genetic diversity exists within species, species diversity exists within habitats. Loss at any level weakens the entire system.</div>
+</div>
+
+<!-- ==================== SLIDE 4: 3.1.2 ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">3.1.2</div>
+  <h2>Biodiversity &amp; Ecosystem Resilience</h2>
+  <div class="kt"><strong>Key Understanding</strong>The components of diversity contribute to the <em>resilience of ecological systems</em>.</div>
+  <p class="lead">Ecosystem resilience — the ability to absorb disturbance and return to equilibrium — depends on biodiversity at all three levels.</p>
+  <table class="tbl">
+    <tr><th>Diversity Level</th><th>How It Builds Resilience</th></tr>
+    <tr><td><strong>Genetic</strong></td><td>More genetic variation → more chance some individuals survive new threats (disease, climate shift)</td></tr>
+    <tr><td><strong>Species</strong></td><td>More species → functional redundancy → if one is lost, others fill its ecological role</td></tr>
+    <tr><td><strong>Habitat</strong></td><td>More habitat types → more refugia during disturbance → faster recovery from fire, flood, drought</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Complexity, Feedback &amp; Succession</h3>
+    <ul class="bullets">
+      <li><strong>Complex food webs:</strong> More connections → more alternative energy pathways → greater stability</li>
+      <li><strong>Negative feedback loops:</strong> Diverse ecosystems have more mechanisms to restore balance after disturbance</li>
+      <li><strong>Succession stage:</strong> Climax communities (high diversity) are more resilient than pioneer communities (low diversity)</li>
+    </ul>
+  </div>
+  <div class="tip">Case study: Wolves reintroduced to Yellowstone → trophic cascade restored ecosystem balance. Sea otters protect kelp forests by controlling sea urchins — a keystone species maintaining resilience.</div>
+</div>
+
+<!-- ==================== SLIDE 5: 3.1.3 ==================== -->
+<div class="slide" data-sec="evolution">
+  <div class="section-tag">3.1.3</div>
+  <h2>Evolutionary Processes</h2>
+  <div class="kt"><strong>Key Understanding</strong>Biodiversity arises from <em>evolutionary processes</em>.</div>
+  <table class="tbl">
+    <tr><th>Process</th><th>Mechanism</th><th>Effect on Diversity</th></tr>
+    <tr><td><strong>Mutation</strong></td><td>Random changes in DNA; most neutral or harmful, some beneficial</td><td>Introduces new alleles — raw material for evolution</td></tr>
+    <tr><td><strong>Gene flow</strong></td><td>Movement of genes between populations via migration &amp; interbreeding</td><td>Increases genetic diversity; reduces differences between populations</td></tr>
+    <tr><td><strong>Genetic drift</strong></td><td>Random changes in gene frequencies, especially in small populations</td><td>Can reduce diversity; traits may spread or disappear by chance</td></tr>
+    <tr><td><strong>Natural selection</strong></td><td>Individuals with advantageous traits survive &amp; reproduce more</td><td>Populations adapt to environments; drives speciation over time</td></tr>
+  </table>
+  <div class="flow" style="margin-top:16px">
+    <div class="flow-node" style="background:#e8f0fa;border-color:#3b82f6">🎲 Mutation</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#f3eefa;border-color:#8b5cf6">🔀 Gene flow + Drift</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fff9e6;border-color:#d97706">⚔️ Natural selection</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee;border-color:#2e9e5a">🌍 Biodiversity</div>
+  </div>
+  <div class="tip">Key distinction: Genetic drift is random; natural selection is directional. Drift can fix harmful alleles in small populations; selection tends to remove them.</div>
+</div>
+
+<!-- ==================== SLIDE 6: 3.1.4 ==================== -->
+<div class="slide" data-sec="evolution">
+  <div class="section-tag">3.1.4</div>
+  <h2>Natural Selection</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Natural selection</em> is the mechanism driving evolutionary change.</div>
+  <p class="lead">Organisms better adapted to their environment survive, flourish, and reproduce more successfully than those less well adapted — "survival of the fittest."</p>
+  <img src="/slides/images/ess-3-1-moths.jpg" alt="Peppered Moth Natural Selection Diagram" class="slide-img" />
+  <div class="card">
+    <h3>Case Study: The Peppered Moth (<em>Biston betularia</em>)</h3>
+    <ul class="bullets">
+      <li><strong>Pre-Industrial Revolution:</strong> Light-colored moths (typica) dominant — camouflaged against lichen-covered bark. Dark form (carbonaria) rare.</li>
+      <li><strong>During Industrial Revolution:</strong> Soot darkened tree bark → light moths visible to predators → dark moths favored → population shifted toward carbonaria (<strong>industrial melanism</strong>)</li>
+      <li><strong>Post–Clean Air Acts:</strong> Lichen regrew → bark lightened → light moths regained advantage → typica increased again</li>
+      <li><strong>Key lesson:</strong> When the environment changes, the direction of selection reverses — evidence that natural selection is driven by current conditions.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 7: 3.1.5 ==================== -->
+<div class="slide" data-sec="evolution">
+  <div class="section-tag">3.1.5</div>
+  <h2>Mechanisms of Natural Selection</h2>
+  <div class="kt"><strong>Key Understanding</strong>Evolution by natural selection involves <em>variation, overproduction, competition for limited resources, and differences in adaptation</em> that affect rates of survival and reproduction.</div>
+  <table class="tbl">
+    <tr><th>Step</th><th>What Happens</th><th>Consequence</th></tr>
+    <tr><td><strong>1. Variation</strong></td><td>Individuals differ in traits (size, color, behavior) due to genetic diversity</td><td>Provides raw material for selection</td></tr>
+    <tr><td><strong>2. Overproduction</strong></td><td>Species produce more offspring than can survive</td><td>Leads to competition for limited resources</td></tr>
+    <tr><td><strong>3. Competition</strong></td><td>Individuals with advantageous traits are more likely to survive</td><td>Differential survival based on fitness</td></tr>
+    <tr><td><strong>4. Differential reproduction</strong></td><td>Survivors reproduce more → pass on advantageous traits</td><td>Frequency of beneficial alleles increases</td></tr>
+    <tr><td><strong>5. Heritability</strong></td><td>Advantageous traits are inherited by offspring</td><td>Population evolves over generations</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <p style="font-size:14px"><strong>Example — beetles:</strong> In a population of beetles on dark tree bark, dark-colored individuals are better camouflaged from birds → survive more → reproduce more → over generations, the population shifts toward dark coloration.</p>
+  </div>
+  <div class="tip">Exam tip: All five steps are required for a complete explanation of natural selection. Omitting heritability or variation loses marks.</div>
+</div>
+
+<!-- ==================== SLIDE 8: 3.1.6 ==================== -->
+<div class="slide" data-sec="evolution">
+  <div class="section-tag">3.1.6</div>
+  <h2>Speciation</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Speciation</em> is the generation of new species through evolution.</div>
+  <p class="lead">Speciation occurs when populations of a single species become reproductively isolated, evolve separately, and develop enough genetic divergence that they can no longer interbreed.</p>
+  <img src="/slides/images/ess-3-1-finches.jpg" alt="Adaptive Radiation in Darwin's Finches" class="slide-img" />
+  <div class="card">
+    <h3>Case Study: Darwin's Finches (Galápagos)</h3>
+    <p style="font-size:14px">A single immigrant finch species colonized the Galápagos. Geographic isolation on different islands → different food sources → different beak shapes evolved → 13+ distinct species, each adapted to a specific niche. An example of <strong>adaptive radiation</strong>.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: 3.1.7 ==================== -->
+<div class="slide" data-sec="measuring">
+  <div class="section-tag">3.1.7</div>
+  <h2>Species Richness &amp; Evenness</h2>
+  <div class="kt"><strong>Key Understanding</strong>Species diversity in communities is a product of <em>richness</em> and <em>evenness</em>.</div>
+  <table class="tbl">
+    <tr><th>Component</th><th>Definition</th><th>What It Measures</th></tr>
+    <tr><td><strong>Species richness</strong></td><td>The total number of different species in an area</td><td>How many species are present (not how common they are)</td></tr>
+    <tr><td><strong>Species evenness</strong></td><td>The relative abundance of each species</td><td>How evenly individuals are distributed among species</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Why Both Matter</h3>
+    <ul class="bullets">
+      <li>Two ecosystems can have the <strong>same richness</strong> (e.g. 20 species) but very different evenness</li>
+      <li>An ecosystem where <strong>one species dominates</strong> (low evenness) is less resilient than one with balanced abundances</li>
+      <li>High richness + high evenness = <strong>maximum diversity</strong> = greatest stability and resilience</li>
+    </ul>
+  </div>
+  <div class="tip">Exam skill: Given a data table, always calculate or compare both richness and evenness — never assume high richness = high diversity.</div>
+</div>
+
+<!-- ==================== SLIDE 10: 3.1.8 ==================== -->
+<div class="slide" data-sec="measuring">
+  <div class="section-tag">3.1.8</div>
+  <h2>Simpson's Reciprocal Index</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Simpson's reciprocal index</em> is used to provide a quantitative measure of species diversity, allowing different ecosystems to be compared and monitored over time.</div>
+  <div class="card" style="text-align:center;padding:20px;border-left:4px solid var(--blue)">
+    <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted)">Simpson's Diversity Index Formula</div>
+    <div style="font-size:22px;font-weight:700;color:var(--blue);margin:10px 0">D = Σ(n/N)² &nbsp;|&nbsp; Reciprocal Index = 1/D</div>
+    <p style="font-size:13px;color:var(--muted)">n = number of individuals of each species | N = total number of individuals of all species<br/><strong>Higher 1/D value = greater species diversity</strong></p>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Worked Example</h3>
+    <p style="font-size:14px">A quadrat sample contains: Species A (40), Species B (35), Species C (25). Total N = 100.</p>
+    <p style="font-size:14px;margin-top:6px">D = (40/100)² + (35/100)² + (25/100)² = 0.16 + 0.1225 + 0.0625 = <strong>0.345</strong></p>
+    <p style="font-size:14px"><strong>1/D = 1/0.345 ≈ 2.90</strong> → moderate diversity</p>
+  </div>
+  <div class="tip">Skill: You must be able to calculate Simpson's index from a data table. Common error: forgetting to square the fractions (n/N)².</div>
+</div>
+
+<!-- ==================== SLIDE 11: 3.1.9 ==================== -->
+<div class="slide" data-sec="measuring">
+  <div class="section-tag">3.1.9</div>
+  <h2>Biodiversity Knowledge &amp; Conservation</h2>
+  <div class="kt"><strong>Key Understanding</strong>Knowledge of global and regional biodiversity is needed for the development of effective management strategies to conserve biodiversity.</div>
+  <table class="tbl">
+    <tr><th>How Knowledge Is Gathered</th><th>Method</th></tr>
+    <tr><td><strong>Citizen science</strong></td><td>Public volunteers record species sightings, monitor ecosystems (e.g. bird counts, iNaturalist)</td></tr>
+    <tr><td><strong>Government &amp; NGOs</strong></td><td>Remote sensing, field surveys, species monitoring programs (e.g. IUCN Red List assessments)</td></tr>
+    <tr><td><strong>Indigenous &amp; parabiologists</strong></td><td>Local ecological knowledge combined with scientific methods; trained community members collect data</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Conservation Strategies Informed by Knowledge</h3>
+  <table class="tbl">
+    <tr><th>Strategy</th><th>How Knowledge Helps</th><th>Example</th></tr>
+    <tr><td><strong>Protected areas</strong></td><td>Data identifies regions of high ecological value → designated as national parks</td><td>Amazon reserves; Great Barrier Reef Marine Park</td></tr>
+    <tr><td><strong>Sustainable management</strong></td><td>Biodiversity data informs fishing quotas, forestry practices, water management</td><td>MSC-certified sustainable fisheries</td></tr>
+    <tr><td><strong>Species recovery programs</strong></td><td>Population &amp; genetic data guides captive breeding and habitat restoration</td><td>California condor; black-footed ferret recovery</td></tr>
+  </table>
+  <div class="tip">Case study: Gorongosa National Park (Mozambique) — collaboration between government and Carr Foundation uses biodiversity monitoring to guide restoration of a war-damaged ecosystem.</div>
+</div>
+
+<!-- ==================== SLIDE 12: HL 3.1.10 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.10</div>
+  <h2>Mutation &amp; Sexual Reproduction<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Mutation and sexual reproduction</em> increase <em>genetic diversity</em>.</div>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h3 style="color:var(--orange)">Mutation</h3>
+      <ul class="bullets hl">
+        <li>Random changes in DNA sequence — occur spontaneously during replication or from mutagens</li>
+        <li><strong>Beneficial:</strong> Improve survival/reproduction → spread over generations</li>
+        <li><strong>Neutral / Harmful:</strong> Add to gene pool or eliminated by selection</li>
+        <li>Ultimate source of all new genetic variation</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--orange)">Sexual Reproduction</h3>
+      <ul class="bullets hl">
+        <li><strong>Meiosis:</strong> Chromosomes exchange material (recombination) → unique gametes</li>
+        <li><strong>Fertilization:</strong> Fusion of gametes from 2 parents → unique genotype</li>
+        <li>Ensures every individual (except identical twins) is genetically unique</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tip">Populations with high genetic diversity are better equipped to survive environmental change. Low diversity (e.g. agricultural monocultures) → vulnerable to extinction.</div>
+</div>
+
+<!-- ==================== SLIDE 13: HL 3.1.11 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.11</div>
+  <h2>Reproductive Isolation<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Reproductive isolation</em> can be achieved by geographical separation or, for populations living in the same area, by ecological or behavioural differences.</div>
+  <table class="tbl">
+    <tr><th>Type</th><th>Mechanism</th><th>Example</th></tr>
+    <tr><td><strong>Allopatric</strong><br/>(geographic)</td><td>Physical barrier (mountain, river, ocean) prevents gene flow between populations</td><td><strong>Bonobos &amp; chimpanzees:</strong> Separated by the Congo River → evolved independently → different social structures and genetics</td></tr>
+    <tr><td><strong>Sympatric</strong><br/>(same area)</td><td>No physical barrier; isolation by ecological niche or behavioral differences</td><td><strong>Apple maggot fly:</strong> Shifted to apple trees → different fruiting times → reproductive isolation within generations</td></tr>
+    <tr><td><strong>Parapatric</strong><br/>(adjacent)</td><td>Continuous range but individuals mate locally; environmental gradient drives divergence</td><td>Grass species along a mine toxicity gradient — tolerant and non-tolerant populations diverge</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Island Endemism</h3>
+    <ul class="bullets hl">
+      <li>Isolated islands have high <strong>endemism</strong> (species found nowhere else)</li>
+      <li><strong>Galápagos finches:</strong> 13+ species from one ancestor</li>
+      <li><strong>Madagascar lemurs:</strong> ~100 species, all endemic — evolved in isolation for ~60 million years</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 14: HL 3.1.12 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.12</div>
+  <h2>Uneven Distribution of Biodiversity<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Biodiversity is spread unevenly</em> across the planet, and certain areas contain a particularly large proportion of species, especially species that are rare and endangered.</div>
+  <table class="tbl">
+    <tr><th>Factor</th><th>Effect</th></tr>
+    <tr><td><strong>Latitude</strong></td><td>Tropical regions (0°–23.5°) have higher species diversity due to stable temperatures and high rainfall</td></tr>
+    <tr><td><strong>Area</strong></td><td>Larger habitats support more species (species-area relationship)</td></tr>
+    <tr><td><strong>Evolutionary time</strong></td><td>Tropical regions have been climatically stable for longer → more time for speciation</td></tr>
+    <tr><td><strong>Productivity</strong></td><td>Higher NPP in tropics → more energy → supports more complex food webs</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Biodiversity Hotspots</h3>
+    <ul class="bullets hl">
+      <li>Areas with exceptionally high species richness and endemism under significant threat</li>
+      <li><strong>Tropical rainforests:</strong> ~50% of world's species on ~7% of Earth's surface</li>
+      <li><strong>Coral reefs:</strong> "Rainforests of the sea" — structural complexity supports vast marine diversity</li>
+      <li>36 recognized hotspots globally (Conservation International criteria)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 15: HL 3.1.13 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.13</div>
+  <h2>Human-Driven Evolutionary Change<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Human activities have impacted the selective forces</em> acting on species within ecosystems, resulting in <em>evolutionary change</em>.</div>
+  <table class="tbl">
+    <tr><th>Human Activity</th><th>Selective Pressure</th><th>Evolutionary Response</th></tr>
+    <tr><td><strong>Hunting / poaching</strong></td><td>Targeting individuals with specific traits (e.g. large tusks)</td><td>Trait reduction or loss in population</td></tr>
+    <tr><td><strong>Urbanization</strong></td><td>New hazards (traffic), altered food sources, novel habitats</td><td>Behavioral adaptation (road-crossing, diet shifts)</td></tr>
+    <tr><td><strong>Agriculture</strong></td><td>Pesticide use, habitat simplification</td><td>Pest resistance to pesticides</td></tr>
+    <tr><td><strong>Climate change</strong></td><td>Shifting temperature and precipitation patterns</td><td>Range shifts, phenological changes</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Case Study: Tuskless Elephants — Gorongosa, Mozambique</h3>
+    <ul class="bullets hl">
+      <li>During civil war poaching, ~90% of elephants were killed → poachers targeted tusked elephants</li>
+      <li>Tuskless elephants had survival advantage → tuskless gene frequency increased dramatically</li>
+      <li>Demonstrates natural selection driven directly by human selective pressure</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 16: HL 3.1.14 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.14</div>
+  <h2>Artificial Selection<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Artificial selection reduces genetic diversity</em> and, consequently, species resilience.</div>
+  <p class="lead">Humans deliberately breed organisms for desired traits — a process called <strong>artificial selection</strong>. While commercially useful, it drastically narrows the gene pool.</p>
+  <table class="tbl">
+    <tr><th>Example</th><th>What Was Selected</th><th>Cost of Reduced Diversity</th></tr>
+    <tr><td><strong>Cavendish banana</strong></td><td>Size, taste, seedlessness</td><td>Genetically identical clones — Panama disease (TR4) threatens global production</td></tr>
+    <tr><td><strong>Commercial wheat</strong></td><td>High yield, uniform growth</td><td>Vulnerable to new fungal strains; relies on chemical inputs</td></tr>
+    <tr><td><strong>Domestic dog breeds</strong></td><td>Appearance, temperament</td><td>Inherited health problems (e.g. breathing in bulldogs, hip dysplasia)</td></tr>
+  </table>
+  <div class="tip">Contrast with natural selection: Natural selection maintains or increases genetic diversity. Artificial selection decreases it by imposing a single, narrow set of criteria.</div>
+</div>
+
+<!-- ==================== SLIDE 17: HL 3.1.15 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.15</div>
+  <h2>Deep Time<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Earth history extends over a period of 4.5 billion years. <em>Processes that occur over an extended timescale</em> have led to the evolution of life on Earth.</div>
+  <div class="card">
+    <h3>The Scale of Earth History</h3>
+    <ul class="bullets hl">
+      <li><strong>4.5 billion years</strong> since Earth formed</li>
+      <li><strong>~3.8 billion years</strong> since first life (prokaryotes)</li>
+      <li><strong>~540 million years</strong> since the Cambrian Explosion (rapid diversification)</li>
+      <li><strong>~66 million years</strong> since the end-Cretaceous mass extinction (dinosaurs extinct)</li>
+      <li><strong>~300,000 years</strong> since <em>Homo sapiens</em> appeared — a fraction of a second in geological time</li>
+    </ul>
+  </div>
+  <div class="tip">The processes that built Earth's biodiversity took billions of years. Human impacts are altering biodiversity in decades — orders of magnitude faster than natural evolution can respond.</div>
+</div>
+
+<!-- ==================== SLIDE 18: HL 3.1.16 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.16</div>
+  <h2>Geological Epochs<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Earth history is divided up into <em>geological epochs</em> according to the fossil record.</div>
+  <div class="flow">
+    <div class="flow-node" style="background:#f5f7fa">Precambrian<br/><span style="font-size:11px">4500–541 Ma</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f0fa">Paleozoic<br/><span style="font-size:11px">541–252 Ma</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fff9e6">Mesozoic<br/><span style="font-size:11px">252–66 Ma</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#f3eefa">Cenozoic<br/><span style="font-size:11px">66 Ma–present</span></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <p style="font-size:14px"><strong>How epochs are defined:</strong> Geologists use <strong>boundary markers</strong> in rock layers — sudden changes in fossil assemblages, chemical signatures (e.g. iridium layer at the K–Pg boundary), or isotopic ratios. The fossil record is the primary archive of Earth's biological history.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 19: HL 3.1.17 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.17</div>
+  <h2>Mass Extinctions &amp; Speciation<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Mass extinctions</em> are followed by rapid rates of speciation due to increased niche availability.</div>
+  <div class="card">
+    <h3>The "Big Five" Mass Extinctions</h3>
+    <table class="tbl">
+      <tr><th>Event</th><th>When (Ma)</th><th>Species Lost</th><th>Likely Cause</th></tr>
+      <tr><td><strong>End-Ordovician</strong></td><td>~443</td><td>~85%</td><td>Glaciation, sea-level drop</td></tr>
+      <tr><td><strong>Late Devonian</strong></td><td>~372</td><td>~75%</td><td>Ocean anoxia, volcanism</td></tr>
+      <tr><td><strong>End-Permian</strong></td><td>~252</td><td>~96%</td><td>Volcanism (Siberian Traps), climate change</td></tr>
+      <tr><td><strong>End-Triassic</strong></td><td>~201</td><td>~80%</td><td>Volcanism (CAMP), climate change</td></tr>
+      <tr><td><strong>End-Cretaceous</strong></td><td>~66</td><td>~76%</td><td>Asteroid impact + Deccan Traps volcanism</td></tr>
+    </table>
+  </div>
+  <div class="flow" style="margin-top:14px">
+    <div class="flow-node" style="background:#fee2e2">💀 Mass extinction</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fff9e6">🌿 Empty niches</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee">🆕 Rapid speciation</div>
+  </div>
+  <div class="tip">After the end-Cretaceous extinction: Non-avian dinosaurs disappeared → opened niches for mammals → explosive diversification of mammals. Extinction creates opportunity.</div>
+</div>
+
+<!-- ==================== SLIDE 20: HL 3.1.18 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.18</div>
+  <h2>The Anthropocene<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The <em>Anthropocene</em> is a proposed geological epoch characterized by rapid environmental change and species extinction due to human activity.</div>
+  <div class="card">
+    <h3>Evidence for the Anthropocene</h3>
+    <table class="tbl">
+      <tr><th>Evidence Type</th><th>What It Shows</th></tr>
+      <tr><td><strong>Extinction rate</strong></td><td>Current extinction rate is 100–1,000× background rate</td></tr>
+      <tr><td><strong>Nuclear signatures</strong></td><td>Global fallout from nuclear weapons testing (1945–1963) leaves detectable marker</td></tr>
+      <tr><td><strong>Plastics &amp; concrete</strong></td><td>Novel materials now found in sediment layers worldwide</td></tr>
+      <tr><td><strong>CO₂ levels</strong></td><td>Atmospheric CO₂ higher than at any point in 800,000+ years</td></tr>
+      <tr><td><strong>Land use</strong></td><td>~75% of ice-free land significantly altered by human activity</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 21: HL 3.1.19 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.1.19</div>
+  <h2>Planetary-Scale Human Impacts<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Human impacts are having a planetary effect</em>, which will be detectable in the <em>geological record</em>.</div>
+  <div class="card">
+    <table class="tbl">
+      <tr><th>Human Impact</th><th>Geological Signature</th><th>Persistence</th></tr>
+      <tr><td><strong>CO₂ emissions</strong></td><td>Carbon isotope shift (δ¹³C) in sediments; ocean acidification layers</td><td>100,000+ years</td></tr>
+      <tr><td><strong>Plastic pollution</strong></td><td>Plastic fragments in sedimentary layers worldwide</td><td>Millions of years</td></tr>
+      <tr><td><strong>Nuclear fallout</strong></td><td>Radioactive isotopes (Pu-239) in global sediment layers</td><td>Tens of thousands of years</td></tr>
+      <tr><td><strong>Species extinction</strong></td><td>Sudden disappearance of species in fossil record</td><td>Permanent</td></tr>
+    </table>
+  </div>
+  <div class="tip">Exam tip: Connect ecological effects (biodiversity loss, climate change) to their geological signatures to show understanding at the systems level.</div>
+</div>
+
+<!-- ==================== SLIDE 22: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Biodiversity</strong></td><td>The total diversity of living systems — genetic, species, and habitat levels</td></tr>
+      <tr><td><strong>Genetic diversity</strong></td><td>Variation of genes within individuals and populations of a species</td></tr>
+      <tr><td><strong>Species diversity</strong></td><td>The number of species (richness) and their relative abundance (evenness)</td></tr>
+      <tr><td><strong>Habitat diversity</strong></td><td>The variety of physical environments in a region</td></tr>
+      <tr><td><strong>Resilience</strong></td><td>An ecosystem's ability to absorb disturbance and recover to equilibrium</td></tr>
+      <tr><td><strong>Natural selection</strong></td><td>Individuals with advantageous traits survive and reproduce more</td></tr>
+      <tr><td><strong>Speciation</strong></td><td>Generation of new species through evolution and reproductive isolation</td></tr>
+      <tr><td><strong>Species richness</strong></td><td>The number of different species in an area</td></tr>
+      <tr><td><strong>Species evenness</strong></td><td>The relative abundance of each species in a community</td></tr>
+      <tr><td><strong>Simpson's index (1/D)</strong></td><td>Quantitative measure of species diversity; higher = more diverse</td></tr>
+      <tr><td><strong>Anthropocene</strong></td><td>Proposed geological epoch defined by human-dominated environmental change</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 23: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Relationships</h3>
+    <ul class="bullets">
+      <li><strong>Genetic → Species → Habitat diversity:</strong> Nested levels; loss at any level weakens the system</li>
+      <li><strong>Diversity → Resilience:</strong> More species + more genetic variation = more functional redundancy</li>
+      <li><strong>5 steps of natural selection:</strong> Variation, overproduction, competition, differential reproduction, heritability</li>
+      <li><strong>Isolation → Divergence → Reproductive isolation = speciation</strong></li>
+      <li><strong>Richness + Evenness = Species diversity</strong> — Simpson's index quantifies both</li>
+    </ul>
+  </div>
+  <div class="tip">For 9-mark essays: Always link biodiversity to both ecosystem services and evolutionary processes. Use case studies (peppered moths, Gorongosa elephants, Galápagos finches).</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 19 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">3.1.1 – 3.1.9 (SL) + 3.1.10 – 3.1.19 (HL)</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
