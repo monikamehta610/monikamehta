@@ -16,6 +16,15 @@
   <!-- Slide-specific styles -->
   <style>
     /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
   </style>
 
   <!-- Reson widget bridge (must load before body) -->
@@ -29,8 +38,8 @@
 <!-- ==================== SLIDE 1: TITLE ==================== -->
 <div class="slide active" data-sec="intro">
   <div style="text-align:center;padding:40px 0 20px">
-    <div class="section-tag">IB DP Environmental Systems & Societies</div>
-    <h1>Energy & Biomass<br/>in Ecosystems</h1>
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies</div>
+    <h1>Energy &amp; Biomass<br/>in Ecosystems</h1>
     <p class="subtitle">Subtopic 2.2 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
     <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
       <div class="card" style="flex:1;min-width:180px;text-align:center;border-left:3px solid var(--blue)">
@@ -79,7 +88,7 @@
     <div class="flow-arrow">→</div>
     <div class="flow-node consumer">🐾 Consumers<br/>(Herbivores → Carnivores)</div>
     <div class="flow-arrow">→</div>
-    <div class="flow-node decomp">🍄 Decomposers<br/>& Detritivores</div>
+    <div class="flow-node decomp">🍄 Decomposers<br/>&amp; Detritivores</div>
   </div>
   <div class="card-grid cols-2">
     <div class="card">
@@ -170,7 +179,7 @@
     <table class="tbl">
       <tr><th>Type</th><th>Habitat</th><th>Examples</th></tr>
       <tr><td><strong>Terrestrial plants</strong></td><td>Land ecosystems</td><td>Grasses, trees, shrubs, mosses</td></tr>
-      <tr><td><strong>Algae</strong></td><td>Freshwater & marine</td><td>Diatoms, kelp, seaweed</td></tr>
+      <tr><td><strong>Algae</strong></td><td>Freshwater &amp; marine</td><td>Diatoms, kelp, seaweed</td></tr>
       <tr><td><strong>Photosynthetic bacteria</strong></td><td>Various (incl. extreme environments)</td><td>Cyanobacteria, purple sulfur bacteria</td></tr>
     </table>
   </div>
@@ -193,7 +202,7 @@
     <h3>What is ATP?</h3>
     <p style="font-size:14px">ATP is the "energy currency" of cells. It powers:</p>
     <div class="card-grid cols-2" style="margin-top:8px">
-      <div style="font-size:13px">• <strong>Muscle contraction</strong> — movement<br/>• <strong>Cell division</strong> — growth & repair<br/>• <strong>Active transport</strong> — moving molecules across membranes</div>
+      <div style="font-size:13px">• <strong>Muscle contraction</strong> — movement<br/>• <strong>Cell division</strong> — growth &amp; repair<br/>• <strong>Active transport</strong> — moving molecules across membranes</div>
       <div style="font-size:13px">• <strong>Biosynthesis</strong> — building proteins, DNA<br/>• <strong>Nerve impulses</strong> — signal transmission<br/>• <strong>Reproduction</strong> — gamete production</div>
     </div>
   </div>
@@ -207,46 +216,17 @@
 <!-- ==================== SLIDE 9: 2.2.7 ==================== -->
 <div class="slide" data-sec="trophic">
   <div class="section-tag">2.2.7</div>
-  <h2>Heat Loss in Cellular Respiration</h2>
-  <div class="kt"><strong>Key Understanding</strong>Some of the chemical energy released during cellular respiration is <em>transformed into heat</em>. This heat cannot be recaptured and reused by organisms — it is permanently lost from the ecosystem.</div>
-  <div class="card">
-    <h3>Why Does This Happen?</h3>
-    <ul class="bullets">
-      <li>Energy transfer between molecules is <strong>never 100% efficient</strong></li>
-      <li>Some energy escapes as <strong>kinetic energy of molecules</strong> = heat</li>
-      <li>This is an <strong>exergonic reaction</strong> — it releases energy, but not all of it is captured as ATP</li>
-      <li>Once released as heat, the energy <strong>dissipates into the environment</strong> and cannot be recaptured</li>
-    </ul>
-  </div>
-  <div class="kt"><strong>Warm-blooded animals</strong> use some of this heat to maintain body temperature (thermoregulation). But even in these animals, excess heat is still lost to the environment — it doesn't re-enter the food chain.</div>
-  <div class="tip">This is the main reason why energy decreases at each trophic level — heat loss during respiration is the single biggest source of energy "loss" in ecosystems.</div>
+  <h2>Energy Transformed to Heat</h2>
+  <div class="kt"><strong>Key Understanding</strong>Energy transformations are inefficient. In living cells, cellular respiration transforms chemical energy into work, but a large portion is lost as <em>heat energy</em> to the surroundings.</div>
+  <p>Heat released during respiration cannot be converted back into chemical energy by living things — it is lost from the biological system forever.</p>
 </div>
 
 <!-- ==================== SLIDE 10: 2.2.8 ==================== -->
 <div class="slide" data-sec="trophic">
   <div class="section-tag">2.2.8</div>
   <h2>The Second Law of Thermodynamics</h2>
-  <div class="kt"><strong>Key Understanding</strong>Energy transformations in ecosystems are <em>inefficient</em>. At every energy transfer, some energy is degraded (lost as heat), so less usable energy is available at the next stage.</div>
-  <div class="card">
-    <h3>What This Means for Ecosystems</h3>
-    <div class="card-grid cols-2">
-      <div>
-        <p style="font-size:14px"><strong>The 10% Rule (approximate)</strong></p>
-        <p style="font-size:14px">Only about <strong>10%</strong> of the energy at one trophic level is passed to the next. The remaining <strong>~90%</strong> is lost as heat through respiration, movement, and metabolic processes.</p>
-      </div>
-      <div>
-        <p style="font-size:14px"><strong>Example Calculation</strong></p>
-        <div style="font-size:14px;background:var(--bg);padding:10px;border-radius:8px">
-          Producers: 10,000 kJ<br/>
-          Primary consumers: ~1,000 kJ<br/>
-          Secondary consumers: ~100 kJ<br/>
-          Tertiary consumers: ~10 kJ
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="kt"><strong>Entropy</strong> — a measure of disorder — always increases with each energy transfer. Useful, ordered energy (glucose) becomes disordered energy (heat) that disperses into the environment.</div>
-  <div class="tip">This law explains why food chains are short (max 4–5 levels) and why there are far fewer top predators than producers in any ecosystem.</div>
+  <div class="kt"><strong>Key Understanding</strong>When energy is transformed, the amount of usable energy decreases as entropy (disorder) increases. No energy transformation is 100% efficient.</div>
+  <div class="tip">The second law explains why food chains rarely have more than 4 or 5 trophic levels — so much energy is lost as heat at each step that there isn't enough left to support a viable population of higher-level predators.</div>
 </div>
 
 <!-- ==================== SLIDE 11: 2.2.9 ==================== -->
@@ -273,6 +253,7 @@
   <div class="section-tag">2.2.10</div>
   <h2>Food Chains: Producers to Consumers</h2>
   <div class="kt"><strong>Key Understanding</strong>Producers make their own carbon compounds by photosynthesis → they start food chains. Consumers obtain carbon compounds from producers or other consumers → they form subsequent trophic levels.</div>
+  <img src="/slides/images/ess-2-2-food-web.jpg" alt="Forest Food Web Energy Flow" class="slide-img" />
   <div class="eq" style="font-size:15px">
     <span class="label">Example food chain</span>
     Grass <span class="arrow">→</span> Grasshopper <span class="arrow">→</span> Frog <span class="arrow">→</span> Snake <span class="arrow">→</span> Hawk
@@ -322,6 +303,7 @@
   <div class="section-tag">2.2.12</div>
   <h2>Energy Losses Along Food Chains</h2>
   <div class="kt"><strong>Key Understanding</strong>There are <em>losses of energy and organic matter</em> as food is transferred along a food chain. Not all energy available at one level reaches the next.</div>
+  <img src="/slides/images/ess-2-2-energy-flow.jpg" alt="Trophic Energy Flow &amp; 10% Rule Pyramid" class="slide-img" />
   <div class="card">
     <h3>Where Does Energy Go?</h3>
     <table class="tbl">
