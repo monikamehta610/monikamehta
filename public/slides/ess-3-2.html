@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 3.2</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 3: Biodiversity &amp; Conservation</div>
+    <h1>Human Impact<br/>on Biodiversity</h1>
+    <p class="subtitle">Subtopic 3.2 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">7 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">3.2.1 – 3.2.7</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">6 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">3.2.8 – 3.2.13</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic identifies the direct and indirect human threats to biodiversity, examines how multiple impacts interact, introduces the IUCN Red List, explores invasive species, the tragedy of the commons, and — at HL — biodiversity hotspots, Key Biodiversity Areas, indigenous land management, environmental justice, and planetary boundaries.</p>
+  <div class="card-grid cols-2">
+    <div class="card"><strong style="color:var(--blue)">A. Threats to Biodiversity</strong><br/><span style="font-size:13px;color:var(--muted)">Direct &amp; indirect influences, multiple impacts, invasive alien species</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Assessment &amp; Status</strong><br/><span style="font-size:13px;color:var(--muted)">IUCN Red List, conservation status, named species case studies</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Resource Management</strong><br/><span style="font-size:13px;color:var(--muted)">Tragedy of the commons, overexploitation</span></div>
+    <div class="card"><strong style="color:var(--blue)">D. Priority Areas &amp; Justice (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">Hotspots, KBAs, indigenous management, environmental justice, planetary boundaries</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Question</h3>
+  <ul class="bullets">
+    <li>What causes biodiversity loss, and how are ecological and societal systems impacted?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 4 hours SL + 4–5 hours HL.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 3.2.1 ==================== -->
+<div class="slide" data-sec="threats">
+  <div class="section-tag">3.2.1</div>
+  <h2>Direct &amp; Indirect Threats to Biodiversity</h2>
+  <div class="kt"><strong>Key Understanding</strong>Biological diversity is being adversely affected by both <em>direct and indirect influences</em>.</div>
+  <div class="card-grid cols-2">
+    <div class="card" style="border-left:4px solid #c44">
+      <h3 style="color:#c44">🔴 Direct Threats</h3>
+      <ul class="bullets" style="font-size:14px">
+        <li><strong>Overharvesting:</strong> Overfishing, logging, hunting beyond sustainable levels (Atlantic cod collapse)</li>
+        <li><strong>Poaching:</strong> Illegal hunting for commercial value (African elephant ivory)</li>
+        <li><strong>Deforestation:</strong> Large-scale clearing for agriculture/development (Amazon for cattle)</li>
+        <li><strong>Illegal pet trade:</strong> Wild capture of exotic species (parrots, reptiles)</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #0071e3">
+      <h3 style="color:#0071e3">🔵 Indirect Threats</h3>
+      <ul class="bullets" style="font-size:14px">
+        <li><strong>Habitat loss / degradation / fragmentation:</strong> Breaking continuous habitat into isolated patches</li>
+        <li><strong>Pollution:</strong> Air, water, soil, light, noise, thermal</li>
+        <li><strong>Climate change:</strong> Shifts ranges, alters timing, reduces resilience</li>
+        <li><strong>Invasive alien species:</strong> Outcompete native species, introduce disease</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Natural Hazards</h3>
+    <p style="font-size:14px">Naturally occurring events (wildfires, volcanic eruptions, tsunamis) can also damage biodiversity — but are distinct from human-caused threats. The 2019–20 Australian bushfires killed an estimated 3 billion animals, devastating koala habitat.</p>
+  </div>
+  <div class="tip">Key distinction: Direct threats = immediate, observable harm (poaching, deforestation). Indirect threats = underlying drivers that increase vulnerability (climate change, pollution, habitat fragmentation).</div>
+</div>
+
+<!-- ==================== SLIDE 4: 3.2.2 ==================== -->
+<div class="slide" data-sec="threats">
+  <div class="section-tag">3.2.2</div>
+  <h2>Multiple Human Impacts</h2>
+  <div class="kt"><strong>Key Understanding</strong>Most <em>ecosystems are subject to multiple human impacts</em>.</div>
+  <p class="lead">Human impacts rarely act alone — they interact to produce <strong>compounded effects</strong> more severe than any single threat.</p>
+  <table class="tbl">
+    <tr><th>Interaction</th><th>Mechanism</th><th>Example</th></tr>
+    <tr><td><strong>Climate change + habitat loss</strong></td><td>Warming shifts ranges; fragmented habitats block migration</td><td>Mountain species trapped — can't move higher, habitat shrinking</td></tr>
+    <tr><td><strong>Pollution + invasive species</strong></td><td>Pollution weakens natives; invasives exploit weakened competitors</td><td>Nutrient runoff → algal blooms → native fish die → invasives fill niche</td></tr>
+    <tr><td><strong>Habitat fragmentation + overexploitation</strong></td><td>Small isolated populations are easier targets</td><td>Small forest patches → remaining wildlife concentrated → easier to poach</td></tr>
+    <tr><td><strong>Climate change + invasive species</strong></td><td>Warming benefits some invasives; stressed natives less competitive</td><td>Kudzu grows faster in warmer conditions, outcompeting stressed natives</td></tr>
+  </table>
+  <div class="flow" style="margin-top:14px">
+    <div class="flow-node" style="background:#fee2e2">🌡️ Climate change</div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-node" style="background:#fee2e2">🪓 Habitat loss</div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-node" style="background:#fee2e2">🧪 Pollution</div>
+    <div class="flow-arrow">=</div>
+    <div class="flow-node" style="background:#ef4444;color:white;border-color:#b91c1c">⚠️ Cascading loss</div>
+  </div>
+  <div class="tip">Exam tip: When asked about impacts on an ecosystem, always consider how threats interact — don't just list them in isolation.</div>
+</div>
+
+<!-- ==================== SLIDE 5: 3.2.3 ==================== -->
+<div class="slide" data-sec="threats">
+  <div class="section-tag">3.2.3</div>
+  <h2>Invasive Alien Species</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Invasive alien species</em> can reduce local biodiversity by competing for limited resources, predation and introduction of diseases or parasites.</div>
+  <table class="tbl">
+    <tr><th>Mechanism</th><th>How It Works</th><th>Example</th></tr>
+    <tr><td><strong>Competition</strong></td><td>Outcompete natives for food, water, space — especially without natural predators</td><td>Grey squirrel (UK) vs native red squirrel</td></tr>
+    <tr><td><strong>Predation</strong></td><td>Prey on natives that lack evolved defenses</td><td>Brown tree snake (Guam) → extinction of 10+ bird species</td></tr>
+    <tr><td><strong>Disease</strong></td><td>Introduce pathogens natives have no immunity to</td><td>American crayfish → fungal disease devastating European crayfish</td></tr>
+    <tr><td><strong>Habitat alteration</strong></td><td>Physically change the environment</td><td>Kudzu vine (SE US) smothers native trees and plants</td></tr>
+    <tr><td><strong>Hybridization</strong></td><td>Interbreed with natives → genetic dilution</td><td>Mallard ducks hybridizing with native duck species</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Pathways of Introduction</h3>
+  <table class="tbl">
+    <tr><th>Pathway</th><th>Example</th></tr>
+    <tr><td><strong>Shipping / trade</strong></td><td>Zebra mussel in ballast water → Great Lakes</td></tr>
+    <tr><td><strong>Agriculture / horticulture</strong></td><td>Cane toad (Australia) introduced for pest control → became pest</td></tr>
+    <tr><td><strong>Pet trade</strong></td><td>Burmese python released in Florida → Everglades population</td></tr>
+    <tr><td><strong>Tourism</strong></td><td>Seeds/spores on boots and gear → spread in national parks</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 6: 3.2.4 ==================== -->
+<div class="slide" data-sec="assessment">
+  <div class="section-tag">3.2.4</div>
+  <h2>The IUCN Red List</h2>
+  <div class="kt"><strong>Key Understanding</strong>The global <em>conservation status</em> of species is assessed by the International Union for Conservation of Nature (IUCN) and is published as the <em>IUCN Red List</em>. Status is based on number of individuals, rate of increase or decrease of the population, breeding potential, geographic range and known threats.</div>
+  <img src="/slides/images/ess-3-2-iucn-redlist.jpg" alt="IUCN Red List Conservation Categories Spectrum" class="slide-img" />
+  <h3 style="margin-top:16px">Assessment Criteria</h3>
+  <table class="tbl">
+    <tr><th>Criterion</th><th>What It Measures</th><th>Example</th></tr>
+    <tr><td><strong>Population size</strong></td><td>Small populations are inherently more vulnerable</td><td>Amur leopard: &lt;100 individuals → CR</td></tr>
+    <tr><td><strong>Rate of decline</strong></td><td>Speed of population decrease</td><td>Javan rhino: rapid decline from poaching → CR</td></tr>
+    <tr><td><strong>Geographic range</strong></td><td>Restricted range → higher vulnerability</td><td>Golden poison frog: small Colombian range → EN</td></tr>
+    <tr><td><strong>Habitat fragmentation</strong></td><td>Isolated populations → less genetic exchange</td><td>Bornean orangutan: fragmented forest → CR</td></tr>
+    <tr><td><strong>Known threats</strong></td><td>Poaching, pollution, climate change, invasive species</td><td>Hawaiian monk seal: habitat degradation + entanglement → CR</td></tr>
+  </table>
+  <div class="tip">Key stat: ~8.7 million species estimated on Earth; ~80% still undiscovered. Species are going extinct before they are even described.</div>
+</div>
+
+<!-- ==================== SLIDE 7: 3.2.5 ==================== -->
+<div class="slide" data-sec="assessment">
+  <div class="section-tag">3.2.5</div>
+  <h2>Conservation Status &amp; Prioritization</h2>
+  <div class="kt"><strong>Key Understanding</strong>Assigning a global <em>conservation status publicizes the vulnerability of species</em> and allows governments, non-governmental agencies and individual citizens to select appropriate conservation priorities and management strategies.</div>
+  <table class="tbl">
+    <tr><th>Stakeholder</th><th>Priority</th><th>Example</th></tr>
+    <tr><td><strong>Governments</strong></td><td>National interests, economic value, legal frameworks</td><td>US Endangered Species Act; Kenya elephant protection for tourism</td></tr>
+    <tr><td><strong>NGOs</strong></td><td>Flagship species, biodiversity hotspots, community engagement</td><td>WWF: polar bears, pandas; protecting the Amazon</td></tr>
+    <tr><td><strong>Individuals</strong></td><td>Advocacy, donations, sustainable consumer choices, citizen science</td><td>Anti-whaling campaigns → humpback whale recovery</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>How Conservation Status Drives Action</h3>
+    <ul class="bullets">
+      <li><strong>Awareness:</strong> CR status draws global attention → funding, policy change</li>
+      <li><strong>Resource allocation:</strong> Limited funds directed to most urgent cases</li>
+      <li><strong>Policy:</strong> Informs international agreements (CBD, CITES)</li>
+      <li><strong>Tracking:</strong> Status changes over time measure conservation progress</li>
+    </ul>
+  </div>
+  <div class="tip">Flagship species: Charismatic species (tigers, pandas, elephants) chosen to attract public support — protecting them protects the broader ecosystem they inhabit.</div>
+</div>
+
+<!-- ==================== SLIDE 8: 3.2.6 ==================== -->
+<div class="slide" data-sec="assessment">
+  <div class="section-tag">3.2.6</div>
+  <h2>Named Species Case Studies</h2>
+  <div class="kt"><strong>Key Understanding</strong>Investigate three different named species: a species that has become <em>extinct due to human activity</em>; a species that is <em>critically endangered</em>; and a species whose conservation status has been <em>improved by intervention</em>.</div>
+  <table class="tbl">
+    <tr><th>Status</th><th>Species</th><th>Ecological Role</th><th>Threats / Intervention</th><th>Outcome</th></tr>
+    <tr>
+      <td style="color:#c62828;font-weight:700">Extinct</td>
+      <td><strong>Dodo</strong> (<em>Raphus cucullatus</em>)</td>
+      <td>Seed disperser on Mauritius</td>
+      <td>Hunted by sailors; habitat cleared; invasive rats ate eggs</td>
+      <td>Extinct ~1681 — loss of unique island ecosystem function</td>
+    </tr>
+    <tr>
+      <td style="color:#e65100;font-weight:700">Critically Endangered</td>
+      <td><strong>Kakapo</strong> (<em>Strigops habroptilus</em>)</td>
+      <td>Nocturnal herbivore; seed disperser (NZ)</td>
+      <td>Habitat loss; introduced cats, rats, stoats; low reproductive rate</td>
+      <td>~250 individuals; intensive management (captive breeding, predator-free islands)</td>
+    </tr>
+    <tr>
+      <td style="color:#2e7d32;font-weight:700">Improved</td>
+      <td><strong>California Condor</strong> (<em>Gymnogyps californianus</em>)</td>
+      <td>Scavenger — cleans carcasses, prevents disease spread</td>
+      <td>Lead poisoning (ammunition), DDT, habitat loss → 22 birds in 1982</td>
+      <td>Captive breeding + release → ~500 today; lead ammunition bans in range</td>
+    </tr>
+  </table>
+  <div class="tip">Exam requirement: You must know the ecological role, pressures, and evaluation of methods for all three case studies. The kakapo and condor are the most commonly cited examples.</div>
+</div>
+
+<!-- ==================== SLIDE 9: 3.2.7 ==================== -->
+<div class="slide" data-sec="management">
+  <div class="section-tag">3.2.7</div>
+  <h2>Tragedy of the Commons</h2>
+  <div class="kt"><strong>Key Understanding</strong>The <em>tragedy of the commons</em> describes possible outcomes of the shared unrestricted use of a resource, with implications for sustainability and the impacts on biodiversity.</div>
+  <img src="/slides/images/ess-3-2-tragedy-commons.jpg" alt="Tragedy of the Commons Concept and Sustainable Solutions Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Example</th><th>Resource</th><th>What Happened</th></tr>
+    <tr><td><strong>Grand Banks cod fishery</strong></td><td>Atlantic cod (international waters)</td><td>Unrestricted trawling by multiple nations → cod population collapsed in 1992; moratorium still largely in effect</td></tr>
+    <tr><td><strong>Great Pacific Garbage Patch</strong></td><td>Ocean as waste sink</td><td>Unrestricted plastic disposal → 80,000 tonnes floating in Pacific; harms marine life</td></tr>
+    <tr><td><strong>Atmospheric CO₂</strong></td><td>Atmosphere (carbon sink)</td><td>Unrestricted emissions by all nations → climate change → global biodiversity loss</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Solutions</h3>
+  <ul class="bullets">
+    <li><strong>Regulation:</strong> Fishing quotas, marine protected areas, emissions caps</li>
+    <li><strong>Privatization:</strong> Assign ownership → incentive to manage sustainably</li>
+    <li><strong>Community management:</strong> Elinor Ostrom's work — local communities can manage commons effectively with clear rules, monitoring, and sanctions</li>
+  </ul>
+  <div class="tip">Ostrom's insight: The tragedy of the commons is not inevitable — communities with strong governance and clear rules can sustain shared resources. (Ostrom won the Nobel Prize in Economics for this work.)</div>
+</div>
+
+<!-- ==================== SLIDE 10: HL 3.2.8 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.2.8</div>
+  <h2>Biodiversity Hotspots<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Biodiversity hotspots</em> are under threat from habitat destruction, which could lead to a significant loss of biological diversity, especially in tropical biomes.</div>
+  <img src="/slides/images/ess-3-2-hotspots.jpg" alt="World Biodiversity Hotspots and Key Biodiversity Areas Map" class="slide-img" />
+  <div class="card" style="margin-top:14px">
+    <h3>Criteria for a Biodiversity Hotspot</h3>
+    <ul class="bullets hl">
+      <li><strong>≥1,500 endemic vascular plant species</strong> (found nowhere else)</li>
+      <li><strong>≥70% habitat loss</strong> from original extent</li>
+    </ul>
+    <p style="margin-top:8px;font-size:14px"><strong>36 recognized hotspots</strong> globally — covering ~2.3% of Earth's land surface but containing &gt;50% of endemic plant species and ≥42% of terrestrial vertebrates.</p>
+  </div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Hotspot</th><th>Location</th><th>Key Endemics</th><th>Main Threats</th></tr>
+    <tr><td><strong>Madagascar</strong></td><td>Indian Ocean island</td><td>~100 lemur species (90% endemic)</td><td>Deforestation for agriculture, illegal logging, bushmeat hunting</td></tr>
+    <tr><td><strong>Sundaland</strong></td><td>SE Asia (Indonesia, Malaysia)</td><td>Orangutans, Sumatran tiger, rhino</td><td>Palm oil plantations, logging</td></tr>
+    <tr><td><strong>Atlantic Forest</strong></td><td>Brazil</td><td>Golden lion tamarin</td><td>Fragmentation from urbanization, agriculture</td></tr>
+    <tr><td><strong>Coral Triangle</strong></td><td>Western Pacific</td><td>76% of coral species globally</td><td>Ocean warming, acidification, overfishing</td></tr>
+  </table>
+  <div class="tip">Why hotspots matter: Losing a hotspot = losing species that exist nowhere else. Protecting hotspots is the most cost-effective strategy for conserving global biodiversity.</div>
+</div>
+
+<!-- ==================== SLIDE 11: HL 3.2.9 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.2.9</div>
+  <h2>Key Biodiversity Areas<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Key areas that should be <em>prioritized for biodiversity conservation</em> have been identified on the basis of the international importance of their species and habitats.</div>
+  <p class="lead"><strong>Key Biodiversity Areas (KBAs)</strong> are sites of global significance for biodiversity — identified using standardized, science-based criteria.</p>
+  <table class="tbl">
+    <tr><th>KBA Criterion</th><th>Description</th></tr>
+    <tr><td><strong>Globally threatened species</strong></td><td>Presence of CR, EN, or VU species with restricted ranges</td></tr>
+    <tr><td><strong>Range-restricted species</strong></td><td>Species with very small geographic ranges</td></tr>
+    <tr><td><strong>Endemic species</strong></td><td>Species found only at that site</td></tr>
+    <tr><td><strong>Global congregations</strong></td><td>Sites where a large proportion of a species' population gathers (breeding colonies, migration stopovers)</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Why KBAs Matter</h3>
+    <ul class="bullets hl">
+      <li>Home to species listed as VU, EN, or CR on the IUCN Red List</li>
+      <li>Harbor globally unique or irreplaceable ecosystems</li>
+      <li>Provide essential ecosystem services (carbon sequestration, water purification)</li>
+      <li>International collaboration via the <strong>KBA Partnership</strong> (BirdLife International, CI, IUCN)</li>
+    </ul>
+  </div>
+  <div class="tip">KBAs vs hotspots: Hotspots are large regions defined by endemic plants + habitat loss. KBAs are specific sites defined by threatened species presence. A hotspot may contain many KBAs.</div>
+</div>
+
+<!-- ==================== SLIDE 12: HL 3.2.10 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.2.10</div>
+  <h2>Conflict in Key Biodiversity Areas<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>In KBAs, there is <em>conflict between exploitation, sustainable development and conservation</em>.</div>
+  <table class="tbl">
+    <tr><th>Interest</th><th>Priority</th><th>Stakeholders</th></tr>
+    <tr><td><strong>Economic exploitation</strong></td><td>Income, jobs, resource extraction (logging, mining, agriculture)</td><td>Governments, corporations, local workers</td></tr>
+    <tr><td><strong>Sustainable development</strong></td><td>Balance economic needs with long-term ecological health</td><td>Development agencies, some governments</td></tr>
+    <tr><td><strong>Conservation</strong></td><td>Protect species, ecosystems, and biodiversity</td><td>NGOs, scientists, indigenous communities</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Case Study: Congolese Rainforest (Congo Basin)</h3>
+  <div class="card">
+    <ul class="bullets hl">
+      <li>Second-largest tropical rainforest — critical for gorillas, forest elephants, biodiversity</li>
+      <li><strong>Conflict:</strong> Logging concessions + mineral mining (coltan for electronics) vs conservation of endemic species</li>
+      <li><strong>Stakeholders:</strong> Government (revenue), logging companies (profit), local communities (livelihoods), WWF/IUCN (conservation)</li>
+      <li><strong>Resolution attempts:</strong> Community-based forest management, sustainable logging certifications, protected area expansion</li>
+    </ul>
+  </div>
+  <div class="tip">Exam skill: Identify all stakeholders, their interests, and potential compromises. There is rarely a "right" answer — the IB rewards balanced analysis of trade-offs.</div>
+</div>
+
+<!-- ==================== SLIDE 13: HL 3.2.11 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.2.11</div>
+  <h2>Indigenous Land Management<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Traditional indigenous approaches to land management</em> can be seen as more sustainable but are facing challenges of population growth, economic development, climate change and a lack of governmental support and protection.</div>
+  <table class="tbl">
+    <tr><th>Approach</th><th>How It Works</th><th>Example</th></tr>
+    <tr><td><strong>Controlled burning</strong></td><td>Low-intensity fire to reduce fuel loads, promote new growth, maintain biodiversity</td><td>Australian Aboriginal fire management; millennia-old practice now recognized by modern ecology</td></tr>
+    <tr><td><strong>Rotational harvesting</strong></td><td>Cyclic use of different areas → allows recovery</td><td>Amazonian shifting cultivation (small-scale, short cycles)</td></tr>
+    <tr><td><strong>Sacred groves</strong></td><td>Religiously protected forest patches → de facto conservation</td><td>India's sacred groves; West African forest reserves</td></tr>
+    <tr><td><strong>Traditional fishing</strong></td><td>Seasonal bans, size limits, taboo species</td><td>Pacific Islander reef management systems</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Challenges Facing Indigenous Management</h3>
+    <ul class="bullets hl">
+      <li><strong>Population growth:</strong> Larger communities require more resources → pressure on traditional practices</li>
+      <li><strong>Economic development:</strong> Governments may prioritize mining/logging over indigenous land rights</li>
+      <li><strong>Climate change:</strong> Shifting conditions may render traditional ecological knowledge less applicable</li>
+      <li><strong>Governmental support:</strong> Many indigenous groups lack legal recognition of land tenure → vulnerable to displacement</li>
+    </ul>
+  </div>
+  <div class="tip">Key stat: Indigenous peoples manage or hold tenure over ~25% of the world's land surface, which contains ~80% of remaining biodiversity. Supporting indigenous land rights is one of the most cost-effective conservation strategies.</div>
+</div>
+
+<!-- ==================== SLIDE 14: HL 3.2.12 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.2.12</div>
+  <h2>Environmental Justice<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Environmental justice</em> must be considered when undertaking conservation efforts to address biodiversity loss.</div>
+  <p class="lead">Environmental justice = the fair treatment and meaningful involvement of all people, regardless of background, in environmental decisions. Conservation must not disproportionately burden disadvantaged communities.</p>
+  <table class="tbl">
+    <tr><th>Issue</th><th>Justice Dimension</th><th>Example</th></tr>
+    <tr><td><strong>"Fortress conservation"</strong></td><td>Protected areas created by displacing indigenous/local communities</td><td>Maasai evicted from Serengeti/Ngorongoro for game reserves</td></tr>
+    <tr><td><strong>Unequal burden of loss</strong></td><td>Poorest communities lose resources first; wealthier nations benefit from conservation</td><td>Fishing communities restricted by marine protected areas while industrial trawlers operate offshore</td></tr>
+    <tr><td><strong>Benefit sharing</strong></td><td>Who profits from ecotourism or genetic resources?</td><td>Pharmaceutical biopiracy — using indigenous plant knowledge without compensation</td></tr>
+    <tr><td><strong>Participation</strong></td><td>Local communities excluded from conservation decision-making</td><td>Top-down conservation plans without community consultation</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Just Conservation</h3>
+    <ul class="bullets hl">
+      <li>Involve local and indigenous communities in decision-making</li>
+      <li>Ensure conservation benefits are shared equitably</li>
+      <li>Respect land rights and cultural values</li>
+      <li>Address underlying inequalities that drive unsustainable resource use</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 15: HL 3.2.13 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.2.13</div>
+  <h2>Planetary Boundary: Biosphere Integrity<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The planetary boundary "loss of biosphere integrity" indicates that species <em>extinctions have already crossed a critical threshold</em>.</div>
+  <p class="lead">The <strong>planetary boundaries framework</strong> (Rockström et al., 2009) identifies nine Earth-system processes with thresholds that, if crossed, could cause irreversible environmental change.</p>
+  <div class="card">
+    <h3>Biosphere Integrity — Two Control Variables</h3>
+    <ul class="bullets hl">
+      <li><strong>Genetic diversity:</strong> Measured by extinction rate (species lost per million species-years). Safe limit: &lt;10 E/MSY. <strong>Current: ~100–1,000 E/MSY</strong> → <strong style="color:#c62828">BOUNDARY CROSSED</strong></li>
+      <li><strong>Functional diversity:</strong> Ability of ecosystems to maintain ecological processes. Also declining rapidly.</li>
+    </ul>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>What This Means</h3>
+    <ul class="bullets hl">
+      <li>Current extinction rate is <strong>100–1,000×</strong> the natural background rate</li>
+      <li>We are in what scientists call the <strong>"Sixth Mass Extinction"</strong> — the first caused by a single species (humans)</li>
+      <li>Crossing this boundary threatens ecosystem services that human civilization depends on: pollination, water purification, carbon sequestration, food production</li>
+      <li>Unlike some other boundaries (e.g. ozone), this one is <strong>essentially irreversible</strong> — extinct species do not return</li>
+    </ul>
+  </div>
+  <div class="tip">Exam tip: When discussing planetary boundaries, always cite the extinction rate comparison (current vs background) and emphasize irreversibility — this distinguishes a strong answer from a generic one.</div>
+</div>
+
+<!-- ==================== SLIDE 16: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Natural hazard</strong></td><td>Naturally occurring physical phenomenon with potential to damage environments and communities</td></tr>
+      <tr><td><strong>Overharvesting</strong></td><td>Unsustainable extraction of natural resources beyond their capacity to regenerate</td></tr>
+      <tr><td><strong>Habitat fragmentation</strong></td><td>Breaking continuous habitat into smaller, isolated patches</td></tr>
+      <tr><td><strong>Invasive alien species</strong></td><td>Non-native organisms that cause ecological, economic, or health harm in their new environment</td></tr>
+      <tr><td><strong>IUCN Red List</strong></td><td>Global assessment of species' conservation status, from Least Concern to Extinct</td></tr>
+      <tr><td><strong>Flagship species</strong></td><td>Charismatic species used to raise public awareness and funding for conservation</td></tr>
+      <tr><td><strong>Tragedy of the commons</strong></td><td>Overexploitation of a shared resource by individuals acting in self-interest</td></tr>
+      <tr><td><strong>Biodiversity hotspot</strong></td><td>Region with high endemism (≥1,500 endemic plants) and ≥70% habitat loss</td></tr>
+      <tr><td><strong>Key Biodiversity Area (KBA)</strong></td><td>Site of global significance for biodiversity, identified by standardized criteria</td></tr>
+      <tr><td><strong>Environmental justice</strong></td><td>Fair treatment of all people in environmental decisions, regardless of background</td></tr>
+      <tr><td><strong>Biosphere integrity</strong></td><td>Planetary boundary tracking genetic and functional biodiversity — currently exceeded</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 17: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Relationships</h3>
+    <ul class="bullets">
+      <li><strong>Direct + indirect threats interact</strong> → compounded biodiversity loss greater than sum of parts</li>
+      <li><strong>IUCN criteria → conservation status → drives action</strong> from governments, NGOs, individuals</li>
+      <li><strong>Invasive species exploit weakened ecosystems</strong> → most damaging when combined with other stressors</li>
+      <li><strong>Tragedy of the commons → overexploitation</strong> → solution requires regulation, community governance, or property rights</li>
+      <li><strong>Conservation must include environmental justice</strong> → equitable benefit-sharing, community participation</li>
+    </ul>
+  </div>
+  <div class="tip">For 9-mark essays: Always connect human impacts to both ecological consequences AND societal responses (policy, conservation, justice). Use named examples throughout.</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 13 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">3.2.1 – 3.2.7 (SL) + 3.2.8 – 3.2.13 (HL)</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>

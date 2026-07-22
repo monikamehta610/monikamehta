@@ -116,9 +116,9 @@ export const COURSES: Course[] = [
         slug: "3-2",
         title: "Topic 3.2",
         subtitle: "Human Impact on Biodiversity",
+        htmlFile: "/slides/ess-3-2.html",
         level: "SL & HL",
         unit: "Unit 3: Biodiversity & Conservation",
-        status: "coming-soon",
       },
       {
         slug: "3-3",
