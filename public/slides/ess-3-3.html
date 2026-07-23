@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 3.3</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 3: Biodiversity &amp; Conservation</div>
+    <h1>Conservation<br/>&amp; Regeneration</h1>
+    <p class="subtitle">Subtopic 3.3 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">9 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">3.3.1 – 3.3.9</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">5 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">3.3.10 – 3.3.14</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic examines why we conserve biodiversity, the strategies used (in situ vs ex situ, rewilding, international treaties), how conservation areas are designed, and how success is assessed — all through the lens of different environmental value systems.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. Why Conserve?</strong><br/><span style="font-size:13px;color:var(--muted)">Preservation arguments: aesthetic, ecological, economic, ethical, social</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Strategies &amp; Design</strong><br/><span style="font-size:13px;color:var(--muted)">In situ vs ex situ, CBD, reserve design, rewilding, trophic cascades</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Assessment &amp; Worldviews</strong><br/><span style="font-size:13px;color:var(--muted)">Evaluation metrics, ecocentric vs technocentric views, ecotourism</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How can different strategies for conserving and regenerating natural systems be compared?</li>
+    <li>How do worldviews affect the choices made in protecting natural systems?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 4 hours SL + additional HL hours. Final subtopic in Topic 3: Biodiversity &amp; Conservation.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 3.3.1 ==================== -->
+<div class="slide" data-sec="arguments">
+  <div class="section-tag">3.3.1</div>
+  <h2>Arguments for Preservation</h2>
+  <div class="kt"><strong>Key Understanding</strong>Arguments for species and habitat preservation can be based on <em>aesthetic, ecological, economic, ethical and social</em> justifications.</div>
+  <table class="tbl">
+    <tr><th>Justification</th><th>Argument</th><th>Example</th></tr>
+    <tr><td><strong>Aesthetic</strong></td><td>Natural beauty enhances well-being, inspires art, recreation, tourism</td><td>Grand Canyon, coral reefs — beauty has intrinsic and tourism value</td></tr>
+    <tr><td><strong>Ecological</strong></td><td>Ecosystems provide critical services: climate regulation, water purification, pollination</td><td>Bees pollinate ~75% of food crops; wetlands filter water</td></tr>
+    <tr><td><strong>Economic</strong></td><td>Biodiversity supports agriculture, pharmaceuticals, ecotourism industries</td><td>Kenya's wildlife parks generate $1B+/year; rainforest plants → medicines</td></tr>
+    <tr><td><strong>Ethical</strong></td><td>Species have an inherent right to exist independent of human utility</td><td>"Biorights" — moral duty to protect all life forms</td></tr>
+    <tr><td><strong>Social</strong></td><td>Indigenous communities rely on biodiversity for cultural practices and livelihoods</td><td>Amazonian tribes depend on forest for food, medicine, shelter, identity</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Ecosystem Services (Economic Value)</h3>
+    <ul class="bullets">
+      <li><strong>Provisioning:</strong> Food, water, timber, medicines, genetic resources</li>
+      <li><strong>Regulating:</strong> Carbon sequestration, flood control, water purification, climate regulation</li>
+      <li><strong>Cultural:</strong> Recreation, tourism, spiritual value, education</li>
+      <li><strong>Supporting:</strong> Soil formation, nutrient cycling, photosynthesis</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 4: 3.3.2 ==================== -->
+<div class="slide" data-sec="strategies">
+  <div class="section-tag">3.3.2</div>
+  <h2>In Situ vs Ex Situ Conservation</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Species-based conservation</em> tends to involve ex situ strategies, and <em>habitat-based conservation</em> tends to involve in situ strategies.</div>
+  <img src="/slides/images/ess-3-3-insitu-exsitu.jpg" alt="In Situ vs Ex Situ Conservation Comparison Diagram" class="slide-img" />
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">🛡️ In Situ (Habitat-Based)</h3>
+      <p style="font-size:13px;color:var(--muted)">Protect species within their natural habitats</p>
+      <ul class="bullets" style="font-size:13px">
+        <li>National parks &amp; reserves (Kruger, Serengeti)</li>
+        <li>Marine protected areas (Great Barrier Reef)</li>
+        <li>Wildlife corridors (Yellowstone to Yukon)</li>
+        <li>Community-managed conservancies</li>
+      </ul>
+      <p style="font-size:12px;margin-top:8px"><strong>Advantages:</strong> Protects whole ecosystems; maintains ecological processes; natural evolution.</p>
+      <p style="font-size:12px;color:var(--muted)"><strong>Disadvantages:</strong> Expensive to manage; hard to enforce; potential community displacement.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--orange)">
+      <h3 style="color:var(--orange)">🏛️ Ex Situ (Species-Based)</h3>
+      <p style="font-size:13px;color:var(--muted)">Protect species outside natural habitats</p>
+      <ul class="bullets" style="font-size:13px">
+        <li>Zoos (San Diego Zoo — California condor)</li>
+        <li>Botanic gardens (Kew — endangered plants)</li>
+        <li>Seed banks (Svalbard Global Seed Vault)</li>
+        <li>Captive breeding programs</li>
+      </ul>
+      <p style="font-size:12px;margin-top:8px"><strong>Advantages:</strong> Immediate protection for CR species; controlled breeding; public awareness.</p>
+      <p style="font-size:12px;color:var(--muted)"><strong>Disadvantages:</strong> Expensive; small genetic pool; loss of wild survival skills; does not protect habitat.</p>
+    </div>
+  </div>
+  <div class="tip">Key insight: Ex situ is a "backup" — it buys time while threats in natural habitats are addressed. It works best when paired with in situ restoration.</div>
+</div>
+
+<!-- ==================== SLIDE 5: 3.3.3 ==================== -->
+<div class="slide" data-sec="strategies">
+  <div class="section-tag">3.3.3</div>
+  <h2>Mixed Conservation Approaches</h2>
+  <div class="kt"><strong>Key Understanding</strong>Sometimes a <em>mixed conservation approach</em> is adopted, where both habitat and particular species are considered.</div>
+  <div class="flow" style="margin-top:14px">
+    <div class="flow-node" style="background:#e8f0fa">🏛️ Ex situ breeding</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f0fa">📦 Population builds up</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee">🌿 Reintroduction to wild</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee;border-color:#2e9e5a">🛡️ In situ protection</div>
+  </div>
+  <h3 style="margin-top:16px">Case Study: Giant Panda (China)</h3>
+  <div class="card">
+    <ul class="bullets">
+      <li><strong>Ex situ:</strong> Captive breeding at Chengdu Research Base — population grew from ~1,000 to ~1,800</li>
+      <li><strong>In situ:</strong> 67 panda reserves protecting bamboo forest habitat</li>
+      <li><strong>Mixed:</strong> Captive-bred pandas reintroduced to protected reserves → reclassified from EN to VU (2016)</li>
+      <li><strong>Flagship + umbrella species:</strong> Panda conservation protects the entire Sichuan ecosystem</li>
+    </ul>
+  </div>
+  <h3 style="margin-top:16px">Case Study: Arabian Oryx</h3>
+  <div class="card">
+    <p style="font-size:14px">Once <strong>extinct in the wild</strong> → captive breeding at Phoenix Zoo (1960s) → reintroduced to protected areas in Oman &amp; Saudi Arabia → reclassified as <strong>Vulnerable</strong>. A textbook mixed-approach success story.</p>
+  </div>
+  <div class="tip">Species roles in conservation: <em>Flagship species</em> (pandas, tigers) attract funding. <em>Keystone species</em> (wolves, sea otters) are essential for ecosystem function. <em>Umbrella species</em> (pandas, tigers) need large habitats — protecting them protects everything beneath.</div>
+</div>
+
+<!-- ==================== SLIDE 6: 3.3.4 ==================== -->
+<div class="slide" data-sec="strategies">
+  <div class="section-tag">3.3.4</div>
+  <h2>Convention on Biological Diversity (CBD)</h2>
+  <div class="kt"><strong>Key Understanding</strong>The <em>Convention on Biological Diversity (CBD)</em> is a UN treaty addressing both species-based and habitat-based conservation.</div>
+  <p class="lead">Established at the <strong>Rio Earth Summit (1992)</strong>. 196 parties — one of the most widely adopted environmental agreements.</p>
+  <h3>Three Core Objectives</h3>
+  <div class="flow" style="margin:14px 0">
+    <div class="flow-node" style="background:#e8f8ee;border-color:#2e9e5a">🛡️ Conservation of biodiversity</div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-node" style="background:#e8f0fa;border-color:#3b82f6">♻️ Sustainable resource use</div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-node" style="background:#fff9e6;border-color:#d97706">🤝 Equitable benefit sharing</div>
+  </div>
+  <table class="tbl">
+    <tr><th>Key Mechanism</th><th>What It Does</th></tr>
+    <tr><td><strong>NBSAPs</strong></td><td>National Biodiversity Strategies &amp; Action Plans — each country develops its own conservation roadmap</td></tr>
+    <tr><td><strong>Aichi Targets (2010–2020)</strong></td><td>20 global targets to halt biodiversity loss — partially achieved; informed Post-2020 Kunming-Montreal framework</td></tr>
+    <tr><td><strong>Nagoya Protocol</strong></td><td>Fair and equitable sharing of benefits from genetic resources (prevents biopiracy)</td></tr>
+    <tr><td><strong>Cartagena Protocol</strong></td><td>Safe handling of genetically modified organisms (GMOs) to prevent biodiversity harm</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Challenges</h3>
+    <ul class="bullets">
+      <li><strong>No enforcement:</strong> Targets are voluntary — countries set their own pace</li>
+      <li><strong>Funding gaps:</strong> Biodiversity-rich but resource-poor countries struggle to implement NBSAPs</li>
+      <li><strong>Slow progress:</strong> Biodiversity loss continues despite international frameworks</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 7: 3.3.5 ==================== -->
+<div class="slide" data-sec="strategies">
+  <div class="section-tag">3.3.5</div>
+  <h2>Habitat Conservation Strategies</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Habitat conservation strategies</em> protect species by conservation of their natural environment. This may require protection of wild areas or active management.</div>
+  <table class="tbl">
+    <tr><th>Strategy</th><th>How It Works</th><th>Example</th></tr>
+    <tr><td><strong>Protected areas</strong></td><td>National parks, marine reserves restrict human activity</td><td>Kruger NP (South Africa); Great Barrier Reef MPA</td></tr>
+    <tr><td><strong>Habitat restoration</strong></td><td>Replanting native vegetation, rehabilitating wetlands</td><td>Everglades Restoration Project (Florida)</td></tr>
+    <tr><td><strong>Wildlife corridors</strong></td><td>Connect fragmented habitats → allow movement, gene flow</td><td>Yellowstone to Yukon Corridor (Y2Y)</td></tr>
+    <tr><td><strong>Eco-sanctuaries</strong></td><td>Fenced reserves excluding invasive predators</td><td>Zealandia (New Zealand) — predators excluded, native species recover</td></tr>
+    <tr><td><strong>Sustainable land management</strong></td><td>Agroforestry, buffer zones, sustainable fisheries</td><td>Buffer zones around Amazon reserves</td></tr>
+  </table>
+  <div class="tip">Key principle: Habitat conservation is more effective than species-based approaches because it protects entire communities and ecological processes, not just individual species.</div>
+</div>
+
+<!-- ==================== SLIDE 8: 3.3.6 ==================== -->
+<div class="slide" data-sec="strategies">
+  <div class="section-tag">3.3.6</div>
+  <h2>Reserve Design &amp; UNESCO Biosphere Reserves</h2>
+  <div class="kt"><strong>Key Understanding</strong>Effective conservation of biodiversity in nature reserves and national parks <em>depends on</em> an understanding of <em>the biology of target species</em> and on the effect of <em>the size and shape of conservation areas</em>.</div>
+  <img src="/slides/images/ess-3-3-reserve-design.jpg" alt="Nature Reserve Design Principles & UNESCO Biosphere Reserve Zonation" class="slide-img" />
+  <h3 style="margin-top:16px">Design Criteria for Protected Areas</h3>
+  <table class="tbl">
+    <tr><th>Factor</th><th>Consideration</th></tr>
+    <tr><td><strong>Size</strong></td><td>Larger reserves support more species, wider-ranging animals, and more habitats</td></tr>
+    <tr><td><strong>Shape</strong></td><td>Circular = least edge effects; long/thin = more edge exposed to human disturbance</td></tr>
+    <tr><td><strong>Edge effects</strong></td><td>Boundary zones have different conditions (light, wind, invasive species) — minimize by increasing interior-to-edge ratio</td></tr>
+    <tr><td><strong>Connectivity</strong></td><td>Corridors link reserves → allow migration, gene flow, seasonal movement</td></tr>
+    <tr><td><strong>Community involvement</strong></td><td>Without local support, reserves fail — must provide alternatives and jobs</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>SLOSS Debate</h3>
+    <p style="font-size:14px"><strong>Single Large vs Several Small:</strong> Is one large reserve better, or several smaller ones? A large reserve supports wide-ranging species and minimizes edge effects. Several smaller reserves may cover more habitat types. <strong>Best answer: depends on the species and landscape</strong> — corridors connecting small reserves can combine benefits of both.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: 3.3.7 ==================== -->
+<div class="slide" data-sec="regeneration">
+  <div class="section-tag">3.3.7</div>
+  <h2>Rewilding</h2>
+  <div class="kt"><strong>Key Understanding</strong>Natural processes in ecosystems can be regenerated by <em>rewilding</em>.</div>
+  <p class="lead">Rewilding = restoring ecosystems by reintroducing species, reconnecting habitats, and minimizing human intervention — allowing natural processes to self-regulate.</p>
+  <img src="/slides/images/ess-3-3-rewilding-cascade.jpg" alt="Rewilding and Trophic Cascade Yellowstone Case Study Diagram" class="slide-img" />
+  <h3 style="margin-top:16px">Rewilding Methods</h3>
+  <table class="tbl">
+    <tr><th>Method</th><th>Mechanism</th><th>Example</th></tr>
+    <tr><td><strong>Reintroduce apex predators</strong></td><td>Regulate prey populations → trophic cascade restores balance</td><td>Yellowstone wolves — controlled elk → vegetation recovered → beavers, songbirds returned</td></tr>
+    <tr><td><strong>Reconnect habitats</strong></td><td>Corridors allow species movement, gene flow, migration</td><td>Yellowstone to Yukon Corridor (Y2Y)</td></tr>
+    <tr><td><strong>Cessation of agriculture</strong></td><td>Stop farming → allow natural succession to proceed</td><td>Oostvaardersplassen (Netherlands) — farmland → self-regulating grassland</td></tr>
+    <tr><td><strong>Minimize human intervention</strong></td><td>Hands-off management → ecosystem self-regulates</td><td>Knepp Estate (England) — abandoned farmland → nightingales, turtle doves return</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 10: 3.3.8 ==================== -->
+<div class="slide" data-sec="regeneration">
+  <div class="section-tag">3.3.8</div>
+  <h2>Conservation at Multiple Levels</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Conservation and regeneration measures</em> can be used to reverse the decline in biodiversity to ensure a safe operating space for humanity within the biodiversity planetary boundary.</div>
+  <table class="tbl">
+    <tr><th>Level</th><th>Actions</th><th>Example</th></tr>
+    <tr><td><strong>Individual</strong></td><td>Plant native species, reduce plastic, volunteer, citizen science</td><td>Gardening for pollinators; bird count participation</td></tr>
+    <tr><td><strong>Community</strong></td><td>Local reforestation, habitat restoration, community conservancies</td><td>Green Belt Movement (Kenya) — community tree planting</td></tr>
+    <tr><td><strong>National</strong></td><td>Laws, protected areas, endangered species protection</td><td>Brazil's Forest Code; India's Project Tiger</td></tr>
+    <tr><td><strong>International</strong></td><td>Treaties, shared targets, funding mechanisms</td><td>CBD, CITES, Paris Agreement, Aichi Targets</td></tr>
+  </table>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">🛡️ Conservation</h3>
+      <p style="font-size:13px">Protect what exists — prevent further loss. Maintains current biodiversity levels.</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px"><em>Example:</em> India's Project Tiger — reserves protect Bengal tigers from poaching and habitat loss.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">🌱 Regeneration</h3>
+      <p style="font-size:13px">Restore what was lost — rebuild damaged ecosystems. Increases biodiversity beyond current levels.</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px"><em>Example:</em> China's Loess Plateau — eroded land restored to productive farmland and forest.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 11: 3.3.9 ==================== -->
+<div class="slide" data-sec="perspectives">
+  <div class="section-tag">3.3.9</div>
+  <h2>Environmental Perspectives &amp; Conservation</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Environmental perspectives and value systems</em> can impact the choice of conservation strategies selected by a society.</div>
+  <table class="tbl">
+    <tr><th>Perspective</th><th>Conservation Approach</th><th>Example</th></tr>
+    <tr><td><strong>Ecocentric</strong></td><td>Focus on intrinsic value of ecosystems; minimal intervention; in situ conservation; rewilding</td><td>Oostvaardersplassen — hands-off rewilding; national parks with no human interference</td></tr>
+    <tr><td><strong>Anthropocentric / Technocentric</strong></td><td>Value biodiversity for human benefit; ex situ strategies; scientific intervention; sustainable use</td><td>Zoos, seed banks, ecotourism, gene banks; captive breeding for species recovery</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Key Success Factors</h3>
+    <ul class="bullets">
+      <li><strong>Community support:</strong> Without local buy-in, conservation fails — must align with community needs</li>
+      <li><strong>Adequate funding:</strong> Long-term financial commitment required</li>
+      <li><strong>Education &amp; awareness:</strong> Public understanding drives sustainable behavior</li>
+      <li><strong>Legislation:</strong> Strong legal frameworks protect biodiversity</li>
+      <li><strong>Scientific research:</strong> Data-driven decisions guide interventions</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 12: HL 3.3.10 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.3.10</div>
+  <h2>Factors Affecting Conservation Success<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Success in conserving and restoring biodiversity by international, governmental and non-governmental organizations <em>depends on their use of media, speed of response, diplomatic constraints, financial resources and political influence</em>.</div>
+  <table class="tbl">
+    <tr><th>Factor</th><th>How It Affects Success</th></tr>
+    <tr><td><strong>Media use</strong></td><td>Public awareness campaigns drive funding and political pressure (e.g. WWF panda campaigns)</td></tr>
+    <tr><td><strong>Speed of response</strong></td><td>Rapid action can prevent extinction (emergency captive breeding); slow responses allow decline</td></tr>
+    <tr><td><strong>Diplomatic constraints</strong></td><td>International politics can slow or block conservation (e.g. whale hunting quotas in IWC)</td></tr>
+    <tr><td><strong>Financial resources</strong></td><td>Funding determines scale of operations — protected area management, anti-poaching patrols, research</td></tr>
+    <tr><td><strong>Political influence</strong></td><td>Lobbying for legislation, trade agreements (CITES), international treaties</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Comparing Organizations</h3>
+    <table class="tbl">
+      <tr><th>Org</th><th>Type</th><th>Strengths</th><th>Limitations</th></tr>
+      <tr><td><strong>WWF</strong></td><td>NGO</td><td>Global brand, media savvy, flagship species campaigns</td><td>Depends on donations; may prioritize charismatic species</td></tr>
+      <tr><td><strong>IUCN</strong></td><td>Intergovernmental</td><td>Scientific credibility, Red List, policy influence</td><td>No enforcement power; relies on member states</td></tr>
+      <tr><td><strong>CITES</strong></td><td>Treaty</td><td>Legally binding trade regulations</td><td>Enforcement varies; illegal trade persists</td></tr>
+      <tr><td><strong>National agencies</strong></td><td>Government</td><td>Legal authority, on-the-ground management</td><td>Political changes can reverse protections; underfunding</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 13: HL 3.3.11 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.3.11</div>
+  <h2>Positive Feedback Loops from Rewilding<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Positive feedback loops that enhance biodiversity</em> and promote ecosystem equilibrium can be triggered by rewilding and habitat restoration efforts.</div>
+  <p class="lead">Rewilding can create self-reinforcing cycles where initial improvements trigger further gains — a <strong>trophic cascade</strong>.</p>
+  <div class="flow" style="margin:14px 0">
+    <div class="flow-node" style="background:#fee2e2;border-color:#b91c1c">🐺 Apex predator reintroduced</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f0fa">🦌 Herbivores controlled</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee">🌿 Vegetation recovers</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee;border-color:#2e9e5a">🔄 Ecosystem equilibrium</div>
+  </div>
+  <div class="card">
+    <h3>Case Study: Yellowstone Wolves (Positive Feedback Loop)</h3>
+    <ul class="bullets hl">
+      <li><strong>Step 1:</strong> Wolves reintroduced (1995) → elk populations reduced</li>
+      <li><strong>Step 2:</strong> Willow and aspen recovered along rivers → stabilized banks</li>
+      <li><strong>Step 3:</strong> Beavers returned (building dams from recovered willows) → created new ponds</li>
+      <li><strong>Step 4:</strong> Ponds supported fish, amphibians, insects → more birds returned</li>
+      <li><strong>Step 5:</strong> Increased vegetation → cooler water temperatures → improved aquatic habitat</li>
+      <li><strong>Step 6:</strong> Self-sustaining — the ecosystem now maintains itself with minimal intervention</li>
+    </ul>
+  </div>
+  <div class="tip">Key concept: A single intervention (wolf reintroduction) triggered a cascade of positive feedback loops — each improvement reinforced the next, creating a self-sustaining cycle of recovery.</div>
+</div>
+
+<!-- ==================== SLIDE 14: HL 3.3.12 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.3.12</div>
+  <h2>Rewilding: Benefits &amp; Limitations<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Rewilding</em> projects have both benefits and limitations.</div>
+  <div class="card-grid cols-2">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">✅ Benefits</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li>Restores natural processes and ecosystem function</li>
+        <li>Increases biodiversity through trophic cascades</li>
+        <li>Enhances ecosystem resilience to climate change</li>
+        <li>Carbon sequestration in recovering vegetation</li>
+        <li>Economic opportunities through ecotourism</li>
+        <li>Cheaper long-term than intensive management</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #c44">
+      <h3 style="color:#c44">⚠️ Limitations</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li>Conflict with local communities (land use, livestock predation)</li>
+        <li>Slow process — results may take decades</li>
+        <li>Unpredictable outcomes — ecosystems may not recover as expected</li>
+        <li>Requires large land areas</li>
+        <li>Reintroduced predators may conflict with agriculture</li>
+        <li>Political and public opposition (fear of predators)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Case Study: Knepp Estate (England)</h3>
+    <ul class="bullets hl">
+      <li><strong>Before:</strong> Intensive arable farming — unsustainable, soil degradation, low biodiversity</li>
+      <li><strong>Rewilding (2001–):</strong> Abandoned farming → allowed natural succession → introduced free-roaming cattle, pigs, horses (as proxy wild herbivores)</li>
+      <li><strong>Results:</strong> Nightingales, turtle doves, purple emperor butterflies returned; soil quality improved; species diversity increased dramatically</li>
+    </ul>
+  </div>
+  <div class="tip">Exam tip: When evaluating rewilding, always present both sides — benefits AND limitations — with specific examples. The IB rewards balanced analysis.</div>
+</div>
+
+<!-- ==================== SLIDE 15: HL 3.3.13 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.3.13</div>
+  <h2>Assessing Conservation Success<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The <em>success of conservation or regeneration measures needs to be assessed</em>.</div>
+  <table class="tbl">
+    <tr><th>Indicator</th><th>What It Shows</th></tr>
+    <tr><td><strong>Species population trends</strong></td><td>Are target species increasing, stable, or declining?</td></tr>
+    <tr><td><strong>Species richness &amp; diversity</strong></td><td>Is the number and evenness of species improving?</td></tr>
+    <tr><td><strong>Habitat area &amp; quality</strong></td><td>Has protected area expanded? Is habitat condition improving?</td></tr>
+    <tr><td><strong>Ecosystem function</strong></td><td>Are ecological processes (nutrient cycling, pollination) restored?</td></tr>
+    <tr><td><strong>Community well-being</strong></td><td>Are local communities benefiting (income, food security, participation)?</td></tr>
+  </table>
+  <h3 style="margin-top:16px">Case Studies for Assessment</h3>
+  <table class="tbl">
+    <tr><th>Site</th><th>Conservation Effort</th><th>Assessment</th></tr>
+    <tr><td><strong>Sichuan Giant Panda Sanctuaries</strong> (China)</td><td>Mixed approach: 67 reserves + captive breeding</td><td>Population ↑ from ~1,000 to ~1,800; reclassified EN → VU; habitat protection effective but climate change threatens bamboo</td></tr>
+    <tr><td><strong>Virachey NP</strong> (Cambodia)</td><td>WCS-managed protected area</td><td>Challenges: illegal logging, poaching, limited funding; some species stable but overall biodiversity still under pressure</td></tr>
+    <tr><td><strong>Bukit Piton Forest Reserve</strong> (Malaysia)</td><td>WWF habitat restoration</td><td>Reforestation increased forest cover; orangutan population recovering; community engagement improving</td></tr>
+  </table>
+  <div class="tip">Exam skill: When asked to "evaluate success," discuss what has improved AND what still needs work. A balanced answer acknowledges both achievements and ongoing challenges.</div>
+</div>
+
+<!-- ==================== SLIDE 16: HL 3.3.14 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 3.3.14</div>
+  <h2>Ecotourism<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Ecotourism</em> can increase interdependence of local communities and increase biodiversity by generating income and providing funds for protecting areas, but there can also be negative societal and ecological impacts.</div>
+  <div class="card-grid cols-2">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">✅ Benefits</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li><strong>Funding:</strong> Revenue supports protected area management and anti-poaching</li>
+        <li><strong>Local employment:</strong> Guides, lodges, crafts — alternative to resource extraction</li>
+        <li><strong>Education:</strong> Tourists become conservation advocates</li>
+        <li><strong>Incentive:</strong> Communities value live animals over dead ones</li>
+        <li><strong>Example:</strong> Costa Rica — ecotourism generates $4B/year; forest cover doubled from 26% to 52%</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #c44">
+      <h3 style="color:#c44">⚠️ Negative Impacts</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li><strong>Ecological:</strong> Wildlife disturbance, habitat degradation from infrastructure</li>
+        <li><strong>Social:</strong> Displacement of local communities, cultural commodification</li>
+        <li><strong>Economic:</strong> Revenue leakage to international operators</li>
+        <li><strong>Over-tourism:</strong> Visitor numbers exceeding ecological carrying capacity</li>
+        <li><strong>Example:</strong> Galápagos — visitor numbers growing faster than infrastructure can handle</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Successful Ecotourism Model</h3>
+    <ul class="bullets hl">
+      <li>Revenue stays local (community-owned lodges, guide cooperatives)</li>
+      <li>Visitor numbers limited (carrying capacity respected)</li>
+      <li>Strict codes of conduct (distance from wildlife, no feeding)</li>
+      <li>Education integrated into the experience</li>
+      <li>Benefits reach marginalized groups, not just elites</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 17: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Ecosystem services</strong></td><td>Benefits provided by ecosystems: provisioning, regulating, cultural, supporting</td></tr>
+      <tr><td><strong>In situ conservation</strong></td><td>Protecting species within their natural habitats (national parks, reserves)</td></tr>
+      <tr><td><strong>Ex situ conservation</strong></td><td>Protecting species outside natural habitats (zoos, seed banks, captive breeding)</td></tr>
+      <tr><td><strong>Mixed conservation approach</strong></td><td>Combining in situ and ex situ methods (e.g. captive breed then release)</td></tr>
+      <tr><td><strong>CBD</strong></td><td>Convention on Biological Diversity — UN treaty for biodiversity conservation (1992)</td></tr>
+      <tr><td><strong>NBSAP</strong></td><td>National Biodiversity Strategy and Action Plan — each CBD country's conservation roadmap</td></tr>
+      <tr><td><strong>Wildlife corridor</strong></td><td>Strip of habitat connecting fragmented reserves → allows migration and gene flow</td></tr>
+      <tr><td><strong>Edge effects</strong></td><td>Changes in community composition at habitat boundaries due to adjacent land use</td></tr>
+      <tr><td><strong>SLOSS debate</strong></td><td>Single Large vs Several Small reserves — which is more effective for conservation?</td></tr>
+      <tr><td><strong>Biosphere reserve</strong></td><td>UNESCO-designated area with core, buffer, and transition zones balancing conservation and development</td></tr>
+      <tr><td><strong>Rewilding</strong></td><td>Restoring ecosystems through species reintroduction, habitat connectivity, and minimal human intervention</td></tr>
+      <tr><td><strong>Trophic cascade</strong></td><td>Indirect effects across trophic levels triggered by a top predator</td></tr>
+      <tr><td><strong>Ecotourism</strong></td><td>Responsible tourism that generates income while protecting biodiversity and benefiting local communities</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 18: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Relationships</h3>
+    <ul class="bullets">
+      <li><strong>Arguments for conservation</strong> = aesthetic + ecological + economic + ethical + social</li>
+      <li><strong>In situ</strong> (habitat) vs <strong>ex situ</strong> (species) — mixed approaches combine both</li>
+      <li><strong>Reserve design</strong> = size + shape + edge effects + connectivity + community involvement</li>
+      <li><strong>Rewilding</strong> → trophic cascades → positive feedback loops → self-sustaining recovery</li>
+      <li><strong>Ecotourism</strong> = income + biodiversity protection + community benefit — all three required</li>
+      <li><strong>Perspectives matter:</strong> Ecocentric → rewilding, parks; Anthropocentric → zoos, sustainable use</li>
+    </ul>
+  </div>
+  <div class="tip">For 9-mark essays: Always link conservation strategy to an environmental perspective (ecocentric vs anthropocentric). Use named case studies. Discuss trade-offs, not just benefits.</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 14 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">3.3.1 – 3.3.9 (SL) + 3.3.10 – 3.3.14 (HL)</p>
+    <p style="font-size:12px;color:var(--blue);margin-top:4px">🎉 Topic 3: Biodiversity &amp; Conservation is complete!</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
