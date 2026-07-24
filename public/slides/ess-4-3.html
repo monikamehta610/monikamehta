@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 4.3</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 4: Water</div>
+    <h1>Aquatic Food<br/>Production Systems</h1>
+    <p class="subtitle">Subtopic 4.3 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">10 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">4.3.1 – 4.3.10</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">6 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">4.3.11 – 4.3.16</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic examines aquatic food webs, human demand for seafood, overexploitation and fishery collapse, sustainable management (MSY, MPAs, policy), aquaculture, and climate change impacts on aquatic ecosystems.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. Aquatic Food Webs</strong><br/><span style="font-size:13px;color:var(--muted)">Phytoplankton &amp; macrophytes, human demand, unsustainable harvesting</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Fishery Collapse &amp; Solutions</strong><br/><span style="font-size:13px;color:var(--muted)">Grand Banks cod, MSY, MPAs, policy &amp; aquaculture</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Governance &amp; Ethics (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">Stock assessments, MSY risks, UNCLOS EEZs, marine mammal ethics</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How are our diets impacted by our values and perspectives?</li>
+    <li>To what extent are aquatic food systems sustainable?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 4 hours SL + additional HL hours. Third subtopic in Topic 4: Water.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 4.3.1 ==================== -->
+<div class="slide" data-sec="foodwebs">
+  <div class="section-tag">4.3.1</div>
+  <h2>Aquatic Food Webs</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Phytoplankton</em> and <em>macrophytes</em> provide energy for freshwater and marine food webs.</div>
+  <img src="/slides/images/ess-4-3-aquatic-food-web.jpg" alt="Aquatic Food Web 4 Trophic Levels Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Producer</th><th>Type &amp; Description</th><th>Ecological Significance</th></tr>
+    <tr><td><strong>Phytoplankton</strong></td><td>Microscopic photosynthesizers (diatoms, dinoflagellates) floating in water column</td><td>Foundation of open-ocean &amp; lake food webs; produce ~50% of Earth's oxygen</td></tr>
+    <tr><td><strong>Macrophytes</strong></td><td>Visible aquatic plants (seaweed, kelp, seagrass, water lilies)</td><td>Primary production in shallow coastal &amp; freshwater zones; provide habitat &amp; shelter</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 4: 4.3.2 & 4.3.3 ==================== -->
+<div class="slide" data-sec="foodwebs">
+  <div class="section-tag">4.3.2 &amp; 4.3.3</div>
+  <h2>Human Consumption &amp; Surging Global Demand</h2>
+  <div class="kt"><strong>Key Understanding</strong>Global demand for seafood and aquatic plants (seaweed, spirulina) is rising rapidly due to population growth, health awareness, and economic development.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">📈 Rising Consumption</h3>
+      <p style="font-size:13px">Per capita fish consumption has doubled since the 1960s (9.9 kg → 20.5 kg/year per person). Total global fish production reached 179 million tonnes.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">🌿 Seaweed &amp; Flora Boom</h3>
+      <p style="font-size:13px">Seaweed farming exceeds 30 million tonnes/year, used for food (nori), bio-plastics, cosmetics, and carbon sequestration.</p>
+    </div>
+  </div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Category</th><th>Examples</th><th>Nutritional &amp; Social Value</th></tr>
+    <tr><td><strong>Marine Fauna</strong></td><td>Tuna, salmon, cod, shrimp, sardines</td><td>Essential animal protein, omega-3 fatty acids, micronutrients</td></tr>
+    <tr><td><strong>Freshwater Fauna</strong></td><td>Tilapia, carp, catfish, crawfish</td><td>Crucial local protein source in LEDCs and rural communities</td></tr>
+    <tr><td><strong>Flora</strong></td><td>Kelp, nori, spirulina, wakame</td><td>Rich in iodine, vitamins, minerals; low carbon footprint</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 5: 4.3.4 & 4.3.5 ==================== -->
+<div class="slide" data-sec="overexploitation">
+  <div class="section-tag">4.3.4 &amp; 4.3.5</div>
+  <h2>Unsustainable Harvesting &amp; Fishery Collapse</h2>
+  <div class="kt"><strong>Key Understanding</strong>Increasing demand has driven <em>destructive harvesting practices</em> (bottom trawling, blast fishing, ghost gear) leading to major fishery collapses.</div>
+  <img src="/slides/images/ess-4-3-fisheries-aquaculture.jpg" alt="Wild Capture Fisheries vs Aquaculture Environmental Comparison Diagram" class="slide-img" />
+  <div class="card" style="margin-top:14px">
+    <h3>Classic Case Study: Grand Banks Cod Collapse (Newfoundland, 1992)</h3>
+    <ul class="bullets">
+      <li>Industrial trawling + sonar technology + government over-allocation depleted Atlantic cod by <strong>&gt;99%</strong>.</li>
+      <li>In 1992, Canada declared a complete fishing moratorium, laying off <strong>30,000+ fishers</strong> (largest layoff in Canadian history).</li>
+      <li>Even 30+ years later, cod stocks have failed to recover due to altered food web dynamics.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 6: 4.3.6 ==================== -->
+<div class="slide" data-sec="management">
+  <div class="section-tag">4.3.6</div>
+  <h2>Maximum Sustainable Yield (MSY)</h2>
+  <div class="kt"><strong>Key Understanding</strong>The <em>maximum sustainable yield (MSY)</em> is the highest annual catch that can be sustained without long-term population decline (occurs at $K/2$).</div>
+  <img src="/slides/images/ess-4-3-msy-curve.jpg" alt="Maximum Sustainable Yield Population Growth Curve Diagram" class="slide-img" />
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">🎯 Maximum Growth at $K/2$</h3>
+      <p style="font-size:13px">Population growth rate is highest at intermediate density (half carrying capacity). Harvesting equal to this rate keeps stock constant.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">⚠️ Overfishing Hazard</h3>
+      <p style="font-size:13px">Catching above MSY reduces stock size below $K/2$, reducing reproduction speed and leading toward collapse.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 7: 4.3.7 ==================== -->
+<div class="slide" data-sec="climate">
+  <div class="section-tag">4.3.7</div>
+  <h2>Climate Change &amp; Ocean Acidification</h2>
+  <div class="kt"><strong>Key Understanding</strong>Warming water temperatures and ocean acidification disrupt aquatic ecosystems, risking widespread species mortality.</div>
+  <table class="tbl">
+    <tr><th>Stress Driver</th><th>Mechanism</th><th>Ecosystem Impact</th></tr>
+    <tr><td><strong>SST Warming</strong></td><td>High sea surface temperatures cause corals to expel zooxanthellae algae</td><td>Mass coral bleaching (e.g. Great Barrier Reef lost ~50% corals)</td></tr>
+    <tr><td><strong>Ocean Acidification</strong></td><td>Dissolved $\text{CO}_2$ forms carbonic acid, reducing carbonate ions ($\text{CO}_3^{2-}$)</td><td>Shell dissolution &amp; growth inhibition in pteropods, oysters, and reefs</td></tr>
+    <tr><td><strong>Thermal Shifts</strong></td><td>Fish species migrate poleward pursuing cooler water temperatures</td><td>Disrupts traditional fisheries &amp; local marine food webs</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 8: 4.3.8 & 4.3.9 ==================== -->
+<div class="slide" data-sec="management">
+  <div class="section-tag">4.3.8 &amp; 4.3.9</div>
+  <h2>Policy, Marine Protected Areas (MPAs) &amp; Consumer Power</h2>
+  <div class="kt"><strong>Key Understanding</strong>MPAs, mesh size legislation, quotas, and MSC eco-labeling protect aquatic food webs and restore fish yields.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card">
+      <h3 style="color:var(--blue)">🛡️ Marine Protected Areas (MPAs)</h3>
+      <p style="font-size:13px">No-take zones allow fish to reach maturity and reproduce. The "spillover effect" replenishes fish stocks in adjacent fishing zones (e.g. Ross Sea MPA, Great Barrier Reef).</p>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--blue)">🏷️ Policy &amp; Consumer Labels</h3>
+      <p style="font-size:13px">Enforcing net mesh size rules lets juvenile fish escape. Consumer choice via MSC (Marine Stewardship Council) certification incentivizes sustainable fishery practices.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: 4.3.10 ==================== -->
+<div class="slide" data-sec="aquaculture">
+  <div class="section-tag">4.3.10</div>
+  <h2>Aquaculture &amp; Sustainable Models</h2>
+  <div class="kt"><strong>Key Understanding</strong>Aquaculture (farming fish, crustaceans, algae) meets global demand but risks nutrient pollution, disease spread, and wild feed depletion.</div>
+  <div class="card-grid cols-2">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">✅ Benefits</h3>
+      <ul class="bullets" style="font-size:13px">
+        <li>Relieves fishing pressure on wild marine stocks</li>
+        <li>Provides 46%+ of global seafood supply</li>
+        <li>Creates employment in coastal communities</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">⚠️ Environmental Risks</h3>
+      <ul class="bullets" style="font-size:13px">
+        <li>Eutrophication from uneaten feed &amp; fish waste</li>
+        <li>Sea lice &amp; disease transmission to wild fish</li>
+        <li>Mangrove deforestation for coastal shrimp ponds</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Sustainable Innovation: Integrated Multi-Trophic Aquaculture (IMTA)</h3>
+    <p style="font-size:13px">IMTA combines finfish (fed species) with mussels/oysters (organic extractors) and kelp/seaweed (inorganic nutrient absorption) in a single integrated system, turning waste into valuable co-products.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 10: HL 4.3.11 & 4.3.12 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.3.11 &amp; 4.3.12</div>
+  <h2>Interconnected Dynamics &amp; Stock Assessments<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Stratification, nutrient mixing, and upwellings dictate aquatic primary productivity. Stock assessments require rigorous scientific monitoring.</div>
+  <div class="flow" style="margin:16px 0">
+    <div class="flow-node" style="background:#fee2e2">🌡️ Thermal Stratification</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fee2e2">🚫 Blocks Nutrient Mixing</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fee2e2">📉 Low Surface Phytoplankton</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fee2e2;border-color:#b91c1c">🐟 Reduced Fish Biomass</div>
+  </div>
+  <div class="card">
+    <h3>Stock Assessment Tools</h3>
+    <p style="font-size:13px">Fisheries use acoustic sonar surveys, catch-per-unit-effort (CPUE) logs, and environmental DNA (eDNA) sampling to estimate biomass. Inaccurate data leads to quota over-allocation and stock collapse.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 11: HL 4.3.13 & 4.3.14 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.3.13 &amp; 4.3.14</div>
+  <h2>Risks of Harvesting at MSY &amp; Multi-Stakeholder Recovery<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Harvesting at exactly MSY leaves no safety buffer for bad climate years. Fishery recovery requires multi-stakeholder cooperation.</div>
+  <div class="card-grid cols-2">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">⚠️ MSY Management Risks</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li>Ignores annual environmental fluctuations (El Niño, warming)</li>
+        <li>Assumes perfect population data without accounting for illegal (IUU) fishing</li>
+        <li>Precautionary approach advocates fishing below MSY</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">🤝 Recovery Alliance</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li>Governments (strict quota enforcement &amp; MPAs)</li>
+        <li>Industry (selective gear &amp; vessel tracking)</li>
+        <li>Supermarkets &amp; Retailers (sourcing only MSC-certified fish)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 12: HL 4.3.15 & 4.3.16 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.3.15 &amp; 4.3.16</div>
+  <h2>UNCLOS EEZs &amp; Marine Mammal Harvesting Ethics<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>UNCLOS grants 200 nautical mile (370 km) EEZs to coastal states, leaving 60% of oceans as high seas. Marine mammal harvesting sparks ethical conflicts.</div>
+  <div class="card" style="margin-top:14px">
+    <h3>UNCLOS Maritime Zones</h3>
+    <ul class="bullets hl">
+      <li><strong>Exclusive Economic Zone (EEZ):</strong> Coastal nation controls all living and mineral resources up to 370 km from shore.</li>
+      <li><strong>High Seas (60% of oceans):</strong> Outside national jurisdiction; prone to "Tragedy of the Commons" and overfishing until recent High Seas Treaty agreements.</li>
+    </ul>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Ethical Conflicts in Marine Mammal Harvesting</h3>
+    <p style="font-size:13px">Commercial whaling/sealing (Japan, Norway, Iceland) vs. International Whaling Commission (IWC) moratorium vs. Indigenous subsistence rights (Inuit whale hunting). Balances animal sentience rights against cultural heritage and food sovereignty.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 13: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Phytoplankton</strong></td><td>Microscopic photosynthesizers forming the foundation of aquatic food webs</td></tr>
+      <tr><td><strong>Overexploitation</strong></td><td>Harvesting wild species faster than natural reproduction can replace them</td></tr>
+      <tr><td><strong>Bottom Trawling</strong></td><td>Dragging heavy weighted nets across seafloor, destroying benthic habitats and causing high bycatch</td></tr>
+      <tr><td><strong>Maximum Sustainable Yield (MSY)</strong></td><td>Highest annual catch rate that maintains stock equilibrium (at $K/2$)</td></tr>
+      <tr><td><strong>Marine Protected Area (MPA)</strong></td><td>Designated ocean zone restricting fishing to allow ecosystem recovery &amp; spillover</td></tr>
+      <tr><td><strong>Aquaculture</strong></td><td>Farming aquatic organisms (fish, crustaceans, mollusks, algae) under controlled conditions</td></tr>
+      <tr><td><strong>IMTA</strong></td><td>Integrated Multi-Trophic Aquaculture combining fed species, shellfish, and seaweed to recycle waste</td></tr>
+      <tr><td><strong>UNCLOS</strong></td><td>UN Convention on the Law of the Sea establishing 200 nm (370 km) EEZs</td></tr>
+      <tr><td><strong>EEZ</strong></td><td>Exclusive Economic Zone where coastal states hold sovereign resource rights</td></tr>
+      <tr><td><strong>IWC Moratorium</strong></td><td>1986 global ban on commercial whaling by International Whaling Commission</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 14: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>Food web base:</strong> Phytoplankton produce 50% of Earth's $\text{O}_2$.</li>
+      <li><strong>Grand Banks Cod lesson:</strong> Tech + overcapacity + high quotas = total stock collapse.</li>
+      <li><strong>MSY mechanics:</strong> Occurs at $K/2$; harvesting at exact MSY carries high risk without safety buffers.</li>
+      <li><strong>HL UNCLOS &amp; High Seas:</strong> EEZ = 370 km; High Seas = 60% of ocean subject to open-access depletion.</li>
+    </ul>
+  </div>
+  <div class="tip">Exam tip: Evaluate aquaculture by contrasting traditional open-cage salmon farming (disease, pollution) with IMTA systems (waste recycling, multi-product revenue).</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 16 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">4.3.1 – 4.3.10 (SL) + 4.3.11 – 4.3.16 (HL)</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>

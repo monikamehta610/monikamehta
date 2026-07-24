@@ -148,9 +148,9 @@ export const COURSES: Course[] = [
         slug: "4-3",
         title: "Topic 4.3",
         subtitle: "Aquatic Food Production Systems",
+        htmlFile: "/slides/ess-4-3.html",
         level: "SL & HL",
         unit: "Unit 4: Water",
-        status: "coming-soon",
       },
       {
         slug: "4-4",
