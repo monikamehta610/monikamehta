@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 4.2</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 4: Water</div>
+    <h1>Water Access, Use<br/>&amp; Security</h1>
+    <p class="subtitle">Subtopic 4.2 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">8 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">4.2.1 – 4.2.8</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">11 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">4.2.9 – 4.2.19</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic defines water security, examines how social/economic/political factors shape access, explores conservation strategies at domestic and industrial levels, and — at HL — covers water stress, planetary boundaries, transboundary disputes, and governance.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. Water Security &amp; Access</strong><br/><span style="font-size:13px;color:var(--muted)">SDG 6, social/economic/political drivers, demand growth</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Scarcity &amp; Solutions</strong><br/><span style="font-size:13px;color:var(--muted)">Physical vs economic scarcity, dams, desalination, drip irrigation, domestic conservation</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Governance &amp; Stress (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">Planetary boundary, water footprints, transboundary disputes, citizen science</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>What issues of water equity exist, and how can they be addressed?</li>
+    <li>How do human populations affect the water cycle, and how does this impact water security?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 2 hours SL + additional HL hours. Second subtopic in Topic 4: Water.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 4.2.1 ==================== -->
+<div class="slide" data-sec="security">
+  <div class="section-tag">4.2.1</div>
+  <h2>Water Security</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Water security</em> is having access to sufficient amounts of safe drinking water.</div>
+  <p class="lead">Water security = reliable availability of adequate quantity + acceptable quality water for health, livelihoods, and production.</p>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">🎯 SDG 6 Goal</h3>
+      <p style="font-size:13px">Clean Water and Sanitation for All by 2030 (UN Sustainable Development Goal 6).</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--orange)">
+      <h3 style="color:var(--orange)">⚠️ Global Reality</h3>
+      <p style="font-size:13px">785 million people lack basic drinking water; 2.2 billion lack safely managed water services.</p>
+    </div>
+  </div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Component</th><th>Definition</th></tr>
+    <tr><td><strong>Quality</strong></td><td>Safe, uncontaminated water free from pathogens and toxic chemicals</td></tr>
+    <tr><td><strong>Quantity</strong></td><td>Adequate volume to meet domestic, agricultural, and industrial needs</td></tr>
+    <tr><td><strong>Accessibility</strong></td><td>Equitable availability without physical, economic, or social barriers</td></tr>
+    <tr><td><strong>Sustainability</strong></td><td>Water use that does not deplete aquifers or degrade ecosystems for future generations</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 4: 4.2.2 ==================== -->
+<div class="slide" data-sec="security">
+  <div class="section-tag">4.2.2</div>
+  <h2>Factors Affecting Water Access</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Social, cultural, economic</em> and <em>political factors</em> all have an impact on the availability of, and equitable access to, the freshwater required for human well-being.</div>
+  <table class="tbl">
+    <tr><th>Factor</th><th>Impact on Water Access</th><th>Example</th></tr>
+    <tr><td><strong>Social</strong></td><td>Urbanization outpaces infrastructure; women and girls bear 80% of water-collection burden</td><td>Delhi &amp; Mumbai slums — chronic shortages and water tanker dependency</td></tr>
+    <tr><td><strong>Cultural</strong></td><td>Traditional water management knowledge (qanat systems); spiritual values attached to rivers</td><td>Indigenous water rights in North America; traditional qanats in Iran</td></tr>
+    <tr><td><strong>Economic</strong></td><td>Privatization raises costs beyond affordable levels for poor households; agricultural exports displace local supply</td><td>Cochabamba "Water Wars" (Bolivia) against privatized utility rate hikes</td></tr>
+    <tr><td><strong>Political</strong></td><td>Governance quality, corruption, transboundary river conflicts, infrastructure investments</td><td>Nile Basin dispute between Egypt, Sudan, and Ethiopia (GERD dam)</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Case Study: Flint Water Crisis (USA)</h3>
+    <p style="font-size:13px">A 2014 cost-saving decision switched Flint's water supply to the corrosive Flint River, leaching lead into drinking water and disproportionately affecting low-income minority residents. Demonstrates political and economic inequality in water access even in MEDCs.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 5: 4.2.3 ==================== -->
+<div class="slide" data-sec="scarcity">
+  <div class="section-tag">4.2.3</div>
+  <h2>Demand: Population Growth &amp; Development</h2>
+  <div class="kt"><strong>Key Understanding</strong>Human societies undergoing <em>population growth</em> or <em>economic development must increase the supply of water or the efficiency</em> of its utilization.</div>
+  <table class="tbl">
+    <tr><th>Sector</th><th>% Global Freshwater</th><th>Primary Uses</th><th>Key Challenge</th></tr>
+    <tr><td><strong>Agriculture</strong></td><td>~70%</td><td>Crop irrigation, livestock watering, food processing</td><td>High waste from traditional flood irrigation</td></tr>
+    <tr><td><strong>Industry</strong></td><td>~22%</td><td>Power plant cooling, manufacturing, mining</td><td>Heavy metal &amp; chemical pollution discharge</td></tr>
+    <tr><td><strong>Domestic</strong></td><td>~8%</td><td>Drinking, sanitation, cooking, municipal use</td><td>Infrastructure leakage &amp; inequitable distribution</td></tr>
+  </table>
+  <div class="flow" style="margin:16px 0">
+    <div class="flow-node" style="background:#fee2e2">📈 Population &amp; Wealth Growth</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f0fa">💧 Surging Water Demand</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee;border-color:#2e9e5a">Option A: Supply Increase<br/>Option B: Efficiency Gains</div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 6: 4.2.4 & 4.2.7 ==================== -->
+<div class="slide" data-sec="solutions">
+  <div class="section-tag">4.2.4 &amp; 4.2.7</div>
+  <h2>Increasing Water Supply &amp; Agricultural Efficiency</h2>
+  <div class="kt"><strong>Key Understanding</strong>Water supplies can be increased by dams, rainwater catchment, desalination, and wetland restoration. Agricultural efficiency can be improved via drip irrigation and aquaponics.</div>
+  <img src="/slides/images/ess-4-2-desalination-drip.jpg" alt="Reverse Osmosis Desalination and Drip Irrigation System Diagram" class="slide-img" />
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">🧂 Desalination (Reverse Osmosis)</h3>
+      <p style="font-size:13px">Seawater forced through semipermeable membrane under high pressure. Israel gets 85% of domestic water from desalination (Sorek plant: 627,000 m³/day). Challenges: high energy cost, toxic brine disposal.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">🌱 Drip Irrigation</h3>
+      <p style="font-size:13px">Delivers water directly to plant roots via perforated tubes. Saves 50–70% water compared to conventional flood irrigation and minimizes evaporation/weed growth.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 7: 4.2.5 ==================== -->
+<div class="slide" data-sec="scarcity">
+  <div class="section-tag">4.2.5</div>
+  <h2>Physical vs Economic Water Scarcity</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Water scarcity</em> refers to the limited availability of water to human societies and can be physical or economic.</div>
+  <img src="/slides/images/ess-4-2-water-scarcity.jpg" alt="Physical vs Economic Water Scarcity Comparison Diagram" class="slide-img" />
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">🏜️ Physical Scarcity</h3>
+      <p style="font-size:13px">Natural water resources are insufficient to meet regional demand (arid climate, drought, overexploited aquifers). Example: Middle East, North Africa, Sahel region.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #3b82f6">
+      <h3 style="color:#3b82f6">💰 Economic Scarcity</h3>
+      <p style="font-size:13px">Water is physically present in the environment, but financial, infrastructural, or institutional barriers prevent people from accessing clean water. Example: Sub-Saharan Africa.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 8: 4.2.6 & 4.2.8 ==================== -->
+<div class="slide" data-sec="solutions">
+  <div class="section-tag">4.2.6 &amp; 4.2.8</div>
+  <h2>Domestic Conservation &amp; National Mitigation</h2>
+  <div class="kt"><strong>Key Understanding</strong>Domestic conservation techniques and national mitigation strategies exist to combat water scarcity.</div>
+  <table class="tbl">
+    <tr><th>Country / City</th><th>Mitigation Strategy</th><th>Mechanism &amp; Results</th></tr>
+    <tr><td><strong>Israel</strong></td><td>Desalination + Drip Irrigation + Recycling</td><td>85% domestic water from RO desalination; 86% wastewater recycled for agriculture</td></tr>
+    <tr><td><strong>Singapore</strong></td><td>NEWater Advanced Recycling</td><td>Reclaims municipal wastewater using microfiltration &amp; UV → supplies 40% of national water</td></tr>
+    <tr><td><strong>Cape Town</strong></td><td>Rationing &amp; Crisis Management</td><td>Enforced 50L/day per person limit in 2018, averting "Day Zero" reservoir collapse</td></tr>
+    <tr><td><strong>Domestic Homes</strong></td><td>Greywater &amp; Metering</td><td>Dual-flush toilets, rainwater harvesting, greywater recycling for garden/flushing</td></tr>
+  </table>
+  <div class="tip">Key takeaway: Effective water mitigation requires combining supply-side innovations (desalination, wastewater recycling) with demand-side conservation (water pricing, rationing).</div>
+</div>
+
+<!-- ==================== SLIDE 9: HL 4.2.9 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.2.9</div>
+  <h2>Freshwater as a Planetary Boundary<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Freshwater consumption is one of the nine planetary boundaries (Rockström et al.). Exceeding it risks abrupt, irreversible ecological shifts.</div>
+  <div class="card-grid cols-2">
+    <div class="card" style="border-left:4px solid #3b82f6">
+      <h3 style="color:#3b82f6">📊 Safe Operating Limit</h3>
+      <p style="font-size:14px">Boundary threshold: <strong>4,000 km³/year</strong> of global freshwater consumption.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">⚠️ Current Status: CROSSED</h3>
+      <p style="font-size:14px">Current consumption: <strong>~4,600 km³/year</strong> → <strong style="color:#ef4444">BOUNDARY EXCEEDED</strong>.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Systemic Risks of Boundary Transgression</h3>
+    <ul class="bullets hl">
+      <li>Aquifer depletion faster than natural recharge rates</li>
+      <li>Collapse of river delta ecosystems and drying of major water bodies (e.g. Aral Sea)</li>
+      <li>Altered regional evapotranspiration, modifying rainfall and intensifying continental droughts</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 10: HL 4.2.11 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.2.11</div>
+  <h2>Water Footprints &amp; Virtual Water<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Water footprints measure direct and indirect (virtual) water consumption, informing societal decision-making on water security.</div>
+  <img src="/slides/images/ess-4-2-virtual-water.jpg" alt="Virtual Water Footprints of Common Consumer Goods Infographic" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Consumer Item</th><th>Embedded Virtual Water</th><th>Why It Is High</th></tr>
+    <tr><td><strong>1 kg Beef</strong></td><td>~15,000 Liters</td><td>Years of feed crop irrigation (grain/hay) + livestock drinking water</td></tr>
+    <tr><td><strong>1 Pair of Jeans</strong></td><td>~7,500 Liters</td><td>Water-intensive cotton crop irrigation + fabric dyeing &amp; processing</td></tr>
+    <tr><td><strong>1 kg Wheat</strong></td><td>~1,500 Liters</td><td>Crop evapotranspiration &amp; soil moisture consumption</td></tr>
+    <tr><td><strong>1 Cup of Coffee</strong></td><td>~130 Liters</td><td>Growing, harvesting, washing, and roasting coffee beans</td></tr>
+  </table>
+  <div class="tip">Virtual Water Trade Note: Importing water-intensive goods allows water-scarce nations to "import" water from water-rich nations, relieving local water stress.</div>
+</div>
+
+<!-- ==================== SLIDE 11: HL 4.2.13 & 4.2.14 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.2.13 &amp; 4.2.14</div>
+  <h2>Water Stress Thresholds &amp; Dimensions<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Water stress takes into account availability, quality, environmental flows, and accessibility. Defined as clean accessible supply under 1,700 m³/year per capita.</div>
+  <div class="card">
+    <h3>Falkenmark Water Stress Indicators</h3>
+    <ul class="bullets hl">
+      <li><strong>&gt;1,700 m³/capita/year:</strong> No Water Stress</li>
+      <li><strong>&lt;1,700 m³/capita/year:</strong> Water Stress (periodic shortages)</li>
+      <li><strong>&lt;1,000 m³/capita/year:</strong> Water Scarcity (chronic supply disruption)</li>
+      <li><strong>&lt;500 m³/capita/year:</strong> Absolute Scarcity (human health &amp; economic viability threatened)</li>
+    </ul>
+  </div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Dimension</th><th>Metric Focus</th></tr>
+    <tr><td><strong>Scarcity</strong></td><td>Volumetric availability per person per year</td></tr>
+    <tr><td><strong>Quality</strong></td><td>Freedom from chemical toxins, heavy metals, and bacterial pathogens</td></tr>
+    <tr><td><strong>Environmental Flows</strong></td><td>Minimum river discharge required to sustain aquatic ecosystem health</td></tr>
+    <tr><td><strong>Accessibility</strong></td><td>Physical distance and economic affordability of safe water sources</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 12: HL 4.2.15 & 4.2.16 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.2.15 &amp; 4.2.16</div>
+  <h2>Transboundary Water Disputes<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Over 60% of international river basins are transboundary. Upstream water diversion or damming creates geopolitical conflict with downstream states.</div>
+  <table class="tbl">
+    <tr><th>Transboundary Basin</th><th>Nations Involved</th><th>Core Conflict &amp; Geopolitics</th></tr>
+    <tr><td><strong>Nile River</strong></td><td>Ethiopia, Sudan, Egypt</td><td>Ethiopia's Grand Ethiopian Renaissance Dam (GERD) vs Egypt's historical downstream water rights</td></tr>
+    <tr><td><strong>Mekong River</strong></td><td>China, Laos, Thailand, Cambodia, Vietnam</td><td>Upstream Chinese hydroelectric dams trap sediment and restrict water flow to downstream Vietnamese rice farming &amp; fisheries</td></tr>
+    <tr><td><strong>Colorado River</strong></td><td>7 US States &amp; Mexico</td><td>Over-allocation among agriculture, cities (Las Vegas, LA), and Mexico; climate drought leaves Lake Mead at critical low levels</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 13: HL 4.2.18 & 4.2.19 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.2.18 &amp; 4.2.19</div>
+  <h2>Industrial Trade-offs &amp; Inequitable Access<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Industrial water production carries unavoidable environmental impacts. Inequitable water and sanitation access reinforces poverty traps, disease, and gender inequality.</div>
+  <div class="card-grid cols-2">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">⚠️ Industrial Environmental Costs</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li>Desalination: toxic brine discharge destroys benthic marine life; high fossil fuel energy use</li>
+        <li>Wastewater treatment: chemical sludge disposal and high energy consumption</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">👧 Human &amp; Gender Development Impact</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li>Women/girls spend 200 million hours/day collecting water globally → missed schooling &amp; economic exclusion</li>
+        <li>Unsafe water causes 842,000 diarrheal deaths annually, locking communities in poverty traps</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tip">Economic Multiplier: Every $1 invested in clean water and sanitation yields $8 in economic returns from reduced healthcare costs and increased productivity.</div>
+</div>
+
+<!-- ==================== SLIDE 14: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Water Security</strong></td><td>Reliable access to sufficient, safe, affordable water for human well-being and ecosystems</td></tr>
+      <tr><td><strong>Physical Scarcity</strong></td><td>Inadequate natural water resources to satisfy regional water demand</td></tr>
+      <tr><td><strong>Economic Scarcity</strong></td><td>Lack of investment or infrastructure to access abundant natural water resources</td></tr>
+      <tr><td><strong>Reverse Osmosis</strong></td><td>High-pressure membrane filtration process removing salt from seawater</td></tr>
+      <tr><td><strong>Drip Irrigation</strong></td><td>Micro-irrigation system delivering water directly to plant root zones, saving 50-70% water</td></tr>
+      <tr><td><strong>Virtual Water</strong></td><td>Volume of freshwater embedded in the production of food, goods, or services</td></tr>
+      <tr><td><strong>Planetary Boundary</strong></td><td>Threshold for global freshwater consumption (4,000 km³/yr) — currently exceeded</td></tr>
+      <tr><td><strong>Water Stress</strong></td><td>Condition when annual water availability falls below 1,700 m³ per person</td></tr>
+      <tr><td><strong>Transboundary Basin</strong></td><td>River or aquifer system shared across national borders, prone to geopolitical conflict</td></tr>
+      <tr><td><strong>Environmental Flows</strong></td><td>Minimum river discharge required to sustain downstream ecosystem health</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 15: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>Security components:</strong> Quality + Quantity + Accessibility + Sustainability.</li>
+      <li><strong>Scarcity distinction:</strong> Physical = nature lacks water; Economic = society lacks infrastructure/funds.</li>
+      <li><strong>Agriculture priority:</strong> Uses 70% of freshwater; drip irrigation &amp; dietary shifts offer highest conservation potential.</li>
+      <li><strong>HL Transboundary &amp; Boundaries:</strong> GERD/Nile dispute as a primary case study; freshwater planetary boundary exceeded (~4,600 km³/yr).</li>
+    </ul>
+  </div>
+  <div class="tip">Exam tip: For 9-mark essay questions on water security, analyze both supply-side (desalination, dams) and demand-side (drip irrigation, pricing, conservation) approaches across MEDCs vs LEDCs.</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 19 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">4.2.1 – 4.2.8 (SL) + 4.2.9 – 4.2.19 (HL)</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
