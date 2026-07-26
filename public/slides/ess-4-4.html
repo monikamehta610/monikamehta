@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 4.4</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 4: Water</div>
+    <h1>Water Pollution</h1>
+    <p class="subtitle">Subtopic 4.4 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">8 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">4.4.1 – 4.4.8</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">9 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">4.4.9 – 4.4.17</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic covers sources and impacts of water pollution, plastic debris, water quality measurement, BOD, eutrophication (process, impacts, management), and — at HL — specific pollutants, algal toxins, sewage treatment, indicator species, biotic indices, WHO guidelines, and citizen action.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. Sources &amp; Plastics</strong><br/><span style="font-size:13px;color:var(--muted)">Point vs non-point, microplastics, ocean gyres, supply-chain bans</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Quality &amp; Eutrophication</strong><br/><span style="font-size:13px;color:var(--muted)">BOD, algal blooms, hypoxia &amp; dead zones, 3 management levels</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Sewage &amp; Biotic Indices (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">3-stage sewage treatment, indicator species, biotic index, WHO standards</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How does pollution affect the sustainability of environmental systems?</li>
+    <li>How do different perspectives affect how pollution is managed?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 4 hours SL + additional 4 hours HL. Final subtopic in Topic 4: Water.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 4.4.1 ==================== -->
+<div class="slide" data-sec="sources">
+  <div class="section-tag">4.4.1</div>
+  <h2>Sources of Water Pollution</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Water pollution has multiple sources</em> (point and non-point) and has major impacts on aquatic ecosystems.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #3b82f6">
+      <h3 style="color:#3b82f6">📍 Point Source</h3>
+      <p style="font-size:13px">Traced to a single, discrete, identifiable location (e.g. factory discharge pipe, municipal sewage outfall, oil spill).</p>
+    </div>
+    <div class="card" style="border-left:4px solid #d97706">
+      <h3 style="color:#d97706">🌫️ Non-Point Source</h3>
+      <p style="font-size:13px">Originates from diffuse, wide-spread areas (e.g. agricultural fertilizer runoff, urban stormwater, atmospheric acid deposition).</p>
+    </div>
+  </div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Category</th><th>Primary Sources</th><th>Key Pollutants &amp; Impacts</th></tr>
+    <tr><td><strong>Agricultural</strong></td><td>Crop fertilizer runoff, livestock manure</td><td>Nitrates, phosphates, pathogens $\rightarrow$ Eutrophication</td></tr>
+    <tr><td><strong>Industrial</strong></td><td>Factories, mining operations</td><td>Heavy metals (mercury, lead), acid mine drainage</td></tr>
+    <tr><td><strong>Municipal</strong></td><td>Domestic sewage, urban roads</td><td>Organic waste, microplastics, oil, detergent surfactants</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 4: 4.4.2 ==================== -->
+<div class="slide" data-sec="sources">
+  <div class="section-tag">4.4.2</div>
+  <h2>Plastic Pollution &amp; Ocean Gyres</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Plastic debris accumulates in marine gyres</em>, causing entanglement, ingestion, microplastic bioaccumulation, and toxin transport.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">🐢 Macroplastic Hazards</h3>
+      <p style="font-size:13px">Sea turtles ingest plastic bags (confusing them with jellyfish); ghost fishing nets entangle marine mammals and seabirds.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #d97706">
+      <h3 style="color:#d97706">🔬 Microplastics (&lt;5 mm)</h3>
+      <p style="font-size:13px">Ingested by zooplankton and fish. Bioaccumulate in organisms and biomagnify up the food chain, carrying adsorbed POP toxins.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Management Interventions</h3>
+    <ul class="bullets">
+      <li><strong>Supply Chain Bans:</strong> Banning single-use plastics and micro-beads in cosmetics (EU directives).</li>
+      <li><strong>Extended Producer Responsibility (EPR):</strong> Mandating manufacturers fund plastic collection &amp; recycling.</li>
+      <li><strong>Cleanup Innovations:</strong> Deploying ocean barriers in high-density gyres (e.g. Ocean Cleanup Project).</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 5: 4.4.3 & 4.4.4 ==================== -->
+<div class="slide" data-sec="quality">
+  <div class="section-tag">4.4.3 &amp; 4.4.4</div>
+  <h2>Measuring Water Quality &amp; BOD</h2>
+  <div class="kt"><strong>Key Understanding</strong>Water quality is measured via direct parameters (pH, DO, temperature) and indirect biological parameters like <em>Biochemical Oxygen Demand (BOD)</em>.</div>
+  <div class="card" style="margin-top:14px;background:#f0f5ff;border:1.5px solid var(--blue)">
+    <h3 style="color:var(--blue)">🧪 BOD Formula &amp; Test Procedure</h3>
+    <p style="font-size:14px;font-weight:600;margin-bottom:6px">$$\text{BOD} = \text{DO}_{\text{initial}} - \text{DO}_{\text{final after 5 days in dark at 20°C}} \quad (\text{mg/L})$$</p>
+    <p style="font-size:13px">High BOD indicates heavy organic pollution (sewage, manure). Decomposing aerobic bacteria rapidly consume dissolved oxygen.</p>
+  </div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>BOD Value</th><th>Water Quality Status</th><th>Typical Sources</th></tr>
+    <tr><td><strong>&lt; 1 mg/L</strong></td><td>Very Clean</td><td>Unpolluted pristine mountain streams</td></tr>
+    <tr><td><strong>1 – 2 mg/L</strong></td><td>Fairly Clean</td><td>Moderate natural organic matter</td></tr>
+    <tr><td><strong>3 – 5 mg/L</strong></td><td>Moderately Polluted</td><td>Agricultural runoff, urban stormwater</td></tr>
+    <tr><td><strong>&gt; 5 mg/L</strong></td><td>Heavily Polluted</td><td>Raw municipal sewage, factory effluent</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 6: 4.4.5 & 4.4.6 ==================== -->
+<div class="slide" data-sec="eutrophication">
+  <div class="section-tag">4.4.5 &amp; 4.4.6</div>
+  <h2>Eutrophication &amp; Hypoxic Dead Zones</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Eutrophication</em> is the excessive nutrient enrichment of water bodies, causing algal blooms, light blockage, bacterial decomposition, high BOD, and hypoxia.</div>
+  <img src="/slides/images/ess-4-4-eutrophication-cascade.jpg" alt="6-Stage Eutrophication Process Diagram" class="slide-img" />
+  <div class="flow" style="margin:16px 0">
+    <div class="flow-node" style="background:#fff9e6">🌾 Nutrient Runoff ($\text{N, P}$)</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee">🌿 Algal Bloom</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f0fa">☀️ Light Blocked</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fee2e2">🦠 Bacterial Decay (↑BOD)</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#fee2e2;border-color:#b91c1c">☠️ Hypoxic Dead Zone</div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 7: 4.4.7 & 4.4.8 ==================== -->
+<div class="slide" data-sec="eutrophication">
+  <div class="section-tag">4.4.7 &amp; 4.4.8</div>
+  <h2>Impacts &amp; 3-Level Management Model</h2>
+  <div class="kt"><strong>Key Understanding</strong>Eutrophication damages ecosystem services. Pollution can be managed across 3 levels: human behavior alteration, release regulation, and ecosystem restoration.</div>
+  <table class="tbl">
+    <tr><th>Management Level</th><th>Strategy Objective</th><th>Practical Actions &amp; Examples</th></tr>
+    <tr><td><strong>Level 1: Altering Human Activity</strong></td><td>Reduce pollutant production at source</td><td>Adopt organic farming, precision fertilizer application, phosphate-free detergents</td></tr>
+    <tr><td><strong>Level 2: Regulating Release</strong></td><td>Control pollutant entry into waterways</td><td>Construct riparian buffer strips, wetlands, enforce tertiary sewage treatment</td></tr>
+    <tr><td><strong>Level 3: Clean-up &amp; Restoration</strong></td><td>Rehabilitate damaged ecosystems</td><td>Dredge nutrient-laden lake sediment, pump oxygen into hypoxic zones, apply algaecides</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Case Study: Gulf of Mexico Hypoxic Zone</h3>
+    <p style="font-size:13px">Agricultural runoff carrying excess nitrogen down the Mississippi River creates a 15,000+ km² dead zone in the Gulf of Mexico every summer, devastating commercial shrimp and fish catches.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 8: HL 4.4.9 & 4.4.10 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.4.9 &amp; 4.4.10</div>
+  <h2>Specific Pollutants &amp; Harmful Algal Blooms (HABs)<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Water pollutants include POPs, heavy metals, TBT, and pharmaceuticals. Eutrophication can trigger toxic Harmful Algal Blooms.</div>
+  <div class="card-grid cols-2">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">☠️ Chemical Pollutant Risks</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li><strong>POPs &amp; Heavy Metals:</strong> DDT, PCBs, Mercury bioaccumulate in fat and biomagnify to top predators</li>
+        <li><strong>TBT (Tributyltin):</strong> Anti-fouling boat paint component causing imposex (gender alteration) in marine snails</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #d97706">
+      <h3 style="color:#d97706">⚠️ Toxic Algal Blooms</h3>
+      <ul class="bullets hl" style="font-size:13px">
+        <li>Cyanobacteria produce <strong>microcystins</strong> (liver toxins)</li>
+        <li><em>Alexandrium</em> dinoflagellates produce <strong>saxitoxin</strong>, causing Paralytic Shellfish Poisoning (PSP) in humans</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: HL 4.4.12 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.4.12</div>
+  <h2>3-Stage Sewage Treatment Plant<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Sewage treatment removes solids, organic matter, and nutrients across primary, secondary, and tertiary stages before safe discharge.</div>
+  <img src="/slides/images/ess-4-4-sewage-treatment.jpg" alt="3-Stage Sewage Treatment Plant Process Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Treatment Stage</th><th>Process Mechanism</th><th>Target Removed</th></tr>
+    <tr><td><strong>Primary (Physical)</strong></td><td>Screening bar filters + sedimentation settling tanks</td><td>Large debris, sticks, rags, heavy grit, floating grease</td></tr>
+    <tr><td><strong>Secondary (Biological)</strong></td><td>Aeration tanks with activated sludge aerobic bacteria</td><td>Dissolved organic matter ($\text{BOD}$ reduced by ~90%)</td></tr>
+    <tr><td><strong>Tertiary (Advanced/Chemical)</strong></td><td>Nutrient precipitation tanks + UV / Chlorination disinfection</td><td>Phosphates, nitrates, micro-pathogens &amp; viruses</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 10: HL 4.4.13 & 4.4.14 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.4.13 &amp; 4.4.14</div>
+  <h2>Indicator Species &amp; Biotic Indices<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Indicator species</em> presence and abundance allow calculation of a <em>Biotic Index</em>, providing an indirect long-term measure of water quality.</div>
+  <img src="/slides/images/ess-4-4-biotic-index-indicators.jpg" alt="Indicator Species and Biotic Index Chart" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Tolerance Category</th><th>Representative Macroinvertebrates</th><th>Water Quality Indication</th></tr>
+    <tr><td><strong>Pollution-Sensitive</strong></td><td>Stonefly nymph, Mayfly nymph, Caddisfly larva</td><td>Clean, well-oxygenated water (High Biotic Score)</td></tr>
+    <tr><td><strong>Intermediate Tolerance</strong></td><td>Freshwater shrimp (<em>Gammarus</em>), Damselfly nymph</td><td>Moderately polluted / Fair water quality</td></tr>
+    <tr><td><strong>Pollution-Tolerant</strong></td><td>Sludge worm (<em>Tubifex</em>), Rat-tailed maggot, Leech</td><td>Heavily polluted, hypoxic water (Low Biotic Score)</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 11: HL 4.4.15 – 4.4.17 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.4.15 – 4.4.17</div>
+  <h2>WQI, WHO Standards &amp; Citizen Action<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Water Quality Index (WQI) synthesizes data. WHO sets global guidelines. Citizen science empowers local stream monitoring and advocacy.</div>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h3 style="color:var(--blue)">📋 WHO Drinking Guidelines</h3>
+      <p style="font-size:13px">Sets international safe limits ($E. coli = 0 / 100\text{mL}$, $\text{Nitrates} &lt; 50\text{ mg/L}$). Local governments enforce statutory national drinking standards.</p>
+    </div>
+    <div class="card">
+      <h3 style="color:var(--blue)">👥 Citizen Science &amp; Action</h3>
+      <p style="font-size:13px">Volunteer monitoring networks (e.g. FreshwaterWatch) gather river data, identify pollution outfalls, and lobby for legislative enforcement.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 12: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Point Source</strong></td><td>Pollution originating from a single, identifiable outlet (pipe, spill site)</td></tr>
+      <tr><td><strong>Non-Point Source</strong></td><td>Pollution from diffuse, widespread areas (agricultural runoff, urban roads)</td></tr>
+      <tr><td><strong>Microplastics</strong></td><td>Plastic fragments smaller than 5 mm that bioaccumulate in marine life</td></tr>
+      <tr><td><strong>BOD</strong></td><td>Biochemical Oxygen Demand: $\text{DO}_{\text{initial}} - \text{DO}_{\text{final}}$ after 5 days at 20°C in dark</td></tr>
+      <tr><td><strong>Eutrophication</strong></td><td>Nutrient enrichment ($\text{N, P}$) driving algal blooms, high BOD, and hypoxia</td></tr>
+      <tr><td><strong>Hypoxia / Anoxia</strong></td><td>Low ($\text{DO} &lt; 2\text{ mg/L}$) or zero oxygen conditions resulting in dead zones</td></tr>
+      <tr><td><strong>Indicator Species</strong></td><td>Organisms whose presence/absence indicates specific environmental quality</td></tr>
+      <tr><td><strong>Biotic Index</strong></td><td>Scale assessing ecosystem health based on macroinvertebrate pollution tolerance</td></tr>
+      <tr><td><strong>Activated Sludge</strong></td><td>Secondary sewage treatment process using aerobic bacteria to decompose organic waste</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 13: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>Full Eutrophication Chain:</strong> Nutrient runoff $\rightarrow$ Algal bloom $\rightarrow$ Light blocked $\rightarrow$ Plants die $\rightarrow$ Bacterial decay $\rightarrow$ High BOD $\rightarrow$ Hypoxia.</li>
+      <li><strong>BOD Calculation:</strong> $\text{DO}_{\text{initial}} - \text{DO}_{\text{final}}$. High value = polluted water.</li>
+      <li><strong>3 Sewage Stages:</strong> Primary = physical separation; Secondary = biological breakdown; Tertiary = chemical nutrient &amp; pathogen removal.</li>
+      <li><strong>Indicator Species:</strong> Stoneflies = clean water; Tubifex worms = organic pollution.</li>
+    </ul>
+  </div>
+  <div class="tip">Exam tip: When evaluating eutrophication management in 9-mark essay questions, frame your response using the 3-level pollution management framework (Alter Activity $\rightarrow$ Regulate Release $\rightarrow$ Restore System).</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 17 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">4.4.1 – 4.4.8 (SL) + 4.4.9 – 4.4.17 (HL) · Complete Topic 4: Water!</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
