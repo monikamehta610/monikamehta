@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 5.1</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 5: Land</div>
+    <h1>Soil Systems &amp; Ecosystems</h1>
+    <p class="subtitle">Subtopic 5.1 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">14 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">5.1.1 – 5.1.14</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">7 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">5.1.15 – 5.1.21</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic models soil as an open dynamic system — examining its composition, profile horizons, inputs, outputs, transfers, transformations, role in biogeochemical cycles, texture, humus, and function as a global carbon sink.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. Soil System &amp; Structure</strong><br/><span style="font-size:13px;color:var(--muted)">Dynamic open system, composition, horizons (O, A, B, C, R)</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Processes &amp; Texture</strong><br/><span style="font-size:13px;color:var(--muted)">Inputs/outputs, transfers/transformations, texture triangle, humus</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Classification &amp; Carbon (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">Soil classification (-isols), 5 formation factors, soil analysis, $\text{CO}_2$ vs $\text{CH}_4$ release</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How do soils play a role in sustaining natural systems?</li>
+    <li>How are human activities affecting the stability of soil systems?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 3 hours SL + additional 2 hours HL. First subtopic in Topic 5: Land.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 5.1.1 & 5.1.2 ==================== -->
+<div class="slide" data-sec="system">
+  <div class="section-tag">5.1.1 &amp; 5.1.2</div>
+  <h2>Soil as a Dynamic System &amp; Composition</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Soil is an open dynamic system</em> consisting of inorganic minerals (sand, silt, clay), organic matter (humus, biota), water, and air.</div>
+  <div class="card-grid cols-4" style="margin-top:14px">
+    <div class="card" style="text-align:center;border-top:3px solid #8d6e63">
+      <div style="font-size:20px;font-weight:700;color:#8d6e63">45%</div>
+      <div style="font-size:12px;font-weight:600">Inorganic Minerals</div>
+      <div style="font-size:11px;color:var(--muted)">Sand, silt &amp; clay</div>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid #4e342e">
+      <div style="font-size:20px;font-weight:700;color:#4e342e">5%</div>
+      <div style="font-size:12px;font-weight:600">Organic Matter</div>
+      <div style="font-size:11px;color:var(--muted)">Humus, roots, organisms</div>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid #42a5f5">
+      <div style="font-size:20px;font-weight:700;color:#42a5f5">25%</div>
+      <div style="font-size:12px;font-weight:600">Soil Water</div>
+      <div style="font-size:11px;color:var(--muted)">Dissolved nutrients</div>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid #90a4ae">
+      <div style="font-size:20px;font-weight:700;color:#90a4ae">25%</div>
+      <div style="font-size:12px;font-weight:600">Soil Air</div>
+      <div style="font-size:11px;color:var(--muted)">Pore spaces ($\text{O}_2, \text{CO}_2$)</div>
+    </div>
+  </div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>System Component</th><th>Function &amp; Ecological Role</th></tr>
+    <tr><td><strong>Inorganic Minerals</strong></td><td>Derived from rock weathering; provide structural support and mineral nutrients ($\text{K}^+, \text{Ca}^{2+}, \text{Mg}^{2+}$)</td></tr>
+    <tr><td><strong>Organic Matter &amp; Humus</strong></td><td>Provides plant nutrients ($\text{N, P}$), enhances water retention, feeds decomposers, improves soil crumb structure</td></tr>
+    <tr><td><strong>Soil Water &amp; Air</strong></td><td>Dissolves nutrients for root absorption; provides oxygen for root and microbial respiration</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 4: 5.1.3 ==================== -->
+<div class="slide" data-sec="profile">
+  <div class="section-tag">5.1.3</div>
+  <h2>Soil Profile &amp; Horizons</h2>
+  <div class="kt"><strong>Key Understanding</strong>Soils develop distinct vertical layers known as <em>horizons (O, A, B, C, R)</em> through long-term physical, chemical, and biological weathering.</div>
+  <img src="/slides/images/ess-5-1-soil-profile.jpg" alt="Soil Profile and Horizons Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Horizon</th><th>Layer Name</th><th>Key Characteristics</th></tr>
+    <tr><td><strong>O Horizon</strong></td><td>Organic Layer</td><td>Decomposed leaf litter, plant residues, and dark humus accumulation</td></tr>
+    <tr><td><strong>A Horizon</strong></td><td>Topsoil / Mixed Layer</td><td>Rich in organic humus, active plant roots, and soil life. <strong>Most fertile &amp; most vulnerable layer</strong></td></tr>
+    <tr><td><strong>B Horizon</strong></td><td>Subsoil</td><td>Accumulates leached minerals (iron, aluminum oxides, clay) washed down from A horizon</td></tr>
+    <tr><td><strong>C Horizon</strong></td><td>Parent Material</td><td>Partially weathered bedrock and coarse rock fragments with minimal organic content</td></tr>
+    <tr><td><strong>R Horizon</strong></td><td>Bedrock</td><td>Solid unweathered bedrock layer foundation</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 5: 5.1.4 – 5.1.7 ==================== -->
+<div class="slide" data-sec="processes">
+  <div class="section-tag">5.1.4 – 5.1.7</div>
+  <h2>System Inputs, Outputs, Transfers &amp; Transformations</h2>
+  <div class="kt"><strong>Key Understanding</strong>Soil operates via <em>inputs</em> (litter, precipitation), <em>outputs</em> (erosion, leaching, gases), <em>transfers</em> (infiltration, biological mixing), and <em>transformations</em> (decomposition, weathering).</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">📥 Inputs &amp; Transfers</h3>
+      <ul class="bullets" style="font-size:13px">
+        <li><strong>Inputs:</strong> Plant litterfall, organic manure, precipitation minerals, nitrogen fixation</li>
+        <li><strong>Transfers:</strong> Infiltration, downward percolation, earthworm biological mixing, leaching</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">📤 Outputs &amp; Transformations</h3>
+      <ul class="bullets" style="font-size:13px">
+        <li><strong>Outputs:</strong> Wind &amp; water topsoil erosion, nutrient leaching, plant harvesting, $\text{CO}_2/\text{CH}_4$ gas release</li>
+        <li><strong>Transformations:</strong> Organic decomposition to humus, rock weathering, nitrification</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 6: 5.1.8 & 5.1.9 ==================== -->
+<div class="slide" data-sec="cycles">
+  <div class="section-tag">5.1.8 &amp; 5.1.9</div>
+  <h2>Soil in Biogeochemical Cycles &amp; Plant Medium</h2>
+  <div class="kt"><strong>Key Understanding</strong>Soil provides essential mineral nutrients ($\text{N, P, K}$) and water for terrestrial plants. <em>Exception: Carbon is obtained from atmospheric $\text{CO}_2$ via photosynthesis.</em></div>
+  <table class="tbl">
+    <tr><th>Biogeochemical Cycle</th><th>Soil Storage &amp; Flow Role</th></tr>
+    <tr><td><strong>Water Cycle</strong></td><td>Infiltration, soil water storage, percolation to aquifers, uptake for plant transpiration</td></tr>
+    <tr><td><strong>Carbon Cycle</strong></td><td>Stores organic carbon in humus &amp; peat; releases $\text{CO}_2$ via root and microbial respiration</td></tr>
+    <tr><td><strong>Nitrogen Cycle</strong></td><td>$\text{N}_2$-fixing bacteria convert nitrogen to $\text{NH}_4^+$; nitrifying bacteria convert $\text{NH}_4^+$ to $\text{NO}_3^-$ for plant absorption</td></tr>
+  </table>
+  <div class="tip">Exam distinction: Plants absorb mineral nutrients ($\text{N, P, K, Ca, Mg}$) from soil water via roots, but synthesize carbon compounds using atmospheric $\text{CO}_2$ during photosynthesis.</div>
+</div>
+
+<!-- ==================== SLIDE 7: 5.1.10 & 5.1.11 ==================== -->
+<div class="slide" data-sec="biodiversity">
+  <div class="section-tag">5.1.10 &amp; 5.1.11</div>
+  <h2>Soil Biodiversity &amp; Ecosystem Functions</h2>
+  <div class="kt"><strong>Key Understanding</strong>Soil hosts massive biodiversity (bacteria, fungi, earthworms, nematodes) driving nutrient recycling, soil aeration, and mycorrhizal symbiosis.</div>
+  <table class="tbl">
+    <tr><th>Soil Organism Group</th><th>Ecological Role &amp; Ecosystem Service</th></tr>
+    <tr><td><strong>Decomposers &amp; Fungi</strong></td><td>Break down complex lignin &amp; cellulose into plant-available nutrients and humus</td></tr>
+    <tr><td><strong>Mycorrhizal Fungi</strong></td><td>Symbiotic association with plant roots — greatly expands root surface area for phosphorus &amp; water absorption</td></tr>
+    <tr><td><strong>Earthworms &amp; Burrowers</strong></td><td>Biological mixing of O &amp; A horizons, creating macropores for aeration and water infiltration</td></tr>
+    <tr><td><strong>$\text{N}_2$-Fixing Bacteria</strong></td><td><em>Rhizobium</em> in legume root nodules convert atmospheric $\text{N}_2$ gas into bio-available nitrates</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 8: 5.1.12 & 5.1.13 ==================== -->
+<div class="slide" data-sec="texture">
+  <div class="section-tag">5.1.12 &amp; 5.1.13</div>
+  <h2>Soil Texture Triangle &amp; Productivity</h2>
+  <div class="kt"><strong>Key Understanding</strong>Soil texture depends on relative proportions of <em>sand, silt, and clay</em>. <strong>Loam</strong> offers the optimum balance for primary productivity.</div>
+  <img src="/slides/images/ess-5-1-texture-triangle.jpg" alt="Soil Texture Triangle Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Particle Type</th><th>Particle Size</th><th>Water Retention</th><th>Drainage &amp; Aeration</th><th>Nutrient Holding</th></tr>
+    <tr><td><strong>Sand</strong></td><td>0.05 – 2.0 mm</td><td>Low</td><td>Excessive / High</td><td>Low</td></tr>
+    <tr><td><strong>Silt</strong></td><td>0.002 – 0.05 mm</td><td>Moderate</td><td>Moderate</td><td>Moderate</td></tr>
+    <tr><td><strong>Clay</strong></td><td>&lt; 0.002 mm</td><td>Very High</td><td>Poor / Waterlogged</td><td>High ($\text{CEC}$)</td></tr>
+    <tr><td><strong>Loam (Balanced)</strong></td><td>Mix + Humus</td><td>Optimum</td><td>Optimum</td><td>High</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 9: 5.1.14 ==================== -->
+<div class="slide" data-sec="carbon">
+  <div class="section-tag">5.1.14</div>
+  <h2>Soils as Carbon Sinks, Stores &amp; Sources</h2>
+  <div class="kt"><strong>Key Understanding</strong>Soil carbon balance depends on the ratio of organic litter inputs to microbial decomposition rates. Cold or waterlogged soils form major carbon sinks.</div>
+  <div class="card-grid cols-3" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">❄️ Cold Permafrost &amp; Peatlands</h3>
+      <p style="font-size:13px">Decomposition is extremely slow due to freezing or anaerobic conditions $\rightarrow$ massive long-term carbon sink (e.g. Arctic tundra, peat bogs).</p>
+    </div>
+    <div class="card" style="border-left:4px solid #d97706">
+      <h3 style="color:#d97706">🌴 Tropical Rainforest Soil</h3>
+      <p style="font-size:13px">Warmth and moisture accelerate decomposition $\rightarrow$ organic carbon rapidly recycled into biomass $\rightarrow$ thin soil carbon store.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">🔥 Degraded Agricultural Soil</h3>
+      <p style="font-size:13px">Deforestation, heavy tillage, and wetland drainage accelerate oxidation $\rightarrow$ turns soil from carbon sink to net $\text{CO}_2$ source.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 10: HL 5.1.15 & 5.1.18 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 5.1.15 &amp; 5.1.18</div>
+  <h2>Soil Classification &amp; 5 Formation Factors<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Soils are classified by profile appearance (-isols). Soil genesis is shaped by 5 factors: Climate, Organisms, Relief (geomorphology), Parent Material (geology), and Time.</div>
+  <table class="tbl">
+    <tr><th>Soil Order (-isol)</th><th>Associated Biome</th><th>Profile Features</th></tr>
+    <tr><td><strong>Oxisol</strong></td><td>Tropical Rainforest</td><td>Deep, highly weathered, red/yellow iron oxide rich, nutrient-depleted topsoil</td></tr>
+    <tr><td><strong>Mollisol</strong></td><td>Temperate Grassland (Prairie)</td><td>Deep, dark, humus-rich A horizon; exceptionally high fertility</td></tr>
+    <tr><td><strong>Spodosol</strong></td><td>Boreal Forest (Taiga)</td><td>Acidic, leached ash-gray A horizon with mineral accumulation in B horizon</td></tr>
+    <tr><td><strong>Aridisol</strong></td><td>Desert</td><td>Arid, alkaline, minimal organic matter with salt/calcium carbonate crusts</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 11: HL 5.1.16 & 5.1.17 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 5.1.16 &amp; 5.1.17</div>
+  <h2>A Horizon Value &amp; Vulnerability<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The <em>A horizon (topsoil)</em> contains mixed organic humus and mineral nutrients. It is the primary engine of terrestrial plant growth but the most susceptible to erosion.</div>
+  <div class="card">
+    <h3>Topsoil Vulnerability &amp; Degradation Cascade</h3>
+    <ul class="bullets hl">
+      <li>Plowing and vegetation removal expose loose A horizon particles to wind and water erosion.</li>
+      <li>Erosion removes dark humus $\rightarrow$ loss of Cation Exchange Capacity ($\text{CEC}$) and water-holding ability.</li>
+      <li>Subsoil (B horizon) exposure results in poor seedling germination and agricultural desertification.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 12: HL 5.1.19 – 5.1.21 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 5.1.19 – 5.1.21</div>
+  <h2>Soil Analysis &amp; Greenhouse Gas Release<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Soil health is measured via bulk density, organic %, infiltration, and pH. Aerobic soils release $\text{CO}_2$; anaerobic waterlogged soils release $\text{CH}_4$.</div>
+  <table class="tbl">
+    <tr><th>Soil Analysis Parameter</th><th>Measurement Method</th><th>Ecological Meaning</th></tr>
+    <tr><td><strong>Bulk Density</strong></td><td>Core dry mass / core volume</td><td>High bulk density indicates severe soil compaction, restricting root growth</td></tr>
+    <tr><td><strong>Organic Content (%)</strong></td><td>Loss-on-ignition (dry burning at 500°C)</td><td>Higher % indicates greater humus content, fertility, and carbon storage</td></tr>
+    <tr><td><strong>Gas Emission Mode</strong></td><td>Aerobic vs Anaerobic respiration</td><td>Aerobic soils release $\text{CO}_2$; flooded rice paddies/peatlands release $\text{CH}_4$ (28× GHG potency)</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 13: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Soil Profile</strong></td><td>Vertical cross-section showing distinctive soil horizons (O, A, B, C, R)</td></tr>
+      <tr><td><strong>Humus</strong></td><td>Dark, crumbly organic material formed by fully decomposed plant and animal matter</td></tr>
+      <tr><td><strong>A Horizon (Topsoil)</strong></td><td>Fertile mixed organic-mineral layer essential for root growth; highly vulnerable to erosion</td></tr>
+      <tr><td><strong>Leaching</strong></td><td>Downward removal of dissolved mineral nutrients out of root reach by percolating water</td></tr>
+      <tr><td><strong>Loam</strong></td><td>Optimal agricultural soil texture combining balanced sand, silt, clay, and organic humus</td></tr>
+      <tr><td><strong>Mycorrhizae</strong></td><td>Symbiotic fungal-plant root association enhancing nutrient (phosphorus) and water uptake</td></tr>
+      <tr><td><strong>Oxisol / Mollisol</strong></td><td>Soil orders characteristic of tropical rainforests (Oxisol) and temperate grasslands (Mollisol)</td></tr>
+      <tr><td><strong>Bulk Density</strong></td><td>Dry soil mass per unit volume; indicator of soil compaction and aeration pore space</td></tr>
+      <tr><td><strong>Permafrost Carbon Sink</strong></td><td>Frozen Arctic soils storing massive amounts of organic carbon under low decomposition rates</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 14: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>Soil System Model:</strong> Inputs (litter, rain) $\rightarrow$ Transfers (leaching, percolation) $\rightarrow$ Transformations (decomposition, weathering) $\rightarrow$ Outputs (erosion, gas release).</li>
+      <li><strong>Plant Nutrients Exception:</strong> Plants absorb mineral nutrients ($\text{N, P, K}$) from soil water, but carbon is taken from atmospheric $\text{CO}_2$.</li>
+      <li><strong>Texture Triangle:</strong> Practice reading Sand %, Silt %, Clay % coordinates to identify Loam vs Clay soil.</li>
+      <li><strong>HL Formation Factors:</strong> Remember CLORPT (Climate, Organisms, Relief, Parent Material, Time).</li>
+    </ul>
+  </div>
+  <div class="tip">Exam tip: In essay questions comparing agricultural sustainability, contrast high-tillage monoculture (A horizon loss, compaction) with conservation tillage &amp; cover cropping.</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 21 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">5.1.1 – 5.1.14 (SL) + 5.1.15 – 5.1.21 (HL)</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
