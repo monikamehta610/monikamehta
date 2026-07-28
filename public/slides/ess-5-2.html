@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 5.2</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 5: Land</div>
+    <h1>Agriculture &amp; Food Systems</h1>
+    <p class="subtitle">Subtopic 5.2 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">12 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">5.2.1 – 5.2.12</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">8 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">5.2.13 – 5.2.20</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic covers global food production systems, land scarcity, food equity, traditional farming vs Green Revolution monoculture, soil conservation techniques, trophic efficiency, food security, and — at HL — regenerative farming, high-tech vertical agriculture, and malnutrition.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. Global Food System &amp; Equity</strong><br/><span style="font-size:13px;color:var(--muted)">Land scarcity, food waste (~30%), food distribution equity, Maasai land rights</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Farming Systems &amp; Conservation</strong><br/><span style="font-size:13px;color:var(--muted)">Green Revolution, synthetic fertilizers, 6 soil conservation techniques</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Regenerative &amp; High-Tech (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">Permaculture, zero tillage, vertical farming, diet sustainability, malnutrition</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Question</h3>
+  <ul class="bullets">
+    <li>To what extent can the production of food be considered sustainable?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 6 hours SL + additional HL hours. Second subtopic in Topic 5: Land.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 5.2.1 – 5.2.3 ==================== -->
+<div class="slide" data-sec="system">
+  <div class="section-tag">5.2.1 – 5.2.3</div>
+  <h2>Land Scarcity, Equity &amp; Food Distribution</h2>
+  <div class="kt"><strong>Key Understanding</strong>Arable land is a finite resource. Global agriculture produces enough food to feed 8+ billion people, but distribution is inequitable and ~30% is wasted.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">🗑️ Global Food Waste (~30%)</h3>
+      <p style="font-size:13px">Developing nations lose food post-harvest due to storage &amp; transport gaps; MEDCs waste food at retail and consumer levels.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">⚖️ Inequitable Access</h3>
+      <p style="font-size:13px">Marginalized groups (such as indigenous pastoralists) are disproportionately displaced by commercial land-use decisions without input.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Case Study: Maasai Pastoralist Dispossession (East Africa)</h3>
+    <p style="font-size:13px">Traditional Maasai grazing lands have been increasingly converted to commercial agriculture, national parks, and safari tourism, restricting their seasonal nomadic mobility and creating localized food insecurity.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 4: 5.2.4 – 5.2.6 ==================== -->
+<div class="slide" data-sec="systems">
+  <div class="section-tag">5.2.4 – 5.2.6</div>
+  <h2>Agricultural Systems &amp; Traditional Practices</h2>
+  <div class="kt"><strong>Key Understanding</strong>Farming systems vary widely based on soil, climate, and culture. Traditional practices like <em>nomadic pastoralism</em> and <em>slash-and-burn</em> sustain low-density populations.</div>
+  <table class="tbl">
+    <tr><th>Farming System</th><th>Input &amp; Energy Intensity</th><th>Outputs &amp; Sustainability</th></tr>
+    <tr><td><strong>Subsistence Farming</strong></td><td>Low inputs (family labor, manure, saved seed)</td><td>Local family food supply; high ecological sustainability at low density</td></tr>
+    <tr><td><strong>Nomadic Pastoralism</strong></td><td>Low inputs (seasonal livestock herding)</td><td>Meat, milk, blood; sustainable in arid grasslands with low population</td></tr>
+    <tr><td><strong>Slash-and-Burn (Shifting)</strong></td><td>Low inputs (forest clearance &amp; burning)</td><td>Ash-fertilized crops for 2-3 yrs; forest regenerates if fallow period is long</td></tr>
+    <tr><td><strong>Commercial Monoculture</strong></td><td>High inputs (fossil fuels, synthetic NPK, pesticides, hybrid seeds)</td><td>High single-crop yield for market; high risk of soil degradation &amp; pollution</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 5: 5.2.7 ==================== -->
+<div class="slide" data-sec="greenrev">
+  <div class="section-tag">5.2.7</div>
+  <h2>The Green Revolution</h2>
+  <div class="kt"><strong>Key Understanding</strong>The Green Revolution doubled food yields through high-yielding crop varieties (HYVs), synthetic fertilizers, pesticides, and expansion of irrigation.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">✅ Benefits</h3>
+      <ul class="bullets" style="font-size:13px">
+        <li>Saved millions from acute famine in India, Mexico, and Southeast Asia</li>
+        <li>Dramatically increased crop yield per hectare without expanding land area</li>
+        <li>Lowered global grain market prices</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">⚠️ Environmental &amp; Social Costs</h3>
+      <ul class="bullets" style="font-size:13px">
+        <li>Heavy soil degradation, salinization, and chemical runoff eutrophication</li>
+        <li>High fossil fuel dependency &amp; groundwater depletion</li>
+        <li>Smallholder farmer debt traps due to expensive patented seeds &amp; inputs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 6: 5.2.8 & 5.2.9 ==================== -->
+<div class="slide" data-sec="conservation">
+  <div class="section-tag">5.2.8 &amp; 5.2.9</div>
+  <h2>Synthetic Fertilizers &amp; 6 Soil Conservation Techniques</h2>
+  <div class="kt"><strong>Key Understanding</strong>Synthetic fertilizers boost yields at the expense of soil health. Sustainable agriculture utilizes specific soil conservation techniques to preserve topsoil.</div>
+  <img src="/slides/images/ess-5-2-soil-conservation-techniques.jpg" alt="6 Soil Conservation Techniques Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Technique</th><th>Mechanism &amp; How It Works</th><th>Key Environmental Benefit</th></tr>
+    <tr><td><strong>Terracing</strong></td><td>Carving step-like flat benches into steep hillsides</td><td>Prevents severe water runoff and soil washing downhill</td></tr>
+    <tr><td><strong>Contour Plowing</strong></td><td>Plowing furrows horizontally across land contours</td><td>Slows surface runoff water speed, trapping sediment</td></tr>
+    <tr><td><strong>Cover Cropping</strong></td><td>Planting clover or rye between main harvest seasons</td><td>Protects bare topsoil from wind/water erosion; adds organic matter</td></tr>
+    <tr><td><strong>Crop Rotation</strong></td><td>Alternating grain crops with nitrogen-fixing legumes</td><td>Breaks pest cycles and naturally replenishes soil nitrates</td></tr>
+    <tr><td><strong>Shelterbelts / Windbreaks</strong></td><td>Planting rows of tall trees along field borders</td><td>Deflects wind, preventing topsoil wind erosion</td></tr>
+    <tr><td><strong>Zero Tillage (No-Till)</strong></td><td>Seeding directly into unplowed crop residue</td><td>Preserves soil structure, earthworms, and soil carbon storage</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 7: 5.2.10 ==================== -->
+<div class="slide" data-sec="diet">
+  <div class="section-tag">5.2.10</div>
+  <h2>Trophic Efficiency &amp; Diet Sustainability</h2>
+  <div class="kt"><strong>Key Understanding</strong>Diets lower in trophic levels (plant-based) are significantly more energy-efficient and sustainable due to ~90% energy loss between trophic levels.</div>
+  <div class="card" style="margin-top:14px">
+    <h3>Virtual Water &amp; Land Footprint per kg Food</h3>
+    <ul class="bullets">
+      <li><strong>1 kg Beef:</strong> ~15,400 Liters of water + 10-20× more land than grains (Trophic Level 3/4)</li>
+      <li><strong>1 kg Pork / Chicken:</strong> ~4,300 - 6,000 Liters of water</li>
+      <li><strong>1 kg Wheat / Cereals:</strong> ~1,500 Liters of water (Trophic Level 1 - Producer)</li>
+      <li><strong>1 kg Vegetables / Potatoes:</strong> ~290 - 400 Liters of water</li>
+    </ul>
+  </div>
+  <div class="tip">Energy Loss Rule: Eating grain directly feeds 10× more people than feeding the grain to cattle and consuming the beef.</div>
+</div>
+
+<!-- ==================== SLIDE 8: 5.2.11 & 5.2.12 ==================== -->
+<div class="slide" data-sec="security">
+  <div class="section-tag">5.2.11 &amp; 5.2.12</div>
+  <h2>Sustainable Supply &amp; The 4 Pillars of Food Security</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Food security</em> exists when all people have physical and economic access to safe, nutritious food. Requires sustainable intensification without expanding farmland.</div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Pillar of Food Security</th><th>Focus &amp; Definition</th></tr>
+    <tr><td><strong>1. Availability</strong></td><td>Sufficient global/local food production supply</td></tr>
+    <tr><td><strong>2. Access</strong></td><td>Economic affordability and physical access to market supplies</td></tr>
+    <tr><td><strong>3. Utilization</strong></td><td>Nutritional quality, clean water, and sanitation for proper absorption</td></tr>
+    <tr><td><strong>4. Stability</strong></td><td>Consistent food access over time without climate or conflict disruptions</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 9: HL 5.2.14 & 5.2.15 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 5.2.14 &amp; 5.2.15</div>
+  <h2>Regenerative Agriculture &amp; Permaculture<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Alternative systems like <em>permaculture</em>, <em>regenerative farming</em>, and <em>mob grazing</em> restore soil health, sequester carbon, and boost biodiversity.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">🌿 Permaculture Principles</h3>
+      <p style="font-size:13px">Design agricultural systems modeled on natural ecosystems: polycultures, closed nutrient loops, rainwater harvesting, zero chemical inputs.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">🐂 Regenerative Mob Grazing</h3>
+      <p style="font-size:13px">Concentrating livestock in small paddocks for short periods mimics wild herds, trampling organic matter into soil and building topsoil carbon.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 10: HL 5.2.16 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 5.2.16</div>
+  <h2>High-Tech &amp; Vertical Agriculture<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Modern indoor high-tech greenhouses, hydroponics, and urban vertical farms achieve extreme productivity per m² with minimal water use.</div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Technology</th><th>Mechanism &amp; Advantages</th><th>Key Trade-offs</th></tr>
+    <tr><td><strong>Vertical Farming</strong></td><td>Stacked indoor layers using LED lighting &amp; hydroponics; 90% less water, zero soil erosion, urban proximity</td><td>High energy consumption for lights/climate control; high capital startup cost</td></tr>
+    <tr><td><strong>Precision AI Farming</strong></td><td>Drones, sensors, and GPS targeting water &amp; fertilizers to exact plant needs</td><td>Reduces chemical waste; expensive digital infrastructure required</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 11: HL 5.2.17 – 5.2.20 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 5.2.17 – 5.2.20</div>
+  <h2>Diet Sustainability, Wild Harvest &amp; Malnutrition<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Dietary footprint varies widely. Malnutrition encompasses both undernourishment (hunger) and overnourishment (obesity).</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">⚠️ Undernourishment (~735M)</h3>
+      <p style="font-size:13px">Chronic caloric deficit causing stunting &amp; wasting in impoverished, climate-shocked, or war-torn regions.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #d97706">
+      <h3 style="color:#d97706">🍔 Overnourishment (~1.9B)</h3>
+      <p style="font-size:13px">Excess caloric intake from cheap, ultra-processed, energy-dense foods leading to obesity and cardiovascular diseases.</p>
+    </div>
+  </div>
+  <div class="tip">EAT-Lancet Planetary Health Diet: Recommends 50% reduction in global red meat and sugar consumption, doubling fruit, vegetable, legume, and nut intake.</div>
+</div>
+
+<!-- ==================== SLIDE 12: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Arable Land</strong></td><td>Land suitable for growing agricultural crops</td></tr>
+      <tr><td><strong>Green Revolution</strong></td><td>1950s-70s agricultural shift to high-yielding seeds, synthetic fertilizers, pesticides, and heavy irrigation</td></tr>
+      <tr><td><strong>Subsistence Farming</strong></td><td>Agriculture practiced to provide food for the farmer's family with minimal market surplus</td></tr>
+      <tr><td><strong>Contour Plowing</strong></td><td>Plowing across sloping land along elevation contour lines to reduce water runoff erosion</td></tr>
+      <tr><td><strong>Zero Tillage (No-Till)</strong></td><td>Planting seeds directly into undisturbed crop residue without plowing</td></tr>
+      <tr><td><strong>Food Security</strong></td><td>Condition where all people have physical and economic access to safe, nutritious food</td></tr>
+      <tr><td><strong>Permaculture</strong></td><td>Ethical agricultural design system mimicking natural self-sustaining ecosystems</td></tr>
+      <tr><td><strong>Vertical Farming</strong></td><td>Indoor urban farming growing crops in vertically stacked layers using hydroponics and LEDs</td></tr>
+      <tr><td><strong>Malnutrition</strong></td><td>Deficiencies, excesses, or imbalances in a person's intake of energy and/or nutrients</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 13: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>Food Equity:</strong> Global agriculture produces enough food; starvation stems from poor distribution, poverty, and 30% food waste.</li>
+      <li><strong>Green Revolution Trade-off:</strong> High crop yields vs soil salinization, chemical runoff, and farmer debt.</li>
+      <li><strong>6 Soil Conservation Methods:</strong> Terracing, Contour Plowing, Cover Cropping, Crop Rotation, Shelterbelts, Zero Tillage.</li>
+      <li><strong>Trophic Energy:</strong> Eating plant-based foods directly saves 90% energy compared to livestock consumption.</li>
+      <li><strong>HL Malnutrition Spectrum:</strong> Contrast undernourishment (hunger) with overnourishment (obesity).</li>
+    </ul>
+  </div>
+  <div class="tip">Exam tip: When comparing commercial monoculture to permaculture in 9-mark essay questions, evaluate inputs (fossil fuels vs labor), outputs (single commodity vs diverse food), and long-term soil sustainability.</div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 20 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">5.2.1 – 5.2.12 (SL) + 5.2.13 – 5.2.20 (HL) · Complete Topic 5: Land!</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>

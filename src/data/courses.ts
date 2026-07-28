@@ -172,9 +172,9 @@ export const COURSES: Course[] = [
         slug: "5-2",
         title: "Topic 5.2",
         subtitle: "Agriculture & Food",
+        htmlFile: "/slides/ess-5-2.html",
         level: "SL & HL",
         unit: "Unit 5: Land",
-        status: "coming-soon",
       },
       {
         slug: "6-1",
