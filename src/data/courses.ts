@@ -77,6 +77,7 @@ export const COURSES: Course[] = [
         title: "Topic 2.2",
         subtitle: "Ecosystems & Ecology",
         htmlFile: "/slides/ess-2-2.html",
+        youtubeUrl: "https://youtu.be/gHWhLeqs-7U?si=1_EfXzXw6OtknFR4",
         level: "SL & HL",
         unit: "Unit 2: Ecology",
       },
