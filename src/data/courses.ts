@@ -188,9 +188,9 @@ export const COURSES: Course[] = [
         slug: "6-2",
         title: "Topic 6.2",
         subtitle: "Climate Change – Causes & Impacts",
+        htmlFile: "/slides/ess-6-2.html",
         level: "SL & HL",
         unit: "Unit 6: Atmospheric Systems & Society",
-        status: "coming-soon",
       },
       {
         slug: "6-3",

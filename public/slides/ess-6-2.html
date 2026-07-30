@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 6.2</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 6: Atmosphere</div>
+    <h1>Climate Change:<br/>Causes &amp; Impacts</h1>
+    <p class="subtitle">Subtopic 6.2 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">7 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">6.2.1 – 6.2.7</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">2 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">6.2.8 – 6.2.9</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic examines the evidence for anthropogenic climate change, industrial drivers ($\text{CO}_2, \text{CH}_4, \text{N}_2\text{O}$), proxy data (ice cores), ecological and societal impacts, feedback mechanisms, and — at HL — the climate change planetary boundary and geopolitical perspectives.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. System &amp; Proxy Evidence</strong><br/><span style="font-size:13px;color:var(--muted)">800k-year Vostok ice cores, Keeling Curve, post-1950 acceleration</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Ecological &amp; Societal Impacts</strong><br/><span style="font-size:13px;color:var(--muted)">Coral bleaching, sea level rise, biome shifts, water/food security</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Feedbacks &amp; Boundaries (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">Ice-albedo &amp; permafrost positive loops, 350 ppm boundary, Paris Agreement</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>To what extent has climate change occurred due to anthropogenic causes?</li>
+    <li>How do differing perspectives play a role in responding to climate change challenges?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 3 hours SL + additional 4 hours HL. Second subtopic in Topic 6: Atmosphere.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 6.2.1 & 6.2.2 ==================== -->
+<div class="slide" data-sec="system">
+  <div class="section-tag">6.2.1 &amp; 6.2.2</div>
+  <h2>Climate System &amp; Anthropogenic Acceleration</h2>
+  <div class="kt"><strong>Key Understanding</strong>Climate represents 30+ year average weather patterns. Anthropogenic $\text{CO}_2$ emissions have accelerated rapidly since the post-1950 Great Acceleration.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #3b82f6">
+      <h3 style="color:#3b82f6">🌤️ Weather vs. Climate</h3>
+      <p style="font-size:13px">Weather = day-to-day atmospheric conditions. Climate = 30-year statistical average of temperature, precipitation, and wind.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">📈 Post-1950 Acceleration</h3>
+      <p style="font-size:13px">Pre-industrial $\text{CO}_2$ levels remained at ~280 ppm for millennia. Post-WWII industrial expansion drove concentrations to <strong>425+ ppm today</strong>.</p>
+    </div>
+  </div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Major Anthropogenic Source</th><th>Associated Greenhouse Gas</th><th>Global Percentage Share</th></tr>
+    <tr><td><strong>Fossil Fuel Energy &amp; Transport</strong></td><td>Carbon Dioxide ($\text{CO}_2$) &amp; Methane ($\text{CH}_4$)</td><td>~75% of global emissions</td></tr>
+    <tr><td><strong>Deforestation &amp; Land Use Shift</strong></td><td>Carbon Dioxide ($\text{CO}_2$)</td><td>~10% of global emissions</td></tr>
+    <tr><td><strong>Agriculture &amp; Livestock</strong></td><td>Methane ($\text{CH}_4$) &amp; Nitrous Oxide ($\text{N}_2\text{O}$)</td><td>~15% of global emissions</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 4: 6.2.3 ==================== -->
+<div class="slide" data-sec="evidence">
+  <div class="section-tag">6.2.3</div>
+  <h2>Proxy Data &amp; 800,000-Year Climate Record</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Proxy data</em> (ice cores, tree rings, sediment cores) show a direct positive correlation between atmospheric $\text{CO}_2$ concentrations and global temperatures.</div>
+  <img src="/slides/images/ess-6-2-ice-core-co2-trend.jpg" alt="800000 Years of Ice Core Proxy Data Chart" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Proxy Data Source</th><th>Measurement Mechanism</th><th>Information Provided</th></tr>
+    <tr><td><strong>Ice Cores (Vostok / EPICA)</strong></td><td>Air bubbles trapped in ancient ice sheets (oxygen isotopes &amp; gas ratios)</td><td>800,000-year continuous record of $\text{CO}_2$, $\text{CH}_4$, and paleotemperature</td></tr>
+    <tr><td><strong>Tree Rings (Dendrochronology)</strong></td><td>Annual growth ring width and wood density</td><td>Centennial-scale records of regional moisture and temperature anomalies</td></tr>
+    <tr><td><strong>Ocean Sediment Cores</strong></td><td>Foraminifera micro-fossil shell chemistry ($\delta^{18}\text{O}$)</td><td>Millennial-scale records of ocean temperature and ice volume</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 5: 6.2.4 & 6.2.5 ==================== -->
+<div class="slide" data-sec="impacts">
+  <div class="section-tag">6.2.4 &amp; 6.2.5</div>
+  <h2>Enhanced Greenhouse Effect &amp; Ecosystem Shifts</h2>
+  <div class="kt"><strong>Key Understanding</strong>Excess GHGs enhance radiative heat trapping, resulting in global warming, ocean thermal expansion, coral bleaching, and poleward biome shifts.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">🪸 Marine Ecosystem Collapse</h3>
+      <p style="font-size:13px">Warming sea surface temperatures cause corals to expel zooxanthellae (bleaching). Combined with ocean acidification ($\text{CO}_2 \rightarrow$ carbonic acid), reef structures dissolve.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #d97706">
+      <h3 style="color:#d97706">🌲 Poleward Biome Shifts</h3>
+      <p style="font-size:13px">Species ranges shift toward higher latitudes and altitudes. Mountain species face "summit traps" with nowhere higher to migrate.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 6: 6.2.6 ==================== -->
+<div class="slide" data-sec="impacts">
+  <div class="section-tag">6.2.6</div>
+  <h2>Societal Impacts &amp; Human Vulnerability</h2>
+  <div class="kt"><strong>Key Understanding</strong>Climate change threatens human societies through water stress, agricultural loss, vector-borne disease expansion, extreme weather damage, and climate displacement.</div>
+  <table class="tbl">
+    <tr><th>Societal Sector</th><th>Climate Vulnerability &amp; Risk</th></tr>
+    <tr><td><strong>Water Security</strong></td><td>Glacial retreat (Himalayas, Andes) depletes river water for billions; saltwater intrusion corrupts coastal aquifers</td></tr>
+    <tr><td><strong>Food Security</strong></td><td>Heat stress and shifting rainfall reduce staple grain yields (wheat, maize); extreme droughts trigger crop failures</td></tr>
+    <tr><td><strong>Public Health</strong></td><td>Expanding geographic range for malaria/dengue mosquitoes; severe mortality from urban heatwaves</td></tr>
+    <tr><td><strong>Human Migration</strong></td><td>Rising sea levels threaten low-lying island nations (Tuvalu, Maldives) generating climate refugees</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 7: 6.2.7 ==================== -->
+<div class="slide" data-sec="feedbacks">
+  <div class="section-tag">6.2.7</div>
+  <h2>Climate Feedback Loops</h2>
+  <div class="kt"><strong>Key Understanding</strong>Climate systems feature <em>positive feedbacks</em> (amplifying warming) and <em>negative feedbacks</em> (dampening warming). Positive feedbacks dominate today.</div>
+  <img src="/slides/images/ess-6-2-climate-feedback-loops.jpg" alt="Positive vs Negative Climate Feedback Loops Diagram" class="slide-img" />
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">🔥 Positive Feedback (Self-Reinforcing)</h3>
+      <p style="font-size:13px"><strong>Ice-Albedo:</strong> Warming $\rightarrow$ Ice melts $\rightarrow$ Dark ocean absorbs heat $\rightarrow$ More melting.<br/><strong>Permafrost:</strong> Warming $\rightarrow$ Thaw $\rightarrow$ Methane released $\rightarrow$ More warming.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">☁️ Negative Feedback (Stabilizing)</h3>
+      <p style="font-size:13px"><strong>Cloud Albedo:</strong> Warming $\rightarrow$ Evaporation $\rightarrow$ High low-level cloud cover $\rightarrow$ Reflects solar radiation $\rightarrow$ Cooling effect.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 8: HL 6.2.8 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.2.8</div>
+  <h2>Climate Change Planetary Boundary<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The safe operating limit for climate change is <strong>350 ppm $\text{CO}_2$</strong> and <strong>+1.0 W/m² radiative forcing</strong>. Both boundaries have been crossed.</div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Indicator Parameter</th><th>Planetary Safe Boundary</th><th>Current Observed Status</th><th>Risk Threshold</th></tr>
+    <tr><td><strong>Atmospheric $\text{CO}_2$</strong></td><td>350 ppm</td><td><strong style="color:#ef4444">425+ ppm</strong></td><td>EXCEEDED (High Risk Zone)</td></tr>
+    <tr><td><strong>Radiative Forcing</strong></td><td>+1.0 W/m²</td><td><strong style="color:#ef4444">+2.3 W/m²</strong></td><td>EXCEEDED (High Risk Zone)</td></tr>
+    <tr><td><strong>Global Temp Anomaly</strong></td><td>+1.5°C above pre-industrial</td><td>+1.1°C to +1.2°C</td><td>Approaching Tipping Points</td></tr>
+  </table>
+  <div class="card" style="margin-top:14px">
+    <h3>Paris Agreement Targets (2015)</h3>
+    <p style="font-size:13px">Legally binding international treaty committing nations to limit global warming to <strong>well below 2.0°C</strong>, pursuing efforts to limit increase to <strong>1.5°C</strong> above pre-industrial levels to prevent catastrophic climate tipping points.</p>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: HL 6.2.9 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.2.9</div>
+  <h2>Geopolitical Perspectives on Climate Action<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Perspectives on climate mitigation and adaptation differ based on economic interests, historical emission responsibilities, vulnerability, and political worldviews.</div>
+  <table class="tbl">
+    <tr><th>Stakeholder Perspective</th><th>Core Position &amp; Arguments</th></tr>
+    <tr><td><strong>Developed MEDCs</strong></td><td>High historical emissions responsibility; capacity for tech innovation; face economic pushback from fossil fuel industries</td></tr>
+    <tr><td><strong>Developing LEDCs &amp; SIDS</strong></td><td>Low historical emissions but highest vulnerability; demand <strong>Climate Justice</strong> &amp; Loss and Damage funding from wealthy nations</td></tr>
+    <tr><td><strong>Indigenous Communities</strong></td><td>Traditional Ecological Knowledge (TEK) stewardship; direct subsistence dependence on shifting climate systems</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 10: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Climate</strong></td><td>Statistical average of weather conditions over a minimum 30-year period</td></tr>
+      <tr><td><strong>Proxy Data</strong></td><td>Indirect historical climate evidence preserved in ice cores, tree rings, and sediment layers</td></tr>
+      <tr><td><strong>Enhanced Greenhouse Effect</strong></td><td>Additional heat trapping caused by anthropogenic GHG emissions ($\text{CO}_2, \text{CH}_4, \text{N}_2\text{O}$)</td></tr>
+      <tr><td><strong>Ice-Albedo Feedback</strong></td><td>Positive feedback where melting darkens surfaces, increasing heat absorption and further melting</td></tr>
+      <tr><td><strong>Radiative Forcing</strong></td><td>Imbalance between incoming solar radiation and outgoing infrared radiation ($\text{W/m}^2$)</td></tr>
+      <tr><td><strong>Climate Tipping Point</strong></td><td>Critical threshold beyond which a climate subsystem undergoes rapid, irreversible transformation</td></tr>
+      <tr><td><strong>Climate Justice</strong></td><td>Principle that burden of climate action should reflect historical emissions and socioeconomic vulnerability</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 11: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>Proxy Data Evidence:</strong> Vostok ice cores prove $\text{CO}_2$ and global temperature move in lockstep; current 425+ ppm is unprecedented in 800,000 years.</li>
+      <li><strong>Positive vs Negative Feedback:</strong> Ice-albedo and permafrost methane release are positive (amplifying); cloud reflection is negative (cooling).</li>
+      <li><strong>HL Planetary Boundary:</strong> $\text{CO}_2$ boundary (350 ppm) has been exceeded; Paris Agreement targets +1.5°C limit.</li>
+    </ul>
+  </div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 9 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">6.2.1 – 6.2.7 (SL) + 6.2.8 – 6.2.9 (HL) · Complete Topic 6: Atmosphere!</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
