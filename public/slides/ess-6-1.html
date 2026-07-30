@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 6.1</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 6: Atmosphere</div>
+    <h1>Introduction to<br/>the Atmosphere</h1>
+    <p class="subtitle">Subtopic 6.1 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">4 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">6.1.1 – 6.1.4</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">5 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">6.1.5 – 6.1.9</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic examines the atmospheric boundary layer, gas composition ($\text{N}_2, \text{O}_2, \text{CO}_2, \text{H}_2\text{O}$), the tricellular circulation model, the greenhouse energy budget, and — at HL — lapse rates, Milankovitch orbital cycles, Quaternary climate shifts, and life-atmosphere co-evolution.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. Composition &amp; Layers</strong><br/><span style="font-size:13px;color:var(--muted)">78% $\text{N}_2$, 21% $\text{O}_2$, Troposphere, Stratosphere, Mesosphere, Thermosphere</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Circulation &amp; Greenhouse</strong><br/><span style="font-size:13px;color:var(--muted)">Hadley, Ferrel &amp; Polar cells, shortwave vs longwave IR energy budget</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Orbital Cycles &amp; Evolution (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">Standard lapse rate (6.5°C/km), Milankovitch cycles, Great Oxygenation Event</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How do atmospheric systems contribute to the stability of life on Earth?</li>
+    <li>How do atmospheric processes interact with Earth's surface and oceans to regulate global climate?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 1 hour SL + additional 2 hours HL. First subtopic in Topic 6: Atmosphere.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 6.1.1 ==================== -->
+<div class="slide" data-sec="layers">
+  <div class="section-tag">6.1.1</div>
+  <h2>Composition &amp; Layers of the Atmosphere</h2>
+  <div class="kt"><strong>Key Understanding</strong>The atmosphere is a dynamic mixture of gases supporting terrestrial life, structured into distinct thermal layers (Troposphere, Stratosphere, Mesosphere, Thermosphere, Exosphere).</div>
+  <img src="/slides/images/ess-6-1-atmosphere-layers.jpg" alt="Earth's Atmospheric Layers and Altitude vs Temperature Profile Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Layer</th><th>Altitude Range</th><th>Key Characteristics &amp; Functions</th></tr>
+    <tr><td><strong>Troposphere</strong></td><td>0 – 12 km</td><td>Contains 75% of atmospheric mass, all water vapor &amp; weather. Temperature drops with height (-6.5°C/km)</td></tr>
+    <tr><td><strong>Stratosphere</strong></td><td>12 – 50 km</td><td>Contains the protective <strong>Ozone Layer ($\text{O}_3$)</strong> absorbing harmful solar UV radiation. Temperature warms with height</td></tr>
+    <tr><td><strong>Mesosphere</strong></td><td>50 – 85 km</td><td>Coldest atmospheric layer (-90°C). Meteors burn up due to friction with gas molecules</td></tr>
+    <tr><td><strong>Thermosphere</strong></td><td>85 – 600 km</td><td>Absorbs high-energy X-rays and cosmic radiation. Site of auroras and space station orbit</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 4: 6.1.2 ==================== -->
+<div class="slide" data-sec="circulation">
+  <div class="section-tag">6.1.2</div>
+  <h2>Differential Heating &amp; The Tricellular Model</h2>
+  <div class="kt"><strong>Key Understanding</strong>Uneven solar heating between the Equator and Poles drives thermal circulation via the <em>Tricellular Model (Hadley, Ferrel, Polar cells)</em>, redistributing global heat.</div>
+  <img src="/slides/images/ess-6-1-tricellular-model.jpg" alt="Tricellular Model of Atmospheric Circulation Diagram" class="slide-img" />
+  <div class="card-grid cols-3" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">Hadley Cell (0°–30°)</h3>
+      <p style="font-size:13px">Intense equatorial heating creates rising air (ITCZ low pressure rain) $\rightarrow$ sinks at 30° latitude forming dry subtropical deserts.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">Ferrel Cell (30°–60°)</h3>
+      <p style="font-size:13px">Mid-latitude circulation driven by adjacent cells, generating prevailing Westerly winds across temperate zones.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #3b82f6">
+      <h3 style="color:#3b82f6">Polar Cell (60°–90°)</h3>
+      <p style="font-size:13px">Cold, dense air sinks at the poles (high pressure) and flows equatorward, rising at the polar front (60°).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 5: 6.1.3 & 6.1.4 ==================== -->
+<div class="slide" data-sec="greenhouse">
+  <div class="section-tag">6.1.3 &amp; 6.1.4</div>
+  <h2>The Greenhouse Effect &amp; Radiation Budget</h2>
+  <div class="kt"><strong>Key Understanding</strong>Shortwave solar radiation warms Earth's surface. The warmed surface re-emits <em>longwave infrared (IR) radiation</em>, which is absorbed and re-radiated back by Greenhouse Gases (GHGs).</div>
+  <img src="/slides/images/ess-6-1-greenhouse-effect.jpg" alt="The Greenhouse Effect Energy Budget Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Greenhouse Gas</th><th>Natural / Human Sources</th><th>Global Warming Potential (GWP 100yr)</th></tr>
+    <tr><td><strong>Water Vapor ($\text{H}_2\text{O}$)</strong></td><td>Evaporation from oceans &amp; lakes (natural feedback)</td><td>Variable (largest contributor to natural effect)</td></tr>
+    <tr><td><strong>Carbon Dioxide ($\text{CO}_2$)</strong></td><td>Fossil fuel combustion, deforestation, respiration</td><td>1 (Reference baseline)</td></tr>
+    <tr><td><strong>Methane ($\text{CH}_4$)</strong></td><td>Livestock enteric fermentation, rice paddies, landfills</td><td>28× $\text{CO}_2$ equivalent</td></tr>
+    <tr><td><strong>Nitrous Oxide ($\text{N}_2\text{O}$)</strong></td><td>Synthetic nitrogen fertilizers, industrial processes</td><td>265× $\text{CO}_2$ equivalent</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 6: HL 6.1.5 & 6.1.6 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.1.5 &amp; 6.1.6</div>
+  <h2>Dynamic System, Lapse Rate &amp; Gravity<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Gravity compresses atmospheric molecules near sea level. In the troposphere, temperature drops at the <em>Standard Lapse Rate (~6.5°C per 1,000m)</em>.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">🏔️ Tropospheric Lapse Rate</h3>
+      <p style="font-size:13px">As altitude increases, air pressure drops and distance from the warm surface heat source increases $\rightarrow$ temperature cools by 6.5°C for every 1 km gain in altitude.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--orange)">
+      <h3 style="color:var(--orange)">☀️ Stratospheric Inversion</h3>
+      <p style="font-size:13px">In the stratosphere, temperature <em>increases</em> with height because the ozone layer absorbs high-energy solar UV radiation, releasing thermal heat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 7: HL 6.1.7 & 6.1.8 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.1.7 &amp; 6.1.8</div>
+  <h2>Milankovitch Cycles &amp; Quaternary Climate Shifts<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong><em>Milankovitch cycles</em> (Eccentricity, Obliquity, Precession) drive long-term natural glacial-interglacial cycles over 10,000–100,000 year timescales.</div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Orbital Cycle</th><th>Periodicity</th><th>Mechanism &amp; Climate Impact</th></tr>
+    <tr><td><strong>Eccentricity</strong></td><td>~100,000 Years</td><td>Earth's orbit shifts between circular and elliptical, altering distance from the Sun</td></tr>
+    <tr><td><strong>Obliquity (Tilt)</strong></td><td>~41,000 Years</td><td>Axial tilt varies between 22.1° and 24.5°, altering seasonal temperature intensity</td></tr>
+    <tr><td><strong>Precession (Wobble)</strong></td><td>~26,000 Years</td><td>Axial wobble alters which hemisphere points toward the Sun at perihelion</td></tr>
+  </table>
+  <div class="tip">Exam distinction: Milankovitch cycles operate over tens of thousands of years. Modern post-industrial warming is occurring in <em>decades</em>, driven by anthropogenic GHG emissions.</div>
+</div>
+
+<!-- ==================== SLIDE 8: HL 6.1.9 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.1.9</div>
+  <h2>Life-Atmosphere Co-Evolution<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The evolution of photosynthetic life altered Earth's atmosphere, which in turn enabled terrestrial colonization and evolutionary diversification.</div>
+  <div class="flow" style="margin:16px 0">
+    <div class="flow-node" style="background:#fff9e6">🌋 Pre-biotic Atmosphere<br/>($\text{CO}_2, \text{CH}_4$, No $\text{O}_2$)</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee">🦠 Cyanobacteria Photosynthesis<br/>(2.4 Ga)</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f0fa">📈 Great Oxygenation Event<br/>($\text{O}_2$ accumulation)</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#f3e5f5;border-color:#7b1fa2">🛡️ Stratospheric Ozone Layer<br/>Formed</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node" style="background:#e8f8ee;border-color:#2e9e5a">🌿 Terrestrial Land Life<br/>Colonization</div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Troposphere</strong></td><td>Lowest atmospheric layer (0-12 km) containing 75% of air mass, weather, and greenhouse gases</td></tr>
+      <tr><td><strong>Stratosphere</strong></td><td>Atmospheric layer (12-50 km) containing the UV-absorbing Ozone Layer ($\text{O}_3$)</td></tr>
+      <tr><td><strong>Hadley Cell</strong></td><td>Equatorial circulation cell driving rising air at ITCZ and sinking air at 30° desert belts</td></tr>
+      <tr><td><strong>Greenhouse Effect</strong></td><td>Natural process where GHGs absorb outgoing longwave IR radiation, keeping Earth ~33°C warmer</td></tr>
+      <tr><td><strong>Lapse Rate</strong></td><td>Rate of temperature decrease with altitude in the troposphere (~6.5°C/km)</td></tr>
+      <tr><td><strong>Milankovitch Cycles</strong></td><td>Orbital variations (eccentricity, obliquity, precession) driving natural glacial-interglacial cycles</td></tr>
+      <tr><td><strong>Great Oxygenation Event</strong></td><td>Geological period (~2.4 Ga) when cyanobacterial oxygen accumulated in the atmosphere</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 10: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>Radiation wavelength distinction:</strong> Sun emits shortwave radiation (visible/UV); Earth re-emits longwave infrared (IR) radiation.</li>
+      <li><strong>Tricellular connection:</strong> Connect Hadley cell descending air at 30° N/S to global desert biomes.</li>
+      <li><strong>HL Milankovitch vs Anthropogenic:</strong> Natural orbital cycles act over $10^4-10^5$ years; human warming acts over $10^1-10^2$ years.</li>
+    </ul>
+  </div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 9 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">6.1.1 – 6.1.4 (SL) + 6.1.5 – 6.1.9 (HL)</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>

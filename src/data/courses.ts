@@ -180,9 +180,9 @@ export const COURSES: Course[] = [
         slug: "6-1",
         title: "Topic 6.1",
         subtitle: "Introduction to the Atmosphere",
+        htmlFile: "/slides/ess-6-1.html",
         level: "SL & HL",
         unit: "Unit 6: Atmospheric Systems & Society",
-        status: "coming-soon",
       },
       {
         slug: "6-2",
