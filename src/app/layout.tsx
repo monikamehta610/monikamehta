@@ -10,22 +10,21 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Monika Mehta | Science Educator, IBDP Biology & ESS Specialist, Biotech Professional",
+  title: "Monika Mehta | IBDP Biology & ESS Educator",
   description:
-    "Monika Mehta is an experienced Science Educator & Biotechnology Professional with 9+ years in university lecturing, IBDP Biology & ESS instruction, and quality control. Book a tutoring consultation or explore interactive IB course slides.",
+    "Monika Mehta is an experienced IBDP Biology & ESS Educator with 9+ years of university lecturing and IB instruction. Book a tutoring consultation or explore interactive IB course slides.",
   keywords: [
     "Monika Mehta",
     "IBDP Biology",
     "IBDP ESS",
     "Science Educator",
-    "Biotechnology",
     "IB Tutor",
     "San Jose Educator",
     "University Lecturer",
   ],
   authors: [{ name: "Monika Mehta" }],
   openGraph: {
-    title: "Monika Mehta | Science Educator & Biotech Specialist",
+    title: "Monika Mehta | IBDP Biology & ESS Educator",
     description:
       "Expert IBDP instruction, university lecturing, and interactive study resources for IB Environmental Systems & Societies and Biology.",
     type: "website",

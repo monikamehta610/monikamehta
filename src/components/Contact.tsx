@@ -74,7 +74,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="text-slate-600 max-w-xl text-center text-sm sm:text-base leading-relaxed">
-            Schedule a free 15-minute consultation to discuss IB DP Biology &amp; ESS tutoring, university lecturing collaborations, or biotech consultation.
+            Schedule a free 15-minute consultation to discuss IB DP Biology &amp; ESS tutoring, Internal Assessment guidance, or university lecturing collaborations.
           </p>
 
           {/* Quick Action Button: Book Call */}
@@ -245,7 +245,7 @@ export default function Contact() {
                   >
                     <option value="Tutoring / Lecturing Inquiry">IB DP Biology / ESS Tutoring</option>
                     <option value="University Lecturing">University Lecturing / Teaching</option>
-                    <option value="Biotech Consultation">Biotechnology Quality Control / Consultation</option>
+                    <option value="IA Guidance">Internal Assessment (IA) Mentorship</option>
                     <option value="General Question">General Question</option>
                   </select>
                 </div>

@@ -23,23 +23,23 @@ export default function Hero() {
             {/* Top pill badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200/80 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-blue-600 animate-pulse" />
-              <span>Science Educator, IBDP Specialist &amp; Biotech Professional</span>
+              <span>IBDP Biology &amp; ESS Educator | 9+ Years Experience</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900">
-              Elevating Science Education &amp;{" "}
+              Master IB Biology &amp; ESS with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-600 to-indigo-600">
-                Academic Performance.
+                Expert Guidance.
               </span>
             </h1>
 
-            {/* Subheading focusing on tutoring/lecturing lead generation */}
+            {/* Subheading focusing on tutoring & lecturing */}
             <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-              Hi, I&apos;m <strong>Monika Mehta</strong>. With 9+ years of University lecturing, IBDP Biology &amp; ESS instruction, and Industrial Quality Control experience, I help students achieve Level 7 IB scores and universities deliver high-impact science education.
+              Hi, I&apos;m <strong>Monika Mehta</strong>. With over 9 years of university lecturing and IBDP Biology &amp; ESS instruction experience, I help students achieve Level 7 IB scores and master complex scientific concepts with confidence.
             </p>
 
-            {/* CTA Buttons - Primary: Book Intro Call / Tutoring; Secondary: Study Slides */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto pt-2">
               <a
                 href="#contact"
@@ -88,7 +88,7 @@ export default function Hero() {
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 text-base">Educational Services</h3>
-                      <p className="text-xs text-slate-500">Tutoring, Lecturing &amp; Consulting</p>
+                      <p className="text-xs text-slate-500">Tutoring &amp; Academic Lecturing</p>
                     </div>
                   </div>
                   <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
@@ -102,7 +102,7 @@ export default function Hero() {
                     { icon: CheckCircle2, color: "text-blue-600", title: "IBDP Biology & ESS Tutoring", desc: "One-on-one personalized coaching targeting Level 7 scores" },
                     { icon: Award, color: "text-emerald-600", title: "Internal Assessment (IA) Mentorship", desc: "Expert guidance from topic selection to data analysis" },
                     { icon: FileText, color: "text-indigo-600", title: "University Science Lecturing", desc: "Microbiology, Genetics, and General Biology instruction" },
-                    { icon: Sparkles, color: "text-amber-500", title: "Biotech Quality Control Consulting", desc: "9+ years industrial QC and laboratory compliance background" },
+                    { icon: Sparkles, color: "text-amber-500", title: "Interactive Course & Exam Strategy", desc: "Full slide decks, Paper 1 & 2 exam strategies & mark schemes" },
                   ].map((service, i) => (
                     <div key={i} className="flex items-start gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
                       <service.icon className={`w-5 h-5 ${service.color} flex-shrink-0 mt-0.5`} />
