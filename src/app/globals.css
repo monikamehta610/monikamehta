@@ -25,7 +25,6 @@
   --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-glow: glow 3s ease-in-out infinite alternate;
 
   @keyframes fade-in-up {
     from {
@@ -42,62 +41,54 @@
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
     }
   }
   @keyframes pulse-slow {
     0%, 100% {
-      opacity: 0.2;
+      opacity: 0.15;
     }
     50% {
-      opacity: 0.45;
-    }
-  }
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 15px rgba(13, 148, 136, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
-    }
-    to {
-      box-shadow: 0 0 25px rgba(13, 148, 136, 0.5), 0 0 50px rgba(99, 102, 241, 0.3);
+      opacity: 0.35;
     }
   }
 }
 
 :root {
-  /* Vibrant Deep Modern Theme */
-  --background: #0b0f19;
-  --foreground: #f8fafc;
-  --card: #151c2e;
-  --card-foreground: #f8fafc;
-  --primary: #0d9488;
+  /* Clean Modern Light Theme (Apple / Stripe / Linear style) */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
-  --secondary: #1e293b;
-  --secondary-foreground: #cbd5e1;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #6366f1;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #475569;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #10b981;
   --accent-foreground: #ffffff;
-  --border: #1e293b;
-  --input: #151c2e;
-  --ring: #0d9488;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #2563eb;
 }
 
 .dark {
-  --background: #0b0f19;
-  --foreground: #f8fafc;
-  --card: #151c2e;
-  --card-foreground: #f8fafc;
-  --primary: #14b8a6;
-  --primary-foreground: #0f172a;
-  --secondary: #1e293b;
-  --secondary-foreground: #cbd5e1;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #818cf8;
-  --accent-foreground: #0f172a;
-  --border: #1e293b;
-  --input: #151c2e;
-  --ring: #14b8a6;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #475569;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #2563eb;
 }
 
 @layer base {
@@ -126,30 +117,30 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0d9488;
+  background: #2563eb;
 }
 
-/* ── Course Platform: Warm Light Scope for Slide Containers ───────────────── */
+/* Course light scope for slide decks */
 .course-light {
-  --cl-bg:             #fbfaf8;
-  --cl-bg-subtle:      #f5f3f0;
+  --cl-bg:             #f8fafc;
+  --cl-bg-subtle:      #f1f5f9;
   --cl-card:           #ffffff;
-  --cl-card-border:    #ece7e2;
-  --cl-fg:             #2f2a24;
-  --cl-fg-muted:       #6f6a64;
-  --cl-fg-subtle:      #9e9890;
-  --cl-accent-bio:     #16a34a;
-  --cl-accent-bio-bg:  rgba(22, 163, 74, 0.09);
-  --cl-accent-ess:     #0d9488;
-  --cl-accent-ess-bg:  rgba(13, 148, 136, 0.09);
-  --cl-accent-neutral: #0d9488;
-  --cl-shadow:         0 2px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
-  --cl-shadow-md:      0 4px 20px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  --cl-card-border:    #e2e8f0;
+  --cl-fg:             #0f172a;
+  --cl-fg-muted:       #475569;
+  --cl-fg-subtle:      #64748b;
+  --cl-accent-bio:     #10b981;
+  --cl-accent-bio-bg:  rgba(16, 185, 129, 0.09);
+  --cl-accent-ess:     #2563eb;
+  --cl-accent-ess-bg:  rgba(37, 99, 235, 0.09);
+  --cl-accent-neutral: #2563eb;
+  --cl-shadow:         0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.03);
+  --cl-shadow-md:      0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
   --cl-radius:         12px;
   --cl-radius-lg:      18px;
 
@@ -157,11 +148,3 @@ html {
   background-color: var(--cl-bg);
   color: var(--cl-fg);
 }
-
-@keyframes course-fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.course-animate-in          { animation: course-fade-up 0.5s cubic-bezier(0.16,1,0.3,1) both; }
-.course-animate-in-delay    { animation: course-fade-up 0.5s cubic-bezier(0.16,1,0.3,1) 0.12s both; }
-.course-animate-in-delay-2  { animation: course-fade-up 0.5s cubic-bezier(0.16,1,0.3,1) 0.22s both; }
