@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 6.3</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 6: Atmosphere</div>
+    <h1>Climate Change:<br/>Mitigation &amp; Adaptation</h1>
+    <p class="subtitle">Subtopic 6.3 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">5 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">6.3.1 – 6.3.5</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">7 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">6.3.6 – 6.3.12</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic addresses societal responses to climate change through <strong>mitigation</strong> (reducing emissions &amp; enhancing sinks) and <strong>adaptation</strong> (reducing vulnerability to unavoidable impacts), international UN frameworks, decarbonization, and — at HL — stakeholder policy, IPCC Shared Socioeconomic Pathways (SSPs), geoengineering, and implementation barriers.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. Global Action &amp; Decarbonization</strong><br/><span style="font-size:13px;color:var(--muted)">Paris Agreement, Net-Zero, phase out fossil fuels for renewables</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Mitigation &amp; Adaptation Strategies</strong><br/><span style="font-size:13px;color:var(--muted)">Carbon sinks, structural flood barriers, NAPAs, drought-resistant crops</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Geoengineering &amp; SSPs (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">SRM (solar reflection) vs CDR (direct air capture), IPCC SSP1-5 scenarios</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Question</h3>
+  <ul class="bullets">
+    <li>How can human societies address the causes and consequences of climate change?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 4 hours SL + additional 4 hours HL. Third subtopic in Topic 6: Atmosphere.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 6.3.1 & 6.3.2 ==================== -->
+<div class="slide" data-sec="action">
+  <div class="section-tag">6.3.1 &amp; 6.3.2</div>
+  <h2>Global Action, Mitigation &amp; Decarbonization</h2>
+  <div class="kt"><strong>Key Understanding</strong>Avoiding catastrophic warming requires worldwide decarbonization — shifting energy infrastructure from fossil fuels to renewables to achieve Net-Zero.</div>
+  <img src="/slides/images/ess-6-3-mitigation-vs-adaptation.jpg" alt="Climate Change Mitigation vs Adaptation Infographic" class="slide-img" />
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #3b82f6">
+      <h3 style="color:#3b82f6">🌱 Mitigation (Addressing Causes)</h3>
+      <p style="font-size:13px">Interventions to reduce anthropogenic GHG sources (renewable energy, EV transport) or enhance carbon sinks (reforestation, soil sequestration).</p>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">🛡️ Adaptation (Managing Impacts)</h3>
+      <p style="font-size:13px">Adjustments in natural or human systems to cope with actual or expected climate impacts (seawalls, drought-tolerant crops, flood zoning).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 4: 6.3.3 & 6.3.4 ==================== -->
+<div class="slide" data-sec="strategies">
+  <div class="section-tag">6.3.3 &amp; 6.3.4</div>
+  <h2>Specific Mitigation &amp; Adaptation Strategies</h2>
+  <div class="kt"><strong>Key Understanding</strong>Societies deploy a mix of technical, behavioral, structural, and non-structural strategies to manage climate risk.</div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Category</th><th>Approach &amp; Method</th><th>Practical Examples</th></tr>
+    <tr><td><strong>Mitigation: Reduction</strong></td><td>Energy efficiency, solar/wind renewables, plant-based diets</td><td>Germany <em>Energiewende</em>, electric vehicle mandates, carbon taxes</td></tr>
+    <tr><td><strong>Mitigation: Removal</strong></td><td>Protecting &amp; expanding biological &amp; physical carbon sinks</td><td>Afforestation, mangrove restoration, Carbon Capture &amp; Storage (CCS)</td></tr>
+    <tr><td><strong>Adaptation: Structural</strong></td><td>Physical infrastructure engineered to resist climate hazards</td><td>London Thames Barrier, Israel Sorek Desalination Plant, green roofs</td></tr>
+    <tr><td><strong>Adaptation: Non-Structural</strong></td><td>Policy, land-use zoning, insurance, and warning systems</td><td>Bangladesh cyclone early warning systems, flood-plain building codes</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 5: 6.3.5 ==================== -->
+<div class="slide" data-sec="napa">
+  <div class="section-tag">6.3.5</div>
+  <h2>National Adaptation Programmes of Action (NAPAs)</h2>
+  <div class="kt"><strong>Key Understanding</strong>NAPAs provide a process for Least Developed Countries (LDCs) to identify and prioritize urgent adaptation needs responding to climate vulnerability.</div>
+  <table class="tbl">
+    <tr><th>Scale</th><th>Adaptation Planning Mechanism</th><th>Key Objectives</th></tr>
+    <tr><td><strong>International / UN</strong></td><td>Green Climate Fund (GCF) &amp; Paris Agreement NDCs</td><td>Channeling financial resources from developed to developing nations</td></tr>
+    <tr><td><strong>National Level (NAPAs)</strong></td><td>LDC National Adaptation Programmes</td><td>Prioritizing immediate resilience in agriculture, water supply, and coastal defense</td></tr>
+    <tr><td><strong>Local / Municipal</strong></td><td>Urban Resilience &amp; Heatwave Action Plans</td><td>Installing cooling centers, permeable urban pavement, rainwater harvesting</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 6: HL 6.3.6 & 6.3.7 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.3.6 &amp; 6.3.7</div>
+  <h2>Stakeholders &amp; UN Frameworks<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Climate responses are led by governments (carbon pricing, regulations), businesses (B Corp, net-zero supply chains), NGOs, and UN bodies (UNFCCC, IPCC).</div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>UN Entity / Accord</th><th>Primary Role</th><th>Key Milestones</th></tr>
+    <tr><td><strong>UNFCCC</strong></td><td>Intergovernmental treaty body organizing annual COP summits</td><td>1997 Kyoto Protocol, 2015 Paris Agreement</td></tr>
+    <tr><td><strong>IPCC</strong></td><td>Scientific body reviewing climate data for policy assessment</td><td>6th Assessment Reports (AR6), Shared Socioeconomic Pathways</td></tr>
+    <tr><td><strong>Kigali Amendment</strong></td><td>Phase-down of Hydrofluorocarbons (HFCs) under Montreal Protocol</td><td>Legally binding global treaty targeting potent refrigerant GHGs</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 7: HL 6.3.8 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.3.8</div>
+  <h2>IPCC Shared Socioeconomic Pathways (SSPs)<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>The IPCC models 5 Shared Socioeconomic Pathways (SSPs) projecting future GHG emission trajectories and resulting 2100 global warming levels.</div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Scenario</th><th>Socioeconomic Trajectory</th><th>Projected 2100 Warming</th></tr>
+    <tr><td><strong style="color:#2e9e5a">SSP1 - 1.9</strong></td><td>Sustainability — Shift toward green growth &amp; rapid decarbonization</td><td><strong style="color:#2e9e5a">~1.5°C</strong> (Safe Threshold)</td></tr>
+    <tr><td><strong>SSP2 - 4.5</strong></td><td>Middle of the Road — Moderate historical trends continue</td><td>~2.7°C (Moderate Risk)</td></tr>
+    <tr><td><strong style="color:#ef4444">SSP5 - 8.5</strong></td><td>Fossil-Fueled Development — High energy demand &amp; zero mitigation</td><td><strong style="color:#ef4444">~4.4°C</strong> (Catastrophic Risk)</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 8: HL 6.3.9 & 6.3.10 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.3.9 &amp; 6.3.10</div>
+  <h2>Mitigation Technology &amp; Implementation Barriers<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Implementation of climate technology (smart grids, IoT, DAC) faces financial constraints, leadership gaps, misinformation, and geopolitical divides.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid var(--blue)">
+      <h3 style="color:var(--blue)">🏙️ Smart Urban Systems</h3>
+      <p style="font-size:13px">IoT sensors, smart energy grids (e.g. Copenhagen), and building energy automation optimize energy use and lower carbon footprints.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">⚠️ Implementation Barriers</h3>
+      <p style="font-size:13px">Socioeconomic hurdles include high capital costs, fossil-fuel industry lobbying, political election cycles, and North-South equity divides.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: HL 6.3.11 & 6.3.12 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.3.11 &amp; 6.3.12</div>
+  <h2>Geoengineering &amp; Changing Perspectives<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Geoengineering (SRM vs CDR) addresses symptoms rather than root causes. Activists, media, and local groups play a key role in shifting public perspectives.</div>
+  <img src="/slides/images/ess-6-3-geoengineering-technologies.jpg" alt="Geoengineering Approaches Diagram" class="slide-img" />
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid var(--orange)">
+      <h3 style="color:var(--orange)">☀️ Solar Radiation Management (SRM)</h3>
+      <p style="font-size:13px">Stratospheric aerosol injection &amp; marine cloud brightening reflect sunlight back to space to cool the surface rapidly.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">🌱 Carbon Dioxide Removal (CDR)</h3>
+      <p style="font-size:13px">Direct Air Capture (DAC), Ocean Fertilization, and BECCS extract $\text{CO}_2$ directly from the atmosphere for underground storage.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 10: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Mitigation</strong></td><td>Interventions aimed at reducing anthropogenic GHG emissions or enhancing carbon sinks</td></tr>
+      <tr><td><strong>Adaptation</strong></td><td>Adjustments in natural or human systems to reduce vulnerability to climate impacts</td></tr>
+      <tr><td><strong>Decarbonization</strong></td><td>Phasing out carbon-emitting fossil fuels and transitioning to 100% renewable energy</td></tr>
+      <tr><td><strong>NAPA</strong></td><td>National Adaptation Programme of Action — identifying urgent climate needs for LDCs</td></tr>
+      <tr><td><strong>Geoengineering</strong></td><td>Large-scale technological interventions in Earth systems (SRM / CDR) to alter climate</td></tr>
+      <tr><td><strong>Direct Air Capture (DAC)</strong></td><td>Chemical technology extracting $\text{CO}_2$ directly from ambient air for geological storage</td></tr>
+      <tr><td><strong>SSP Scenarios</strong></td><td>IPCC Shared Socioeconomic Pathways modeling future climate and emissions trends</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 11: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>Mitigation vs Adaptation:</strong> Mitigation targets the causes ($\text{CO}_2$ emissions); Adaptation targets the symptoms (flooding, droughts). Both are required.</li>
+      <li><strong>Structural vs Non-Structural:</strong> Structural = physical engineering (seawalls, dams); Non-structural = policy/zoning/education.</li>
+      <li><strong>Geoengineering Risk (HL):</strong> SRM treats temperature symptoms without reducing ocean acidification; stopping SRM triggers rapid termination shock warming.</li>
+    </ul>
+  </div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 12 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">6.3.1 – 6.3.5 (SL) + 6.3.6 – 6.3.12 (HL) · Complete Unit 6: Atmospheric Systems!</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
