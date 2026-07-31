@@ -209,9 +209,9 @@ export const COURSES: Course[] = [
         slug: "6-4",
         title: "Topic 6.4",
         subtitle: "Stratospheric Ozone",
+        htmlFile: "/slides/ess-6-4.html",
         level: "SL & HL",
         unit: "Unit 6: Atmospheric Systems & Society",
-        status: "coming-soon",
       },
       {
         slug: "7-1",

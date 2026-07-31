@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESS Topic 6.4</title>
+
+  <!-- Shared Reson/Bloome design system (base tokens + BW layer) -->
+  <link rel="stylesheet" href="/slides/reson-shared.css" />
+
+  <!-- Sora font (used by Bloome slides) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Slide-specific styles -->
+  <style>
+    /* Slide layout and styling loaded from shared stylesheet /slides/reson-shared.css */
+    .slide-img {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 16px auto;
+      display: block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+  </style>
+
+  <!-- Reson widget bridge (must load before body) -->
+  <script src="/slides/reson-init.js"></script>
+</head>
+<body class="bw">
+<div id="progress" style="width:0%"></div>
+
+<div id="deck">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide active" data-sec="intro">
+  <div style="text-align:center;padding:40px 0 20px">
+    <div class="section-tag">IB DP Environmental Systems &amp; Societies — Topic 6: Atmosphere</div>
+    <h1>Stratospheric Ozone</h1>
+    <p class="subtitle">Subtopic 6.4 — New Syllabus (First Assessment 2026)<br/>Standard Level + Higher Level</p>
+    <div style="margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--blue)">
+        <div style="font-size:13px;font-weight:600">9 SL Points</div>
+        <div style="font-size:12px;color:var(--muted)">6.4.1 – 6.4.9</div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;text-align:center;border-left:3px solid var(--orange)">
+        <div style="font-size:13px;font-weight:600">4 HL Extensions</div>
+        <div style="font-size:12px;color:var(--muted)">6.4.10 – 6.4.13</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: OVERVIEW ==================== -->
+<div class="slide" data-sec="intro">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p class="lead">This subtopic examines the UV radiation spectrum, the stratospheric ozone layer ($\text{O}_3$), natural formation and destruction equilibrium, catalytic breakdown by Ozone-Depleting Substances (ODSs like CFCs), the Montreal Protocol success, and — at HL — halogen chemistry, polar stratospheric clouds (PSCs), HFCs, and air conditioning impacts.</p>
+  <div class="card-grid cols-3">
+    <div class="card"><strong style="color:var(--blue)">A. UV Shield &amp; Biological Impacts</strong><br/><span style="font-size:13px;color:var(--muted)">UVA, UVB, UVC absorption, skin cancer, cataracts, phytoplankton decline</span></div>
+    <div class="card"><strong style="color:var(--blue)">B. Ozone Equilibrium &amp; CFCs</strong><br/><span style="font-size:13px;color:var(--muted)">Natural $\text{O}_2/\text{O}_3$ equilibrium disrupted by Chlorine radicals from CFCs</span></div>
+    <div class="card"><strong style="color:var(--blue)">C. Montreal Protocol &amp; HFCs (HL)</strong><br/><span style="font-size:13px;color:var(--muted)">Boundary NOT crossed (~2060 recovery), Kigali Amendment phase-down of HFCs</span></div>
+  </div>
+  <h3 style="margin-top:20px">Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How does the ozone layer maintain equilibrium?</li>
+    <li>How does human activity change this equilibrium?</li>
+  </ul>
+  <div class="tip">Time allocation: minimum 2 hours SL + additional 4 hours HL. Final subtopic in Topic 6: Atmosphere.</div>
+</div>
+
+<!-- ==================== SLIDE 3: 6.4.1 – 6.4.4 ==================== -->
+<div class="slide" data-sec="spectrum">
+  <div class="section-tag">6.4.1 – 6.4.4</div>
+  <h2>The Electromagnetic Spectrum &amp; UV Shield</h2>
+  <div class="kt"><strong>Key Understanding</strong>Shorter wavelengths (high frequency UV radiation) carry higher energy and present severe risks to living organisms. The stratospheric ozone layer acts as a critical biological shield.</div>
+  <img src="/slides/images/ess-6-4-uv-radiation-spectrum.jpg" alt="UV Radiation Spectrum and Atmospheric Shielding Diagram" class="slide-img" />
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>UV Band</th><th>Wavelength Range</th><th>Atmospheric Stratospheric Absorption</th><th>Biological Danger &amp; Health Impacts</th></tr>
+    <tr><td><strong>UVC</strong></td><td>100 – 280 nm</td><td><strong style="color:#2e9e5a">100% Absorbed</strong> by $\text{O}_2$ and $\text{O}_3$</td><td>Lethal / Mutagenic; zero reaches Earth's surface</td></tr>
+    <tr><td><strong>UVB</strong></td><td>280 – 315 nm</td><td><strong style="color:#3b82f6">95% Absorbed</strong> by Ozone Layer ($\text{O}_3$)</td><td>Skin cancer (melanoma), eye cataracts, DNA mutations, phytoplankton damage</td></tr>
+    <tr><td><strong>UVA</strong></td><td>315 – 400 nm</td><td><strong style="color:#d97706">0% Absorbed</strong> (Passes through)</td><td>Premature skin aging, low-level DNA damage; stimulates Vitamin D synthesis</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SLIDE 4: 6.4.5 & 6.4.6 ==================== -->
+<div class="slide" data-sec="equilibrium">
+  <div class="section-tag">6.4.5 &amp; 6.4.6</div>
+  <h2>Ozone Equilibrium &amp; CFC Catalytic Destruction</h2>
+  <div class="kt"><strong>Key Understanding</strong>Stratospheric ozone exists in a natural <em>dynamic equilibrium</em>. Ozone-Depleting Substances (ODSs) like CFCs release chlorine radicals ($\text{Cl}^\bullet$) that destroy ozone in a continuous catalytic cycle.</div>
+  <img src="/slides/images/ess-6-4-stratospheric-ozone-cycle.jpg" alt="Stratospheric Ozone Cycle Formation and CFC Catalytic Destruction Diagram" class="slide-img" />
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">⚖️ Natural Dynamic Equilibrium</h3>
+      <p style="font-size:13px"><strong>Formation:</strong> $\text{O}_2 + \text{UV-C} \rightarrow 2\text{O}$; $\text{O} + \text{O}_2 \rightarrow \text{O}_3$<br/><strong>Breakdown:</strong> $\text{O}_3 + \text{UV-B/C} \rightarrow \text{O}_2 + \text{O}$<br/>Rates of formation and breakdown remain equal.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <h3 style="color:#ef4444">🧪 Catalytic Destruction by $\text{Cl}^\bullet$</h3>
+      <p style="font-size:13px">1. $\text{CF}_2\text{Cl}_2 + \text{UV-C} \rightarrow \text{CF}_2\text{Cl}^\bullet + \text{Cl}^\bullet$<br/>2. $\text{Cl}^\bullet + \text{O}_3 \rightarrow \text{ClO}^\bullet + \text{O}_2$<br/>3. $\text{ClO}^\bullet + \text{O} \rightarrow \text{Cl}^\bullet + \text{O}_2$<br/><em>Single $\text{Cl}^\bullet$ destroys ~100,000 $\text{O}_3$ molecules!</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 5: 6.4.7 – 6.4.9 ==================== -->
+<div class="slide" data-sec="montreal">
+  <div class="section-tag">6.4.7 – 6.4.9</div>
+  <h2>The Montreal Protocol &amp; Planetary Boundary</h2>
+  <div class="kt"><strong>Key Understanding</strong>The 1987 Montreal Protocol is the most successful international environmental treaty in history. Universal ratification has prevented the stratospheric ozone planetary boundary from being crossed.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">📜 1987 Montreal Protocol Success</h3>
+      <ul class="bullets" style="font-size:13px">
+        <li>Universally ratified by 198 UN member states</li>
+        <li>Phased out 99% of global production of CFCs &amp; Halons</li>
+        <li>Financial &amp; technology transfer mechanism for developing nations</li>
+        <li>Precautionary principle applied before irreversible destruction occurred</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #3b82f6">
+      <h3 style="color:#3b82f6">🌍 Boundary Status: NOT Crossed</h3>
+      <ul class="bullets" style="font-size:13px">
+        <li>Antarctic ozone hole peaked around year 2000 (30 million $\text{km}^2$)</li>
+        <li>Significant healing and recovery observed since early 2000s</li>
+        <li>Full stratospheric recovery projected by ~2060s</li>
+        <li>Prevented estimated 2+ million annual skin cancer cases by 2050</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 6: HL 6.4.10 & 6.4.11 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.4.10 &amp; 6.4.11</div>
+  <h2>Halogen Chemistry &amp; Polar Stratospheric Clouds<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Severe polar spring ozone depletion (the "Ozone Hole") is caused by extreme winter cold (-78°C) generating Polar Stratospheric Clouds (PSCs) that activate reservoir chlorine.</div>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>Polar Season</th><th>Atmospheric &amp; Chemical Mechanism</th><th>Ozone State</th></tr>
+    <tr><td><strong>Polar Winter (June–Aug)</strong></td><td>Polar vortex isolates air; temperatures fall below -78°C forming ice/nitric acid <strong>PSCs</strong></td><td>Inactive reservoir $\text{HCl}$ &amp; $\text{ClONO}_2$ convert to active $\text{Cl}_2$ gas on PSC surfaces</td></tr>
+    <tr><td><strong>Polar Spring (Sept–Nov)</strong></td><td>Sunlight returns; UV-C photolyzes $\text{Cl}_2 \rightarrow 2\text{Cl}^\bullet$ starting massive catalytic destruction</td><td><strong style="color:#ef4444">Ozone Hole Forms</strong> (drop below 220 Dobson Units)</td></tr>
+    <tr><td><strong>Polar Summer (Dec)</strong></td><td>Polar vortex breaks down; warmer mid-latitude air replenishes stratospheric ozone</td><td>Ozone hole temporarily fills until next winter cycle</td></tr>
+  </table>
+  <div class="tip">Volcanic Aerosols: Major volcanic eruptions (e.g. Mt. Pinatubo 1991) inject sulfate aerosols into the stratosphere, offering extra surfaces for chlorine activation and worsening depletion.</div>
+</div>
+
+<!-- ==================== SLIDE 7: HL 6.4.12 & 6.4.13 ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 6.4.12 &amp; 6.4.13</div>
+  <h2>HFCs, Kigali Amendment &amp; Air Conditioning<span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding</strong>Hydrofluorocarbons (HFCs) replaced CFCs to protect the ozone layer, but are potent greenhouse gases. The 2016 <em>Kigali Amendment</em> targets HFC phase-down to combat global warming.</div>
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card" style="border-left:4px solid #3b82f6">
+      <h3 style="color:#3b82f6">❄️ The HFC Dilemma</h3>
+      <p style="font-size:13px">HFCs contain no chlorine atoms ($\text{ODP} = 0$), so they do not destroy ozone. However, HFCs are super-pollutants with Global Warming Potentials up to <strong>14,800× $\text{CO}_2$</strong>.</p>
+    </div>
+    <div class="card" style="border-left:4px solid #2e9e5a">
+      <h3 style="color:#2e9e5a">📜 2016 Kigali Amendment</h3>
+      <p style="font-size:13px">Legally binding amendment to the Montreal Protocol committing countries to phase down HFC production by 80%+ over 30 years, avoiding up to <strong>0.5°C of global warming</strong> by 2100.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 8: GLOSSARY ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Key Terms Glossary</div>
+  <h2>Essential Vocabulary</h2>
+  <div class="card">
+    <table class="tbl">
+      <tr><th style="width:35%">Term</th><th>Definition</th></tr>
+      <tr><td><strong>Ozone Layer ($\text{O}_3$)</strong></td><td>Stratospheric concentration of triatomic oxygen absorbing 95%+ of solar UV-B and 100% of UV-C</td></tr>
+      <tr><td><strong>ODSs</strong></td><td>Ozone-Depleting Substances (CFCs, Halons, HCFCs, Methyl Bromide) releasing reactive halogens</td></tr>
+      <tr><td><strong>Dynamic Equilibrium</strong></td><td>Steady state where rate of natural ozone formation equals rate of UV-driven ozone breakdown</td></tr>
+      <tr><td><strong>Catalytic Cycle</strong></td><td>Chain reaction where a single free chlorine radical ($\text{Cl}^\bullet$) destroys ~100,000 ozone molecules</td></tr>
+      <tr><td><strong>Dobson Unit (DU)</strong></td><td>Unit measuring column ozone thickness; concentrations under 220 DU define an "Ozone Hole"</td></tr>
+      <tr><td><strong>PSCs</strong></td><td>Polar Stratospheric Clouds forming below -78°C providing ice surfaces for chlorine activation</td></tr>
+      <tr><td><strong>Kigali Amendment</strong></td><td>2016 Montreal Protocol extension establishing binding phase-down targets for climate-warming HFCs</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 9: EXAM TIPS ==================== -->
+<div class="slide" data-sec="summary">
+  <div class="section-tag">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="card">
+    <h3>Must-Know Concepts</h3>
+    <ul class="bullets">
+      <li><strong>UV Wavelength Danger:</strong> UV-C (most energetic/dangerous, 100% absorbed) $\rightarrow$ UV-B (causes skin cancer/cataracts, 95% absorbed) $\rightarrow$ UV-A (passes through).</li>
+      <li><strong>Catalytic Mechanism:</strong> $\text{Cl}^\bullet + \text{O}_3 \rightarrow \text{ClO}^\bullet + \text{O}_2$; $\text{ClO}^\bullet + \text{O} \rightarrow \text{Cl}^\bullet + \text{O}_2$. $\text{Cl}^\bullet$ is regenerated!</li>
+      <li><strong>Planetary Boundary Precedent:</strong> Stratospheric ozone is the primary planetary boundary successfully protected via international governance (Montreal Protocol).</li>
+    </ul>
+  </div>
+  <div class="card" style="text-align:center;margin-top:16px;background:#f5f7fa;border:1.5px solid var(--blue)">
+    <p style="font-size:16px;font-weight:600">You've covered all 13 syllabus points ✅</p>
+    <p style="font-size:13px;color:var(--muted)">6.4.1 – 6.4.9 (SL) + 6.4.10 – 6.4.13 (HL) · Complete Topic 6: Atmosphere &amp; Climate Change!</p>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<button id="prevBtn" disabled aria-label="Previous slide">‹</button>
+<button id="nextBtn" aria-label="Next slide">›</button>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+document.getElementById('prevBtn').addEventListener('click', () => go(-1));
+document.getElementById('nextBtn').addEventListener('click', () => go(1));
+function goTo(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[current].classList.remove('active');
+  current = idx;
+  slides[current].classList.add('active');
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === total - 1;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  document.getElementById('deck').scrollTop = 0;
+}
+function go(dir) { goTo(current + dir); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+goTo(0);
+</script>
+</body>
+</html>
