@@ -1,124 +1,131 @@
 "use client";
 
-import { ArrowRight, Mail, Phone } from "lucide-react";
-import { LinkedinIcon } from "@/components/icons";
+import Link from "next/link";
+import { ArrowRight, BookOpen, Sparkles, Award, FileText, CheckCircle2, PlayCircle } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden"
+      className="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-[#0b0f19]"
     >
-      {/* Background glowing blobs */}
+      {/* Dynamic Background glowing blobs */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-primary/20 blur-[80px] animate-pulse-slow" />
-        <div className="absolute bottom-[20%] right-[10%] w-[250px] h-[250px] rounded-full bg-emerald-600/10 blur-[100px] animate-pulse-slow [animation-delay:2s]" />
+        <div className="absolute top-[15%] left-[8%] w-[380px] h-[380px] rounded-full bg-teal-500/15 blur-[120px] animate-pulse-slow" />
+        <div className="absolute bottom-[15%] right-[8%] w-[420px] h-[420px] rounded-full bg-indigo-600/15 blur-[140px] animate-pulse-slow [animation-delay:2s]" />
+        <div className="absolute top-[40%] right-[30%] w-[250px] h-[250px] rounded-full bg-cyan-500/10 blur-[90px] animate-pulse-slow [animation-delay:4s]" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-12 lg:py-20">
-          {/* Text Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-8 lg:py-16">
+          {/* Main Hero Text Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 animate-fade-in-up">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-accent text-primary border border-primary/20">
-              <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
-              Science Educator & Biotech Professional
-            </span>
+            
+            {/* Top pill badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-slate-800/90 text-teal-300 border border-teal-500/30 shadow-lg shadow-teal-500/10 backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-teal-400 animate-pulse" />
+              <span>IB DP Environmental Systems &amp; Societies &amp; Biology</span>
+            </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-foreground">
-              Inspiring the next <br className="hidden sm:inline" />
-              generation of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-700">scientists.</span>
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
+              Master IB DP Science with{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-indigo-400">
+                Interactive Excellence.
+              </span>
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-xl">
-              Hi, I&apos;m Monika Mehta. I am a dedicated Science Educator and Biotechnology professional with over 9 years of experience spanning University lecturing, IBDP instruction, and Industrial Quality Control.
+            {/* Subheading */}
+            <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
+              Comprehensive study resources created by <strong>Monika Mehta</strong> — Science Educator with 9+ years of University &amp; IBDP instruction. Complete slide decks, practice question sets, and Internal Assessment &amp; Extended Essay guides.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <a
-                href="#experience"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/95 transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 w-full sm:w-auto cursor-pointer"
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto pt-2">
+              <Link
+                href="/courses/ess"
+                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-teal-500 via-emerald-600 to-teal-600 text-white font-extrabold text-sm shadow-xl shadow-teal-500/25 hover:shadow-teal-500/40 hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto cursor-pointer"
               >
-                View Experience
+                <BookOpen className="w-4 h-4" />
+                Explore ESS Slide Decks
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
 
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-secondary border border-border text-foreground font-semibold hover:bg-muted transition-all duration-300 w-full sm:w-auto cursor-pointer"
+                href="#ia-ee"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-slate-800/80 border border-slate-700 text-slate-200 font-bold text-sm hover:bg-slate-700/80 hover:text-white transition-all duration-300 w-full sm:w-auto cursor-pointer"
               >
-                Get in Touch
+                <FileText className="w-4 h-4 text-indigo-400" />
+                IA &amp; EE Guidance Portal
               </a>
             </div>
 
-            {/* Social & Contact Links */}
-            <div className="flex items-center gap-4 pt-4">
-              <a
-                href="https://linkedin.com/in/monikapmehtabiotech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-secondary hover:bg-muted text-muted-foreground hover:text-foreground border border-border transition-all duration-200"
-                aria-label="LinkedIn Profile"
-              >
-                <LinkedinIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:monikamehta610@gmail.com"
-                className="p-3 rounded-xl bg-secondary hover:bg-muted text-muted-foreground hover:text-foreground border border-border transition-all duration-200"
-                aria-label="Email Address"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-              <a
-                href="tel:+16692646035"
-                className="p-3 rounded-xl bg-secondary hover:bg-muted text-muted-foreground hover:text-foreground border border-border transition-all duration-200"
-                aria-label="Phone Number"
-              >
-                <Phone className="w-5 h-5" />
-              </a>
+            {/* Key Stats Bar */}
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 w-full max-w-lg">
+              <div>
+                <div className="text-2xl sm:text-3xl font-black text-white">25+</div>
+                <div className="text-xs text-slate-400 font-medium mt-0.5">Interactive Topics</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-black text-teal-400">50+</div>
+                <div className="text-xs text-slate-400 font-medium mt-0.5">Custom Diagrams</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-black text-indigo-400">100%</div>
+                <div className="text-xs text-slate-400 font-medium mt-0.5">2026 IB Syllabus</div>
+              </div>
             </div>
           </div>
 
-          {/* Profile Illustration */}
+          {/* Feature Showcase Card */}
           <div className="lg:col-span-5 flex justify-center items-center animate-fade-in-up [animation-delay:0.2s]">
-            <div className="relative group w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              {/* Outer glowing border */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary to-emerald-700 opacity-20 group-hover:opacity-30 blur-2xl transition-all duration-500 animate-float" />
+            <div className="relative group w-full max-w-md">
+              {/* Glow backdrop */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-teal-500 via-indigo-500 to-emerald-500 opacity-25 group-hover:opacity-40 blur-2xl transition-all duration-500 animate-float" />
 
-              {/* Main Container */}
-              <div className="relative w-full h-full rounded-3xl border border-border bg-card/40 backdrop-blur-sm p-4 overflow-hidden shadow-2xl flex items-center justify-center">
-                {/* Techy grid line decoration */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+              {/* Glassmorphism Card */}
+              <div className="relative rounded-3xl border border-slate-700/80 bg-slate-900/90 backdrop-blur-xl p-6 shadow-2xl space-y-5">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center text-teal-400 font-black text-lg">
+                      🌍
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white text-base">IB DP ESS Portal</h3>
+                      <p className="text-xs text-slate-400">Environmental Systems &amp; Societies</p>
+                    </div>
+                  </div>
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-400 bg-teal-500/10 px-2.5 py-1 rounded-full border border-teal-500/20">
+                    SL &amp; HL Ready
+                  </span>
+                </div>
 
-                {/* Styled DNA double helix and laboratory vector illustration */}
-                <svg
-                  className="w-4/5 h-4/5 text-primary/80 dark:text-primary/60 animate-float"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                {/* Features List */}
+                <div className="space-y-3">
+                  {[
+                    { icon: CheckCircle2, color: "text-emerald-400", title: "Complete Slide Decks", desc: "All 7 units formatted with high-res illustrations" },
+                    { icon: FileText, color: "text-indigo-400", title: "Practice Questions & Exam Tips", desc: "Paper 1 case studies & Paper 2 9-mark essay guides" },
+                    { icon: Award, color: "text-teal-400", title: "Internal Assessment (IA) Hub", desc: "Criteria breakdown & 15+ sample research topics" },
+                    { icon: PlayCircle, color: "text-rose-400", title: "Video Lessons", desc: "YouTube companion tutorials linked to each topic" },
+                  ].map((feat, i) => (
+                    <div key={i} className="flex items-start gap-3 p-2.5 rounded-xl bg-slate-800/40 border border-slate-800">
+                      <feat.icon className={`w-5 h-5 ${feat.color} flex-shrink-0 mt-0.5`} />
+                      <div>
+                        <div className="text-xs font-bold text-slate-200">{feat.title}</div>
+                        <div className="text-[11px] text-slate-400 leading-tight">{feat.desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Quick Link Button */}
+                <Link
+                  href="/courses/ess"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-teal-300 font-bold text-xs border border-slate-700 transition-colors"
                 >
-                  <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6" />
-                  
-                  {/* DNA strands */}
-                  <path d="M60 60 C80 90, 120 110, 140 140" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                  <path d="M140 60 C120 90, 80 110, 60 140" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                  
-                  {/* DNA base pairs */}
-                  <line x1="72" y1="78" x2="128" y2="78" stroke="currentColor" strokeWidth="2" />
-                  <line x1="85" y1="92" x2="115" y2="92" stroke="currentColor" strokeWidth="2" />
-                  <line x1="100" y1="100" x2="100" y2="100" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                  <line x1="85" y1="108" x2="115" y2="108" stroke="currentColor" strokeWidth="2" />
-                  <line x1="72" y1="122" x2="128" y2="122" stroke="currentColor" strokeWidth="2" />
-                  
-                  {/* Surrounding lab motifs */}
-                  <circle cx="100" cy="65" r="8" fill="currentColor" fillOpacity="0.3" />
-                  <circle cx="100" cy="135" r="8" fill="currentColor" fillOpacity="0.3" />
-                </svg>
-
-                {/* Interactive corner markers */}
-                <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-primary/40" />
-                <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-primary/40" />
-                <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-primary/40" />
-                <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-primary/40" />
+                  Start Studying Now
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           </div>

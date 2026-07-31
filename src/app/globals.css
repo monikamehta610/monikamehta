@@ -25,6 +25,7 @@
   --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-glow: glow 3s ease-in-out infinite alternate;
 
   @keyframes fade-in-up {
     from {
@@ -46,50 +47,57 @@
   }
   @keyframes pulse-slow {
     0%, 100% {
-      opacity: 0.15;
+      opacity: 0.2;
     }
     50% {
-      opacity: 0.3;
+      opacity: 0.45;
+    }
+  }
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 15px rgba(13, 148, 136, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
+    }
+    to {
+      box-shadow: 0 0 25px rgba(13, 148, 136, 0.5), 0 0 50px rgba(99, 102, 241, 0.3);
     }
   }
 }
 
 :root {
-  /* Default Warm Light Theme */
-  --background: #fbfaf8;
-  --foreground: #2f2a24;
-  --card: #ffffff;
-  --card-foreground: #2f2a24;
-  --primary: #5a7d65;
+  /* Vibrant Deep Modern Theme */
+  --background: #0b0f19;
+  --foreground: #f8fafc;
+  --card: #151c2e;
+  --card-foreground: #f8fafc;
+  --primary: #0d9488;
   --primary-foreground: #ffffff;
-  --secondary: #f5f3f0;
-  --secondary-foreground: #6f6a64;
-  --muted: #efecea;
-  --muted-foreground: #9e9890;
-  --accent: #eef2fa;
-  --accent-foreground: #2f2a24;
-  --border: #ece7e2;
-  --input: #ffffff;
-  --ring: #5a7d65;
+  --secondary: #1e293b;
+  --secondary-foreground: #cbd5e1;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #6366f1;
+  --accent-foreground: #ffffff;
+  --border: #1e293b;
+  --input: #151c2e;
+  --ring: #0d9488;
 }
 
 .dark {
-  /* Warm Dark Theme variant */
-  --background: #181614;
-  --foreground: #efecea;
-  --card: #201e1b;
-  --card-foreground: #efecea;
-  --primary: #8ab498;
-  --primary-foreground: #181614;
-  --secondary: #2a2724;
-  --secondary-foreground: #9e9890;
-  --muted: #2a2724;
-  --muted-foreground: #6f6a64;
-  --accent: #2c3630;
-  --accent-foreground: #efecea;
-  --border: #33302c;
-  --input: #201e1b;
-  --ring: #8ab498;
+  --background: #0b0f19;
+  --foreground: #f8fafc;
+  --card: #151c2e;
+  --card-foreground: #f8fafc;
+  --primary: #14b8a6;
+  --primary-foreground: #0f172a;
+  --secondary: #1e293b;
+  --secondary-foreground: #cbd5e1;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #818cf8;
+  --accent-foreground: #0f172a;
+  --border: #1e293b;
+  --input: #151c2e;
+  --ring: #14b8a6;
 }
 
 @layer base {
@@ -118,17 +126,15 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: #334155;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted-foreground);
+  background: #0d9488;
 }
 
-/* ── Course Platform: Warm Light Scope ────────────────────────────────────── */
-/* Mirrors the Bloome/Reson slide design system — always light, never dark.    */
-/* Applied via the courses layout wrapper regardless of the user's theme.      */
+/* ── Course Platform: Warm Light Scope for Slide Containers ───────────────── */
 .course-light {
   --cl-bg:             #fbfaf8;
   --cl-bg-subtle:      #f5f3f0;
@@ -139,9 +145,9 @@ html {
   --cl-fg-subtle:      #9e9890;
   --cl-accent-bio:     #16a34a;
   --cl-accent-bio-bg:  rgba(22, 163, 74, 0.09);
-  --cl-accent-ess:     #0891b2;
-  --cl-accent-ess-bg:  rgba(8, 145, 178, 0.09);
-  --cl-accent-neutral: #5a7d65;
+  --cl-accent-ess:     #0d9488;
+  --cl-accent-ess-bg:  rgba(13, 148, 136, 0.09);
+  --cl-accent-neutral: #0d9488;
   --cl-shadow:         0 2px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
   --cl-shadow-md:      0 4px 20px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
   --cl-radius:         12px;
