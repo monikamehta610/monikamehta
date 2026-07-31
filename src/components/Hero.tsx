@@ -11,8 +11,8 @@ export default function Hero() {
     >
       {/* Soft background glows */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] rounded-full bg-blue-400/10 blur-[130px] animate-pulse-slow" />
-        <div className="absolute bottom-[10%] right-[10%] w-[450px] h-[450px] rounded-full bg-emerald-400/10 blur-[140px] animate-pulse-slow [animation-delay:2s]" />
+        <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] rounded-full bg-indigo-500/10 blur-[130px] animate-pulse-slow" />
+        <div className="absolute bottom-[10%] right-[10%] w-[450px] h-[450px] rounded-full bg-violet-500/10 blur-[140px] animate-pulse-slow [animation-delay:2s]" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -21,15 +21,15 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 animate-fade-in-up">
             
             {/* Top pill badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200/80 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200/80 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-indigo-600 animate-pulse" />
               <span>IBDP Biology &amp; ESS Educator | 9+ Years Experience</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900">
               Master IB Biology &amp; ESS with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-600 to-indigo-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-emerald-600">
                 Expert Guidance.
               </span>
             </h1>
@@ -43,7 +43,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto pt-2">
               <a
                 href="#contact"
-                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-blue-600 text-white font-extrabold text-sm shadow-lg shadow-blue-500/25 hover:bg-blue-700 hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-indigo-600 text-white font-extrabold text-sm shadow-lg shadow-indigo-500/25 hover:bg-indigo-700 hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
                 Book a Free 15-Min Intro Call
@@ -54,7 +54,7 @@ export default function Hero() {
                 href="/courses/ess"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-slate-900 shadow-xs transition-all duration-300 w-full sm:w-auto cursor-pointer"
               >
-                <BookOpen className="w-4 h-4 text-emerald-600" />
+                <BookOpen className="w-4 h-4 text-violet-600" />
                 Browse Course Materials
               </Link>
             </div>
@@ -66,11 +66,11 @@ export default function Hero() {
                 <div className="text-xs text-slate-500 font-semibold mt-0.5">Years Experience</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-blue-600">100s</div>
+                <div className="text-2xl sm:text-3xl font-black text-indigo-600">100s</div>
                 <div className="text-xs text-slate-500 font-semibold mt-0.5">Students Taught</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-emerald-600">Level 7</div>
+                <div className="text-2xl sm:text-3xl font-black text-violet-600">Level 7</div>
                 <div className="text-xs text-slate-500 font-semibold mt-0.5">IB Mastery Track</div>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function Hero() {
               <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 backdrop-blur-xl p-6 shadow-2xl shadow-slate-200/60 space-y-5">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 font-black text-lg">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 font-black text-lg">
                       🎓
                     </div>
                     <div>
@@ -91,7 +91,7 @@ export default function Hero() {
                       <p className="text-xs text-slate-500">Tutoring &amp; Academic Lecturing</p>
                     </div>
                   </div>
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-200">
                     Accepting Students
                   </span>
                 </div>
@@ -99,9 +99,9 @@ export default function Hero() {
                 {/* Services List */}
                 <div className="space-y-3">
                   {[
-                    { icon: CheckCircle2, color: "text-blue-600", title: "IBDP Biology & ESS Tutoring", desc: "One-on-one personalized coaching targeting Level 7 scores" },
-                    { icon: Award, color: "text-emerald-600", title: "Internal Assessment (IA) Mentorship", desc: "Expert guidance from topic selection to data analysis" },
-                    { icon: FileText, color: "text-indigo-600", title: "University Science Lecturing", desc: "Microbiology, Genetics, and General Biology instruction" },
+                    { icon: CheckCircle2, color: "text-indigo-600", title: "IBDP Biology & ESS Tutoring", desc: "One-on-one personalized coaching targeting Level 7 scores" },
+                    { icon: Award, color: "text-violet-600", title: "Internal Assessment (IA) Mentorship", desc: "Expert guidance from topic selection to data analysis" },
+                    { icon: FileText, color: "text-emerald-600", title: "University Science Lecturing", desc: "Microbiology, Genetics, and General Biology instruction" },
                     { icon: Sparkles, color: "text-amber-500", title: "Interactive Course & Exam Strategy", desc: "Full slide decks, Paper 1 & 2 exam strategies & mark schemes" },
                   ].map((service, i) => (
                     <div key={i} className="flex items-start gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
@@ -117,7 +117,7 @@ export default function Hero() {
                 {/* Primary CTA button */}
                 <a
                   href="#contact"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition-colors"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition-colors"
                 >
                   Book a Consultation Session
                   <ArrowRight className="w-3.5 h-3.5" />

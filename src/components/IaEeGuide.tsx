@@ -7,18 +7,18 @@ export default function IaEeGuide() {
   return (
     <section id="ia-ee" className="py-20 bg-white border-t border-slate-200/80 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-400/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-400/5 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
-            <Award className="w-3.5 h-3.5 text-indigo-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-violet-50 text-violet-700 border border-violet-200">
+            <Award className="w-3.5 h-3.5 text-violet-600" />
             IB DP Core Excellence
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
             Internal Assessment &amp;{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-emerald-600 to-indigo-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-emerald-600">
               Extended Essay Guides
             </span>
           </h2>
@@ -30,13 +30,13 @@ export default function IaEeGuide() {
         {/* 2 Main Cards: IA Guide & EE Guide */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Internal Assessment (IA) Card */}
-          <div className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 space-y-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-blue-300 transition-all">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 space-y-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-blue-100/80 border border-blue-200 flex items-center justify-center text-blue-600">
+                <div className="w-12 h-12 rounded-2xl bg-indigo-100/80 border border-indigo-200 flex items-center justify-center text-indigo-600">
                   <Target className="w-6 h-6" />
                 </div>
-                <span className="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                <span className="text-xs font-extrabold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">
                   25% of Final IB Grade
                 </span>
               </div>
@@ -67,7 +67,7 @@ export default function IaEeGuide() {
             <div className="pt-4 border-t border-slate-200">
               <Link
                 href="/courses/ess#ia-guide"
-                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-500/20 transition-all"
+                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 transition-all"
               >
                 Access IA Criteria &amp; Sample Topics
                 <ArrowRight className="w-4 h-4" />
@@ -76,13 +76,13 @@ export default function IaEeGuide() {
           </div>
 
           {/* Extended Essay (EE) Card */}
-          <div className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 space-y-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50/60 p-8 space-y-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-violet-300 transition-all">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-100/80 border border-indigo-200 flex items-center justify-center text-indigo-600">
+                <div className="w-12 h-12 rounded-2xl bg-violet-100/80 border border-violet-200 flex items-center justify-center text-violet-600">
                   <Compass className="w-6 h-6" />
                 </div>
-                <span className="text-xs font-extrabold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">
+                <span className="text-xs font-extrabold uppercase tracking-wider text-violet-700 bg-violet-50 px-3 py-1 rounded-full border border-violet-200">
                   4,000-Word Core Requirement
                 </span>
               </div>
@@ -101,7 +101,7 @@ export default function IaEeGuide() {
                   { name: "Reflective Process", desc: "3 mandatory RPPF reflection sessions with supervisor" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5 text-xs text-slate-600">
-                    <Lightbulb className="w-4 h-4 text-indigo-600 flex-shrink-0 mt-0.5" />
+                    <Lightbulb className="w-4 h-4 text-violet-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-slate-900">{item.name}:</strong> {item.desc}
                     </div>
@@ -113,7 +113,7 @@ export default function IaEeGuide() {
             <div className="pt-4 border-t border-slate-200">
               <Link
                 href="/courses/ess#ee-guide"
-                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 transition-all"
+                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-xs shadow-md shadow-violet-500/20 transition-all"
               >
                 Access EE Framework &amp; Guidelines
                 <ArrowRight className="w-4 h-4" />

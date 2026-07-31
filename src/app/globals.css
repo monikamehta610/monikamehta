@@ -55,22 +55,22 @@
 }
 
 :root {
-  /* Clean Modern Light Theme (Apple / Stripe / Linear style) */
+  /* Clean Modern Light Theme with Royal Indigo (#4f46e5) & Soft Violet (#7c3aed) */
   --background: #f8fafc;
   --foreground: #0f172a;
   --card: #ffffff;
   --card-foreground: #0f172a;
-  --primary: #2563eb;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --secondary-foreground: #475569;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --accent: #10b981;
+  --accent: #7c3aed;
   --accent-foreground: #ffffff;
   --border: #e2e8f0;
   --input: #ffffff;
-  --ring: #2563eb;
+  --ring: #4f46e5;
 }
 
 .dark {
@@ -78,17 +78,17 @@
   --foreground: #0f172a;
   --card: #ffffff;
   --card-foreground: #0f172a;
-  --primary: #2563eb;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --secondary-foreground: #475569;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --accent: #10b981;
+  --accent: #7c3aed;
   --accent-foreground: #ffffff;
   --border: #e2e8f0;
   --input: #ffffff;
-  --ring: #2563eb;
+  --ring: #4f46e5;
 }
 
 @layer base {
@@ -122,7 +122,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #4f46e5;
 }
 
 /* Course light scope for slide decks */
@@ -136,9 +136,9 @@ html {
   --cl-fg-subtle:      #64748b;
   --cl-accent-bio:     #10b981;
   --cl-accent-bio-bg:  rgba(16, 185, 129, 0.09);
-  --cl-accent-ess:     #2563eb;
-  --cl-accent-ess-bg:  rgba(37, 99, 235, 0.09);
-  --cl-accent-neutral: #2563eb;
+  --cl-accent-ess:     #4f46e5;
+  --cl-accent-ess-bg:  rgba(79, 70, 229, 0.09);
+  --cl-accent-neutral: #4f46e5;
   --cl-shadow:         0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.03);
   --cl-shadow-md:      0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
   --cl-radius:         12px;

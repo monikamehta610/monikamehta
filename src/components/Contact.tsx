@@ -63,13 +63,13 @@ export default function Contact() {
         
         {/* Section Heading & Strong Call To Action */}
         <div className="flex flex-col items-center text-center space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200">
-            <Calendar className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
+            <Calendar className="w-3.5 h-3.5 text-indigo-600" />
             Direct Consultation &amp; Tutoring Booking
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
             Ready to Elevate Your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
               Science Results?
             </span>
           </h2>
@@ -81,7 +81,7 @@ export default function Contact() {
           <div className="pt-2">
             <a
               href="#contact-form"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm shadow-md shadow-blue-500/20 hover:scale-[1.02] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-sm shadow-md shadow-indigo-500/20 hover:scale-[1.02] transition-all"
             >
               <Calendar className="w-4 h-4" />
               Book a Free 15-Min Intro Call
@@ -104,7 +104,7 @@ export default function Contact() {
             <div className="space-y-6">
               {/* Protected Email */}
               <div className="flex items-center gap-3">
-                <span className="p-3 rounded-xl bg-white border border-slate-200 text-blue-600 shadow-xs">
+                <span className="p-3 rounded-xl bg-white border border-slate-200 text-indigo-600 shadow-xs">
                   <Mail className="w-5 h-5" />
                 </span>
                 <div>
@@ -114,7 +114,7 @@ export default function Contact() {
                   {showEmail ? (
                     <a
                       href={`mailto:${decodedEmail}`}
-                      className="text-sm font-bold text-blue-600 hover:underline break-all"
+                      className="text-sm font-bold text-indigo-600 hover:underline break-all"
                     >
                       {decodedEmail}
                     </a>
@@ -122,9 +122,9 @@ export default function Contact() {
                     <button
                       type="button"
                       onClick={() => setShowEmail(true)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-blue-600 bg-white border border-slate-200 px-2.5 py-1 rounded-lg transition-colors cursor-pointer mt-0.5"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-indigo-600 bg-white border border-slate-200 px-2.5 py-1 rounded-lg transition-colors cursor-pointer mt-0.5"
                     >
-                      <Eye className="w-3.5 h-3.5 text-blue-600" />
+                      <Eye className="w-3.5 h-3.5 text-indigo-600" />
                       Click to Reveal Email
                     </button>
                   )}
@@ -212,7 +212,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Sarah Jenkins"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-600 transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 transition-colors"
                   />
                 </div>
 
@@ -228,7 +228,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="e.g. sarah@example.com"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-600 transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 transition-colors"
                   />
                 </div>
 
@@ -241,7 +241,7 @@ export default function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-600 transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 transition-colors"
                   >
                     <option value="Tutoring / Lecturing Inquiry">IB DP Biology / ESS Tutoring</option>
                     <option value="University Lecturing">University Lecturing / Teaching</option>
@@ -262,14 +262,14 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell me about your learning goals, target IB grade, or lecture topic..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-600 transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 transition-colors"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full py-3 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm shadow-md shadow-blue-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-sm shadow-md shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
                   {status === "submitting" ? "Sending Request..." : "Send Consultation Request"}

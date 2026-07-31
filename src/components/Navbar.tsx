@@ -41,11 +41,11 @@ export default function Navbar() {
               href="/"
               className="flex items-center gap-2.5 text-xl font-bold tracking-tight text-slate-900 hover:opacity-90 transition-opacity"
             >
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center text-white text-xs font-black shadow-md shadow-blue-500/20">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white text-xs font-black shadow-md shadow-indigo-500/20">
                 MM
               </div>
               <span className="font-extrabold tracking-tight">
-                Monika Mehta<span className="text-blue-600">.</span>
+                Monika Mehta<span className="text-indigo-600">.</span>
               </span>
             </Link>
           </div>
@@ -56,14 +56,14 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                className="text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors duration-200"
               >
                 {item.label}
               </Link>
             ))}
             <Link
               href="/courses/ess"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 hover:scale-[1.02] transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/30 hover:scale-[1.02] transition-all duration-200"
             >
               <GraduationCap className="w-4 h-4" />
               Explore ESS
@@ -96,7 +96,7 @@ export default function Navbar() {
               key={item.label}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2.5 rounded-xl text-base font-semibold text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-all duration-200"
+              className="block px-3 py-2.5 rounded-xl text-base font-semibold text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-all duration-200"
             >
               {item.label}
             </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
             <Link
               href="/courses/ess"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-blue-600 text-white font-bold text-sm shadow-md"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-sm shadow-md"
             >
               <GraduationCap className="w-4 h-4" />
               Explore ESS Slides &amp; Practice
