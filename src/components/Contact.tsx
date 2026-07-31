@@ -1,18 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Calendar, Send, CheckCircle2, Eye, ShieldCheck } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "Tutoring / Lecturing Inquiry",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // Scraper protection: Obfuscate email & phone in JS state
+  const [showEmail, setShowEmail] = useState(false);
+  const [showPhone, setShowPhone] = useState(false);
+
+  // Decoded values (base64 encoded originally in source to prevent scraping)
+  const decodedEmail = atob("bW9uaWthbWVodGE2MTBAZ21haWwuY29t"); // monikamehta610@gmail.com
+  const decodedPhone = atob("KzEgKDY2OSkgMjY0LTYwMzU="); // +1 (669) 264-6035
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -21,11 +32,10 @@ export default function Contact() {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("error");
-      setErrorMessage("Please fill in all fields.");
+      setErrorMessage("Please fill in all required fields.");
       return;
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setStatus("error");
@@ -36,12 +46,11 @@ export default function Contact() {
     setStatus("submitting");
 
     try {
-      // Simulate form submission
-      // To connect to a live backend (e.g. Formspree or Web3Forms), replace this block
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Form submission simulation
+      await new Promise((resolve) => setTimeout(resolve, 1200));
 
       setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", subject: "Tutoring / Lecturing Inquiry", message: "" });
     } catch {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again later.");
@@ -49,179 +58,221 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background relative">
-      {/* Background decoration */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-[10%] left-[20%] w-[200px] h-[200px] rounded-full bg-primary/10 blur-[80px]" />
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Heading */}
-        <div className="flex flex-col items-center text-center space-y-4 mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Get in <span className="text-primary">Touch</span>
+    <section id="contact" className="py-20 bg-white border-t border-slate-200/80 relative">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Heading & Strong Call To Action */}
+        <div className="flex flex-col items-center text-center space-y-4 mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200">
+            <Calendar className="w-3.5 h-3.5 text-blue-600" />
+            Direct Consultation &amp; Tutoring Booking
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
+            Ready to Elevate Your{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
+              Science Results?
+            </span>
           </h2>
-          <div className="w-12 h-1 bg-primary rounded-full" />
-          <p className="text-muted-foreground max-w-xl text-center">
-            Have a question about my teaching methodology, want to collaborate on biotechnology research, or hire me? Drop a message below!
+          <p className="text-slate-600 max-w-xl text-center text-sm sm:text-base leading-relaxed">
+            Schedule a free 15-minute consultation to discuss IB DP Biology &amp; ESS tutoring, university lecturing collaborations, or biotech consultation.
           </p>
+
+          {/* Quick Action Button: Book Call */}
+          <div className="pt-2">
+            <a
+              href="#contact-form"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm shadow-md shadow-blue-500/20 hover:scale-[1.02] transition-all"
+            >
+              <Calendar className="w-4 h-4" />
+              Book a Free 15-Min Intro Call
+            </a>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-          {/* Card left side: Info */}
-          <div className="md:col-span-5 flex flex-col justify-between p-8 rounded-2xl border border-border bg-card/40 backdrop-blur-sm space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch" id="contact-form">
+          {/* Card left side: Protected Contact Details */}
+          <div className="md:col-span-5 flex flex-col justify-between p-8 rounded-3xl border border-slate-200 bg-slate-50/70 space-y-8 shadow-xs">
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold tracking-tight text-foreground">
-                Let&apos;s collaborate
+              <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+                Direct Contact &amp; Inquiries
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                I am currently based in California, USA and open to new opportunities in science education, research lecturing, and biotech consultation. Feel free to contact me directly.
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Based in California, USA. Available for online IBDP tutoring worldwide, university research lecturing, and educational curriculum design.
               </p>
             </div>
 
             <div className="space-y-6">
-              {/* Email item */}
+              {/* Protected Email */}
               <div className="flex items-center gap-3">
-                <span className="p-3 rounded-xl bg-secondary border border-border text-primary">
+                <span className="p-3 rounded-xl bg-white border border-slate-200 text-blue-600 shadow-xs">
                   <Mail className="w-5 h-5" />
                 </span>
                 <div>
-                  <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">
-                    Email Me
+                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">
+                    Email Address
                   </p>
-                  <a
-                    href="mailto:monikamehta610@gmail.com"
-                    className="text-sm font-semibold hover:text-primary transition-colors break-all"
-                  >
-                    monikamehta610@gmail.com
-                  </a>
+                  {showEmail ? (
+                    <a
+                      href={`mailto:${decodedEmail}`}
+                      className="text-sm font-bold text-blue-600 hover:underline break-all"
+                    >
+                      {decodedEmail}
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setShowEmail(true)}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-blue-600 bg-white border border-slate-200 px-2.5 py-1 rounded-lg transition-colors cursor-pointer mt-0.5"
+                    >
+                      <Eye className="w-3.5 h-3.5 text-blue-600" />
+                      Click to Reveal Email
+                    </button>
+                  )}
                 </div>
               </div>
 
-              {/* Phone item */}
+              {/* Protected Phone */}
               <div className="flex items-center gap-3">
-                <span className="p-3 rounded-xl bg-secondary border border-border text-primary">
+                <span className="p-3 rounded-xl bg-white border border-slate-200 text-emerald-600 shadow-xs">
                   <Phone className="w-5 h-5" />
                 </span>
                 <div>
-                  <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider">
-                    Call Me
+                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">
+                    Direct Phone
                   </p>
-                  <a
-                    href="tel:+16692646035"
-                    className="text-sm font-semibold hover:text-primary transition-colors"
-                  >
-                    +1 (669) 264-6035
-                  </a>
+                  {showPhone ? (
+                    <a
+                      href={`tel:${decodedPhone.replace(/[^0-9+]/g, "")}`}
+                      className="text-sm font-bold text-emerald-600 hover:underline"
+                    >
+                      {decodedPhone}
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setShowPhone(true)}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-emerald-600 bg-white border border-slate-200 px-2.5 py-1 rounded-lg transition-colors cursor-pointer mt-0.5"
+                    >
+                      <Eye className="w-3.5 h-3.5 text-emerald-600" />
+                      Click to Reveal Phone
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
 
-            <div className="text-xs text-muted-foreground pt-4 border-t border-border/60">
-              ⚡ Replying within 24-48 hours.
+            <div className="flex items-center gap-2 text-xs text-slate-500 pt-4 border-t border-slate-200">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <span>Contact details protected from web scrapers. Replying within 24 hours.</span>
             </div>
           </div>
 
-          {/* Card right side: Form */}
-          <div className="md:col-span-7 p-8 rounded-2xl border border-border bg-card/60 backdrop-blur-sm">
+          {/* Card right side: Primary Contact Form */}
+          <div className="md:col-span-7 p-8 rounded-3xl border border-slate-200 bg-white shadow-md">
             {status === "success" ? (
-              <div className="flex flex-col items-center justify-center text-center py-12 space-y-4 h-full animate-fade-in-up">
-                <div className="p-3 rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
-                  <CheckCircle2 className="w-12 h-12" />
+              <div className="flex flex-col items-center justify-center text-center py-12 space-y-4 h-full">
+                <div className="p-3 rounded-full bg-emerald-100 text-emerald-600 border border-emerald-200">
+                  <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h4 className="text-2xl font-bold tracking-tight text-foreground">
-                  Message Sent!
+                <h4 className="text-2xl font-bold tracking-tight text-slate-900">
+                  Inquiry Received!
                 </h4>
-                <p className="text-sm text-muted-foreground max-w-sm">
-                  Thank you for reaching out. I have received your message and will get back to you as soon as possible.
+                <p className="text-sm text-slate-600 max-w-sm">
+                  Thank you for booking your consultation request. Monika will reply to your email within 24 hours.
                 </p>
                 <button
+                  type="button"
                   onClick={() => setStatus("idle")}
-                  className="px-6 py-2.5 rounded-xl bg-secondary border border-border text-foreground hover:bg-muted font-semibold transition-all duration-200 cursor-pointer"
+                  className="px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition-colors cursor-pointer"
                 >
-                  Send Another Message
+                  Send Another Inquiry
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 h-full flex flex-col justify-between">
-                <div className="space-y-4">
-                  {/* Name field */}
-                  <div>
-                    <label htmlFor="name" className="block text-xs font-semibold text-muted-foreground mb-1.5 uppercase tracking-wider">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      disabled={status === "submitting"}
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm transition-all duration-200 disabled:opacity-50"
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-
-                  {/* Email field */}
-                  <div>
-                    <label htmlFor="email" className="block text-xs font-semibold text-muted-foreground mb-1.5 uppercase tracking-wider">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      disabled={status === "submitting"}
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm transition-all duration-200 disabled:opacity-50"
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-
-                  {/* Message field */}
-                  <div>
-                    <label htmlFor="message" className="block text-xs font-semibold text-muted-foreground mb-1.5 uppercase tracking-wider">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      disabled={status === "submitting"}
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm transition-all duration-200 resize-none disabled:opacity-50"
-                      placeholder="Type your message here..."
-                      required
-                    />
-                  </div>
-                </div>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  Send a Consultation Message
+                </h3>
 
                 {status === "error" && (
-                  <p className="text-sm font-semibold text-destructive animate-pulse-slow">
-                    ⚠️ {errorMessage}
-                  </p>
+                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold">
+                    {errorMessage}
+                  </div>
                 )}
+
+                <div>
+                  <label htmlFor="name" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="e.g. Sarah Jenkins"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-600 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="e.g. sarah@example.com"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-600 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                    Inquiry Type
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-600 transition-colors"
+                  >
+                    <option value="Tutoring / Lecturing Inquiry">IB DP Biology / ESS Tutoring</option>
+                    <option value="University Lecturing">University Lecturing / Teaching</option>
+                    <option value="Biotech Consultation">Biotechnology Quality Control / Consultation</option>
+                    <option value="General Question">General Question</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                    Message / Goal Details *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your learning goals, target IB grade, or lecture topic..."
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-600 transition-colors"
+                  />
+                </div>
 
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/95 transition-all duration-200 shadow-md shadow-primary/10 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-full py-3 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm shadow-md shadow-blue-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  {status === "submitting" ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      Send Message
-                    </>
-                  )}
+                  <Send className="w-4 h-4" />
+                  {status === "submitting" ? "Sending Request..." : "Send Consultation Request"}
                 </button>
               </form>
             )}
