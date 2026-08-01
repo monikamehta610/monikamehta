@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, BookOpen, Sparkles, Award, FileText, CheckCircle2, Calendar } from "lucide-react";
+import { ArrowRight, BookOpen, Sparkles, Award, FileText, CheckCircle2, Calendar, Building2, GraduationCap, Microscope } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-gradient-to-b from-stone-50 via-white to-stone-50"
+      className="relative min-h-[92vh] flex flex-col justify-between pt-24 pb-12 overflow-hidden bg-gradient-to-b from-stone-50 via-white to-stone-50"
     >
       {/* Soft background glows */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -15,8 +15,8 @@ export default function Hero() {
         <div className="absolute bottom-[10%] right-[10%] w-[450px] h-[450px] rounded-full bg-amber-400/10 blur-[140px] animate-pulse-slow [animation-delay:2s]" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-8 lg:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-8 lg:py-12">
           {/* Main Hero Text Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 animate-fade-in-up">
             
@@ -126,6 +126,50 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
+        {/* Institutional Credibility & Social Proof Strip */}
+        <div className="mt-10 pt-8 border-t border-stone-200/80">
+          <p className="text-center text-xs font-extrabold uppercase tracking-widest text-stone-400 mb-6">
+            Institutional Teaching &amp; Industry Experience
+          </p>
+
+          <div className="flex items-center justify-center gap-6 sm:gap-12 flex-wrap">
+            {[
+              {
+                name: "Fountainhead School",
+                role: "IB World School Educator",
+                icon: GraduationCap,
+                color: "text-orange-600",
+              },
+              {
+                name: "Uka Tarsadia University",
+                role: "Assistant Professor & Lecturer",
+                icon: Building2,
+                color: "text-amber-600",
+              },
+              {
+                name: "Arkray Healthcare Pvt. Ltd.",
+                role: "Biotech & Quality Control Executive",
+                icon: Microscope,
+                color: "text-emerald-600",
+              },
+            ].map((inst, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white border border-stone-200/90 shadow-xs hover:shadow-md hover:border-orange-300 transition-all duration-200 grayscale hover:grayscale-0"
+              >
+                <div className="p-2 rounded-xl bg-stone-100">
+                  <inst.icon className={`w-5 h-5 ${inst.color}`} />
+                </div>
+                <div>
+                  <div className="text-xs font-black text-stone-800">{inst.name}</div>
+                  <div className="text-[10px] font-semibold text-stone-500">{inst.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

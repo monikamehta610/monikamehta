@@ -35,18 +35,43 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          
+          {/* Logo / Stylized Science Wordmark (Left-aligned) */}
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="flex items-center gap-2.5 text-xl font-bold tracking-tight text-stone-900 hover:opacity-90 transition-opacity"
+              className="flex items-center gap-3 text-xl font-bold tracking-tight text-stone-900 hover:opacity-90 transition-opacity"
             >
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-500 flex items-center justify-center text-white text-xs font-black shadow-md shadow-orange-600/20">
-                MM
+              {/* Monogram Icon */}
+              <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-orange-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-orange-600/20 group">
+                <svg
+                  className="w-5 h-5 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Monogram MM + Leaf emblem */}
+                  <path
+                    d="M4 18V6H7.5L10 12L12.5 6H16V18H13.5V10.5L10.5 16.5H9.5L6.5 10.5V18H4Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M18.5 7C16.5 7 15 8.5 15 10.5C15 13 18.5 15 18.5 15C18.5 15 22 13 22 10.5C22 8.5 20.5 7 18.5 7Z"
+                    fill="#ffffff"
+                    fillOpacity="0.8"
+                  />
+                </svg>
               </div>
-              <span className="font-extrabold tracking-tight">
-                Monika Mehta<span className="text-orange-600">.</span>
-              </span>
+
+              {/* Wordmark Text */}
+              <div className="flex flex-col">
+                <span className="font-black text-lg tracking-tight leading-none text-stone-900">
+                  Monika Mehta<span className="text-orange-600">.</span>
+                </span>
+                <span className="text-[10px] font-bold text-stone-500 uppercase tracking-widest leading-none mt-1">
+                  IBDP Science Educator
+                </span>
+              </div>
             </Link>
           </div>
 
