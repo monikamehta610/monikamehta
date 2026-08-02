@@ -79,8 +79,8 @@ body {
   --red-light: rgba(199, 92, 92, 0.1);
   --blue: #5b82b8;
   --blue-light: rgba(91, 130, 184, 0.1);
-  --orange: #d97706;
-  --orange-light: rgba(255, 229, 136, 0.4);
+  --orange: #eab308;
+  --orange-light: rgba(250, 204, 21, 0.4);
 
   /* Radius */
   --radius: 0.5rem;

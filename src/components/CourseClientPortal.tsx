@@ -185,7 +185,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
           <span
             style={{
               fontSize: "1.75rem",
-              background: "#ffe588",
+              background: "#facc15",
               width: 48,
               height: 48,
               borderRadius: 14,
@@ -204,8 +204,8 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                 fontWeight: 800,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#451a03",
-                background: "#ffe588",
+                color: "#0f172a",
+                background: "#facc15",
                 padding: "3px 10px",
                 borderRadius: 9999,
                 border: "1px solid #fef08a",
@@ -217,7 +217,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
               style={{
                 fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
                 fontWeight: 800,
-                color: "#1c1917",
+                color: "#0f172a",
                 letterSpacing: "-0.025em",
                 margin: "4px 0 0 0",
               }}
@@ -226,7 +226,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
             </h1>
           </div>
         </div>
-        <p style={{ color: "#78350f", fontSize: "0.95rem", lineHeight: 1.6, maxWidth: 680 }}>
+        <p style={{ color: "#713f12", fontSize: "0.95rem", lineHeight: 1.6, maxWidth: 680 }}>
           {course.description}
         </p>
 
@@ -243,19 +243,19 @@ export default function CourseClientPortal({ course }: { course: Course }) {
         >
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "0.75rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <Sparkles size={18} style={{ color: "#d97706" }} />
-              <span style={{ fontWeight: 700, fontSize: "0.9rem", color: "#1c1917" }}>
+              <Sparkles size={18} style={{ color: "#eab308" }} />
+              <span style={{ fontWeight: 700, fontSize: "0.9rem", color: "#0f172a" }}>
                 Course Progress: {stats.published} of {stats.total} Topics Published
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontSize: "0.75rem", fontWeight: 600 }}>
-              <span style={{ background: "#ffe588", color: "#451a03", padding: "3px 10px", borderRadius: 9999, fontWeight: 800 }}>
+              <span style={{ background: "#facc15", color: "#0f172a", padding: "3px 10px", borderRadius: 9999, fontWeight: 800 }}>
                 {stats.slCount} SL Topics
               </span>
-              <span style={{ background: "#fef9c3", color: "#b45309", padding: "3px 10px", borderRadius: 9999, fontWeight: 800 }}>
+              <span style={{ background: "#fef9c3", color: "#ca8a04", padding: "3px 10px", borderRadius: 9999, fontWeight: 800 }}>
                 {stats.hlCount} HL Topics
               </span>
-              <span style={{ fontWeight: 800, color: "#d97706" }}>{stats.percentage}% Complete</span>
+              <span style={{ fontWeight: 800, color: "#eab308" }}>{stats.percentage}% Complete</span>
             </div>
           </div>
 
@@ -265,7 +265,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
               style={{
                 width: `${stats.percentage}%`,
                 height: "100%",
-                background: "linear-gradient(90deg, #ffe588, #f59e0b)",
+                background: "linear-gradient(90deg, #facc15, #eab308)",
                 borderRadius: 9999,
                 transition: "width 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
@@ -297,9 +297,9 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                 fontWeight: 700,
                 border: "none",
                 cursor: "pointer",
-                background: isActive ? "#ffe588" : "transparent",
-                color: isActive ? "#451a03" : "#78350f",
-                borderBottom: isActive ? "2px solid #d97706" : "2px solid transparent",
+                background: isActive ? "#facc15" : "transparent",
+                color: isActive ? "#0f172a" : "#713f12",
+                borderBottom: isActive ? "2px solid #eab308" : "2px solid transparent",
                 transition: "all 0.18s ease",
               }}
             >
@@ -318,7 +318,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
             {/* Search Box & Level Filter */}
             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center" }}>
               <div style={{ position: "relative", flex: 1, minWidth: 260 }}>
-                <Search size={18} style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "#d97706" }} />
+                <Search size={18} style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "#eab308" }} />
                 <input
                   type="text"
                   placeholder="Search subtopics by title, number (e.g. 4.1, 6.2), or keyword..."
@@ -331,7 +331,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                     border: "1px solid #fef08a",
                     background: "#ffffff",
                     fontSize: "0.875rem",
-                    color: "#1c1917",
+                    color: "#0f172a",
                     outline: "none",
                     boxShadow: "0 1px 3px rgba(0,0,0,0.02)",
                   }}
@@ -351,8 +351,8 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                       fontWeight: 700,
                       border: "none",
                       cursor: "pointer",
-                      background: selectedLevel === lvl ? "#ffe588" : "transparent",
-                      color: selectedLevel === lvl ? "#451a03" : "#78350f",
+                      background: selectedLevel === lvl ? "#facc15" : "transparent",
+                      color: selectedLevel === lvl ? "#0f172a" : "#713f12",
                       boxShadow: selectedLevel === lvl ? "0 1px 4px rgba(0,0,0,0.06)" : "none",
                       transition: "all 0.15s ease",
                     }}
@@ -373,9 +373,9 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                   fontSize: "0.8125rem",
                   fontWeight: 600,
                   whiteSpace: "nowrap",
-                  border: selectedUnit === "all" ? "1.5px solid #d97706" : "1px solid #fef08a",
-                  background: selectedUnit === "all" ? "#ffe588" : "#ffffff",
-                  color: selectedUnit === "all" ? "#451a03" : "#78350f",
+                  border: selectedUnit === "all" ? "1.5px solid #eab308" : "1px solid #fef08a",
+                  background: selectedUnit === "all" ? "#facc15" : "#ffffff",
+                  color: selectedUnit === "all" ? "#0f172a" : "#713f12",
                   cursor: "pointer",
                   transition: "all 0.15s ease",
                 }}
@@ -395,9 +395,9 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                       fontSize: "0.8125rem",
                       fontWeight: 600,
                       whiteSpace: "nowrap",
-                      border: isSelected ? "1.5px solid #d97706" : "1px solid #fef08a",
-                      background: isSelected ? "#ffe588" : "#ffffff",
-                      color: isSelected ? "#451a03" : "#78350f",
+                      border: isSelected ? "1.5px solid #eab308" : "1px solid #fef08a",
+                      background: isSelected ? "#facc15" : "#ffffff",
+                      color: isSelected ? "#0f172a" : "#713f12",
                       cursor: "pointer",
                       transition: "all 0.15s ease",
                     }}
@@ -418,14 +418,14 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                 borderRadius: 16,
                 padding: "3.5rem 2rem",
                 textAlign: "center",
-                color: "#78350f",
+                color: "#713f12",
               }}
             >
               <BookOpen size={32} style={{ margin: "0 auto 0.75rem", opacity: 0.5 }} />
-              <p style={{ fontWeight: 700, color: "#1c1917", marginBottom: "0.25rem" }}>
+              <p style={{ fontWeight: 700, color: "#0f172a", marginBottom: "0.25rem" }}>
                 No matching topics found
               </p>
-              <p style={{ fontSize: "0.85rem", color: "#78350f" }}>
+              <p style={{ fontSize: "0.85rem", color: "#713f12" }}>
                 Try adjusting your search query or unit/level filter.
               </p>
             </div>
@@ -434,14 +434,14 @@ export default function CourseClientPortal({ course }: { course: Course }) {
               {groupedFilteredSlides.map(([unit, slides]) => (
                 <div key={unit}>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
-                    <Layers size={14} style={{ color: "#d97706" }} />
+                    <Layers size={14} style={{ color: "#eab308" }} />
                     <h2
                       style={{
                         fontSize: "0.75rem",
                         fontWeight: 800,
                         letterSpacing: "0.06em",
                         textTransform: "uppercase",
-                        color: "#78350f",
+                        color: "#713f12",
                         margin: 0,
                       }}
                     >
@@ -468,19 +468,19 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                             transition: "all 0.18s ease",
                             boxShadow: isComingSoon ? "none" : "0 1px 4px rgba(0,0,0,0.03)",
                           }}
-                          className={!isComingSoon ? "hover:border-amber-400 hover:shadow-md hover:-translate-y-0.5" : ""}
+                          className={!isComingSoon ? "hover:border-yellow-400 hover:shadow-md hover:-translate-y-0.5" : ""}
                         >
                           <div style={{ minWidth: 0, flex: 1 }}>
                             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.35rem" }}>
-                              <span style={{ fontWeight: 800, color: "#1c1917", fontSize: "0.9375rem", letterSpacing: "-0.01em" }}>
+                              <span style={{ fontWeight: 800, color: "#0f172a", fontSize: "0.9375rem", letterSpacing: "-0.01em" }}>
                                 {slide.title}
                               </span>
                               <span
                                 style={{
                                   fontSize: "0.65rem",
                                   fontWeight: 800,
-                                  color: "#451a03",
-                                  background: "#ffe588",
+                                  color: "#0f172a",
+                                  background: "#facc15",
                                   padding: "2px 8px",
                                   borderRadius: 9999,
                                   border: "1px solid #fef08a",
@@ -490,7 +490,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                                 {slide.level}
                               </span>
                             </div>
-                            <p style={{ fontSize: "0.8125rem", color: "#78350f", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            <p style={{ fontSize: "0.8125rem", color: "#713f12", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                               {slide.subtitle}
                             </p>
                           </div>
@@ -505,7 +505,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                                 style={{
                                   fontSize: "0.65rem",
                                   fontWeight: 800,
-                                  color: "#78350f",
+                                  color: "#713f12",
                                   background: "#fef9c3",
                                   padding: "3px 10px",
                                   borderRadius: 9999,
@@ -520,13 +520,13 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                                   width: 32,
                                   height: 32,
                                   borderRadius: 10,
-                                  background: "#ffe588",
+                                  background: "#facc15",
                                   display: "flex",
                                   alignItems: "center",
                                   justifyContent: "center",
                                 }}
                               >
-                                <ArrowRight size={16} style={{ color: "#451a03" }} />
+                                <ArrowRight size={16} style={{ color: "#0f172a" }} />
                               </div>
                             )}
                           </div>
@@ -554,12 +554,12 @@ export default function CourseClientPortal({ course }: { course: Course }) {
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <div style={{ background: "#ffffff", border: "1px solid #fef08a", borderRadius: 16, padding: "1.5rem", boxShadow: "0 2px 8px rgba(0,0,0,0.03)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
-              <Brain size={20} style={{ color: "#d97706" }} />
-              <h2 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#1c1917", margin: 0 }}>
+              <Brain size={20} style={{ color: "#eab308" }} />
+              <h2 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
                 IB DP ESS General Exam Tips &amp; Question Frameworks
               </h2>
             </div>
-            <p style={{ color: "#78350f", fontSize: "0.875rem", lineHeight: 1.6, margin: 0 }}>
+            <p style={{ color: "#713f12", fontSize: "0.875rem", lineHeight: 1.6, margin: 0 }}>
               Master Paper 1 Case Study data synthesis and Paper 2 extended response 9-mark essay structures.
             </p>
           </div>
@@ -587,32 +587,32 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                       alignItems: "center",
                       justifyContent: "space-between",
                       gap: "1rem",
-                      background: isExpanded ? "#fffdf5" : "#ffffff",
+                      background: isExpanded ? "#fefce8" : "#ffffff",
                       transition: "background 0.15s ease",
                     }}
                   >
                     <div>
                       <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.25rem" }}>
-                        <span style={{ fontSize: "0.6875rem", fontWeight: 800, textTransform: "uppercase", color: "#451a03", background: "#ffe588", padding: "2px 8px", borderRadius: 9999 }}>
+                        <span style={{ fontSize: "0.6875rem", fontWeight: 800, textTransform: "uppercase", color: "#0f172a", background: "#facc15", padding: "2px 8px", borderRadius: 9999 }}>
                           {set.type}
                         </span>
-                        <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#1c1917", margin: 0 }}>
+                        <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
                           {set.title}
                         </h3>
                       </div>
-                      <p style={{ fontSize: "0.8125rem", color: "#78350f", margin: 0 }}>{set.description}</p>
+                      <p style={{ fontSize: "0.8125rem", color: "#713f12", margin: 0 }}>{set.description}</p>
                     </div>
-                    <ArrowRight size={18} style={{ transform: isExpanded ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s ease", color: "#d97706" }} />
+                    <ArrowRight size={18} style={{ transform: isExpanded ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s ease", color: "#eab308" }} />
                   </div>
 
                   {isExpanded && (
                     <div style={{ padding: "1.5rem", borderTop: "1px solid #fef08a", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                       {/* Tips */}
                       <div>
-                        <h4 style={{ fontSize: "0.8125rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.05em", color: "#b45309", marginBottom: "0.5rem" }}>
+                        <h4 style={{ fontSize: "0.8125rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.05em", color: "#ca8a04", marginBottom: "0.5rem" }}>
                           💡 Pro Strategy Checkpoints:
                         </h4>
-                        <ul style={{ margin: 0, paddingLeft: "1.25rem", color: "#1c1917", fontSize: "0.85rem", lineHeight: 1.6 }}>
+                        <ul style={{ margin: 0, paddingLeft: "1.25rem", color: "#0f172a", fontSize: "0.85rem", lineHeight: 1.6 }}>
                           {set.tips.map((t, idx) => (
                             <li key={idx} style={{ marginBottom: "0.25rem" }}>{t}</li>
                           ))}
@@ -622,12 +622,12 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                       {/* Sample Questions & Mark Schemes */}
                       <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                         {set.questions.map((qItem, qIdx) => (
-                          <div key={qIdx} style={{ background: "#fffdf5", border: "1px solid #fef08a", borderRadius: 12, padding: "1rem 1.25rem" }}>
-                            <div style={{ fontWeight: 700, color: "#1c1917", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
+                          <div key={qIdx} style={{ background: "#fefce8", border: "1px solid #fef08a", borderRadius: 12, padding: "1rem 1.25rem" }}>
+                            <div style={{ fontWeight: 700, color: "#0f172a", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
                               Q{qIdx + 1}: {qItem.q}
                             </div>
-                            <div style={{ background: "#ffffff", border: "1px solid #fef08a", borderRadius: 8, padding: "0.75rem 1rem", fontSize: "0.8125rem", color: "#78350f", lineHeight: 1.65, whiteSpace: "pre-line" }}>
-                              <strong style={{ color: "#d97706" }}>Official Mark Scheme Guidance:</strong>{"\n"}
+                            <div style={{ background: "#ffffff", border: "1px solid #fef08a", borderRadius: 8, padding: "0.75rem 1rem", fontSize: "0.8125rem", color: "#713f12", lineHeight: 1.65, whiteSpace: "pre-line" }}>
+                              <strong style={{ color: "#eab308" }}>Official Mark Scheme Guidance:</strong>{"\n"}
                               {qItem.ms}
                             </div>
                           </div>
@@ -648,32 +648,32 @@ export default function CourseClientPortal({ course }: { course: Course }) {
           {/* Header */}
           <div style={{ background: "#ffffff", border: "1px solid #fef08a", borderRadius: 16, padding: "1.5rem", boxShadow: "0 2px 8px rgba(0,0,0,0.03)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
-              <Award size={22} style={{ color: "#d97706" }} />
-              <h2 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#1c1917", margin: 0 }}>
+              <Award size={22} style={{ color: "#eab308" }} />
+              <h2 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
                 IB DP ESS Internal Assessment (IA) &amp; Extended Essay (EE) Portal
               </h2>
             </div>
-            <p style={{ color: "#78350f", fontSize: "0.875rem", lineHeight: 1.6, margin: 0 }}>
+            <p style={{ color: "#713f12", fontSize: "0.875rem", lineHeight: 1.6, margin: 0 }}>
               Mastering the 4 assessment criteria for a Level 7 Individual Investigation (25% of final grade) and interdisciplinary Extended Essays.
             </p>
           </div>
 
           {/* IA Assessment Criteria Grid */}
           <div>
-            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#1c1917", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <CheckCircle2 size={18} style={{ color: "#d97706" }} />
+            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <CheckCircle2 size={18} style={{ color: "#eab308" }} />
               The Four ESS IA Assessment Criteria (Total: 24 Marks)
             </h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(420px, 1fr))", gap: "1rem" }}>
               {IA_CRITERIA.map((crit, idx) => (
                 <div key={idx} style={{ background: "#ffffff", border: "1px solid #fef08a", borderRadius: 14, padding: "1.25rem", boxShadow: "0 1px 4px rgba(0,0,0,0.02)" }}>
-                  <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "#b45309", margin: "0 0 0.25rem 0" }}>
+                  <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "#ca8a04", margin: "0 0 0.25rem 0" }}>
                     {crit.title}
                   </h4>
-                  <p style={{ fontSize: "0.8125rem", color: "#1c1917", fontWeight: 600, margin: "0 0 0.75rem 0" }}>
+                  <p style={{ fontSize: "0.8125rem", color: "#0f172a", fontWeight: 600, margin: "0 0 0.75rem 0" }}>
                     Focus: {crit.focus}
                   </p>
-                  <ul style={{ margin: 0, paddingLeft: "1.2rem", color: "#78350f", fontSize: "0.8rem", lineHeight: 1.6 }}>
+                  <ul style={{ margin: 0, paddingLeft: "1.2rem", color: "#713f12", fontSize: "0.8rem", lineHeight: 1.6 }}>
                     {crit.checkpoints.map((cp, cIdx) => (
                       <li key={cIdx} style={{ marginBottom: "0.25rem" }}>{cp}</li>
                     ))}
@@ -685,14 +685,14 @@ export default function CourseClientPortal({ course }: { course: Course }) {
 
           {/* High-Scoring Sample IA Topics */}
           <div style={{ background: "#ffffff", border: "1px solid #fef08a", borderRadius: 16, padding: "1.5rem", boxShadow: "0 2px 8px rgba(0,0,0,0.03)" }}>
-            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#1c1917", margin: "0 0 1rem 0", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <Lightbulb size={18} style={{ color: "#d97706" }} />
+            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", margin: "0 0 1rem 0", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <Lightbulb size={18} style={{ color: "#eab308" }} />
               High-Scoring Sample ESS IA Research Questions
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
               {SAMPLE_IA_TOPICS.map((topic, tIdx) => (
-                <div key={tIdx} style={{ background: "#fffdf5", border: "1px solid #fef08a", borderRadius: 10, padding: "0.75rem 1rem", fontSize: "0.85rem", color: "#1c1917", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ fontWeight: 800, color: "#b45309" }}>#{tIdx + 1}</span>
+                <div key={tIdx} style={{ background: "#fefce8", border: "1px solid #fef08a", borderRadius: 10, padding: "0.75rem 1rem", fontSize: "0.85rem", color: "#0f172a", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                  <span style={{ fontWeight: 800, color: "#ca8a04" }}>#{tIdx + 1}</span>
                   <span>{topic}</span>
                 </div>
               ))}

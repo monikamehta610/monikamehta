@@ -9,24 +9,24 @@ export default function CoursesTeaser() {
   const bioCount = bioCourse ? bioCourse.slides.filter((s) => s.status !== "coming-soon").length : 0;
 
   return (
-    <section id="courses" className="py-20 bg-[#fffdf0] border-t border-amber-200/80 relative">
+    <section id="courses" className="py-20 bg-yellow-50/50 border-t border-yellow-200/80 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
         <div className="flex flex-col items-center text-center space-y-4 mb-14">
           <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black text-amber-950 border border-amber-300 shadow-xs"
-            style={{ background: "#ffe588" }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black text-slate-950 border border-yellow-300 shadow-xs"
+            style={{ background: "#facc15" }}
           >
-            <GraduationCap className="w-3.5 h-3.5 text-amber-800" />
+            <GraduationCap className="w-3.5 h-3.5 text-slate-900" />
             Curriculum Guide (First Assessment 2026)
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-stone-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
             IB DP Science{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-700 to-stone-900">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-yellow-600 to-slate-900">
               Courses &amp; Slides
             </span>
           </h2>
-          <p className="text-stone-600 max-w-xl text-center text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 max-w-xl text-center text-sm sm:text-base leading-relaxed">
             Interactive, slide-based study resources aligned with the official IB Diploma guide — with embedded custom diagrams, practice questions, and video companions.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function CoursesTeaser() {
               label: "ESS",
               full: "Environmental Systems & Societies",
               desc: "Complete 7-unit interactive slide decks covering Ecosystems, Biodiversity, Water, Land, Atmosphere, and Sustainability.",
-              badgeColor: "bg-[#ffe588] text-amber-950 border-amber-300",
+              badgeColor: "bg-[#facc15] text-slate-950 border-yellow-300",
               href: "/courses/ess",
               count: essCount,
               total: essCourse ? essCourse.slides.length : 25,
@@ -49,14 +49,14 @@ export default function CoursesTeaser() {
               label: "Biology",
               full: "IB DP Biology SL & HL",
               desc: "Cell biology, molecular genetics, ecology, evolution, and human physiology — interactive slides coming soon.",
-              badgeColor: "bg-amber-100 text-amber-950 border-amber-300",
+              badgeColor: "bg-yellow-100 text-slate-950 border-yellow-300",
               href: "/courses/biology",
               count: bioCount,
               total: bioCourse ? bioCourse.slides.length : 20,
             },
           ].map((card) => (
             <Link key={card.label} href={card.href} className="group block" style={{ textDecoration: "none" }}>
-              <div className="rounded-3xl border border-amber-200 bg-white p-7 hover:border-amber-400 hover:-translate-y-1 hover:shadow-xl hover:shadow-stone-900/5 transition-all duration-300 cursor-pointer h-full flex flex-col justify-between space-y-6">
+              <div className="rounded-3xl border border-yellow-200 bg-white p-7 hover:border-yellow-400 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300 cursor-pointer h-full flex flex-col justify-between space-y-6">
                 
                 {/* Header */}
                 <div className="space-y-4">
@@ -68,22 +68,22 @@ export default function CoursesTeaser() {
                   </div>
 
                   <div>
-                    <h3 className="font-extrabold text-xl text-stone-900 group-hover:text-amber-700 transition-colors">
+                    <h3 className="font-extrabold text-xl text-slate-900 group-hover:text-amber-600 transition-colors">
                       {card.full}
                     </h3>
-                    <p className="text-stone-600 text-xs sm:text-sm leading-relaxed mt-2">
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mt-2">
                       {card.desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Footer CTA */}
-                <div className="pt-4 border-t border-amber-100 flex items-center justify-between">
-                  <span className="text-xs font-bold text-stone-700 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-700" />
+                <div className="pt-4 border-t border-yellow-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600" />
                     SL &amp; HL Covered
                   </span>
-                  <div className="inline-flex items-center gap-2 text-xs font-black text-amber-800 group-hover:translate-x-1 transition-transform">
+                  <div className="inline-flex items-center gap-2 text-xs font-black text-slate-900 group-hover:translate-x-1 transition-transform">
                     {card.count > 0 ? "View All Topics & Slides" : "Explore Course"}
                     <ArrowRight className="w-4 h-4" />
                   </div>

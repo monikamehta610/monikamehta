@@ -55,40 +55,40 @@
 }
 
 :root {
-  /* Warm Butter Yellow (#ffe588) Theme */
-  --background: #fffdf5;
-  --foreground: #1c1917;
+  /* Vibrant Solar Yellow (#facc15 / #eab308) Theme */
+  --background: #fefce8;
+  --foreground: #0f172a;
   --card: #ffffff;
-  --card-foreground: #1c1917;
-  --primary: #d97706;
-  --primary-foreground: #ffffff;
-  --secondary: #ffe588;
-  --secondary-foreground: #451a03;
+  --card-foreground: #0f172a;
+  --primary: #eab308;
+  --primary-foreground: #0f172a;
+  --secondary: #fef08a;
+  --secondary-foreground: #713f12;
   --muted: #fef9c3;
-  --muted-foreground: #b45309;
-  --accent: #ffe588;
-  --accent-foreground: #451a03;
+  --muted-foreground: #ca8a04;
+  --accent: #facc15;
+  --accent-foreground: #0f172a;
   --border: #fef08a;
   --input: #ffffff;
-  --ring: #d97706;
+  --ring: #eab308;
 }
 
 .dark {
-  --background: #fffdf5;
-  --foreground: #1c1917;
+  --background: #fefce8;
+  --foreground: #0f172a;
   --card: #ffffff;
-  --card-foreground: #1c1917;
-  --primary: #d97706;
-  --primary-foreground: #ffffff;
-  --secondary: #ffe588;
-  --secondary-foreground: #451a03;
+  --card-foreground: #0f172a;
+  --primary: #eab308;
+  --primary-foreground: #0f172a;
+  --secondary: #fef08a;
+  --secondary-foreground: #713f12;
   --muted: #fef9c3;
-  --muted-foreground: #b45309;
-  --accent: #ffe588;
-  --accent-foreground: #451a03;
+  --muted-foreground: #ca8a04;
+  --accent: #facc15;
+  --accent-foreground: #0f172a;
   --border: #fef08a;
   --input: #ffffff;
-  --ring: #d97706;
+  --ring: #eab308;
 }
 
 @layer base {
@@ -117,28 +117,28 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffe588;
+  background: #facc15;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d97706;
+  background: #eab308;
 }
 
 /* Course light scope for slide decks */
 .course-light {
-  --cl-bg:             #fffdf5;
+  --cl-bg:             #fefce8;
   --cl-bg-subtle:      #fef9c3;
   --cl-card:           #ffffff;
   --cl-card-border:    #fef08a;
-  --cl-fg:             #1c1917;
-  --cl-fg-muted:       #78350f;
-  --cl-fg-subtle:      #d97706;
-  --cl-accent-bio:     #d97706;
-  --cl-accent-bio-bg:  rgba(255, 229, 136, 0.4);
-  --cl-accent-ess:     #b45309;
-  --cl-accent-ess-bg:  rgba(255, 229, 136, 0.3);
-  --cl-accent-neutral: #ffe588;
+  --cl-fg:             #0f172a;
+  --cl-fg-muted:       #713f12;
+  --cl-fg-subtle:      #ca8a04;
+  --cl-accent-bio:     #eab308;
+  --cl-accent-bio-bg:  rgba(250, 204, 21, 0.4);
+  --cl-accent-ess:     #ca8a04;
+  --cl-accent-ess-bg:  rgba(234, 179, 8, 0.3);
+  --cl-accent-neutral: #facc15;
   --cl-shadow:         0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.03);
   --cl-shadow-md:      0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
   --cl-radius:         12px;
