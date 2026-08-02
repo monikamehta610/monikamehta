@@ -64,7 +64,7 @@ const HIGHLIGHTS: HighlightItem[] = [
     icon: <GraduationCap className="w-5 h-5 text-primary" />,
     illustration: (
       <svg
-        className="w-full h-full text-emerald-500/40 dark:text-emerald-500/20"
+        className="w-full h-full text-red-800/40 dark:text-red-800/20"
         viewBox="0 0 200 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

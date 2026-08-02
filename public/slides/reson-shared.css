@@ -71,8 +71,8 @@ body {
   --bg-selected: rgba(0, 0, 0, 0.05);
 
   /* Semantic */
-  --green: #5a9e6f;
-  --green-light: rgba(90, 158, 111, 0.1);
+  --green: #991b1b;
+  --green-light: rgba(153, 27, 27, 0.1);
   --yellow: #c49a3c;
   --yellow-light: rgba(196, 154, 60, 0.1);
   --red: #c75c5c;
