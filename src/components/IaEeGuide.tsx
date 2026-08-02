@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Lightbulb } from "lucide-react";
+import { ArrowRight, CheckCircle2, Lightbulb, FileText, Target, BookOpen } from "lucide-react";
 
 const IA_CRITERIA = [
-  { name: "Identifying Context", marks: "6 marks", desc: "Clear environmental issue, focused RQ, and local/global context." },
-  { name: "Planning", marks: "6 marks", desc: "Methodology, variable control, safety & ethics." },
-  { name: "Analysis", marks: "6 marks", desc: "Raw data processing, statistical tests, uncertainty analysis." },
-  { name: "Evaluation", marks: "6 marks", desc: "Conclusion linked to RQ, strengths, limitations & solutions." },
+  { name: "Identifying Context", desc: "Clear environmental issue, focused RQ, and local/global context." },
+  { name: "Planning", desc: "Methodology, variable control, safety & ethics." },
+  { name: "Analysis", desc: "Raw data processing, statistical tests, uncertainty analysis." },
+  { name: "Evaluation", desc: "Conclusion linked to RQ, strengths, limitations & solutions." },
 ];
 
 const EE_FACTORS = [
@@ -36,155 +36,116 @@ export default function IaEeGuide() {
             className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight"
             style={{ color: "#1A1A1A" }}
           >
-            Internal Assessment & Extended Essay Guides
+            Internal Assessment & Extended Essay
           </h2>
           <p
             className="mt-4 text-base leading-relaxed"
             style={{ color: "#6B6B6B", lineHeight: "1.7" }}
           >
-            Step-by-step frameworks, assessment criteria breakdowns, and high-scoring sample research ideas to help IB students achieve Level 7 in their ESS IA and Extended Essay.
+            A high-level breakdown of the two most critical independent research components in the IB Diploma Programme.
           </p>
         </div>
 
-        {/* Two cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-          {/* IA Card */}
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
+          
+          {/* Tile 1: IA Hero (Col span 2) */}
           <div
-            className="rounded-2xl border p-8 flex flex-col justify-between transition-all duration-200 hover:border-[#1C1C1C]"
+            className="md:col-span-2 rounded-3xl border p-8 md:p-10 flex flex-col justify-between transition-all duration-300 hover:shadow-md"
             style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
           >
-            <div className="space-y-6">
-              {/* Header */}
-              <div className="flex items-start justify-between">
-                <div>
-                  <span
-                    className="text-[11px] font-semibold uppercase tracking-widest"
-                    style={{ color: "#1C1C1C" }}
-                  >
-                    Individual Investigation
-                  </span>
-                  <h3
-                    className="mt-1 text-xl font-semibold leading-snug"
-                    style={{ color: "#1A1A1A" }}
-                  >
-                    Internal Assessment (IA)
-                  </h3>
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#F0F0EE" }}>
+                  <Target className="w-5 h-5" style={{ color: "#1C1C1C" }} />
                 </div>
-                <span
-                  className="text-[11px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ml-4"
-                  style={{ background: "#F0F0EE", color: "#1C1C1C" }}
-                >
-                  25% of Grade
-                </span>
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: "#1C1C1C" }}>Individual Investigation</span>
+                  <h3 className="text-xl font-bold" style={{ color: "#1A1A1A" }}>Internal Assessment (IA)</h3>
+                </div>
               </div>
-
-              <p className="text-sm leading-relaxed" style={{ color: "#6B6B6B", lineHeight: "1.7" }}>
-                A 1,500–2,250 word individual investigation focused on a specific environmental issue with local or global relevance.
-              </p>
-
-              {/* Criteria */}
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#9CA3AF" }}>
-                  Four Assessment Criteria
-                </p>
-                {IA_CRITERIA.map((c) => (
-                  <div key={c.name} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#1C1C1C" }} />
-                    <div>
-                      <span className="text-sm font-medium" style={{ color: "#1A1A1A" }}>
-                        {c.name}
-                      </span>
-                      <span className="text-xs ml-1.5 font-medium" style={{ color: "#9CA3AF" }}>
-                        ({c.marks})
-                      </span>
-                      <p className="text-xs mt-0.5 leading-relaxed" style={{ color: "#6B6B6B" }}>
-                        {c.desc}
-                      </p>
-                    </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                {IA_CRITERIA.map((c, i) => (
+                  <div key={i}>
+                    <h4 className="text-sm font-semibold flex items-center gap-2 mb-1.5" style={{ color: "#1A1A1A" }}>
+                      <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "#1C1C1C" }} />
+                      {c.name} (6 Marks)
+                    </h4>
+                    <p className="text-xs leading-relaxed" style={{ color: "#6B6B6B" }}>{c.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="mt-8 pt-6 border-t" style={{ borderColor: "#E8E5E0" }}>
-              <Link
-                href="/courses/ess#ia-guide"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-75"
-                style={{ color: "#1C1C1C" }}
-              >
-                Access IA Criteria & Sample Topics
-                <ArrowRight className="w-4 h-4" />
+            <div className="mt-8 pt-6 border-t flex items-center justify-between" style={{ borderColor: "#E8E5E0" }}>
+              <span className="text-xs font-semibold" style={{ color: "#9CA3AF" }}>24 Total Marks</span>
+              <Link href="/courses/ess#ia-guide" className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-75" style={{ color: "#1C1C1C" }}>
+                Access Guide & Topics <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
-          {/* EE Card */}
+          {/* Tile 2: IA Stats (Col span 1) */}
           <div
-            className="rounded-2xl border p-8 flex flex-col justify-between transition-all duration-200 hover:border-[#1C1C1C]"
+            className="md:col-span-1 rounded-3xl border p-8 flex flex-col justify-center items-center text-center transition-all duration-300 hover:shadow-md"
+            style={{ background: "#1C1C1C", borderColor: "#1C1C1C" }}
+          >
+             <h3 className="text-5xl font-bold tracking-tighter mb-2" style={{ color: "#FFFFFF" }}>25%</h3>
+             <p className="text-sm font-medium mb-6" style={{ color: "#9CA3AF" }}>of final ESS grade</p>
+             <div className="w-full h-px bg-white/10 mb-6" />
+             <div className="flex items-center justify-center gap-2 text-sm font-medium text-white mb-1">
+               <FileText className="w-4 h-4" /> 1,500 - 2,250
+             </div>
+             <p className="text-xs text-white/60">Words Required</p>
+          </div>
+
+          {/* Tile 3: EE Stats (Col span 1) */}
+          <div
+            className="md:col-span-1 rounded-3xl border p-8 flex flex-col justify-center items-center text-center transition-all duration-300 hover:shadow-md"
             style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
           >
-            <div className="space-y-6">
-              {/* Header */}
-              <div className="flex items-start justify-between">
-                <div>
-                  <span
-                    className="text-[11px] font-semibold uppercase tracking-widest"
-                    style={{ color: "#1C1C1C" }}
-                  >
-                    Independent Research Paper
-                  </span>
-                  <h3
-                    className="mt-1 text-xl font-semibold leading-snug"
-                    style={{ color: "#1A1A1A" }}
-                  >
-                    Extended Essay (EE)
-                  </h3>
+             <h3 className="text-4xl font-bold tracking-tighter mb-2" style={{ color: "#1A1A1A" }}>4,000</h3>
+             <p className="text-sm font-medium mb-6" style={{ color: "#6B6B6B" }}>Max Word Count</p>
+             <div className="w-full h-px mb-6" style={{ background: "#E8E5E0" }} />
+             <div className="flex items-center justify-center gap-2 text-sm font-bold mb-1" style={{ color: "#1C1C1C" }}>
+               <BookOpen className="w-4 h-4" /> Interdisciplinary
+             </div>
+             <p className="text-xs" style={{ color: "#9CA3AF" }}>Societal & Ethical Focus</p>
+          </div>
+
+          {/* Tile 4: EE Hero (Col span 2) */}
+          <div
+            className="md:col-span-2 rounded-3xl border p-8 md:p-10 flex flex-col justify-between transition-all duration-300 hover:shadow-md"
+            style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+          >
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#F0F0EE" }}>
+                  <Lightbulb className="w-5 h-5" style={{ color: "#1C1C1C" }} />
                 </div>
-                <span
-                  className="text-[11px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ml-4"
-                  style={{ background: "#F5F4F2", color: "#6B6B6B" }}
-                >
-                  4,000 Words
-                </span>
+                <div>
+                  <span className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: "#1C1C1C" }}>Independent Research</span>
+                  <h3 className="text-xl font-bold" style={{ color: "#1A1A1A" }}>Extended Essay (EE)</h3>
+                </div>
               </div>
-
-              <p className="text-sm leading-relaxed" style={{ color: "#6B6B6B", lineHeight: "1.7" }}>
-                An independent interdisciplinary research paper integrating environmental science with human societal and ethical perspectives.
-              </p>
-
-              {/* Key factors */}
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#9CA3AF" }}>
-                  Key Success Factors
-                </p>
-                {EE_FACTORS.map((f) => (
-                  <div key={f.name} className="flex items-start gap-3">
-                    <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#1C1C1C" }} />
-                    <div>
-                      <span className="text-sm font-medium" style={{ color: "#1A1A1A" }}>
-                        {f.name}
-                      </span>
-                      <p className="text-xs mt-0.5 leading-relaxed" style={{ color: "#6B6B6B" }}>
-                        {f.desc}
-                      </p>
-                    </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                {EE_FACTORS.map((f, i) => (
+                  <div key={i}>
+                    <h4 className="text-sm font-semibold flex items-center gap-2 mb-1.5" style={{ color: "#1A1A1A" }}>
+                       <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#1C1C1C" }} />
+                      {f.name}
+                    </h4>
+                    <p className="text-xs leading-relaxed" style={{ color: "#6B6B6B" }}>{f.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="mt-8 pt-6 border-t" style={{ borderColor: "#E8E5E0" }}>
-              <Link
-                href="/courses/ess#ee-guide"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-75"
-                style={{ color: "#1C1C1C" }}
-              >
-                Access EE Framework & Guidelines
-                <ArrowRight className="w-4 h-4" />
+            <div className="mt-8 pt-6 border-t flex items-center justify-end" style={{ borderColor: "#E8E5E0" }}>
+              <Link href="/courses/ess#ee-guide" className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-75" style={{ color: "#1C1C1C" }}>
+                Access EE Framework <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
+
         </div>
       </div>
     </section>
