@@ -1,147 +1,88 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-@theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-
-  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-
-  --animate-fade-in-up: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-slow: pulse-slow 5s ease-in-out infinite;
-
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-  }
-  @keyframes pulse-slow {
-    0%, 100% { opacity: 0.08; }
-    50% { opacity: 0.18; }
-  }
-}
-
-:root {
-  /* ── Sage & Slate Design System ────────────────────────────── */
-  /* Warm white canvas — never clinical, never distracting       */
-  --background:            #FAFAF9;
-  --foreground:            #1A1A1A;
-
-  /* Card surfaces */
-  --card:                  #FFFFFF;
-  --card-foreground:       #1A1A1A;
-
-  /* Primary accent — Deep Sage Green (biology, nature, calm authority) */
-  --primary:               #2E6B4F;
-  --primary-foreground:    #FFFFFF;
-
-  /* Secondary — Sage tint for backgrounds and tags */
-  --secondary:             #F5F4F2;
-  --secondary-foreground:  #1A1A1A;
-
-  /* Muted surfaces */
-  --muted:                 #F5F4F2;
-  --muted-foreground:      #6B6B6B;
-
-  /* Accent (same as primary for consistency) */
-  --accent:                #2E6B4F;
-  --accent-foreground:     #FFFFFF;
-
-  /* Borders — warm grey, never harsh */
-  --border:                #E8E5E0;
-  --input:                 #FFFFFF;
-  --ring:                  #2E6B4F;
-
-  /* Sage tints (used inline) */
-  --sage-light:            #E8F5EE;
-  --sage-dark:             #1D4535;
-}
-
-/* No dark mode variant — site is intentionally light-mode only */
-.dark {
-  --background:            #FAFAF9;
-  --foreground:            #1A1A1A;
-  --card:                  #FFFFFF;
-  --card-foreground:       #1A1A1A;
-  --primary:               #2E6B4F;
-  --primary-foreground:    #FFFFFF;
-  --secondary:             #F5F4F2;
-  --secondary-foreground:  #1A1A1A;
-  --muted:                 #F5F4F2;
-  --muted-foreground:      #6B6B6B;
-  --accent:                #2E6B4F;
-  --accent-foreground:     #FFFFFF;
-  --border:                #E8E5E0;
-  --input:                 #FFFFFF;
-  --ring:                  #2E6B4F;
-}
-
 @layer base {
-  * {
-    border-color: var(--border);
+  :root {
+    /* Steve Jobs Minimalist Black & White System */
+    --background: #FAFAF9;        /* Warm paper canvas */
+    --background-subtle: #F5F4F2; /* Soft grey contrast section */
+    --card: #FFFFFF;              /* Pure white card surface */
+    --foreground: #1A1A1A;        /* Near-black high-contrast text */
+    --muted-foreground: #6B6B6B;  /* Muted slate secondary text */
+    --subtle-foreground: #9CA3AF; /* Light grey labels/captions */
+    
+    /* Primary Accent: Deep Charcoal / Black */
+    --accent: #1C1C1C;
+    --accent-light: #F0F0EE;
+    --accent-dark: #000000;
+    
+    --border: #E8E5E0;            /* Subtle card/section border */
   }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+/* Base Utility Classes */
+.bg-canvas {
+  background-color: var(--background);
 }
 
-/* Custom scrollbar — thin, sage accent */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--background); }
-::-webkit-scrollbar-thumb { background: #2E6B4F; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #1D4535; }
+.bg-canvas-subtle {
+  background-color: var(--background-subtle);
+}
 
-/* Course portal scope */
-.course-light {
-  --cl-bg:             #FAFAF9;
-  --cl-bg-subtle:      #F5F4F2;
-  --cl-card:           #FFFFFF;
-  --cl-card-border:    #E8E5E0;
-  --cl-fg:             #1A1A1A;
-  --cl-fg-muted:       #6B6B6B;
-  --cl-fg-subtle:      #9CA3AF;
-  --cl-accent-bio:     #2E6B4F;
-  --cl-accent-bio-bg:  rgba(46, 107, 79, 0.08);
-  --cl-accent-ess:     #2E6B4F;
-  --cl-accent-ess-bg:  rgba(46, 107, 79, 0.06);
-  --cl-accent-neutral: #E8F5EE;
-  --cl-shadow:         0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
-  --cl-shadow-md:      0 4px 16px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.03);
-  --cl-radius:         12px;
-  --cl-radius-lg:      18px;
+.text-accent {
+  color: var(--accent);
+}
 
-  color-scheme: light;
-  background-color: var(--cl-bg);
-  color: var(--cl-fg);
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-accent-light {
+  background-color: var(--accent-light);
+}
+
+.border-subtle {
+  border-color: var(--border);
+}
+
+/* Primary Button Styling */
+.btn-primary {
+  background-color: #1C1C1C;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.625rem 1.25rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Card Base Styling */
+.apple-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-card:hover {
+  border-color: #1C1C1C;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }

@@ -43,7 +43,7 @@ export default function CoursesTeaser() {
         <div className="max-w-2xl mb-14">
           <span
             className="text-xs font-semibold uppercase tracking-widest"
-            style={{ color: "#2E6B4F" }}
+            style={{ color: "#1C1C1C" }}
           >
             Course Materials
           </span>
@@ -71,7 +71,7 @@ export default function CoursesTeaser() {
               style={{ textDecoration: "none" }}
             >
               <div
-                className="rounded-2xl border p-7 h-full flex flex-col justify-between transition-all duration-200 hover:shadow-md"
+                className="rounded-2xl border p-7 h-full flex flex-col justify-between transition-all duration-200 hover:shadow-md hover:border-[#1C1C1C]"
                 style={{
                   background: "#FFFFFF",
                   borderColor: "#E8E5E0",
@@ -83,7 +83,7 @@ export default function CoursesTeaser() {
                     <span className="text-3xl">{card.icon}</span>
                     <span
                       className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      style={{ background: "#E8F5EE", color: "#2E6B4F" }}
+                      style={{ background: "#F0F0EE", color: "#1C1C1C" }}
                     >
                       {card.count > 0 ? `${card.count} / ${card.total} Topics Live` : "Coming Soon"}
                     </span>
@@ -92,7 +92,7 @@ export default function CoursesTeaser() {
                   {/* Content */}
                   <div>
                     <h3
-                      className="font-semibold text-lg leading-snug transition-colors group-hover:text-[#2E6B4F]"
+                      className="font-semibold text-lg leading-snug transition-colors group-hover:text-[#1C1C1C]"
                       style={{ color: "#1A1A1A" }}
                     >
                       {card.full}
@@ -112,12 +112,12 @@ export default function CoursesTeaser() {
                   style={{ borderColor: "#E8E5E0" }}
                 >
                   <span className="flex items-center gap-1.5 text-xs font-medium" style={{ color: "#6B6B6B" }}>
-                    <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "#2E6B4F" }} />
+                    <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "#1C1C1C" }} />
                     {card.badge} Covered
                   </span>
                   <span
                     className="flex items-center gap-1 text-xs font-semibold group-hover:gap-2 transition-all"
-                    style={{ color: "#2E6B4F" }}
+                    style={{ color: "#1C1C1C" }}
                   >
                     {card.count > 0 ? "View All Topics" : "Explore Course"}
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -83,7 +83,7 @@ export default function Contact() {
         <div className="max-w-2xl mb-14">
           <span
             className="text-xs font-semibold uppercase tracking-widest"
-            style={{ color: "#2E6B4F" }}
+            style={{ color: "#1C1C1C" }}
           >
             Get in Touch
           </span>
@@ -102,7 +102,7 @@ export default function Contact() {
           <a
             href="#contact-form"
             className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
-            style={{ background: "#2E6B4F" }}
+            style={{ background: "#1C1C1C" }}
           >
             <Calendar className="w-4 h-4" />
             Book a Free 15-Min Call
@@ -132,7 +132,7 @@ export default function Contact() {
               {/* Email */}
               <div>
                 <div className="flex items-center gap-2 mb-1.5">
-                  <Mail className="w-4 h-4" style={{ color: "#2E6B4F" }} />
+                  <Mail className="w-4 h-4" style={{ color: "#1C1C1C" }} />
                   <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#9CA3AF" }}>
                     Email
                   </span>
@@ -141,7 +141,7 @@ export default function Contact() {
                   <a
                     href={`mailto:${decodedEmail}`}
                     className="text-sm font-medium break-all hover:underline"
-                    style={{ color: "#2E6B4F" }}
+                    style={{ color: "#1C1C1C" }}
                   >
                     {decodedEmail}
                   </a>
@@ -149,7 +149,7 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={() => setShowEmail(true)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold border rounded-lg px-3 py-1.5 transition-colors hover:border-[#2E6B4F] hover:text-[#2E6B4F] cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold border rounded-lg px-3 py-1.5 transition-colors hover:border-[#1C1C1C] hover:text-[#1C1C1C] cursor-pointer"
                     style={{ borderColor: "#E8E5E0", color: "#6B6B6B" }}
                   >
                     <Eye className="w-3.5 h-3.5" />
@@ -161,7 +161,7 @@ export default function Contact() {
               {/* Phone */}
               <div>
                 <div className="flex items-center gap-2 mb-1.5">
-                  <Phone className="w-4 h-4" style={{ color: "#2E6B4F" }} />
+                  <Phone className="w-4 h-4" style={{ color: "#1C1C1C" }} />
                   <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#9CA3AF" }}>
                     Phone
                   </span>
@@ -170,7 +170,7 @@ export default function Contact() {
                   <a
                     href={`tel:${decodedPhone.replace(/[^0-9+]/g, "")}`}
                     className="text-sm font-medium hover:underline"
-                    style={{ color: "#2E6B4F" }}
+                    style={{ color: "#1C1C1C" }}
                   >
                     {decodedPhone}
                   </a>
@@ -178,7 +178,7 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={() => setShowPhone(true)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold border rounded-lg px-3 py-1.5 transition-colors hover:border-[#2E6B4F] hover:text-[#2E6B4F] cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold border rounded-lg px-3 py-1.5 transition-colors hover:border-[#1C1C1C] hover:text-[#1C1C1C] cursor-pointer"
                     style={{ borderColor: "#E8E5E0", color: "#6B6B6B" }}
                   >
                     <Eye className="w-3.5 h-3.5" />
@@ -192,7 +192,7 @@ export default function Contact() {
               className="flex items-start gap-2 pt-5 border-t text-xs"
               style={{ borderColor: "#E8E5E0", color: "#9CA3AF" }}
             >
-              <ShieldCheck className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#2E6B4F" }} />
+              <ShieldCheck className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#1C1C1C" }} />
               <span>Contact details protected from web scrapers. Replies within 24 hours.</span>
             </div>
           </div>
@@ -206,9 +206,9 @@ export default function Contact() {
               <div className="flex flex-col items-center justify-center text-center py-16 space-y-5 h-full">
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center"
-                  style={{ background: "#E8F5EE" }}
+                  style={{ background: "#F0F0EE" }}
                 >
-                  <CheckCircle2 className="w-7 h-7" style={{ color: "#2E6B4F" }} />
+                  <CheckCircle2 className="w-7 h-7" style={{ color: "#1C1C1C" }} />
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold" style={{ color: "#1A1A1A" }}>
@@ -221,7 +221,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={() => setStatus("idle")}
-                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl border text-sm font-semibold transition-colors hover:border-[#2E6B4F] hover:text-[#2E6B4F] cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl border text-sm font-semibold transition-colors hover:border-[#1C1C1C] hover:text-[#1C1C1C] cursor-pointer"
                   style={{ borderColor: "#E8E5E0", color: "#6B6B6B" }}
                 >
                   Send Another Message
@@ -305,7 +305,7 @@ export default function Contact() {
                   type="submit"
                   disabled={status === "submitting"}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90 cursor-pointer disabled:opacity-60"
-                  style={{ background: "#2E6B4F" }}
+                  style={{ background: "#1C1C1C" }}
                 >
                   <Send className="w-4 h-4" />
                   {status === "submitting" ? "Sending…" : "Send Consultation Request"}

@@ -28,7 +28,7 @@ export default function IaEeGuide() {
         <div className="max-w-2xl mb-14">
           <span
             className="text-xs font-semibold uppercase tracking-widest"
-            style={{ color: "#2E6B4F" }}
+            style={{ color: "#1C1C1C" }}
           >
             IB DP Core
           </span>
@@ -51,7 +51,7 @@ export default function IaEeGuide() {
 
           {/* IA Card */}
           <div
-            className="rounded-2xl border p-8 flex flex-col justify-between"
+            className="rounded-2xl border p-8 flex flex-col justify-between transition-all duration-200 hover:border-[#1C1C1C]"
             style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
           >
             <div className="space-y-6">
@@ -60,7 +60,7 @@ export default function IaEeGuide() {
                 <div>
                   <span
                     className="text-[11px] font-semibold uppercase tracking-widest"
-                    style={{ color: "#2E6B4F" }}
+                    style={{ color: "#1C1C1C" }}
                   >
                     Individual Investigation
                   </span>
@@ -73,7 +73,7 @@ export default function IaEeGuide() {
                 </div>
                 <span
                   className="text-[11px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ml-4"
-                  style={{ background: "#E8F5EE", color: "#2E6B4F" }}
+                  style={{ background: "#F0F0EE", color: "#1C1C1C" }}
                 >
                   25% of Grade
                 </span>
@@ -90,7 +90,7 @@ export default function IaEeGuide() {
                 </p>
                 {IA_CRITERIA.map((c) => (
                   <div key={c.name} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#2E6B4F" }} />
+                    <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#1C1C1C" }} />
                     <div>
                       <span className="text-sm font-medium" style={{ color: "#1A1A1A" }}>
                         {c.name}
@@ -111,7 +111,7 @@ export default function IaEeGuide() {
               <Link
                 href="/courses/ess#ia-guide"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-75"
-                style={{ color: "#2E6B4F" }}
+                style={{ color: "#1C1C1C" }}
               >
                 Access IA Criteria & Sample Topics
                 <ArrowRight className="w-4 h-4" />
@@ -121,7 +121,7 @@ export default function IaEeGuide() {
 
           {/* EE Card */}
           <div
-            className="rounded-2xl border p-8 flex flex-col justify-between"
+            className="rounded-2xl border p-8 flex flex-col justify-between transition-all duration-200 hover:border-[#1C1C1C]"
             style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
           >
             <div className="space-y-6">
@@ -130,7 +130,7 @@ export default function IaEeGuide() {
                 <div>
                   <span
                     className="text-[11px] font-semibold uppercase tracking-widest"
-                    style={{ color: "#2E6B4F" }}
+                    style={{ color: "#1C1C1C" }}
                   >
                     Independent Research Paper
                   </span>
@@ -160,7 +160,7 @@ export default function IaEeGuide() {
                 </p>
                 {EE_FACTORS.map((f) => (
                   <div key={f.name} className="flex items-start gap-3">
-                    <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#2E6B4F" }} />
+                    <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#1C1C1C" }} />
                     <div>
                       <span className="text-sm font-medium" style={{ color: "#1A1A1A" }}>
                         {f.name}
@@ -178,7 +178,7 @@ export default function IaEeGuide() {
               <Link
                 href="/courses/ess#ee-guide"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-75"
-                style={{ color: "#2E6B4F" }}
+                style={{ color: "#1C1C1C" }}
               >
                 Access EE Framework & Guidelines
                 <ArrowRight className="w-4 h-4" />

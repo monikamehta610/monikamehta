@@ -25,9 +25,9 @@ const S = {
   fg: "#1A1A1A",
   fgMuted: "#6B6B6B",
   fgSubtle: "#9CA3AF",
-  accent: "#2E6B4F",
-  accentLight: "#E8F5EE",
-  accentDark: "#1D4535",
+  accent: "#1C1C1C",
+  accentLight: "#F0F0EE",
+  accentDark: "#000000",
   shadow: "0 1px 4px rgba(0,0,0,0.06)",
   shadowMd: "0 4px 16px rgba(0,0,0,0.07)",
 };
@@ -478,7 +478,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
                   style={{
                     padding: "1.25rem 1.5rem", cursor: "pointer",
                     display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem",
-                    background: isExp ? "#F0F9F4" : S.white,
+                    background: isExp ? "#F5F4F2" : S.white,
                   }}
                 >
                   <div>

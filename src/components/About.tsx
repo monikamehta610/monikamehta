@@ -65,7 +65,7 @@ export default function About() {
         <div className="max-w-2xl mb-14">
           <span
             className="text-xs font-semibold uppercase tracking-widest"
-            style={{ color: "#2E6B4F" }}
+            style={{ color: "#1C1C1C" }}
           >
             Background
           </span>
@@ -129,9 +129,9 @@ export default function About() {
                     <div className="flex items-center gap-3">
                       <div
                         className="w-8 h-8 rounded-lg flex items-center justify-center"
-                        style={{ background: "#E8F5EE" }}
+                        style={{ background: "#F0F0EE" }}
                       >
-                        <Icon className="w-4 h-4" style={{ color: "#2E6B4F" }} />
+                        <Icon className="w-4 h-4" style={{ color: "#1C1C1C" }} />
                       </div>
                       <h4
                         className="text-sm font-semibold leading-tight"
@@ -144,7 +144,7 @@ export default function About() {
                       {category.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-2.5 py-1 rounded-lg text-xs font-medium border transition-colors hover:border-[#2E6B4F] hover:text-[#2E6B4F]"
+                          className="px-2.5 py-1 rounded-lg text-xs font-medium border transition-colors hover:border-[#1C1C1C] hover:text-[#1C1C1C]"
                           style={{
                             background: "#FFFFFF",
                             borderColor: "#E8E5E0",

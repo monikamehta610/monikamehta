@@ -30,7 +30,7 @@ export default function Home() {
           <div className="flex items-center gap-2.5">
             <div
               className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold"
-              style={{ background: "#2E6B4F" }}
+              style={{ background: "#1C1C1C" }}
             >
               MM
             </div>
@@ -44,8 +44,8 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <a
               href="/#contact"
-              className="text-xs font-medium transition-colors"
-              style={{ color: "#2E6B4F" }}
+              className="text-xs font-medium transition-colors hover:underline"
+              style={{ color: "#1C1C1C" }}
             >
               Book a Call
             </a>

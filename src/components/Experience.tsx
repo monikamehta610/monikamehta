@@ -69,7 +69,7 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
           <div className="max-w-2xl mb-14">
-          <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#2E6B4F" }}>Career Timeline</span>
+          <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#1C1C1C" }}>Career Timeline</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight" style={{ color: "#1A1A1A" }}>
             Work Experience
           </h2>
@@ -83,7 +83,7 @@ export default function Experience() {
           {EXPERIENCES.map((job, index) => (
             <div key={index} className="relative pl-8 md:pl-10 group">
               {/* Timeline marker */}
-              <span className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-white border border-[#E8E5E0] text-[#9CA3AF] group-hover:text-[#2E6B4F] group-hover:border-[#2E6B4F] transition-all duration-300 z-10">
+              <span className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-white border border-[#E8E5E0] text-[#9CA3AF] group-hover:text-[#1C1C1C] group-hover:border-[#1C1C1C] transition-all duration-300 z-10">
                 <Briefcase className="w-4 h-4" />
               </span>
 
