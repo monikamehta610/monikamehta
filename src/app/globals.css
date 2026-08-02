@@ -55,40 +55,40 @@
 }
 
 :root {
-  /* Coolors Trending Education Option A: Serene Soft Teal (#0d9488) & Warm Ivory */
-  --background: #f0fdfa;
-  --foreground: #0f172a;
+  /* Warm Butter Yellow (#ffe588) Theme */
+  --background: #fffdf5;
+  --foreground: #1c1917;
   --card: #ffffff;
-  --card-foreground: #0f172a;
-  --primary: #0d9488;
+  --card-foreground: #1c1917;
+  --primary: #d97706;
   --primary-foreground: #ffffff;
-  --secondary: #ccfbf1;
-  --secondary-foreground: #115e59;
-  --muted: #ccfbf1;
-  --muted-foreground: #0d9488;
-  --accent: #0284c7;
-  --accent-foreground: #ffffff;
-  --border: #99f6e4;
+  --secondary: #ffe588;
+  --secondary-foreground: #451a03;
+  --muted: #fef9c3;
+  --muted-foreground: #b45309;
+  --accent: #ffe588;
+  --accent-foreground: #451a03;
+  --border: #fef08a;
   --input: #ffffff;
-  --ring: #0d9488;
+  --ring: #d97706;
 }
 
 .dark {
-  --background: #f0fdfa;
-  --foreground: #0f172a;
+  --background: #fffdf5;
+  --foreground: #1c1917;
   --card: #ffffff;
-  --card-foreground: #0f172a;
-  --primary: #0d9488;
+  --card-foreground: #1c1917;
+  --primary: #d97706;
   --primary-foreground: #ffffff;
-  --secondary: #ccfbf1;
-  --secondary-foreground: #115e59;
-  --muted: #ccfbf1;
-  --muted-foreground: #0d9488;
-  --accent: #0284c7;
-  --accent-foreground: #ffffff;
-  --border: #99f6e4;
+  --secondary: #ffe588;
+  --secondary-foreground: #451a03;
+  --muted: #fef9c3;
+  --muted-foreground: #b45309;
+  --accent: #ffe588;
+  --accent-foreground: #451a03;
+  --border: #fef08a;
   --input: #ffffff;
-  --ring: #0d9488;
+  --ring: #d97706;
 }
 
 @layer base {
@@ -116,29 +116,29 @@ html {
   background: var(--background);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #0d9488;
+::-webkit-scrollbar-thumb {
+  background: #ffe588;
+  border-radius: 9999px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #5eead4;
-  border-radius: 9999px;
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
 }
 
 /* Course light scope for slide decks */
 .course-light {
-  --cl-bg:             #f0fdfa;
-  --cl-bg-subtle:      #ccfbf1;
+  --cl-bg:             #fffdf5;
+  --cl-bg-subtle:      #fef9c3;
   --cl-card:           #ffffff;
-  --cl-card-border:    #99f6e4;
-  --cl-fg:             #0f172a;
-  --cl-fg-muted:       #115e59;
-  --cl-fg-subtle:      #0d9488;
-  --cl-accent-bio:     #0d9488;
-  --cl-accent-bio-bg:  rgba(13, 148, 136, 0.09);
-  --cl-accent-ess:     #0284c7;
-  --cl-accent-ess-bg:  rgba(2, 132, 199, 0.09);
-  --cl-accent-neutral: #0d9488;
+  --cl-card-border:    #fef08a;
+  --cl-fg:             #1c1917;
+  --cl-fg-muted:       #78350f;
+  --cl-fg-subtle:      #d97706;
+  --cl-accent-bio:     #d97706;
+  --cl-accent-bio-bg:  rgba(255, 229, 136, 0.4);
+  --cl-accent-ess:     #b45309;
+  --cl-accent-ess-bg:  rgba(255, 229, 136, 0.3);
+  --cl-accent-neutral: #ffe588;
   --cl-shadow:         0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.03);
   --cl-shadow-md:      0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
   --cl-radius:         12px;
