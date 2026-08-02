@@ -34,7 +34,7 @@ export const COURSES: Course[] = [
     shortTitle: "ESS",
     description: "IBDP Environmental Systems & Societies — interactive slide-based lesson materials.",
     icon: "🌍",
-    accentColor: "#047857",
+    accentColor: "#991b1b",
     slides: [
       {
         slug: "1-1",
