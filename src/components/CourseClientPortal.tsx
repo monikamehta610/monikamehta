@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -138,6 +138,15 @@ export default function CourseClientPortal({ course }: { course: Course }) {
   const [selectedUnit, setSelectedUnit] = useState<string>("all");
   const [selectedLevel, setSelectedLevel] = useState<"all" | "SL" | "HL">("all");
   const [expandedQuestion, setExpandedQuestion] = useState<string | null>("p1-case-study");
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === "#ia-guide" || hash === "#ee-guide") {
+      setActiveTab("ia-ee");
+    } else if (hash === "#questions") {
+      setActiveTab("questions");
+    }
+  }, []);
 
   const unitList = useMemo(() => {
     const seen = new Set<string>();
@@ -539,7 +548,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
           </div>
 
           {/* IA Criteria */}
-          <div>
+          <div id="ia-guide">
             <h3 style={{ fontSize: "1rem", fontWeight: 700, color: S.fg, marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
               <CheckCircle2 size={16} style={{ color: S.accent }} />
               The Four ESS IA Criteria — Total: 24 Marks
@@ -563,7 +572,7 @@ export default function CourseClientPortal({ course }: { course: Course }) {
           </div>
 
           {/* Sample topics */}
-          <div style={{ background: S.white, border: `1px solid ${S.border}`, borderRadius: 16, padding: "1.5rem", boxShadow: S.shadow }}>
+          <div id="ee-guide" style={{ background: S.white, border: `1px solid ${S.border}`, borderRadius: 16, padding: "1.5rem", boxShadow: S.shadow }}>
             <h3 style={{ fontSize: "1rem", fontWeight: 700, color: S.fg, margin: "0 0 1rem 0", display: "flex", alignItems: "center", gap: "0.5rem" }}>
               <Lightbulb size={16} style={{ color: S.accent }} />
               High-Scoring Sample ESS IA Research Questions

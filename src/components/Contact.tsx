@@ -75,7 +75,7 @@ export default function Contact() {
     <section
       id="contact"
       className="py-24 border-t"
-      style={{ background: "#F5F4F2", borderColor: "#E8E5E0" }}
+      style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
     >
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
 
@@ -114,7 +114,7 @@ export default function Contact() {
           {/* Left: Contact details */}
           <div
             className="md:col-span-4 p-8 rounded-2xl border flex flex-col gap-8"
-            style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+            style={{ background: "#FAFAF9", borderColor: "#E8E5E0" }}
           >
             <div className="space-y-2">
               <h3
@@ -200,7 +200,7 @@ export default function Contact() {
           {/* Right: Form */}
           <div
             className="md:col-span-8 p-8 rounded-2xl border"
-            style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+            style={{ background: "#FAFAF9", borderColor: "#E8E5E0" }}
           >
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center text-center py-16 space-y-5 h-full">
