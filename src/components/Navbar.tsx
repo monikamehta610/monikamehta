@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/#home" },
@@ -18,9 +18,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -29,116 +27,95 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-xl border-b border-yellow-200/80 shadow-xs"
+          ? "bg-white/95 backdrop-blur-xl border-b border-[#E8E5E0] shadow-sm"
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          
-          {/* Logo / Stylized Science Wordmark (Left-aligned) */}
-          <div className="flex-shrink-0">
-            <Link
-              href="/"
-              className="flex items-center gap-3 text-xl font-bold tracking-tight text-slate-900 hover:opacity-90 transition-opacity"
+
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          >
+            {/* Monogram — sage on white, clean */}
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-white text-sm font-bold tracking-tight"
+              style={{ background: "#2E6B4F" }}
             >
-              {/* Monogram Icon using Solar Yellow */}
-              <div
-                className="relative w-9 h-9 rounded-xl flex items-center justify-center text-slate-950 font-black shadow-md shadow-yellow-500/20 group"
-                style={{ background: "linear-gradient(135deg, #facc15 0%, #eab308 100%)" }}
-              >
-                <svg
-                  className="w-5 h-5 text-slate-950"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 18V6H7.5L10 12L12.5 6H16V18H13.5V10.5L10.5 16.5H9.5L6.5 10.5V18H4Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M18.5 7C16.5 7 15 8.5 15 10.5C15 13 18.5 15 18.5 15C18.5 15 22 13 22 10.5C22 8.5 20.5 7 18.5 7Z"
-                    fill="#0f172a"
-                    fillOpacity="0.8"
-                  />
-                </svg>
-              </div>
+              MM
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="font-semibold text-[#1A1A1A] text-[15px] tracking-tight">
+                Monika Mehta
+              </span>
+              <span className="text-[10px] text-[#6B6B6B] font-medium tracking-wide mt-0.5">
+                IBDP Science Educator
+              </span>
+            </div>
+          </Link>
 
-              {/* Wordmark Text */}
-              <div className="flex flex-col">
-                <span className="font-black text-lg tracking-tight leading-none text-slate-900">
-                  Monika Mehta<span className="text-yellow-500">.</span>
-                </span>
-                <span className="text-[10px] font-extrabold text-amber-700 uppercase tracking-widest leading-none mt-1">
-                  IBDP Science Educator
-                </span>
-              </div>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-7">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-7">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-semibold text-slate-700 hover:text-yellow-600 transition-colors duration-200"
+                className="text-sm font-medium text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors duration-200"
               >
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/courses/ess"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-slate-950 text-xs font-black shadow-md shadow-yellow-500/20 hover:scale-[1.02] transition-all duration-200"
-              style={{ background: "linear-gradient(135deg, #facc15 0%, #eab308 100%)" }}
+            <a
+              href="/#contact"
+              className="inline-flex items-center px-4 py-2 rounded-lg text-white text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-md"
+              style={{ background: "#2E6B4F" }}
             >
-              <GraduationCap className="w-4 h-4" />
-              Explore ESS
-            </Link>
+              Book a Call
+            </a>
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="flex md:hidden items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-xl bg-yellow-50 text-slate-900 border border-yellow-200 hover:text-yellow-700 focus:outline-none cursor-pointer"
-              aria-expanded={isOpen}
-              aria-label="Main menu"
-            >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg text-[#1A1A1A] hover:bg-[#F5F4F2] transition-colors cursor-pointer"
+            aria-expanded={isOpen}
+            aria-label="Main menu"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu Panel */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-80 border-b border-yellow-200 bg-white/95 backdrop-blur-xl" : "max-h-0"
+          isOpen
+            ? "max-h-72 border-b border-[#E8E5E0] bg-white/98 backdrop-blur-xl"
+            : "max-h-0"
         }`}
       >
-        <div className="px-4 pt-2 pb-6 space-y-1.5 sm:px-6">
+        <div className="px-6 pt-2 pb-6 space-y-1">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.label}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:text-yellow-600 hover:bg-yellow-50 transition-all duration-200"
+              className="block px-3 py-2.5 rounded-lg text-sm font-medium text-[#1A1A1A] hover:bg-[#F5F4F2] transition-colors"
             >
               {item.label}
             </Link>
           ))}
           <div className="pt-2">
-            <Link
-              href="/courses/ess"
+            <a
+              href="/#contact"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-slate-950 font-black text-sm shadow-md"
-              style={{ background: "linear-gradient(135deg, #facc15 0%, #eab308 100%)" }}
+              className="flex items-center justify-center w-full py-2.5 rounded-lg text-white font-semibold text-sm transition-opacity hover:opacity-90"
+              style={{ background: "#2E6B4F" }}
             >
-              <GraduationCap className="w-4 h-4" />
-              Explore ESS Slides &amp; Practice
-            </Link>
+              Book a Free Consultation
+            </a>
           </div>
         </div>
       </div>

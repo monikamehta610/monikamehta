@@ -65,15 +65,15 @@ const EXPERIENCES: Job[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 bg-secondary/30 relative">
+    <section id="experience" className="py-24 border-t" style={{ background: "#F5F4F2", borderColor: "#E8E5E0" }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
-        <div className="flex flex-col items-center text-center space-y-4 mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Work <span className="text-primary">Experience</span>
+          <div className="max-w-2xl mb-14">
+          <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#2E6B4F" }}>Career Timeline</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight" style={{ color: "#1A1A1A" }}>
+            Work Experience
           </h2>
-          <div className="w-12 h-1 bg-primary rounded-full" />
-          <p className="text-muted-foreground max-w-xl text-center">
+          <p className="mt-4 text-sm leading-relaxed" style={{ color: "#6B6B6B", lineHeight: "1.75" }}>
             My professional career path in science education, research lecturing, and healthcare quality assurance.
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function Experience() {
           {EXPERIENCES.map((job, index) => (
             <div key={index} className="relative pl-8 md:pl-10 group">
               {/* Timeline marker */}
-              <span className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-secondary border border-border text-muted-foreground group-hover:text-primary group-hover:border-primary group-hover:shadow-[0_0_12px_rgba(139,92,246,0.3)] transition-all duration-350 z-10">
+              <span className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-white border border-[#E8E5E0] text-[#9CA3AF] group-hover:text-[#2E6B4F] group-hover:border-[#2E6B4F] transition-all duration-300 z-10">
                 <Briefcase className="w-4 h-4" />
               </span>
 

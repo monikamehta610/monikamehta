@@ -22,14 +22,14 @@
   --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
-  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in-up: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-pulse-slow: pulse-slow 5s ease-in-out infinite;
 
   @keyframes fade-in-up {
     from {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -37,58 +37,68 @@
     }
   }
   @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
   }
   @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.15;
-    }
-    50% {
-      opacity: 0.35;
-    }
+    0%, 100% { opacity: 0.08; }
+    50% { opacity: 0.18; }
   }
 }
 
 :root {
-  /* Vibrant Solar Yellow (#facc15 / #eab308) Theme */
-  --background: #fefce8;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --primary: #eab308;
-  --primary-foreground: #0f172a;
-  --secondary: #fef08a;
-  --secondary-foreground: #713f12;
-  --muted: #fef9c3;
-  --muted-foreground: #ca8a04;
-  --accent: #facc15;
-  --accent-foreground: #0f172a;
-  --border: #fef08a;
-  --input: #ffffff;
-  --ring: #eab308;
+  /* ── Sage & Slate Design System ────────────────────────────── */
+  /* Warm white canvas — never clinical, never distracting       */
+  --background:            #FAFAF9;
+  --foreground:            #1A1A1A;
+
+  /* Card surfaces */
+  --card:                  #FFFFFF;
+  --card-foreground:       #1A1A1A;
+
+  /* Primary accent — Deep Sage Green (biology, nature, calm authority) */
+  --primary:               #2E6B4F;
+  --primary-foreground:    #FFFFFF;
+
+  /* Secondary — Sage tint for backgrounds and tags */
+  --secondary:             #F5F4F2;
+  --secondary-foreground:  #1A1A1A;
+
+  /* Muted surfaces */
+  --muted:                 #F5F4F2;
+  --muted-foreground:      #6B6B6B;
+
+  /* Accent (same as primary for consistency) */
+  --accent:                #2E6B4F;
+  --accent-foreground:     #FFFFFF;
+
+  /* Borders — warm grey, never harsh */
+  --border:                #E8E5E0;
+  --input:                 #FFFFFF;
+  --ring:                  #2E6B4F;
+
+  /* Sage tints (used inline) */
+  --sage-light:            #E8F5EE;
+  --sage-dark:             #1D4535;
 }
 
+/* No dark mode variant — site is intentionally light-mode only */
 .dark {
-  --background: #fefce8;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --primary: #eab308;
-  --primary-foreground: #0f172a;
-  --secondary: #fef08a;
-  --secondary-foreground: #713f12;
-  --muted: #fef9c3;
-  --muted-foreground: #ca8a04;
-  --accent: #facc15;
-  --accent-foreground: #0f172a;
-  --border: #fef08a;
-  --input: #ffffff;
-  --ring: #eab308;
+  --background:            #FAFAF9;
+  --foreground:            #1A1A1A;
+  --card:                  #FFFFFF;
+  --card-foreground:       #1A1A1A;
+  --primary:               #2E6B4F;
+  --primary-foreground:    #FFFFFF;
+  --secondary:             #F5F4F2;
+  --secondary-foreground:  #1A1A1A;
+  --muted:                 #F5F4F2;
+  --muted-foreground:      #6B6B6B;
+  --accent:                #2E6B4F;
+  --accent-foreground:     #FFFFFF;
+  --border:                #E8E5E0;
+  --input:                 #FFFFFF;
+  --ring:                  #2E6B4F;
 }
 
 @layer base {
@@ -98,7 +108,6 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 }
 
@@ -107,40 +116,28 @@ html {
   scroll-padding-top: 5rem;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
+/* Custom scrollbar — thin, sage accent */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: #2E6B4F; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #1D4535; }
 
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #facc15;
-  border-radius: 9999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #eab308;
-}
-
-/* Course light scope for slide decks */
+/* Course portal scope */
 .course-light {
-  --cl-bg:             #fefce8;
-  --cl-bg-subtle:      #fef9c3;
-  --cl-card:           #ffffff;
-  --cl-card-border:    #fef08a;
-  --cl-fg:             #0f172a;
-  --cl-fg-muted:       #713f12;
-  --cl-fg-subtle:      #ca8a04;
-  --cl-accent-bio:     #eab308;
-  --cl-accent-bio-bg:  rgba(250, 204, 21, 0.4);
-  --cl-accent-ess:     #ca8a04;
-  --cl-accent-ess-bg:  rgba(234, 179, 8, 0.3);
-  --cl-accent-neutral: #facc15;
-  --cl-shadow:         0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.03);
-  --cl-shadow-md:      0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);
+  --cl-bg:             #FAFAF9;
+  --cl-bg-subtle:      #F5F4F2;
+  --cl-card:           #FFFFFF;
+  --cl-card-border:    #E8E5E0;
+  --cl-fg:             #1A1A1A;
+  --cl-fg-muted:       #6B6B6B;
+  --cl-fg-subtle:      #9CA3AF;
+  --cl-accent-bio:     #2E6B4F;
+  --cl-accent-bio-bg:  rgba(46, 107, 79, 0.08);
+  --cl-accent-ess:     #2E6B4F;
+  --cl-accent-ess-bg:  rgba(46, 107, 79, 0.06);
+  --cl-accent-neutral: #E8F5EE;
+  --cl-shadow:         0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
+  --cl-shadow-md:      0 4px 16px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.03);
   --cl-radius:         12px;
   --cl-radius-lg:      18px;
 

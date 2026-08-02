@@ -5,7 +5,7 @@ import { BookOpen, Monitor, FlaskConical, Thermometer } from "lucide-react";
 const SKILL_CATEGORIES = [
   {
     title: "Curriculum & Instruction",
-    icon: <BookOpen className="w-5 h-5 text-primary" />,
+    icon: BookOpen,
     skills: [
       "IBDP Biology & ESS",
       "Inquiry-Based Learning",
@@ -17,7 +17,7 @@ const SKILL_CATEGORIES = [
   },
   {
     title: "Educational Technology",
-    icon: <Monitor className="w-5 h-5 text-primary" />,
+    icon: Monitor,
     skills: [
       "ManageBac",
       "Nearpod & Pear Deck",
@@ -29,7 +29,7 @@ const SKILL_CATEGORIES = [
   },
   {
     title: "Laboratory Expertise",
-    icon: <FlaskConical className="w-5 h-5 text-primary" />,
+    icon: FlaskConical,
     skills: [
       "PCR (Polymerase Chain Reaction)",
       "Western Blot & ELISA",
@@ -41,7 +41,7 @@ const SKILL_CATEGORIES = [
   },
   {
     title: "Environmental Sensors",
-    icon: <Thermometer className="w-5 h-5 text-primary" />,
+    icon: Thermometer,
     skills: [
       "Vernier Sensors (CO2, O2)",
       "pH & Dissolved Oxygen Sensors",
@@ -54,54 +54,89 @@ const SKILL_CATEGORIES = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-secondary/30 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="flex flex-col items-center text-center space-y-4 mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            About <span className="text-primary">Me</span>
+    <section
+      id="about"
+      className="py-24 border-t"
+      style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+
+        {/* Section heading */}
+        <div className="max-w-2xl mb-14">
+          <span
+            className="text-xs font-semibold uppercase tracking-widest"
+            style={{ color: "#2E6B4F" }}
+          >
+            Background
+          </span>
+          <h2
+            className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight"
+            style={{ color: "#1A1A1A" }}
+          >
+            About Monika Mehta
           </h2>
-          <div className="w-12 h-1 bg-primary rounded-full" />
-          <p className="text-muted-foreground max-w-xl text-center">
+          <p
+            className="mt-4 text-base leading-relaxed"
+            style={{ color: "#6B6B6B", lineHeight: "1.7" }}
+          >
             My background, teaching philosophy, and core scientific competencies.
           </p>
         </div>
 
-        {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Professional Bio */}
-          <div className="lg:col-span-5 space-y-6">
-            <h3 className="text-2xl font-bold tracking-tight text-foreground">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+
+          {/* Bio */}
+          <div className="lg:col-span-4 space-y-5">
+            <h3
+              className="text-lg font-semibold"
+              style={{ color: "#1A1A1A" }}
+            >
               Professional Biography
             </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              I am a dedicated Science Educator and Biotechnology professional with over 9 years of experience bridging academic research, university lecturing, IBDP (International Baccalaureate Diploma Programme) instruction, and industrial quality control.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              As an expert in IBDP Biology and Environmental Systems and Societies (ESS), I have a proven track record of successfully mentoring students through Internal Assessments (IA) and Extended Essays (EE), guiding them to build rigorous research designs and write scholarly articles.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Additionally, my background in industrial QA and university-level instruction provides me with deep expertise in molecular biology protocols (including PCR, Western Blot, ELISA, and Cell Line maintenance). I strive to integrate technology and hands-on laboratory experience to cultivate a deep curiosity for the life sciences.
-            </p>
+            <div className="space-y-4 text-sm leading-relaxed" style={{ color: "#6B6B6B", lineHeight: "1.75" }}>
+              <p>
+                I am a dedicated Science Educator and Biotechnology professional with over 9 years of experience bridging academic research, university lecturing, IBDP instruction, and industrial quality control.
+              </p>
+              <p>
+                As an expert in IBDP Biology and Environmental Systems and Societies (ESS), I have a proven track record of mentoring students through Internal Assessments and Extended Essays, guiding them to build rigorous research designs.
+              </p>
+              <p>
+                My background in industrial QA and university-level instruction provides deep expertise in molecular biology protocols including PCR, Western Blot, ELISA, and Cell Line maintenance.
+              </p>
+            </div>
           </div>
 
-          {/* Core Technical Toolkit */}
-          <div className="lg:col-span-7 space-y-6">
-            <h3 className="text-2xl font-bold tracking-tight text-foreground">
+          {/* Skills grid */}
+          <div className="lg:col-span-8">
+            <h3
+              className="text-lg font-semibold mb-6"
+              style={{ color: "#1A1A1A" }}
+            >
               Skills & Expertise
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {SKILL_CATEGORIES.map((category) => (
-                <div
-                  key={category.title}
-                  className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm hover:border-primary/20 transition-all duration-300 shadow-sm flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="p-2 rounded-lg bg-secondary border border-border">
-                        {category.icon}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {SKILL_CATEGORIES.map((category) => {
+                const Icon = category.icon;
+                return (
+                  <div
+                    key={category.title}
+                    className="rounded-2xl border p-6 space-y-4"
+                    style={{
+                      background: "#FAFAF9",
+                      borderColor: "#E8E5E0",
+                    }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-8 h-8 rounded-lg flex items-center justify-center"
+                        style={{ background: "#E8F5EE" }}
+                      >
+                        <Icon className="w-4 h-4" style={{ color: "#2E6B4F" }} />
                       </div>
-                      <h4 className="font-semibold text-base text-foreground leading-tight">
+                      <h4
+                        className="text-sm font-semibold leading-tight"
+                        style={{ color: "#1A1A1A" }}
+                      >
                         {category.title}
                       </h4>
                     </div>
@@ -109,15 +144,20 @@ export default function About() {
                       {category.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground border border-border/60 transition-all duration-150"
+                          className="px-2.5 py-1 rounded-lg text-xs font-medium border transition-colors hover:border-[#2E6B4F] hover:text-[#2E6B4F]"
+                          style={{
+                            background: "#FFFFFF",
+                            borderColor: "#E8E5E0",
+                            color: "#6B6B6B",
+                          }}
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

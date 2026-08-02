@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, GraduationCap, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { COURSES } from "@/data/courses";
 
 export default function CoursesTeaser() {
@@ -8,87 +8,121 @@ export default function CoursesTeaser() {
   const essCount = essCourse ? essCourse.slides.filter((s) => s.status !== "coming-soon").length : 0;
   const bioCount = bioCourse ? bioCourse.slides.filter((s) => s.status !== "coming-soon").length : 0;
 
+  const cards = [
+    {
+      icon: "🌍",
+      label: "ESS",
+      full: "Environmental Systems & Societies",
+      desc: "Complete 7-unit interactive slide decks covering Ecosystems, Biodiversity, Water, Land, Atmosphere, and Sustainability — aligned to the IB DP 2026 guide.",
+      href: "/courses/ess",
+      count: essCount,
+      total: essCourse ? essCourse.slides.length : 25,
+      badge: "SL & HL",
+    },
+    {
+      icon: "🧬",
+      label: "Biology",
+      full: "IB DP Biology",
+      desc: "Cell biology, molecular genetics, ecology, evolution, and human physiology — interactive slides and mark scheme guides coming soon.",
+      href: "/courses/biology",
+      count: bioCount,
+      total: bioCourse ? bioCourse.slides.length : 20,
+      badge: "SL & HL",
+    },
+  ];
+
   return (
-    <section id="courses" className="py-20 bg-yellow-50/50 border-t border-yellow-200/80 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section heading */}
-        <div className="flex flex-col items-center text-center space-y-4 mb-14">
-          <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black text-slate-950 border border-yellow-300 shadow-xs"
-            style={{ background: "#facc15" }}
+    <section
+      id="courses"
+      className="py-24 border-t"
+      style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+
+        {/* Section label + heading */}
+        <div className="max-w-2xl mb-14">
+          <span
+            className="text-xs font-semibold uppercase tracking-widest"
+            style={{ color: "#2E6B4F" }}
           >
-            <GraduationCap className="w-3.5 h-3.5 text-slate-900" />
-            Curriculum Guide (First Assessment 2026)
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
-            IB DP Science{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-yellow-600 to-slate-900">
-              Courses &amp; Slides
-            </span>
+            Course Materials
+          </span>
+          <h2
+            className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight"
+            style={{ color: "#1A1A1A" }}
+          >
+            IB DP Science Courses & Slides
           </h2>
-          <p className="text-slate-600 max-w-xl text-center text-sm sm:text-base leading-relaxed">
-            Interactive, slide-based study resources aligned with the official IB Diploma guide — with embedded custom diagrams, practice questions, and video companions.
+          <p
+            className="mt-4 text-base leading-relaxed"
+            style={{ color: "#6B6B6B", lineHeight: "1.7" }}
+          >
+            Slide-based study resources aligned with the official IB Diploma guide — with embedded diagrams, practice questions, and mark scheme analysis.
           </p>
         </div>
 
         {/* Two subject cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {[
-            {
-              icon: "🌍",
-              label: "ESS",
-              full: "Environmental Systems & Societies",
-              desc: "Complete 7-unit interactive slide decks covering Ecosystems, Biodiversity, Water, Land, Atmosphere, and Sustainability.",
-              badgeColor: "bg-[#facc15] text-slate-950 border-yellow-300",
-              href: "/courses/ess",
-              count: essCount,
-              total: essCourse ? essCourse.slides.length : 25,
-            },
-            {
-              icon: "🧬",
-              label: "Biology",
-              full: "IB DP Biology SL & HL",
-              desc: "Cell biology, molecular genetics, ecology, evolution, and human physiology — interactive slides coming soon.",
-              badgeColor: "bg-yellow-100 text-slate-950 border-yellow-300",
-              href: "/courses/biology",
-              count: bioCount,
-              total: bioCourse ? bioCourse.slides.length : 20,
-            },
-          ].map((card) => (
-            <Link key={card.label} href={card.href} className="group block" style={{ textDecoration: "none" }}>
-              <div className="rounded-3xl border border-yellow-200 bg-white p-7 hover:border-yellow-400 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300 cursor-pointer h-full flex flex-col justify-between space-y-6">
-                
-                {/* Header */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {cards.map((card) => (
+            <Link
+              key={card.label}
+              href={card.href}
+              className="group block"
+              style={{ textDecoration: "none" }}
+            >
+              <div
+                className="rounded-2xl border p-7 h-full flex flex-col justify-between transition-all duration-200 hover:shadow-md"
+                style={{
+                  background: "#FFFFFF",
+                  borderColor: "#E8E5E0",
+                }}
+              >
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-4xl">{card.icon}</span>
-                    <span className={`text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full border ${card.badgeColor}`}>
+                  {/* Header */}
+                  <div className="flex items-start justify-between">
+                    <span className="text-3xl">{card.icon}</span>
+                    <span
+                      className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                      style={{ background: "#E8F5EE", color: "#2E6B4F" }}
+                    >
                       {card.count > 0 ? `${card.count} / ${card.total} Topics Live` : "Coming Soon"}
                     </span>
                   </div>
 
+                  {/* Content */}
                   <div>
-                    <h3 className="font-extrabold text-xl text-slate-900 group-hover:text-amber-600 transition-colors">
+                    <h3
+                      className="font-semibold text-lg leading-snug transition-colors group-hover:text-[#2E6B4F]"
+                      style={{ color: "#1A1A1A" }}
+                    >
                       {card.full}
                     </h3>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mt-2">
+                    <p
+                      className="text-sm mt-2 leading-relaxed"
+                      style={{ color: "#6B6B6B", lineHeight: "1.7" }}
+                    >
                       {card.desc}
                     </p>
                   </div>
                 </div>
 
-                {/* Footer CTA */}
-                <div className="pt-4 border-t border-yellow-100 flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-600" />
-                    SL &amp; HL Covered
+                {/* Footer */}
+                <div
+                  className="flex items-center justify-between pt-5 mt-5 border-t"
+                  style={{ borderColor: "#E8E5E0" }}
+                >
+                  <span className="flex items-center gap-1.5 text-xs font-medium" style={{ color: "#6B6B6B" }}>
+                    <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "#2E6B4F" }} />
+                    {card.badge} Covered
                   </span>
-                  <div className="inline-flex items-center gap-2 text-xs font-black text-slate-900 group-hover:translate-x-1 transition-transform">
-                    {card.count > 0 ? "View All Topics & Slides" : "Explore Course"}
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+                  <span
+                    className="flex items-center gap-1 text-xs font-semibold group-hover:gap-2 transition-all"
+                    style={{ color: "#2E6B4F" }}
+                  >
+                    {card.count > 0 ? "View All Topics" : "Explore Course"}
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
                 </div>
-
               </div>
             </Link>
           ))}

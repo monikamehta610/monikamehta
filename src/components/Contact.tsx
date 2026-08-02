@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, Calendar, Send, CheckCircle2, Eye, ShieldCheck } from "lucide-react";
+import { Mail, Phone, Calendar, Send, CheckCircle2, Eye, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,14 +12,11 @@ export default function Contact() {
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-
-  // Scraper protection: Obfuscate email & phone in JS state
   const [showEmail, setShowEmail] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
 
-  // Decoded values (base64 encoded originally in source to prevent scraping)
-  const decodedEmail = atob("bW9uaWthbWVodGE2MTBAZ21haWwuY29t"); // monikamehta610@gmail.com
-  const decodedPhone = atob("KzEgKDY2OSkgMjY4LTYwMzU="); // +1 (669) 264-6035
+  const decodedEmail = atob("bW9uaWthbWVodGE2MTBAZ21haWwuY29t");
+  const decodedPhone = atob("KzEgKDY2OSkgMjY4LTYwMzU=");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -35,20 +32,15 @@ export default function Contact() {
       setErrorMessage("Please fill in all required fields.");
       return;
     }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setStatus("error");
       setErrorMessage("Please provide a valid email address.");
       return;
     }
-
     setStatus("submitting");
-
     try {
-      // Form submission simulation
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setStatus("success");
       setFormData({ name: "", email: "", subject: "Tutoring / Lecturing Inquiry", message: "" });
     } catch {
@@ -57,196 +49,236 @@ export default function Contact() {
     }
   };
 
-  return (
-    <section id="contact" className="py-20 bg-white border-t border-yellow-200/80 relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Heading & Strong Call To Action */}
-        <div className="flex flex-col items-center text-center space-y-4 mb-14">
-          <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black text-slate-950 border border-yellow-300 shadow-xs"
-            style={{ background: "#facc15" }}
-          >
-            <Calendar className="w-3.5 h-3.5 text-slate-900" />
-            Direct Consultation &amp; Tutoring Booking
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
-            Ready to Elevate Your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
-              Science Results?
-            </span>
-          </h2>
-          <p className="text-slate-600 max-w-xl text-center text-sm sm:text-base leading-relaxed">
-            Schedule a free 15-minute consultation to discuss IB DP Biology &amp; ESS tutoring, Internal Assessment guidance, or university lecturing collaborations.
-          </p>
+  const inputStyle = {
+    width: "100%",
+    padding: "10px 14px",
+    borderRadius: 10,
+    border: "1px solid #E8E5E0",
+    background: "#FAFAF9",
+    fontSize: "0.875rem",
+    color: "#1A1A1A",
+    outline: "none",
+    transition: "border-color 0.15s ease",
+  } as React.CSSProperties;
 
-          {/* Quick Action Button: Book Call */}
-          <div className="pt-2">
-            <a
-              href="#contact-form"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-slate-950 font-black text-sm shadow-md hover:scale-[1.02] transition-all"
-              style={{ background: "linear-gradient(135deg, #facc15 0%, #eab308 100%)" }}
-            >
-              <Calendar className="w-4 h-4" />
-              Book a Free 15-Min Intro Call
-            </a>
-          </div>
+  const labelStyle = {
+    display: "block",
+    fontSize: "0.75rem",
+    fontWeight: 600,
+    color: "#6B6B6B",
+    marginBottom: "6px",
+    textTransform: "uppercase" as const,
+    letterSpacing: "0.05em",
+  };
+
+  return (
+    <section
+      id="contact"
+      className="py-24 border-t"
+      style={{ background: "#F5F4F2", borderColor: "#E8E5E0" }}
+    >
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+
+        {/* Section heading */}
+        <div className="max-w-2xl mb-14">
+          <span
+            className="text-xs font-semibold uppercase tracking-widest"
+            style={{ color: "#2E6B4F" }}
+          >
+            Get in Touch
+          </span>
+          <h2
+            className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight"
+            style={{ color: "#1A1A1A" }}
+          >
+            Ready to Elevate Your IB Results?
+          </h2>
+          <p
+            className="mt-4 text-base leading-relaxed"
+            style={{ color: "#6B6B6B", lineHeight: "1.7" }}
+          >
+            Schedule a free 15-minute consultation to discuss IBDP Biology & ESS tutoring, IA guidance, or university lecturing collaborations.
+          </p>
+          <a
+            href="#contact-form"
+            className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90"
+            style={{ background: "#2E6B4F" }}
+          >
+            <Calendar className="w-4 h-4" />
+            Book a Free 15-Min Call
+          </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch" id="contact-form">
-          {/* Card left side: Protected Contact Details */}
-          <div className="md:col-span-5 flex flex-col justify-between p-8 rounded-3xl border border-yellow-200 bg-yellow-50/40 space-y-8 shadow-xs">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold tracking-tight text-slate-900">
-                Direct Contact &amp; Inquiries
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-7" id="contact-form">
+
+          {/* Left: Contact details */}
+          <div
+            className="md:col-span-4 p-8 rounded-2xl border flex flex-col gap-8"
+            style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+          >
+            <div className="space-y-2">
+              <h3
+                className="text-lg font-semibold"
+                style={{ color: "#1A1A1A" }}
+              >
+                Direct Contact
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Based in California, USA. Available for online IBDP tutoring worldwide, university research lecturing, and educational curriculum design.
+              <p className="text-sm leading-relaxed" style={{ color: "#6B6B6B" }}>
+                Based in California, USA. Available for online IBDP tutoring worldwide and university lecturing.
               </p>
             </div>
 
-            <div className="space-y-6">
-              {/* Protected Email */}
-              <div className="flex items-center gap-3">
-                <span className="p-3 rounded-xl bg-white border border-yellow-300 text-amber-700 shadow-xs">
-                  <Mail className="w-5 h-5" />
-                </span>
-                <div>
-                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">
-                    Email Address
-                  </p>
-                  {showEmail ? (
-                    <a
-                      href={`mailto:${decodedEmail}`}
-                      className="text-sm font-bold text-slate-900 hover:underline break-all"
-                    >
-                      {decodedEmail}
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => setShowEmail(true)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-800 hover:text-amber-600 bg-white border border-yellow-300 px-2.5 py-1 rounded-lg transition-colors cursor-pointer mt-0.5"
-                    >
-                      <Eye className="w-3.5 h-3.5 text-amber-600" />
-                      Click to Reveal Email
-                    </button>
-                  )}
+            <div className="space-y-5">
+              {/* Email */}
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <Mail className="w-4 h-4" style={{ color: "#2E6B4F" }} />
+                  <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#9CA3AF" }}>
+                    Email
+                  </span>
                 </div>
+                {showEmail ? (
+                  <a
+                    href={`mailto:${decodedEmail}`}
+                    className="text-sm font-medium break-all hover:underline"
+                    style={{ color: "#2E6B4F" }}
+                  >
+                    {decodedEmail}
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setShowEmail(true)}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold border rounded-lg px-3 py-1.5 transition-colors hover:border-[#2E6B4F] hover:text-[#2E6B4F] cursor-pointer"
+                    style={{ borderColor: "#E8E5E0", color: "#6B6B6B" }}
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    Reveal Email
+                  </button>
+                )}
               </div>
 
-              {/* Protected Phone */}
-              <div className="flex items-center gap-3">
-                <span className="p-3 rounded-xl bg-white border border-yellow-300 text-amber-700 shadow-xs">
-                  <Phone className="w-5 h-5" />
-                </span>
-                <div>
-                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">
-                    Direct Phone
-                  </p>
-                  {showPhone ? (
-                    <a
-                      href={`tel:${decodedPhone.replace(/[^0-9+]/g, "")}`}
-                      className="text-sm font-bold text-amber-800 hover:underline"
-                    >
-                      {decodedPhone}
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => setShowPhone(true)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-800 hover:text-amber-600 bg-white border border-yellow-300 px-2.5 py-1 rounded-lg transition-colors cursor-pointer mt-0.5"
-                    >
-                      <Eye className="w-3.5 h-3.5 text-amber-600" />
-                      Click to Reveal Phone
-                    </button>
-                  )}
+              {/* Phone */}
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <Phone className="w-4 h-4" style={{ color: "#2E6B4F" }} />
+                  <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#9CA3AF" }}>
+                    Phone
+                  </span>
                 </div>
+                {showPhone ? (
+                  <a
+                    href={`tel:${decodedPhone.replace(/[^0-9+]/g, "")}`}
+                    className="text-sm font-medium hover:underline"
+                    style={{ color: "#2E6B4F" }}
+                  >
+                    {decodedPhone}
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setShowPhone(true)}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold border rounded-lg px-3 py-1.5 transition-colors hover:border-[#2E6B4F] hover:text-[#2E6B4F] cursor-pointer"
+                    style={{ borderColor: "#E8E5E0", color: "#6B6B6B" }}
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    Reveal Phone
+                  </button>
+                )}
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-slate-500 pt-4 border-t border-yellow-200">
-              <ShieldCheck className="w-4 h-4 text-amber-600" />
-              <span>Contact details protected from web scrapers. Replying within 24 hours.</span>
+            <div
+              className="flex items-start gap-2 pt-5 border-t text-xs"
+              style={{ borderColor: "#E8E5E0", color: "#9CA3AF" }}
+            >
+              <ShieldCheck className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#2E6B4F" }} />
+              <span>Contact details protected from web scrapers. Replies within 24 hours.</span>
             </div>
           </div>
 
-          {/* Card right side: Primary Contact Form */}
-          <div className="md:col-span-7 p-8 rounded-3xl border border-yellow-200 bg-white shadow-md">
+          {/* Right: Form */}
+          <div
+            className="md:col-span-8 p-8 rounded-2xl border"
+            style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+          >
             {status === "success" ? (
-              <div className="flex flex-col items-center justify-center text-center py-12 space-y-4 h-full">
-                <div className="p-3 rounded-full border border-yellow-300 text-slate-950" style={{ background: "#facc15" }}>
-                  <CheckCircle2 className="w-10 h-10" />
+              <div className="flex flex-col items-center justify-center text-center py-16 space-y-5 h-full">
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center"
+                  style={{ background: "#E8F5EE" }}
+                >
+                  <CheckCircle2 className="w-7 h-7" style={{ color: "#2E6B4F" }} />
                 </div>
-                <h4 className="text-2xl font-bold tracking-tight text-slate-900">
-                  Inquiry Received!
-                </h4>
-                <p className="text-sm text-slate-600 max-w-sm">
-                  Thank you for booking your consultation request. Monika will reply to your email within 24 hours.
-                </p>
+                <div>
+                  <h4 className="text-xl font-semibold" style={{ color: "#1A1A1A" }}>
+                    Inquiry Received
+                  </h4>
+                  <p className="text-sm mt-2" style={{ color: "#6B6B6B" }}>
+                    Thank you — Monika will reply to your email within 24 hours.
+                  </p>
+                </div>
                 <button
                   type="button"
                   onClick={() => setStatus("idle")}
-                  className="px-6 py-2.5 rounded-xl border border-yellow-300 text-slate-950 font-black text-xs transition-colors cursor-pointer"
-                  style={{ background: "#facc15" }}
+                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl border text-sm font-semibold transition-colors hover:border-[#2E6B4F] hover:text-[#2E6B4F] cursor-pointer"
+                  style={{ borderColor: "#E8E5E0", color: "#6B6B6B" }}
                 >
-                  Send Another Inquiry
+                  Send Another Message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
-                  Send a Consultation Message
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <h3 className="text-lg font-semibold" style={{ color: "#1A1A1A" }}>
+                  Send a Message
                 </h3>
 
                 {status === "error" && (
-                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold">
+                  <div
+                    className="p-3 rounded-xl text-xs font-medium border"
+                    style={{ background: "#FEF2F2", borderColor: "#FECACA", color: "#DC2626" }}
+                  >
                     {errorMessage}
                   </div>
                 )}
 
-                <div>
-                  <label htmlFor="name" className="block text-xs font-bold text-slate-800 mb-1 uppercase tracking-wider">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="e.g. Sarah Jenkins"
-                    className="w-full px-4 py-2.5 rounded-xl border border-yellow-200 bg-yellow-50/20 text-slate-900 text-sm focus:outline-none focus:border-yellow-500 transition-colors"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" style={labelStyle}>Full Name *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="e.g. Sarah Jenkins"
+                      style={inputStyle}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" style={labelStyle}>Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="e.g. sarah@example.com"
+                      style={inputStyle}
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-bold text-slate-800 mb-1 uppercase tracking-wider">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="e.g. sarah@example.com"
-                    className="w-full px-4 py-2.5 rounded-xl border border-yellow-200 bg-yellow-50/20 text-slate-900 text-sm focus:outline-none focus:border-yellow-500 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-xs font-bold text-slate-800 mb-1 uppercase tracking-wider">
-                    Inquiry Type
-                  </label>
+                  <label htmlFor="subject" style={labelStyle}>Inquiry Type</label>
                   <select
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-2.5 rounded-xl border border-yellow-200 bg-yellow-50/20 text-slate-900 text-sm focus:outline-none focus:border-yellow-500 transition-colors"
+                    style={inputStyle}
                   >
                     <option value="Tutoring / Lecturing Inquiry">IB DP Biology / ESS Tutoring</option>
                     <option value="University Lecturing">University Lecturing / Teaching</option>
@@ -256,9 +288,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-bold text-slate-800 mb-1 uppercase tracking-wider">
-                    Message / Goal Details *
-                  </label>
+                  <label htmlFor="message" style={labelStyle}>Message *</label>
                   <textarea
                     id="message"
                     name="message"
@@ -267,18 +297,19 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell me about your learning goals, target IB grade, or lecture topic..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-yellow-200 bg-yellow-50/20 text-slate-900 text-sm focus:outline-none focus:border-yellow-500 transition-colors"
+                    style={{ ...inputStyle, resize: "vertical" }}
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full py-3 px-6 rounded-xl text-slate-950 font-black text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
-                  style={{ background: "linear-gradient(135deg, #facc15 0%, #eab308 100%)" }}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-semibold text-sm transition-opacity hover:opacity-90 cursor-pointer disabled:opacity-60"
+                  style={{ background: "#2E6B4F" }}
                 >
                   <Send className="w-4 h-4" />
-                  {status === "submitting" ? "Sending Request..." : "Send Consultation Request"}
+                  {status === "submitting" ? "Sending…" : "Send Consultation Request"}
+                  {status !== "submitting" && <ArrowRight className="w-4 h-4" />}
                 </button>
               </form>
             )}
