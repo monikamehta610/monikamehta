@@ -18,18 +18,18 @@ import { YouTubeLink } from "@/components/YouTubeLink";
 
 // ── Design tokens ─────────────────────────────────────────────
 const S = {
-  bg: "#FAFAF9",
-  bgSubtle: "#F5F4F2",
+  bg: "#FDF8F3",
+  bgSubtle: "#F5EDE3",
   white: "#FFFFFF",
-  border: "#E8E5E0",
-  fg: "#1A1A1A",
-  fgMuted: "#6B6B6B",
-  fgSubtle: "#9CA3AF",
-  accent: "#1C1C1C",
-  accentLight: "#F0F0EE",
-  accentDark: "#000000",
-  shadow: "0 1px 4px rgba(0,0,0,0.06)",
-  shadowMd: "0 4px 16px rgba(0,0,0,0.07)",
+  border: "#E8D5C8",
+  fg: "#2C1810",
+  fgMuted: "#7A5C52",
+  fgSubtle: "#A8887E",
+  accent: "#C1604A",
+  accentLight: "#FAEAE4",
+  accentDark: "#8B3A27",
+  shadow: "0 1px 4px rgba(193,96,74,0.06)",
+  shadowMd: "0 4px 16px rgba(193,96,74,0.08)",
 };
 
 // ── Practice Questions data ────────────────────────────────────

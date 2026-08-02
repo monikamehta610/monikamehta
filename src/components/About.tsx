@@ -57,28 +57,22 @@ export default function About() {
     <section
       id="about"
       className="py-24 border-t"
-      style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+      style={{ background: "#FFFFFF", borderColor: "#E8D5C8" }}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
 
         {/* Section heading */}
         <div className="max-w-2xl mb-14">
-          <span
-            className="text-xs font-semibold uppercase tracking-widest"
-            style={{ color: "#1C1C1C" }}
-          >
+          <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#C1604A" }}>
             Background
           </span>
           <h2
             className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight"
-            style={{ color: "#1A1A1A" }}
+            style={{ color: "#2C1810" }}
           >
             About Monika Mehta
           </h2>
-          <p
-            className="mt-4 text-base leading-relaxed"
-            style={{ color: "#6B6B6B", lineHeight: "1.7" }}
-          >
+          <p className="mt-4 text-base leading-relaxed" style={{ color: "#7A5C52" }}>
             My background, teaching philosophy, and core scientific competencies.
           </p>
         </div>
@@ -87,13 +81,10 @@ export default function About() {
 
           {/* Bio */}
           <div className="lg:col-span-4 space-y-5">
-            <h3
-              className="text-lg font-semibold"
-              style={{ color: "#1A1A1A" }}
-            >
+            <h3 className="text-lg font-semibold" style={{ color: "#2C1810" }}>
               Professional Biography
             </h3>
-            <div className="space-y-4 text-sm leading-relaxed" style={{ color: "#6B6B6B", lineHeight: "1.75" }}>
+            <div className="space-y-4 text-sm leading-relaxed" style={{ color: "#7A5C52", lineHeight: "1.75" }}>
               <p>
                 I am a dedicated Science Educator and Biotechnology professional with over 9 years of experience bridging academic research, university lecturing, IBDP instruction, and industrial quality control.
               </p>
@@ -108,10 +99,7 @@ export default function About() {
 
           {/* Skills grid */}
           <div className="lg:col-span-8">
-            <h3
-              className="text-lg font-semibold mb-6"
-              style={{ color: "#1A1A1A" }}
-            >
+            <h3 className="text-lg font-semibold mb-6" style={{ color: "#2C1810" }}>
               Skills & Expertise
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -121,22 +109,16 @@ export default function About() {
                   <div
                     key={category.title}
                     className="rounded-2xl border p-6 space-y-4"
-                    style={{
-                      background: "#FAFAF9",
-                      borderColor: "#E8E5E0",
-                    }}
+                    style={{ background: "#FDF8F3", borderColor: "#E8D5C8" }}
                   >
                     <div className="flex items-center gap-3">
                       <div
                         className="w-8 h-8 rounded-lg flex items-center justify-center"
-                        style={{ background: "#F0F0EE" }}
+                        style={{ background: "#FAEAE4" }}
                       >
-                        <Icon className="w-4 h-4" style={{ color: "#1C1C1C" }} />
+                        <Icon className="w-4 h-4" style={{ color: "#C1604A" }} />
                       </div>
-                      <h4
-                        className="text-sm font-semibold leading-tight"
-                        style={{ color: "#1A1A1A" }}
-                      >
+                      <h4 className="text-sm font-semibold leading-tight" style={{ color: "#2C1810" }}>
                         {category.title}
                       </h4>
                     </div>
@@ -144,12 +126,8 @@ export default function About() {
                       {category.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-2.5 py-1 rounded-lg text-xs font-medium border transition-colors hover:border-[#1C1C1C] hover:text-[#1C1C1C]"
-                          style={{
-                            background: "#FFFFFF",
-                            borderColor: "#E8E5E0",
-                            color: "#6B6B6B",
-                          }}
+                          className="px-2.5 py-1 rounded-lg text-xs font-medium border transition-colors hover:border-[#C1604A] hover:text-[#C1604A]"
+                          style={{ background: "#FFFFFF", borderColor: "#E8D5C8", color: "#7A5C52" }}
                         >
                           {skill}
                         </span>

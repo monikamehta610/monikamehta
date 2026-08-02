@@ -18,41 +18,41 @@ export default function Home() {
         <Experience />
         <Contact />
       </main>
-      {/* Footer — warm white, consistent with body */}
+      {/* Footer */}
       <footer
         className="py-10 border-t"
         style={{
-          background: "#FAFAF9",
-          borderColor: "#E8E5E0",
+          background: "#FDF8F3",
+          borderColor: "#E8D5C8",
         }}
       >
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
             <div
               className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold"
-              style={{ background: "#1C1C1C" }}
+              style={{ background: "#C1604A" }}
             >
               MM
             </div>
-            <span className="text-sm font-medium" style={{ color: "#1A1A1A" }}>
+            <span className="text-sm font-medium" style={{ color: "#2C1810" }}>
               Monika Mehta
             </span>
           </div>
-          <p className="text-xs text-center" style={{ color: "#9CA3AF" }}>
+          <p className="text-xs text-center" style={{ color: "#A8887E" }}>
             © {new Date().getFullYear()} Monika Mehta · IBDP Biology & ESS Educator · All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a
               href="/#contact"
               className="text-xs font-medium transition-colors hover:underline"
-              style={{ color: "#1C1C1C" }}
+              style={{ color: "#C1604A" }}
             >
               Book a Call
             </a>
             <a
               href="/courses/ess"
               className="text-xs font-medium"
-              style={{ color: "#6B6B6B" }}
+              style={{ color: "#7A5C52" }}
             >
               ESS Course
             </a>

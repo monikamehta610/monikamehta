@@ -22,7 +22,7 @@ const EXPERIENCES: Job[] = [
       "Supervised Extended Essays (EE) and provided expert guidance on External Assessments, ensuring alignment with IBO marking schemes.",
       "Led the IBDP Group 4 Project, managing research themes, experimental content, field trips, and guest speaker sessions.",
       "Evaluated student progress using diverse assessment methods, including mastery skill checklists and criterion-referenced tests.",
-      "Integrated advanced EdTech tools (Nearpod, Padlet, Trello) to facilitate interactive and distance learning environments."
+      "Integrated advanced EdTech tools (Nearpod, Padlet, Trello) to facilitate interactive and distance learning environments.",
     ],
   },
   {
@@ -33,7 +33,7 @@ const EXPERIENCES: Job[] = [
     bullets: [
       "Provide personalized, one-on-one global tutoring focused on mastering complex biological concepts and improving IA/EE scores.",
       "Supervised Extended Essays in Biology and ESS, guiding students in developing high-level research questions and academic writing skills that meet IBO criteria.",
-      "Deliver strategic feedback on assessment drafts aligned with IBDP command terms to push academic performance."
+      "Deliver strategic feedback on assessment drafts aligned with IBDP command terms to push academic performance.",
     ],
   },
   {
@@ -43,10 +43,10 @@ const EXPERIENCES: Job[] = [
     period: "Aug 2016 – July 2019",
     bullets: [
       "Large-Scale Undergraduate Instruction: Delivered lectures and supervised laboratory practicals for 180+ first-year Biotechnology and Microbiology students annually across three rotating cohorts.",
-      "Postgraduate Mentorship: Provided specialized instruction and academic support to classes of 30+ Master’s students, focusing on advanced biotechnology applications.",
+      "Postgraduate Mentorship: Provided specialized instruction and academic support to classes of 30+ Master's students, focusing on advanced biotechnology applications.",
       "Research & Thesis Supervision: Directly assisted professors in guiding the theses and research projects of 15+ students annually, ensuring rigorous scientific methodology and data integrity.",
       "Academic Coordination: Actively organized national and international seminars, workshops, and conferences, managing logistics and participant engagement.",
-      "Departmental Service: Served as an active member of the women's grievance redressal committee, contributing to a supportive and equitable campus environment."
+      "Departmental Service: Served as an active member of the women's grievance redressal committee, contributing to a supportive and equitable campus environment.",
     ],
   },
   {
@@ -58,54 +58,68 @@ const EXPERIENCES: Job[] = [
       "Quality Assurance: Conducted qualitative and quantitative analysis of raw materials and finished products to ensure 100% compliance with GMP/GLP standards.",
       "Analytical Testing: Validated biochemical and microbiological assays using PCR, ELISA, Spectroscopy, and Chromatography.",
       "Molecular Techniques: Executed high-level protocols including Western Blot, Gel Electrophoresis, and maintenance of Cell Line/Tissue Cultures.",
-      "Lab Operations: Managed daily equipment calibration and water treatment analysis to ensure laboratory precision and safety."
+      "Lab Operations: Managed daily equipment calibration and water treatment analysis to ensure laboratory precision and safety.",
     ],
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 border-t" style={{ background: "#F5F4F2", borderColor: "#E8E5E0" }}>
+    <section id="experience" className="py-24 border-t" style={{ background: "#F5EDE3", borderColor: "#E8D5C8" }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-          <div className="max-w-2xl mb-14">
-          <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#1C1C1C" }}>Career Timeline</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight" style={{ color: "#1A1A1A" }}>
+        <div className="max-w-2xl mb-14">
+          <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#C1604A" }}>Career Timeline</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight" style={{ color: "#2C1810" }}>
             Work Experience
           </h2>
-          <p className="mt-4 text-sm leading-relaxed" style={{ color: "#6B6B6B", lineHeight: "1.75" }}>
+          <p className="mt-4 text-sm leading-relaxed" style={{ color: "#7A5C52", lineHeight: "1.75" }}>
             My professional career path in science education, research lecturing, and healthcare quality assurance.
           </p>
         </div>
 
         {/* Timeline container */}
-        <div className="relative border-l border-border md:ml-6 space-y-12">
+        <div className="relative space-y-12" style={{ borderLeft: "1px solid #E8D5C8", marginLeft: "1.5rem" }}>
           {EXPERIENCES.map((job, index) => (
             <div key={index} className="relative pl-8 md:pl-10 group">
               {/* Timeline marker */}
-              <span className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-white border border-[#E8E5E0] text-[#9CA3AF] group-hover:text-[#1C1C1C] group-hover:border-[#1C1C1C] transition-all duration-300 z-10">
+              <span
+                className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 z-10"
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid #E8D5C8",
+                  color: "#A8887E",
+                }}
+              >
                 <Briefcase className="w-4 h-4" />
               </span>
 
-              {/* Grid / Details */}
-              <div className="p-6 rounded-2xl border border-border bg-card/50 backdrop-blur-sm group-hover:border-primary/20 transition-all duration-300 shadow-sm space-y-4">
+              <div
+                className="p-6 rounded-2xl border space-y-4 transition-all duration-300 hover:shadow-md hover:border-[#C1604A]"
+                style={{ background: "#FFFFFF", borderColor: "#E8D5C8" }}
+              >
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <div>
-                    <h3 className="text-xl font-bold text-foreground">
+                    <h3 className="text-xl font-bold" style={{ color: "#2C1810" }}>
                       {job.title}
                     </h3>
-                    <p className="text-sm font-semibold text-primary">
-                      {job.company} <span className="text-xs text-muted-foreground font-normal">| {job.location}</span>
+                    <p className="text-sm font-semibold" style={{ color: "#C1604A" }}>
+                      {job.company}{" "}
+                      <span className="text-xs font-normal" style={{ color: "#A8887E" }}>
+                        | {job.location}
+                      </span>
                     </p>
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-secondary text-muted-foreground border border-border/80 w-fit">
+                  <span
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold border w-fit"
+                    style={{ background: "#FAEAE4", color: "#C1604A", borderColor: "#E8D5C8" }}
+                  >
                     <Calendar className="w-3.5 h-3.5" />
                     {job.period}
                   </span>
                 </div>
 
-                <ul className="space-y-2.5 text-sm text-muted-foreground leading-relaxed list-disc list-inside">
+                <ul className="space-y-2.5 text-sm leading-relaxed list-disc list-inside" style={{ color: "#7A5C52" }}>
                   {job.bullets.map((bullet, bulletIdx) => (
                     <li key={bulletIdx} className="pl-1">
                       <span className="relative -left-1">{bullet}</span>

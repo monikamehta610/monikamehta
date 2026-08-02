@@ -2,20 +2,20 @@
 
 @layer base {
   :root {
-    /* Steve Jobs Minimalist Black & White System */
-    --background: #FAFAF9;        /* Warm paper canvas */
-    --background-subtle: #F5F4F2; /* Soft grey contrast section */
+    /* Warm Terracotta System */
+    --background: #FDF8F3;        /* Warm parchment canvas */
+    --background-subtle: #F5EDE3; /* Sandy blush contrast section */
     --card: #FFFFFF;              /* Pure white card surface */
-    --foreground: #1A1A1A;        /* Near-black high-contrast text */
-    --muted-foreground: #6B6B6B;  /* Muted slate secondary text */
-    --subtle-foreground: #9CA3AF; /* Light grey labels/captions */
-    
-    /* Primary Accent: Deep Charcoal / Black */
-    --accent: #1C1C1C;
-    --accent-light: #F0F0EE;
-    --accent-dark: #000000;
-    
-    --border: #E8E5E0;            /* Subtle card/section border */
+    --foreground: #2C1810;        /* Deep espresso high-contrast text */
+    --muted-foreground: #7A5C52;  /* Warm rose-brown secondary text */
+    --subtle-foreground: #A8887E; /* Dusty blush labels/captions */
+
+    /* Primary Accent: Terracotta */
+    --accent: #C1604A;
+    --accent-light: #FAEAE4;
+    --accent-dark: #8B3A27;
+
+    --border: #E8D5C8;            /* Warm sand border */
   }
 
   body {
@@ -54,19 +54,19 @@
 
 /* Primary Button Styling */
 .btn-primary {
-  background-color: #1C1C1C;
+  background-color: #C1604A;
   color: #FFFFFF;
   font-weight: 600;
   border-radius: 0.75rem;
   padding: 0.625rem 1.25rem;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(193, 96, 74, 0.15);
 }
 
 .btn-primary:hover {
-  background-color: #000000;
+  background-color: #8B3A27;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(193, 96, 74, 0.25);
 }
 
 .btn-primary:active {
@@ -78,11 +78,11 @@
   background-color: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px rgba(193, 96, 74, 0.04);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .apple-card:hover {
-  border-color: #1C1C1C;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: #C1604A;
+  box-shadow: 0 8px 24px rgba(193, 96, 74, 0.08);
 }

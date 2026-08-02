@@ -35,28 +35,19 @@ export default function CoursesTeaser() {
     <section
       id="courses"
       className="py-24 border-t"
-      style={{ background: "#FFFFFF", borderColor: "#E8E5E0" }}
+      style={{ background: "#FFFFFF", borderColor: "#E8D5C8" }}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
 
         {/* Section label + heading */}
         <div className="max-w-2xl mb-14">
-          <span
-            className="text-xs font-semibold uppercase tracking-widest"
-            style={{ color: "#1C1C1C" }}
-          >
+          <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#C1604A" }}>
             Course Materials
           </span>
-          <h2
-            className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight"
-            style={{ color: "#1A1A1A" }}
-          >
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight" style={{ color: "#2C1810" }}>
             IB DP Science Courses & Slides
           </h2>
-          <p
-            className="mt-4 text-base leading-relaxed"
-            style={{ color: "#6B6B6B", lineHeight: "1.7" }}
-          >
+          <p className="mt-4 text-base leading-relaxed" style={{ color: "#7A5C52", lineHeight: "1.7" }}>
             Slide-based study resources aligned with the official IB Diploma guide — with embedded diagrams, practice questions, and mark scheme analysis.
           </p>
         </div>
@@ -71,11 +62,8 @@ export default function CoursesTeaser() {
               style={{ textDecoration: "none" }}
             >
               <div
-                className="rounded-2xl border p-7 h-full flex flex-col justify-between transition-all duration-200 hover:shadow-md hover:border-[#1C1C1C]"
-                style={{
-                  background: "#FFFFFF",
-                  borderColor: "#E8E5E0",
-                }}
+                className="rounded-2xl border p-7 h-full flex flex-col justify-between transition-all duration-200 hover:shadow-md hover:border-[#C1604A]"
+                style={{ background: "#FFFFFF", borderColor: "#E8D5C8" }}
               >
                 <div className="space-y-4">
                   {/* Header */}
@@ -83,7 +71,7 @@ export default function CoursesTeaser() {
                     <span className="text-3xl">{card.icon}</span>
                     <span
                       className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
-                      style={{ background: "#F0F0EE", color: "#1C1C1C" }}
+                      style={{ background: "#FAEAE4", color: "#C1604A" }}
                     >
                       {card.count > 0 ? `${card.count} / ${card.total} Topics Live` : "Coming Soon"}
                     </span>
@@ -92,15 +80,12 @@ export default function CoursesTeaser() {
                   {/* Content */}
                   <div>
                     <h3
-                      className="font-semibold text-lg leading-snug transition-colors group-hover:text-[#1C1C1C]"
-                      style={{ color: "#1A1A1A" }}
+                      className="font-semibold text-lg leading-snug transition-colors group-hover:text-[#C1604A]"
+                      style={{ color: "#2C1810" }}
                     >
                       {card.full}
                     </h3>
-                    <p
-                      className="text-sm mt-2 leading-relaxed"
-                      style={{ color: "#6B6B6B", lineHeight: "1.7" }}
-                    >
+                    <p className="text-sm mt-2 leading-relaxed" style={{ color: "#7A5C52", lineHeight: "1.7" }}>
                       {card.desc}
                     </p>
                   </div>
@@ -109,15 +94,15 @@ export default function CoursesTeaser() {
                 {/* Footer */}
                 <div
                   className="flex items-center justify-between pt-5 mt-5 border-t"
-                  style={{ borderColor: "#E8E5E0" }}
+                  style={{ borderColor: "#E8D5C8" }}
                 >
-                  <span className="flex items-center gap-1.5 text-xs font-medium" style={{ color: "#6B6B6B" }}>
-                    <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "#1C1C1C" }} />
+                  <span className="flex items-center gap-1.5 text-xs font-medium" style={{ color: "#7A5C52" }}>
+                    <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "#C1604A" }} />
                     {card.badge} Covered
                   </span>
                   <span
                     className="flex items-center gap-1 text-xs font-semibold group-hover:gap-2 transition-all"
-                    style={{ color: "#1C1C1C" }}
+                    style={{ color: "#C1604A" }}
                   >
                     {card.count > 0 ? "View All Topics" : "Explore Course"}
                     <ArrowRight className="w-3.5 h-3.5" />
