@@ -25,7 +25,7 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("error");
@@ -38,15 +38,16 @@ export default function Contact() {
       setErrorMessage("Please provide a valid email address.");
       return;
     }
-    setStatus("submitting");
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "Tutoring / Lecturing Inquiry", message: "" });
-    } catch {
-      setStatus("error");
-      setErrorMessage("Something went wrong. Please try again later.");
-    }
+
+    const subject = encodeURIComponent(`${formData.subject} - ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:${decodedEmail}?subject=${subject}&body=${body}`;
+
+    setStatus("success");
+    setFormData({ name: "", email: "", subject: "Tutoring / Lecturing Inquiry", message: "" });
   };
 
   const inputStyle = {
