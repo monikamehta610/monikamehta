@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB ESS 7.1 — Natural Resources: Uses & Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0A6EBD;
+    --blue-light: #E8F4FD;
+    --blue-dark: #064A7A;
+    --orange: #FF6B35;
+    --orange-light: #FFF3ED;
+    --green: #2E8B57;
+    --green-light: #EAF7F0;
+    --red: #C0392B;
+    --red-light: #FDECEB;
+    --gray-50: #FAFBFC;
+    --gray-100: #F4F5F7;
+    --gray-200: #E8EAED;
+    --gray-400: #9AA0A6;
+    --gray-600: #5F6368;
+    --gray-800: #202124;
+    --hl-accent: #7B2D8E;
+    --hl-accent-light: #F5EAF8;
+    --hl-accent-border: #C9A0DC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fff;
+    color: var(--gray-800);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Slide Container ── */
+  .slide {
+    display: none;
+    min-height: 100vh;
+    padding: 3rem 2rem 6rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .slide.active { display: block; }
+
+  /* ── Typography ── */
+  h1 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; color: var(--gray-800); }
+  h2 { font-size: 1.65rem; font-weight: 600; line-height: 1.3; margin-bottom: 1rem; color: var(--gray-800); }
+  h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-800); }
+  p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+  strong { font-weight: 600; }
+
+  /* ── Section Tag ── */
+  .section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+    background: var(--blue-light);
+    color: var(--blue);
+  }
+  .section-tag.hl {
+    background: var(--hl-accent-light);
+    color: var(--hl-accent);
+  }
+
+  /* ── HL Badge ── */
+  .hl-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    background: var(--hl-accent);
+    color: #fff;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* ── HL Accent Border ── */
+  .hl-accent {
+    border-left: 4px solid var(--hl-accent);
+    padding-left: 1.2rem;
+  }
+
+  /* ── Key Understanding Box ── */
+  .kt {
+    background: var(--gray-100);
+    border-left: 4px solid var(--blue);
+    padding: 1rem 1.2rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.2rem 0;
+    font-size: 0.92rem;
+  }
+  .kt strong { color: var(--blue-dark); display: block; margin-bottom: 0.3rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hl-accent .kt { border-left-color: var(--hl-accent); }
+  .hl-accent .kt strong { color: var(--hl-accent); }
+
+  /* ── Card ── */
+  .card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card h3 { margin-bottom: 0.4rem; }
+
+  /* ── Equation ── */
+  .eq {
+    background: var(--blue-light);
+    border: 1px solid #B8DCF2;
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--blue-dark);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Table ── */
+  .tbl {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.88rem;
+  }
+  .tbl th {
+    background: var(--gray-100);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 2px solid var(--gray-200);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray-600);
+  }
+  .tbl td {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+  }
+  .tbl tr:last-child td { border-bottom: none; }
+
+  /* ── Bullets ── */
+  .bullets { list-style: none; padding: 0; margin: 0.8rem 0; }
+  .bullets li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.92rem;
+  }
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+  .hl-accent .bullets li::before { background: var(--hl-accent); }
+
+  /* ── Tip ── */
+  .tip {
+    background: var(--orange-light);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 8px 8px 0;
+    padding: 0.9rem 1.2rem;
+    margin: 1.2rem 0;
+    font-size: 0.88rem;
+  }
+  .tip strong { color: var(--orange); }
+
+  /* ── Case Study ── */
+  .case {
+    background: var(--green-light);
+    border-left: 4px solid var(--green);
+    border-radius: 0 8px 8px 0;
+    padding: 0.9rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 0.88rem;
+  }
+  .case strong { color: var(--green); }
+
+  /* ── Flow Diagram (CSS) ── */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+  .flow-box {
+    background: var(--blue-light);
+    border: 1px solid #B8DCF2;
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .flow-arrow {
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  /* ── Value Grid ── */
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.7rem;
+    margin: 1rem 0;
+  }
+  .value-item {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 0.8rem;
+    font-size: 0.82rem;
+  }
+  .value-item strong { display: block; margin-bottom: 0.2rem; color: var(--blue-dark); font-size: 0.85rem; }
+
+  /* ── Progress Bar ── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--blue);
+    z-index: 1000;
+    transition: width 0.3s ease;
+  }
+
+  /* ── Navigation ── */
+  .nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--gray-200);
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+  }
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--gray-800);
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .nav-btn:hover { background: var(--gray-100); border-color: var(--gray-400); }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-dots { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; justify-content: center; max-width: 60%; }
+  .nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray-200);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s;
+  }
+  .nav-dot.active { background: var(--blue); width: 20px; border-radius: 4px; }
+  .nav-dot.hl-dot { background: var(--hl-accent-border); }
+  .nav-dot.hl-dot.active { background: var(--hl-accent); }
+  .nav-counter { font-size: 0.72rem; color: var(--gray-400); white-space: nowrap; margin: 0 0.5rem; }
+
+  /* ── Cover ── */
+  .cover { display: flex; flex-direction: column; justify-content: center; min-height: 90vh; text-align: center; }
+  .cover h1 { font-size: 2.6rem; margin-bottom: 0.3rem; }
+  .cover .subtitle { font-size: 1.1rem; color: var(--gray-600); margin-bottom: 2rem; }
+  .cover .stats { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+  .cover .stat { text-align: center; }
+  .cover .stat-num { font-size: 2rem; font-weight: 700; color: var(--blue); }
+  .cover .stat-label { font-size: 0.75rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── Completion ── */
+  .completion { text-align: center; padding-top: 4rem; }
+  .completion .check { font-size: 4rem; margin-bottom: 1rem; }
+  .completion h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .completion .point-count { font-size: 3rem; font-weight: 700; color: var(--blue); margin: 1rem 0; }
+  .completion .point-label { font-size: 0.85rem; color: var(--gray-600); }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .slide { padding: 2rem 1.2rem 6rem; }
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.3rem; }
+    .cover h1 { font-size: 1.9rem; }
+    .cover .stat-num { font-size: 1.5rem; }
+    .value-grid { grid-template-columns: 1fr; }
+    .flow { font-size: 0.78rem; }
+    .tbl { font-size: 0.8rem; }
+    .tbl th, .tbl td { padding: 0.45rem 0.5rem; }
+    .nav-dots { max-width: 45%; }
+    .nav-dot { width: 6px; height: 6px; }
+    .nav-dot.active { width: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 0 — COVER                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <div class="section-tag">IB DP Environmental Systems & Societies</div>
+    <h1>7.1 Natural Resources — Uses &amp; Management</h1>
+    <p class="subtitle">Subtopic 7.1 · New Syllabus (First Assessment 2026)<br>Standard Level + Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">11</div><div class="stat-label">SL Syllabus Points</div></div>
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">HL Extensions</div></div>
+      <div class="stat"><div class="stat-num">19</div><div class="stat-label">Total Understandings</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 1 — OVERVIEW                        -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p>This subtopic explores what natural resources are, how they are classified, and why understanding their value matters for building a sustainable future. It connects directly to climate change, biodiversity loss, and resource scarcity across the syllabus.</p>
+
+  <h3>Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How does the renewability of natural capital have implications for its sustainable use?</li>
+    <li>How might societies reconcile competing perspectives on natural resource use?</li>
+    <li>To what extent can human societies use natural resources sustainably?</li>
+  </ul>
+
+  <h3 style="margin-top:1.2rem;">Content Map</h3>
+  <div class="card">
+    <strong style="color:var(--blue)">A. Natural Resources &amp; Capital</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">Definitions, natural capital, income, goods vs services, perspective critique</p>
+    <strong style="color:var(--green)">B. Ecosystem Services &amp; Classification</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">Life-supporting services, renewable vs non-renewable, finiteness</p>
+    <strong style="color:var(--orange)">C. Values &amp; Dynamic Worth</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">Nine types of value, how value changes over time</p>
+    <strong style="color:var(--hl-accent)">D. Management, Security &amp; HL Extensions</strong>
+    <p style="margin:0.3rem 0 0;font-size:0.85rem;">Sustainability, resource security, factors in decision-making, EIAs, economic interests, geopolitical tensions</p>
+  </div>
+
+  <p style="font-size:0.82rem;color:var(--gray-400);margin-top:1rem;">⏱ Time allocation: minimum 6 hours for this subtopic.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 2 — 7.1.1                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">7.1.1 — Natural Resources</div>
+  <h2>Natural Resources Are the Raw Materials &amp; Energy Used by Society</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Natural resources are the <em>raw materials</em> and <em>sources of energy</em> used and consumed by society.
+  </div>
+
+  <p>Natural resources are materials and energy sources found in nature that humans use for food, shelter, energy, and industrial production. They are the foundation of life on Earth and of human civilization.</p>
+
+  <h3>Categories</h3>
+  <table class="tbl">
+    <tr><th>Type</th><th>Source</th><th>Examples</th></tr>
+    <tr><td><strong>Biotic</strong></td><td>Living things</td><td>Forests, animals, crops, fish</td></tr>
+    <tr><td><strong>Abiotic</strong></td><td>Non-living things</td><td>Sunlight, water, air, minerals, soil</td></tr>
+  </table>
+
+  <h3>Key Examples</h3>
+  <ul class="bullets">
+    <li><strong>Sunlight</strong> — drives photosynthesis and solar power</li>
+    <li><strong>Water</strong> — drinking, agriculture, hydropower, habitat</li>
+    <li><strong>Minerals</strong> — construction, manufacturing, technology</li>
+    <li><strong>Soil</strong> — foundation of agriculture and food production</li>
+    <li><strong>Forests</strong> — timber, oxygen, carbon sinks, biodiversity</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 3 — 7.1.2                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">7.1.2 — Natural Capital</div>
+  <h2>Natural Capital Is the Stock of Natural Resources on Earth</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Natural capital is the <em>stock</em> of natural resources available on Earth.
+  </div>
+
+  <p>Think of natural capital like a <strong>bank account</strong>. The stock (principal) is the total resources available; the natural income (interest) is the flow of goods and services generated each year.</p>
+
+  <h3>Three Types of Natural Capital</h3>
+  <table class="tbl">
+    <tr><th>Type</th><th>Regeneration</th><th>Examples</th></tr>
+    <tr><td><strong>Renewable</strong></td><td>Regenerated naturally over time</td><td>Forests, fisheries, freshwater, solar energy</td></tr>
+    <tr><td><strong>Non-renewable</strong></td><td>Fixed stock; not replenished on human timescale</td><td>Fossil fuels, minerals, metal ores</td></tr>
+    <tr><td><strong>Replenishable</strong></td><td>Replaceable but slow to regenerate</td><td>Groundwater, soil, ozone layer</td></tr>
+  </table>
+
+  <div class="tip">
+    <strong>⚠ Exam Hint</strong> Replenishable resources sit between renewable and non-renewable. Groundwater can be recharged by rainfall, but if extraction exceeds recharge, it becomes effectively non-renewable.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 4 — 7.1.3                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">7.1.3 — Natural Income</div>
+  <h2>Natural Capital Provides Goods &amp; Services</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Natural capital provides <em>natural income</em> in terms of goods and services.
+  </div>
+
+  <div class="flow">
+    <div class="flow-box">Natural Capital<br><small>(stock)</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Natural Income<br><small>(flow)</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--green-light);border-color:#A8D8B9;">Goods<br><small>(tangible)</small></div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-box" style="background:var(--orange-light);border-color:#F5C4A8;">Services<br><small>(intangible)</small></div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Goods (tangible)</th><th>Services (intangible)</th></tr>
+    <tr><td>Timber, fish, grain, minerals, fossil fuels</td><td>Water replenishment, flood protection, climate regulation, carbon sequestration, pollination</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>🌱 Case Study — The Amazon Rainforest</strong>
+    The Amazon produces goods (timber, rubber, medicinal plants) and services (carbon sequestration generating ~6% of the world's O₂, regulating rainfall across South America, housing 10% of all species on Earth). Deforestation depletes both the stock and the income.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 5 — 7.1.4                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">7.1.4 — Perspective on Nature</div>
+  <h2>"Natural Capital" Implies a Particular Perspective</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    The terms "natural capital" and "natural income" imply a particular <em>perspective</em> on nature.
+  </div>
+
+  <p>Calling nature "capital" frames it as an economic asset that exists to produce goods and services for humans. This is useful for resource management but carries philosophical implications.</p>
+
+  <table class="tbl">
+    <tr><th>Perspective</th><th>View of Nature</th><th>Implication</th></tr>
+    <tr><td><strong>Anthropocentric</strong></td><td>Nature exists primarily for human use</td><td>Can lead to exploitation if unchecked</td></tr>
+    <tr><td><strong>Ecocentric</strong></td><td>Nature has intrinsic value independent of humans</td><td>Challenges the "capital" framing</td></tr>
+  </table>
+
+  <div class="card">
+    <h3>Benefits of the Natural Capital Model</h3>
+    <ul class="bullets">
+      <li>Promotes sustainable use by valuing natural income</li>
+      <li>Integrates environmental considerations into economic planning</li>
+      <li>Makes ecosystem services visible in policy decisions</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <strong>⚠ Exam Hint</strong> In essay questions, acknowledge the anthropocentric assumption embedded in the language "natural capital" — then explain why the framework is still useful. This demonstrates the critical thinking the mark scheme rewards at higher bands.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 6 — 7.1.5                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">7.1.5 — Ecosystem Services</div>
+  <h2>Ecosystems Provide Life-Supporting Services</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Ecosystems provide life-supporting <em>ecosystem services</em>.
+  </div>
+
+  <p>Ecosystem services are the benefits humans receive from functioning ecosystems. They are generally categorized into four types:</p>
+
+  <table class="tbl">
+    <tr><th>Category</th><th>Description</th><th>Examples</th></tr>
+    <tr><td><strong>Provisioning</strong></td><td>Products obtained from ecosystems</td><td>Food, timber, freshwater, fibre, medicines</td></tr>
+    <tr><td><strong>Regulating</strong></td><td>Benefits from regulation of ecosystem processes</td><td>Climate regulation, flood control, water purification, pollination</td></tr>
+    <tr><td><strong>Cultural</strong></td><td>Non-material benefits</td><td>Recreation, aesthetics, spiritual enrichment, education</td></tr>
+    <tr><td><strong>Supporting</strong></td><td>Services necessary for all other services</td><td>Nutrient cycling, soil formation, photosynthesis, water cycling</td></tr>
+  </table>
+
+  <h3>Key Life-Supporting Services</h3>
+  <ul class="bullets">
+    <li><strong>Water replenishment</strong> — forests and wetlands absorb rainfall, recharge groundwater</li>
+    <li><strong>Flood &amp; erosion protection</strong> — mangroves, wetlands, root systems stabilise soil</li>
+    <li><strong>Pollution mitigation</strong> — reed beds filter nutrients, wetlands break down pollutants</li>
+    <li><strong>Carbon sequestration</strong> — forests, grasslands, oceans absorb atmospheric CO₂</li>
+  </ul>
+
+  <div class="case">
+    <strong>🌊 Case Study — Mangroves in Southeast Asia</strong>
+    Mangrove forests provide ~$65 billion/year in flood protection services globally. After the 2004 Indian Ocean tsunami, areas with intact mangroves suffered significantly less damage than areas where mangroves had been cleared for shrimp farming.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 7 — 7.1.6                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">7.1.6 — Renewable vs Non-Renewable</div>
+  <h2>All Resources Are Finite</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    All resources are <em>finite</em>. Resources can be classified as either <em>renewable</em> or <em>non-renewable</em>.
+  </div>
+
+  <table class="tbl">
+    <tr><th></th><th>Renewable</th><th>Non-Renewable</th></tr>
+    <tr><td><strong>Definition</strong></td><td>Can regenerate at a rate ≥ rate of use</td><td>Fixed geological stock; cannot be replenished on human timescale</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Solar, wind, forests, fish stocks, freshwater</td><td>Coal, oil, natural gas, minerals, metal ores</td></tr>
+    <tr><td><strong>Key risk</strong></td><td>Can become non-renewable if overused</td><td>Depletion is permanent (on human timescales)</td></tr>
+  </table>
+
+  <div class="tip">
+    <strong>⚠ Critical Insight</strong> Renewable resources can become effectively non-renewable if used beyond their regeneration rate. The Atlantic cod fishery collapse is a classic example — a renewable resource turned into a depleted one.
+  </div>
+
+  <div class="case">
+    <strong>🐟 Case Study — North Sea Cod Collapse</strong>
+    Overfishing of Atlantic cod off Newfoundland in the 1980s–90s exceeded the Maximum Sustainable Yield. The population collapsed by 99%, devastating coastal communities. The fishery remains closed decades later — a renewable resource became functionally non-renewable.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 8 — 7.1.7                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-8">
+  <div class="section-tag">7.1.7 — Multiple Values</div>
+  <h2>Natural Capital Has Many Forms of Value</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Natural capital has <em>aesthetic, cultural, economic, environmental, health, intrinsic, social, spiritual</em> and <em>technological</em> value. The value of natural capital is influenced by these factors.
+  </div>
+
+  <div class="value-grid">
+    <div class="value-item"><strong>🎨 Aesthetic</strong>Beauty and visual appeal of landscapes — tourism, inspiration, well-being</div>
+    <div class="value-item"><strong>🏛 Cultural</strong>Cultural identities, traditions, art, folklore tied to nature</div>
+    <div class="value-item"><strong>💰 Economic</strong>Market value of goods and services — jobs, GDP, trade</div>
+    <div class="value-item"><strong>🌍 Environmental</strong>Ecological processes: nutrient cycling, water purification, biodiversity</div>
+    <div class="value-item"><strong>❤️ Health</strong>Clean air, water, medicinal resources, spaces for physical/mental health</div>
+    <div class="value-item"><strong>✨ Intrinsic</strong>Inherent worth independent of human use — all species have a right to exist</div>
+    <div class="value-item"><strong>🤝 Social</strong>Community cohesion, shared stewardship, social interaction</div>
+    <div class="value-item"><strong>🙏 Spiritual</strong>Sacred environments central to religious beliefs and practices</div>
+    <div class="value-item"><strong>🔬 Technological</strong>Biomimicry, raw materials for innovation, new solutions</div>
+  </div>
+
+  <div class="case">
+    <strong>🏛 Case Study — Sacred Groves of India</strong>
+    Forests protected by religious beliefs for centuries. Their cultural and spiritual value has preserved biodiversity that would otherwise have been cleared for agriculture — demonstrating how non-economic values can drive conservation.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 9 — 7.1.8                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-9">
+  <div class="section-tag">7.1.8 — Dynamic Value</div>
+  <h2>The Value of Natural Capital Changes Over Time</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    The value of natural capital is <em>dynamic</em> in that it can change over time.
+  </div>
+
+  <p>Resource values shift according to cultural, social, economic, environmental, technological and political factors.</p>
+
+  <table class="tbl">
+    <tr><th>Era / Context</th><th>Resource</th><th>Value Then</th><th>Value Now</th></tr>
+    <tr><td>Stone Age</td><td>Flint for arrowheads</td><td>Extremely high (hunting = survival)</td><td>Minimal economic value</td></tr>
+    <tr><td>Stone Age</td><td>Fossil fuels</td><td>Worthless (no combustion technology)</td><td>Critical for global energy</td></tr>
+    <tr><td>Pre-2010</td><td>Lithium</td><td>Niche industrial mineral</td><td>Booming — EV batteries, smartphones</td></tr>
+    <tr><td>Pre-plastic</td><td>Whale oil</td><td>Primary lubricant and lighting fuel</td><td>Commercially banned; cultural shift</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>🔋 Case Study — Lithium's Rising Value</strong>
+    Lithium prices surged from ~$6,000/tonne (2020) to over $70,000/tonne (2022) due to the electric vehicle revolution. A mineral that was once niche became strategically critical — illustrating how technology dynamically reshapes resource value.
+  </div>
+
+  <div class="tip">
+    <strong>⚠ Exam Hint</strong> When discussing dynamic value, always specify <em>which factor</em> caused the change (technology, culture, politics, economics) and give a named example.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 10 — 7.1.9                          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-10">
+  <div class="section-tag">7.1.9 — Managing for Sustainability</div>
+  <h2>Natural Capital Must Be Managed for Sustainability</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    The use of natural capital needs to be managed in order to ensure <em>sustainability</em>.
+  </div>
+
+  <p>Two conditions for sustainable resource use:</p>
+  <div class="eq">Resources must not be used faster than they regenerate<br>Waste must not be emitted faster than the environment can absorb it</div>
+
+  <h3>Key Concept: Maximum Sustainable Yield (MSY)</h3>
+  <p>MSY is the largest harvest that can be taken from a population indefinitely without depleting it. Exceeding MSY leads to resource collapse.</p>
+  <img src="/images/ess_msy_curve_1784935744653.jpg" alt="Maximum Sustainable Yield Curve" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+
+  <table class="tbl">
+    <tr><th>Strategy</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>Quotas</strong></td><td>Legal limits on extraction/harvest</td><td>EU Common Fisheries Policy — Total Allowable Catches</td></tr>
+    <tr><td><strong>Marine Protected Areas</strong></td><td>Exclusion zones where resources recover</td><td>Galápagos Marine Reserve — visitor limits and zoning</td></tr>
+    <tr><td><strong>Certification</strong></td><td>Third-party sustainability standards</td><td>FSC certification for sustainable forestry (Canada)</td></tr>
+    <tr><td><strong>Indigenous Collaboration</strong></td><td>Integrating traditional ecological knowledge</td><td>Boreal forest management with First Nations communities</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>🏝 Case Study — Galápagos Islands</strong>
+    Tourism generates vital income, but uncontrolled tourism threatens endemic species. Ecuador implemented strict visitor limits, zoning of protected areas, and sustainable tourism practices — balancing economic benefit with natural capital preservation.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 11 — 7.1.10                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-11">
+  <div class="section-tag">7.1.10 — Resource Security</div>
+  <h2>Resource Security = Long-Term Availability</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Resource security depends on the ability of societies to ensure the <em>long-term availability</em> of sufficient natural resources to meet demand.
+  </div>
+
+  <p>Resource security primarily concerns <strong>food</strong>, <strong>water</strong> and <strong>energy</strong>. A country's resource security depends on supply and demand of natural resources.</p>
+
+  <table class="tbl">
+    <tr><th>Factor</th><th>How It Affects Security</th></tr>
+    <tr><td><strong>Geographical</strong></td><td>Natural availability of fertile land, freshwater, mineral deposits</td></tr>
+    <tr><td><strong>Economic</strong></td><td>Wealth enables infrastructure, technology, imports</td></tr>
+    <tr><td><strong>Political stability</strong></td><td>Stable governments manage resources, ensure equitable distribution</td></tr>
+    <tr><td><strong>Technology</strong></td><td>Innovation in agriculture, desalination, efficiency</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>💧 Case Study — Israel's Water Security</strong>
+    Despite minimal freshwater, Israel achieved water security through: desalination (provides ~40% of domestic water), 85% wastewater recycling, and drip irrigation. Technology transformed a water-insecure nation into a water-surplus one.
+  </div>
+
+  <div class="case">
+    <strong>🌾 Case Study — Ethiopia's Food Insecurity</strong>
+    Frequent droughts, conflict, and limited infrastructure leave Ethiopia chronically food-insecure. Despite agricultural development programs, the population remains vulnerable — illustrating how political and geographical factors compound resource insecurity.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 12 — 7.1.11                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-12">
+  <div class="section-tag">7.1.11 — Factors in Resource Choices</div>
+  <h2>Resource Choices Reflect Diverse Perspectives</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    The choices a society makes in using given natural resources are affected by <em>many factors</em> and reflect <em>diverse perspectives</em>.
+  </div>
+
+  <table class="tbl">
+    <tr><th>Factor</th><th>Influence</th><th>Named Example</th></tr>
+    <tr><td><strong>Economic</strong></td><td>Profitability, jobs, GDP contribution</td><td>US natural gas — fracking made shale gas economically viable</td></tr>
+    <tr><td><strong>Sociocultural</strong></td><td>Cultural traditions, sacred sites, social norms</td><td>Sacred groves of India — religious beliefs protect forests</td></tr>
+    <tr><td><strong>Political</strong></td><td>Government policy, energy independence goals</td><td>France — nuclear energy for energy independence post-1970s oil crisis</td></tr>
+    <tr><td><strong>Environmental</strong></td><td>Climate change concerns, biodiversity protection</td><td>Germany's Energiewende — shift from nuclear/fossil to renewables</td></tr>
+    <tr><td><strong>Geographical</strong></td><td>Natural endowments, terrain, climate</td><td>Norway — mountainous terrain and rivers → 90%+ hydropower</td></tr>
+    <tr><td><strong>Technological</strong></td><td>New extraction methods, efficiency gains</td><td>Lithium extraction for EV batteries</td></tr>
+    <tr><td><strong>Historical</strong></td><td>Past conflicts, colonial legacies, long-standing practices</td><td>Oil-dependent economies shaped by colonial resource extraction</td></tr>
+  </table>
+
+  <div class="tip">
+    <strong>⚠ Exam Hint</strong> When asked about resource choices, identify <em>at least two</em> influencing factors and explain how they interact. The best answers show that factors rarely act in isolation — economic interests may clash with environmental concerns, political decisions may override cultural values.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 13 — HL 7.1.12                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-13">
+  <div class="section-tag hl">7.1.12 — HL Extension</div>
+  <h2>Management &amp; Intervention Strategies <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    A range of different management and intervention strategies can be used to directly influence society's use of natural capital.
+  </div>
+
+  <p>Governments, organisations and communities use various tools to manage resource use. These range from voluntary approaches to strict regulatory controls.</p>
+
+  <table class="tbl">
+    <tr><th>Strategy Type</th><th>Mechanism</th><th>Example</th></tr>
+    <tr><td><strong>Market-based</strong></td><td>Taxes, subsidies, tradeable permits</td><td>Carbon pricing, fuel taxes, cap-and-trade systems</td></tr>
+    <tr><td><strong>Regulatory</strong></td><td>Laws, bans, quotas, zoning</td><td>Fishing quotas, logging bans in protected areas, CITES trade restrictions</td></tr>
+    <tr><td><strong>Voluntary</strong></td><td>Certification, agreements, corporate pledges</td><td>FSC timber certification, Roundtable on Sustainable Palm Oil (RSPO)</td></tr>
+    <tr><td><strong>Community-based</strong></td><td>Local management, traditional knowledge</td><td>Indigenous land stewardship, community-managed forests</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>🐋 Case Study — International Whaling Commission</strong>
+    A global regulatory intervention: the IWC imposed a commercial whaling moratorium (1986) to prevent whale population collapse. Despite violations by some nations, most great whale species have recovered — demonstrating that international regulation can work when enforced.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 14 — HL 7.1.13                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-14">
+  <div class="section-tag hl">7.1.13 — HL Extension</div>
+  <h2>Overexploitation Depletes Natural Capital <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    Overexploitation and excessive consumption can lead to the <em>depletion</em> of natural capital.
+  </div>
+
+  <p>When extraction or consumption exceeds the regeneration rate, natural capital declines — sometimes to the point of irreversible collapse.</p>
+
+  <h3>The Tragedy of the Commons</h3>
+  <p>Hardin's concept: when a shared resource is accessible to all, individuals acting in self-interest will overexploit it, even when it's clear that this destroys the resource for everyone.</p>
+
+  <div class="flow">
+    <div class="flow-box" style="background:var(--red-light);border-color:#E8B4B0;">Open Access</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--orange-light);border-color:#F5C4A8;">Individual Overuse</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--red-light);border-color:#E8B4B0;">Resource Depletion</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--gray-100);border-color:var(--gray-200);">Collapse</div>
+  </div>
+
+  <img src="/images/ess_tragedy_commons_1784752062258.jpg" alt="Tragedy of the Commons" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+
+  <table class="tbl">
+    <tr><th>Resource</th><th>Overexploitation</th><th>Consequence</th></tr>
+    <tr><td>Atlantic cod (Newfoundland)</td><td>Industrial trawling exceeded MSY</td><td>99% population collapse (1992); fishery still closed</td></tr>
+    <tr><td>Amazon rainforest</td><td>Deforestation for cattle ranching and soy</td><td>Carbon sink loss, biodiversity decline, regional rainfall disruption</td></tr>
+    <tr><td>Groundwater (Ogallala Aquifer)</td><td>Industrial agriculture pumping exceeds recharge</td><td>Water table dropping ~1m/year; agricultural crisis imminent</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 15 — HL 7.1.14                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-15">
+  <div class="section-tag hl">7.1.14 — HL Extension</div>
+  <h2>Environmental Impact Assessment (EIA) <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    Sustainable resource management in development projects is addressed in an <em>environmental impact assessment</em> (EIA).
+  </div>
+
+  <p>An EIA evaluates the likely environmental, social and economic consequences of a proposed project <em>before</em> it is approved. Most countries legally require EIAs for major development projects.</p>
+
+  <h3>Stages of an EIA</h3>
+  <div class="flow">
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">1. Screening<br><small>Is an EIA needed?</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">2. Scoping<br><small>What impacts matter?</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">3. Baseline<br><small>Current conditions</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">4. Prediction<br><small>Impact assessment</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">5. Mitigation<br><small>Reduce impacts</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">6. Monitoring<br><small>Post-approval</small></div>
+  </div>
+
+  <div class="case">
+    <strong>🏗 Case Study — EU EIA Directive</strong>
+    The European Union requires EIAs for projects likely to have significant environmental effects (roads, dams, power plants, waste facilities). The 2014 revision strengthened requirements for climate impact assessment and public participation.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 16 — HL 7.1.15                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-16">
+  <div class="section-tag hl">7.1.15 — HL Extension</div>
+  <h2>EIAs Consider Three Dimensions <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    EIAs consider the <em>environmental, social and economic</em> impacts of any proposed project.
+  </div>
+
+  <img src="/images/ess_sustainability_pillars_1784738293366.jpg" alt="Pillars of Sustainability" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+
+  <table class="tbl">
+    <tr><th>Dimension</th><th>What the EIA Assesses</th><th>Example Consideration</th></tr>
+    <tr><td><strong>Environmental</strong></td><td>Ecosystems, biodiversity, water, air, soil, climate</td><td>Will the project destroy wetland habitat? How much CO₂ will it emit?</td></tr>
+    <tr><td><strong>Social</strong></td><td>Community impacts, health, displacement, cultural sites</td><td>Will communities be displaced? Are there archaeological sites?</td></tr>
+    <tr><td><strong>Economic</strong></td><td>Costs, benefits, jobs, long-term viability</td><td>Will the project create sufficient employment to offset environmental costs?</td></tr>
+  </table>
+
+  <h3>Standards Vary Between Countries</h3>
+  <p>EIA requirements differ significantly based on governance capacity, wealth and regulatory frameworks. This is an <strong>environmental justice issue</strong> — communities in countries with weak governance may receive less protection.</p>
+
+  <div class="case">
+    <strong>⚖️ Comparison — Germany vs Kenya</strong>
+    Germany's EIA process is rigorous: detailed modelling, public hearings, independent review, long-term monitoring. In rural Kenya, EIAs for agricultural projects may focus on basic impacts with limited post-approval monitoring — due to resource constraints. The outcome: the same type of project receives very different environmental scrutiny.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 17 — HL 7.1.16                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-17">
+  <div class="section-tag hl">7.1.16 — HL Extension</div>
+  <h2>Public Participation in EIAs <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    Making EIAs <em>public</em> allows local citizens to have a role as <em>stakeholders</em> in decision-making.
+  </div>
+
+  <p>Public participation ensures that affected communities can provide input, raise concerns, and influence project design. This connects to environmental justice and the rights of marginalised groups, including indigenous communities.</p>
+
+  <h3>Levels of Participation</h3>
+  <div class="flow">
+    <div class="flow-box" style="background:var(--red-light);border-color:#E8B4B0;">Tokenistic<br><small>Information only</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--orange-light);border-color:#F5C4A8;">Consultation<br><small>Feedback sought</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--green-light);border-color:#A8D8B9;">Collaboration<br><small>Co-design</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--blue-light);border-color:#B8DCF2;">Empowerment<br><small>Decision authority</small></div>
+  </div>
+
+  <div class="tip">
+    <strong>⚠ Exam Hint</strong> Distinguish between <em>genuine</em> and <em>tokenistic</em> consultation. Tokenistic participation means "we told you what we're going to do"; genuine participation means "your input changed the outcome."
+  </div>
+
+  <div class="case">
+    <strong>🌳 Case Study — Pipeline Protests (Standing Rock, 2016)</strong>
+    The Dakota Access Pipeline EIA was criticised for inadequate consultation with the Standing Rock Sioux Tribe. Community opposition highlighted how marginalised groups can be excluded from decision-making — even when EIAs are technically conducted.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 18 — HL 7.1.17                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-18">
+  <div class="section-tag hl">7.1.17 — HL Extension</div>
+  <h2>Unsustainable Extraction of Renewable Resources <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    While a given resource may be <em>renewable</em>, the associated means of extracting, harvesting, transporting and processing it may be <em>unsustainable</em>.
+  </div>
+
+  <p>A resource can be renewable in theory, but the methods used to obtain it may cause environmental damage that undermines its renewability.</p>
+
+  <table class="tbl">
+    <tr><th>Renewable Resource</th><th>Unsustainable Practice</th><th>Environmental Impact</th></tr>
+    <tr><td><strong>Timber</strong></td><td>Clear-cutting tropical rainforest</td><td>Biodiversity loss, soil erosion, carbon release, habitat destruction</td></tr>
+    <tr><td><strong>Fish</strong></td><td>Bottom trawling, dynamite fishing</td><td>Destruction of seabed habitats, coral reef damage, bycatch</td></tr>
+    <tr><td><strong>Water</strong></td><td>Over-pumping from aquifers</td><td>Land subsidence, saltwater intrusion, ecosystem collapse</td></tr>
+    <tr><td><strong>Biofuels</strong></td><td>Deforestation for palm oil plantations</td><td>Peatland destruction, massive CO₂ emissions, orangutan habitat loss</td></tr>
+  </table>
+
+  <div class="eq">Renewable resource ≠ Sustainable practice</div>
+
+  <div class="case">
+    <strong>🌴 Case Study — Palm Oil in Borneo</strong>
+    Palm oil is a renewable crop, but its expansion has driven massive deforestation in Borneo. Peatland draining releases vast amounts of CO₂, and the loss of rainforest has pushed orangutans to the brink of extinction. The resource is renewable; the extraction method is not.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 19 — HL 7.1.18                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-19">
+  <div class="section-tag hl">7.1.18 — HL Extension</div>
+  <h2>Economic Interests vs Long-Term Sustainability <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    Economic interests often favour <em>short-term</em> responses in production and consumption which undermine <em>long-term sustainability</em>.
+  </div>
+
+  <p>Markets reward short-term profit. Political cycles run 4–5 years. Ecosystems operate on decades to centuries. This mismatch creates powerful incentives for overexploitation.</p>
+
+  <table class="tbl">
+    <tr><th>Timeframe Mismatch</th><th>Consequence</th></tr>
+    <tr><td>Quarterly profit reports</td><td>Pressure to maximise immediate extraction</td></tr>
+    <tr><td>Political election cycles (4–5 years)</td><td>Politicians discount long-term environmental costs</td></tr>
+    <tr><td>Ecosystem recovery (decades–centuries)</td><td>Damage done now won't be apparent for generations</td></tr>
+  </table>
+
+  <h3>The Economics of Overexploitation</h3>
+  <ul class="bullets">
+    <li><strong>Discount rates</strong> — future benefits are valued less than present benefits in economic models</li>
+    <li><strong>Externalities</strong> — environmental costs (pollution, habitat loss) are often not included in market prices</li>
+    <li><strong>Subsidies</strong> — governments may subsidise fossil fuel extraction, making unsustainable practices artificially profitable</li>
+    <li><strong>Tragedy of the commons</strong> — shared resources are exploited because the profit is private but the cost is shared</li>
+  </ul>
+
+  <div class="case">
+    <strong>🏭 Case Study — Global Fishing Subsidies</strong>
+    The UN estimates that $35 billion/year in fishing subsidies (fuel, vessel construction) make industrial fishing profitable in areas where it would otherwise be uneconomic. This directly drives overfishing — short-term economic incentives destroying long-term resource viability.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 20 — HL 7.1.19                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-20">
+  <div class="section-tag hl">7.1.19 — HL Extension</div>
+  <h2>Resource Insecurity &amp; Geopolitical Tension <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    Natural resource insecurity hinders socio-economic development and can lead to <em>environmental degradation</em> and <em>geopolitical tensions and conflicts</em>.
+  </div>
+
+  <p>When resources become scarce, competition intensifies — between communities, regions, and nations. Resource insecurity amplifies existing inequalities and can trigger conflict.</p>
+
+  <div class="flow">
+    <div class="flow-box" style="background:var(--red-light);border-color:#E8B4B0;">Resource Scarcity</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--orange-light);border-color:#F5C4A8;">Economic Pressure</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--red-light);border-color:#E8B4B0;">Social Unrest</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:#F8D7DA;border-color:#E0A0A0;">Geopolitical Conflict</div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Resource</th><th>Region</th><th>Tension / Conflict</th></tr>
+    <tr><td><strong>Oil</strong></td><td>Middle East</td><td>Gulf Wars, OPEC geopolitics, Iran–US tensions</td></tr>
+    <tr><td><strong>Water</strong></td><td>Nile Basin</td><td>Ethiopia–Egypt–Sudan dispute over Grand Ethiopian Renaissance Dam</td></tr>
+    <tr><td><strong>Cobalt</strong></td><td>DR Congo</td><td>"Blood cobalt" — child labour, environmental destruction for electronics supply chain</td></tr>
+    <tr><td><strong>Fish</strong></td><td>South China Sea</td><td>Territorial disputes partly driven by fishing rights and seabed resources</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>💧 Case Study — The Nile Water Dispute</strong>
+    Egypt depends on the Nile for 97% of its freshwater. Ethiopia's GERD dam will reduce downstream flow. Negotiations have been ongoing since 2011, with Egypt threatening military action. This illustrates how water insecurity can escalate to geopolitical crisis.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 21 — KEY TERMS GLOSSARY              -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-21">
+  <div class="section-tag">Key Terms</div>
+  <h2>Glossary — Essential Vocabulary</h2>
+
+  <table class="tbl">
+    <tr><th style="width:30%;">Term</th><th>Definition</th></tr>
+    <tr><td><strong>Natural resources</strong></td><td>Raw materials and sources of energy used and consumed by society</td></tr>
+    <tr><td><strong>Natural capital</strong></td><td>The stock of natural resources available on Earth</td></tr>
+    <tr><td><strong>Natural income</strong></td><td>The annual flow of goods and services produced by natural capital</td></tr>
+    <tr><td><strong>Ecosystem services</strong></td><td>Benefits provided by functioning ecosystems that support human life</td></tr>
+    <tr><td><strong>Renewable resource</strong></td><td>A resource that can regenerate at a rate ≥ rate of use</td></tr>
+    <tr><td><strong>Non-renewable resource</strong></td><td>A fixed stock that cannot be replenished on a humanly meaningful timeframe</td></tr>
+    <tr><td><strong>Replenishable resource</strong></td><td>A resource intermediate between renewable and non-renewable (e.g. groundwater, soil)</td></tr>
+    <tr><td><strong>Maximum Sustainable Yield (MSY)</strong></td><td>The largest harvest that can be taken from a population indefinitely without depleting it</td></tr>
+    <tr><td><strong>Resource security</strong></td><td>Ensuring long-term availability of sufficient natural resources to meet demand</td></tr>
+    <tr><td><strong>Tragedy of the commons</strong></td><td>Overexploitation of a shared resource by individuals acting in self-interest</td></tr>
+    <tr><td><strong>Environmental Impact Assessment (EIA)</strong></td><td>A process evaluating the environmental, social and economic consequences of a proposed project</td></tr>
+    <tr><td><strong>Overexploitation</strong></td><td>Extraction or consumption of a resource beyond its regeneration rate</td></tr>
+    <tr><td><strong>Intrinsic value</strong></td><td>The inherent worth of something independent of its utility to humans</td></tr>
+    <tr><td><strong>Anthropocentric</strong></td><td>A human-centred perspective; nature valued primarily for human use</td></tr>
+    <tr><td><strong>Ecocentric</strong></td><td>An ecosystem-centred perspective; nature valued for its own sake</td></tr>
+    <tr><td><strong>Externalities</strong></td><td>Costs or benefits of an activity not reflected in market prices</td></tr>
+    <tr><td><strong>Carbon sequestration</strong></td><td>The process of capturing and storing atmospheric CO₂ in biomass or soils</td></tr>
+    <tr><td><strong>Geopolitical tension</strong></td><td>Political conflict arising from competition over natural resources between nations</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 22 — EXAM TIPS                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-22">
+  <div class="section-tag" style="background:var(--orange-light);color:var(--orange);">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+
+  <div class="tip">
+    <strong>📝 Paper 1 — Case Study Skills</strong>
+    <ul class="bullets" style="margin-top:0.4rem;">
+      <li>Identify which <strong>type</strong> of natural capital is being discussed (renewable, non-renewable, replenishable)</li>
+      <li>Classify the <strong>value(s)</strong> of the natural capital involved (economic, environmental, cultural, intrinsic…)</li>
+      <li>Use specific <strong>data</strong> from the case study — don't rely on general knowledge alone</li>
+      <li>Evaluate from <strong>multiple perspectives</strong> (anthropocentric vs ecocentric)</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <strong>📝 Paper 2 — Structured Essay Tips</strong>
+    <ul class="bullets" style="margin-top:0.4rem;">
+      <li><strong>Define key terms</strong> early in your response — "Natural capital refers to the stock of natural resources…"</li>
+      <li><strong>Use named examples</strong> — specific case studies score higher than generic references</li>
+      <li><strong>Discuss factors</strong> — always consider at least two influencing factors (economic + environmental, political + cultural)</li>
+      <li><strong>Evaluate</strong> — present both sides; use "on the other hand" and "however"</li>
+      <li><strong>HL students:</strong> reference EIA stages, management strategies, and the short-term vs long-term economic tension</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Common Exam Patterns</h3>
+    <table class="tbl">
+      <tr><th>Pattern</th><th>Key Skill</th></tr>
+      <tr><td>Classify resources</td><td>Renewable / non-renewable / replenishable — with justification</td></tr>
+      <tr><td>Identify ecosystem services</td><td>Provisioning, regulating, cultural, supporting — with examples</td></tr>
+      <tr><td>Evaluate resource use</td><td>Consider multiple values and perspectives</td></tr>
+      <tr><td>Discuss sustainability</td><td>MSY, management strategies, trade-offs</td></tr>
+      <tr><td>HL: EIA analysis</td><td>Stages, stakeholder participation, three dimensions</td></tr>
+      <tr><td>HL: Geopolitical tension</td><td>Link resource scarcity to economic and political consequences</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 23 — COMPLETION                      -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-23">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>You've Covered All 19 Syllabus Points</h1>
+    <div class="point-count">19</div>
+    <div class="point-label">Understanding points completed</div>
+    <p style="margin-top:1.5rem;font-size:0.95rem;color:var(--gray-600);">
+      <strong>7.1.1 – 7.1.11</strong> (SL) + <strong>7.1.12 – 7.1.19</strong> (HL)
+    </p>
+    <p style="font-size:0.85rem;color:var(--gray-400);margin-top:2rem;">
+      IB ESS 7.1 — Natural Resources: Uses &amp; Management<br>
+      New Syllabus · First Assessment 2026
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- NAVIGATION BAR                             -->
+<!-- ═══════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <button class="nav-btn" id="prevBtn" onclick="goTo(currentSlide - 1)">← Prev</button>
+  <div style="display:flex;align-items:center;gap:0.3rem;">
+    <div class="nav-dots" id="navDots"></div>
+    <span class="nav-counter" id="navCounter"></span>
+  </div>
+  <button class="nav-btn" id="nextBtn" onclick="goTo(currentSlide + 1)">Next →</button>
+</nav>
+
+<script>
+  // ── Slide Engine ──
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  let currentSlide = 0;
+
+  // HL slide indices (0-based): slides 13–20 are HL (7.1.12–7.1.19)
+  const hlSlides = new Set([13, 14, 15, 16, 17, 18, 19, 20]);
+
+  function goTo(n) {
+    if (n < 0 || n >= totalSlides) return;
+    slides[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    updateNav();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateNav() {
+    document.getElementById('prevBtn').disabled = currentSlide === 0;
+    document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+    document.getElementById('navCounter').textContent = (currentSlide + 1) + ' / ' + totalSlides;
+    document.getElementById('progressBar').style.width = ((currentSlide / (totalSlides - 1)) * 100) + '%';
+
+    const dots = document.querySelectorAll('.nav-dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  // ── Build Dots ──
+  const dotsContainer = document.getElementById('navDots');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot' + (hlSlides.has(i) ? ' hl-dot' : '');
+    dot.title = 'Slide ' + (i + 1);
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  // ── Keyboard Navigation ──
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      goTo(currentSlide + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      goTo(currentSlide - 1);
+    }
+  });
+
+  // ── Touch Swipe ──
+  let touchStartX = 0;
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  document.addEventListener('touchend', function(e) {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 60) {
+      if (diff > 0) goTo(currentSlide + 1);
+      else goTo(currentSlide - 1);
+    }
+  }, { passive: true });
+
+  // ── Init ──
+  updateNav();
+</script>
+
+</body>
+</html>
