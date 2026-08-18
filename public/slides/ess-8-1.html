@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB ESS 8.1 — Human Populations Dynamics</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
+  .section-tag.hl{background:var(--hl-light);color:var(--hl)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue-dark);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .hl-accent{border-left:4px solid var(--hl);padding-left:1.2rem}.hl-accent .kt{border-left-color:var(--hl)}.hl-accent .kt strong{color:var(--hl)}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .eq{background:var(--blue-light);border:1px solid #B8DCF2;border-radius:8px;padding:.9rem 1.2rem;margin:1rem 0;font-size:1.05rem;font-weight:500;text-align:center;color:var(--blue-dark);letter-spacing:.02em}
+  .eq-dark{background:var(--gray-800);color:#fff;border:none;font-family:'Sora',monospace;letter-spacing:.5px}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .warn{background:var(--red-light);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.warn strong{color:var(--red)}
+  .flow{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin:1rem 0;font-size:.85rem}.flow-box{background:var(--blue-light);border:1px solid #B8DCF2;border-radius:8px;padding:.5rem .8rem;font-weight:500;text-align:center;white-space:nowrap}.flow-arrow{color:var(--blue);font-weight:700;font-size:1.1rem}
+  .slide-img{width:100%;border-radius:10px;margin:1rem 0;box-shadow:0 2px 8px rgba(0,0,0,.1);object-fit:cover}
+  .img-caption{font-size:.78rem;color:var(--gray-400);text-align:center;margin-top:-.5rem;margin-bottom:.8rem;font-style:italic}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--blue);width:20px;border-radius:4px}.nav-dot.hl-dot{background:var(--hl-border)}.nav-dot.hl-dot.active{background:var(--hl)}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  .reflect{background:var(--yellow-light);border:1px solid #F0D89E;border-radius:10px;padding:1rem 1.2rem;margin:1.2rem 0;font-size:.9rem}.reflect strong{color:#B8860B}
+  .calc-box{background:var(--blue-light);border:1px solid #B8DCF2;border-radius:10px;padding:1rem 1.2rem;margin:1rem 0;font-family:'Sora',monospace;font-size:.9rem;line-height:1.8}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80" alt="Diverse group of people" class="cover-img">
+    <div class="section-tag">IB DP Environmental Systems & Societies</div>
+    <h1>8.1 — Human Populations Dynamics</h1>
+    <p class="subtitle">Subtopic 8.1 · New Syllabus (First Assessment 2026)<br>Standard Level + Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">SL Syllabus Points</div></div>
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">HL Extensions</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Total Understandings</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — OVERVIEW -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p>This subtopic examines how human populations grow, change and are measured. Students explore birth and death rates, population models, policy interventions, age–sex pyramids, and the demographic transition model.</p>
+  <h3>Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How can the dynamics of human populations be measured and compared?</li>
+    <li>To what extent can the future growth of the human population be accurately predicted?</li>
+  </ul>
+  <div class="card">
+    <strong style="color:var(--blue)">A. Population Inputs &amp; Outputs</strong>
+    <p style="margin:.3rem 0 .6rem;font-size:.85rem;">Births, deaths, immigration, emigration; CBR, CDR, TFR, NIR, doubling time</p>
+    <strong style="color:var(--green)">B. Growth Models &amp; Policies</strong>
+    <p style="margin:.3rem 0 .6rem;font-size:.85rem;">Population growth curves; UN projections; anti-natalist, pro-natalist, and indirect management</p>
+    <strong style="color:var(--orange)">C. Demographic Analysis</strong>
+    <p style="margin:.3rem 0 .6rem;font-size:.85rem;">Age–sex pyramids; DTM; dependency ratio; population momentum</p>
+    <strong style="color:var(--hl)">D. HL Extensions</strong>
+    <p style="margin:.3rem 0 0;font-size:.85rem;">Population stress on Earth's systems; dependency ratio &amp; momentum deep-dive</p>
+  </div>
+  <p style="font-size:.82rem;color:var(--gray-400);margin-top:1rem;">⏱ Time allocation: minimum 2 hours for this subtopic.</p>
+</div>
+
+<!-- SLIDE 2 — 8.1.1 -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">8.1.1 — Population Inputs</div>
+  <h2>Births &amp; Immigration Are Inputs</h2>
+  <div class="kt"><strong>Key Understanding</strong>Births and immigration are <em>inputs</em> to a human population.</div>
+  <p>Human populations can be modelled as a <strong>stock</strong> (storage) that changes over time through <strong>inputs</strong> (births, immigration) and <strong>outputs</strong> (deaths, emigration). This systems approach helps us understand why populations grow or shrink.</p>
+  <h3>Key Measures</h3>
+  <table class="tbl">
+    <tr><th>Measure</th><th>Definition</th><th>Formula</th></tr>
+    <tr><td><strong>Crude Birth Rate (CBR)</strong></td><td>Live births per 1,000 people per year</td><td>(Births ÷ Total Population) × 1,000</td></tr>
+    <tr><td><strong>Total Fertility Rate (TFR)</strong></td><td>Average births per woman of childbearing age (15–49)</td><td>Sum of age-specific birth rates</td></tr>
+    <tr><td><strong>General Fertility Rate (GFR)</strong></td><td>Births per 1,000 women aged 15–49</td><td>(Births ÷ Women 15–49) × 1,000</td></tr>
+  </table>
+  <div class="calc-box">
+    <strong>Example:</strong> Country X has 250,000 births and a population of 10,000,000<br>
+    CBR = (250,000 ÷ 10,000,000) × 1,000 = <strong>25 per 1,000</strong>
+  </div>
+  <h3>Why CBR Varies Between Countries</h3>
+  <ul class="bullets">
+    <li><strong>Fertility rates:</strong> Cultural norms, access to family planning, desired family size</li>
+    <li><strong>Age structure:</strong> Younger populations have more women of childbearing age</li>
+    <li><strong>Socioeconomic factors:</strong> Education, employment, urbanisation all influence birth rates</li>
+    <li><strong>Healthcare:</strong> Access to contraception directly affects fertility</li>
+  </ul>
+  <div class="case"><strong>📊 Example</strong>Niger has a CBR of ~47 per 1,000 (high fertility, young population). Japan has a CBR of ~7 per 1,000 (low fertility, aging population). The difference is driven by education, healthcare access, cultural norms, and economic development.</div>
+</div>
+
+<!-- SLIDE 3 — 8.1.2 -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">8.1.2 — Population Outputs</div>
+  <h2>Deaths &amp; Emigration Are Outputs</h2>
+  <div class="kt"><strong>Key Understanding</strong>Deaths and emigration are <em>outputs</em> from a human population.</div>
+  <h3>Key Measures</h3>
+  <table class="tbl">
+    <tr><th>Measure</th><th>Definition</th><th>Formula</th></tr>
+    <tr><td><strong>Crude Death Rate (CDR)</strong></td><td>Deaths per 1,000 people per year</td><td>(Deaths ÷ Total Population) × 1,000</td></tr>
+    <tr><td><strong>Infant Mortality Rate (IMR)</strong></td><td>Deaths of children under 1 per 1,000 live births</td><td>(Deaths under 1 ÷ Live Births) × 1,000</td></tr>
+    <tr><td><strong>Life Expectancy</strong></td><td>Average years a newborn is expected to live</td><td>Calculated from current mortality rates</td></tr>
+  </table>
+  <div class="calc-box">
+    <strong>Example:</strong> Country Y has 80,000 deaths and a population of 5,000,000<br>
+    CDR = (80,000 ÷ 5,000,000) × 1,000 = <strong>16 per 1,000</strong>
+  </div>
+  <div class="warn"><strong>⚠ CDR Pitfall</strong>CDR is a poor standalone indicator. Countries with many elderly people (e.g. Denmark, CDR ~11) appear to have higher death rates than countries with young populations (e.g. Mexico, CDR ~5) — even though Denmark has far better healthcare. Always consider <strong>age structure</strong> when interpreting CDR.</div>
+  <h3>Why CDR Varies Between Countries</h3>
+  <ul class="bullets">
+    <li><strong>Healthcare quality:</strong> Access to medicines, hospitals, vaccinations</li>
+    <li><strong>Disease burden:</strong> Malaria, HIV/AIDS, tuberculosis in LICs</li>
+    <li><strong>Age distribution:</strong> Older populations have naturally higher CDRs</li>
+    <li><strong>Living conditions:</strong> Nutrition, sanitation, clean water access</li>
+    <li><strong>Conflict &amp; disasters:</strong> Wars and natural disasters spike death rates</li>
+  </ul>
+  <h3>Emigration</h3>
+  <p>People leave countries due to economic hardship, political instability, environmental degradation, or conflict. High emigration rates can indicate push factors (war, poverty) or pull factors (jobs, safety elsewhere).</p>
+</div>
+
+<!-- SLIDE 4 — 8.1.3 -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">8.1.3 — Quantifying Dynamics</div>
+  <h2>Key Population Calculations</h2>
+  <div class="kt"><strong>Key Understanding</strong>Population dynamics can be quantified and analysed by calculating <em>total fertility rate, life expectancy, doubling time</em> and <em>natural increase</em>.</div>
+  <h3>Four Essential Calculations</h3>
+  <table class="tbl">
+    <tr><th>Metric</th><th>Definition</th><th>Formula</th></tr>
+    <tr><td><strong>Total Fertility Rate (TFR)</strong></td><td>Average births per woman (15–49)</td><td>Sum of age-specific birth rates</td></tr>
+    <tr><td><strong>Natural Increase Rate (NIR)</strong></td><td>Population growth from births minus deaths (excludes migration)</td><td>NIR = CBR − CDR (per 1,000) or NIR% = (CBR − CDR) ÷ 10</td></tr>
+    <tr><td><strong>Doubling Time (DT)</strong></td><td>Years for population to double at current growth rate</td><td>DT = 70 ÷ Growth Rate (%)</td></tr>
+    <tr><td><strong>Life Expectancy</strong></td><td>Average years a newborn is expected to live</td><td>Calculated from current mortality data</td></tr>
+  </table>
+  <div class="eq">Replacement Level TFR ≈ 2.1 — the rate at which a population replaces itself without migration</div>
+  <div class="calc-box">
+    <strong>Worked Example:</strong><br>
+    CBR = 25 per 1,000 · CDR = 10 per 1,000<br><br>
+    <strong>NIR</strong> = 25 − 10 = <strong>15 per 1,000 = 1.5% per year</strong><br>
+    <strong>Doubling Time</strong> = 70 ÷ 1.5 = <strong>~47 years</strong><br><br>
+    → This population doubles in roughly 47 years at current rates.
+  </div>
+  <h3>Why These Metrics Vary</h3>
+  <div class="compare-grid">
+    <div class="compare-card"><h4 style="color:var(--blue)">High TFR Countries</h4><ul><li>Limited education for women</li><li>High infant mortality (need replacements)</li><li>Agricultural economies (children = labour)</li><li>Weak family planning access</li></ul></div>
+    <div class="compare-card"><h4 style="color:var(--green)">Low TFR Countries</h4><ul><li>High education levels</li><li>Low infant mortality</li><li>Urban economies (children = cost)</li><li>Universal family planning access</li></ul></div>
+  </div>
+  <div class="tip"><strong>📝 Exam Hint</strong> Exam questions often ask you to <em>calculate</em> NIR and doubling time from given data. Practice: NIR% = (CBR − CDR) ÷ 10, DT = 70 ÷ Growth Rate%. Always show your working.</div>
+</div>
+
+<!-- SLIDE 5 — 8.1.4 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">8.1.4 — Population Growth Curve</div>
+  <h2>The Global Population Explosion</h2>
+  <div class="kt"><strong>Key Understanding</strong>The global human population has followed a <em>rapid growth curve</em>. Models are used to predict the growth of the future global human population.</div>
+  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=80" alt="Earth from space showing population density" class="slide-img" style="height:250px;">
+  <p class="img-caption">8 billion people and counting — the growth curve keeps climbing</p>
+  <h3>Historical Growth</h3>
+  <ul class="bullets">
+    <li>For thousands of years: ~0.04% annual growth (stable)</li>
+    <li>~1800 (Industrial Revolution): growth rate began climbing</li>
+    <li>1950: ~2.5 billion · 1999: ~6 billion · 2022: ~8 billion</li>
+    <li>Current growth rate: ~0.8–1% per year (slowing but still adding ~70M people/year)</li>
+  </ul>
+  <h3>UN Projection Models</h3>
+  <p>Because future fertility rates are uncertain, the UN uses three scenarios:</p>
+  <table class="tbl">
+    <tr><th>Scenario</th><th>Assumption</th><th>2100 Projection</th><th>Implications</th></tr>
+    <tr><td><strong>High</strong></td><td>Fertility stays high or declines slowly</td><td>~15+ billion</td><td>Severe resource pressure, food insecurity, climate stress</td></tr>
+    <tr><td><strong>Medium</strong> (most likely)</td><td>Fertility declines at current trend</td><td>~10.4 billion</td><td>Manageable with policy intervention</td></tr>
+    <tr><td><strong>Low</strong></td><td>Fertility drops below replacement level widely</td><td>~7 billion</td><td>Aging populations, labour shortages, economic stagnation</td></tr>
+  </table>
+  <div class="case"><strong>📊 Case Study — India vs Nigeria</strong>India overtook China as the world's most populous country in 2023 (~1.44B). Nigeria is projected to become the 3rd most populous by 2050 (~375M → ~546M). The difference: India's TFR has dropped to ~2.0 (below replacement), while Nigeria's remains ~5.1.</div>
+  <div class="reflect"><strong>🤔 Think About It</strong> If the medium scenario plays out, the global population peaks at ~10.4 billion around 2080 and then slowly declines. What does this mean for food systems, climate policy, and economic growth?</div>
+</div>
+
+<!-- SLIDE 6 — 8.1.5 -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">8.1.5 — Population Policies</div>
+  <h2>Direct Population Management</h2>
+  <div class="kt"><strong>Key Understanding</strong>Population and migration policies can be employed to <em>directly manage</em> growth rates of human populations.</div>
+  <h3>Anti-Natalist Policies (Reduce Births)</h3>
+  <table class="tbl">
+    <tr><th>Tool</th><th>Mechanism</th><th>Example</th></tr>
+    <tr><td>Legal restrictions</td><td>Limits on children per family</td><td>China's One-Child Policy (1979–2015)</td></tr>
+    <tr><td>Economic disincentives</td><td>Higher taxes, reduced benefits for large families</td><td>Singapore's baby bonus (reduced for 3rd+ child)</td></tr>
+    <tr><td>Contraception access</td><td>Free/subsidised family planning</td><td>Iran's family planning programme (1989)</td></tr>
+    <tr><td>Education campaigns</td><td>Promoting smaller families</td><td>India's "Hum Do Hamare Do" (We Two, Our Two)</td></tr>
+  </table>
+  <div class="case"><strong>🇨🇳 Case Study — China's One-Child Policy</strong>Introduced 1979, relaxed to two-child in 2016, three-child in 2021. Successfully slowed growth (~400M births prevented by some estimates) but created side effects: aging population, gender imbalance (117 boys per 100 girls), shrinking workforce, and "4-2-1 problem" (one child supporting two parents and four grandparents).</div>
+  <h3>Pro-Natalist Policies (Increase Births)</h3>
+  <table class="tbl">
+    <tr><th>Tool</th><th>Mechanism</th><th>Example</th></tr>
+    <tr><td>Financial incentives</td><td>Child benefits, tax breaks, baby bonuses</td><td>France's family allocations</td></tr>
+    <tr><td>Parental leave</td><td>Paid maternity/paternity leave</td><td>Sweden's 480 days shared leave</td></tr>
+    <tr><td>Childcare support</td><td>Subsidised or free childcare</td><td>Nordic countries</td></tr>
+    <tr><td>Housing benefits</td><td>Priority/larger housing for families</td><td>Russia's "maternity capital" programme</td></tr>
+  </table>
+  <div class="case"><strong>🇫🇷 Case Study — France</strong>France has one of the highest TFR in Europe (~1.8) thanks to comprehensive pro-natalist policies: generous parental leave, family allowances, tax benefits for 3+ children, and subsidised childcare. These policies have been in place since the post-WWII era.</div>
+  <div class="warn"><strong>⚠ Migration Policies</strong>Points-based immigration systems (e.g. Australia, Canada) are another direct management tool — attracting skilled workers to fill labour gaps and manage population size without affecting birth rates.</div>
+</div>
+
+<!-- SLIDE 7 — 8.1.6 -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">8.1.6 — Indirect Management</div>
+  <h2>Indirect Population Management</h2>
+  <div class="kt"><strong>Key Understanding</strong>Human population growth can also be managed <em>indirectly</em> through economic, social, health, development and other policies that have an impact on births, deaths or migration.</div>
+  <p>Indirect management doesn't target population directly — it changes the conditions that influence reproductive choices.</p>
+  <h3>Key Indirect Levers</h3>
+  <table class="tbl">
+    <tr><th>Policy Area</th><th>Mechanism</th><th>Effect on Population</th><th>Named Example</th></tr>
+    <tr><td><strong>Female education</strong></td><td>Delays marriage, increases career options, improves family planning</td><td>TFR falls significantly</td><td>Bangladesh: girls' education reduced TFR from 6.9 → 2.0 (1970–2020)</td></tr>
+    <tr><td><strong>Economic development</strong></td><td>Reduces need for child labour, increases cost of raising children</td><td>TFR falls as economies grow</td><td>South Korea: rapid industrialisation drove TFR from 6.0 → 0.8</td></tr>
+    <tr><td><strong>Public health</strong></td><td>Lower infant mortality → fewer "replacement" births</td><td>TFR declines over time</td><td>Brazil: Bolsa Família reduced IMR by 17% in 10 years</td></tr>
+    <tr><td><strong>Urbanisation</strong></td><td>Higher living costs, smaller housing, less need for child labour</td><td>TFR declines in urban areas</td><td>Global trend: urban TFR consistently lower than rural</td></tr>
+  </table>
+  <div class="eq">SDG 4 (Education) + SDG 3 (Health) + SDG 5 (Gender Equality) → Indirect population management</div>
+  <div class="case"><strong>🇧🇩 Case Study — Bangladesh</strong>Since the 1990s, Bangladesh invested heavily in female education: free compulsory schooling for girls, financial incentives for families to keep daughters in school. Result: TFR dropped from 6.9 (1970) to 2.0 (2020) — without any coercive anti-natalist policy. Educated women delay marriage, have fewer children, and invest more in each child's health and education.</div>
+  <div class="reflect"><strong>🤔 Think About It</strong> Which is more effective — direct policies (like China's one-child rule) or indirect policies (like Bangladesh's education investment)? What are the ethical trade-offs?</div>
+</div>
+
+<!-- SLIDE 8 — 8.1.7 -->
+<div class="slide" id="slide-8">
+  <div class="section-tag">8.1.7 — Age–Sex Pyramids</div>
+  <h2>Modelling Population Composition</h2>
+  <div class="kt"><strong>Key Understanding</strong>The composition of human populations can be modelled and compared using <em>age–sex pyramids</em>.</div>
+
+  <img src="/images/ess_population_pyramid.jpg" alt="Population Pyramid (Age-Sex Structure)" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+  <h3>How to Read an Age–Sex Pyramid</h3>
+  <table class="tbl">
+    <tr><th>Shape Feature</th><th>What It Tells You</th></tr>
+    <tr><td><strong>Wide base</strong></td><td>High birth rate — youthful, growing population</td></tr>
+    <tr><td><strong>Narrowing base</strong></td><td>Falling birth rate — growth slowing</td></tr>
+    <tr><td><strong>Vertical sides</strong></td><td>Low death rate — most people surviving to old age</td></tr>
+    <tr><td><strong>Concave slopes</strong></td><td>High death rate — rapid attrition in each age group</td></tr>
+    <tr><td><strong>Bulge in middle</strong></td><td>Immigration or in-migration of working-age people</td></tr>
+    <tr><td><strong>Deficit (dent)</strong></td><td>Emigration, war, or epidemic affecting specific ages</td></tr>
+  </table>
+  <h3>Three Classic Shapes</h3>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-color:#E8B4B0;"><h4 style="color:var(--red)">🔴 Expanding (Nigeria)</h4><p>Broad base, narrow top. High birth rate, high death rate. Rapid growth. Challenges: education, employment for youth bulge.</p></div>
+    <div class="compare-card" style="border-color:#B8DCF2;"><h4 style="color:var(--blue)">🔵 Stationary (USA)</h4><p>Roughly equal-width columns. Birth rate ≈ death rate. Stable population. Challenges: maintaining workforce, healthcare costs.</p></div>
+    <div class="compare-card" style="border-color:#C9A0DC;"><h4 style="color:var(--hl)">🟣 Contracting (Japan)</h4><p>Narrow base, wide top. Low birth rate, aging population. Shrinkage. Challenges: pension systems, labour shortages, healthcare burden.</p></div>
+  </div>
+  <div class="case"><strong>🇳🇬 vs 🇯🇵</strong><strong>Nigeria:</strong> ~43% of population under 15. TFR ~5.1. Massive youth bulge — needs schools, jobs, infrastructure.<br><strong>Japan:</strong> ~12% under 15, ~29% over 65. TFR ~1.2. Shrinking workforce — relies on automation and immigration to fill gaps.</div>
+  <div class="tip"><strong>📝 Exam Hint</strong> When given an age–sex pyramid, identify: (1) shape type, (2) birth rate trend (base width), (3) death rate trend (side slope), (4) migration effects (bulges/dents), (5) economic challenges ahead.</div>
+</div>
+
+<!-- SLIDE 9 — 8.1.8 -->
+<div class="slide" id="slide-9">
+  <div class="section-tag">8.1.8 — Demographic Transition Model</div>
+  <h2>The DTM: From High to Low Growth</h2>
+  <div class="kt"><strong>Key Understanding</strong>The <em>demographic transition model (DTM)</em> describes the changing levels of births and deaths in a human population through different stages of development over time.</div>
+
+  <img src="/images/ess_dtm.jpg" alt="Demographic Transition Model (DTM)" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+  <h3>The Four Stages</h3>
+  <table class="tbl">
+    <tr><th>Stage</th><th>CBR</th><th>CDR</th><th>NIR</th><th>Population Trend</th><th>Typical Context</th></tr>
+    <tr><td><strong>1 — High Stationary</strong></td><td>High</td><td>High</td><td>Low</td><td>Stable, low total</td><td>Pre-industrial societies</td></tr>
+    <tr><td><strong>2 — Early Expanding</strong></td><td>High</td><td>Falling</td><td>High</td><td>Rapid growth</td><td>Industrialising / developing</td></tr>
+    <tr><td><strong>3 — Late Expanding</strong></td><td>Falling</td><td>Low</td><td>Declining</td><td>Growth slowing</td><td>Industrialised / urbanised</td></tr>
+    <tr><td><strong>4 — Low Stationary</strong></td><td>Low</td><td>Low</td><td>Low</td><td>Stable or declining</td><td>Post-industrial / MEDC</td></tr>
+  </table>
+  <p style="font-size:.82rem;color:var(--gray-400);">Some models add a Stage 5 (declining) where CDR exceeds CBR — e.g. Japan, Germany, Italy.</p>
+  <h3>What Drives the Transition?</h3>
+  <ul class="bullets">
+    <li><strong>Stage 1→2:</strong> Healthcare improves (vaccines, sanitation) → death rates fall while birth rates stay high</li>
+    <li><strong>Stage 2→3:</strong> Education, urbanisation, women's rights → birth rates begin falling</li>
+    <li><strong>Stage 3→4:</strong> Universal family planning, high living costs, career priorities → birth rates reach replacement level</li>
+  </ul>
+  <div class="case"><strong>🌍 Country Examples on the DTM</strong><strong>Stage 2:</strong> Chad, Niger, Mali (high CBR, falling CDR, rapid growth)<br><strong>Stage 3:</strong> India, Brazil, South Africa (CBR falling, growth slowing)<br><strong>Stage 4:</strong> USA, UK, Australia (low CBR, low CDR, stable)<br><strong>Stage 5:</strong> Japan, Germany, Italy (CBR below CDR, population declining)</div>
+  <div class="reflect"><strong>🤔 Think About It</strong> The DTM assumes all countries follow the same path. But some oil-rich Gulf states (high income, high fertility) don't fit neatly. What are the model's limitations?</div>
+</div>
+
+<!-- SLIDE 10 — HL 8.1.9 -->
+<div class="slide" id="slide-10">
+  <div class="section-tag hl">8.1.9 — HL Extension</div>
+  <h2>Population Stress on Earth's Systems <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding (HL)</strong>Rapid human population growth has increased <em>stress on the Earth's systems</em>.</div>
+  <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=900&q=80" alt="Electronic waste — stress on systems" class="slide-img" style="height:230px;">
+  <p class="img-caption">More people = more demand on finite planetary resources</p>
+  <h3>Stress Areas</h3>
+  <table class="tbl">
+    <tr><th>Earth System</th><th>Population Pressure</th><th>Consequence</th></tr>
+    <tr><td><strong>Biosphere</strong></td><td>Habitat conversion for agriculture/urbanisation</td><td>Biodiversity loss, species extinction</td></tr>
+    <tr><td><strong>Climate</strong></td><td>More energy, transport, agriculture = more GHGs</td><td>Global warming, extreme weather</td></tr>
+    <tr><td><strong>Hydrosphere</strong></td><td>Water demand exceeds recharge in many regions</td><td>Water scarcity, aquifer depletion</td></tr>
+    <tr><td><strong>Geosphere</strong></td><td>Mining, quarrying, soil degradation</td><td>Soil erosion, desertification</td></tr>
+  </table>
+  <h3>The Doughnut Economics Model (Kate Raworth)</h3>
+  <p>A framework for balancing human needs with planetary limits:</p>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-color:#A8D8B9;"><h4 style="color:var(--green)">🎯 Social Foundation (inner ring)</h4><p>Minimum needs for a decent life: food, water, healthcare, education, energy, income, political voice. Falling below = human deprivation.</p></div>
+    <div class="compare-card" style="border-color:#E8B4B0;"><h4 style="color:var(--red)">🌍 Planetary Boundaries (outer ring)</h4><p>Ecological ceiling: climate change, biodiversity loss, land use, freshwater use, pollution. Exceeding = environmental degradation.</p></div>
+  </div>
+  <div class="eq">The goal: live within the doughnut — above the social foundation, below the ecological ceiling</div>
+  <div class="warn"><strong>⚠ Biocapacity Disparity</strong>High-income countries consume far more than their fair share of biocapacity. If everyone lived like the average American, we'd need ~5 Earths. The population-environment relationship is not just about <em>how many</em> people, but <em>how much</em> each person consumes.</div>
+</div>
+
+<!-- SLIDE 11 — HL 8.1.10 -->
+<div class="slide" id="slide-11">
+  <div class="section-tag hl">8.1.10 — HL Extension</div>
+  <h2>Dependency Ratio &amp; Population Momentum <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent"><strong>Key Understanding (HL)</strong>Age–sex pyramids can be used to determine the <em>dependency ratio</em> and <em>population momentum</em>.</div>
+  <h3>Dependency Ratio</h3>
+  <div class="calc-box">
+    <strong>Formula:</strong><br>
+    Dependency Ratio = ((Pop 0–14) + (Pop 65+)) ÷ (Pop 15–64) × 100<br><br>
+    <strong>Example:</strong> Country with 30M children, 10M elderly, 60M working-age<br>
+    DR = (30 + 10) ÷ 60 × 100 = <strong>66.7</strong> — every 100 workers support ~67 dependents
+  </div>
+  <table class="tbl">
+    <tr><th>Dependency Type</th><th>Population Structure</th><th>Economic Challenge</th></tr>
+    <tr><td><strong>Youth dependency</strong></td><td>Broad base — many children (0–14)</td><td>Schools, childcare, youth employment</td></tr>
+    <tr><td><strong>Elderly dependency</strong></td><td>Wide top — many retirees (65+)</td><td>Pensions, healthcare, shrinking workforce</td></tr>
+  </table>
+  <h3>Population Momentum</h3>
+  <p>Even if fertility rates drop to replacement level (TFR ≈ 2.1), populations can continue growing for decades because a large proportion of young people are entering their reproductive years.</p>
+  <div class="eq">Population Momentum = large young cohort → more potential parents → continued growth even at lower TFR</div>
+  <div class="case"><strong>🇮🇳 Case Study — India's Momentum</strong>India's TFR has dropped to ~2.0 (below replacement), but the population will keep growing for ~30 more years because ~25% of Indians are under 15. These young people will enter reproductive age, sustaining growth even though each woman has fewer children on average.</div>
+  <div class="tip"><strong>📝 Exam Hint</strong> Population momentum explains why "just stop having babies" doesn't instantly stabilise populations. The age structure itself drives growth for a generation after fertility declines. This is a classic exam concept — always link it to the pyramid shape.</div>
+</div>
+
+<!-- SLIDE 12 — KEY TERMS -->
+<div class="slide" id="slide-12">
+  <div class="section-tag">Key Terms</div>
+  <h2>Glossary — Essential Vocabulary</h2>
+  <table class="tbl">
+    <tr><th style="width:30%">Term</th><th>Definition</th></tr>
+    <tr><td><strong>Crude Birth Rate (CBR)</strong></td><td>Number of live births per 1,000 people per year</td></tr>
+    <tr><td><strong>Crude Death Rate (CDR)</strong></td><td>Number of deaths per 1,000 people per year</td></tr>
+    <tr><td><strong>Total Fertility Rate (TFR)</strong></td><td>Average number of births per woman of childbearing age (15–49)</td></tr>
+    <tr><td><strong>Natural Increase Rate (NIR)</strong></td><td>CBR minus CDR — population growth from births and deaths only (excludes migration)</td></tr>
+    <tr><td><strong>Doubling Time (DT)</strong></td><td>Number of years for a population to double, calculated as 70 ÷ growth rate (%)</td></tr>
+    <tr><td><strong>Replacement Level TFR</strong></td><td>TFR of ~2.1 — the rate at which a population replaces itself without migration</td></tr>
+    <tr><td><strong>Infant Mortality Rate (IMR)</strong></td><td>Deaths of children under 1 year per 1,000 live births</td></tr>
+    <tr><td><strong>Life Expectancy</strong></td><td>Average number of years a newborn is expected to live at current mortality rates</td></tr>
+    <tr><td><strong>Age–Sex Pyramid</strong></td><td>Graphical model showing population composition by age group and sex</td></tr>
+    <tr><td><strong>Demographic Transition Model (DTM)</strong></td><td>Model describing how birth and death rates change as a country develops through stages</td></tr>
+    <tr><td><strong>Dependency Ratio</strong></td><td>Ratio of dependents (under 15 + over 65) to working-age population (15–64)</td></tr>
+    <tr><td><strong>Population Momentum</strong></td><td>Continued population growth even after fertility declines, due to a large young cohort entering reproductive years</td></tr>
+    <tr><td><strong>Anti-natalist Policy</strong></td><td>Government policy designed to reduce birth rates and slow population growth</td></tr>
+    <tr><td><strong>Pro-natalist Policy</strong></td><td>Government policy designed to increase birth rates and boost population growth</td></tr>
+    <tr><td><strong>Biocapacity</strong></td><td>Earth's ability to regenerate natural resources and absorb waste</td></tr>
+    <tr><td><strong>Planetary Boundaries</strong></td><td>Ecological limits within which humanity can safely operate (Rockström et al.)</td></tr>
+  </table>
+</div>
+
+<!-- SLIDE 13 — EXAM TIPS -->
+<div class="slide" id="slide-13">
+  <div class="section-tag" style="background:var(--orange-light);color:var(--orange)">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  <div class="tip"><strong>📝 Paper 1 — Case Study Skills</strong>
+    <ul class="bullets" style="margin-top:.4rem">
+      <li>Identify the country's <strong>DTM stage</strong> — where is it on the transition?</li>
+      <li>Read the <strong>age–sex pyramid</strong> — expanding, stationary, or contracting?</li>
+      <li>Calculate <strong>NIR and doubling time</strong> from given CBR/CDR data</li>
+      <li>Link to <strong>policy context</strong> — are there anti-natalist or pro-natalist policies?</li>
+    </ul>
+  </div>
+  <div class="tip"><strong>📝 Paper 2 — Structured Essay Tips</strong>
+    <ul class="bullets" style="margin-top:.4rem">
+      <li><strong>Define key terms</strong> — "The CBR is the number of live births per 1,000 people per year…"</li>
+      <li><strong>Use specific data</strong> — "Niger's TFR is 5.1, compared to Japan's 1.2"</li>
+      <li><strong>Compare and contrast</strong> — anti-natalist vs pro-natalist, direct vs indirect management</li>
+      <li><strong>Evaluate with perspectives</strong> — technocentric (policy solutions) vs ecocentric (carrying capacity)</li>
+      <li><strong>HL students:</strong> always consider population momentum and dependency ratios in your analysis</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Common Exam Patterns</h3>
+    <table class="tbl">
+      <tr><th>Pattern</th><th>Key Skill</th></tr>
+      <tr><td>Calculate CBR/CDR/NIR/DT</td><td>Apply formulas to given data; show working</td></tr>
+      <tr><td>Interpret age–sex pyramids</td><td>Identify shape, birth/death trends, migration effects</td></tr>
+      <tr><td>Evaluate population policies</td><td>Anti-natalist vs pro-natalist; ethical trade-offs; success metrics</td></tr>
+      <tr><td>Discuss DTM stages</td><td>Link to healthcare, education, urbanisation, economic development</td></tr>
+      <tr><td>HL: Population momentum</td><td>Explain why growth continues after TFR drops</td></tr>
+      <tr><td>HL: Earth systems stress</td><td>Link population growth to biocapacity, planetary boundaries, doughnut model</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 14 — COMPLETION -->
+<div class="slide" id="slide-14">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>You've Covered All 10 Syllabus Points</h1>
+    <div class="point-count">10</div>
+    <div class="point-label">Understanding points completed</div>
+    <p style="margin-top:1.5rem;font-size:.95rem;color:var(--gray-600)"><strong>8.1.1 – 8.1.8</strong> (SL) + <strong>8.1.9 – 8.1.10</strong> (HL)</p>
+    <p style="font-size:.85rem;color:var(--gray-400);margin-top:2rem">IB ESS 8.1 — Human Populations Dynamics<br>New Syllabus · First Assessment 2026<br><em>Understanding how populations grow is the first step to managing them sustainably.</em></p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <button class="nav-btn" id="prevBtn" onclick="goTo(currentSlide-1)">← Prev</button>
+  <div style="display:flex;align-items:center;gap:.3rem"><div class="nav-dots" id="navDots"></div><span class="nav-counter" id="navCounter"></span></div>
+  <button class="nav-btn" id="nextBtn" onclick="goTo(currentSlide+1)">Next →</button>
+</nav>
+<script>
+const slides=document.querySelectorAll('.slide'),total=slides.length;let cur=0;const hl=new Set([10,11]);
+function goTo(n){if(n<0||n>=total)return;slides[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');upd();window.scrollTo({top:0,behavior:'smooth'})}
+function upd(){document.getElementById('prevBtn').disabled=cur===0;document.getElementById('nextBtn').disabled=cur===total-1;document.getElementById('navCounter').textContent=(cur+1)+' / '+total;document.getElementById('progressBar').style.width=((cur/(total-1))*100)+'%';document.querySelectorAll('.nav-dot').forEach((d,i)=>d.classList.toggle('active',i===cur))}
+const dc=document.getElementById('navDots');for(let i=0;i<total;i++){const d=document.createElement('button');d.className='nav-dot'+(hl.has(i)?' hl-dot':'');d.title='Slide '+(i+1);d.onclick=()=>goTo(i);dc.appendChild(d)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();goTo(cur+1)}else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();goTo(cur-1)}});
+let ts=0;document.addEventListener('touchstart',e=>{ts=e.changedTouches[0].screenX},{passive:true});document.addEventListener('touchend',e=>{const d=ts-e.changedTouches[0].screenX;if(Math.abs(d)>60){d>0?goTo(cur+1):goTo(cur-1)}},{passive:true});
+upd();
+</script>
+</body>
+</html>

@@ -241,9 +241,9 @@ export const COURSES: Course[] = [
         slug: "8-1",
         title: "Topic 8.1",
         subtitle: "Human Population Dynamics",
+        htmlFile: "/slides/ess-8-1.html",
         level: "SL & HL",
         unit: "Unit 8: Human Populations & Urban Systems",
-        status: "coming-soon",
       },
       {
         slug: "8-2",
