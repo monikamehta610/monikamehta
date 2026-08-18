@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB ESS 7.2 — Energy Sources: Uses & Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0A6EBD; --blue-light: #E8F4FD; --blue-dark: #064A7A;
+    --orange: #FF6B35; --orange-light: #FFF3ED;
+    --green: #2E8B57; --green-light: #EAF7F0;
+    --red: #C0392B; --red-light: #FDECEB;
+    --yellow: #F0AD4E; --yellow-light: #FFF9E6;
+    --gray-50: #FAFBFC; --gray-100: #F4F5F7; --gray-200: #E8EAED;
+    --gray-400: #9AA0A6; --gray-600: #5F6368; --gray-800: #202124;
+    --hl-accent: #7B2D8E; --hl-accent-light: #F5EAF8; --hl-accent-border: #C9A0DC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Sora', -apple-system, sans-serif; background: #fff; color: var(--gray-800); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  .slide { display: none; min-height: 100vh; padding: 3rem 2rem 6rem; max-width: 900px; margin: 0 auto; }
+  .slide.active { display: block; }
+
+  h1 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.65rem; font-weight: 600; line-height: 1.3; margin-bottom: 1rem; }
+  h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
+  p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+  strong { font-weight: 600; }
+
+  .section-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 4px; margin-bottom: 0.8rem; background: var(--blue-light); color: var(--blue); }
+  .section-tag.hl { background: var(--hl-accent-light); color: var(--hl-accent); }
+  .hl-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 3px; background: var(--hl-accent); color: #fff; margin-left: 0.5rem; vertical-align: middle; }
+  .hl-accent { border-left: 4px solid var(--hl-accent); padding-left: 1.2rem; }
+
+  .kt { background: var(--gray-100); border-left: 4px solid var(--blue); padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin: 1.2rem 0; font-size: 0.92rem; }
+  .kt strong { color: var(--blue-dark); display: block; margin-bottom: 0.3rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hl-accent .kt { border-left-color: var(--hl-accent); }
+  .hl-accent .kt strong { color: var(--hl-accent); }
+
+  .card { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1rem 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+
+  .eq { background: var(--blue-light); border: 1px solid #B8DCF2; border-radius: 8px; padding: 0.9rem 1.2rem; margin: 1rem 0; font-size: 1.05rem; font-weight: 500; text-align: center; color: var(--blue-dark); letter-spacing: 0.02em; }
+
+  .tbl { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  .tbl th { background: var(--gray-100); font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--gray-200); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gray-600); }
+  .tbl td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+  .tbl tr:last-child td { border-bottom: none; }
+
+  .bullets { list-style: none; padding: 0; margin: 0.8rem 0; }
+  .bullets li { position: relative; padding-left: 1.4rem; margin-bottom: 0.5rem; font-size: 0.92rem; }
+  .bullets li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+  .hl-accent .bullets li::before { background: var(--hl-accent); }
+
+  .tip { background: var(--orange-light); border-left: 4px solid var(--orange); border-radius: 0 8px 8px 0; padding: 0.9rem 1.2rem; margin: 1.2rem 0; font-size: 0.88rem; }
+  .tip strong { color: var(--orange); }
+
+  .case { background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; padding: 0.9rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; }
+  .case strong { color: var(--green); }
+
+  .warn { background: var(--red-light); border-left: 4px solid var(--red); border-radius: 0 8px 8px 0; padding: 0.9rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; }
+  .warn strong { color: var(--red); }
+
+  .flow { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin: 1rem 0; font-size: 0.85rem; }
+  .flow-box { background: var(--blue-light); border: 1px solid #B8DCF2; border-radius: 8px; padding: 0.5rem 0.8rem; font-weight: 500; text-align: center; white-space: nowrap; }
+  .flow-arrow { color: var(--blue); font-weight: 700; font-size: 1.1rem; }
+
+  .energy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.7rem; margin: 1rem 0; }
+  .energy-item { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 0.8rem; font-size: 0.82rem; }
+  .energy-item strong { display: block; margin-bottom: 0.2rem; font-size: 0.85rem; }
+
+  .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: var(--blue); z-index: 1000; transition: width 0.3s ease; }
+
+  .nav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-top: 1px solid var(--gray-200); padding: 0.7rem 1.5rem; display: flex; align-items: center; justify-content: space-between; z-index: 999; }
+  .nav-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border: 1px solid var(--gray-200); border-radius: 8px; background: #fff; color: var(--gray-800); font-family: inherit; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+  .nav-btn:hover { background: var(--gray-100); border-color: var(--gray-400); }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-dots { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; justify-content: center; max-width: 60%; }
+  .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-200); border: none; cursor: pointer; padding: 0; transition: all 0.2s; }
+  .nav-dot.active { background: var(--blue); width: 20px; border-radius: 4px; }
+  .nav-dot.hl-dot { background: var(--hl-accent-border); }
+  .nav-dot.hl-dot.active { background: var(--hl-accent); }
+  .nav-counter { font-size: 0.72rem; color: var(--gray-400); white-space: nowrap; margin: 0 0.5rem; }
+
+  .cover { display: flex; flex-direction: column; justify-content: center; min-height: 90vh; text-align: center; }
+  .cover h1 { font-size: 2.6rem; margin-bottom: 0.3rem; }
+  .cover .subtitle { font-size: 1.1rem; color: var(--gray-600); margin-bottom: 2rem; }
+  .cover .stats { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+  .cover .stat { text-align: center; }
+  .cover .stat-num { font-size: 2rem; font-weight: 700; color: var(--blue); }
+  .cover .stat-label { font-size: 0.75rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .completion { text-align: center; padding-top: 4rem; }
+  .completion .check { font-size: 4rem; margin-bottom: 1rem; }
+  .completion h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .completion .point-count { font-size: 3rem; font-weight: 700; color: var(--blue); margin: 1rem 0; }
+  .completion .point-label { font-size: 0.85rem; color: var(--gray-600); }
+
+  @media (max-width: 640px) {
+    .slide { padding: 2rem 1.2rem 6rem; }
+    h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; }
+    .cover h1 { font-size: 1.9rem; } .cover .stat-num { font-size: 1.5rem; }
+    .energy-grid { grid-template-columns: 1fr; }
+    .tbl { font-size: 0.8rem; } .tbl th, .tbl td { padding: 0.45rem 0.5rem; }
+    .nav-dots { max-width: 45%; } .nav-dot { width: 6px; height: 6px; } .nav-dot.active { width: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 0 — COVER                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <div class="section-tag">IB DP Environmental Systems & Societies</div>
+    <h1>7.2 Energy Sources — Uses &amp; Management</h1>
+    <p class="subtitle">Subtopic 7.2 · New Syllabus (First Assessment 2026)<br>Standard Level + Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">SL Syllabus Points</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">HL Extensions</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Total Understandings</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 1 — OVERVIEW                        -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p>This subtopic examines how societies generate, store and use energy. Students evaluate renewable and non-renewable energy sources, energy security, sustainability, nuclear power, battery storage, and the challenges of transitioning away from fossil fuels.</p>
+
+  <h3>Guiding Questions</h3>
+  <ul class="bullets">
+    <li>To what extent can energy consumption be equitable across the world?</li>
+    <li>How can energy production be sustainable?</li>
+  </ul>
+
+  <div class="card">
+    <strong style="color:var(--blue)">A. Energy Sources &amp; Classification</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">Renewable vs non-renewable, fossil fuels, renewables, global consumption trends</p>
+    <strong style="color:var(--green)">B. Sustainability &amp; Choices</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">Environmental costs of each source, factors influencing energy decisions, storage systems</p>
+    <strong style="color:var(--orange)">C. Conservation &amp; Efficiency</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">Conservation vs efficiency, circular economy, reducing import dependence</p>
+    <strong style="color:var(--hl-accent)">D. HL Extensions</strong>
+    <p style="margin:0.3rem 0 0;font-size:0.85rem;">Energy security, fossil fuel depletion, nuclear power, battery storage consequences</p>
+  </div>
+  <p style="font-size:0.82rem;color:var(--gray-400);margin-top:1rem;">⏱ Time allocation: minimum 3 hours for this subtopic.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 2 — 7.2.1                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">7.2.1 — Energy Sources</div>
+  <h2>Energy Sources Are Both Renewable &amp; Non-Renewable</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Energy sources are both <em>renewable</em> and <em>non-renewable</em>.
+  </div>
+
+  <p>All energy on Earth ultimately comes from the Sun. Fossil fuels are stored solar energy from millions of years ago. Most energy is converted to <strong>electricity</strong> — via mechanical energy (turbines) → electrical energy (generators).</p>
+
+  <table class="tbl">
+    <tr><th></th><th>Renewable Sources</th><th>Non-Renewable Sources</th></tr>
+    <tr><td><strong>Definition</strong></td><td>Replenished naturally on a human timescale</td><td>Finite; cannot be replenished on a human timescale</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Solar, wind, hydro, tidal, geothermal, biomass</td><td>Coal, oil, natural gas, nuclear (uranium)</td></tr>
+    <tr><td><strong>Key advantage</strong></td><td>Continuous supply; low operational emissions</td><td>High energy density; established infrastructure</td></tr>
+    <tr><td><strong>Key challenge</strong></td><td>Intermittency; storage needed</td><td>Finite reserves; high emissions; pollution</td></tr>
+  </table>
+
+  <h3>Energy Conversion to Electricity</h3>
+  <div class="flow">
+    <div class="flow-box">Energy Source</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Mechanical Energy<br><small>(turbine rotation)</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--green-light);border-color:#A8D8B9;">Electrical Energy<br><small>(generator)</small></div>
+  </div>
+  <p style="font-size:0.88rem;">Exceptions: solar PV cells convert sunlight <em>directly</em> to electricity (no turbine needed).</p>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 3 — 7.2.2                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">7.2.2 — Global Consumption</div>
+  <h2>Global Energy Consumption Is Rising</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Global energy consumption is rising with <em>increasing population</em> and with <em>per capita demand</em>.
+  </div>
+
+  <img src="/images/ess_global_energy.jpg" alt="Rising Global Energy Consumption" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+
+  <p>Two forces drive rising consumption: <strong>more people</strong> and <strong>more energy per person</strong>. Fossil fuels still dominate — providing ~80% of global primary energy — because they are deeply embedded in transport, heating, industry, and agriculture.</p>
+
+  <h3>Why Fossil Fuels Are Hard to Replace</h3>
+  <table class="tbl">
+    <tr><th>Industry</th><th>Role of Fossil Fuels</th><th>Why Transition Is Difficult</th></tr>
+    <tr><td><strong>Steel</strong></td><td>Coal as reducing agent in blast furnaces</td><td>Green hydrogen alternatives not yet commercially viable at scale</td></tr>
+    <tr><td><strong>Concrete/Cement</strong></td><td>Coal/gas fuel the calcination process</td><td>Calcination itself releases CO₂ independent of fuel source</td></tr>
+    <tr><td><strong>Fertiliser</strong></td><td>Haber-Bosch process uses natural gas as hydrogen source</td><td>Feeds ~4 billion people — no substitute at scale yet</td></tr>
+    <tr><td><strong>Plastics</strong></td><td>Petroleum as feedstock</td><td>Plastic production accounts for ~8% of global oil use</td></tr>
+  </table>
+
+  <div class="warn">
+    <strong>🌍 Developing Country Challenge</strong>
+    Transition away from fossil fuels is particularly difficult for developing countries: they need cheap, reliable energy for industrialisation, lack capital for renewable infrastructure, and have growing populations with rising per capita demand. The "energy ladder" shows that the poorest rely on biomass while the richest use electricity/gas — billions are stuck on the bottom rungs.
+  </div>
+
+  <div class="case">
+    <strong>📊 Case Study — USA vs Kenya</strong>
+    US per capita energy use: ~85 kWh/day. Kenya: ~3 kWh/day. The US uses 28× more energy per person. As Kenya develops, its energy demand will surge — the question is whether that growth can be powered renewably.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 4 — 7.2.3                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">7.2.3 — Sustainability</div>
+  <h2>Sustainability of Energy Sources Varies Significantly</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    The <em>sustainability</em> of energy sources varies significantly.
+  </div>
+
+  <p>Sustainability includes not just resource longevity but the environmental, economic and social costs of extraction, use, and disposal.</p>
+
+  <table class="tbl">
+    <tr><th>Source</th><th>Key Environmental Costs</th><th>Sustainability Rating</th></tr>
+    <tr><td><strong>Coal</strong></td><td>Highest CO₂/unit energy; acid rain; habitat destruction from mining; coal ash toxicity</td><td style="color:var(--red);">Lowest</td></tr>
+    <tr><td><strong>Oil</strong></td><td>Spills devastate marine ecosystems; refining produces toxic pollutants; transport risks</td><td style="color:var(--red);">Very Low</td></tr>
+    <tr><td><strong>Natural Gas</strong></td><td>"Cleanest" fossil fuel but methane leaks (80× CO₂ warming potential); fracking contaminates groundwater</td><td style="color:var(--orange);">Low</td></tr>
+    <tr><td><strong>Nuclear</strong></td><td>Uranium mining; radioactive waste (thousands of years); catastrophic accident risk (Chernobyl, Fukushima)</td><td style="color:var(--yellow);">Mixed — low carbon but high risk</td></tr>
+    <tr><td><strong>Solar</strong></td><td>Panel manufacturing uses toxic materials (cadmium, lead); land use for farms; 25–30yr lifespan; recycling limited</td><td style="color:var(--green);">High</td></tr>
+    <tr><td><strong>Wind</strong></td><td>Bird/bat collisions; composite blade disposal challenging; construction footprint</td><td style="color:var(--green);">High</td></tr>
+    <tr><td><strong>Biomass</strong></td><td>Deforestation if not managed; air pollution from combustion; land competition with food</td><td style="color:var(--orange);">Variable — depends on source</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>⛏ Case Study — Rare Earth Elements</strong>
+    REEs (neodymium, dysprosium) are essential for wind turbines and EV motors. China produces ~60% of global supply. Mining REEs involves toxic chemicals, radioactive waste, and habitat destruction — meaning "green" technology has its own environmental footprint.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 5 — 7.2.4                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">7.2.4 — Energy Choices</div>
+  <h2>Factors Affecting a Country's Energy Choices</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    A variety of factors will affect the <em>energy choices</em> that a country makes.
+  </div>
+
+  <p>Energy sources are not evenly distributed. Fossil fuels are concentrated: coal in China/US, oil in the Middle East, gas in Russia/Qatar. Many countries depend on imports — a vulnerability during political disruption.</p>
+
+  <table class="tbl">
+    <tr><th>Factor</th><th>Influence on Energy Choice</th><th>Named Example</th></tr>
+    <tr><td><strong>Availability</strong></td><td>Use what's geographically accessible</td><td>Norway → 90%+ hydropower (mountains + rivers)</td></tr>
+    <tr><td><strong>Economics</strong></td><td>Cost of production and infrastructure</td><td>US shale gas boom — fracking made gas cheaper than coal</td></tr>
+    <tr><td><strong>Politics</strong></td><td>Government policy, subsidies, energy independence</td><td>France → nuclear (70% of electricity) post-1970s oil crisis</td></tr>
+    <tr><td><strong>Technology</strong></td><td>Innovation enables new options</td><td>Saudi Arabia investing in solar despite vast oil reserves</td></tr>
+    <tr><td><strong>Environment</strong></td><td>Climate commitments, pollution concerns</td><td>Germany's Energiewende — shift to renewables after Fukushima</td></tr>
+    <tr><td><strong>Culture</strong></td><td>Public attitudes, acceptance</td><td>Japan — post-Fukushima anti-nuclear sentiment</td></tr>
+    <tr><td><strong>Security</strong></td><td>Desire to avoid import dependence</td><td>China's massive solar/wind investment to reduce coal reliance</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>🇩🇪 vs 🇸🇦 Case Study</strong>
+    <strong>Germany:</strong> Energiewende targets 80% renewables by 2030. Phase-out of nuclear + coal. Strong economy supports investment, but transition costs raise consumer prices.<br>
+    <strong>Saudi Arabia:</strong> World's cheapest oil production ($2–3/barrel). Economy depends on oil exports. Investing in solar (NEOM project) but transition is slow due to oil revenue dependence.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 6 — 7.2.5                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">7.2.5 — Energy Storage</div>
+  <h2>Intermittency Creates Need for Storage</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Intermittent energy production from some renewable sources creates the need for <em>energy storage systems</em>.
+  </div>
+
+  <p>Wind and solar are variable — the sun doesn't shine at night, wind doesn't blow constantly. Without storage, renewables can't provide reliable 24-hour electricity.</p>
+
+  <div class="eq">Peak demand ≠ Peak renewable production → Storage bridges the gap ("peak-shaving")</div>
+
+  <h3>Pumped Hydroelectricity Storage (PHS)</h3>
+  <div class="flow">
+    <div class="flow-box" style="background:var(--blue-light);border-color:#B8DCF2;">Excess Energy<br><small>(low demand / high wind)</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Pump Water<br><small>Lower → Upper Reservoir</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--green-light);border-color:#A8D8B9;">Stored as<br>Potential Energy</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Release Water<br><small>Through Turbines</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--orange-light);border-color:#F5C4A8;">Electricity<br><small>(high demand)</small></div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Storage Solution</th><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><strong>Pumped Hydro (PHS)</strong></td><td>Large-scale; 70–85% efficiency; decades-long lifespan</td><td>Requires specific geography; ecosystem disruption</td></tr>
+    <tr><td><strong>Lithium-ion Batteries</strong></td><td>Scalable; fast response; modular</td><td>Mining impacts (lithium, cobalt); limited lifespan; cost</td></tr>
+    <tr><td><strong>Hydrogen Fuel Cells</strong></td><td>Flexible; scalable; zero-emission output</td><td>Energy-intensive production; storage challenges</td></tr>
+    <tr><td><strong>Thermal Storage</strong></td><td>Stores heat for later use; molten salt for solar</td><td>Limited to specific applications</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 7 — 7.2.6                           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">7.2.6 — Conservation &amp; Efficiency</div>
+  <h2>Conservation &amp; Efficiency Reduce Import Dependence</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Energy <em>conservation</em> and energy <em>efficiency</em> may allow a country to be less dependent on importing a resource.
+  </div>
+
+  <table class="tbl">
+    <tr><th></th><th>Energy Conservation</th><th>Energy Efficiency</th></tr>
+    <tr><td><strong>Definition</strong></td><td>Behavioural changes to reduce energy consumption</td><td>Technology/design to perform the same task with less energy</td></tr>
+    <tr><td><strong>Example</strong></td><td>Turning off lights, lowering thermostats, cycling instead of driving</td><td>LED lighting (75% less energy than incandescent), insulation, heat pumps</td></tr>
+    <tr><td><strong>Key insight</strong></td><td>Every 1°C reduction in heating saves ~10% of heating energy</td><td>Intelligent lighting with sensors can halve building electricity use</td></tr>
+  </table>
+
+  <h3>Circular Economy &amp; Energy Efficiency</h3>
+  <p>Designing goods for disassembly and recycling reduces the energy needed to produce new materials. Buildings designed with energy efficiency from the outset (passive house standards) use up to 90% less heating energy than conventional buildings.</p>
+
+  <div class="case">
+    <strong>💡 Case Study — Japan's Top Runner Programme</strong>
+    Japan sets minimum energy efficiency standards based on the best-performing products on the market. Manufacturers must meet these standards within a set timeframe. This has driven dramatic improvements in appliance efficiency, reducing national energy demand despite economic growth.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 8 — HL 7.2.7                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-8">
+  <div class="section-tag hl">7.2.7 — HL Extension</div>
+  <h2>Energy Security <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    Energy security for a country means access to <em>affordable and reliable</em> sources of energy. Through energy-efficiency measures, decreasing reliance on imported energy supplies and diversification, a country can improve its energy security.
+  </div>
+
+  <h3>Three Strategies for Energy Security</h3>
+  <div class="flow">
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">Energy Efficiency<br><small>Reduce demand</small></div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">Domestic Production<br><small>Reduce imports</small></div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-box" style="background:var(--hl-accent-light);border-color:var(--hl-accent-border);">Diversification<br><small>Mix energy sources</small></div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Strategy</th><th>How It Improves Security</th></tr>
+    <tr><td><strong>Energy efficiency</strong></td><td>Lower demand = less need for imports; reduces costs for consumers and businesses</td></tr>
+    <tr><td><strong>Decrease import reliance</strong></td><td>Invest in domestic renewables (wind, solar, hydro); maintain strategic oil/gas reserves as buffer</td></tr>
+    <tr><td><strong>Diversification</strong></td><td>Mix of sources (renewable + nuclear + gas) reduces risk from any single supply disruption</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>⚡ Case Study — Russia–Ukraine Gas Dispute (2006, 2009, 2022)</strong>
+    Europe's dependence on Russian gas became a critical security vulnerability. After Russia's 2022 invasion of Ukraine, EU nations scrambled to diversify: accelerating LNG imports, expanding renewables, and restarting some coal plants. The crisis proved that energy dependence = geopolitical vulnerability.
+  </div>
+
+  <div class="case">
+    <strong>🪜 Energy Poverty</strong>
+    ~770 million people lack electricity access. Energy security also means equitable access. Clean cookstoves, solar mini-grids, and community solar can lift people off biomass fuels — reducing health impacts from indoor air pollution (4 million premature deaths/year).
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 9 — HL 7.2.8                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-9">
+  <div class="section-tag hl">7.2.8 — HL Extension</div>
+  <h2>Fossil Fuel Dependence &amp; Depletion <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    The global economy mostly depends on <em>finite reserves</em> of fossil fuels as energy sources; these include coal, oil and natural gas.
+  </div>
+
+  <p>Fossil fuels are embedded not only in electricity generation but in transport, heating, industrial processes, and as feedstocks for plastics, chemicals, and fertilisers. This pervasive dependence cannot be rapidly unwound.</p>
+
+  <h3>Factors Determining Depletion Timescales</h3>
+  <table class="tbl">
+    <tr><th>Factor</th><th>Effect on Depletion</th></tr>
+    <tr><td><strong>Reserve discovery</strong></td><td>New discoveries (e.g., deep-sea oil) extend reserves; fracking unlocked "unreachable" gas</td></tr>
+    <tr><td><strong>Extraction technology</strong></td><td>Better technology accesses previously uneconomic deposits</td></tr>
+    <tr><td><strong>Consumption rate</strong></td><td>Rising demand (especially from developing economies) accelerates depletion</td></tr>
+    <tr><td><strong>Energy transition speed</strong></td><td>Faster renewable adoption reduces fossil fuel demand → slows depletion</td></tr>
+    <tr><td><strong>Economic viability</strong></td><td>If prices drop below extraction cost, reserves become "stranded assets"</td></tr>
+  </table>
+
+  <div class="eq">Proven reserves of oil alone would generate ~3.5 trillion tonnes of CO₂ — 7× the remaining carbon budget for 1.5°C</div>
+
+  <div class="warn">
+    <strong>⚠ Stranded Assets</strong>
+    If climate targets are met, much of the world's proven fossil fuel reserves will never be burned. These become "stranded assets" — coal mines, oil fields, and gas infrastructure worth billions that lose their economic value. This creates enormous financial risk for fossil-fuel-dependent economies.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 10 — HL 7.2.9                        -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-10">
+  <div class="section-tag hl">7.2.9 — HL Extension</div>
+  <h2>Nuclear Power <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    Nuclear power is a <em>non-renewable, low-carbon</em> means of electricity production.
+  </div>
+
+  <p>Nuclear fission splits uranium atoms, releasing heat → steam → turbine → electricity. Nuclear provides ~10% of global electricity and ~25% of low-carbon electricity worldwide.</p>
+
+  <h3>The Nuclear Debate</h3>
+  <table class="tbl">
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Very low CO₂ during operation (~12 g CO₂/kWh vs coal ~820)</td><td>Radioactive waste remains hazardous for thousands of years</td></tr>
+    <tr><td>High energy density — small fuel, enormous output</td><td>Uranium is finite (non-renewable)</td></tr>
+    <tr><td>Reliable baseload power (not intermittent)</td><td>Catastrophic accident risk (Chernobyl 1986, Fukushima 2011)</td></tr>
+    <tr><td>Long operational lifespan (40–60 years)</td><td>Extremely high construction costs and time overruns</td></tr>
+    <tr><td>Low land use compared to solar/wind farms</td><td>Decommissioning is expensive and complex</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>☢ Case Study — Fukushima Daiichi (2011)</strong>
+    Tsunami overwhelmed seawall → cooling systems failed → reactor meltdowns. 154,000 people evacuated. Estimated cleanup cost: $200+ billion over 30+ years. Led to Japan shutting all 54 reactors (only 12 restarted by 2025) and Germany accelerating its nuclear phase-out.
+  </div>
+
+  <div class="tip">
+    <strong>⚠ Exam Hint</strong> Nuclear power is a classic evaluation question. Avoid treating it as simply "good" or "bad". A strong answer acknowledges the low-carbon operational benefit while honestly addressing waste, accident risk, and cost. Link your evaluation to ecocentric vs technocentric perspectives (Topic 1.1).
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 11 — HL 7.2.10                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-11">
+  <div class="section-tag hl">7.2.10 — HL Extension</div>
+  <h2>Battery Storage: Costs &amp; Consequences <span class="hl-badge">HL</span></h2>
+  <div class="kt hl-accent">
+    <strong>Key Understanding (HL)</strong>
+    Battery storage is required on a <em>large scale</em> to meet global requirements for reduction of carbon emissions, but it requires mining, transporting, processing and construction, all of which produce <em>emissions and pollution</em>, and cause <em>sociopolitical tensions</em>.
+  </div>
+
+  <img src="/images/ess_battery_storage.jpg" alt="Battery Storage Technology" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+
+  <p>Batteries are the critical link between intermittent renewables and reliable electricity. But the supply chain behind them has its own environmental and social costs.</p>
+
+  <h3>The Battery Supply Chain</h3>
+  <div class="flow">
+    <div class="flow-box" style="background:var(--red-light);border-color:#E8B4B0;">Mining<br><small>Lithium, cobalt, nickel</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--orange-light);border-color:#F5C4A8;">Processing<br><small>Chemical refining</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--yellow-light);border-color:#F0D89E;">Manufacturing<br><small>Cell production</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--green-light);border-color:#A8D8B9;">Use<br><small>Grid / EV storage</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--gray-100);border-color:var(--gray-200);">End of Life<br><small>Recycling?</small></div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>Impact</th><th>Details</th></tr>
+    <tr><td><strong>Lithium mining (Chile, Australia)</strong></td><td>Water-intensive (500,000 litres per tonne); depletes aquifers in arid regions; local communities lose water access</td></tr>
+    <tr><td><strong>Cobalt mining (DR Congo)</strong></td><td>~70% of global supply; child labour documented; toxic dust causes respiratory disease; "blood cobalt" parallels "blood diamonds"</td></tr>
+    <tr><td><strong>Processing emissions</strong></td><td>Refining lithium, nickel, and cobalt is energy-intensive; often powered by coal in China</td></tr>
+    <tr><td><strong>End-of-life waste</strong></td><td>Battery recycling is nascent; ~5% of lithium-ion batteries recycled globally; toxic chemicals leach from landfill</td></tr>
+    <tr><td><strong>Sociopolitical tensions</strong></td><td>Geopolitical competition for mineral supply chains; "green colonialism" concerns in extraction countries</td></tr>
+  </table>
+
+  <div class="case">
+    <strong>🇨🇴 Case Study — Cobalt in DR Congo</strong>
+    Artisanal mines employ ~200,000 Congolese, including an estimated 40,000 children. Exposure to cobalt dust causes lung disease. Despite contributing to the global energy transition, mining communities see little benefit — raising critical environmental justice questions about who bears the cost of "clean" energy.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 12 — KEY TERMS                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-12">
+  <div class="section-tag">Key Terms</div>
+  <h2>Glossary — Essential Vocabulary</h2>
+
+  <table class="tbl">
+    <tr><th style="width:30%;">Term</th><th>Definition</th></tr>
+    <tr><td><strong>Renewable energy</strong></td><td>Energy from sources replenished naturally on a human timescale (solar, wind, hydro, tidal, geothermal, biomass)</td></tr>
+    <tr><td><strong>Non-renewable energy</strong></td><td>Energy from finite sources that cannot be replenished on a human timescale (coal, oil, gas, nuclear)</td></tr>
+    <tr><td><strong>Fossil fuels</strong></td><td>Coal, oil and natural gas formed from ancient organic remains over millions of years</td></tr>
+    <tr><td><strong>Nuclear fission</strong></td><td>Splitting uranium atoms to release energy for electricity generation</td></tr>
+    <tr><td><strong>Intermittency</strong></td><td>The variable, unpredictable nature of some renewable sources (wind, solar)</td></tr>
+    <tr><td><strong>Peak demand</strong></td><td>Periods of highest electricity consumption in a day</td></tr>
+    <tr><td><strong>Peak-shaving</strong></td><td>Using stored energy to meet demand when renewable production is low</td></tr>
+    <tr><td><strong>Pumped hydro storage (PHS)</strong></td><td>Storing energy by pumping water uphill; releasing it through turbines when needed</td></tr>
+    <tr><td><strong>Energy conservation</strong></td><td>Behavioural changes to reduce energy consumption</td></tr>
+    <tr><td><strong>Energy efficiency</strong></td><td>Using technology to perform the same task with less energy input</td></tr>
+    <tr><td><strong>Energy security</strong></td><td>Access to affordable, reliable energy sources to meet a country's needs</td></tr>
+    <tr><td><strong>Energy poverty</strong></td><td>Lack of access to sufficient, clean, affordable energy for basic needs</td></tr>
+    <tr><td><strong>Stranded assets</strong></td><td>Fossil fuel reserves that may never be burned due to climate policy</td></tr>
+    <tr><td><strong>Circular economy</strong></td><td>Designing products for reuse, repair and recycling to reduce energy and material demand</td></tr>
+    <tr><td><strong>Baseload power</strong></td><td>The minimum continuous electricity demand a grid must meet 24/7</td></tr>
+    <tr><td><strong>Haber-Bosch process</strong></td><td>Industrial process using natural gas to produce synthetic nitrogen fertiliser</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 13 — EXAM TIPS                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-13">
+  <div class="section-tag" style="background:var(--orange-light);color:var(--orange);">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+
+  <div class="tip">
+    <strong>📝 Paper 1 — Case Study Skills</strong>
+    <ul class="bullets" style="margin-top:0.4rem;">
+      <li>Identify the <strong>energy mix</strong> of the case study country — what % is fossil vs renewable vs nuclear?</li>
+      <li>Link to <strong>geography</strong> — what resources are available domestically vs imported?</li>
+      <li>Consider <strong>multiple factors</strong> — economics, politics, environment, technology</li>
+      <li>Evaluate trade-offs: "Germany's nuclear phase-out improved public confidence but temporarily increased coal use"</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <strong>📝 Paper 2 — Structured Essay Tips</strong>
+    <ul class="bullets" style="margin-top:0.4rem;">
+      <li><strong>Define key terms</strong> — "Energy security refers to a country's ability to access affordable, reliable…"</li>
+      <li><strong>Use specific data</strong> — "Coal produces ~820 g CO₂/kWh; nuclear produces ~12 g CO₂/kWh"</li>
+      <li><strong>Compare and contrast</strong> — pros vs cons, developed vs developing, short-term vs long-term</li>
+      <li><strong>Evaluate with perspectives</strong> — technocentrists favour nuclear; ecocentrists favour renewables</li>
+      <li><strong>HL students:</strong> always consider the full lifecycle — mining → manufacture → use → disposal</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Common Exam Patterns</h3>
+    <table class="tbl">
+      <tr><th>Pattern</th><th>Key Skill</th></tr>
+      <tr><td>Compare energy sources</td><td>Advantages/disadvantages across sustainability, cost, availability, security</td></tr>
+      <tr><td>Evaluate a country's choices</td><td>Link to geography, economics, politics, culture, technology</td></tr>
+      <tr><td>Discuss energy storage</td><td>Intermittency problem → storage solutions → environmental costs</td></tr>
+      <tr><td>HL: Nuclear debate</td><td>Low carbon vs waste/accidents; ecocentric vs technocentric</td></tr>
+      <tr><td>HL: Fossil fuel future</td><td>Depletion timescales, stranded assets, transition barriers</td></tr>
+      <tr><td>HL: Battery ethics</td><td>Emissions reduction vs mining impacts; environmental justice</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 14 — COMPLETION                      -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" id="slide-14">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>You've Covered All 10 Syllabus Points</h1>
+    <div class="point-count">10</div>
+    <div class="point-label">Understanding points completed</div>
+    <p style="margin-top:1.5rem;font-size:0.95rem;color:var(--gray-600);">
+      <strong>7.2.1 – 7.2.6</strong> (SL) + <strong>7.2.7 – 7.2.10</strong> (HL)
+    </p>
+    <p style="font-size:0.85rem;color:var(--gray-400);margin-top:2rem;">
+      IB ESS 7.2 — Energy Sources: Uses &amp; Management<br>
+      New Syllabus · First Assessment 2026
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- NAVIGATION BAR                             -->
+<!-- ═══════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <button class="nav-btn" id="prevBtn" onclick="goTo(currentSlide - 1)">← Prev</button>
+  <div style="display:flex;align-items:center;gap:0.3rem;">
+    <div class="nav-dots" id="navDots"></div>
+    <span class="nav-counter" id="navCounter"></span>
+  </div>
+  <button class="nav-btn" id="nextBtn" onclick="goTo(currentSlide + 1)">Next →</button>
+</nav>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  let currentSlide = 0;
+  const hlSlides = new Set([8, 9, 10, 11]); // 7.2.7–7.2.10
+
+  function goTo(n) {
+    if (n < 0 || n >= totalSlides) return;
+    slides[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    updateNav();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateNav() {
+    document.getElementById('prevBtn').disabled = currentSlide === 0;
+    document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+    document.getElementById('navCounter').textContent = (currentSlide + 1) + ' / ' + totalSlides;
+    document.getElementById('progressBar').style.width = ((currentSlide / (totalSlides - 1)) * 100) + '%';
+    document.querySelectorAll('.nav-dot').forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+  }
+
+  const dotsContainer = document.getElementById('navDots');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot' + (hlSlides.has(i) ? ' hl-dot' : '');
+    dot.title = 'Slide ' + (i + 1);
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goTo(currentSlide + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goTo(currentSlide - 1); }
+  });
+
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 60) { diff > 0 ? goTo(currentSlide + 1) : goTo(currentSlide - 1); }
+  }, { passive: true });
+
+  updateNav();
+</script>
+
+</body>
+</html>

@@ -225,9 +225,9 @@ export const COURSES: Course[] = [
         slug: "7-2",
         title: "Topic 7.2",
         subtitle: "Energy Sources",
+        htmlFile: "/slides/ess-7-2.html",
         level: "SL & HL",
         unit: "Unit 7: Natural Resources",
-        status: "coming-soon",
       },
       {
         slug: "7-3",
