@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB ESS 7.3 — Solid Waste</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0A6EBD; --blue-light: #E8F4FD; --blue-dark: #064A7A;
+    --orange: #FF6B35; --orange-light: #FFF3ED;
+    --green: #2E8B57; --green-light: #EAF7F0;
+    --red: #C0392B; --red-light: #FDECEB;
+    --yellow: #F0AD4E; --yellow-light: #FFF9E6;
+    --gray-50: #FAFBFC; --gray-100: #F4F5F7; --gray-200: #E8EAED;
+    --gray-400: #9AA0A6; --gray-600: #5F6368; --gray-800: #202124;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Sora', -apple-system, sans-serif; background: #fff; color: var(--gray-800); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  .slide { display: none; min-height: 100vh; padding: 3rem 2rem 6rem; max-width: 900px; margin: 0 auto; }
+  .slide.active { display: block; }
+
+  h1 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.65rem; font-weight: 600; line-height: 1.3; margin-bottom: 1rem; }
+  h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
+  p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+  strong { font-weight: 600; }
+
+  .section-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 4px; margin-bottom: 0.8rem; background: var(--blue-light); color: var(--blue); }
+
+  .kt { background: var(--gray-100); border-left: 4px solid var(--blue); padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin: 1.2rem 0; font-size: 0.92rem; }
+  .kt strong { color: var(--blue-dark); display: block; margin-bottom: 0.3rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .card { background: #fff; border: 1px solid var(--gray-200); border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1rem 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+
+  .eq { background: var(--blue-light); border: 1px solid #B8DCF2; border-radius: 8px; padding: 0.9rem 1.2rem; margin: 1rem 0; font-size: 1.05rem; font-weight: 500; text-align: center; color: var(--blue-dark); letter-spacing: 0.02em; }
+
+  .tbl { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  .tbl th { background: var(--gray-100); font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--gray-200); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gray-600); }
+  .tbl td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+  .tbl tr:last-child td { border-bottom: none; }
+
+  .bullets { list-style: none; padding: 0; margin: 0.8rem 0; }
+  .bullets li { position: relative; padding-left: 1.4rem; margin-bottom: 0.5rem; font-size: 0.92rem; }
+  .bullets li::before { content: ''; position: absolute; left: 0; top: 0.55rem; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+
+  .tip { background: var(--orange-light); border-left: 4px solid var(--orange); border-radius: 0 8px 8px 0; padding: 0.9rem 1.2rem; margin: 1.2rem 0; font-size: 0.88rem; }
+  .tip strong { color: var(--orange); }
+
+  .case { background: var(--green-light); border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; padding: 0.9rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; }
+  .case strong { color: var(--green); }
+
+  .warn { background: var(--red-light); border-left: 4px solid var(--red); border-radius: 0 8px 8px 0; padding: 0.9rem 1.2rem; margin: 1rem 0; font-size: 0.88rem; }
+  .warn strong { color: var(--red); }
+
+  .flow { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin: 1rem 0; font-size: 0.85rem; }
+  .flow-box { background: var(--blue-light); border: 1px solid #B8DCF2; border-radius: 8px; padding: 0.5rem 0.8rem; font-weight: 500; text-align: center; white-space: nowrap; }
+  .flow-arrow { color: var(--blue); font-weight: 700; font-size: 1.1rem; }
+
+  .slide-img { width: 100%; border-radius: 10px; margin: 1rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); object-fit: cover; }
+  .slide-img.row { display: flex; gap: 0.8rem; margin: 1rem 0; }
+  .slide-img.row img { flex: 1; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); object-fit: cover; height: 180px; }
+  .img-caption { font-size: 0.78rem; color: var(--gray-400); text-align: center; margin-top: -0.5rem; margin-bottom: 0.8rem; font-style: italic; }
+  .cover-img { width: 100%; height: 40vh; object-fit: cover; border-radius: 16px; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+
+  .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: var(--blue); z-index: 1000; transition: width 0.3s ease; }
+
+  .nav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-top: 1px solid var(--gray-200); padding: 0.7rem 1.5rem; display: flex; align-items: center; justify-content: space-between; z-index: 999; }
+  .nav-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border: 1px solid var(--gray-200); border-radius: 8px; background: #fff; color: var(--gray-800); font-family: inherit; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+  .nav-btn:hover { background: var(--gray-100); border-color: var(--gray-400); }
+  .nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .nav-dots { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; justify-content: center; max-width: 60%; }
+  .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-200); border: none; cursor: pointer; padding: 0; transition: all 0.2s; }
+  .nav-dot.active { background: var(--blue); width: 20px; border-radius: 4px; }
+  .nav-counter { font-size: 0.72rem; color: var(--gray-400); white-space: nowrap; margin: 0 0.5rem; }
+
+  .cover { display: flex; flex-direction: column; justify-content: center; min-height: 90vh; text-align: center; }
+  .cover h1 { font-size: 2.6rem; margin-bottom: 0.3rem; }
+  .cover .subtitle { font-size: 1.1rem; color: var(--gray-600); margin-bottom: 2rem; }
+  .cover .stats { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+  .cover .stat { text-align: center; }
+  .cover .stat-num { font-size: 2rem; font-weight: 700; color: var(--blue); }
+  .cover .stat-label { font-size: 0.75rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .completion { text-align: center; padding-top: 4rem; }
+  .completion .check { font-size: 4rem; margin-bottom: 1rem; }
+  .completion h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .completion .point-count { font-size: 3rem; font-weight: 700; color: var(--blue); margin: 1rem 0; }
+  .completion .point-label { font-size: 0.85rem; color: var(--gray-600); }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1rem 0; }
+  .compare-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 10px; padding: 1rem; }
+  .compare-card h4 { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .compare-card p { font-size: 0.85rem; margin: 0; }
+  .compare-card ul { font-size: 0.85rem; padding-left: 1.2rem; margin: 0.4rem 0 0; }
+
+  .reflect { background: var(--yellow-light); border: 1px solid #F0D89E; border-radius: 10px; padding: 1rem 1.2rem; margin: 1.2rem 0; font-size: 0.9rem; }
+  .reflect strong { color: var(--yellow); }
+
+  @media (max-width: 640px) {
+    .slide { padding: 2rem 1.2rem 6rem; }
+    h1 { font-size: 1.7rem; } h2 { font-size: 1.3rem; }
+    .cover h1 { font-size: 1.9rem; } .cover .stat-num { font-size: 1.5rem; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .tbl { font-size: 0.8rem; } .tbl th, .tbl td { padding: 0.45rem 0.5rem; }
+    .slide-img.row { flex-direction: column; }
+    .slide-img.row img { height: 200px; }
+    .nav-dots { max-width: 45%; } .nav-dot { width: 6px; height: 6px; } .nav-dot.active { width: 14px; }
+    .cover-img { height: 30vh; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://reson-assets-private.0da94ee175d35887d1042684049fdd81.r2.cloudflarestorage.com/files/agent-media/renoise-results/991f5c7e-34d9-483a-ad27-1034daef2d48/image-0-7eb58bf4-7531-4601-adf8-035c25195c5f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=98b34c59f79c5e1b75968eb11d23a0b9%2F20260818%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260818T043038Z&X-Amz-Expires=86400&X-Amz-Signature=df811d1cc99c06602728e4ecacdbf12f85f52001525cc8398b3f4bfed9b9f7eb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject" alt="Landfill with heavy machinery" class="cover-img">
+    <div class="section-tag">IB DP Environmental Systems & Societies</div>
+    <h1>Where Does "Away" Actually Go?</h1>
+    <p class="subtitle">7.3 Solid Waste · New Syllabus (First Assessment 2026)<br>Standard Level Only</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Syllabus Points</div></div>
+      <div class="stat"><div class="stat-num">SL</div><div class="stat-label">Level Only</div></div>
+      <div class="stat"><div class="stat-num">2h</div><div class="stat-label">Min. Time</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — OVERVIEW -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p>This subtopic examines how societies produce, classify and manage solid domestic waste. Students explore the sources and composition of waste, the environmental and social impacts of waste management, and the most sustainable strategies for waste reduction.</p>
+
+  <h3>Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How can societies sustainably manage waste?</li>
+    <li>What are the most effective strategies for minimizing the environmental impact of solid waste disposal?</li>
+    <li>How can technological innovations and policies be integrated to enhance the efficiency and sustainability of waste management systems?</li>
+  </ul>
+
+  <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=900&q=80" alt="Sorting waste at recycling facility" class="slide-img">
+  <p class="img-caption">Waste sorting — the first step in sustainable management</p>
+
+  <div class="card">
+    <strong style="color:var(--blue)">A. Sources of Solid Waste</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">Domestic, industrial, agricultural; classification by source and type; linear economy</p>
+    <strong style="color:var(--green)">B. Composition &amp; Variation</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">SDW content; factors affecting volume and composition over time and between societies</p>
+    <strong style="color:var(--orange)">C. Impacts of Waste Management</strong>
+    <p style="margin:0.3rem 0 0.6rem;font-size:0.85rem;">Environmental and social impacts; transboundary movement; pollution thresholds</p>
+    <strong style="color:var(--blue)">D. Strategies &amp; Disposal Options</strong>
+    <p style="margin:0.3rem 0 0;font-size:0.85rem;">Preventative vs restorative; landfills, incineration, recycling, composting; circular economy; sustainable promotion</p>
+  </div>
+  <p style="font-size:0.82rem;color:var(--gray-400);margin-top:1rem;">⏱ Time allocation: minimum 2 hours for this subtopic.</p>
+</div>
+
+<!-- SLIDE 2 — 7.3.1 -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">7.3.1 — Sources of Solid Waste</div>
+  <h2>Use of Natural Resources Generates Waste</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Use of natural resources generates waste that can be classified by <em>source</em> or <em>type</em>.
+  </div>
+
+  <p>Every stage of production and consumption creates waste. In industrialized countries, waste generation has reached alarming levels — nearly <strong>one-third</strong> of all food produced globally is wasted (~1.3 billion tonnes annually, FAO). The rapid turnover of electronics has created a surge in e-waste, with millions of tonnes discarded each year.</p>
+
+  <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&q=80" alt="Nature and resources" class="slide-img">
+  <p class="img-caption">Natural resources → products → waste: the linear economy chain</p>
+
+  <h3>Classification by Source</h3>
+  <table class="tbl">
+    <tr><th>Source</th><th>Description</th><th>Examples</th><th>Impact</th></tr>
+    <tr><td><strong>Domestic</strong></td><td>Waste from households</td><td>Packaging, food scraps, appliances, furniture</td><td>Landfill pressure; pollution if not managed</td></tr>
+    <tr><td><strong>Industrial</strong></td><td>From manufacturing processes</td><td>Chemicals, scrap metals, packaging</td><td>Soil and water contamination</td></tr>
+    <tr><td><strong>Agricultural</strong></td><td>From farming activities</td><td>Pesticides, fertilisers, animal waste, crop residues</td><td>Nutrient pollution, methane, soil degradation</td></tr>
+  </table>
+
+  <h3>Classification by Type</h3>
+  <table class="tbl">
+    <tr><th>Type</th><th>Description</th><th>Key Concern</th></tr>
+    <tr><td><strong>E-waste</strong></td><td>Discarded electronics (computers, phones, TVs)</td><td>Toxic elements (lead, mercury); low recycling rates</td></tr>
+    <tr><td><strong>Food waste</strong></td><td>Organic waste from households, restaurants, supermarkets</td><td>Methane in landfills; wasted resources in production</td></tr>
+    <tr><td><strong>Biohazardous</strong></td><td>Medical waste from hospitals and labs</td><td>Infection risk; requires strict disposal regulations</td></tr>
+  </table>
+
+  <div class="kt" style="border-left-color:var(--red);">
+    <strong style="color:var(--red);">Linear Economy</strong>
+    A system where people buy a product, use it, and then throw it away: <em>take → make → dispose</em>. This creates enormous landfill waste and depletes finite resources as new raw materials must constantly be extracted. The opposite — a <strong>circular economy</strong> — designs products for reuse, repair and recycling to keep materials in use longer.
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=900&q=80" alt="Electronic waste" class="slide-img" style="height:250px;">
+  <p class="img-caption">E-waste — one of the fastest-growing waste streams globally</p>
+</div>
+
+<!-- SLIDE 3 — 7.3.2 -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">7.3.2 — SDW Composition</div>
+  <h2>Solid Domestic Waste Has Diverse Content</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Solid domestic waste (SDW) typically has <em>diverse content</em>.
+  </div>
+
+  <img src="/images/ess_solid_waste.jpg" alt="Solid Domestic Waste Composition" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+
+  <p><strong>Solid domestic waste (SDW)</strong> refers to waste generated from households. It includes a wide variety of materials discarded in daily life. Understanding its composition is crucial for effective waste management.</p>
+
+  <!-- Pie Chart SVG — corrected percentages (World Bank What a Waste data) -->
+  <div style="text-align:center;margin:1.5rem 0;">
+    <svg viewBox="0 0 420 300" width="420" height="300" style="max-width:100%;">
+      <!-- Pie segments using stroke-dasharray on circles -->
+      <!-- Total circumference = 2π×120 ≈ 754 -->
+      <!-- Organic 25% = 188.5 -->
+      <circle cx="150" cy="150" r="120" fill="none" stroke="#2E8B57" stroke-width="40" stroke-dasharray="188.5 565.5" stroke-dashoffset="0"/>
+      <!-- Paper 17% = 128.2 -->
+      <circle cx="150" cy="150" r="120" fill="none" stroke="#0A6EBD" stroke-width="40" stroke-dasharray="128.2 625.8" stroke-dashoffset="-188.5"/>
+      <!-- Plastics 12% = 90.5 -->
+      <circle cx="150" cy="150" r="120" fill="none" stroke="#FF6B35" stroke-width="40" stroke-dasharray="90.5 663.5" stroke-dashoffset="-316.7"/>
+      <!-- Glass 5% = 37.7 -->
+      <circle cx="150" cy="150" r="120" fill="none" stroke="#F0AD4E" stroke-width="40" stroke-dasharray="37.7 716.3" stroke-dashoffset="-407.2"/>
+      <!-- Metals 5% = 37.7 -->
+      <circle cx="150" cy="150" r="120" fill="none" stroke="#7B2D8E" stroke-width="40" stroke-dasharray="37.7 716.3" stroke-dashoffset="-444.9"/>
+      <!-- Other 13% = 98.0 (textiles, wood, rubber, leather, garden, etc.) -->
+      <circle cx="150" cy="150" r="120" fill="none" stroke="#9AA0A6" stroke-width="40" stroke-dasharray="98.0 656.0" stroke-dashoffset="-482.6"/>
+      <!-- Background ring -->
+      <circle cx="150" cy="150" r="120" fill="none" stroke="#E8EAED" stroke-width="40" stroke-dasharray="754 0" stroke-dashoffset="-0" opacity="0.3"/>
+      <!-- Legend -->
+      <rect x="310" y="35" width="14" height="14" rx="3" fill="#2E8B57"/>
+      <text x="330" y="47" font-size="11" font-family="Sora" fill="#5F6368">Organic 25%</text>
+      <rect x="310" y="57" width="14" height="14" rx="3" fill="#0A6EBD"/>
+      <text x="330" y="69" font-size="11" font-family="Sora" fill="#5F6368">Paper 17%</text>
+      <rect x="310" y="79" width="14" height="14" rx="3" fill="#FF6B35"/>
+      <text x="330" y="91" font-size="11" font-family="Sora" fill="#5F6368">Plastics 12%</text>
+      <rect x="310" y="101" width="14" height="14" rx="3" fill="#F0AD4E"/>
+      <text x="330" y="113" font-size="11" font-family="Sora" fill="#5F6368">Glass 5%</text>
+      <rect x="310" y="123" width="14" height="14" rx="3" fill="#7B2D8E"/>
+      <text x="330" y="135" font-size="11" font-family="Sora" fill="#5F6368">Metals 5%</text>
+      <rect x="310" y="145" width="14" height="14" rx="3" fill="#9AA0A6"/>
+      <text x="330" y="157" font-size="11" font-family="Sora" fill="#5F6368">Other 13%</text>
+      <text x="150" y="148" text-anchor="middle" font-size="12" font-weight="600" font-family="Sora" fill="#202124">Global</text>
+      <text x="150" y="164" text-anchor="middle" font-size="10" font-family="Sora" fill="#5F6368">SDW Composition</text>
+      <text x="150" y="180" text-anchor="middle" font-size="8" font-family="Sora" fill="#9AA0A6">Source: World Bank, What a Waste 2.0</text>
+    </svg>
+  </div>
+
+  <h3>Key Components of SDW</h3>
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue);">📄 Paper &amp; Cardboard</h4>
+      <p>Newspapers, magazines, packaging. Highly recyclable — reduces demand for virgin materials.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--green);">🪟 Glass</h4>
+      <p>Bottles, jars. 100% recyclable without quality loss. Recycled glass reduces energy use by 30%.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--orange);">🥫 Metal</h4>
+      <p>Aluminium and tin cans. Recycling aluminium saves 95% of the energy needed for virgin production.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--red);">🧴 Plastics</h4>
+      <p>Packaging, bottles, bags. Major contributor to ocean pollution. Only ~9% of all plastic ever made has been recycled.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--green);">🌿 Organic Waste</h4>
+      <p>Food scraps, garden waste. Compostable — creates nutrient-rich soil and reduces methane from landfills.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--gray-600);">📦 Other (Textiles, Wood, Rubber)</h4>
+      <p>Clothing, furniture, leather goods. Growing stream due to fast fashion. Often hard to recycle.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>📝 Remember</strong> For exams: know at least three common materials in SDW and their recycling potential. Organic waste is the largest single component globally (~25%).
+  </div>
+</div>
+
+<!-- SLIDE 4 — 7.3.3 -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">7.3.3 — Variation Over Time &amp; Societies</div>
+  <h2>Waste Volume and Composition Varies</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    The volume and composition of waste varies over time and between societies due to <em>socioeconomic, political, environmental and technological</em> factors.
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1610047838691-3e0e48d0d572?w=900&q=80" alt="Contrast between developed and developing waste" class="slide-img">
+  <p class="img-caption">Waste generation varies enormously between high-income and low-income countries</p>
+
+  <h3>Key Data: Global Waste Generation</h3>
+  <table class="tbl">
+    <tr><th>Country/Region</th><th>Daily Waste Per Person</th><th>Annual Total</th><th>Key Factors</th></tr>
+    <tr><td><strong>USA</strong></td><td>~2.3 kg (4.9 lbs)</td><td>~1,159 kg</td><td>High consumption, single-use culture</td></tr>
+    <tr><td><strong>UK</strong></td><td>~1.5 kg</td><td>~548 kg</td><td>Urbanised, high service economy</td></tr>
+    <tr><td><strong>Sub-Saharan Africa</strong></td><td>~0.39 kg</td><td>~142 kg</td><td>Lower consumption, less formal collection</td></tr>
+    <tr><td><strong>Global average</strong></td><td>~0.74 kg</td><td>~270 kg</td><td>Wide variation by income level</td></tr>
+  </table>
+  <p style="font-size:0.82rem;color:var(--gray-400);">Source: World Bank, What a Waste 2.0 (2018); US EPA (2018)</p>
+
+  <h3>Factors Affecting Waste Volume</h3>
+  <ul class="bullets">
+    <li><strong>Socioeconomic:</strong> Higher income → more consumption → more waste; industrialized societies produce more packaging waste</li>
+    <li><strong>Political:</strong> Regulations influence what enters waste streams (e.g. plastic bans reduce plastic waste volume)</li>
+    <li><strong>Environmental:</strong> Climate, geography, and available infrastructure affect disposal methods</li>
+    <li><strong>Technological:</strong> Better packaging technology and electronics shorten product lifecycles → more e-waste</li>
+  </ul>
+
+  <h3>Composition Differences</h3>
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue);">High-Income Countries</h4>
+      <ul>
+        <li>30–40% food wasted at consumer level</li>
+        <li>High packaging waste (plastics, card)</li>
+        <li>Growing e-waste from tech turnover</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--green);">Low-Income Countries</h4>
+      <ul>
+        <li>Food waste occurs in production/transport</li>
+        <li>Less packaging, more organic content</li>
+        <li>Informal recycling sectors</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="case">
+    <strong>📊 Case Study — Historical Shift</strong>
+    In pre-industrial societies, waste was minimal and mostly organic — easily absorbed by local ecosystems. Non-biodegradable items were treasured and passed down through generations. The Industrial Revolution brought mass production and mass waste. Today, high-income countries generate roughly 5–7× more waste per capita than low-income countries (World Bank).
+  </div>
+</div>
+
+<!-- SLIDE 5 — 7.3.4 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">7.3.4 — Impacts of Waste Management</div>
+  <h2>Production, Treatment &amp; Management Has Impacts</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    The production, treatment and management of waste has <em>environmental and social impacts</em>, which may be experienced in a <em>different location</em> from where the waste was generated.
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=900&q=80" alt="Plastic pollution in water" class="slide-img" style="height:250px;">
+  <p class="img-caption">Waste impacts often travel far from where they were generated — "away" is a myth</p>
+
+  <h3>The Illusion of "Away"</h3>
+  <p>When we throw something "away," it doesn't disappear. It goes to a landfill, incinerator, ocean, or another country. Waste persists — often with long-lasting environmental and social consequences.</p>
+
+  <div class="eq">Waste ≠ Gone · Waste = Somewhere else · "There is no 'away'"</div>
+
+  <h3>Environmental Impacts by Disposal Method</h3>
+  <table class="tbl">
+    <tr><th>Method</th><th>Key Environmental Impacts</th></tr>
+    <tr><td><strong>Landfills</strong></td><td>Soil contamination from leachate; methane emissions (25× CO₂ warming potential); groundwater pollution</td></tr>
+    <tr><td><strong>Incineration</strong></td><td>Air pollution (dioxins, particulates); toxic fly ash requiring landfill; greenhouse gas emissions</td></tr>
+    <tr><td><strong>Plastic pollution</strong></td><td>Non-biodegradable waste in oceans; marine life ingestion/entanglement; microplastics in food chain</td></tr>
+    <tr><td><strong>Informal disposal</strong></td><td>Open burning releases toxins; uncontrolled dumps spread disease vectors</td></tr>
+  </table>
+
+  <h3>Social Impacts</h3>
+  <ul class="bullets">
+    <li><strong>Health risks:</strong> Poor communities exposed to hazardous waste (e.g. informal e-waste processing in Ghana)</li>
+    <li><strong>Environmental injustice:</strong> Waste exported from HICs to LICs where it is poorly managed</li>
+    <li><strong>Quality of life:</strong> Odour, noise, vermin, and visual pollution from poorly managed waste sites</li>
+  </ul>
+
+  <img src="https://images.unsplash.com/photo-1607690525738-42360a892d6f?w=900&q=80" alt="Recycling bins in different colors" class="slide-img" style="height:220px;">
+  <p class="img-caption">Waste segregation at source — key to reducing downstream impacts</p>
+
+  <h3>The Global Movement of Waste</h3>
+  <div class="warn">
+    <strong>⚠ Transboundary Waste</strong>
+    Despite local management efforts, significant amounts of waste are transported across borders — typically from HICs to LICs. This is particularly common with e-waste and plastic waste. Low-income countries often lack infrastructure to manage hazardous waste safely, creating severe environmental degradation and health risks. The <strong>Basel Convention</strong> regulates this movement but enforcement remains a challenge.
+  </div>
+
+  <div class="case">
+    <strong>🇩🇪 Case Study — Germany's Waste Segregation</strong>
+    Germany is a global leader in waste management. Households are provided with colour-coded bins: <strong>Yellow</strong> (plastic/metal packaging), <strong>Blue</strong> (paper/cardboard), <strong>Brown</strong> (organic waste), <strong>Black/Gray</strong> (residual waste). This system has driven recycling rates above 65% — the highest in the EU.
+  </div>
+</div>
+
+<!-- SLIDE 6 — 7.3.5 -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">7.3.5 — Pollution Threshold</div>
+  <h2>Ecosystems Absorb Waste — But Only Up to a Point</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Ecosystems can absorb some waste, but <em>pollution</em> occurs when harmful substances are added to an environment at a rate faster than they are transformed into harmless substances.
+  </div>
+
+  <img src="https://reson-assets-private.0da94ee175d35887d1042684049fdd81.r2.cloudflarestorage.com/files/agent-media/renoise-results/7d69c60a-c757-4026-93cf-3f85bc112dd1/image-0-041f5861-c516-4621-8256-a27d43687137.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=98b34c59f79c5e1b75968eb11d23a0b9%2F20260818%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260818T043201Z&X-Amz-Expires=86400&X-Amz-Signature=6501f152ac8d30b813f101a6db8ec3cb4b0070c373beb601da6b14339edeab29&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject" alt="Healthy ecosystem" class="slide-img" style="height:250px;">
+  <p class="img-caption">Healthy ecosystems naturally decompose organic waste — but have limits</p>
+
+  <h3>Key Concepts</h3>
+  <table class="tbl">
+    <tr><th>Concept</th><th>Definition</th><th>Example</th></tr>
+    <tr><td><strong>Biodegradability</strong></td><td>Ability of a substance to be broken down by natural processes (microorganisms)</td><td>Food scraps → days/weeks; paper → months; plastic → hundreds of years</td></tr>
+    <tr><td><strong>Half-life</strong></td><td>Time for half of a substance to break down or be eliminated from the environment</td><td>DDT: ~15 years; Uranium-238: 4.5 billion years</td></tr>
+    <tr><td><strong>Pollution threshold</strong></td><td>The rate at which waste input exceeds the ecosystem's capacity to process it</td><td>Eutrophication from excess nutrients; microplastic accumulation</td></tr>
+  </table>
+
+  <img src="https://reson-assets-private.0da94ee175d35887d1042684049fdd81.r2.cloudflarestorage.com/files/agent-media/renoise-results/1886a8b6-a68f-4e9b-b15a-16094e08c397/image-0-da3b1a13-11df-4474-8b12-a9bedf31b3d5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=98b34c59f79c5e1b75968eb11d23a0b9%2F20260818%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260818T044015Z&X-Amz-Expires=86400&X-Amz-Signature=717fe8c452f5c499c81439e1c4d6ab5d157a9e25db07d1d1b8e064dcc6ecf796&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject" alt="Ocean plastic pollution" class="slide-img" style="height:250px;">
+  <p class="img-caption">Non-biodegradable waste accumulates when ecosystems can't break it down</p>
+
+  <h3>Environmental Impacts When Thresholds Are Exceeded</h3>
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue);">💧 Water Pollution</h4>
+      <p>Nutrient runoff causes eutrophication → algal blooms → oxygen depletion → aquatic death. Plastics persist and enter food chains.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--orange);">🌍 Soil Contamination</h4>
+      <p>Heavy metals and pesticides accumulate → reduced soil fertility → disrupted microbial life → biodiversity loss.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--red);">💨 Air Pollution</h4>
+      <p>SO₂ and NOₓ from burning waste → acid rain → damages forests, lakes, and buildings over long distances.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--green);">🐟 Food Chain Contamination</h4>
+      <p>POPs bioaccumulate through food chains → reach dangerous concentrations in humans → cancer, reproductive disorders.</p>
+    </div>
+  </div>
+
+  <!-- Biodegradable vs Non-Biodegradable SVG -->
+  <div style="text-align:center;margin:1rem 0;">
+    <svg viewBox="0 0 700 160" width="700" height="160" style="max-width:100%;">
+      <rect x="10" y="10" width="330" height="140" rx="12" fill="#EAF7F0" stroke="#A8D8B9" stroke-width="1.5"/>
+      <text x="175" y="38" text-anchor="middle" font-size="13" font-weight="600" font-family="Sora" fill="#2E8B57">Biodegradable</text>
+      <text x="175" y="60" text-anchor="middle" font-size="11" font-family="Sora" fill="#5F6368">Food scraps, paper, cotton, wood</text>
+      <text x="175" y="80" text-anchor="middle" font-size="11" font-family="Sora" fill="#5F6368">Broken down by microorganisms</text>
+      <text x="175" y="100" text-anchor="middle" font-size="11" font-family="Sora" fill="#5F6368">Days to months to decompose</text>
+      <text x="175" y="125" text-anchor="middle" font-size="18" font-family="Sora" fill="#2E8B57">✓ Returns to ecosystem</text>
+      <rect x="360" y="10" width="330" height="140" rx="12" fill="#FDECEB" stroke="#E8B4B0" stroke-width="1.5"/>
+      <text x="525" y="38" text-anchor="middle" font-size="13" font-weight="600" font-family="Sora" fill="#C0392B">Non-Biodegradable</text>
+      <text x="525" y="60" text-anchor="middle" font-size="11" font-family="Sora" fill="#5F6368">Plastic bottles, glass, synthetic chemicals</text>
+      <text x="525" y="80" text-anchor="middle" font-size="11" font-family="Sora" fill="#5F6368">Resist natural decomposition</text>
+      <text x="525" y="100" text-anchor="middle" font-size="11" font-family="Sora" fill="#5F6368">Centuries to never decompose</text>
+      <text x="525" y="125" text-anchor="middle" font-size="18" font-family="Sora" fill="#C0392B">✗ Accumulates in environment</text>
+    </svg>
+  </div>
+
+  <div class="reflect">
+    <strong>🤔 Think About It</strong> If a factory dumps chemicals into a river faster than the river's bacteria can break them down, at what point does "waste disposal" become "pollution"? What determines that threshold?
+  </div>
+
+  <div class="tip">
+    <strong>📝 Exam Hint</strong> When asked about pollution, always link to the concept of the ecosystem's <em>carrying capacity for waste</em>. Pollution = input rate > natural processing rate. This is a quantitative threshold, not just "waste is bad."
+  </div>
+</div>
+
+<!-- SLIDE 7 — 7.3.6 -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">7.3.6 — Preventative vs Restorative</div>
+  <h2>Preventative Strategies Are More Sustainable</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    <em>Preventative</em> strategies for waste management are more sustainable than <em>restorative</em> strategies.
+  </div>
+
+  <img src="/images/ess_waste_hierarchy.jpg" alt="Waste Hierarchy Pyramid" style="max-width:100%; border-radius:12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(193, 96, 74, 0.15);" />
+
+  <img src="https://images.unsplash.com/photo-1542601098-8fc114e148e2?w=900&q=80" alt="Reduce, Reuse, Recycle concept" class="slide-img" style="height:230px;">
+  <p class="img-caption">The 3 Rs (Reduce, Reuse, Recycle) are preventative — they prevent waste before it exists</p>
+
+  <!-- Waste Hierarchy SVG -->
+  <div style="text-align:center;margin:1.5rem 0;">
+    <svg viewBox="0 0 400 260" width="400" height="260" style="max-width:100%;">
+      <polygon points="200,10 340,250 60,250" fill="none" stroke="#E8EAED" stroke-width="1.5"/>
+      <polygon points="200,10 240,80 160,80" fill="#2E8B57"/>
+      <text x="200" y="55" text-anchor="middle" font-size="12" font-weight="600" font-family="Sora" fill="#fff">PREVENT</text>
+      <polygon points="160,80 240,80 265,130 135,130" fill="#0A6EBD"/>
+      <text x="200" y="112" text-anchor="middle" font-size="11" font-weight="600" font-family="Sora" fill="#fff">REDUCE</text>
+      <polygon points="135,130 265,130 285,175 115,175" fill="#F0AD4E"/>
+      <text x="200" y="158" text-anchor="middle" font-size="11" font-weight="600" font-family="Sora" fill="#fff">REUSE</text>
+      <polygon points="115,175 285,175 305,215 95,215" fill="#FF6B35"/>
+      <text x="200" y="202" text-anchor="middle" font-size="11" font-weight="600" font-family="Sora" fill="#fff">RECYCLE / COMPOST</text>
+      <polygon points="95,215 305,215 340,250 60,250" fill="#C0392B"/>
+      <text x="200" y="240" text-anchor="middle" font-size="11" font-weight="600" font-family="Sora" fill="#fff">DISPOSE (LEAST PREFERRED)</text>
+      <text x="355" y="50" font-size="10" font-family="Sora" fill="#2E8B57" font-weight="600">Most preferred</text>
+      <text x="355" y="245" font-size="10" font-family="Sora" fill="#C0392B" font-weight="600">Least preferred</text>
+      <line x1="365" y1="65" x2="365" y2="230" stroke="#9AA0A6" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+      <defs><marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#9AA0A6"/></marker></defs>
+    </svg>
+  </div>
+
+  <h3>Comparison</h3>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-color:#A8D8B9;">
+      <h4 style="color:var(--green);">✅ Preventative Strategies</h4>
+      <ul>
+        <li>Address waste at the source</li>
+        <li>Reduce consumption and packaging</li>
+        <li>Extended Producer Responsibility (EPR)</li>
+        <li>Bans on single-use plastics</li>
+        <li>Public education campaigns</li>
+      </ul>
+      <p style="margin-top:0.5rem;color:var(--green);font-weight:600;">More sustainable — lower cost, lower impact</p>
+    </div>
+    <div class="compare-card" style="border-color:#E8B4B0;">
+      <h4 style="color:var(--red);">🔄 Restorative Strategies</h4>
+      <ul>
+        <li>Clean up after damage occurs</li>
+        <li>Ocean cleanup projects</li>
+        <li>Brownfield remediation</li>
+        <li>Contaminated water treatment</li>
+        <li>Costly and often incomplete</li>
+      </ul>
+      <p style="margin-top:0.5rem;color:var(--red);font-weight:600;">Less sustainable — addresses symptoms, not causes</p>
+    </div>
+  </div>
+
+  <div class="eq">Prevention &gt; Cure · Stopping waste before it's created &gt; Cleaning it up after</div>
+
+  <p><strong>Circular economy</strong> is the overarching framework for preventative strategies. Instead of the linear <em>take-make-dispose</em> model, a circular economy designs products for durability, repair, reuse, and recycling — keeping materials in use for as long as possible and minimising waste at every stage. This is the systemic shift behind EPR policies, product redesign, and the "6 Rs" (Refuse, Rethink, Repurpose, Repair, Remanufacture, Recover).</p>
+
+  <div class="case">
+    <strong>🌍 Case Study — Single-Use Plastic Bans</strong>
+    Over 120 countries have introduced bans or taxes on single-use plastics. Rwanda banned plastic bags in 2008 — now one of the cleanest nations in Africa. The EU banned single-use plastics (cutlery, plates, straws, stirrers) in 2021. These preventative measures reduce waste at source, avoiding the far higher cost of ocean cleanup or landfill management.
+  </div>
+
+  <div class="reflect">
+    <strong>🤔 Think About It</strong> Is recycling truly "preventative" — or is it a restorative strategy that happens before the damage is severe? Where does "reduce" end and "recycle" begin on the prevention spectrum?
+  </div>
+</div>
+
+<!-- SLIDE 8 — 7.3.7 -->
+<div class="slide" id="slide-8">
+  <div class="section-tag">7.3.7 — Disposal Options</div>
+  <h2>Different Disposal Options, Different Trade-Offs</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Different waste disposal options have different <em>advantages and disadvantages</em> in terms of their impact on societies and ecosystems.
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1567393528677-d6adae7d4a0a?w=900&q=80" alt="Landfill site" class="slide-img" style="height:230px;">
+  <p class="img-caption">Landfill — still the world's most common waste disposal method</p>
+
+  <h3>Landfill</h3>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-color:#A8D8B9;">
+      <h4 style="color:var(--green);">Advantages</h4>
+      <ul>
+        <li>Cheap and simple to operate</li>
+        <li>Methane capture for energy production</li>
+        <li>Creates local jobs</li>
+        <li>Old sites can be landscaped and reused</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-color:#E8B4B0;">
+      <h4 style="color:var(--red);">Disadvantages</h4>
+      <ul>
+        <li>Methane emissions (greenhouse gas)</li>
+        <li>Leachate contaminates groundwater</li>
+        <li>Landfill sites filling up globally</li>
+        <li>Odour, vermin, visual pollution</li>
+      </ul>
+    </div>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1569005972746-3c0c2f61a6fc?w=900&q=80" alt="Waste incineration plant" class="slide-img" style="height:230px;">
+  <p class="img-caption">Incineration reduces waste volume by 80–85% but creates air quality concerns</p>
+
+  <h3>Incineration</h3>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-color:#A8D8B9;">
+      <h4 style="color:var(--green);">Advantages</h4>
+      <ul>
+        <li>Reduces waste volume by 80–85%</li>
+        <li>Can generate electricity (waste-to-energy)</li>
+        <li>Destroys hazardous/clinical waste</li>
+        <li>Avoids methane emissions of landfills</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-color:#E8B4B0;">
+      <h4 style="color:var(--red);">Disadvantages</h4>
+      <ul>
+        <li>Air pollution (dioxins, heavy metals)</li>
+        <li>Toxic fly ash requires landfill</li>
+        <li>Very high setup costs</li>
+        <li>Public opposition (NIMBY)</li>
+      </ul>
+    </div>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1590099033615-be195f8d575c?w=900&q=80" alt="Recycling facility" class="slide-img" style="height:230px;">
+  <p class="img-caption">Recycling saves raw materials and energy — but depends on public participation</p>
+
+  <h3>Recycling</h3>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-color:#A8D8B9;">
+      <h4 style="color:var(--green);">Advantages</h4>
+      <ul>
+        <li>Conserves raw materials and energy</li>
+        <li>Reduces pollution at extraction stage</li>
+        <li>Creates green jobs</li>
+        <li>Lowers greenhouse gas emissions</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-color:#E8B4B0;">
+      <h4 style="color:var(--red);">Disadvantages</h4>
+      <ul>
+        <li>Requires public buy-in and sorting</li>
+        <li>Not always cost-effective</li>
+        <li>High initial capital investment</li>
+        <li>Recycled products may be less durable</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Composting</h3>
+  <div class="compare-grid">
+    <div class="compare-card" style="border-color:#A8D8B9;">
+      <h4 style="color:var(--green);">Advantages</h4>
+      <ul>
+        <li>Low cost; can be done at household level</li>
+        <li>Creates nutrient-rich soil</li>
+        <li>Reduces landfill organic waste</li>
+        <li>Decreases need for synthetic fertilisers</li>
+      </ul>
+    </div>
+    <div class="compare-card" style="border-color:#E8B4B0;">
+      <h4 style="color:var(--red);">Disadvantages</h4>
+      <ul>
+        <li>Attracts pests if poorly managed</li>
+        <li>Only works for organic matter</li>
+        <li>Requires space and public buy-in</li>
+        <li>Odour problems at scale</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="reflect">
+    <strong>🤔 Your Turn</strong> You're the waste minister for a small island nation with limited land, no recycling infrastructure, and growing tourism. Which disposal method do you prioritise first — and why? What would need to change before you could adopt the others?
+  </div>
+
+  <div class="tip">
+    <strong>📝 Exam Hint</strong> For "discuss" questions on disposal methods: always evaluate both sides with specific data. E.g. "Incineration reduces volume by 85%, but emits dioxins — a carcinogen. Cost-benefit depends on whether the country has land scarcity (Japan favours incineration) or open land (US favours landfills)."
+  </div>
+</div>
+
+<!-- SLIDE 9 — 7.3.8 -->
+<div class="slide" id="slide-9">
+  <div class="section-tag">7.3.8 — Sustainable Management</div>
+  <h2>Promoting Sustainable Waste Management</h2>
+  <div class="kt">
+    <strong>Key Understanding</strong>
+    Sustainable options for management of SDW can be <em>promoted</em> in societies.
+  </div>
+
+  <img src="https://reson-assets-private.0da94ee175d35887d1042684049fdd81.r2.cloudflarestorage.com/files/agent-media/renoise-results/86e7dda8-e7a4-4d21-9884-7bd8eafab59e/image-0-d5f45c8d-c6b5-4dbb-a45c-cfc5696c7f01.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=98b34c59f79c5e1b75968eb11d23a0b9%2F20260818%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260818T043301Z&X-Amz-Expires=86400&X-Amz-Signature=da3ab31c0341f6dceeea0251a706641223069cb0a669d5728b17498096a68573&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject" alt="Green city — sustainable infrastructure" class="slide-img" style="height:240px;">
+  <p class="img-caption">Sustainable waste management requires infrastructure, policy, and cultural change</p>
+
+  <h3>Strategies for Promotion</h3>
+  <table class="tbl">
+    <tr><th>Strategy</th><th>How It Works</th><th>Named Example</th></tr>
+    <tr><td><strong>Taxes &amp; Financial Incentives</strong></td><td>Charge for waste disposal to discourage excess; subsidise recycling</td><td>Pay-As-You-Throw (PAYT) — shown to reduce waste volumes significantly where implemented</td></tr>
+    <tr><td><strong>Legislation</strong></td><td>Mandatory recycling; plastic bans; Extended Producer Responsibility (EPR)</td><td>EU Single-Use Plastics Directive (2021)</td></tr>
+    <tr><td><strong>Education &amp; Awareness</strong></td><td>School programmes; public campaigns; workshops on composting</td><td>Japan's school recycling education system</td></tr>
+    <tr><td><strong>Improved Facilities</strong></td><td>Convenient recycling centres; curbside collection; hazardous waste drop-off</td><td>South Korea's food waste recycling scheme (~95% recycled)</td></tr>
+    <tr><td><strong>Community Initiatives</strong></td><td>Community composting; zero-waste groups; local repair cafés</td><td>Kamikatsu, Japan — 45-category sorting</td></tr>
+  </table>
+
+  <h3>Pay-As-You-Throw (PAYT)</h3>
+  <div class="flow">
+    <div class="flow-box" style="background:var(--red-light);border-color:#E8B4B0;">More waste<br><small>= Higher cost</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--yellow-light);border-color:#F0D89E;">Behaviour<br>change</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box" style="background:var(--green-light);border-color:#A8D8B9;">Less waste<br>+ More recycling</div>
+  </div>
+  <p style="font-size:0.88rem;">PAYT creates a direct financial incentive to reduce waste. Where implemented, waste volumes typically decrease by 25–45%. South Korea's volume-based waste fee system, introduced in 1995, reduced per capita waste by over 15% within a decade and boosted recycling rates from 15% to over 60%.</p>
+
+  <img src="https://images.unsplash.com/photo-1567366922287-e4e9e707ab3b?w=900&q=80" alt="Recycling in action" class="slide-img" style="height:220px;">
+  <p class="img-caption">Successful recycling depends on accessible infrastructure and public participation</p>
+
+  <div class="case">
+    <strong>🇯🇵 Case Study — Kamikatsu Zero Waste</strong>
+    Kamikatsu, a town of ~1,500 people in Japan, declared zero waste by 2020. Residents sort waste into <strong>45 categories</strong>. The town operates a "kuru-kuru" shop where items are exchanged for reuse. While the 2020 target wasn't fully met, the town achieves ~80% recycling/composting rate — compared to ~20% national average.
+  </div>
+
+  <div class="case">
+    <strong>🇸🇪 Case Study — Sweden</strong>
+    Sweden recycles or composts ~49% of waste and incinerates ~49% for energy. Less than 1% goes to landfill. The country actually <em>imports</em> waste from other European nations to fuel its waste-to-energy plants, which provide heating for 250,000 homes.
+  </div>
+
+  <div class="reflect">
+    <strong>🤔 Think About It</strong> Sweden imports other countries' waste for energy. Is that sustainable — or just shifting the problem? What happens when neighbouring countries improve their own recycling?
+  </div>
+
+  <div class="tip">
+    <strong>📝 Exam Hint</strong> For "evaluate" questions: compare preventative (PAYT, bans, education) vs restorative (ocean cleanup, landfill remediation) approaches. Strong answers note that prevention is more sustainable but requires political will and cultural change, while restoration addresses existing damage but doesn't prevent future waste.
+  </div>
+</div>
+
+<!-- SLIDE 10 — KEY TERMS -->
+<div class="slide" id="slide-10">
+  <div class="section-tag">Key Terms</div>
+  <h2>Glossary — Essential Vocabulary</h2>
+
+  <table class="tbl">
+    <tr><th style="width:30%;">Term</th><th>Definition</th></tr>
+    <tr><td><strong>Solid domestic waste (SDW)</strong></td><td>Waste generated from households, including packaging, food scraps, appliances, and furniture</td></tr>
+    <tr><td><strong>Linear economy</strong></td><td>Take-make-dispose system where resources are extracted, used, and discarded</td></tr>
+    <tr><td><strong>Circular economy</strong></td><td>System designed to keep resources in use for as long as possible through reuse, repair, and recycling (see 7.3.6)</td></tr>
+    <tr><td><strong>Biodegradability</strong></td><td>Ability of a substance to be broken down naturally by microorganisms</td></tr>
+    <tr><td><strong>Half-life</strong></td><td>Time required for half of a substance to break down or be eliminated from the environment</td></tr>
+    <tr><td><strong>Bioaccumulation</strong></td><td>Gradual build-up of substances in an organism over time, especially through the food chain</td></tr>
+    <tr><td><strong>Leachate</strong></td><td>Liquid that drains or 'leaches' from a landfill, carrying dissolved contaminants</td></tr>
+    <tr><td><strong>Methane</strong></td><td>Greenhouse gas produced by organic waste decomposition in landfills; 25× more warming potential than CO₂</td></tr>
+    <tr><td><strong>E-waste</strong></td><td>Discarded electronic devices and components (computers, phones, TVs)</td></tr>
+    <tr><td><strong>Transboundary waste</strong></td><td>Waste transported across national borders for disposal or recycling</td></tr>
+    <tr><td><strong>Basel Convention</strong></td><td>International treaty regulating movement of hazardous waste between countries</td></tr>
+    <tr><td><strong>Extended Producer Responsibility (EPR)</strong></td><td>Policy requiring manufacturers to manage the end-of-life disposal of their products</td></tr>
+    <tr><td><strong>Pay-As-You-Throw (PAYT)</strong></td><td>Waste management scheme where households are charged based on the amount of waste they produce</td></tr>
+    <tr><td><strong>Preventative strategy</strong></td><td>Waste management approach that reduces or eliminates waste before it is created</td></tr>
+    <tr><td><strong>Restorative strategy</strong></td><td>Waste management approach that cleans up and restores environments after damage has occurred</td></tr>
+    <tr><td><strong>Waste-to-energy</strong></td><td>Burning waste at high temperatures to generate electricity or heat</td></tr>
+  </table>
+</div>
+
+<!-- SLIDE 11 — EXAM TIPS -->
+<div class="slide" id="slide-11">
+  <div class="section-tag" style="background:var(--orange-light);color:var(--orange);">Exam Preparation</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+
+  <div class="tip">
+    <strong>📝 Paper 1 — Case Study Skills</strong>
+    <ul class="bullets" style="margin-top:0.4rem;">
+      <li>Identify the <strong>waste composition</strong> of the case study country — what % is organic, plastic, paper?</li>
+      <li>Link to <strong>income level</strong> — HICs generate more packaging waste; LICs have more organic waste</li>
+      <li>Evaluate <strong>disposal methods used</strong> — are they preventative or restorative?</li>
+      <li>Consider <strong>transboundary impacts</strong> — does the country export waste? Import waste?</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <strong>📝 Paper 2 — Structured Essay Tips</strong>
+    <ul class="bullets" style="margin-top:0.4rem;">
+      <li><strong>Define key terms</strong> — "SDW refers to waste generated from households, including…"</li>
+      <li><strong>Use specific data</strong> — "The average American produces 2.3 kg of waste per day, compared to 0.39 kg in sub-Saharan Africa (World Bank, 2018)"</li>
+      <li><strong>Compare and contrast</strong> — preventative vs restorative, HIC vs LIC, landfill vs incineration</li>
+      <li><strong>Evaluate with perspectives</strong> — ecocentric (reduce consumption) vs technocentric (waste-to-energy)</li>
+      <li><strong>Always mention the ecosystem threshold</strong> — pollution = input rate > natural processing capacity</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Common Exam Patterns</h3>
+    <table class="tbl">
+      <tr><th>Pattern</th><th>Key Skill</th></tr>
+      <tr><td>Classify waste by source/type</td><td>Domestic, industrial, agricultural; organic, inorganic, hazardous</td></tr>
+      <tr><td>Compare disposal methods</td><td>Advantages/disadvantages of landfill, incineration, recycling, composting</td></tr>
+      <tr><td>Evaluate waste management</td><td>Preventative vs restorative; cost, environmental impact, social acceptance</td></tr>
+      <tr><td>Discuss transboundary issues</td><td>Basel Convention; waste colonialism; environmental justice</td></tr>
+      <tr><td>Analyze a zero-waste initiative</td><td>Kamikatsu, Sweden, Germany — what made it work?</td></tr>
+      <tr><td>Link to SDGs</td><td>SDG 12 (Responsible Consumption &amp; Production); SDG 14 (Life Below Water)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 12 — COMPLETION -->
+<div class="slide" id="slide-12">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>You've Covered All 8 Syllabus Points</h1>
+    <div class="point-count">8</div>
+    <div class="point-label">Understanding points completed</div>
+    <p style="margin-top:1.5rem;font-size:0.95rem;color:var(--gray-600);">
+      <strong>7.3.1 – 7.3.8</strong> (SL Only — no HL extension for this subtopic)
+    </p>
+    <p style="font-size:0.85rem;color:var(--gray-400);margin-top:2rem;">
+      IB ESS 7.3 — Solid Waste<br>
+      New Syllabus · First Assessment 2026<br>
+      <em>The goal: less waste in, less harm out.</em>
+    </p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <button class="nav-btn" id="prevBtn" onclick="goTo(currentSlide - 1)">← Prev</button>
+  <div style="display:flex;align-items:center;gap:0.3rem;">
+    <div class="nav-dots" id="navDots"></div>
+    <span class="nav-counter" id="navCounter"></span>
+  </div>
+  <button class="nav-btn" id="nextBtn" onclick="goTo(currentSlide + 1)">Next →</button>
+</nav>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  let currentSlide = 0;
+
+  function goTo(n) {
+    if (n < 0 || n >= totalSlides) return;
+    slides[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    updateNav();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateNav() {
+    document.getElementById('prevBtn').disabled = currentSlide === 0;
+    document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+    document.getElementById('navCounter').textContent = (currentSlide + 1) + ' / ' + totalSlides;
+    document.getElementById('progressBar').style.width = ((currentSlide / (totalSlides - 1)) * 100) + '%';
+    document.querySelectorAll('.nav-dot').forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+  }
+
+  const dotsContainer = document.getElementById('navDots');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    dot.title = 'Slide ' + (i + 1);
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goTo(currentSlide + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goTo(currentSlide - 1); }
+  });
+
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 60) { diff > 0 ? goTo(currentSlide + 1) : goTo(currentSlide - 1); }
+  }, { passive: true });
+
+  updateNav();
+</script>
+
+</body>
+</html>
