@@ -267,9 +267,9 @@ export const COURSES: Course[] = [
         slug: "hl-a",
         title: "HL.a",
         subtitle: "Environmental Law",
+        htmlFile: "/slides/ess-hl-a.html",
         level: "HL Only",
         unit: "HL Lenses",
-        status: "coming-soon",
       },
       {
         slug: "hl-b",
