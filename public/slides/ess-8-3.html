@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB ESS 8.3 — Urban Air Pollution</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
+  .section-tag.hl{background:var(--hl-light);color:var(--hl)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue-dark);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .hl-accent{border-left:4px solid var(--hl);padding-left:1.2rem}.hl-accent .kt{border-left-color:var(--hl)}.hl-accent .kt strong{color:var(--hl)}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .eq{background:var(--blue-light);border:1px solid #B8DCF2;border-radius:8px;padding:.9rem 1.2rem;margin:1rem 0;font-size:1.05rem;font-weight:500;text-align:center;color:var(--blue-dark);letter-spacing:.02em}
+  .eq-dark{background:var(--gray-800);color:#fff;border:none;font-family:'Sora',monospace;letter-spacing:.5px}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .warn{background:var(--red-light);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.warn strong{color:var(--red)}
+  .flow{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin:1rem 0;font-size:.85rem}.flow-box{background:var(--blue-light);border:1px solid #B8DCF2;border-radius:8px;padding:.5rem .8rem;font-weight:500;text-align:center;white-space:nowrap}.flow-arrow{color:var(--blue);font-weight:700;font-size:1.1rem}
+  .slide-img{width:100%;border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(193, 96, 74, 0.15);object-fit:cover}
+  .img-caption{font-size:.78rem;color:var(--gray-400);text-align:center;margin-top:-.5rem;margin-bottom:.8rem;font-style:italic}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--blue);width:20px;border-radius:4px}.nav-dot.hl-dot{background:var(--hl-border)}.nav-dot.hl-dot.active{background:var(--hl)}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  .reflect{background:var(--yellow-light);border:1px solid #F0D89E;border-radius:10px;padding:1rem 1.2rem;margin:1.2rem 0;font-size:.9rem}.reflect strong{color:#B8860B}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1517482939912-32a537f71775?w=900&q=80" alt="Smog over an urban skyline" class="cover-img">
+    <div class="section-tag">IB DP Environmental Systems & Societies</div>
+    <h1>8.3 — Urban Air Pollution</h1>
+    <p class="subtitle">Subtopic 8.3 · New Syllabus (First Assessment 2026)<br>Standard Level + Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">SL Syllabus Points</div></div>
+      <div class="stat"><div class="stat-num">1</div><div class="stat-label">HL Extensions</div></div>
+      <div class="stat"><div class="stat-num">7</div><div class="stat-label">Total Understandings</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — OVERVIEW -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">Overview</div>
+  <h2>What You Need to Know</h2>
+  <p>This subtopic examines how fossil fuel combustion in urban areas leads to complex air pollution problems. We will explore the differences between primary and secondary pollutants, the formation of photochemical smog, the impacts of acid rain, and strategies for managing these global issues.</p>
+  <h3>Guiding Questions</h3>
+  <ul class="bullets">
+    <li>How do human activities and natural processes interact to create urban air pollution?</li>
+    <li>What are the environmental and social impacts of photochemical smog and acid rain?</li>
+    <li>How effective are different management strategies in mitigating urban air pollution?</li>
+  </ul>
+  <div class="card">
+    <strong style="color:var(--blue)">A. Pollutants</strong>
+    <p style="margin:.3rem 0 .6rem;font-size:.85rem;">Distinguishing between primary and secondary pollutants.</p>
+    <strong style="color:var(--green)">B. Photochemical Smog</strong>
+    <p style="margin:.3rem 0 .6rem;font-size:.85rem;">The role of sunlight, VOCs, NOx, and thermal inversions in forming smog.</p>
+    <strong style="color:var(--orange)">C. Acid Deposition</strong>
+    <p style="margin:.3rem 0 .6rem;font-size:.85rem;">Causes and impacts of wet and dry acid deposition on ecosystems.</p>
+    <strong style="color:var(--hl)">D. HL Extensions</strong>
+    <p style="margin:.3rem 0 0;font-size:.85rem;">Policy analysis and the application of economic/ethical lenses to pollution management.</p>
+  </div>
+</div>
+
+<!-- SLIDE 2 — 8.3.1 -->
+<div class="slide" id="slide-2" data-hl="false">
+  <div class="section-tag">8.3.1 — Primary & Secondary Pollutants</div>
+  <h2>Primary vs Secondary Pollutants</h2>
+  <div class="kt"><strong>Key Understanding</strong>Fossil fuel combustion produces <em>primary pollutants</em>, which can react in the atmosphere to form <em>secondary pollutants</em>.</div>
+  
+  <img src="/images/ess_primary_secondary.jpg" alt="Primary vs Secondary Air Pollutants" class="slide-img">
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Primary Pollutants</h4>
+      <p>Emitted directly into the atmosphere from a source (e.g., a car exhaust or factory chimney).</p>
+      <ul>
+        <li><strong>NOx</strong> (Nitrogen Oxides)</li>
+        <li><strong>SO2</strong> (Sulfur Dioxide)</li>
+        <li><strong>CO</strong> (Carbon Monoxide)</li>
+        <li><strong>PM</strong> (Particulate Matter like PM10, PM2.5)</li>
+        <li><strong>VOCs</strong> (Volatile Organic Compounds)</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--orange)">Secondary Pollutants</h4>
+      <p>Formed when primary pollutants undergo chemical reactions in the atmosphere (often driven by sunlight or water).</p>
+      <ul>
+        <li><strong>Tropospheric Ozone (O3)</strong></li>
+        <li><strong>Photochemical Smog</strong></li>
+        <li><strong>Acid Rain (H2SO4, HNO3)</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 — 8.3.2 -->
+<div class="slide" id="slide-3" data-hl="false">
+  <div class="section-tag">8.3.2 — Photochemical Smog</div>
+  <h2>Formation of Photochemical Smog</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Photochemical smog</em> is a mixture of primary and secondary pollutants, predominantly tropospheric ozone, formed when NOx and VOCs react in the presence of <em>sunlight</em>.</div>
+  
+  <p>Unlike normal "smog" (smoke + fog), photochemical smog is a chemical soup that peaks in the afternoon on hot, sunny days.</p>
+  
+  <h3>The Chemical Reaction</h3>
+  <div class="eq">
+    Nitrogen Oxides (NOx) + Volatile Organic Compounds (VOCs) + Sunlight ➔ Tropospheric Ozone (O3) + PANs
+  </div>
+  
+  <ul class="bullets">
+    <li><strong>Tropospheric Ozone (O3):</strong> While ozone in the stratosphere protects us from UV rays, ozone in the troposphere (ground level) is a toxic greenhouse gas that damages lung tissue and plant leaves.</li>
+    <li><strong>PANs:</strong> Peroxyacyl nitrates are highly toxic respiratory and eye irritants.</li>
+  </ul>
+  
+  <div class="warn"><strong>Environmental Impact</strong>Photochemical smog reduces photosynthesis in plants, damages materials (like rubber and plastics), and causes severe respiratory diseases (asthma, bronchitis) in humans.</div>
+</div>
+
+<!-- SLIDE 4 — 8.3.3 -->
+<div class="slide" id="slide-4" data-hl="false">
+  <div class="section-tag">8.3.3 — Smog Factors</div>
+  <h2>Factors Influencing Smog</h2>
+  <div class="kt"><strong>Key Understanding</strong>The frequency and severity of photochemical smog in an area depend on local <em>topography</em>, <em>climate</em>, and <em>population density</em>.</div>
+  
+  <img src="/images/ess_smog.jpg" alt="Thermal Inversion and Photochemical Smog" class="slide-img">
+  
+  <h3>The Role of Thermal Inversions</h3>
+  <p>Normally, warm air near the ground rises, carrying pollutants away. During a <strong>thermal inversion</strong>, a layer of warm air traps cooler, denser air near the surface, acting like a "lid" that traps all emissions over a city.</p>
+  
+  <h3>Why Some Cities Suffer More:</h3>
+  <table class="tbl">
+    <tr><th>Factor</th><th>How it Worsens Smog</th><th>Examples</th></tr>
+    <tr><td><strong>Topography (Valleys)</strong></td><td>Mountains surrounding a city block wind, preventing pollutants from dispersing.</td><td>Los Angeles, Mexico City, Santiago.</td></tr>
+    <tr><td><strong>Climate (Sunshine)</strong></td><td>High UV sunlight is required to drive the photochemical reactions.</td><td>Sunny climates experience more smog.</td></tr>
+    <tr><td><strong>Population Density</strong></td><td>More people = more cars (NOx) and more industrial/domestic emissions (VOCs).</td><td>Beijing, New Delhi.</td></tr>
+  </table>
+</div>
+
+<!-- SLIDE 5 — 8.3.4 -->
+<div class="slide" id="slide-5" data-hl="false">
+  <div class="section-tag">8.3.4 — Acid Deposition</div>
+  <h2>The Causes of Acid Rain</h2>
+  <div class="kt"><strong>Key Understanding</strong><em>Acid deposition</em> occurs when sulfur dioxide (SO2) and nitrogen oxides (NOx) from fossil fuel combustion react with water in the atmosphere to form acidic compounds.</div>
+  
+  <p>Acid deposition can be <strong>wet</strong> (rain, snow, fog) or <strong>dry</strong> (ash, dry particles falling to the ground).</p>
+  
+  <div class="flow">
+    <div class="flow-box">Coal Power Plants<br>(SO2 emissions)</div>
+    <div class="flow-arrow">➜</div>
+    <div class="flow-box">Reacts with H2O</div>
+    <div class="flow-arrow">➜</div>
+    <div class="flow-box">Sulfuric Acid (H2SO4)</div>
+  </div>
+  
+  <div class="flow">
+    <div class="flow-box">Vehicle Exhausts<br>(NOx emissions)</div>
+    <div class="flow-arrow">➜</div>
+    <div class="flow-box">Reacts with H2O</div>
+    <div class="flow-arrow">➜</div>
+    <div class="flow-box">Nitric Acid (HNO3)</div>
+  </div>
+  
+  <p>Normal rain is slightly acidic (pH ~5.6) due to natural CO2 in the air. Acid rain typically has a pH between 4.0 and 5.0.</p>
+</div>
+
+<!-- SLIDE 6 — 8.3.5 -->
+<div class="slide" id="slide-6" data-hl="false">
+  <div class="section-tag">8.3.5 — Impacts of Acid Rain</div>
+  <h2>Environmental Impacts of Acid Rain</h2>
+  <div class="kt"><strong>Key Understanding</strong>Acid deposition has profound impacts on <em>terrestrial and aquatic ecosystems</em>, as well as on human infrastructure.</div>
+  
+  <img src="/images/ess_acid_rain.jpg" alt="Impacts of Acid Rain" class="slide-img">
+  
+  <h3>1. Direct & Indirect Effects on Trees (Forests)</h3>
+  <ul class="bullets">
+    <li><strong>Direct:</strong> Acid rain damages leaves/needles, breaking down the cuticle and reducing photosynthesis.</li>
+    <li><strong>Indirect (Soil):</strong> Acidifies soil, which <em>leaches</em> away essential nutrients (Calcium, Magnesium).</li>
+    <li><strong>Indirect (Toxicity):</strong> Acidic soil releases toxic Aluminum (Al3+) ions, which damage tree roots, preventing them from absorbing water.</li>
+  </ul>
+  
+  <h3>2. Aquatic Ecosystems (Lakes & Rivers)</h3>
+  <ul class="bullets">
+    <li>Low pH combined with Aluminum runoff is highly toxic to fish (causes mucus to build up on gills, leading to asphyxiation).</li>
+    <li>Decreases biodiversity; sensitive indicator species (like lichen and certain aquatic insects) die off first.</li>
+  </ul>
+  
+  <h3>3. Human Infrastructure</h3>
+  <p>Acid rain chemically weathers limestone and marble buildings and statues, and corrodes metal bridges and railways.</p>
+</div>
+
+<!-- SLIDE 7 — 8.3.6 -->
+<div class="slide" id="slide-7" data-hl="false">
+  <div class="section-tag">8.3.6 — Management Strategies</div>
+  <h2>Managing Air Pollution</h2>
+  <div class="kt"><strong>Key Understanding</strong>Pollution management strategies can be evaluated at three levels: <em>altering human activity</em>, <em>regulating the release of pollutants</em>, and <em>cleaning up damaged systems</em>.</div>
+  
+  <p>We use the "Replace, Regulate, Restore" framework to evaluate strategies.</p>
+  
+  <table class="tbl">
+    <tr><th>Strategy Level</th><th>Examples for Smog & Acid Rain</th><th>Evaluation</th></tr>
+    <tr>
+      <td><strong>1. Alter Human Activity (Replace)</strong></td>
+      <td>Switching from coal to wind/solar; walking/cycling instead of driving; using public transport.</td>
+      <td><strong>Pro:</strong> Prevents pollution at the source.<br><strong>Con:</strong> Requires massive behavioral and economic shifts.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Regulate Release (Regulate)</strong></td>
+      <td>Catalytic converters in cars (reduces NOx); scrubbing chimneys in coal plants to remove SO2; taxes on high-emission vehicles.</td>
+      <td><strong>Pro:</strong> Technology exists and can be legislated.<br><strong>Con:</strong> Expensive to retrofit factories; doesn't stop fossil fuel use.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Clean Up (Restore)</strong></td>
+      <td>Adding crushed limestone (liming) to acidified lakes to neutralize the pH; replanting damaged forests.</td>
+      <td><strong>Pro:</strong> Saves ecosystems in immediate danger.<br><strong>Con:</strong> Very expensive, temporary fix (acid rain will just fall again).</td>
+    </tr>
+  </table>
+</div>
+
+<!-- SLIDE 8 — 8.3.7 -->
+<div class="slide" id="slide-8" data-hl="true">
+  <div class="hl-accent">
+    <div class="section-tag hl">8.3.7 — HL Extensions</div>
+    <h2>Policy, Economics & Ethics <span class="hl-badge">HL</span></h2>
+    <div class="kt"><strong>Key Understanding (HL)</strong>The implementation of air pollution management strategies requires careful consideration of <em>economic impacts, environmental laws, and ethical responsibilities</em>.</div>
+  </div>
+  
+  <p>For HL students, understanding the science is not enough. You must apply the three lenses:</p>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Economic Lens</h4>
+      <p>Implementing scrubbers on coal plants costs millions. Who pays? Does the cost get passed to consumers? What is the economic cost of <em>inaction</em> (healthcare costs for asthma, lost agricultural yields from smog)?</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--green)">Ethical Lens</h4>
+      <p>Is it ethical for developed nations (who historically polluted the most) to demand developing nations curb their emissions at the expense of economic growth? This raises issues of environmental justice.</p>
+    </div>
+  </div>
+  
+  <div class="case"><strong>🌍 Cross-Border Pollution</strong> Acid rain does not respect borders. SO2 emitted in the USA often falls as acid rain in Canada. This necessitates international treaties, such as the 1991 US-Canada Air Quality Agreement.</div>
+</div>
+
+<!-- SLIDE 9 — GLOSSARY -->
+<div class="slide" id="slide-9" data-hl="false">
+  <div class="section-tag">Review</div>
+  <h2>Glossary — Essential Vocabulary</h2>
+  <table class="tbl">
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td><strong>Primary Pollutant</strong></td><td>A pollutant emitted directly from a source (e.g., NOx, SO2).</td></tr>
+    <tr><td><strong>Secondary Pollutant</strong></td><td>A pollutant formed in the atmosphere through chemical reactions (e.g., Tropospheric Ozone).</td></tr>
+    <tr><td><strong>Tropospheric Ozone</strong></td><td>Ozone found at ground level; a harmful secondary pollutant and greenhouse gas.</td></tr>
+    <tr><td><strong>Thermal Inversion</strong></td><td>A weather condition where a layer of warm air traps cooler, polluted air near the ground.</td></tr>
+    <tr><td><strong>Wet Deposition</strong></td><td>Acid rain, snow, or fog.</td></tr>
+    <tr><td><strong>Leaching</strong></td><td>The process by which acid rain washes vital nutrients out of the soil.</td></tr>
+  </table>
+</div>
+
+<!-- SLIDE 10 — EXAM TIPS -->
+<div class="slide" id="slide-10" data-hl="false">
+  <div class="section-tag">Review</div>
+  <h2>Key Takeaways &amp; Exam Tips</h2>
+  
+  <div class="tip"><strong>📝 Exam Hint: Strategy Evaluation</strong> When asked to "evaluate" a pollution management strategy, make sure you provide BOTH strengths and weaknesses. The best answers always structure their points using the "Alter, Regulate, Restore" framework.</div>
+  
+  <ul class="bullets">
+    <li><strong>Don't confuse Ozone types:</strong> Stratospheric ozone = GOOD (protects from UV). Tropospheric ozone = BAD (causes respiratory issues and smog).</li>
+    <li><strong>Aluminum Toxicity:</strong> For acid rain questions regarding forests or lakes, always mention the release of toxic Al3+ ions from the soil. It shows higher-level understanding than just saying "the acid kills them."</li>
+    <li><strong>Topography matters:</strong> Be prepared to explain <em>why</em> a specific city (like Los Angeles) has worse smog than a flat city with the same number of cars.</li>
+  </ul>
+</div>
+
+<!-- SLIDE 11 — COMPLETION -->
+<div class="slide" id="slide-11" data-hl="false">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>Topic 8.3 Complete!</h1>
+    <p>You have successfully reviewed Urban Air Pollution.</p>
+    <div class="point-count">7 / 7</div>
+    <div class="point-label">Syllabus Understandings Covered</div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
+  <div class="nav-dots" id="dotsContainer"></div>
+  <div class="nav-counter" id="slideCounter">1 / 12</div>
+  <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const counter = document.getElementById('slideCounter');
+  const progressBar = document.getElementById('progressBar');
+  const dotsContainer = document.getElementById('dotsContainer');
+  
+  // Initialize dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    if (slide.getAttribute('data-hl') === 'true') {
+      dot.classList.add('hl-dot');
+    }
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => jumpTo(i);
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  function updateNav() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    btnPrev.disabled = currentSlide === 0;
+    btnNext.disabled = currentSlide === totalSlides - 1;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function goTo(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    updateNav();
+  }
+  
+  function jumpTo(index) {
+    currentSlide = index;
+    updateNav();
+  }
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) goTo(1);
+    if (e.key === 'ArrowLeft' && currentSlide > 0) goTo(-1);
+  });
+  
+  updateNav();
+</script>
+</body>
+</html>

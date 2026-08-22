@@ -259,9 +259,9 @@ export const COURSES: Course[] = [
         slug: "8-3",
         title: "Topic 8.3",
         subtitle: "Urban Air Pollution",
+        htmlFile: "/slides/ess-8-3.html",
         level: "SL & HL",
         unit: "Unit 8: Human Populations & Urban Systems",
-        status: "coming-soon",
       },
       {
         slug: "hl-a",
