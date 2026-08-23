@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB ESS HL.c — Environmental Ethics</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--hl-light);color:var(--hl)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--hl);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--hl);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--hl)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .warn{background:var(--red-light);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.warn strong{color:var(--red)}
+  .slide-img{width:100%;border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(193, 96, 74, 0.15);object-fit:cover}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 30%}
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--hl);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--hl);width:20px;border-radius:4px}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--hl)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--hl);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&q=80" alt="Person holding a small plant in their hands" class="cover-img">
+    <div class="section-tag">IB DP Environmental Systems & Societies</div>
+    <h1>HL.c — Environmental Ethics</h1>
+    <p class="subtitle">Higher Level Lens · New Syllabus (First Assessment 2026)</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">HL</div><div class="stat-label">Only</div></div>
+      <div class="stat"><div class="stat-num">Lens</div><div class="stat-label">Application</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — HL.c.1 & HL.c.2 -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">HL.c.1 / HL.c.2</div>
+  <h2>Ethics & Environmental Ethics</h2>
+  <div class="kt"><strong>HL.c.1</strong> Ethics is the branch of philosophy that focuses on moral principles and what behaviours are right and wrong.</div>
+  
+  <p>Ethics guides human behavior based on what a society or individual deems to be "good" or "bad".</p>
+  
+  <div class="kt"><strong>HL.c.2</strong> Environmental ethics is a branch of ethical philosophy that addresses environmental issues.</div>
+  
+  <p>Traditional ethics focused entirely on human-to-human relationships. Environmental ethics asks: Do we have moral obligations to non-human entities (animals, plants, rivers, ecosystems)? If so, what are they?</p>
+</div>
+
+<!-- SLIDE 2 — HL.c.3 -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">HL.c.3</div>
+  <h2>Conflicting Ethical Values</h2>
+  <div class="kt"><strong>Key Understanding</strong>A variety of ethical frameworks and conflicting ethical values emerge from differing fundamental beliefs concerning the relationship between humans and nature.</div>
+  
+  <p>If an anthropocentric (human-centered) leader and an ecocentric (nature-centered) leader look at a forest, they will apply entirely different ethical frameworks. The anthropocentrist might say it is unethical to deny humans the timber they need to build houses. The ecocentrist might say it is unethical to destroy a living ecosystem.</p>
+</div>
+
+<!-- SLIDE 3 — HL.c.4 & HL.c.5 -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">HL.c.4 / HL.c.5</div>
+  <h2>Instrumental vs Intrinsic Value</h2>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--orange)">Instrumental Value (HL.c.4)</h4>
+      <p>The usefulness an entity has for humans. Valuing nature for what it can <em>do</em> for us.</p>
+      <ul>
+        <li>A forest is valuable because it provides timber.</li>
+        <li>A wetland is valuable because it filters our water.</li>
+        <li>Often tied to Anthropocentrism.</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--green)">Intrinsic Value (HL.c.5)</h4>
+      <p>The value one may attach to something simply for what it is. Valuing nature just for existing.</p>
+      <ul>
+        <li>A forest has the right to exist, even if humans never visit it or use it.</li>
+        <li>A species has value in itself.</li>
+        <li>Tied to Ecocentrism/Biocentrism.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4 — HL.c.6 & HL.c.7 -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">HL.c.6 / HL.c.7</div>
+  <h2>Moral Standing</h2>
+  <div class="kt"><strong>HL.c.6</strong> The concepts of instrumental and intrinsic value are not exclusive.</div>
+  
+  <p>A coral reef can possess both! It has instrumental value (protects coastlines, supports fisheries) AND intrinsic value (it is a beautiful, living ecosystem with a right to exist).</p>
+  
+  <div class="kt"><strong>HL.c.7</strong> An entity has “moral standing” if it is to be morally considered with regard to how we ought to act towards it.</div>
+  
+  <p>Who gets moral standing? Historically, only humans. Later, we extended it to animals (animal welfare laws). Now, environmental ethics debates if a river, a mountain, or an entire ecosystem should be granted moral standing.</p>
+</div>
+
+<!-- SLIDE 5 — HL.c.8 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">HL.c.8</div>
+  <h2>The Three Traditional Ethical Frameworks</h2>
+  <div class="kt"><strong>Key Understanding</strong>There are three major approaches of traditional ethics: virtue ethics, consequentialist ethics and rights-based ethics.</div>
+  
+  <table class="tbl">
+    <tr><th>Framework</th><th>Core Focus</th></tr>
+    <tr><td><strong>Virtue Ethics</strong></td><td>The character of the person acting. "What would a good person do?"</td></tr>
+    <tr><td><strong>Consequentialist</strong></td><td>The outcome of the action. "Will this cause the most good for the most people?"</td></tr>
+    <tr><td><strong>Rights-Based</strong></td><td>The rules and rights involved. "Does this action violate someone's inherent rights?"</td></tr>
+  </table>
+</div>
+
+<!-- SLIDE 6 — HL.c.9 & HL.c.10 -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">HL.c.9 / HL.c.10</div>
+  <h2>Virtue vs. Consequentialist Ethics</h2>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Virtue Ethics (HL.c.9)</h4>
+      <p>Focuses on the character of the person doing the action. Assumes good people do good actions. <br><br><strong>Example:</strong> I will recycle because it is the "right thing to do" and makes me a responsible citizen (even if my one bottle doesn't save the world).</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--orange)">Consequentialist Ethics (HL.c.10)</h4>
+      <p>The consequences determine the morality. A common form is <em>Utilitarianism</em> (the greatest good for the greatest number). <br><br><strong>Example:</strong> We should flood this valley to build a dam because the electricity will benefit 1 million people, outweighing the harm to the valley.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7 — HL.c.11 & HL.c.12 -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">HL.c.11 / HL.c.12</div>
+  <h2>Rights-Based Ethics & The Appeal to Nature</h2>
+  
+  <div class="kt"><strong>HL.c.11</strong> Rights-based ethical systems focus on the actions and whether they conflict with the rights of others.</div>
+  
+  <p>Also known as deontological ethics. It states that certain actions are inherently wrong, regardless of the consequences. For example, animal rights activists argue it is inherently wrong to test cosmetics on animals, even if it benefits humans, because animals have a right not to suffer.</p>
+  
+  <div class="kt"><strong>HL.c.12</strong> The "Appeal to Nature" fallacy.</div>
+  
+  <p>Some people hold the view that whatever is "natural" is correct or good. This is a logical fallacy. Arsenic, tsunamis, and disease are completely natural, but they are not "good." We cannot simply say an environmental policy is good just because it is "natural."</p>
+</div>
+
+<!-- SLIDE 8 — HL.c.13 -->
+<div class="slide" id="slide-8">
+  <div class="section-tag">HL.c.13</div>
+  <h2>Environmental & Social Justice</h2>
+  <div class="kt"><strong>Key Understanding</strong>Environmental movements and social justice movements have developed from separate histories but are increasingly seeking common goals of equitable and just societies.</div>
+  
+  <p>Historically, environmentalism focused on saving wilderness and wildlife, while social justice focused on human rights and poverty. Today, they intersect deeply.</p>
+  
+  <div class="case"><strong>🌍 Intersectionality:</strong> Marginalized communities and developing nations often face the worst impacts of climate change, toxic waste dumping, and air pollution, despite contributing the least to the problem. You cannot achieve environmental sustainability without achieving social justice (and vice versa).</div>
+</div>
+
+<!-- SLIDE 9 — COMPLETION -->
+<div class="slide" id="slide-9">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>HL.c Lens Complete!</h1>
+    <p>You have successfully reviewed all 13 understandings for Environmental Ethics.</p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
+  <div class="nav-dots" id="dotsContainer"></div>
+  <div class="nav-counter" id="slideCounter">1 / 10</div>
+  <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const counter = document.getElementById('slideCounter');
+  const progressBar = document.getElementById('progressBar');
+  const dotsContainer = document.getElementById('dotsContainer');
+  
+  // Initialize dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    dot.classList.add('hl-dot'); // All dots are HL for this deck
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => jumpTo(i);
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  function updateNav() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    btnPrev.disabled = currentSlide === 0;
+    btnNext.disabled = currentSlide === totalSlides - 1;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function goTo(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    updateNav();
+  }
+  
+  function jumpTo(index) {
+    currentSlide = index;
+    updateNav();
+  }
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) goTo(1);
+    if (e.key === 'ArrowLeft' && currentSlide > 0) goTo(-1);
+  });
+  
+  updateNav();
+</script>
+</body>
+</html>
