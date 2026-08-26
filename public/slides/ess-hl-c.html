@@ -23,6 +23,13 @@
   .warn{background:var(--red-light);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.warn strong{color:var(--red)}
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(123, 45, 142, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 30%}
+  
+  /* CSS Flow Diagrams */
+  .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
+  .flow-step { background: var(--gray-50); border: 2px solid var(--hl); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flow-arrow { color: var(--hl); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
+  .flow-step.alt { border-color: var(--orange); background: var(--orange-light); color: var(--orange); }
+
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--hl);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
   .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
@@ -59,6 +66,14 @@
   
   <p>Ethics guides human behavior based on what a society or individual deems to be fundamentally "good" or "bad". In environmental policy, Anthropocentric ethics often prioritize human economic growth over ecosystem health, leading to exploitation.</p>
   
+  <div class="css-flow">
+    <div class="flow-step">Environmental Crisis Emerges (e.g., Deforestation)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Society applies Ethical Framework to Evaluate</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Policy Decision is Made (Protect vs Exploit)</div>
+  </div>
+  
   <div class="kt"><strong>HL.c.2</strong> Environmental ethics is a branch of ethical philosophy that addresses environmental issues.</div>
   
   <p>Traditional ethics focused entirely on human-to-human relationships. Environmental ethics fundamentally extends moral consideration to the non-human world (animals, plants, rivers, ecosystems). It highlights the severe limitations of traditional approaches that view nature merely as an exploitable resource.</p>
@@ -92,7 +107,6 @@
       <p>The usefulness an entity has for humans. Valuing nature strictly for what it can <em>do</em> for us. This risks commodifying nature.</p>
       <ul>
         <li>A forest is valuable because it provides timber and jobs.</li>
-        <li>A wetland is valuable because it filters human drinking water.</li>
         <li>Tightly tied to Anthropocentric and Technocentric approaches.</li>
       </ul>
     </div>
@@ -101,11 +115,12 @@
       <p>The value one may attach to something simply for what it is. Valuing nature just for existing.</p>
       <ul>
         <li>A forest has the right to exist, even if humans never visit it or extract a single resource from it.</li>
-        <li>Challenges policymakers because it is incredibly hard to put a dollar figure on "existence."</li>
         <li>Tightly tied to Ecocentric approaches.</li>
       </ul>
     </div>
   </div>
+  
+  <div class="case"><strong>Real Case Study — Hetch Hetchy Valley:</strong> In the early 1900s, there was a massive debate over building a dam in Yosemite's Hetch Hetchy Valley. Gifford Pinchot (Instrumental value) argued the dam should be built to provide water for San Francisco humans. John Muir (Intrinsic value) argued the valley was a temple of nature that deserved to be preserved untouched. Pinchot won, and the dam was built.</div>
 </div>
 
 <!-- SLIDE 4 — HL.c.6 & HL.c.7 -->
@@ -120,7 +135,7 @@
   
   <img src="/images/ess_moral_standing.jpg" alt="Concentric Circles of Expanding Moral Standing" class="slide-img">
   
-  <p>Who gets moral standing? Historically, it was granted only to humans. Over time, society expanded it to include animals (resulting in animal welfare laws). Today, cutting-edge environmental ethics debates whether to legally extend moral standing to non-living entities like rivers, mountains, or entire landscapes (e.g. the Whanganui River in New Zealand being granted legal personhood).</p>
+  <p>Who gets moral standing? Historically, it was granted only to humans. Over time, society expanded it to include animals (resulting in animal welfare laws). Today, cutting-edge environmental ethics debates whether to legally extend moral standing to non-living entities like rivers, mountains, or entire landscapes.</p>
 </div>
 
 <!-- SLIDE 5 — HL.c.8 -->
@@ -182,7 +197,17 @@
   
   <p>Historically, environmentalism focused heavily on saving untouched wilderness and protecting wildlife, while social justice focused on human rights, equity, and poverty. Today, they intersect deeply to form the concept of <strong>Environmental Justice</strong>.</p>
   
-  <div class="case"><strong>🌍 Intersectionality & Environmental Racism:</strong> Marginalized communities, indigenous groups, and developing nations almost universally face the worst impacts of climate change, toxic waste dumping, and air pollution, despite contributing the absolute least to the problem (e.g. Flint Water Crisis, e-waste dumping in Ghana). The core idea of environmental justice is that you cannot achieve true environmental sustainability without achieving social justice, and vice versa.</div>
+  <div class="css-flow">
+    <div class="flow-step">Systemic Inequality & Racism</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Marginalized Communities lack Political Power to fight back</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Corporations choose to build Toxic Waste sites in those neighborhoods</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Result: Environmental Injustice & Health Crises</div>
+  </div>
+  
+  <div class="case"><strong>Real Case Study — The Flint Water Crisis:</strong> In Flint, Michigan, a majority-Black and lower-income community, the local government switched the city's water supply to the highly polluted Flint River to save money. The water corroded lead pipes, poisoning thousands of children. Residents were ignored for over a year due to systemic environmental racism. This proves that you cannot achieve true environmental sustainability without achieving social justice.</div>
 </div>
 
 <!-- SLIDE 9 — COMPLETION -->
@@ -190,7 +215,7 @@
   <div class="completion">
     <div class="check">✅</div>
     <h1>HL.c Lens Complete!</h1>
-    <p>You have successfully reviewed all 13 understandings for Environmental Ethics.</p>
+    <p>You have successfully reviewed all 13 understandings, case studies, and flowcharts for Environmental Ethics.</p>
   </div>
 </div>
 

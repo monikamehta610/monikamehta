@@ -23,6 +23,13 @@
   .warn{background:var(--red-light);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.warn strong{color:var(--red)}
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(123, 45, 142, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 60%}
+  
+  /* CSS Flow Diagrams */
+  .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
+  .flow-step { background: var(--gray-50); border: 2px solid var(--hl); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flow-arrow { color: var(--hl); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
+  .flow-step.alt { border-color: var(--orange); background: var(--orange-light); color: var(--orange); }
+
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--hl);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
   .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
@@ -105,15 +112,21 @@
   
   <img src="/images/ess_market_failure.jpg" alt="Market Failure and Negative Externality Diagram" class="slide-img">
   
-  <p>Market failure often happens due to <strong>Negative Externalities</strong>. An externality is a cost suffered by a third party as a result of an economic transaction (e.g. a factory polluting a river and downstream residents getting sick). Because the factory doesn't pay for the health damages, the product's price doesn't reflect its true cost to society. This leads to overproduction of the polluting good.</p>
+  <p>Market failure often happens due to <strong>Negative Externalities</strong>. An externality is a cost suffered by a third party as a result of an economic transaction. Because the factory doesn't pay for health damages, the product's price doesn't reflect its true cost to society.</p>
   
   <div class="kt"><strong>HL.b.4</strong> When the market fails to prevent negative impacts, the polluter-pays principle may be applied.</div>
   
-  <ul class="bullets">
-    <li><strong>Polluter Pays:</strong> The party responsible for producing pollution is held legally and financially responsible for paying for the damage done to the natural environment.</li>
-    <li><strong>Implementation:</strong> Typically enforced via Carbon Taxes or Tradable Permits (Cap and Trade) to internalize the negative externality.</li>
-    <li><strong>Challenges in Developing Economies:</strong> Strict enforcement of the polluter-pays principle can cripple growing industries in developing nations that cannot afford clean technology, potentially leading to widespread job losses and economic instability.</li>
-  </ul>
+  <div class="css-flow">
+    <div class="flow-step">1. Factory pollutes river during manufacturing (Negative Externality)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Government applies 'Polluter Pays' via Carbon Tax or Fines</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3. Factory's cost of production rises; Supply curve shifts left</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">4. Factory invests in clean tech to avoid taxes (Market Failure Corrected)</div>
+  </div>
+  
+  <p><strong>Challenges in Developing Economies:</strong> Strict enforcement of the polluter-pays principle can cripple growing industries in developing nations that cannot afford clean technology, potentially leading to widespread job losses and economic instability.</p>
 </div>
 
 <!-- SLIDE 4 — HL.b.5 -->
@@ -122,7 +135,15 @@
   <h2>Greenwashing</h2>
   <div class="kt"><strong>Key Understanding</strong>“Greenwashing” or “green sheen” is where companies use marketing to give themselves a more environmentally friendly image.</div>
   
-  <p>Companies may spend significantly more money and resources on <em>advertising</em> themselves as environmentally friendly than on actual sustainable practices. This intentionally misleads consumers who are attempting to make eco-conscious purchasing decisions.</p>
+  <div class="css-flow">
+    <div class="flow-step">Company wants to increase sales from eco-conscious consumers</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Company spends millions on PR rather than actually changing practices</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Consumers are misled and buy the product thinking it's sustainable</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Real environmental degradation continues unchecked</div>
+  </div>
   
   <div class="card">
     <strong style="color:var(--hl)">Common Greenwashing Tactics:</strong>
@@ -133,7 +154,8 @@
       <li><strong>False Labels:</strong> Creating fake "eco-certification" logos that look official but are made up by the company itself.</li>
     </ul>
   </div>
-  <p><strong>Combatting Greenwashing:</strong> Requires strict government regulation (like the FTC defining specific terms), mandatory independent third-party certifications (like FSC or Energy Star), and heavy financial penalties for misleading advertising.</p>
+  
+  <div class="case"><strong>Real Case Study — Volkswagen "Dieselgate":</strong> VW marketed their diesel cars as "clean diesel" and eco-friendly. It was later discovered they had installed "defeat devices" to cheat emissions tests, while their cars were actually emitting 40 times the legal limit of nitrogen oxides.</div>
 </div>
 
 <!-- SLIDE 5 — HL.b.6 -->
@@ -145,6 +167,8 @@
   <img src="/images/ess_tragedy_commons.jpg" alt="Tragedy of the Commons Diagram" class="slide-img">
   
   <p>When a shared resource (like the atmosphere, open ocean fisheries, or a communal pasture) is open and accessible to everyone without rules, individuals acting rationally in their own self-interest will extract as much as possible. This ultimately destroys the resource, leading to ruin for everyone.</p>
+  
+  <div class="case"><strong>Real Case Study — Grand Banks Cod Fishery:</strong> For centuries, the Grand Banks off Newfoundland was a globally shared fishing ground. In the 1960s, massive industrial trawlers from multiple nations overfished the region, acting purely in their own economic self-interest. By 1992, the cod population collapsed entirely, destroying the local economy and ecosystem.</div>
   
   <div class="card">
     <strong style="color:var(--green)">Alternative Solutions to the Tragedy:</strong>
@@ -173,7 +197,7 @@
 <div class="slide" id="slide-7">
   <div class="section-tag">HL.b.9 / HL.b.10</div>
   <h2>Ecological vs Environmental Economics</h2>
-  <div class="kt"><strong>HL.b.9</strong> Ecological economics is different from environmental economics in that it views the economy as a subsystem of Earth’s larger biosphere and the social system as being a sub-component of ecology.</div>
+  <div class="kt"><strong>HL.b.9</strong> Ecological economics views the economy as a subsystem of Earth’s larger biosphere.</div>
   
   <p>While <em>Environmental Economics</em> attempts to fix market failures using taxes within the current capitalist system, <em>Ecological Economics</em> states that infinite growth on a finite planet is mathematically impossible. It argues that if the biosphere collapses, the entire economy collapses with it.</p>
   
@@ -181,8 +205,10 @@
   
   <ul class="bullets">
     <li>Ecological economics attributes massive value to ecosystems beyond mere resource extraction, factoring in carbon sequestration, flood prevention, cultural heritage, and intrinsic value.</li>
-    <li><strong>Resource Transfer Agreements:</strong> Policies where wealthy nations financially compensate developing nations to protect their natural capital (e.g. the UN's REDD+ program). Challenges include ensuring funds reach local communities, monitoring compliance, and preventing the infringement on indigenous land rights.</li>
+    <li><strong>Resource Transfer Agreements:</strong> Policies where wealthy nations financially compensate developing nations to protect their natural capital (e.g. the UN's REDD+ program).</li>
   </ul>
+  
+  <div class="case"><strong>Real Case Study — Costa Rica's PES Program:</strong> Costa Rica implemented a "Payment for Ecosystem Services" (PES) program, paying private landowners to protect their forests rather than log them, successfully reversing national deforestation.</div>
 </div>
 
 <!-- SLIDE 8 — HL.b.11 & HL.b.12 -->
@@ -216,7 +242,7 @@
     </div>
     <div class="compare-card">
       <h4 style="color:var(--green)">Absolute Decoupling</h4>
-      <p>The economy grows while total environmental degradation actually <em>decreases</em> (the curves separate entirely). This is the holy grail of sustainability, but it is exceedingly difficult to achieve on a global scale.</p>
+      <p>The economy grows while total environmental degradation actually <em>decreases</em> (the curves separate entirely). This is the ultimate goal of sustainability, but it is exceedingly difficult to achieve on a global scale without a massive shift to renewables.</p>
     </div>
   </div>
 </div>
@@ -257,7 +283,7 @@
   <div class="completion">
     <div class="check">✅</div>
     <h1>HL.b Lens Complete!</h1>
-    <p>You have successfully reviewed all 17 understandings for Environmental Economics.</p>
+    <p>You have successfully reviewed all 17 understandings, case studies, and flowcharts for Environmental Economics.</p>
   </div>
 </div>
 
