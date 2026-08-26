@@ -21,7 +21,7 @@
   .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
   .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
   .warn{background:var(--red-light);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.warn strong{color:var(--red)}
-  .slide-img{width:100%;border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(193, 96, 74, 0.15);object-fit:cover}
+  .slide-img{width:100%;max-height: 400px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(193, 96, 74, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 60%}
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--hl);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
@@ -51,159 +51,208 @@
   </div>
 </div>
 
-<!-- SLIDE 1 — HL.b.1 & HL.b.2 -->
+<!-- SLIDE 1 — HL.b.1 -->
 <div class="slide" id="slide-1">
-  <div class="section-tag">HL.b.1 / HL.b.2</div>
-  <h2>Economics & The Environment</h2>
-  <div class="kt"><strong>HL.b.1</strong> Economics studies how humans produce, distribute and consume goods and services, both individually and collectively.</div>
+  <div class="section-tag">HL.b.1</div>
+  <h2>Supply and Demand</h2>
+  <div class="kt"><strong>Key Understanding</strong>Economics studies how humans produce, distribute and consume goods and services, both individually and collectively.</div>
   
-  <p><strong>Supply and Demand:</strong> The fundamental principle of economics. <em>Supply</em> is how much of a resource is available, and <em>Demand</em> is how much people want it. <em>Market Equilibrium</em> is the point where the supply curve and demand curve intersect (the price people are willing to pay matches the price producers are willing to accept).</p>
+  <p>At the core of conventional economics is the relationship between <strong>Supply</strong> (how much of a resource is available) and <strong>Demand</strong> (how much consumers want to buy it).</p>
   
-  <div class="kt"><strong>HL.b.2</strong> Environmental economics is economics applied to the environment and environmental issues.</div>
+  <img src="/images/ess_supply_demand.jpg" alt="Supply and Demand Diagram showing Market Equilibrium" class="slide-img">
   
-  <p>Environmental economists use tools like taxes, subsidies, and valuation to address environmental problems, often using market-based instruments like <strong>carbon taxes</strong> to change consumer and business behavior.</p>
+  <ul class="bullets">
+    <li><strong>Market Equilibrium:</strong> Established where the supply curve and demand curve intersect. The price producers are willing to accept equals the price consumers are willing to pay.</li>
+    <li><strong>Shifting the Demand Curve:</strong> Can be caused by changes in consumer income, changes in preferences (e.g. going vegan), or the price of substitute goods.</li>
+    <li><strong>Government Subsidies:</strong> If the government subsidizes renewable energy, it lowers the cost of production, shifting the supply curve to the right (more is supplied at a lower price).</li>
+  </ul>
 </div>
 
-<!-- SLIDE 2 — HL.b.3 & HL.b.4 -->
+<!-- SLIDE 2 — HL.b.2 -->
 <div class="slide" id="slide-2">
+  <div class="section-tag">HL.b.2</div>
+  <h2>Environmental Economics</h2>
+  <div class="kt"><strong>Key Understanding</strong>Environmental economics is economics applied to the environment and environmental issues.</div>
+  
+  <p>Economists play a massive role in managing environmental resources by applying economic principles to pollution and conservation. They attempt to put a financial value on nature to protect it.</p>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Market-Based Instruments</h4>
+      <p>Used to address pollution by changing financial incentives:</p>
+      <ul>
+        <li>Carbon Taxes</li>
+        <li>Cap and Trade (Tradable Permits)</li>
+        <li>Subsidies for Green Tech</li>
+        <li>Fines for illegal dumping</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--orange)">Technocentric vs Ecocentric</h4>
+      <ul>
+        <li><strong>Technocentric:</strong> Nature is a resource to be managed for human benefit. Growth is good.</li>
+        <li><strong>Ecocentric:</strong> Nature has intrinsic value. We must limit economic growth to protect it.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 — HL.b.3 & HL.b.4 -->
+<div class="slide" id="slide-3">
   <div class="section-tag">HL.b.3 / HL.b.4</div>
-  <h2>Market Failure & Polluter Pays</h2>
+  <h2>Market Failure & Polluter Pays Principle</h2>
   <div class="kt"><strong>HL.b.3</strong> Market failure occurs when the allocation of goods and services by the free market imposes negative impacts on the environment.</div>
   
-  <p><strong>Externalities:</strong> A cost (or benefit) caused by a producer that is not financially incurred by that producer. <em>Negative externalities</em> (like a factory polluting a river) cause market failure because the price of the factory's goods does not reflect the true cost to society (the polluted river).</p>
+  <p>Market failure often happens due to <strong>Negative Externalities</strong> (a cost suffered by a third party as a result of an economic transaction, e.g. a factory polluting a river and residents getting sick). The product's price doesn't reflect its true cost to society.</p>
   
   <div class="kt"><strong>HL.b.4</strong> When the market fails to prevent negative impacts, the polluter-pays principle may be applied.</div>
   
-  <p>This principle states that those who produce pollution should bear the costs of managing it to prevent damage to human health or the environment. It is often implemented via Carbon Taxes, Tradable Permits (Cap-and-Trade), or fines.</p>
+  <ul class="bullets">
+    <li><strong>Polluter Pays:</strong> The party responsible for producing pollution is held responsible for paying for the damage done to the natural environment.</li>
+    <li><strong>Tradable Permits (Cap and Trade):</strong> Supports this principle by capping total emissions and forcing heavy polluters to buy permits from cleaner companies.</li>
+    <li><strong>Challenges in Developing Economies:</strong> Strict enforcement of polluter-pays can cripple growing industries in developing nations that cannot afford clean technology, leading to job losses and economic instability.</li>
+  </ul>
 </div>
 
-<!-- SLIDE 3 — HL.b.5 -->
-<div class="slide" id="slide-3">
+<!-- SLIDE 4 — HL.b.5 -->
+<div class="slide" id="slide-4">
   <div class="section-tag">HL.b.5</div>
   <h2>Greenwashing</h2>
-  <div class="kt"><strong>Key Understanding</strong>"Greenwashing" or "green sheen" is where companies use marketing to give themselves a more environmentally friendly image.</div>
+  <div class="kt"><strong>Key Understanding</strong>“Greenwashing” or “green sheen” is where companies use marketing to give themselves a more environmentally friendly image.</div>
   
-  <p>Companies may spend more time and money marketing themselves as "eco-friendly" than actually minimizing their environmental impact. This misleads consumers who are trying to make sustainable choices.</p>
+  <img src="https://images.unsplash.com/photo-1621644723927-44bc99a5c4cc?w=900&q=80" alt="Recycling symbol next to money" class="slide-img">
+  
+  <p>Companies may spend more resources on <em>advertising</em> themselves as green than on actual environmentally sound practices. This misleads consumers who want to make sustainable choices.</p>
   
   <div class="card">
     <strong style="color:var(--hl)">Common Tactics:</strong>
     <ul class="bullets">
-      <li>Using vague terms like "all-natural" or "eco" without certification.</li>
-      <li>Highlighting one tiny green initiative while ignoring massive pollution elsewhere (e.g. an oil company advertising their small solar farm).</li>
-      <li>Using green packaging and nature imagery to imply sustainability.</li>
+      <li><strong>Vague Language:</strong> Using unregulated terms like "eco-friendly," "natural," or "green" without certifications.</li>
+      <li><strong>Hidden Trade-offs:</strong> Advertising recycled packaging while the product itself is highly toxic.</li>
+      <li><strong>Irrelevant Claims:</strong> Boasting that a product is "CFC-Free" (CFCs have been globally banned for decades).</li>
     </ul>
+  </div>
+  <p><strong>Combatting it:</strong> Regulatory bodies (like the FTC) can strictly define terms, mandate independent third-party certifications, and issue heavy fines for misleading advertising.</p>
+</div>
+
+<!-- SLIDE 5 — HL.b.6 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">HL.b.6</div>
+  <h2>The Tragedy of the Commons</h2>
+  <div class="kt"><strong>Key Understanding</strong>The tragedy of the commons highlights the problem where property rights are not clearly delineated and no market price is attached to a common good, resulting in overexploitation.</div>
+  
+  <p>When a resource (like the atmosphere, open ocean fisheries, or a shared pasture) is open to everyone, individuals acting in their own self-interest will extract as much as possible, ultimately destroying the resource for everyone.</p>
+  
+  <div class="card">
+    <strong style="color:var(--green)">Alternative Solutions:</strong>
+    <p>Traditional economics suggests either strict government regulation or full privatization. However, Elinor Ostrom won a Nobel Prize for demonstrating <strong>community-based resource management</strong>. Local communities often successfully manage shared resources sustainably by setting their own social norms, rules, and local sanctions without needing a central government.</p>
   </div>
 </div>
 
-<!-- SLIDE 4 — HL.b.6 -->
-<div class="slide" id="slide-4">
-  <div class="section-tag">HL.b.6</div>
-  <h2>Tragedy of the Commons</h2>
-  <div class="kt"><strong>Key Understanding</strong>The tragedy of the commons highlights the problem where property rights are not clearly delineated and no market price is attached to a common good, resulting in overexploitation.</div>
-  
-  <p>If a resource (like the open ocean, the atmosphere, or a shared pasture) is open to everyone, individuals acting in their own self-interest will over-use and destroy the resource, even though it is bad for everyone in the long run.</p>
-  
-  <div class="tip"><strong>Alternative Solutions:</strong> While government regulation or privatization are common solutions, Elinor Ostrom (Nobel Laureate) proved that <em>community-based resource management</em> (local people creating their own rules and enforcing them) can be highly effective.</div>
-</div>
-
-<!-- SLIDE 5 — HL.b.7 & HL.b.8 -->
-<div class="slide" id="slide-5">
+<!-- SLIDE 6 — HL.b.7 & HL.b.8 -->
+<div class="slide" id="slide-6">
   <div class="section-tag">HL.b.7 / HL.b.8</div>
-  <h2>Environmental Accounting</h2>
+  <h2>Environmental Accounting & Non-Use Value</h2>
   <div class="kt"><strong>HL.b.7</strong> Environmental accounting is the attempt to attach economic value to natural resources and their depletion.</div>
   
-  <p>By putting a dollar value on nature (e.g., valuing a forest for its timber, or a wetland for its flood protection), we can integrate the environment into a nation's financial reporting.</p>
+  <p>It integrates environmental costs (like pollution or loss of biodiversity) into a nation's financial reporting. The challenge is <strong>consensus value</strong>—different stakeholders disagree wildly on what a forest or wetland is "worth" in dollars.</p>
   
   <div class="kt"><strong>HL.b.8</strong> In some cases, economic value can be established by use, but this is not the case for non-use values.</div>
   
+  <table class="tbl">
+    <tr><th>Value Type</th><th>Definition & Example</th></tr>
+    <tr><td><strong>Use Value</strong></td><td>Directly using the resource (e.g. timber, fishing, hiking tourism). Easy to calculate market price.</td></tr>
+    <tr><td><strong>Non-Use Value</strong></td><td>Value attached to a resource just for existing, even if humans never visit it or use it (e.g. existence value of blue whales or the Amazon). Incredibly difficult to quantify economically.</td></tr>
+  </table>
+</div>
+
+<!-- SLIDE 7 — HL.b.9 & HL.b.10 -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">HL.b.9 / HL.b.10</div>
+  <h2>Ecological vs Environmental Economics</h2>
+  <div class="kt"><strong>HL.b.9</strong> Ecological economics is different from environmental economics in that it views the economy as a subsystem of Earth’s larger biosphere and the social system as being a sub- component of ecology.</div>
+  
+  <p>While <em>Environmental Economics</em> tries to fix market failures using taxes within the current capitalist system, <em>Ecological Economics</em> states that infinite growth on a finite planet is impossible. If the biosphere collapses, the economy collapses.</p>
+  
+  <div class="kt"><strong>HL.b.10</strong> While the economic valuation of ecosystem services is addressed by environmental economics, there is an even greater emphasis in ecological economics.</div>
+  
   <ul class="bullets">
-    <li><strong>Use Value:</strong> The value of using a resource directly (e.g. chopping down a tree for wood).</li>
-    <li><strong>Non-Use Value:</strong> The value attached to a resource just for existing, even if humans never use it (e.g. the existence value of the Amazon rainforest or blue whales). These are incredibly difficult to quantify in a spreadsheet.</li>
+    <li>Ecological economics attributes massive value to forests beyond timber: carbon sequestration, flood prevention, cultural heritage, and intrinsic value.</li>
+    <li><strong>Resource Transfer Agreements:</strong> Policies where wealthy nations pay developing nations to protect their forests (e.g. REDD+). Challenges include corruption, monitoring, and infringing on indigenous land rights.</li>
   </ul>
 </div>
 
-<!-- SLIDE 6 — HL.b.9 & HL.b.10 -->
-<div class="slide" id="slide-6">
-  <div class="section-tag">HL.b.9 / HL.b.10</div>
-  <h2>Ecological Economics vs Environmental Economics</h2>
-  <div class="kt"><strong>HL.b.9</strong> Ecological economics is different from environmental economics in that it views the economy as a subsystem of Earth’s larger biosphere.</div>
-  
-  <div class="compare-grid">
-    <div class="compare-card">
-      <h4 style="color:var(--orange)">Environmental Economics</h4>
-      <p>Views the environment as a subset of the economy (a resource to be used and managed). Focuses on fixing market failures (taxes, subsidies) to achieve sustainability within the current capitalist system.</p>
-    </div>
-    <div class="compare-card">
-      <h4 style="color:var(--green)">Ecological Economics</h4>
-      <p>Views the economy as a subsystem entirely dependent on the Earth's biosphere. If the biosphere collapses, the economy collapses. Emphasizes absolute limits to growth and the true valuation of ecosystem services (HL.b.10).</p>
-    </div>
-  </div>
-</div>
-
-<!-- SLIDE 7 — HL.b.11 & HL.b.12 -->
-<div class="slide" id="slide-7">
+<!-- SLIDE 8 — HL.b.11 & HL.b.12 -->
+<div class="slide" id="slide-8">
   <div class="section-tag">HL.b.11 / HL.b.12</div>
-  <h2>Measuring Growth</h2>
+  <h2>Measuring Economic Growth</h2>
   <div class="kt"><strong>HL.b.11</strong> Economic growth is the change in the total market value of goods and services in a country over a period and is usually measured as the annual percentage change in GDP.</div>
   
-  <p><strong>GDP (Gross Domestic Product)</strong> has severe limitations: it measures economic activity, but not well-being or environmental health. Cutting down an entire forest and selling the wood increases GDP, but destroys natural capital.</p>
-  <p>Alternative metrics like the <strong>Genuine Progress Indicator (GPI)</strong> subtract the costs of environmental degradation and crime from the GDP to give a more accurate picture of prosperity.</p>
+  <p><strong>Limitations of GDP (Gross Domestic Product):</strong> GDP only measures economic transactions. If a country cuts down all its forests and sells the wood, GDP goes up. If an oil spill happens and billions are spent cleaning it up, GDP goes up. It completely ignores environmental destruction and social inequality.</p>
+  
+  <div class="tip"><strong>Alternative Metric — GPI:</strong> The Genuine Progress Indicator (GPI) subtracts the costs of negative effects (pollution, crime, resource depletion) from the GDP to provide a much more accurate assessment of a country's actual well-being.</div>
   
   <div class="kt"><strong>HL.b.12</strong> Economic growth is influenced by supply and demand, and may be perceived as a measure of prosperity.</div>
 </div>
 
-<!-- SLIDE 8 — HL.b.13 & HL.b.14 -->
-<div class="slide" id="slide-8">
+<!-- SLIDE 9 — HL.b.13 & HL.b.14 -->
+<div class="slide" id="slide-9">
   <div class="section-tag">HL.b.13 / HL.b.14</div>
-  <h2>Decoupling Growth from Degradation</h2>
+  <h2>Eco-Economic Decoupling</h2>
   <div class="kt"><strong>HL.b.13</strong> Economic growth has impacts on environmental welfare.</div>
-  <p>Historically, unchecked economic growth is directly tied to increased greenhouse gas emissions, resource depletion, and habitat destruction.</p>
+  <p>Historically, unchecked economic growth is directly tied to increased resource extraction, habitat destruction, and massive increases in greenhouse gas emissions.</p>
   
   <div class="kt"><strong>HL.b.14</strong> Eco-economic decoupling is the notion of separating economic growth from environmental degradation.</div>
   
-  <ul class="bullets">
-    <li><strong>Relative Decoupling:</strong> The economy grows faster than the rate of environmental degradation (we are getting more efficient, but total impact is still rising).</li>
-    <li><strong>Absolute Decoupling:</strong> The economy grows while total environmental degradation actually decreases. This is the ultimate goal, but is extremely difficult to achieve.</li>
-  </ul>
-</div>
-
-<!-- SLIDE 9 — HL.b.15 & HL.b.16 -->
-<div class="slide" id="slide-9">
-  <div class="section-tag">HL.b.15 / HL.b.16</div>
-  <h2>Degrowth & Zero Growth</h2>
-  <div class="kt"><strong>HL.b.15</strong> Ecological economics supports the need for degrowth, zero growth or slow growth, and advocates planned reduction in consumption and production, particularly in high-income countries.</div>
-  
-  <p>Because the Earth has finite resources, infinite economic growth is mathematically impossible. <strong>Degrowth</strong> is a planned, deliberate reduction in the size of the economy to bring it back in balance with planetary boundaries (unlike a recession, which is an unplanned economic collapse).</p>
-  
-  <div class="kt"><strong>HL.b.16</strong> Ecological economists support a slow/no/zero growth model.</div>
-  
-  <p>Conventional economists believe technology will allow us to grow forever (technocentrism). Ecological economists argue we must transition to a steady-state economy (zero growth) focused on human well-being rather than consuming more stuff.</p>
-</div>
-
-<!-- SLIDE 10 — HL.b.17 -->
-<div class="slide" id="slide-10">
-  <div class="section-tag">HL.b.17</div>
-  <h2>Circular & Doughnut Economics</h2>
-  <div class="kt"><strong>Key Understanding</strong>The circular economy and doughnut economics models can be seen as applications of ecological economics for sustainability.</div>
-  
   <div class="compare-grid">
     <div class="compare-card">
-      <h4 style="color:var(--green)">Circular Economy</h4>
-      <p>Moving away from the linear "Take-Make-Dispose" model. A circular economy aims to eliminate waste entirely by ensuring all products are designed to be reused, repaired, or endlessly recycled back into the system.</p>
+      <h4 style="color:var(--orange)">Relative Decoupling</h4>
+      <p>The economy grows <em>faster</em> than the rate of environmental degradation. We are getting more efficient per unit of GDP, but total environmental impact is still going up.</p>
     </div>
     <div class="compare-card">
-      <h4 style="color:var(--orange)">Doughnut Economics</h4>
-      <p>A model by Kate Raworth. The goal is to live in the "doughnut" — the safe and just space for humanity. We must ensure everyone has the <strong>Social Foundation</strong> (food, water, equity) without overshooting the <strong>Ecological Ceiling</strong> (climate change, biodiversity loss).</p>
+      <h4 style="color:var(--green)">Absolute Decoupling</h4>
+      <p>The economy grows while total environmental degradation actually <em>decreases</em>. This is the holy grail of sustainability, but exceedingly difficult to achieve on a global scale.</p>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 11 — COMPLETION -->
+<!-- SLIDE 10 — HL.b.15 & HL.b.16 -->
+<div class="slide" id="slide-10">
+  <div class="section-tag">HL.b.15 / HL.b.16</div>
+  <h2>Degrowth and Zero Growth Models</h2>
+  <div class="kt"><strong>HL.b.15</strong> Ecological economics supports the need for degrowth, zero growth or slow growth, and advocates planned reduction in consumption and production, particularly in high-income countries.</div>
+  
+  <p><strong>Degrowth</strong> is a planned, deliberate reduction in the size of the economy to bring it back in balance with planetary boundaries. <br><em>Note: This is very different from a recession, which is an unplanned, chaotic economic collapse causing suffering.</em></p>
+  
+  <ul class="bullets">
+    <li><strong>Barriers to Degrowth:</strong> Intense political resistance, corporate lobbying, and the fact that modern capitalist systems are structurally reliant on perpetual growth to function.</li>
+  </ul>
+  
+  <div class="kt"><strong>HL.b.16</strong> Ecological economists support a slow/no/zero growth model.</div>
+  <p>They argue that once a country reaches a certain level of wealth, more GDP does not increase happiness. We should transition to a "steady-state economy" that focuses on human well-being rather than consuming more stuff.</p>
+</div>
+
+<!-- SLIDE 11 — HL.b.17 -->
 <div class="slide" id="slide-11">
+  <div class="section-tag">HL.b.17</div>
+  <h2>Circular & Doughnut Economics</h2>
+  <div class="kt"><strong>Key Understanding</strong>The circular economy and doughnut economics models can be seen as applications of ecological economics for sustainability.</div>
+  
+  <img src="/images/ess_doughnut.jpg" alt="Doughnut Economics Diagram" class="slide-img">
+  
+  <table class="tbl">
+    <tr><th>Model</th><th>Explanation</th></tr>
+    <tr><td><strong>Circular Economy</strong></td><td>Replaces the linear "Take-Make-Dispose" model. Aims to eliminate waste entirely by designing products to be endlessly repaired, reused, or recycled back into the system.</td></tr>
+    <tr><td><strong>Doughnut Economics</strong></td><td>Created by Kate Raworth. The goal is to live in the "doughnut" — the safe and just space for humanity. We must ensure everyone has the <em>Social Foundation</em> (food, water, equity) without overshooting the <em>Ecological Ceiling</em> (climate change, biodiversity loss).</td></tr>
+  </table>
+</div>
+
+<!-- SLIDE 12 — COMPLETION -->
+<div class="slide" id="slide-12">
   <div class="completion">
     <div class="check">✅</div>
     <h1>HL.b Lens Complete!</h1>
-    <p>You have successfully reviewed Environmental Economics.</p>
+    <p>You have successfully reviewed all 17 understandings for Environmental Economics.</p>
   </div>
 </div>
 
@@ -211,7 +260,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 12</div>
+  <div class="nav-counter" id="slideCounter">1 / 13</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 
