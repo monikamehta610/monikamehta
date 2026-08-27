@@ -295,15 +295,15 @@ export const COURSES: Course[] = [
     shortTitle: "Biology",
     description: "IBDP Biology — interactive slide-based lesson materials for SL and HL.",
     icon: "🧬",
-    accentColor: "#1C1C1C",
+    accentColor: "#0A6EBD",
     slides: [
       {
         slug: "a1-1",
         title: "Topic A1.1",
         subtitle: "Water",
+        htmlFile: "/slides/bio-a1-1.html",
         level: "SL & HL",
-        unit: "Theme A: Unity & Diversity",
-        status: "coming-soon",
+        unit: "Theme A: Form and Function",
       },
       {
         slug: "a1-2",
