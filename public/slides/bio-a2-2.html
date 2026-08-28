@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB DP Biology A2.2 — Cell Structure</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
+  
+  /* CSS Flow Diagrams */
+  .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
+  .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
+  .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
+  .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
+
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--blue);width:20px;border-radius:4px}.nav-dot.hl-dot.active{background:var(--hl)}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=900&q=80" alt="Cells under microscope" class="cover-img">
+    <div class="section-tag">IB DP Biology 2025: Unity and Diversity</div>
+    <h1>A2.2 — Cell Structure</h1>
+    <p class="subtitle">Theme A: Form and Function · Standard & Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">11</div><div class="stat-label">Understandings</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">HL Extensions</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — A2.2.1 -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">A2.2.1</div>
+  <h2>Cell Theory</h2>
+  <div class="kt"><strong>Key Understanding</strong> Cells are the fundamental structural and functional unit of all living organisms.</div>
+  
+  <p>The cell theory is one of the unifying principles of biology. Using deductive reasoning, we can predict that any newly discovered living organism will be composed of cells.</p>
+  
+  <div class="css-flow">
+    <div class="flow-step">1. All living organisms are composed of one or more cells</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. The cell is the basic unit of life (smallest entity that survives independently)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">3. All cells arise from pre-existing cells by division</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 — A2.2.2 & A2.2.3 -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">A2.2.2 / A2.2.3</div>
+  <h2>Microscopy & Magnification</h2>
+  <div class="kt"><strong>Key Understanding</strong> Microscopes are essential for exploring cell structure. We can calculate magnification and real size from micrographs.</div>
+  
+  <p>Most cells are too small to be seen with the naked eye. Microscopes magnify images, allowing biologists to study detailed ultrastructure.</p>
+  
+  <div class="card">
+    <strong style="color:var(--blue)">Magnification Formula (MIA):</strong>
+    <p style="font-size: 1.5rem; text-align: center; margin: 1rem 0; font-weight: bold;">Magnification (M) = Image Size (I) / Actual Size (A)</p>
+    <ul class="bullets">
+      <li><strong>I:</strong> Measure the image using a ruler (convert to µm).</li>
+      <li><strong>A:</strong> The real size of the specimen.</li>
+      <li><strong>M:</strong> How many times larger the image is compared to the specimen.</li>
+    </ul>
+  </div>
+  <div class="tip"><strong>Exam Tip:</strong> Always convert your units to be the same before calculating! 1 mm = 1000 µm. 1 µm = 1000 nm.</div>
+</div>
+
+<!-- SLIDE 3 — A2.2.4 -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">A2.2.4</div>
+  <h2>Developments in Microscopy</h2>
+  <div class="kt"><strong>Key Understanding</strong> Technological advancements in microscopy have revolutionized our understanding of cell structure.</div>
+  
+  <table class="tbl">
+    <tr><th>Type</th><th>Resolution & Features</th><th>Use Cases</th></tr>
+    <tr>
+      <td><strong>Light Microscopy</strong></td>
+      <td>Low resolution (~200 nm). Uses visible light.</td>
+      <td>Viewing live cells, general tissue structure, and some organelles (nucleus).</td>
+    </tr>
+    <tr>
+      <td><strong>Electron Microscopy (EM)</strong></td>
+      <td>High resolution (~0.1 nm). Uses a beam of electrons.</td>
+      <td>Viewing dead cells at high magnification. Resolves ultrastructure (ribosomes, membranes).</td>
+    </tr>
+    <tr>
+      <td><strong>Fluorescence Microscopy</strong></td>
+      <td>Uses specific fluorescent tags (fluorophores).</td>
+      <td>Tracking specific proteins or structures within a living or fixed cell.</td>
+    </tr>
+    <tr>
+      <td><strong>Cryo-Electron Microscopy</strong></td>
+      <td>Samples frozen at cryogenic temperatures.</td>
+      <td>High-resolution 3D structures of biomolecules without the need for dyes or fixatives.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- SLIDE 4 — A2.2.5 -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">A2.2.5</div>
+  <h2>Common Cellular Structures</h2>
+  <div class="kt"><strong>Key Understanding</strong> All cells, regardless of type, share certain fundamental structures required for life.</div>
+  
+  <p>Whether prokaryotic or eukaryotic, every living cell possesses the following structural components:</p>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Plasma Membrane</h4>
+      <p>A phospholipid bilayer that acts as a selectively permeable boundary.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Cytoplasm</h4>
+      <p>A water-based medium where metabolic reactions occur.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">DNA</h4>
+      <p>The genetic material that stores instructions for life processes.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Ribosomes</h4>
+      <p>The molecular machines responsible for protein synthesis.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 — A2.2.6 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">A2.2.6</div>
+  <h2>Prokaryotic Cell Ultrastructure</h2>
+  <div class="kt"><strong>Key Understanding</strong> Prokaryotes have a simple, uncompartmentalized cell structure.</div>
+  
+  <img src="/images/prokaryote_cell.jpg" alt="Prokaryote Cell Diagram" class="slide-img">
+  
+  <ul class="bullets">
+    <li><strong>Nucleoid:</strong> Region containing a single, continuous loop of naked DNA.</li>
+    <li><strong>70S Ribosomes:</strong> Smaller ribosomes for protein synthesis.</li>
+    <li><strong>Cell Wall:</strong> Rigid outer layer (peptidoglycan) that maintains shape and prevents bursting.</li>
+    <li><strong>Capsule:</strong> Outermost protective layer in some bacteria.</li>
+    <li><strong>Flagellum & Pili:</strong> Used for motility (flagella) and adherence/conjugation (pili).</li>
+  </ul>
+</div>
+
+<!-- SLIDE 6 — A2.2.7 -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">A2.2.7</div>
+  <h2>Eukaryotic Cell Ultrastructure</h2>
+  <div class="kt"><strong>Key Understanding</strong> Eukaryotes possess a compartmentalized cell structure with membrane-bound organelles.</div>
+  
+  <img src="/images/eukaryote_cell.jpg" alt="Eukaryote Cell Diagram" class="slide-img">
+  
+  <ul class="bullets">
+    <li><strong>Nucleus:</strong> Contains linear DNA associated with histones; enclosed in a double membrane with pores.</li>
+    <li><strong>80S Ribosomes:</strong> Larger ribosomes bound to the Rough ER or free in cytoplasm.</li>
+    <li><strong>Mitochondria:</strong> Site of aerobic respiration (ATP production).</li>
+    <li><strong>Endoplasmic Reticulum (RER & SER):</strong> Synthesis and transport of proteins (RER) and lipids (SER).</li>
+    <li><strong>Golgi Apparatus:</strong> Modifies, sorts, and packages proteins for secretion.</li>
+  </ul>
+</div>
+
+<!-- SLIDE 7 — A2.2.8 -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">A2.2.8</div>
+  <h2>Life Processes in Unicellular Organisms</h2>
+  <div class="kt"><strong>Key Understanding</strong> A single cell must carry out all the functions of life.</div>
+  
+  <p>Unicellular organisms (like <i>Paramecium</i> or <i>Chlamydomonas</i>) are entirely self-sufficient, performing all basic life functions:</p>
+  
+  <table class="tbl">
+    <tr><th>Function (MR SHENG)</th><th>Description</th></tr>
+    <tr><td><strong>Metabolism</strong></td><td>Enzyme-catalyzed chemical reactions in the cytoplasm.</td></tr>
+    <tr><td><strong>Reproduction</strong></td><td>Producing offspring (e.g., binary fission).</td></tr>
+    <tr><td><strong>Sensitivity</strong></td><td>Responding to internal and external environmental stimuli.</td></tr>
+    <tr><td><strong>Homeostasis</strong></td><td>Maintaining a stable internal environment (e.g., osmoregulation via contractile vacuoles).</td></tr>
+    <tr><td><strong>Excretion</strong></td><td>Removal of metabolic waste products.</td></tr>
+    <tr><td><strong>Nutrition</strong></td><td>Obtaining food for energy and growth (autotrophic or heterotrophic).</td></tr>
+    <tr><td><strong>Growth</strong></td><td>Increasing in size or dry mass over time.</td></tr>
+  </table>
+</div>
+
+<!-- SLIDE 8 — A2.2.9 - A2.2.11 -->
+<div class="slide" id="slide-8">
+  <div class="section-tag">A2.2.9 / 2.2.11</div>
+  <h2>Eukaryotic Variations & Atypical Cells</h2>
+  <div class="kt"><strong>Key Understanding</strong> Not all eukaryotic cells are identical. Plant, animal, and fungal cells differ, and some specialized cells are atypical.</div>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--green)">Plant Cells</h4>
+      <ul>
+        <li>Cellulose cell wall</li>
+        <li>Large central vacuole</li>
+        <li>Chloroplasts (for photosynthesis)</li>
+        <li>No centrioles</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Animal Cells</h4>
+      <ul>
+        <li>No cell wall</li>
+        <li>Small, temporary vacuoles (if any)</li>
+        <li>No chloroplasts</li>
+        <li>Contain centrioles & lysosomes</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="case">
+    <strong>Atypical Cells (Exceptions to standard cell theory rules):</strong>
+    <ul class="bullets">
+      <li><strong>Striated Muscle Fibres:</strong> Very long, multi-nucleated cells.</li>
+      <li><strong>Aseptate Fungal Hyphae:</strong> Continuous cytoplasm with multiple nuclei, undivided by septa.</li>
+      <li><strong>Red Blood Cells:</strong> Mature mammalian RBCs lack a nucleus to maximize hemoglobin capacity.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SLIDE 9 — A2.2.12 (HL) -->
+<div class="slide" id="slide-9">
+  <div class="section-tag hl-tag">A2.2.12 <span class="hl-badge">HL Only</span></div>
+  <h2>Endosymbiosis</h2>
+  <div class="kt"><strong>Key Understanding (HL)</strong> The origin of eukaryotic cells is explained by the Endosymbiotic Theory.</div>
+  
+  <p>The theory states that mitochondria and chloroplasts were once free-living prokaryotes that were engulfed by a larger host cell. Instead of being digested, they formed a mutually beneficial symbiotic relationship.</p>
+  
+  <div class="css-flow">
+    <div class="flow-step hl">Large ancestral prokaryote engulfs smaller aerobic bacteria</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Symbiosis: Host gets ATP; bacteria gets protection</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Over millions of years, engulfed bacteria evolve into Mitochondria</div>
+  </div>
+  
+  <p><strong>Evidence (Mitochondria & Chloroplasts):</strong> They possess double membranes, their own naked circular DNA, 70S ribosomes, and replicate by binary fission independently of the cell!</p>
+</div>
+
+<!-- SLIDE 10 — A2.2.13 (HL) -->
+<div class="slide" id="slide-10">
+  <div class="section-tag hl-tag">A2.2.13 <span class="hl-badge">HL Only</span></div>
+  <h2>Cell Differentiation</h2>
+  <div class="kt"><strong>Key Understanding (HL)</strong> In multicellular organisms, cells differentiate to perform specialized functions by expressing some genes and not others.</div>
+  
+  <p>Every somatic (body) cell in a multicellular organism contains the exact same genome (identical DNA). However, cells look and function differently (e.g., a neuron vs a muscle cell).</p>
+  
+  <div class="card">
+    <strong style="color:var(--hl)">Gene Expression:</strong>
+    <p>Differentiation occurs when specific genes are "turned on" (expressed) while others are "turned off" (repressed). Chemical gradients and environmental signals trigger this selective gene expression, directing the cell along a specific developmental pathway.</p>
+  </div>
+</div>
+
+<!-- SLIDE 11 — A2.2.14 (HL) -->
+<div class="slide" id="slide-11">
+  <div class="section-tag hl-tag">A2.2.14 <span class="hl-badge">HL Only</span></div>
+  <h2>Multicellularity</h2>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Multicellular organisms have emergent properties arising from the interaction of their cellular components.</div>
+  
+  <p>As organisms grew larger and more complex, solitary cells grouped together. Over evolutionary time, this cooperation led to true multicellularity.</p>
+  
+  <div class="css-flow">
+    <div class="flow-step hl">Cells group together (Colonies)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Cells differentiate and specialize (Tissues)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Tissues work together for complex functions (Organs)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl"><strong>Emergent Properties:</strong> The whole organism can do things that the individual cells cannot do alone.</div>
+  </div>
+</div>
+
+<!-- SLIDE 12 — COMPLETION -->
+<div class="slide" id="slide-12">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>A2.2 Cell Structure Complete!</h1>
+    <p>You have successfully reviewed all SL and HL understandings for Biology Theme A2.2.</p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
+  <div class="nav-dots" id="dotsContainer"></div>
+  <div class="nav-counter" id="slideCounter">1 / 13</div>
+  <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const counter = document.getElementById('slideCounter');
+  const progressBar = document.getElementById('progressBar');
+  const dotsContainer = document.getElementById('dotsContainer');
+  
+  // Initialize dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    // Mark HL dots
+    if(slide.querySelector('.hl-badge')) dot.classList.add('hl-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => jumpTo(i);
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  function updateNav() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    btnPrev.disabled = currentSlide === 0;
+    btnNext.disabled = currentSlide === totalSlides - 1;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function goTo(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    updateNav();
+  }
+  
+  function jumpTo(index) {
+    currentSlide = index;
+    updateNav();
+  }
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) goTo(1);
+    if (e.key === 'ArrowLeft' && currentSlide > 0) goTo(-1);
+  });
+  
+  updateNav();
+</script>
+</body>
+</html>

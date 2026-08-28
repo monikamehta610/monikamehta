@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB DP Biology A2.1 — Origins of Cells</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
+  
+  /* CSS Flow Diagrams */
+  .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
+  .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
+  .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
+  .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
+
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--blue);width:20px;border-radius:4px}.nav-dot.hl-dot.active{background:var(--hl)}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=900&q=80" alt="Cells" class="cover-img">
+    <div class="section-tag">IB DP Biology 2025: Unity and Diversity</div>
+    <h1>A2.1 — Origins of Cells</h1>
+    <p class="subtitle">Theme A: Unity and Diversity · Higher Level Only</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">9</div><div class="stat-label">Understandings</div></div>
+      <div class="stat"><div class="stat-num">9</div><div class="stat-label">HL Extensions</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — A2.1.1 -->
+<div class="slide" id="slide-1">
+  <div class="section-tag hl-tag">A2.1.1 <span class="hl-badge">HL Only</span></div>
+  <h2>Conditions on Early Earth</h2>
+  <div class="kt"><strong>Key Understanding</strong> Conditions on early Earth were very different from today, creating a unique environment for the origin of life.</div>
+  
+  <p>The early Earth's atmosphere was highly reducing, lacked free oxygen, and had a higher proportion of other gases, which facilitated the chemical evolution of life.</p>
+  
+  <div class="css-flow">
+    <div class="flow-step hl">High Temperatures and Volcanic Activity</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Atmosphere rich in Methane, Ammonia, CO2, and Hydrogen</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Lack of Ozone layer allowed intense UV radiation</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Provided energy for chemical synthesis</div>
+  </div>
+  
+  <ul class="bullets">
+    <li><strong>No Free Oxygen:</strong> Unlike today, oxygen was virtually absent, which prevented the breakdown of newly formed organic molecules.</li>
+    <li><strong>Energy Sources:</strong> Lightning, geothermal heat, and UV radiation provided the activation energy for early chemical reactions.</li>
+  </ul>
+</div>
+
+<!-- SLIDE 2 — A2.1.2 -->
+<div class="slide" id="slide-2">
+  <div class="section-tag hl-tag">A2.1.2 <span class="hl-badge">HL Only</span></div>
+  <h2>Cells as the Smallest Units of Life</h2>
+  <div class="kt"><strong>Key Understanding</strong> Cells are the smallest units that display all the characteristics of life.</div>
+  
+  <p>For life to exist, there must be a basic functional unit that can sustain itself, reproduce, and interact with the environment. The cell is this fundamental unit.</p>
+  
+  <div class="card">
+    <strong style="color:var(--hl)">Why Cells?</strong>
+    <ul class="bullets">
+      <li>They provide <strong>compartmentalization</strong>, keeping metabolic reactions localized and efficient.</li>
+      <li>They have a boundary (the plasma membrane) separating the internal environment from the external chaos.</li>
+      <li>They contain genetic material to pass on instructions for life.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SLIDE 3 — A2.1.3 -->
+<div class="slide" id="slide-3">
+  <div class="section-tag hl-tag">A2.1.3 <span class="hl-badge">HL Only</span></div>
+  <h2>The Challenge of Spontaneous Origin</h2>
+  <div class="kt"><strong>Key Understanding</strong> The spontaneous origin of cells is a highly complex process and currently impossible to observe or fully replicate.</div>
+  
+  <p>Life essentially arose from non-living matter (abiogenesis). The leap from simple organic molecules to complex, self-sustaining, replicating cells is one of the greatest mysteries in biology.</p>
+  
+  <ul class="bullets">
+    <li><strong>Complexity:</strong> Even the simplest cell requires a vast array of interacting molecules (DNA, RNA, proteins, lipids).</li>
+    <li><strong>Probability:</strong> The spontaneous assembly of these components in the exact necessary order is statistically extremely improbable, yet it happened.</li>
+    <li><strong>Time Scale:</strong> This process took hundreds of millions of years in a vast ocean, making it difficult to simulate in a lab.</li>
+  </ul>
+</div>
+
+<!-- SLIDE 4 — A2.1.4 -->
+<div class="slide" id="slide-4">
+  <div class="section-tag hl-tag">A2.1.4 <span class="hl-badge">HL Only</span></div>
+  <h2>Evidence for the Origin of Carbon Compounds</h2>
+  <div class="kt"><strong>Key Understanding</strong> The Miller-Urey experiment provided evidence that organic molecules could form under early Earth conditions.</div>
+  
+  <p>In 1953, Stanley Miller and Harold Urey designed an apparatus to simulate the conditions of early Earth.</p>
+  
+  <img src="/images/miller_urey_apparatus.jpg" alt="Miller-Urey Apparatus" class="slide-img">
+  
+  <div class="css-flow">
+    <div class="flow-step hl">Boiled water created vapor (simulating early oceans)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Mixed with gases (CH4, NH3, H2) simulating early atmosphere</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Electrical sparks (simulating lightning) provided energy</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Condenser cooled the mixture</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Result: Formation of amino acids and other organic compounds</div>
+  </div>
+</div>
+
+<!-- SLIDE 5 — A2.1.5 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag hl-tag">A2.1.5 <span class="hl-badge">HL Only</span></div>
+  <h2>Vesicle Formation</h2>
+  <div class="kt"><strong>Key Understanding</strong> The spontaneous assembly of amphipathic molecules into vesicles provided early compartmentalization.</div>
+  
+  <p>Before complex cells existed, simple membranous structures needed to form to protect internal chemistry.</p>
+  
+  <ul class="bullets">
+    <li><strong>Amphipathic Molecules:</strong> Fatty acids have both hydrophilic (water-loving) and hydrophobic (water-fearing) parts.</li>
+    <li><strong>Spontaneous Assembly:</strong> In water, these molecules naturally assemble into spherical bilayers called <em>vesicles</em> to hide their hydrophobic tails from water.</li>
+    <li><strong>Significance:</strong> Vesicles create an isolated internal environment where chemical reactions can occur without interference from the outside world—a crucial step towards true cells.</li>
+  </ul>
+</div>
+
+<!-- SLIDE 6 — A2.1.6 -->
+<div class="slide" id="slide-6">
+  <div class="section-tag hl-tag">A2.1.6 <span class="hl-badge">HL Only</span></div>
+  <h2>The RNA World Hypothesis</h2>
+  <div class="kt"><strong>Key Understanding</strong> RNA is thought to be the first genetic material because it can both store information and catalyze reactions.</div>
+  
+  <p>The "Chicken and Egg" problem of early life: DNA is needed to make proteins, but proteins are needed to replicate DNA. The solution? RNA could do both.</p>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--hl)">Information Storage</h4>
+      <p>Like DNA, RNA is composed of nucleotide sequences that can store and transmit genetic information.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--hl)">Catalysis (Ribozymes)</h4>
+      <p>Unlike DNA, some RNA molecules can fold into complex 3D shapes and act as enzymes (ribozymes), catalyzing their own replication and other reactions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7 — A2.1.7 -->
+<div class="slide" id="slide-7">
+  <div class="section-tag hl-tag">A2.1.7 <span class="hl-badge">HL Only</span></div>
+  <h2>Evidence for LUCA</h2>
+  <div class="kt"><strong>Key Understanding</strong> Evidence supports the existence of a Last Universal Common Ancestor (LUCA) from which all life descends.</div>
+  
+  <p>LUCA was not the very first cell, but rather the most recent population of organisms from which all organisms living on Earth have a common descent.</p>
+  
+  <div class="card">
+    <strong style="color:var(--hl)">Key Evidence for LUCA:</strong>
+    <ul class="bullets">
+      <li><strong>Universal Genetic Code:</strong> Almost all organisms use the exact same genetic code to translate DNA into proteins.</li>
+      <li><strong>Shared Genes:</strong> Studies show hundreds of genes (especially those for metabolism and ribosomes) are shared across all domains of life (Archaea, Bacteria, Eukarya).</li>
+      <li><strong>Common Biochemistry:</strong> The use of ATP as an energy currency and lipid bilayer membranes are universal.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SLIDE 8 — A2.1.8 & A2.1.9 -->
+<div class="slide" id="slide-8">
+  <div class="section-tag hl-tag">A2.1.8 / A2.1.9 <span class="hl-badge">HL Only</span></div>
+  <h2>Dating the First Cells & Hydrothermal Vents</h2>
+  <div class="kt"><strong>A2.1.8</strong> Approaches used to estimate the timing of the first cells and LUCA.</div>
+  <div class="kt"><strong>A2.1.9</strong> Hydrothermal vents as a likely site for the origin of life.</div>
+  
+  <ul class="bullets">
+    <li><strong>Fossil Evidence:</strong> Stromatolites and microfossils suggest life existed at least 3.5 to 3.8 billion years ago.</li>
+    <li><strong>Molecular Clocks:</strong> Analyzing mutation rates in DNA suggests LUCA existed around 4 billion years ago.</li>
+  </ul>
+  
+  <div class="css-flow">
+    <div class="flow-step hl">Alkaline Hydrothermal Vents (Deep Ocean)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Provide a continuous source of heat energy</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Mineral-rich environment with natural gradients (pH and temperature)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Ideal conditions to fuel early metabolic reactions and form LUCA</div>
+  </div>
+</div>
+
+
+<!-- SLIDE 9 — COMPLETION -->
+<div class="slide" id="slide-9">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>A2.1 Origins of Cells Complete!</h1>
+    <p>You have successfully reviewed all HL understandings for Biology Theme A2.1.</p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
+  <div class="nav-dots" id="dotsContainer"></div>
+  <div class="nav-counter" id="slideCounter">1 / 10</div>
+  <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const counter = document.getElementById('slideCounter');
+  const progressBar = document.getElementById('progressBar');
+  const dotsContainer = document.getElementById('dotsContainer');
+  
+  // Initialize dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    // Mark HL dots
+    if(slide.querySelector('.hl-badge')) dot.classList.add('hl-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => jumpTo(i);
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  function updateNav() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    btnPrev.disabled = currentSlide === 0;
+    btnNext.disabled = currentSlide === totalSlides - 1;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function goTo(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    updateNav();
+  }
+  
+  function jumpTo(index) {
+    currentSlide = index;
+    updateNav();
+  }
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) goTo(1);
+    if (e.key === 'ArrowLeft' && currentSlide > 0) goTo(-1);
+  });
+  
+  updateNav();
+</script>
+</body>
+</html>
