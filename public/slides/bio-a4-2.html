@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IB DP Biology A4.2 — Conservation of Biodiversity</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
   :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
   *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -20,6 +28,8 @@
   .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
   .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
   .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .skill{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.skill strong{color:var(--blue)}
+  .application{background:var(--hl-light);border-left:4px solid var(--hl);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.application strong{color:var(--hl)}
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
   
@@ -65,6 +75,8 @@
   <div class="kt"><strong>Key Understanding</strong>Biodiversity is the variety of life in all forms, levels, and combinations, including ecosystem, species, and genetic diversity.</div>
   
   <p>Biological diversity (biodiversity) is a multi-dimensional concept that operates at different biological scales.</p>
+  
+  <img src="/images/biodiversity_index_comparison.jpg" alt="Biodiversity comparison diagram" class="slide-img">
   
   <div class="compare-grid">
     <div class="compare-card">
@@ -175,17 +187,19 @@
   <div class="kt"><strong>Key Understanding (HL)</strong> Using biodiversity indices to quantitatively evaluate the health of ecosystems.</div>
   
   <p>Ecologists use mathematical formulas to measure diversity, combining both species richness and species evenness into a single index.</p>
-  
-  <div class="card">
-    <strong style="color:var(--hl)">Simpson's Diversity Index (D):</strong>
-    <p>A commonly used measure. A higher value indicates greater biodiversity and a more stable ecosystem.</p>
-    <div style="text-align: center; margin: 1rem 0; font-size: 1.2rem; font-weight: bold;">
-      D = N(N-1) / Σn(n-1)
-    </div>
+
+  <div class="skill">
+    <strong>Mathematical Skills: Calculating Diversity Indices</strong>
+    <p>Use Simpson's Reciprocal Diversity Index and Shannon diversity to compare ecosystems.</p>
     <ul class="bullets">
-      <li><strong>N:</strong> Total number of organisms of all species found.</li>
-      <li><strong>n:</strong> Number of individuals of a particular species.</li>
+      <li><strong>Simpson's Reciprocal Index:</strong> $D = \frac{N(N-1)}{\sum n(n-1)}$</li>
+      <li><strong>Shannon Diversity Index:</strong> $H' = -\sum_{i=1}^{S} p_i \ln p_i$ (where $p_i = \frac{n_i}{N}$)</li>
     </ul>
+  </div>
+
+  <div class="application">
+    <strong>Application:</strong>
+    <p>Comparing these indices helps in monitoring environmental change, assessing the impact of conservation efforts, and determining the stability of an ecosystem.</p>
   </div>
 </div>
 

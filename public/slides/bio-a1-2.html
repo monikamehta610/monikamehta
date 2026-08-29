@@ -20,6 +20,8 @@
   .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
   .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
   .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .skills{background:var(--yellow-light);border-left:4px solid var(--yellow);padding:.9rem 1.2rem;border-radius:0 8px 8px 0;margin:1rem 0;font-size:.88rem}.skills strong{color:var(--yellow);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .apps{background:var(--red-light);border-left:4px solid var(--red);padding:.9rem 1.2rem;border-radius:0 8px 8px 0;margin:1rem 0;font-size:.88rem}.apps strong{color:var(--red);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
   
@@ -52,8 +54,8 @@
     <h1>A1.2 — Nucleic Acids</h1>
     <p class="subtitle">Theme A: Form and Function · Standard & Higher Level</p>
     <div class="stats">
-      <div class="stat"><div class="stat-num">7</div><div class="stat-label">Understandings</div></div>
-      <div class="stat"><div class="stat-num">3</div><div class="stat-label">HL Extensions</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Understandings</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">HL Extensions</div></div>
     </div>
   </div>
 </div>
@@ -84,7 +86,7 @@
 <div class="slide" id="slide-2">
   <div class="section-tag">A1.2.2</div>
   <h2>Nucleotide Structure</h2>
-  <div class="kt"><strong>Key Understanding</strong> Nucleic acids (DNA and RNA) are polymers made of repeating monomeric units called nucleotides.</div>
+  <div class="kt"><strong>Key Understanding</strong> Components of a nucleotide: pentose sugar, phosphate group, and nitrogenous base.</div>
   
   <p>Each nucleotide has three components:</p>
   
@@ -104,7 +106,7 @@
 <div class="slide" id="slide-3">
   <div class="section-tag">A1.2.3</div>
   <h2>Polymer Formation & Base Pairing</h2>
-  <div class="kt"><strong>Key Understanding</strong> Nucleotides link together to form a strong sugar-phosphate backbone, and complementary bases pair via hydrogen bonds.</div>
+  <div class="kt"><strong>Key Understanding</strong> Sugar–phosphate bonding and the formation of the sugar–phosphate “backbone” of DNA and RNA.</div>
   
   <p>Nucleic acid strands are built through condensation reactions.</p>
   
@@ -115,19 +117,28 @@
     <div class="flow-arrow">↓</div>
     <div class="flow-step alt">Creates the strong, continuous <strong>Sugar-Phosphate Backbone</strong></div>
   </div>
+</div>
+
+<!-- SLIDE 4 — DNA vs RNA (Part 1) -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">A1.2.4 / A1.2.5</div>
+  <h2>Bases and RNA Polymers</h2>
+  <div class="kt"><strong>Key Understanding</strong> Bases in each nucleic acid form the basis of a code, and RNA is a polymer formed by the condensation of nucleotide monomers.</div>
   
-  <p>In double-stranded DNA, the two strands are held together by <strong>Hydrogen Bonds</strong> between complementary nitrogenous bases:</p>
+  <p>The nitrogenous bases form the alphabet of the genetic code.</p>
+  
   <ul class="bullets">
-    <li><strong>Adenine (A)</strong> pairs with <strong>Thymine (T)</strong> (or Uracil in RNA) with 2 hydrogen bonds.</li>
-    <li><strong>Cytosine (C)</strong> pairs with <strong>Guanine (G)</strong> with 3 hydrogen bonds.</li>
+    <li><strong>DNA Bases:</strong> Adenine, Thymine, Cytosine, Guanine.</li>
+    <li><strong>RNA Bases:</strong> Adenine, Uracil (replaces Thymine), Cytosine, Guanine.</li>
+    <li><strong>RNA Polymer:</strong> RNA is typically a single strand formed through condensation reactions between nucleotides.</li>
   </ul>
 </div>
 
-<!-- SLIDE 4 — DNA vs RNA -->
-<div class="slide" id="slide-4">
-  <div class="section-tag">A1.2.4</div>
+<!-- SLIDE 5 — DNA vs RNA (Part 2) -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">A1.2.6 / A1.2.7</div>
   <h2>Differences between DNA and RNA</h2>
-  <div class="kt"><strong>Key Understanding</strong> DNA and RNA differ in their structure, sugar, and bases.</div>
+  <div class="kt"><strong>Key Understanding</strong> DNA as a double helix linked by hydrogen bonding, and structural differences between DNA and RNA.</div>
   
   <div class="compare-grid">
     <div class="compare-card">
@@ -135,7 +146,7 @@
       <ul>
         <li><strong>Strands:</strong> Double-stranded (Double Helix)</li>
         <li><strong>Sugar:</strong> Deoxyribose</li>
-        <li><strong>Bases:</strong> Adenine, Thymine, Cytosine, Guanine</li>
+        <li><strong>Bases:</strong> A, T, C, G</li>
         <li><strong>Function:</strong> Long-term storage of genetic information</li>
       </ul>
     </div>
@@ -144,33 +155,45 @@
       <ul>
         <li><strong>Strands:</strong> Single-stranded</li>
         <li><strong>Sugar:</strong> Ribose</li>
-        <li><strong>Bases:</strong> Adenine, Uracil (replaces T), Cytosine, Guanine</li>
+        <li><strong>Bases:</strong> A, U (Uracil), C, G</li>
         <li><strong>Function:</strong> Transfer information and protein synthesis</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 5 — Information Storage & Universal Code -->
-<div class="slide" id="slide-5">
-  <div class="section-tag">A1.2.5 / A1.2.6 / A1.2.7</div>
-  <h2>Information Storage & The Universal Code</h2>
-  <div class="kt"><strong>Key Understanding</strong> The sequence of bases stores information, and the genetic code is universal across nearly all life forms.</div>
+<!-- SLIDE 6 — Base Pairing & Information Diversity -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">A1.2.8 / A1.2.9</div>
+  <h2>Base Pairing & Information Storage</h2>
+  <div class="kt"><strong>Key Understanding</strong> Complementary base pairing enables replication/expression, and base sequence diversity provides limitless information storage.</div>
   
-  <p>The vast diversity of life is possible because the sequence of the four nitrogenous bases can vary infinitely. This sequence is the ultimate code for building proteins.</p>
+  <p>In double-stranded DNA, the two strands are held together by <strong>Hydrogen Bonds</strong> between complementary nitrogenous bases:</p>
+  <ul class="bullets">
+    <li><strong>Adenine (A)</strong> pairs with <strong>Thymine (T)</strong> with 2 hydrogen bonds.</li>
+    <li><strong>Cytosine (C)</strong> pairs with <strong>Guanine (G)</strong> with 3 hydrogen bonds.</li>
+  </ul>
+  
+  <p>The vast diversity of life is possible because the sequence of the four nitrogenous bases can vary infinitely. Variations in these sequences cause the differences between individuals and species.</p>
+</div>
+
+<!-- SLIDE 7 — Universal Code -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">A1.2.10</div>
+  <h2>Conservation of the Genetic Code</h2>
+  <div class="kt"><strong>Key Understanding</strong> Conservation of the genetic code across all life forms is evidence of universal common ancestry.</div>
   
   <ul class="bullets">
-    <li><strong>Information Storage:</strong> A specific sequence of bases constitutes a gene.</li>
-    <li><strong>Diversity:</strong> Variations in these sequences cause the differences between individuals and species.</li>
-    <li><strong>Universal Code:</strong> The same codons (3-base sequences) code for the same amino acids in almost all organisms on Earth. This is powerful evidence for universal common ancestry.</li>
+    <li><strong>Universal Code:</strong> The same codons (3-base sequences) code for the same amino acids in almost all organisms on Earth.</li>
+    <li>This consistency provides powerful evolutionary evidence that all life shares a single common ancestor.</li>
   </ul>
 </div>
 
-<!-- SLIDE 6 — Directionality (HL) -->
-<div class="slide" id="slide-6">
-  <div class="section-tag hl-tag">A1.2.8 <span class="hl-badge">HL Only</span></div>
+<!-- SLIDE 8 — Directionality (HL) -->
+<div class="slide" id="slide-8">
+  <div class="section-tag hl-tag">A1.2.11 <span class="hl-badge">HL Only</span></div>
   <h2>Directionality (5' to 3')</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> DNA and RNA strands have a specific directionality that is critical for replication and transcription.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Directionality of RNA and DNA (5' to 3' linkages) is significant for replication, transcription, and translation.</div>
   
   <p>The carbon atoms in the pentose sugar are numbered 1' through 5'. This numbering gives the nucleic acid strand a direction.</p>
   
@@ -179,21 +202,21 @@
     <div class="flow-arrow">↓</div>
     <div class="flow-step hl">The other end has a free Hydroxyl (-OH) attached to the 3' carbon (3' end)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">DNA replication and transcription always proceed in the <strong>5' to 3' direction</strong></div>
+    <div class="flow-step hl">DNA replication, transcription, and translation always proceed in the <strong>5' to 3' direction</strong></div>
   </div>
   
-  <p>Because the two strands of the DNA double helix run in opposite directions, they are said to be <strong>anti-parallel</strong>.</p>
+  <p>Because the two strands of the DNA double helix run in opposite directions, they are said to be <strong>antiparallel</strong>.</p>
 </div>
 
-<!-- SLIDE 7 — Helix Stability & Nucleosomes (HL) -->
-<div class="slide" id="slide-7">
-  <div class="section-tag hl-tag">A1.2.9 / A1.2.10 <span class="hl-badge">HL Only</span></div>
+<!-- SLIDE 9 — Helix Stability & Nucleosomes (HL) -->
+<div class="slide" id="slide-9">
+  <div class="section-tag hl-tag">A1.2.12 / A1.2.13 <span class="hl-badge">HL Only</span></div>
   <h2>Helix Stability & Nucleosome Structure</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> Stability is maintained by purine-to-pyrimidine bonding, and DNA is organized into nucleosomes in eukaryotes.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Purine-to-pyrimidine bonding maintains DNA helix stability, and DNA is organized into nucleosomes in eukaryotes.</div>
   
   <div class="card">
     <strong style="color:var(--hl)">Helix Stability:</strong>
-    <p>A bulky purine base (A or G, two rings) always bonds with a smaller pyrimidine base (T or C, one ring). This ensures the DNA helix maintains a constant width and three-dimensional structure regardless of the exact base sequence.</p>
+    <p>A bulky purine base (A or G, two rings) always bonds with a smaller pyrimidine base (T or C, one ring). This ensures the DNA helix maintains a constant width and three-dimensional structure.</p>
   </div>
   
   <div class="card">
@@ -206,8 +229,34 @@
   </div>
 </div>
 
-<!-- SLIDE 8 — COMPLETION -->
-<div class="slide" id="slide-8">
+<!-- SLIDE 10 — Hershey-Chase Experiment (HL) -->
+<div class="slide" id="slide-10">
+  <div class="section-tag hl-tag">A1.2.14 <span class="hl-badge">HL Only</span></div>
+  <h2>Hershey–Chase Experiment</h2>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Evidence from the Hershey–Chase experiment for DNA as the genetic material.</div>
+  
+  <img src="/images/hershey_chase.jpg" alt="Hershey-Chase Experiment" class="slide-img">
+
+  <div class="skills">
+    <strong>Nature of Science (Skills)</strong>
+    <p>The Hershey-Chase experiment (1952) used radioactive isotopes (S-35 for proteins, P-32 for DNA) to label bacteriophages. After infection and centrifugation, the radioactive phosphorus was found inside the bacterial cells (pellet), while the sulfur remained outside (supernatant). This provided definitive experimental evidence that DNA, not protein, is the genetic material.</p>
+  </div>
+</div>
+
+<!-- SLIDE 11 — Chargaff's Data (HL) -->
+<div class="slide" id="slide-11">
+  <div class="section-tag hl-tag">A1.2.15 <span class="hl-badge">HL Only</span></div>
+  <h2>Chargaff's Data on Base Ratios</h2>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Chargaff's data on the relative amounts of pyrimidine and purine bases across diverse life forms.</div>
+  
+  <div class="apps">
+    <strong>Applications</strong>
+    <p>Erwin Chargaff analyzed the DNA of many species and found that the amount of Adenine always roughly equals Thymine, and Guanine equals Cytosine (A=T and G=C). This also meant that the total amount of purines equals the total amount of pyrimidines. This data was crucial for Watson and Crick in discovering the complementary base pairing of the DNA double helix.</p>
+  </div>
+</div>
+
+<!-- SLIDE 12 — COMPLETION -->
+<div class="slide" id="slide-12">
   <div class="completion">
     <div class="check">✅</div>
     <h1>A1.2 Nucleic Acids Complete!</h1>
@@ -219,7 +268,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 9</div>
+  <div class="nav-counter" id="slideCounter">1 / 13</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

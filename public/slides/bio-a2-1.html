@@ -52,8 +52,8 @@
     <h1>A2.1 — Origins of Cells</h1>
     <p class="subtitle">Theme A: Unity and Diversity · Higher Level Only</p>
     <div class="stats">
-      <div class="stat"><div class="stat-num">9</div><div class="stat-label">Understandings</div></div>
-      <div class="stat"><div class="stat-num">9</div><div class="stat-label">HL Extensions</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Understandings</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">HL Extensions</div></div>
     </div>
   </div>
 </div>
@@ -136,6 +136,11 @@
     <div class="flow-arrow">↓</div>
     <div class="flow-step hl">Result: Formation of amino acids and other organic compounds</div>
   </div>
+
+  <div class="tip">
+    <strong>Skills</strong>
+    <p>Analysis of evidence for the origin of carbon compounds from the Miller-Urey experiment. Students should be able to deduce how experimental design replicates hypothetical early Earth conditions.</p>
+  </div>
 </div>
 
 <!-- SLIDE 5 — A2.1.5 -->
@@ -170,6 +175,11 @@
       <h4 style="color:var(--hl)">Catalysis (Ribozymes)</h4>
       <p>Unlike DNA, some RNA molecules can fold into complex 3D shapes and act as enzymes (ribozymes), catalyzing their own replication and other reactions.</p>
     </div>
+  </div>
+
+  <div class="case">
+    <strong>Nature of Science</strong>
+    <p>Testability of the RNA world hypothesis: Scientific hypotheses must be testable. Experimental evidence, such as the synthesis of RNA nucleotides under simulated prebiotic conditions and the discovery of catalytic RNA (ribozymes), provides testable predictions that support the RNA world hypothesis.</p>
   </div>
 </div>
 
@@ -214,9 +224,24 @@
   </div>
 </div>
 
-
-<!-- SLIDE 9 — COMPLETION -->
+<!-- SLIDE 9 — A2.1.10 Endosymbiosis -->
 <div class="slide" id="slide-9">
+  <div class="section-tag hl-tag">A2.1.10 <span class="hl-badge">HL Only</span></div>
+  <h2>The Endosymbiotic Theory</h2>
+  <div class="kt"><strong>Key Understanding</strong> Eukaryotic cells are believed to have evolved from early prokaryotes that were engulfed by phagocytosis.</div>
+  
+  <p>The origin of eukaryotes (mitochondria and chloroplasts) is explained by the endosymbiotic theory.</p>
+  
+  <img src="/images/endosymbiosis.jpg" alt="Endosymbiotic Theory Flow Diagram" class="slide-img">
+  
+  <div class="case">
+    <strong>Applications</strong>
+    <p>Evaluating evidence for endosymbiosis: Mitochondria and chloroplasts share several characteristics with independent prokaryotes, such as 70S ribosomes, circular naked DNA, double membranes, and autonomous replication by binary fission.</p>
+  </div>
+</div>
+
+<!-- SLIDE 10 — COMPLETION -->
+<div class="slide" id="slide-10">
   <div class="completion">
     <div class="check">✅</div>
     <h1>A2.1 Origins of Cells Complete!</h1>
@@ -228,7 +253,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 10</div>
+  <div class="nav-counter" id="slideCounter">1 / 11</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 
@@ -265,8 +290,8 @@
     
     btnPrev.disabled = currentSlide === 0;
     btnNext.disabled = currentSlide === totalSlides - 1;
-    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
-    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    counter.textContent = \`${currentSlide + 1} / ${totalSlides}\`;
+    progressBar.style.width = \`${((currentSlide + 1) / totalSlides) * 100}%\`;
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

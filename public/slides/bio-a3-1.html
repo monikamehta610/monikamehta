@@ -15,11 +15,18 @@
   .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
   .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
   .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  
+  /* Skills & Applications Boxes */
+  .skill-box{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}
+  .skill-box strong{color:var(--green);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .app-box{background:var(--hl-light);border-left:4px solid var(--hl);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}
+  .app-box strong{color:var(--hl);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+
   .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
   .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
   .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
   .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
-  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .case{background:var(--gray-100);border-left:4px solid var(--gray-600);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--gray-800)}
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
   
@@ -109,15 +116,12 @@
     </ul>
   </div>
   
-  <div class="css-flow">
-    <div class="flow-step">Domain (Eukarya)</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step">Kingdom (Animalia)</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">... Phylum, Class, Order, Family ...</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Genus & Species (Homo sapiens)</div>
+  <div class="app-box">
+    <strong>Application: Classification in 3 Domains</strong>
+    <p>Organisms are classified into three major domains: <strong>Bacteria</strong>, <strong>Archaea</strong>, and <strong>Eukarya</strong>. This system reflects the deepest evolutionary divergences in the history of life.</p>
   </div>
+  
+  <img src="/images/3_domain_phylogenetic_tree.jpg" alt="3-Domain Phylogenetic Tree" class="slide-img">
 </div>
 
 <!-- SLIDE 3 -->
@@ -161,6 +165,11 @@
     </ul>
   </div>
   
+  <div class="app-box">
+    <strong>Application: Human Chromosome 2 Fusion</strong>
+    <p>Evidence from karyotypes and genome sequences shows that human chromosome 2 was formed by the head-to-head fusion of two ancestral ape chromosomes. This perfectly explains why humans have 46 chromosomes while chimpanzees and other great apes have 48, providing powerful evidence for common ancestry.</p>
+  </div>
+  
   <div class="case">
     <strong>Unity and Diversity of Genomes:</strong>
     While every human has a unique genome (due to meiosis and mutation), all humans share the vast majority of their DNA sequence, representing the unity of the species.
@@ -184,11 +193,14 @@
   
   <p><strong>Note:</strong> A larger genome size does NOT necessarily mean the organism is more complex!</p>
   
-  <h3>Whole-Genome Sequencing</h3>
-  <ul class="bullets">
-    <li><strong>Current Uses:</strong> Tracing evolutionary history, identifying genetic diseases, personalized medicine.</li>
-    <li><strong>Future Uses:</strong> Routine sequencing for all patients, predicting disease susceptibility, advanced synthetic biology.</li>
-  </ul>
+  <div class="app-box">
+    <strong>Application: Whole-Genome Sequencing</strong>
+    <p>Sequencing technologies have advanced rapidly, leading to widespread applications:</p>
+    <ul class="bullets">
+      <li><strong>Current Uses:</strong> Tracing evolutionary history and phylogenetics, identifying genetic diseases, and enabling personalized medicine.</li>
+      <li><strong>Future Uses:</strong> Routine sequencing for all patients, accurately predicting disease susceptibility, and advancing synthetic biology.</li>
+    </ul>
+  </div>
 </div>
 
 <!-- SLIDE 6 -->
@@ -219,16 +231,20 @@
   <h2>Dichotomous Keys & eDNA Barcoding</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Tools for identifying species in the environment.</div>
   
-  <h3>Dichotomous Keys</h3>
-  <p>A tool used to identify species by answering a series of paired, yes/no questions about observable characteristics, narrowing down the possibilities until the species is identified.</p>
+  <div class="skill-box">
+    <strong>Skill: Using Dichotomous Keys</strong>
+    <p>A tool used to identify species by answering a series of paired, yes/no questions about observable characteristics, narrowing down the possibilities until the species is identified.</p>
+  </div>
   
   <div class="css-flow">
     <div class="flow-step hl">1a. Leaves are broad and flat -> Go to step 2</div>
     <div class="flow-step hl">1b. Leaves are needle-like -> Conifer</div>
   </div>
   
-  <h3>Environmental DNA (eDNA) Barcoding</h3>
-  <p>A cutting-edge technique where water or soil samples are collected, and the trace DNA left behind by organisms is extracted and sequenced. By matching short DNA sequences (barcodes) to a database, scientists can rapidly identify all species present in an ecosystem without ever seeing them.</p>
+  <div class="skill-box">
+    <strong>Skill: Interpreting eDNA Barcoding Data</strong>
+    <p>A cutting-edge technique where water or soil samples are collected, and the trace DNA left behind by organisms is extracted and sequenced. By matching short DNA sequences (barcodes) to a database, scientists can rapidly identify all species present in an ecosystem without ever seeing them.</p>
+  </div>
 </div>
 
 <!-- SLIDE 8 — COMPLETION -->
