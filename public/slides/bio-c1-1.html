@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB DP Biology C1.1 — Enzymes and Metabolism</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- MathJax for standard LaTeX math -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  
+  .skill-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.skill-box strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .app-box{background:var(--yellow-light);border-left:4px solid var(--yellow);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.app-box strong{color:var(--yellow);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
+  
+  /* CSS Flow Diagrams */
+  .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
+  .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
+  .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
+  .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
+
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--blue);width:20px;border-radius:4px}.nav-dot.hl-dot.active{background:var(--hl)}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <div class="section-tag">IB DP Biology 2025: Interaction and Interdependence</div>
+    <h1>C1.1 — Enzymes & Metabolism</h1>
+    <p class="subtitle">Theme C · Standard & Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">7</div><div class="stat-label">Understandings</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">HL Extensions</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — Metabolism -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">C1.1.1</div>
+  <h2>Metabolism as the Web of Life</h2>
+  <div class="kt"><strong>Key Understanding</strong>Metabolism is the web of all enzyme-catalysed reactions in a cell or organism.</div>
+  
+  <p>Inside every cell, a vast network of chemical reactions is constantly taking place. This complex web is collectively referred to as <strong>metabolism</strong>. Without enzymes acting as biological catalysts, these reactions would occur too slowly to sustain life.</p>
+  
+  <div class="css-flow">
+    <div class="flow-step">Substrate (Reactant) enters the active site</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Enzyme-Substrate Complex forms</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Catalysis occurs (Activation energy is lowered)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Product(s) are released</div>
+  </div>
+  
+  <ul class="bullets">
+    <li><strong>Anabolism:</strong> Building up complex molecules from simpler ones (requires energy). Example: Protein synthesis.</li>
+    <li><strong>Catabolism:</strong> Breaking down complex molecules into simpler ones (releases energy). Example: Cellular respiration (C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Energy).</li>
+  </ul>
+</div>
+
+<!-- SLIDE 2 — Induced-Fit Model & Collision Theory -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">C1.1.2</div>
+  <h2>Enzyme Specificity & The Induced-Fit Model</h2>
+  <div class="kt"><strong>Key Understanding</strong>Enzyme specificities are explained by the complementary shape and chemical properties of the active site.</div>
+  
+  <p>Enzymes are globular proteins with a highly specific region called the <strong>active site</strong>. Only a specific substrate can bind to it. The modern understanding of this interaction is the <strong>Induced-Fit Model</strong>.</p>
+  
+  <div class="card">
+    <strong style="color:var(--blue)">How Catalysis Happens:</strong>
+    <ul class="bullets">
+      <li><strong>Random Collision:</strong> The substrate and enzyme collide due to random molecular motion (kinetic energy).</li>
+      <li><strong>Binding:</strong> The substrate binds to the active site.</li>
+      <li><strong>Induced Fit:</strong> The enzyme undergoes a slight conformational change to mold itself around the substrate more tightly, stressing the substrate's bonds.</li>
+      <li><strong>Lowered $E_A$:</strong> This physical stress lowers the activation energy ($E_A$) required for the reaction, rapidly converting substrate into product.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SLIDE 3 — Environmental Factors -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">C1.1.3</div>
+  <h2>Environmental Effects on Enzyme Rate</h2>
+  <div class="kt"><strong>Key Understanding</strong>Temperature, pH, and substrate concentration affect the rate of enzyme activity.</div>
+  
+  <p>Enzyme activity is highly sensitive to environmental conditions. Extreme changes can cause <strong>denaturation</strong>, a structural change in the enzyme's active site making it unable to bind substrate.</p>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Temperature</h4>
+      <ul>
+        <li>Higher temperature increases kinetic energy, leading to more successful collisions.</li>
+        <li>Above the optimum temperature, hydrogen bonds break, denaturing the enzyme and dropping the reaction rate sharply.</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--orange)">pH Level</h4>
+      <ul>
+        <li>Each enzyme has an optimum pH.</li>
+        <li>Deviating from the optimum alters the active site's charge and shape, reducing activity or causing denaturation.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="skill-box">
+    <strong>Data Analysis Skill:</strong>
+    You should be able to interpret or sketch graphs of enzyme activity. A temperature graph is asymmetrical (gradual rise, sharp drop), while a pH graph is typically a symmetrical bell curve.
+  </div>
+</div>
+
+<!-- SLIDE 4 — Enzyme Inhibition (HL) -->
+<div class="slide" id="slide-4">
+  <div class="section-tag hl-tag">C1.1.4 <span class="hl-badge">HL Only</span></div>
+  <h2>Competitive vs Non-Competitive Inhibition</h2>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Enzyme inhibitors can be competitive or non-competitive, affecting kinetics differently.</div>
+  
+  <img src="/images/bio_enzyme_inhibition.jpg" alt="Enzyme Kinetics Graph showing Competitive and Non-Competitive Inhibition" class="slide-img">
+  
+  <p>Inhibitors reduce the rate of enzymatic reactions ($V_0$). They are categorized by how they interact with the enzyme.</p>
+  
+  <table class="tbl">
+    <tr><th>Type</th><th>Binding Site</th><th>Effect on $V_{max}$</th><th>Effect on $K_m$ (Affinity)</th></tr>
+    <tr>
+      <td><strong>Competitive</strong></td>
+      <td>Active Site (competes with substrate)</td>
+      <td>Unchanged (can be overcome by adding more substrate)</td>
+      <td>Increases (apparent affinity decreases)</td>
+    </tr>
+    <tr>
+      <td><strong>Non-Competitive</strong></td>
+      <td>Allosteric Site (causes conformational change)</td>
+      <td>Decreases (cannot be overcome by more substrate)</td>
+      <td>Unchanged</td>
+    </tr>
+  </table>
+</div>
+
+<!-- SLIDE 5 — Metabolic Pathways (HL) -->
+<div class="slide" id="slide-5">
+  <div class="section-tag hl-tag">C1.1.5 <span class="hl-badge">HL Only</span></div>
+  <h2>Metabolic Pathways & Feedback Inhibition</h2>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Metabolic pathways consist of chains and cycles of enzyme-catalysed reactions, often regulated by end-product inhibition.</div>
+  
+  <p>Metabolism doesn't happen in a single step. It involves multiple steps, where the product of one reaction becomes the substrate for the next. This can form a linear chain (like glycolysis) or a cycle (like the Krebs cycle).</p>
+  
+  <div class="css-flow">
+    <div class="flow-step hl">Substrate → (Enzyme 1) → Intermediate A</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Intermediate A → (Enzyme 2) → Intermediate B</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Intermediate B → (Enzyme 3) → End Product</div>
+  </div>
+  
+  <div class="app-box">
+    <strong>Application: End-Product Inhibition</strong>
+    To prevent the cell from wasting resources, the final <strong>End Product</strong> often acts as a non-competitive inhibitor for <strong>Enzyme 1</strong>. When the end product accumulates, it binds to the allosteric site of Enzyme 1, halting the entire pathway. This is a classic example of <strong>negative feedback</strong>.
+  </div>
+</div>
+
+<!-- SLIDE 6 — COMPLETION -->
+<div class="slide" id="slide-6">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>C1.1 Complete!</h1>
+    <p>You have successfully reviewed all SL and HL understandings for Biology Theme C1.1 — Enzymes and Metabolism.</p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
+  <div class="nav-dots" id="dotsContainer"></div>
+  <div class="nav-counter" id="slideCounter">1 / 6</div>
+  <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const counter = document.getElementById('slideCounter');
+  const progressBar = document.getElementById('progressBar');
+  const dotsContainer = document.getElementById('dotsContainer');
+  
+  // Initialize dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    // Mark HL dots
+    if(slide.querySelector('.hl-badge')) dot.classList.add('hl-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => jumpTo(i);
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  function updateNav() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    btnPrev.disabled = currentSlide === 0;
+    btnNext.disabled = currentSlide === totalSlides - 1;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function goTo(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    updateNav();
+  }
+  
+  function jumpTo(index) {
+    currentSlide = index;
+    updateNav();
+  }
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) goTo(1);
+    if (e.key === 'ArrowLeft' && currentSlide > 0) goTo(-1);
+  });
+  
+  updateNav();
+</script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB DP Biology C3.2 — Defense Against Disease</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Include MathJax for LaTeX math rendering ($...$) -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC;
+  --skill:#8e44ad;--skill-light:#f5eef8;--app:#2980b9;--app-light:#ebf5fb;}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  
+  .skill-box{background:var(--skill-light);border-left:4px solid var(--skill);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.skill-box strong{color:var(--skill);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .app-box{background:var(--app-light);border-left:4px solid var(--app);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.app-box strong{color:var(--app);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+
+  .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
+  
+  /* CSS Flow Diagrams */
+  .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
+  .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
+  .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
+  .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
+
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--blue);width:20px;border-radius:4px}.nav-dot.hl-dot.active{background:var(--hl)}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=900&q=80" alt="Microscope view of cells" class="cover-img">
+    <div class="section-tag">IB DP Biology 2025: Interaction and Interdependence</div>
+    <h1>C3.2 — Defense Against Disease</h1>
+    <p class="subtitle">Theme C: Interaction and Interdependence · Standard & Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">18</div><div class="stat-label">Understandings</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Skills & Apps</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">C3.2.1 - C3.2.3</div>
+  <h2>Primary Defenses: The First Line</h2>
+  <div class="kt"><strong>Key Understanding</strong>Pathogens cause infectious diseases. The skin and mucous membranes form primary barriers against these pathogens. Blood clotting seals cuts to prevent entry.</div>
+  
+  <p>Our bodies are constantly exposed to <strong>pathogens</strong>—microorganisms that cause disease (like bacteria, viruses, fungi, and protists). Our first line of defense is purely physical and chemical.</p>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Skin</h4>
+      <p>A tough, continuous physical barrier.</p>
+      <ul>
+        <li>Contains sebaceous glands that secrete sebum (lowers pH to inhibit bacterial growth).</li>
+        <li>Tough outer layers of dead cells.</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--orange)">Mucous Membranes</h4>
+      <p>Sticky traps in vulnerable areas.</p>
+      <ul>
+        <li>Found in airways, nose, and digestive tract.</li>
+        <li>Secretes mucus which physically traps pathogens.</li>
+        <li>Contains lysozyme (an antibacterial enzyme).</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="css-flow">
+    <div class="flow-step">Cut occurs in the skin, exposing the blood to pathogens</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Platelets gather and release clotting factors</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Prothrombin converts to active Thrombin</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Thrombin catalyzes soluble Fibrinogen into insoluble Fibrin fibers</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Fibrin mesh forms, trapping RBCs to create a clot (scab)</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">C3.2.4 - C3.2.5</div>
+  <h2>Innate vs. Adaptive Immunity</h2>
+  <div class="kt"><strong>Key Understanding</strong>The innate immune system is non-specific and constant. The adaptive immune system is specific and builds memory.</div>
+  
+  <p>If a pathogen breaches the primary barriers, the internal immune system takes over. It is split into two broad categories:</p>
+  
+  <table class="tbl">
+    <tr><th>Property</th><th>Innate Immune System</th><th>Adaptive Immune System</th></tr>
+    <tr>
+      <td><strong>Specificity</strong></td>
+      <td>Non-specific (treats all pathogens roughly the same)</td>
+      <td>Highly specific (targets individual pathogen strains)</td>
+    </tr>
+    <tr>
+      <td><strong>Memory</strong></td>
+      <td>No memory (response is exactly the same every time)</td>
+      <td>Builds memory (response gets faster/stronger upon reinfection)</td>
+    </tr>
+    <tr>
+      <td><strong>Key Players</strong></td>
+      <td>Phagocytes (Macrophages, Neutrophils)</td>
+      <td>Lymphocytes (B-cells, T-cells)</td>
+    </tr>
+  </table>
+  
+  <h3 style="margin-top:1.5rem">Phagocytosis (Innate Response)</h3>
+  <p>White blood cells called phagocytes engulf pathogens via endocytosis. Once inside the phagocyte, the pathogen is trapped in a vesicle which fuses with a <strong>lysosome</strong>. Digestive enzymes completely destroy the pathogen.</p>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">C3.2.6 - C3.2.10</div>
+  <h2>The Adaptive Response: Clonal Selection</h2>
+  <div class="kt"><strong>Key Understanding</strong>Lymphocytes mount a specific adaptive immune response. B-cells multiply by clonal selection to form antibody-secreting plasma cells and memory cells.</div>
+  
+  <p>When the innate system cannot handle an infection, the adaptive system steps in. This process relies on <strong>antigens</strong>—foreign molecules (usually proteins on the surface of a pathogen) that trigger an immune response.</p>
+  
+  <img src="/images/bio_clonal_selection.jpg" alt="Clonal Selection Diagram" class="slide-img">
+  
+  <div class="css-flow">
+    <div class="flow-step">1. Macrophage engulfs pathogen and presents its antigen</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Helper T-cell binds to the presented antigen and activates</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">3. Helper T-cell activates a specific B-cell that matches the antigen</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">4. <strong>Clonal Selection:</strong> The B-cell rapidly divides by mitosis</div>
+  </div>
+  
+  <p>The cloned B-cells differentiate into two types:</p>
+  <ul class="bullets">
+    <li><strong>Plasma Cells:</strong> Short-lived cell factories that pump out massive amounts of specific antibodies.</li>
+    <li><strong>Memory Cells:</strong> Long-lived cells that remain in the blood. If the same pathogen attacks again, they trigger a rapid and overwhelming secondary response (this is <strong>immunity</strong>).</li>
+  </ul>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">C3.2.13 - C3.2.14</div>
+  <h2>Antibiotics & Resistance</h2>
+  <div class="kt"><strong>Key Understanding</strong>Antibiotics block processes that occur in prokaryotic cells but not in eukaryotic cells. Evolution of resistance is a major problem.</div>
+  
+  <p>Antibiotics are chemicals that kill or inhibit the growth of bacteria (prokaryotes). They work by targeting metabolic processes unique to bacteria, such as:</p>
+  <ul class="bullets">
+    <li>Cell wall synthesis (e.g., Penicillin targeting peptidoglycan).</li>
+    <li>Protein synthesis via 70S ribosomes.</li>
+    <li>DNA replication enzymes specific to bacteria.</li>
+  </ul>
+  
+  <div class="app-box">
+    <strong>Application: Viral Infections</strong>
+    <p>Viruses are non-living and rely entirely on the host's (eukaryotic) cellular machinery to reproduce. Because antibiotics only target prokaryotic features, <strong>antibiotics cannot be used to treat viral infections!</strong></p>
+  </div>
+  
+  <div class="skill-box">
+    <strong>Skill: Natural Selection & Resistance</strong>
+    <p>Due to genetic variation (from mutation or plasmid transfer), some bacteria may possess natural resistance to an antibiotic. When an antibiotic is used, it acts as a selective pressure. Susceptible bacteria die, while resistant bacteria survive, reproduce, and pass on the resistance trait. Over time, the entire strain becomes resistant (e.g., MRSA).</p>
+  </div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">C3.2.11 - C3.2.12</div>
+  <h2>HIV and the Immune System</h2>
+  <div class="kt"><strong>Key Understanding</strong>Transmission of HIV occurs through body fluids. HIV destroys helper T-lymphocytes, leading to AIDS.</div>
+  
+  <p>The Human Immunodeficiency Virus (HIV) is a retrovirus that directly attacks the immune system, leading to a catastrophic breakdown of the body's defense.</p>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--red)">Mechanism of Attack</h4>
+      <p>HIV specifically targets and infects <strong>Helper T-cells</strong>. Over time, as the virus replicates, it destroys these cells. Without Helper T-cells, B-cells cannot be activated to produce antibodies.</p>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--hl)">AIDS</h4>
+      <p>When the number of active Helper T-cells drops below a critical threshold, the patient develops Acquired Immunodeficiency Syndrome (AIDS). The patient loses the ability to fight off even mild opportunistic infections.</p>
+    </div>
+  </div>
+  
+  <div class="tip"><strong>Transmission:</strong> HIV is transmitted through the exchange of bodily fluids, primarily unprotected sexual intercourse, sharing of hypodermic needles, blood transfusions, or from mother to child across the placenta/breast milk.</div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">C3.2.16 - C3.2.18</div>
+  <h2>Vaccines and Public Health</h2>
+  <div class="kt"><strong>Key Understanding</strong>Vaccines induce immunity without causing the disease. Herd immunity protects the vulnerable.</div>
+  
+  <p>Vaccines contain antigens (attenuated pathogens, dead pathogens, or purified surface proteins) that trigger an immune response without causing the actual disease. This leads to the production of <strong>memory cells</strong>, granting immunity.</p>
+  
+  <div class="app-box">
+    <strong>Application: Herd Immunity</strong>
+    <p>When a sufficiently high percentage of a population is immunized (typically $>80\%$ or $>90\%$, depending on the disease's $R_0$), the chain of transmission is broken. This provides indirect protection to individuals who cannot be vaccinated (e.g., newborns, immunocompromised individuals).</p>
+  </div>
+  
+  <div class="skill-box">
+    <strong>Skill: Evaluating COVID-19 Data</strong>
+    <p>Students should be able to analyze epidemiological data, graphs, and statistics regarding the spread of SARS-CoV-2. Look for trends like $R_t$ (effective reproduction number), the impact of vaccination rollouts on hospitalization rates, and the emergence of variants over time.</p>
+  </div>
+  
+  <div class="case">
+    <strong>Zoonoses (C3.2.15)</strong>
+    <p>Many major human diseases originated as zoonoses—pathogens that cross the species barrier from animals to humans. Examples include COVID-19 (bats/pangolins), HIV (chimpanzees), and Ebola (fruit bats).</p>
+  </div>
+</div>
+
+<!-- SLIDE 7 — COMPLETION -->
+<div class="slide" id="slide-7">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>C3.2 Defense Against Disease Complete!</h1>
+    <p>You have successfully reviewed all SL and HL understandings for Biology Theme C3.2.</p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
+  <div class="nav-dots" id="dotsContainer"></div>
+  <div class="nav-counter" id="slideCounter">1 / 7</div>
+  <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const counter = document.getElementById('slideCounter');
+  const progressBar = document.getElementById('progressBar');
+  const dotsContainer = document.getElementById('dotsContainer');
+  
+  // Initialize dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    // Mark HL dots
+    if(slide.querySelector('.hl-badge')) dot.classList.add('hl-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => jumpTo(i);
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  function updateNav() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    btnPrev.disabled = currentSlide === 0;
+    btnNext.disabled = currentSlide === totalSlides - 1;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function goTo(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    updateNav();
+  }
+  
+  function jumpTo(index) {
+    currentSlide = index;
+    updateNav();
+  }
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) goTo(1);
+    if (e.key === 'ArrowLeft' && currentSlide > 0) goTo(-1);
+  });
+  
+  updateNav();
+</script>
+</body>
+</html>
