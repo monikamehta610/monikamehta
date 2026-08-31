@@ -35,6 +35,94 @@
   .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
   .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
 
+  /* Interactive Elements */
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 120px;
+    perspective: 1000px;
+    margin: 1rem 0;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .flip-card-front {
+    background-color: var(--blue-light);
+    color: var(--blue-dark);
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 1px solid var(--blue);
+  }
+  .flip-card-back {
+    background-color: var(--blue);
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 0.95rem;
+  }
+
+  details {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+  details[open] {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    background: #fff;
+  }
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--blue-dark);
+    font-size: 1.05rem;
+    outline: none;
+  }
+  details[open] summary {
+    margin-bottom: 1rem;
+    color: var(--blue);
+  }
+
+  .img-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .img-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .img-grid img:hover {
+    transform: scale(1.03);
+  }
+
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
   .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
@@ -71,78 +159,101 @@
   <h2>Nervous vs Endocrine Coordination</h2>
   <div class="kt"><strong>Key Understanding</strong>The integration of body systems is achieved through the coordinated actions of the nervous system and the endocrine system.</div>
   
-  <p>To maintain a stable internal environment (homeostasis) and respond to stimuli, multicellular organisms require rapid and sustained communication between different parts of the body.</p>
+  <p>To maintain a stable internal environment (homeostasis) and respond adequately to internal or external stimuli, multicellular organisms require rapid, precise, and sustained communication between different parts of the body. This is accomplished primarily by the nervous and endocrine systems working in tandem. They both rely on chemical messengers, but their mechanisms of delivery and action profiles differ substantially.</p>
   
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">What is Homeostasis?</div>
+      <div class="flip-card-back">The maintenance of a relatively stable internal environment in an organism despite changes in external conditions.</div>
+    </div>
+  </div>
+
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Nervous System</h4>
       <ul>
-        <li><strong>Signal:</strong> Electrical impulses (action potentials) and chemical neurotransmitters.</li>
-        <li><strong>Transmission:</strong> Along neurons (nerve fibers).</li>
-        <li><strong>Speed:</strong> Extremely rapid (milliseconds).</li>
-        <li><strong>Duration:</strong> Short-lived response.</li>
-        <li><strong>Target:</strong> Specific cells (muscles, glands).</li>
+        <li><strong>Signal Type:</strong> Electrical impulses (action potentials) transmitted along neurons and chemical neurotransmitters across synapses.</li>
+        <li><strong>Transmission Pathway:</strong> Highly specific, travelling directly to the target tissue via nerve fibers.</li>
+        <li><strong>Speed of Action:</strong> Extremely rapid (milliseconds).</li>
+        <li><strong>Duration of Effect:</strong> Short-lived response, quickly dissipating once the stimulus stops.</li>
+        <li><strong>Target Cells:</strong> Specific, localized cells (e.g., muscle fibers or exocrine glands).</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--orange)">Endocrine System</h4>
       <ul>
-        <li><strong>Signal:</strong> Chemical hormones.</li>
-        <li><strong>Transmission:</strong> Through the bloodstream.</li>
-        <li><strong>Speed:</strong> Slower (seconds to days).</li>
-        <li><strong>Duration:</strong> Long-lasting response.</li>
-        <li><strong>Target:</strong> Many target organs/cells with specific receptors.</li>
+        <li><strong>Signal Type:</strong> Chemical hormones secreted by ductless endocrine glands.</li>
+        <li><strong>Transmission Pathway:</strong> Transported globally throughout the body via the bloodstream.</li>
+        <li><strong>Speed of Action:</strong> Much slower (can take seconds, minutes, or even days).</li>
+        <li><strong>Duration of Effect:</strong> Long-lasting and sustained response.</li>
+        <li><strong>Target Cells:</strong> Widespread; any cell possessing the specific complementary receptor for the hormone.</li>
       </ul>
     </div>
+  </div>
+
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1614728423169-3f65fd722b05?w=500&q=80" alt="Nerve Cells / Neurons">
+    <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=500&q=80" alt="Blood vessels representing endocrine transport">
   </div>
 </div>
 
 <!-- SLIDE 2 — Homeostasis & Negative Feedback -->
 <div class="slide" id="slide-2">
   <div class="section-tag">C3.1.2</div>
-  <h2>Homeostasis & Negative Feedback</h2>
-  <div class="kt"><strong>Key Understanding</strong>Homeostasis involves maintaining the internal environment between limits, primarily via negative feedback loops.</div>
+  <h2>Homeostasis & Negative Feedback Loops</h2>
+  <div class="kt"><strong>Key Understanding</strong>Homeostasis involves maintaining the internal environment between limits, primarily orchestrated via negative feedback loops.</div>
   
-  <p><strong>Homeostasis</strong> is the maintenance of a relatively stable internal environment in an organism despite changes in the external environment. This includes regulating parameters such as core temperature, blood pH (maintained closely at pH $7.35 - 7.45$), and blood glucose concentration.</p>
+  <p><strong>Homeostasis</strong> is not a static state, but a dynamic equilibrium. The body constantly monitors internal parameters, such as core body temperature (approx. $37^\circ\text{C}$), blood pH (tightly regulated between $7.35$ and $7.45$), and blood glucose concentrations. When these parameters deviate from their set points, corrective mechanisms are activated.</p>
+  
+  <p>These mechanisms operate on the principle of <strong>negative feedback</strong>, where the response initiated by the effector directly counteracts or diminishes the original stimulus. Once the parameter returns to the optimal set point, the response is switched off, preventing overcorrection.</p>
   
   <div class="css-flow">
-    <div class="flow-step">1. <strong>Stimulus:</strong> Change in the internal environment (e.g., body temperature rises).</div>
+    <div class="flow-step">1. <strong>Stimulus:</strong> A significant change in the internal environment (e.g., body temperature rises above normal).</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">2. <strong>Sensor/Receptor:</strong> Detects the change and sends a signal.</div>
+    <div class="flow-step">2. <strong>Sensor/Receptor:</strong> Specialized cells detect the deviation and send an afferent signal.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">3. <strong>Control Centre:</strong> Processes the signal and formulates a response (e.g., hypothalamus).</div>
+    <div class="flow-step alt">3. <strong>Control Centre:</strong> Processes the signal and formulates a response (e.g., the hypothalamus in the brain).</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">4. <strong>Effector:</strong> Organ or tissue that carries out the response (e.g., sweat glands).</div>
+    <div class="flow-step alt">4. <strong>Effector:</strong> Organ or tissue that carries out the corrective response (e.g., sweat glands produce sweat).</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">5. <strong>Response:</strong> The change is counteracted, bringing the parameter back to the set point.</div>
+    <div class="flow-step">5. <strong>Response:</strong> The physiological change counteracts the stimulus, restoring the set point.</div>
   </div>
   
-  <div class="skill-box"><strong>Skill</strong>Drawing a negative feedback loop diagram. Ensure the cycle clearly shows how the response inhibits the original stimulus.</div>
+  <div class="skill-box"><strong>Skill Application</strong>Practice drawing a continuous negative feedback loop diagram. Ensure the circular nature clearly illustrates how the response inhibits the initial stimulus (the "negative" aspect of the feedback).</div>
 </div>
 
 <!-- SLIDE 3 — Blood Glucose Regulation -->
 <div class="slide" id="slide-3">
   <div class="section-tag">C3.1.3</div>
   <h2>Blood Glucose Regulation</h2>
-  <div class="kt"><strong>Key Understanding</strong>The control of blood glucose concentration involves insulin and glucagon, secreted by $\alpha$ and $\beta$ cells in the pancreatic islets.</div>
+  <div class="kt"><strong>Key Understanding</strong>The control of blood glucose concentration involves the antagonistic hormones insulin and glucagon, secreted by $\alpha$ and $\beta$ cells within the pancreatic islets of Langerhans.</div>
   
-  <img src="/images/bio_blood_glucose.jpg" alt="Blood Glucose Regulation Diagram" class="slide-img">
+  <p>Glucose is the primary respiratory substrate for cells, making its concentration in the blood a critical parameter. The pancreas functions as both an exocrine and endocrine gland; its endocrine tissue, the islets of Langerhans, monitors blood glucose and secretes hormones to regulate it.</p>
   
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=500&q=80" alt="Healthy eating impacting blood sugar">
+    <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=500&q=80" alt="Blood test for glucose">
+  </div>
+
   <div class="card">
-    <strong style="color:var(--blue)">When Blood Glucose is HIGH (e.g., after eating):</strong>
+    <strong style="color:var(--blue)">When Blood Glucose is HIGH (Hyperglycemia, e.g., post-meal):</strong>
     <ul class="bullets">
-      <li>$\beta$ (beta) cells in the pancreas detect high glucose and secrete <strong>insulin</strong>.</li>
-      <li>Insulin stimulates muscle and liver cells to take up glucose and convert it into glycogen ($\text{C}_6\text{H}_{12}\text{O}_6 \rightarrow$ Glycogen).</li>
-      <li>Blood glucose levels decrease back to the set point.</li>
+      <li><strong>Detection:</strong> $\beta$ (beta) cells in the pancreatic islets detect elevated glucose concentrations.</li>
+      <li><strong>Secretion:</strong> $\beta$ cells secrete <strong>insulin</strong> into the bloodstream.</li>
+      <li><strong>Action:</strong> Insulin binds to receptors on target cells (primarily muscle, liver, and adipose tissue), triggering the opening of glucose transport channels.</li>
+      <li><strong>Storage:</strong> Inside liver and muscle cells, enzymes are activated to condense glucose into the insoluble polysaccharide <strong>glycogen</strong> (glycogenesis).</li>
+      <li><strong>Result:</strong> Blood glucose levels decrease, returning to the normal set point, which in turn inhibits further insulin release.</li>
     </ul>
   </div>
   
   <div class="card">
-    <strong style="color:var(--orange)">When Blood Glucose is LOW (e.g., fasting/exercise):</strong>
+    <strong style="color:var(--orange)">When Blood Glucose is LOW (Hypoglycemia, e.g., fasting or intense exercise):</strong>
     <ul class="bullets">
-      <li>$\alpha$ (alpha) cells in the pancreas detect low glucose and secrete <strong>glucagon</strong>.</li>
-      <li>Glucagon stimulates liver cells to break down glycogen into glucose and release it into the blood.</li>
-      <li>Blood glucose levels increase back to the set point.</li>
+      <li><strong>Detection:</strong> $\alpha$ (alpha) cells in the pancreatic islets detect diminished glucose concentrations.</li>
+      <li><strong>Secretion:</strong> $\alpha$ cells secrete <strong>glucagon</strong> into the bloodstream.</li>
+      <li><strong>Action:</strong> Glucagon targets hepatocytes (liver cells) specifically.</li>
+      <li><strong>Mobilization:</strong> It activates enzymes that hydrolyze stored <strong>glycogen</strong> back into free glucose monomers (glycogenolysis).</li>
+      <li><strong>Result:</strong> Glucose is released into the bloodstream, raising concentrations back to the set point and ceasing glucagon secretion.</li>
     </ul>
   </div>
 </div>
@@ -150,54 +261,65 @@
 <!-- SLIDE 4 — Diabetes Mellitus -->
 <div class="slide" id="slide-4">
   <div class="section-tag">C3.1.4</div>
-  <h2>Diabetes Mellitus</h2>
-  <div class="kt"><strong>Key Understanding</strong>The causes and consequences of Type I and Type II diabetes differ significantly.</div>
+  <h2>Diabetes Mellitus: Type I vs Type II</h2>
+  <div class="kt"><strong>Key Understanding</strong>The fundamental causes, physiological consequences, and subsequent treatments of Type I and Type II diabetes differ significantly.</div>
   
+  <p>Diabetes mellitus is a metabolic disorder characterized by an inability to regulate blood glucose levels effectively, leading to chronic hyperglycemia. Over time, high blood sugar damages blood vessels, nerves, kidneys, and eyes. However, the mechanism leading to this hyperglycemia differs based on the type of diabetes.</p>
+
   <table class="tbl">
     <tr><th>Feature</th><th>Type I Diabetes</th><th>Type II Diabetes</th></tr>
     <tr>
-      <td><strong>Onset</strong></td>
-      <td>Usually during childhood ("Early-onset").</td>
-      <td>Usually during adulthood ("Late-onset").</td>
+      <td><strong>Typical Onset</strong></td>
+      <td>Usually manifests during childhood or early adolescence ("Early-onset" or "Juvenile").</td>
+      <td>Historically manifested in late adulthood ("Late-onset"), though increasingly common in youth due to lifestyle.</td>
     </tr>
     <tr>
-      <td><strong>Cause</strong></td>
-      <td>Autoimmune destruction of $\beta$ cells in the pancreas. Body cannot produce insulin.</td>
-      <td>Target cells become insensitive (resistant) to insulin. Down-regulation of insulin receptors.</td>
+      <td><strong>Pathological Cause</strong></td>
+      <td>Autoimmune condition resulting in the destruction of $\beta$ cells in the pancreas. The body utterly fails to produce adequate insulin.</td>
+      <td>Target cells (liver, muscle) become insensitive or resistant to insulin. Often associated with a down-regulation of insulin receptors.</td>
     </tr>
     <tr>
-      <td><strong>Risk Factors</strong></td>
-      <td>Genetics.</td>
-      <td>Obesity, poor diet, lack of exercise, age, genetics.</td>
+      <td><strong>Primary Risk Factors</strong></td>
+      <td>Strong genetic predisposition; certain viral infections may trigger the autoimmune response.</td>
+      <td>Obesity, diets high in refined sugars/fats, sedentary lifestyle, aging, and genetic susceptibility.</td>
     </tr>
     <tr>
-      <td><strong>Treatment</strong></td>
-      <td>Regular insulin injections.</td>
-      <td>Dietary modifications, exercise, medication, and sometimes insulin injections.</td>
+      <td><strong>Management & Treatment</strong></td>
+      <td>Requires lifelong, regular <strong>insulin injections</strong> (or an insulin pump) timed with meals and continuous blood glucose monitoring.</td>
+      <td>Initially managed via <strong>dietary modifications</strong> (low glycemic index foods), weight loss, and vigorous exercise. May progress to oral medications or insulin if insulin resistance worsens.</td>
     </tr>
   </table>
   
-  <div class="app-box"><strong>Application</strong>Evaluating the risk factors for Type II diabetes. Consider epidemiological data showing the correlation between sugar-rich diets, sedentary lifestyles, and the rising global incidence of Type II diabetes.</div>
+  <div class="app-box"><strong>Application Focus</strong>Evaluating the risk factors for Type II diabetes. Epidemiological studies demonstrate a profound positive correlation between diets rich in highly processed, sugary foods, increasingly sedentary modern lifestyles, and the explosive global incidence rate of Type II diabetes over the last half-century.</div>
 </div>
 
 <!-- SLIDE 5 — Hypothalamus and Pituitary Gland (HL) -->
 <div class="slide" id="slide-5">
   <div class="section-tag hl-tag">C3.1.5 <span class="hl-badge">HL Only</span></div>
   <h2>The Hypothalamus & Pituitary Gland</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> The hypothalamus and pituitary gland link the nervous and endocrine systems.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> The hypothalamus and pituitary gland function collectively as the paramount link connecting the rapid nervous system with the sustained endocrine system.</div>
   
-  <p>The <strong>hypothalamus</strong> is a region of the brain that serves as the main control center for homeostasis. It receives information from nerves throughout the body and coordinates endocrine responses by controlling the <strong>pituitary gland</strong>.</p>
+  <p>The <strong>hypothalamus</strong> is a small but vital region in the diencephalon of the brain. It integrates vast amounts of sensory information regarding the internal state of the body (temperature, osmolarity, emotions) and serves as the master control center for homeostasis.</p>
+  
+  <p>Directly beneath the hypothalamus sits the <strong>pituitary gland</strong>, often referred to as the "master gland." The hypothalamus regulates the endocrine system by tightly controlling the pituitary gland via two distinct mechanisms:</p>
   
   <div class="css-flow">
-    <div class="flow-step hl"><strong>Hypothalamus</strong> (Nervous tissue)</div>
+    <div class="flow-step hl"><strong>Hypothalamus</strong> (Nervous tissue, processes internal state)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Secretes neurohormones (e.g., TRH, CRH) or sends direct nerve signals</div>
+    <div class="flow-step hl">Secretes specific releasing/inhibiting neurohormones (e.g., TRH, GnRH) into a portal blood vessel system <strong>OR</strong> sends direct action potentials down neurosecretory axons.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl"><strong>Pituitary Gland</strong> (Anterior & Posterior Lobes)</div>
+    <div class="flow-step hl"><strong>Pituitary Gland</strong><br>(Anterior lobe responds to neurohormones; Posterior lobe stores/releases hormones from axons)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Secretes various hormones (e.g., ADH, Oxytocin, TSH, FSH) into the blood</div>
+    <div class="flow-step hl">Secretes systemic hormones (e.g., ADH, Oxytocin, TSH, FSH, Growth Hormone) directly into systemic circulation.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl"><strong>Target Organs</strong> (e.g., Kidneys, Uterus, Thyroid, Gonads)</div>
+    <div class="flow-step hl"><strong>Target Organs</strong> (e.g., Kidneys for water retention, Thyroid for metabolism, Gonads for reproduction)</div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Neurohormone</div>
+      <div class="flip-card-back">A hormone produced and released by a neurosecretory cell (a specialized neuron) into the blood, bridging nervous and endocrine functions.</div>
+    </div>
   </div>
 </div>
 
@@ -205,36 +327,71 @@
 <div class="slide" id="slide-6">
   <div class="section-tag hl-tag">C3.1.6 <span class="hl-badge">HL Only</span></div>
   <h2>Autonomic Control of Heart Rate</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> The autonomic nervous system controls involuntary processes such as heart rate.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> The autonomic nervous system strictly controls involuntary, subconscious physiological processes, notably the modulation of heart rate.</div>
   
-  <p>The cardiac muscle is <em>myogenic</em> (it can contract on its own), but the <strong>Sinoatrial (SA) node</strong> (the pacemaker) is regulated by the autonomic nervous system located in the medulla oblongata.</p>
+  <p>Cardiac muscle is intrinsically <em>myogenic</em>, meaning it generates its own electrical impulses to contract without requiring external nerve stimulation. The primary pacemaker, the <strong>Sinoatrial (SA) node</strong> in the right atrium, sets the baseline rhythm. However, this rhythm must adapt to the body's varying metabolic demands.</p>
+  
+  <p>The cardiovascular center in the <strong>medulla oblongata</strong> of the brainstem receives inputs regarding blood pressure, pH, and oxygen levels. It modulates the SA node via the two antagonistic branches of the autonomic nervous system.</p>
   
   <div class="compare-grid">
     <div class="compare-card" style="border-color: var(--blue);">
-      <h4 style="color:var(--blue)">Sympathetic Nervous System</h4>
-      <p>The "Fight or Flight" response.</p>
+      <h4 style="color:var(--blue)">Sympathetic Nervous System (SNS)</h4>
+      <p>Associated with the <strong>"Fight or Flight"</strong> physiological response, preparing the body for intense physical activity or stress.</p>
       <ul>
-        <li>Releases <strong>noradrenaline</strong> (norepinephrine) at the SA node.</li>
-        <li><strong>Effect:</strong> Increases heart rate.</li>
-        <li>Stimulated by: Exercise, stress, low blood pH (high CO$_2$).</li>
+        <li><strong>Mechanism:</strong> Sympathetic nerve fibers terminate at the SA node and release the neurotransmitter <strong>noradrenaline</strong> (norepinephrine).</li>
+        <li><strong>Effect:</strong> Increases the frequency of electrical impulses generated by the SA node, dramatically increasing heart rate and contractility.</li>
+        <li><strong>Triggers:</strong> Exercise, acute stress, anger, fear, or a drop in blood pH (indicating elevated CO$_2$ from respiration).</li>
       </ul>
     </div>
     <div class="compare-card" style="border-color: var(--green);">
-      <h4 style="color:var(--green)">Parasympathetic Nervous System</h4>
-      <p>The "Rest and Digest" response.</p>
+      <h4 style="color:var(--green)">Parasympathetic Nervous System (PNS)</h4>
+      <p>Associated with the <strong>"Rest and Digest"</strong> physiological state, conserving energy and promoting maintenance functions.</p>
       <ul>
-        <li>Signals via the <strong>vagus nerve</strong>, releasing <strong>acetylcholine</strong> at the SA node.</li>
-        <li><strong>Effect:</strong> Decreases heart rate.</li>
-        <li>Stimulated by: Relaxation, normal resting conditions.</li>
+        <li><strong>Mechanism:</strong> Signals are transmitted via the <strong>vagus nerve</strong> (cranial nerve X), which releases the neurotransmitter <strong>acetylcholine</strong> at the SA node.</li>
+        <li><strong>Effect:</strong> Hyperpolarizes the SA node cells, decreasing the frequency of action potentials and thus slowing down the heart rate.</li>
+        <li><strong>Triggers:</strong> Relaxation, sleep, digestion, and normal resting conditions.</li>
       </ul>
     </div>
   </div>
   
-  <div class="tip"><strong>Exam Tip (HL):</strong> Remember that adrenaline (epinephrine) from the adrenal glands also increases heart rate, demonstrating how both the nervous and endocrine systems integrate to control a single response.</div>
+  <div class="tip"><strong>Exam Tip (HL):</strong> It is crucial to remember that the endocrine system also plays a role here. The hormone adrenaline (epinephrine), released by the adrenal glands during stress, travels through the blood to the SA node and mimics sympathetic stimulation, causing a sustained increase in heart rate. This perfectly illustrates the integration of nervous and endocrine control!</div>
 </div>
 
-<!-- SLIDE 7 — COMPLETION -->
+<!-- SLIDE 7 — Check Your Understanding -->
 <div class="slide" id="slide-7">
+  <div class="section-tag">Assessment</div>
+  <h2>Check Your Understanding</h2>
+  <div class="kt">Test your knowledge on the concepts covered in this module. Click the questions to reveal the answers.</div>
+
+  <details>
+    <summary>1. Contrast the speed and duration of the nervous system versus the endocrine system.</summary>
+    <p>The nervous system operates extremely rapidly (milliseconds) using electrical impulses and neurotransmitters, resulting in a short-lived response. Conversely, the endocrine system uses hormones traveling through the bloodstream; it acts much more slowly (seconds to days) but typically produces a longer-lasting, sustained response.</p>
+  </details>
+
+  <details>
+    <summary>2. Explain the role of the effector in a negative feedback loop.</summary>
+    <p>The effector is the specific organ, tissue, or gland that carries out the physiological response dictated by the control center. In negative feedback, the action of the effector reverses or diminishes the original stimulus, returning the internal environment to its optimal set point.</p>
+  </details>
+
+  <details>
+    <summary>3. Describe the physiological response when $\alpha$ (alpha) cells in the pancreas detect low blood glucose.</summary>
+    <p>Upon detecting low blood glucose levels (hypoglycemia), the $\alpha$ cells secrete the hormone glucagon into the blood. Glucagon targets the liver, stimulating the breakdown of glycogen into glucose (glycogenolysis), which is then released into the bloodstream, raising glucose levels back to normal.</p>
+  </details>
+
+  <details>
+    <summary>4. What is the fundamental difference in cause between Type I and Type II diabetes?</summary>
+    <p>Type I diabetes is an autoimmune condition where the body destroys its own insulin-producing $\beta$ cells, resulting in a lack of insulin. Type II diabetes occurs when the body's target cells (like muscle and liver cells) become resistant or insensitive to the insulin that is being produced.</p>
+  </details>
+
+  <details>
+    <summary>5. (HL Only) How does the vagus nerve affect the myogenic contraction of the heart?</summary>
+    <p>The vagus nerve is part of the parasympathetic nervous system. It releases the neurotransmitter acetylcholine at the Sinoatrial (SA) node, which decreases the frequency of the heart's myogenic electrical impulses, thereby slowing down the heart rate during periods of rest and relaxation.</p>
+  </details>
+
+</div>
+
+<!-- SLIDE 8 — COMPLETION -->
+<div class="slide" id="slide-8">
   <div class="completion">
     <div class="check">✅</div>
     <h1>C3.1 Complete!</h1>
@@ -246,7 +403,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 8</div>
+  <div class="nav-counter" id="slideCounter">1 / 9</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

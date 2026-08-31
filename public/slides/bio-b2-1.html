@@ -44,6 +44,25 @@
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  
+  /* FLIP CARD */
+  .flip-card { background-color: transparent; width: 100%; height: 180px; perspective: 1000px; margin: 1rem 0; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); font-weight: 700; font-size: 1.4rem; border: 2px solid var(--blue); }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); font-size: 1.05rem; }
+
+  /* IMAGE GRID */
+  .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .img-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.2s; }
+  .img-grid img:hover { transform: scale(1.02); }
+
+  /* DETAILS / SUMMARY */
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 0.8rem 1.2rem; margin-bottom: 1rem; font-size: 0.95rem; }
+  summary { font-weight: 600; cursor: pointer; padding: 0.5rem 0; color: var(--blue-dark); outline: none; }
+  details p { margin-top: 0.8rem; padding-left: 1rem; border-left: 3px solid var(--green); color: var(--gray-800); }
+
   @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
 </style>
 </head>
@@ -60,6 +79,11 @@
       <div class="stat"><div class="stat-num">10</div><div class="stat-label">Understandings</div></div>
       <div class="stat"><div class="stat-num">7</div><div class="stat-label">HL Extensions</div></div>
     </div>
+    
+    <div class="img-grid">
+      <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=400&q=80" alt="Cell biology">
+      <img src="https://images.unsplash.com/photo-1614935151651-0bea6508abb0?auto=format&fit=crop&w=400&q=80" alt="Microscopic structure">
+    </div>
   </div>
 </div>
 
@@ -69,9 +93,20 @@
   <h2>The Fluid Mosaic Model</h2>
   <div class="kt"><strong>Key Understanding</strong>Lipid bilayers form the basis of cell membranes, and the general structure is described by the fluid mosaic model.</div>
   
-  <p>The fluid mosaic model describes cell membranes as a dynamic, flexible lipid bilayer with embedded and surface proteins. Amphipathic phospholipids naturally form these continuous sheet-like bilayers in water.</p>
+  <p>The fluid mosaic model describes cell membranes as a dynamic, flexible lipid bilayer with embedded and surface proteins. Amphipathic phospholipids naturally form these continuous sheet-like bilayers in water. The term "fluid" implies that the lipids and proteins can move laterally within the layer, while "mosaic" refers to the diverse array of proteins embedded within the lipid matrix, much like tiles in a mosaic.</p>
   
-  <img src="/images/fluid_mosaic_model.jpg" alt="Fluid Mosaic Model Diagram" class="slide-img">
+  <p>Phospholipids consist of a hydrophilic (water-loving) phosphate head and two hydrophobic (water-fearing) hydrocarbon tails. When placed in an aqueous environment, these molecules spontaneously arrange themselves into a bilayer, ensuring that the hydrophobic tails are shielded from water while the hydrophilic heads interact with the aqueous internal and external environments.</p>
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Amphipathic</div>
+      <div class="flip-card-back">A molecule possessing both hydrophilic (water-loving) and hydrophobic (water-fearing) properties, such as a phospholipid.</div>
+    </div>
+  </div>
+
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=400&q=80" alt="Abstract fluid forms">
+  </div>
   
   <div class="css-flow">
     <div class="flow-step">Phospholipids have hydrophilic heads and hydrophobic tails</div>
@@ -93,7 +128,8 @@
   <h2>Membranes as Barriers</h2>
   <div class="kt"><strong>Key Understanding</strong>The hydrophobic hydrocarbon core makes membranes effective barriers, providing selective permeability.</div>
   
-  <p>The inner core of the membrane is highly hydrophobic. This means that while some particles can cross easily, others cannot cross at all without help.</p>
+  <p>The inner core of the membrane is highly hydrophobic. This means that while some particles can cross easily, others cannot cross at all without help. This selective permeability is critical for maintaining cellular homeostasis, allowing the cell to regulate its internal conditions independently of the external environment.</p>
+  <p>Small, non-polar molecules traverse the membrane rapidly because they interact favorably with the hydrophobic lipid tails. In contrast, charged ions and large polar molecules are repelled by the hydrophobic core and require specific transmembrane proteins to enter or exit the cell.</p>
   
   <table class="tbl">
     <tr><th>Particle Type</th><th>Example</th><th>Permeability</th></tr>
@@ -121,7 +157,7 @@
   
   <div class="app-box">
     <strong>Application</strong>
-    <p>Selective permeability allows cells to maintain internal environments that differ from their external surroundings, a fundamental requirement for life.</p>
+    <p>Selective permeability allows cells to maintain internal environments that differ from their external surroundings, a fundamental requirement for life. It underpins processes such as nerve impulse transmission, muscle contraction, and nutrient absorption.</p>
   </div>
 </div>
 
@@ -131,6 +167,8 @@
   <h2>Passive Transport Mechanisms</h2>
   <div class="kt"><strong>Key Understanding</strong>Particles move passively down their concentration gradient without ATP.</div>
   
+  <p>Passive transport relies on the innate kinetic energy of molecules, driving their movement from regions of higher concentration to regions of lower concentration until dynamic equilibrium is reached. No cellular metabolic energy (ATP) is consumed in this process.</p>
+  
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Simple Diffusion</h4>
@@ -138,7 +176,7 @@
       <ul>
         <li>Non-selective</li>
         <li>Driven by random particle movement</li>
-        <li>Ex: O₂ entering cells.</li>
+        <li>Ex: O₂ and CO₂ gas exchange in alveoli.</li>
       </ul>
     </div>
     <div class="compare-card">
@@ -146,16 +184,23 @@
       <p>Movement through specific channel proteins.</p>
       <ul>
         <li>Selective permeability</li>
-        <li>Proteins create hydrophilic pathways</li>
-        <li>Ex: K⁺ channels in neurons.</li>
+        <li>Proteins create hydrophilic pathways avoiding the core</li>
+        <li>Ex: K⁺ channels in neurons; Glucose transporters (GLUT).</li>
       </ul>
+    </div>
+  </div>
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Osmosis</div>
+      <div class="flip-card-back">The passive movement of water molecules across a partially permeable membrane from a region of lower solute concentration to a region of higher solute concentration.</div>
     </div>
   </div>
   
   <div class="card">
     <strong style="color:var(--green)">Osmosis and Aquaporins</strong>
-    <p>Osmosis is the net movement of water molecules. Since water is polar, it crosses the membrane slowly. <strong>Aquaporins</strong> are specialized channel proteins that massively increase membrane permeability to water.</p>
-    <p>Rate of diffusion: \( \text{Rate} \propto \frac{\text{Surface Area} \times \text{Concentration Difference}}{\text{Distance}} \)</p>
+    <p>Osmosis is the net movement of water molecules. Since water is polar, it crosses the hydrophobic core slowly. <strong>Aquaporins</strong> are specialized channel proteins that massively increase membrane permeability to water, essential in tissues like the kidneys.</p>
+    <p>Rate of diffusion is mathematically described as: \( \text{Rate} \propto \frac{\text{Surface Area} \times \text{Concentration Difference}}{\text{Distance}} \)</p>
   </div>
 </div>
 
@@ -165,7 +210,8 @@
   <h2>Active Transport</h2>
   <div class="kt"><strong>Key Understanding</strong>Pump proteins use ATP to move specific particles against a concentration gradient.</div>
   
-  <p>When cells need to accumulate substances or expel wastes against their natural gradient, they must expend energy in the form of ATP.</p>
+  <p>When cells need to accumulate substances or expel wastes against their natural concentration gradient (i.e., from low to high concentration), they must expend energy. This energy typically comes from the hydrolysis of Adenosine Triphosphate (ATP).</p>
+  <p>Specific integral membrane proteins acting as "pumps" facilitate this process. A prime example is the proton pump used in cellular respiration or photosynthesis, which establishes crucial electrochemical gradients.</p>
   
   <div class="css-flow">
     <div class="flow-step">Particle enters pump protein from side with lower concentration</div>
@@ -176,10 +222,17 @@
     <div class="flow-arrow">↓</div>
     <div class="flow-step alt">Particle is released on side with higher concentration</div>
   </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Active Transport</div>
+      <div class="flip-card-back">The movement of substances across a cell membrane against a concentration gradient, requiring energy (ATP) and specific transport proteins.</div>
+    </div>
+  </div>
   
   <div class="skill-box">
     <strong>Skill</strong>
-    <p>Distinguish between active and passive transport graphically and theoretically.</p>
+    <p>Distinguish between active and passive transport graphically and theoretically. Be able to interpret graphs showing transport rate vs. concentration gradient.</p>
   </div>
 </div>
 
@@ -189,14 +242,17 @@
   <h2>Glycoproteins & Glycolipids</h2>
   <div class="kt"><strong>Key Understanding</strong>Carbohydrates linked to proteins or lipids on the extracellular side play crucial roles.</div>
   
+  <p>The extracellular matrix and the outer surface of the plasma membrane are rich in carbohydrates attached to proteins (glycoproteins) and lipids (glycolipids). This carbohydrate-rich layer is known as the glycocalyx. It serves vital functions in cellular life.</p>
+  
   <ul class="bullets">
-    <li><strong>Cell Adhesion:</strong> Allowing cells to stick together to form tissues.</li>
+    <li><strong>Cell Adhesion:</strong> Allowing cells to stick together to form structured tissues and organs.</li>
     <li><strong>Cell Recognition:</strong> Acting as markers or antigens (e.g., ABO blood groups) so the immune system can identify self vs. non-self.</li>
+    <li><strong>Receptor Sites:</strong> Binding sites for signaling molecules like hormones (e.g., insulin receptors).</li>
   </ul>
   
   <div class="app-box">
     <strong>Application</strong>
-    <p>The rejection of transplanted organs occurs because the recipient's immune system detects foreign glycoproteins on the donor organ's cells.</p>
+    <p>The rejection of transplanted organs occurs because the recipient's immune system detects foreign glycoproteins on the donor organ's cells, treating them as pathogens and launching an immune response.</p>
   </div>
 </div>
 
@@ -206,23 +262,27 @@
   <h2>Membrane Fluidity and Cholesterol</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Fluidity is affected by fatty acid composition and cholesterol.</div>
   
-  <p>Membranes must be fluid enough for proteins to move and for cell division, but solid enough to maintain structural integrity.</p>
+  <p>Membranes must be fluid enough for proteins to diffuse laterally, for endocytosis/exocytosis to occur, and for cell division. However, they must be solid enough to maintain structural integrity and barrier function. The exact degree of fluidity is carefully regulated.</p>
   
   <table class="tbl">
     <tr><th>Factor</th><th>Effect on Fluidity</th></tr>
     <tr>
       <td>Saturated Fatty Acids</td>
-      <td>Decrease fluidity (pack tightly together)</td>
+      <td>Decrease fluidity (straight chains pack tightly together, increasing intermolecular forces)</td>
     </tr>
     <tr>
       <td>Unsaturated Fatty Acids</td>
-      <td>Increase fluidity (kinks prevent tight packing)</td>
+      <td>Increase fluidity (cis-double bonds create kinks, preventing tight packing)</td>
     </tr>
     <tr>
       <td>Cholesterol (Animals)</td>
-      <td>Acts as a bi-directional buffer. Prevents membrane from being too fluid at high temps and too solid at low temps.</td>
+      <td>Acts as a bi-directional buffer. Prevents membrane from being too fluid at high temps by restricting phospholipid movement, and prevents it from freezing at low temps by disrupting close packing.</td>
     </tr>
   </table>
+
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1618042164219-62c820f10723?auto=format&fit=crop&w=400&q=80" alt="Molecular structure representation">
+  </div>
 </div>
 
 <!-- SLIDE 7 — Advanced Transport (HL) -->
@@ -231,16 +291,18 @@
   <h2>Advanced Membrane Transport Mechanisms</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Complex mechanisms like gated channels and co-transport expand membrane capabilities.</div>
   
+  <p>Higher-level biological functions, such as nerve impulses and efficient nutrient absorption, rely on sophisticated transport mechanisms.</p>
+
   <div class="bullets">
-    <li><strong>Gated Ion Channels:</strong> Channels that open or close in response to stimuli (e.g., voltage-gated Na⁺/K⁺ channels in neurons).</li>
-    <li><strong>Sodium-Potassium Pump:</strong> An exchange transporter that uses 1 ATP to move 3 Na⁺ out and 2 K⁺ in, maintaining resting potential.</li>
-    <li><strong>Indirect Active Transport:</strong> Uses the gradient established by a primary pump to drive the transport of another molecule. Example: Sodium-dependent glucose cotransporters in the intestines use the Na⁺ gradient to absorb glucose against its gradient.</li>
+    <li><strong>Gated Ion Channels:</strong> Channels that open or close in response to stimuli. Voltage-gated channels respond to changes in membrane potential (e.g., Na⁺/K⁺ channels in neurons), while ligand-gated channels open when a specific molecule binds.</li>
+    <li><strong>Sodium-Potassium Pump:</strong> An exchange transporter (antiport) that uses 1 ATP to move 3 Na⁺ out and 2 K⁺ in, maintaining the resting potential of neurons and contributing to osmolarity.</li>
+    <li><strong>Indirect Active Transport (Secondary Active Transport):</strong> Uses the electrochemical gradient established by a primary pump to drive the transport of another molecule against its gradient.</li>
   </div>
   
   <div class="css-flow">
     <div class="flow-step hl">Na⁺/K⁺ pump creates high Na⁺ outside cell (Primary Active)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Na⁺ naturally wants to diffuse back in</div>
+    <div class="flow-step hl">Na⁺ naturally wants to diffuse back in down its gradient</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step hl">Cotransporter uses Na⁺ inflow energy to drag glucose in (Secondary Active)</div>
   </div>
@@ -252,23 +314,51 @@
   <h2>Vesicular Transport & Cell Adhesion</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Fluidity enables vesicle formation and fusion; specific mechanisms allow tissue formation.</div>
   
-  <p>Because the membrane is fluid, portions can pinch off to form vesicles (endocytosis) or fuse with the membrane to release contents (exocytosis). This requires ATP and relies on the hydrophobic interactions of the lipid bilayer rearranging.</p>
+  <p>Because the membrane is a dynamic fluid, portions of it can pinch off to form intracellular vesicles (endocytosis) or fuse with the plasma membrane to release large molecules (exocytosis). These processes are highly organized, require ATP, and rely on the hydrophobic interactions of the lipid bilayer rearranging seamlessly.</p>
   
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Exocytosis</div>
+      <div class="flip-card-back">The cellular process in which intracellular vesicles fuse with the plasma membrane to release their contents into the extracellular space.</div>
+    </div>
+  </div>
+
   <div class="app-box">
     <strong>Application</strong>
-    <p>Neurotransmitter release at synapses occurs via exocytosis of vesicles.</p>
+    <p>Neurotransmitter release at synapses occurs via exocytosis of vesicles containing neurotransmitters. The membrane added to the presynaptic terminal is later recovered via endocytosis.</p>
   </div>
   
-  <p><strong>Cell Adhesion:</strong> Beyond simple glycoproteins, specialized junctions (like tight junctions, desmosomes, and gap junctions) physically connect cells to form stable tissues and allow direct communication.</p>
+  <p><strong>Cell Adhesion:</strong> Beyond simple glycoproteins, specialized protein junctions physically connect cells to form stable tissues. Tight junctions seal adjacent cells to prevent fluid leakage, desmosomes act as rivets for structural support, and gap junctions provide channels for direct chemical communication.</p>
 </div>
 
-<!-- SLIDE 9 — COMPLETION -->
+<!-- SLIDE 9 — SELF ASSESSMENT & COMPLETION -->
 <div class="slide" id="slide-9">
   <div class="completion">
     <div class="check">✅</div>
-    <h1>B2.1 Membranes Complete!</h1>
-    <p>You have successfully reviewed all SL and HL understandings for Biology Theme B2.1.</p>
+    <h1>Check Your Understanding</h1>
+    <p>Review the concepts below to ensure you have mastered B2.1.</p>
   </div>
+
+  <!-- Self Assessment Details/Summary -->
+  <div style="margin-top: 2rem;">
+    <details>
+      <summary>Q: Why are phospholipids considered amphipathic?</summary>
+      <p>A: They consist of a hydrophilic (water-loving) phosphate head and hydrophobic (water-fearing) hydrocarbon tails, allowing them to form stable bilayers in aqueous environments.</p>
+    </details>
+    <details>
+      <summary>Q: What is the main difference between simple and facilitated diffusion?</summary>
+      <p>A: Both are passive, but simple diffusion occurs directly through the lipid bilayer (for small, non-polar molecules), whereas facilitated diffusion requires specific integral channel proteins (for polar or charged molecules).</p>
+    </details>
+    <details>
+      <summary>Q: How does cholesterol regulate membrane fluidity in animal cells?</summary>
+      <p>A: Cholesterol acts as a bi-directional buffer. At high temperatures, it restricts phospholipid movement, preventing the membrane from becoming too fluid. At low temperatures, it prevents tight packing of fatty acid tails, keeping the membrane fluid.</p>
+    </details>
+    <details>
+      <summary>Q: What is the role of ATP in active transport?</summary>
+      <p>A: ATP undergoes hydrolysis to release energy, which induces a conformational change in pump proteins, allowing them to move molecules against their concentration gradient.</p>
+    </details>
+  </div>
+
 </div>
 
 <!-- NAVIGATION -->

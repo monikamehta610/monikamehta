@@ -55,6 +55,31 @@
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  
+  /* NEW CSS for Interactive Elements */
+  .flip-card { background-color: transparent; width: 100%; max-width: 400px; height: 180px; perspective: 1000px; margin: 1.5rem auto; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); border: 2px solid var(--blue); }
+  .flip-card-front h3 { margin: 0; font-size: 1.4rem; }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); flex-direction: column; }
+  .flip-card-back p { margin: 0; font-size: 0.95rem; }
+
+  .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+
+  .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .image-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+  .image-grid img:hover { transform: scale(1.03); }
+
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; margin: 1rem 0; padding: 0.5rem 1rem; transition: all 0.3s ease; }
+  details[open] { background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  summary { font-weight: 600; cursor: pointer; padding: 0.5rem 0; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between; color: var(--blue-dark); font-size: 1.05rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 1.5rem; font-weight: 400; transition: transform 0.3s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p, details ul { margin-top: 0.8rem; margin-bottom: 0.5rem; font-size: 0.95rem; }
+  
   @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
 </style>
 </head>
@@ -81,21 +106,49 @@
   <h2>Habitat and Adaptation</h2>
   <div class="kt"><strong>Key Understanding</strong>Organisms are adapted to the abiotic factors of their habitats.</div>
   
-  <p>A <strong>habitat</strong> is the specific place where a community, species, population, or organism lives, characterized by distinct physical conditions.</p>
+  <p>Every species is finely tuned to its specific environment. A <strong>habitat</strong> provides the necessary physical and chemical conditions (abiotic factors) and biological interactions (biotic factors) that allow a species to survive, grow, and reproduce. Natural selection shapes the traits of populations over generations, leading to <strong>adaptations</strong>—heritable characteristics that increase an organism's ability to survive and reproduce in a specific environment.</p>
   
+  <div class="flip-grid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>Habitat</h3>
+        </div>
+        <div class="flip-card-back">
+          <p>The specific natural environment or physical location where a community, species, population, or individual organism lives.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>Adaptation</h3>
+        </div>
+        <div class="flip-card-back">
+          <p>A structural, physiological, or behavioral trait that evolves over time to improve an organism's fitness in a specific environment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="app-box">
     <strong>Application: Specific Adaptations</strong>
-    <p>Organisms have specialized adaptations to survive in extreme abiotic conditions:</p>
+    <p>Organisms have specialized adaptations to survive in extreme abiotic conditions. These are critical examples to remember:</p>
     <ul class="bullets">
-      <li><strong>Sand Dunes (Marram Grass):</strong> Highly rolled leaves to trap moisture, thick waxy cuticle, and extensive root networks to prevent uprooting in loose sand.</li>
-      <li><strong>Mangrove Swamps (Mangrove Trees):</strong> Aerial roots (pneumatophores) to obtain oxygen in waterlogged, anaerobic mud, and specialized glands to excrete excess salt (NaCl).</li>
+      <li><strong>Sand Dunes (Marram Grass - <i>Ammophila arenaria</i>):</strong> Leaves roll tightly inward to trap moist air, reducing the transpiration gradient. They possess a thick waxy cuticle on the outer surface to prevent water loss and have extensive, deep root networks to anchor them firmly and prevent uprooting in shifting, loose sands.</li>
+      <li><strong>Mangrove Swamps (Mangrove Trees):</strong> Thrive in waterlogged, anaerobic (oxygen-poor) mud and high salinity. They develop aerial roots called <strong>pneumatophores</strong> that grow upwards out of the mud to absorb oxygen from the air. Their leaves also feature specialized salt glands to actively excrete excess sodium chloride (NaCl) absorbed from the seawater.</li>
     </ul>
   </div>
   
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=600&q=80" alt="Marram grass in sand dunes">
+    <img src="https://images.unsplash.com/photo-1508213824874-1234c9c45a72?w=600&q=80" alt="Mangrove roots in water">
+  </div>
+
   <div class="css-flow">
-    <div class="flow-step">Environmental Constraint (e.g. High Salinity)</div>
+    <div class="flow-step">Environmental Constraint (e.g. High Salinity / Drought)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">Natural Selection</div>
+    <div class="flow-step">Natural Selection acting on genetic variation</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step alt">Organism develops specific physiological/structural adaptation</div>
   </div>
@@ -107,15 +160,46 @@
   <h2>Abiotic Variables and Range of Tolerance</h2>
   <div class="kt"><strong>Key Understanding</strong>Abiotic variables affect species distribution and determine an organism's range of tolerance.</div>
   
-  <p>Every species has a <strong>range of tolerance</strong> for every abiotic factor (such as temperature, pH, or light intensity) within which it can survive.</p>
+  <p>Species cannot survive everywhere. Their presence is dictated by a strict <strong>range of tolerance</strong> for multiple abiotic factors, including temperature, pH, light intensity, soil moisture, and salinity. The Law of Tolerance states that the distribution of a species is controlled by the environmental factor for which the organism has the narrowest range of adaptability or control.</p>
   
+  <div class="flip-grid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>Optimum Range</h3>
+        </div>
+        <div class="flip-card-back">
+          <p>The narrow band of environmental conditions where an organism thrives, grows fastest, and reproduces most successfully.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>Zone of Stress</h3>
+        </div>
+        <div class="flip-card-back">
+          <p>Conditions outside the optimum range where organisms can survive but experience physiological stress, reducing growth and reproduction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="skill-box">
-    <strong>Skill: Using Transect Data</strong>
-    <p>Biologists use transect data and data loggers to correlate the distribution of an organism with abiotic variables. If an abiotic factor falls outside the tolerance range, the species cannot survive there. For a standard normal distribution of tolerance, most individuals are found within $\pm 1 \sigma$ (one standard deviation) of the optimum, and few survive near the extreme limits ($> \pm 2 \sigma$).</p>
+    <strong>Skill: Using Transect Data and Data Loggers</strong>
+    <p>Biologists use <strong>line and belt transects</strong> combined with data loggers to measure abiotic variables across a gradient (e.g., from a shoreline inland). By plotting species abundance against an abiotic factor, a normal distribution (bell curve) typically emerges.</p>
+    <ul class="bullets">
+      <li><strong>Optimum Zone:</strong> Peak population density, usually within $\pm 1 \sigma$ (one standard deviation) of the mean.</li>
+      <li><strong>Zone of Physiological Stress:</strong> Lower abundance, found between $\pm 1 \sigma$ and $\pm 2 \sigma$.</li>
+      <li><strong>Zone of Intolerance:</strong> Beyond $\pm 2 \sigma$, extreme limits where the species is completely absent.</li>
+    </ul>
   </div>
   
-  <p>The distribution can often be modelled mathematically using standard bell-curve equations, where the optimum corresponds to the peak frequency.</p>
+  <p>This mathematical modelling helps predict how populations might shift in response to climate change. If temperature limits shift, the species must migrate or face extinction.</p>
   
+  <div class="image-grid" style="grid-template-columns: 1fr;">
+    <img src="https://images.unsplash.com/photo-1563261649-5f2123565103?w=900&q=80" alt="Environmental gradient in nature, indicating shifting conditions">
+  </div>
 </div>
 
 <!-- SLIDE 3 — B4.1.5 -->
@@ -124,29 +208,36 @@
   <h2>Conditions for Coral Reef Formation</h2>
   <div class="kt"><strong>Key Understanding</strong>Specific abiotic conditions are required for coral reef formation.</div>
   
-  <p>Coral reefs are built by colonies of tiny animals called polyps that secrete calcium carbonate (CaCO₃). They have extremely narrow ranges of tolerance.</p>
+  <p>Coral reefs are some of the most biodiverse ecosystems on Earth, yet they are extremely fragile. They are built by colonies of tiny animals called coral polyps that secrete calcium carbonate (CaCO₃) to form hard exoskeletons. Corals live in an obligate mutualistic relationship with photosynthetic algae called <strong>zooxanthellae</strong>.</p>
   
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=600&q=80" alt="Vibrant Coral Reef Underwater">
+    <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80" alt="Close up of coral polyps">
+  </div>
+
+  <p>Because of this symbiotic relationship, reef-building corals have exceptionally narrow ranges of tolerance for their aquatic environment.</p>
+
   <table class="tbl">
-    <tr><th>Abiotic Factor</th><th>Optimal Range/Requirement</th></tr>
+    <tr><th>Abiotic Factor</th><th>Optimal Range/Requirement & Consequences</th></tr>
     <tr>
       <td><strong>Water Depth</strong></td>
-      <td>Generally shallow (less than 50m) to allow sufficient light penetration for symbiotic zooxanthellae.</td>
+      <td>Must be shallow (typically less than 50m). Deep water absorbs too much light, starving the photosynthetic zooxanthellae.</td>
     </tr>
     <tr>
       <td><strong>Temperature</strong></td>
-      <td>Optimal between $23^\circ \text{C}$ and $29^\circ \text{C}$. Too high causes coral bleaching.</td>
+      <td>Optimal range is strictly between $23^\circ \text{C}$ and $29^\circ \text{C}$. High temperatures (even $1-2^\circ \text{C}$ above normal) cause thermal stress, leading to <strong>coral bleaching</strong> (expulsion of zooxanthellae).</td>
     </tr>
     <tr>
       <td><strong>Salinity</strong></td>
-      <td>High salinity (approx 35 ppt); corals cannot survive near river mouths where fresh water dilutes the ocean.</td>
+      <td>Requires high, stable marine salinity (approx 35 ppt). Corals die near estuaries where freshwater river runoff dilutes the ocean water.</td>
     </tr>
     <tr>
-      <td><strong>Clarity</strong></td>
-      <td>Clear water is essential. High turbidity (silt/sediment) blocks light and clogs coral polyps.</td>
+      <td><strong>Clarity / Turbidity</strong></td>
+      <td>Clear, oligotrophic (nutrient-poor) water is essential. High turbidity from silt, sediment, or algal blooms blocks sunlight and physically smothers and clogs the feeding tentacles of the polyps.</td>
     </tr>
     <tr>
       <td><strong>pH</strong></td>
-      <td>Slightly alkaline (pH $\approx$ 8.0 - 8.3) to allow precipitation of CaCO₃ skeletons. Ocean acidification (increasing CO₂) threatens this.</td>
+      <td>Ocean water must be slightly alkaline (pH $\approx$ 8.0 - 8.3). This allows the precipitation of calcium carbonate (calcification). <strong>Ocean acidification</strong> driven by rising atmospheric CO₂ reduces available carbonate ions, dissolving reefs.</td>
     </tr>
   </table>
 </div>
@@ -157,17 +248,35 @@
   <h2>Biomes and Convergent Evolution</h2>
   <div class="kt"><strong>Key Understanding</strong>Biomes are groups of ecosystems with similar communities dictated by abiotic factors and convergent evolution.</div>
   
-  <p>The distribution of terrestrial biomes (e.g., tropical rainforest, hot desert, taiga) is primarily determined by two abiotic factors: <strong>temperature</strong> and <strong>precipitation</strong>.</p>
+  <p>The biosphere is divided into large-scale ecological zones called <strong>biomes</strong> (e.g., tropical rainforest, hot desert, taiga, tundra, temperate deciduous forest). The global distribution of these terrestrial biomes is overwhelmingly dictated by two primary climatic factors: <strong>mean annual temperature</strong> and <strong>mean annual precipitation</strong>.</p>
   
+  <div class="flip-card" style="max-width: 600px; height: 140px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Convergent Evolution</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>The process whereby distantly related organisms independently evolve similar traits to adapt to similar environmental necessities.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>Because the same biome can exist on completely isolated continents, organisms living in them experience identical selective pressures. This leads to <strong>convergent evolution</strong>. Unrelated lineages independently evolve analogous structures because those specific adaptations are the most effective way to survive the harsh abiotic conditions.</p>
+
   <div class="css-flow">
-    <div class="flow-step">Similar Abiotic Conditions across different continents</div>
+    <div class="flow-step">Isolated Continents with identical Climate/Biomes (e.g., African Desert & American Desert)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Unrelated species face similar selective pressures</div>
+    <div class="flow-step alt">Unrelated species face identical environmental selective pressures (e.g., extreme drought)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Convergent Evolution: They evolve similar structural adaptations</div>
+    <div class="flow-step hl">Convergent Evolution: Independent emergence of similar adaptations (analogous structures)</div>
   </div>
   
-  <div class="tip"><strong>Example:</strong> Cacti in the Americas and Euphorbias in Africa are completely unrelated plant families, but both evolved thick, fleshy stems and spines to survive in hot deserts.</div>
+  <div class="tip"><strong>Classic Example:</strong> Cacti (family Cactaceae) are native only to the Americas, while Euphorbias (family Euphorbiaceae) are native to Africa. Despite being genetically distant, both evolved thick fleshy, water-storing stems, reduced leaves modified into protective spines, and waxy cuticles to survive in identical hot desert biomes.</div>
+  
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&q=80" alt="Cactus in American Desert">
+    <img src="https://images.unsplash.com/photo-1620803517855-6b5d98fa6a8b?w=600&q=80" alt="Euphorbia in African landscape">
+  </div>
 </div>
 
 <!-- SLIDE 5 — B4.1.8 -->
@@ -176,35 +285,95 @@
   <h2>Adaptations in Specific Biomes</h2>
   <div class="kt"><strong>Key Understanding</strong>Organisms show distinct adaptations to life in hot deserts and tropical rainforests.</div>
   
-  <p>Organisms in <strong>hot deserts</strong> (xerophytes) face severe water shortages, while those in <strong>tropical rainforests</strong> must compete intensely for light.</p>
+  <p>Evolution acts relentlessly. Organisms in <strong>hot deserts</strong> (xerophytes and desert fauna) face intense thermal stress and severe water scarcity. In stark contrast, organisms in <strong>tropical rainforests</strong> contend with massive competition for light in the understory and adaptations for navigating vertical space.</p>
   
-  <!-- Image Note: The generated image was not copied due to sandbox restrictions, so it is linked from its original path or we could use a placeholder. Using the original path directly. -->
-  <img src="/images/xerophyte_adaptations.jpg" onerror="this.src='https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=900&q=80'" alt="Xerophyte adaptations to dry environments" class="slide-img">
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1615286552965-0a75841029ba?w=600&q=80" alt="Hot Desert Ecosystem">
+    <img src="https://images.unsplash.com/photo-1518182170546-076616fd4395?w=600&q=80" alt="Lush Tropical Rainforest Canopy">
+  </div>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--orange)">Hot Desert Adaptations</h4>
+      <p><em>Primary selective pressure: Water conservation and heat avoidance.</em></p>
       <ul>
-        <li><strong>Xerophytes:</strong> Deep roots, reduced leaves (spines), thick waxy cuticles, CAM physiology to fix CO₂ at night.</li>
-        <li><strong>Animals:</strong> Nocturnal behavior to avoid heat, water conservation mechanisms (e.g., concentrated urine).</li>
+        <li><strong>Xerophytic Plants:</strong>
+          <ul>
+            <li>Deep taproots to reach groundwater or widespread shallow roots to quickly absorb rare rainfall.</li>
+            <li>Leaves reduced to spines to minimize surface area for transpiration and deter herbivores.</li>
+            <li>Thick waxy cuticles on stems to seal in moisture.</li>
+            <li><strong>CAM physiology:</strong> Stomata open only at night to fix CO₂, preventing daytime water evaporation.</li>
+          </ul>
+        </li>
+        <li><strong>Desert Animals:</strong>
+          <ul>
+            <li>Nocturnal or crepuscular behavior to avoid the peak heat of midday.</li>
+            <li>Long loops of Henle in kidneys to produce highly concentrated urine and save water.</li>
+            <li>Large ears (e.g., Fennec fox) to radiate excess body heat.</li>
+          </ul>
+        </li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--green)">Tropical Rainforest Adaptations</h4>
+      <p><em>Primary selective pressure: Light capture and high moisture management.</em></p>
       <ul>
-        <li><strong>Plants:</strong> Broad leaves to capture light, drip tips to shed excess rain, buttress roots for stability in shallow soil, epiphytes climbing to reach the canopy.</li>
-        <li><strong>Animals:</strong> Specialized diets, highly adapted for arboreal (tree-living) lifestyle.</li>
+        <li><strong>Rainforest Plants:</strong>
+          <ul>
+            <li>Broad, large leaves in the understory to maximize capture of scarce, filtered sunlight.</li>
+            <li><strong>Drip tips</strong> on leaves to rapidly shed excess rainwater, preventing fungal growth and weight damage.</li>
+            <li>Large <strong>buttress roots</strong> spreading wide to provide stability in thin, nutrient-poor topsoil.</li>
+            <li><strong>Epiphytes:</strong> Plants (like orchids or bromeliads) that grow entirely on the branches of tall trees to access sunlight high in the canopy without being rooted in soil.</li>
+          </ul>
+        </li>
+        <li><strong>Rainforest Animals:</strong>
+          <ul>
+            <li>Prehensile tails in monkeys for grasping branches in arboreal (tree-dwelling) lifestyles.</li>
+            <li>Aposematic (warning) coloration in poison dart frogs.</li>
+            <li>Camouflage to hide in dense foliage and specialized diets to reduce competition.</li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 6 — COMPLETION -->
+<!-- SLIDE 6 — COMPLETION & SELF ASSESSMENT -->
 <div class="slide" id="slide-6">
-  <div class="completion">
+  <div class="completion" style="padding-top: 1rem;">
     <div class="check">✅</div>
     <h1>B4.1 Adaptation Complete!</h1>
     <p>You have successfully reviewed all understandings for Biology Theme B4.1.</p>
+  </div>
+  
+  <div style="margin-top: 3rem;">
+    <h2>Check Your Understanding</h2>
+    <p>Test your knowledge before moving on to the next module.</p>
+    
+    <details>
+      <summary>1. Describe how Marram grass is adapted to its sand dune habitat.</summary>
+      <p>Marram grass has tightly rolled leaves to trap moist air (reducing the transpiration gradient), a very thick waxy cuticle on the outer surface to minimize water loss, and deep, extensive root networks to anchor the plant in shifting sands.</p>
+    </details>
+
+    <details>
+      <summary>2. What is the zone of physiological stress on a tolerance curve?</summary>
+      <p>It is the range of conditions where an organism can survive, but it experiences stress that lowers its rate of growth and reproduction. It typically lies between one and two standard deviations away from the optimal mean conditions.</p>
+    </details>
+
+    <details>
+      <summary>3. Why do coral reefs require clear, shallow water?</summary>
+      <p>Corals rely on symbiotic photosynthetic algae called zooxanthellae for food. Shallow water ensures sufficient light penetration. Clear water (low turbidity) is required because suspended sediments would block sunlight and physically clog the coral polyps.</p>
+    </details>
+
+    <details>
+      <summary>4. Explain the concept of convergent evolution using desert plants as an example.</summary>
+      <p>Convergent evolution occurs when unrelated species independently evolve similar traits due to facing identical environmental pressures. Cacti in the Americas and Euphorbias in Africa are distantly related but both evolved fleshy stems, spines, and waxy cuticles because those are optimal adaptations for extreme drought in hot deserts.</p>
+    </details>
+
+    <details>
+      <summary>5. Contrast the primary selective pressures for plants in a hot desert versus a tropical rainforest.</summary>
+      <p>In a hot desert, the primary selective pressures are extreme heat and lack of water, leading to adaptations for water storage and minimization of transpiration (e.g., CAM photosynthesis, reduced leaves). In a tropical rainforest, water is abundant but sunlight in the understory is severely limited, leading to adaptations for light capture (e.g., broad leaves, growing as epiphytes high in the canopy) and shedding excess water (drip tips).</p>
+    </details>
   </div>
 </div>
 

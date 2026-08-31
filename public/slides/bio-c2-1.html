@@ -45,6 +45,95 @@
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  
+  /* Flip Card CSS */
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 120px;
+    perspective: 1000px;
+    margin: 1rem 0;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .flip-card-front {
+    background-color: var(--blue-light);
+    color: var(--blue-dark);
+    border: 2px solid var(--blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .flip-card-back {
+    background-color: var(--blue);
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 0.95rem;
+  }
+
+  /* Image Grid CSS */
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .image-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Details & Summary */
+  details {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+  details[open] {
+    background: var(--blue-light);
+    border-color: var(--blue);
+  }
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    color: var(--blue-dark);
+    font-size: 1.05rem;
+  }
+  details p {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--blue);
+    color: var(--gray-800);
+  }
+
   @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
 </style>
 </head>
@@ -71,34 +160,53 @@
   <h2>Receptors and Functional Diversity</h2>
   <div class="kt"><strong>Key Understanding</strong>Receptors are proteins with specific binding sites for signaling chemicals (ligands). Functional categories of signaling chemicals in animals include hormones, neurotransmitters, cytokines, and calcium ions.</div>
   
-  <p>Chemical signaling relies on the interaction between a signaling molecule (<strong>ligand</strong>) and its specific <strong>receptor</strong>. Like an enzyme-substrate complex, this interaction is highly specific.</p>
+  <p>Chemical signaling relies on the interaction between a signaling molecule (<strong>ligand</strong>) and its specific <strong>receptor</strong>. Like an enzyme-substrate complex, this interaction is highly specific. When a ligand binds to a receptor, it causes a conformational change that triggers a cellular response.</p>
   
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Ligand</div>
+      <div class="flip-card-back">A signaling molecule that binds specifically to a receptor site on another molecule, initiating a response.</div>
+    </div>
+  </div>
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Receptor</div>
+      <div class="flip-card-back">A specialized protein on the cell surface or inside the cell that detects a specific ligand and undergoes a conformational change.</div>
+    </div>
+  </div>
+
   <table class="tbl">
     <tr><th>Category</th><th>Source</th><th>Function</th></tr>
     <tr>
       <td><strong>Hormones</strong></td>
       <td>Endocrine glands</td>
-      <td>Travel via blood to distant target cells to regulate physiological processes.</td>
+      <td>Travel via blood to distant target cells to regulate prolonged physiological processes (e.g., growth, metabolism).</td>
     </tr>
     <tr>
       <td><strong>Neurotransmitters</strong></td>
       <td>Neurons</td>
-      <td>Cross synapses to act on adjacent neurons or muscle cells (localized).</td>
+      <td>Cross synaptic clefts to act on adjacent neurons or muscle cells for rapid, localized communication.</td>
     </tr>
     <tr>
       <td><strong>Cytokines</strong></td>
       <td>Immune cells</td>
-      <td>Mediate and regulate immunity, inflammation, and hematopoiesis.</td>
+      <td>Mediate and regulate immunity, inflammation, and hematopoiesis. They coordinate the immune response.</td>
     </tr>
     <tr>
       <td><strong>Calcium Ions (Ca²⁺)</strong></td>
       <td>Stored internally (e.g., ER)</td>
-      <td>Act as ubiquitous intracellular second messengers.</td>
+      <td>Act as ubiquitous intracellular second messengers involved in muscle contraction, neurotransmitter release, and gene expression.</td>
     </tr>
   </table>
 
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=600" alt="Laboratory testing representing hormones">
+    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=600" alt="Neuron network representing neurotransmitters">
+  </div>
+
   <div class="app-box"><strong>Application</strong>
-    Drugs often act by mimicking natural ligands (agonists) or blocking receptors (antagonists) due to their structural similarity to endogenous signaling molecules.
+    Drugs often act by mimicking natural ligands (agonists) or blocking receptors (antagonists) due to their structural similarity to endogenous signaling molecules. For example, beta-blockers block adrenaline receptors to slow heart rate.
   </div>
 </div>
 
@@ -108,7 +216,14 @@
   <h2>Bacterial Quorum Sensing</h2>
   <div class="kt"><strong>Key Understanding</strong>Cell signaling occurs in bacteria, exemplified by quorum sensing (e.g., <em>Vibrio fischeri</em> and bioluminescence).</div>
   
-  <p>Bacteria can communicate and coordinate behavior based on population density. This is achieved through the release and detection of signaling molecules called <strong>autoinducers</strong>.</p>
+  <p>Bacteria are not merely solitary organisms; they can communicate and coordinate behavior based on population density. This density-dependent communication is called <strong>quorum sensing</strong>. It allows a population of bacteria to act collectively, akin to a multicellular organism.</p>
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Autoinducer</div>
+      <div class="flip-card-back">Signaling molecules produced by bacteria that increase in concentration as cell density grows, triggering group behaviors.</div>
+    </div>
+  </div>
   
   <div class="css-flow">
     <div class="flow-step">Low Density: Autoinducers diffuse away, concentration remains low</div>
@@ -117,9 +232,16 @@
     <div class="flow-arrow">↓</div>
     <div class="flow-step hl">Autoinducers bind to intracellular receptors, altering gene expression</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Result: Synchronized population response (e.g., Bioluminescence in <em>V. fischeri</em>)</div>
+    <div class="flow-step alt">Result: Synchronized population response (e.g., Bioluminescence, Biofilms)</div>
   </div>
   
+  <p>A classic example is <em>Vibrio fischeri</em>, a marine bacterium that colonizes the light organ of the bobtail squid. Only when a quorum is reached do the bacteria switch on genes for bioluminescence. Quorum sensing is also critical for pathogenic bacteria to coordinate the release of toxins or form resistant biofilms.</p>
+  
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&q=80&w=600" alt="Glowing bioluminescence">
+    <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=600" alt="Bacterial culture">
+  </div>
+
   <div class="skill-box"><strong>Skills</strong>
     Be able to describe how individual bacterial cells behave differently depending on whether they are solitary or in a dense population.
   </div>
@@ -131,23 +253,27 @@
   <h2>Transmembrane vs. Intracellular Receptors</h2>
   <div class="kt"><strong>Key Understanding</strong>Receptors may be transmembrane (in plasma membranes) or intracellular (in cytoplasm/nucleus). Binding initiates signal transduction pathways.</div>
   
-  <p>The chemical nature of a ligand determines the location of its receptor:</p>
+  <p>The chemical nature of a ligand determines the location of its receptor. The plasma membrane's hydrophobic core acts as a barrier to polar molecules but allows non-polar molecules to pass through easily.</p>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Transmembrane Receptors</h4>
-      <p>Bind to hydrophilic/polar ligands (e.g., protein hormones, neurotransmitters) that cannot cross the hydrophobic core of the plasma membrane.</p>
+      <p>Bind to hydrophilic, polar, or large ligands (e.g., protein/peptide hormones, most neurotransmitters) that cannot cross the hydrophobic core of the plasma membrane.</p>
       <ul>
-        <li>Receptor spans the membrane.</li>
-        <li>Initiates a <strong>Signal Transduction Pathway</strong> inside the cell.</li>
+        <li>Receptor spans the plasma membrane (integral protein).</li>
+        <li>Binding causes a conformational change on the intracellular side.</li>
+        <li>Initiates a <strong>Signal Transduction Pathway</strong> inside the cell using second messengers.</li>
+        <li>Response is typically rapid and reversible.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--hl)">Intracellular Receptors</h4>
-      <p>Bind to hydrophobic/non-polar ligands (e.g., steroid hormones) that easily diffuse across the plasma membrane.</p>
+      <p>Bind to hydrophobic, non-polar, or small ligands (e.g., steroid hormones like testosterone, dissolved gases like NO) that easily diffuse across the plasma membrane.</p>
       <ul>
-        <li>Found in the cytoplasm or nucleus.</li>
-        <li>Often act directly as transcription factors to alter gene expression.</li>
+        <li>Found in the cytoplasm or the nucleus.</li>
+        <li>Ligand-receptor complex enters the nucleus.</li>
+        <li>Often acts directly as a transcription factor to alter gene expression.</li>
+        <li>Response is typically slower but long-lasting.</li>
       </ul>
     </div>
   </div>
@@ -159,21 +285,28 @@
   <h2>GPCRs and Epinephrine Action</h2>
   <div class="kt"><strong>Key Understanding</strong>The mechanism of action of epinephrine receptors involves G proteins and cyclic AMP (cAMP) as a second messenger.</div>
   
-  <p>G-Protein Coupled Receptors (GPCRs) are a massive family of transmembrane receptors. Epinephrine (adrenaline) uses this mechanism to trigger the "fight or flight" response.</p>
+  <p>G-Protein Coupled Receptors (GPCRs) are a massive and diverse family of transmembrane receptors characterized by seven trans-membrane alpha-helices. Epinephrine (adrenaline) uses this mechanism to rapidly trigger the "fight or flight" physiological response without entering the cell.</p>
   
-  <img src="/images/signal_transduction_pathway.jpg" alt="Signal Transduction Pathway showing GPCR and cAMP" class="slide-img">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Second Messenger</div>
+      <div class="flip-card-back">Small intracellular molecules (like cAMP or Ca2+) that relay and amplify signals received at receptors on the cell surface.</div>
+    </div>
+  </div>
   
   <div class="css-flow">
-    <div class="flow-step hl">1. Epinephrine binds to GPCR (conformational change)</div>
+    <div class="flow-step hl">1. Epinephrine binds to GPCR (causing a conformational change)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">2. Receptor activates G-protein (GDP exchanged for GTP)</div>
+    <div class="flow-step hl">2. GPCR activates a G-protein (GDP is exchanged for GTP)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">3. Activated G-protein subunit activates adenylyl cyclase</div>
+    <div class="flow-step hl">3. Activated G-protein subunit separates and activates adenylyl cyclase</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">4. Adenylyl cyclase converts ATP $\rightarrow$ cAMP (Second Messenger)</div>
+    <div class="flow-step alt">4. Adenylyl cyclase converts ATP into cAMP (Second Messenger)</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step alt">5. cAMP activates Protein Kinase A (PKA), triggering a phosphorylation cascade</div>
   </div>
+  
+  <div class="tip"><strong>Signal Amplification:</strong> A single epinephrine molecule can result in the activation of millions of enzymes because each step in the cascade multiplies the number of activated molecules.</div>
 </div>
 
 <!-- SLIDE 5 — C2.1.12 & C2.1.13 -->
@@ -182,23 +315,56 @@
   <h2>Intracellular Receptors & Gene Expression</h2>
   <div class="kt"><strong>Key Understanding</strong>Intracellular receptors affect gene expression. Oestradiol and progesterone exert their effects on target cells this way.</div>
   
-  <p>Steroid hormones, being lipids (derived from cholesterol), are hydrophobic. They bypass transmembrane receptors and enter the cell directly.</p>
+  <p>Steroid hormones are lipids synthesized from cholesterol. Because they are hydrophobic and non-polar, they can easily diffuse through the phospholipid bilayer of cell membranes. They bypass transmembrane receptors and enter the cell directly to influence cellular activity at the genetic level.</p>
   
   <div class="card">
     <strong style="color:var(--hl)">Mechanism of Steroid Hormones:</strong>
     <ul class="bullets">
-      <li><strong>Oestradiol and Progesterone</strong> diffuse across the phospholipid bilayer of target cells.</li>
+      <li><strong>Oestradiol and Progesterone</strong> (female sex hormones) diffuse across the plasma membrane of target cells (e.g., in the uterus or breasts).</li>
       <li>They bind to specific intracellular receptors located in the cytoplasm or nucleus.</li>
-      <li>The hormone-receptor complex forms an active transcription factor.</li>
-      <li>This complex binds to specific DNA sequences (promoters), directly regulating the transcription of mRNA (and therefore protein synthesis).</li>
+      <li>The hormone-receptor binding causes the receptor to change shape, forming an active transcription factor complex.</li>
+      <li>This complex binds to specific DNA control sequences (promoters or enhancers).</li>
+      <li>It directly regulates (promotes or inhibits) the transcription of mRNA, thereby altering the synthesis of specific proteins.</li>
     </ul>
   </div>
   
-  <div class="tip"><strong>Note:</strong> Because steroid hormones require the transcription and translation of new proteins, their effects take much longer to manifest compared to the rapid second-messenger cascades of peptide hormones (like epinephrine).</div>
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=600" alt="DNA double helix representing gene expression">
+    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=600" alt="Microscopic cell activity">
+  </div>
+  
+  <div class="tip"><strong>Note:</strong> Because steroid hormones require the transcription of mRNA and the subsequent translation of new proteins, their physiological effects take much longer to manifest (hours to days) compared to the rapid second-messenger cascades of peptide hormones (seconds to minutes).</div>
 </div>
 
-<!-- SLIDE 6 — COMPLETION -->
+<!-- SLIDE 6 — CHECK YOUR UNDERSTANDING -->
 <div class="slide" id="slide-6">
+  <div class="section-tag">Self-Assessment</div>
+  <h2>Check Your Understanding</h2>
+  <p>Test your knowledge of the C2.1 Chemical Signaling topics covered in this module.</p>
+  
+  <details>
+    <summary>1. Why do peptide hormones require transmembrane receptors while steroid hormones do not?</summary>
+    <p>Peptide hormones are hydrophilic (polar) and cannot cross the hydrophobic core of the phospholipid bilayer, so they must bind to receptors on the cell surface. Steroid hormones are hydrophobic (non-polar) lipids that can freely diffuse across the membrane and bind to intracellular receptors.</p>
+  </details>
+  
+  <details>
+    <summary>2. Describe the role of a second messenger in a signal transduction pathway.</summary>
+    <p>A second messenger (like cAMP or Ca2+) is a small intracellular molecule generated inside the cell in response to the binding of a first messenger (ligand) to a surface receptor. It relays and heavily amplifies the signal throughout the cytoplasm, activating kinases and triggering a widespread cellular response.</p>
+  </details>
+  
+  <details>
+    <summary>3. Explain how quorum sensing allows bacteria to coordinate their behavior.</summary>
+    <p>Bacteria release signaling molecules called autoinducers. At low population densities, these diffuse away. At high densities, the local concentration of autoinducers increases sharply. Once a threshold (quorum) is reached, they bind to receptors inside the bacteria, simultaneously altering gene expression across the population to trigger group behaviors like bioluminescence or biofilm formation.</p>
+  </details>
+  
+  <details>
+    <summary>4. Outline the steps of the epinephrine signaling pathway via GPCR.</summary>
+    <p>1. Epinephrine binds to a GPCR. 2. The GPCR activates a G-protein (exchanging GDP for GTP). 3. The G-protein activates adenylyl cyclase. 4. Adenylyl cyclase converts ATP into cAMP. 5. cAMP activates Protein Kinase A (PKA), which triggers a phosphorylation cascade leading to the cellular response.</p>
+  </details>
+</div>
+
+<!-- SLIDE 7 — COMPLETION -->
+<div class="slide" id="slide-7">
   <div class="completion">
     <div class="check">✅</div>
     <h1>C2.1 Chemical Signaling Complete!</h1>
@@ -210,7 +376,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 7</div>
+  <div class="nav-counter" id="slideCounter">1 / 8</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 
@@ -228,7 +394,7 @@
   slides.forEach((slide, i) => {
     const dot = document.createElement('button');
     dot.className = 'nav-dot';
-    // Mark HL dots (all are HL in this deck)
+    // Mark HL dots (all are HL in this deck, except some wrappers)
     if(slide.querySelector('.hl-badge')) dot.classList.add('hl-dot');
     if (i === 0) dot.classList.add('active');
     dot.onclick = () => jumpTo(i);

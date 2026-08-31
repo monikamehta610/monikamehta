@@ -48,7 +48,26 @@
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
-  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+  
+  /* Interactive Elements Additions */
+  .flip-card { background-color: transparent; width: 100%; height: 160px; perspective: 1000px; margin: 1.5rem 0; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue); border: 2px solid var(--blue); }
+  .flip-card-front h3 { margin: 0; font-size: 1.4rem; }
+  .flip-card-front p { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--blue-dark); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); font-size: 0.95rem; line-height: 1.5; }
+  
+  .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .image-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+  
+  details { background-color: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; margin: 1rem 0; padding: 0.5rem 1rem; }
+  summary { font-weight: 600; cursor: pointer; color: var(--blue-dark); padding: 0.5rem 0; outline: none; font-size: 1.05rem; }
+  details[open] summary { border-bottom: 1px solid var(--gray-200); margin-bottom: 0.8rem; padding-bottom: 0.8rem; }
+  details p { padding-top: 0.5rem; font-size: 0.95rem; }
+
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh} .image-grid { grid-template-columns: 1fr; }}
 </style>
 </head>
 <body>
@@ -74,8 +93,25 @@
   <h2>Carbon and Condensation Reactions</h2>
   <div class="kt"><strong>Key Understanding</strong> Carbon atoms can form four stable covalent bonds, allowing for the formation of diverse macromolecules. These are built via condensation reactions.</div>
   
-  <p>Carbon is the backbone of biological molecules. Because it has four valence electrons, it can form up to four covalent bonds with other elements (such as H, O, N, P), creating complex chains, rings, and branches.</p>
+  <p>Carbon is arguably the most vital element to life because of its unique chemical properties. With four valence electrons, carbon can form up to four incredibly stable covalent bonds. It can bond with other carbon atoms to form long chains or rings, and with other elements like hydrogen, oxygen, nitrogen, and phosphorus to create complex, branched macromolecules crucial for life.</p>
   
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1614935151651-0bea6508abb0?w=600&q=80" alt="Chemical structure representing bonds">
+    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80" alt="Biological networks">
+  </div>
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Condensation Reaction</h3>
+        <p>Hover to reveal definition</p>
+      </div>
+      <div class="flip-card-back">
+        An anabolic reaction where two molecules are joined together to form a larger, more complex molecule, with the loss of water (H₂O). An -OH group from one molecule and an -H from another are removed to form the water byproduct.
+      </div>
+    </div>
+  </div>
+
   <div class="css-flow">
     <div class="flow-step"><strong>Monomers</strong>: Single subunits (e.g., monosaccharides)</div>
     <div class="flow-arrow">↓</div>
@@ -86,7 +122,7 @@
   
   <div class="app-box">
     <strong>Application</strong>
-    Condensation reactions are anabolic (build up complex molecules). A water molecule (H₂O) is always a byproduct when two monomers join.
+    Condensation reactions are anabolic (build up complex molecules). A water molecule (H₂O) is always a byproduct when two monomers join. For instance, linking two glucose molecules produces maltose and one water molecule.
   </div>
 </div>
 
@@ -96,17 +132,29 @@
   <h2>Hydrolysis: Breaking Down Polymers</h2>
   <div class="kt"><strong>Key Understanding</strong> Digestion of polymers into monomers occurs via hydrolysis reactions.</div>
   
-  <p>When organisms consume food, the large macromolecules (polymers) must be broken down into smaller monomers to be absorbed and used by cells. This process is called <strong>hydrolysis</strong> (<em>hydro</em> = water, <em>lysis</em> = to break).</p>
+  <p>When organisms consume complex food materials, the large macromolecules (polymers like starch, proteins, and triglycerides) are too large to pass through cell membranes. They must be broken down into their constituent monomers to be absorbed into the bloodstream and used by cells. This crucial physiological process is called <strong>hydrolysis</strong> (from the Greek <em>hydro</em> meaning water, and <em>lysis</em> meaning to unbind or break).</p>
   
   <ul class="bullets">
-    <li>Requires the <strong>addition of water (H₂O)</strong> to break the covalent bonds.</li>
-    <li>Catalyzed by specific digestive enzymes (e.g., amylase for starch, lipase for lipids).</li>
-    <li>This is a <strong>catabolic</strong> reaction (breaking down).</li>
+    <li>Requires the <strong>addition of a water molecule (H₂O)</strong> to break the covalent bonds holding the polymer together. The water splits into -H and -OH, which attach to the newly separated monomers.</li>
+    <li>It is highly regulated and catalyzed by specific digestive enzymes. For example, amylase breaks down starch, proteases break down proteins, and lipases break down lipids.</li>
+    <li>This is a <strong>catabolic</strong> reaction, meaning it breaks down complex molecules into simpler ones, often releasing energy in the process.</li>
   </ul>
   
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Hydrolysis</h3>
+        <p>Hover to reveal definition</p>
+      </div>
+      <div class="flip-card-back">
+        A catabolic chemical reaction in which a molecule of water is added to a substance to break a covalent bond, splitting a polymer into simpler monomers.
+      </div>
+    </div>
+  </div>
+
   <div class="skill-box">
     <strong>Skill: Drawing Reactions</strong>
-    Be able to identify and draw simplified models of condensation and hydrolysis reactions, clearly showing where H and OH are removed or added to form H₂O.
+    You must be able to identify and draw simplified structural models of condensation and hydrolysis reactions. Ensure you clearly indicate where the hydrogen (H) and hydroxyl (OH) groups are removed during condensation, or where they are added from water during hydrolysis.
   </div>
 </div>
 
@@ -115,26 +163,33 @@
   <div class="section-tag">B1.1.4 / B1.1.5</div>
   <h2>Carbohydrates: Energy and Structure</h2>
   
+  <p>Carbohydrates are organic compounds consisting of carbon, hydrogen, and oxygen, typically with a hydrogen:oxygen atom ratio of 2:1 (as in water). They are fundamentally crucial for energy transfer and structural support in living organisms.</p>
+
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Monosaccharides (B1.1.4)</h4>
-      <p>Single sugar units, primarily used as an immediate energy source for cellular respiration.</p>
+      <p>The simplest form of carbohydrates, consisting of single sugar units. They serve as an immediate, rapidly mobilized energy source for cellular respiration.</p>
       <ul>
-        <li><strong>Examples:</strong> Glucose (C₆H₁₂O₆), Fructose, Galactose, Ribose.</li>
-        <li>Highly soluble in water, easily transported in blood.</li>
+        <li><strong>Key Examples:</strong> Glucose (C₆H₁₂O₆), Fructose, Galactose (hexose sugars) and Ribose/Deoxyribose (pentose sugars).</li>
+        <li>They are highly soluble in water due to their polar hydroxyl (-OH) groups, allowing easy transport in blood and plant sap.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--orange)">Polysaccharides (B1.1.5)</h4>
-      <p>Long chains of monosaccharides, used for energy storage.</p>
+      <p>Complex carbohydrates consisting of long chains of monosaccharides linked by glycosidic bonds. Primarily used for medium-term energy storage or structural roles.</p>
       <ul>
-        <li><strong>Starch:</strong> Energy storage in plants (amylose & amylopectin).</li>
-        <li><strong>Glycogen:</strong> Energy storage in animals (highly branched).</li>
+        <li><strong>Starch:</strong> Energy storage in plants. Exists in two forms: amylose (helical, unbranched) and amylopectin (branched).</li>
+        <li><strong>Glycogen:</strong> Energy storage in animals. Found in liver and muscle cells; it is highly branched for rapid mobilization of glucose.</li>
       </ul>
     </div>
   </div>
   
-  <p>By storing glucose as large, insoluble polysaccharides, cells prevent osmosis issues (water entering the cell and causing it to burst) while keeping energy reserves dense.</p>
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1596484552993-9c8491c7820a?w=600&q=80" alt="Bread and grains representing carbs">
+    <img src="https://images.unsplash.com/photo-1581404172551-71701a52b86c?w=600&q=80" alt="Microscope view">
+  </div>
+
+  <div class="tip"><strong>Osmotic Balance:</strong> By storing glucose molecules clustered together as large, insoluble polysaccharides like glycogen and starch, cells prevent drastic changes in osmolarity. If all that glucose was free-floating, it would draw massive amounts of water into the cell via osmosis, causing it to swell and potentially burst.</div>
 </div>
 
 <!-- SLIDE 4 — B1.1.6 & B1.1.7 -->
@@ -143,17 +198,17 @@
   <h2>Structural Carbohydrates & Glycoproteins</h2>
   
   <h3>Cellulose in Plants (B1.1.6)</h3>
-  <p>Cellulose is a polysaccharide made of $\beta$-glucose. Because the glucose units alternate their orientation, cellulose forms straight, unbranched chains.</p>
+  <p>Cellulose is a massive structural polysaccharide exclusively found in plant cell walls. It is composed entirely of $\beta$-glucose monomers linked by 1,4 glycosidic bonds. Because the hydroxyl groups on carbon 1 and carbon 4 point in opposite directions in $\beta$-glucose, every alternating monomer must be inverted 180° to form the bond. This inversion results in a straight, unbranched, and incredibly strong chain.</p>
   <ul class="bullets">
-    <li>These chains hydrogen bond together to form rigid <strong>microfibrils</strong>.</li>
-    <li>Provides immense tensile strength to plant <strong>cell walls</strong>, preventing them from bursting under high water pressure (turgor).</li>
+    <li>These straight chains run parallel to each other and are cross-linked by hydrogen bonds to form rigid structural units called <strong>microfibrils</strong>.</li>
+    <li>These microfibrils provide immense tensile strength to plant cell walls, ensuring the cell can withstand extremely high internal water pressure (turgor pressure) without lysing.</li>
   </ul>
 
   <h3>Glycoproteins in Cell Recognition (B1.1.7)</h3>
-  <p>Proteins embedded in cell membranes often have short carbohydrate chains attached (glycoproteins). These are critical for:</p>
+  <p>Carbohydrates don't just exist independently; they often conjugate with proteins to form glycoproteins. These molecules are typically embedded in the plasma membrane with the carbohydrate chain protruding into the extracellular space.</p>
   <ul class="bullets">
-    <li><strong>Cell-Cell Recognition:</strong> Allowing the immune system to identify "self" vs. "non-self" cells.</li>
-    <li><strong>Receptors:</strong> Acting as binding sites for hormones or other signalling molecules.</li>
+    <li><strong>Cell-Cell Recognition:</strong> The unique carbohydrate shapes act as biochemical 'ID tags', allowing the immune system to accurately differentiate between "self" cells and "non-self" pathogens. For example, ABO blood groups are determined by glycoproteins on red blood cells.</li>
+    <li><strong>Receptors:</strong> They provide specific binding sites for hormones, neurotransmitters, and other extracellular signalling molecules.</li>
   </ul>
 </div>
 
@@ -161,19 +216,31 @@
 <div class="slide" id="slide-5">
   <div class="section-tag">B1.1.8 / B1.1.9</div>
   <h2>Lipids: Hydrophobic Molecules</h2>
-  <div class="kt"><strong>Key Understanding</strong> Lipids are a diverse group of carbon compounds characterized by their hydrophobic properties. Triglycerides and phospholipids form via condensation.</div>
+  <div class="kt"><strong>Key Understanding</strong> Lipids are a diverse group of carbon compounds characterized primarily by their insolubility in water. The most common forms, triglycerides and phospholipids, are synthesized via condensation reactions.</div>
   
-  <p>Unlike carbohydrates, lipids do not dissolve in water (they are hydrophobic/non-polar). They include fats, oils, waxes, and steroids.</p>
+  <p>Unlike carbohydrates which are largely hydrophilic, lipids are non-polar and hydrophobic (water-fearing). This distinct chemical property makes them suitable for unique biological roles. The lipid family includes triglycerides (fats and oils), waxes, steroids, and phospholipids.</p>
 
   <div class="css-flow">
-    <div class="flow-step">1 Glycerol + 3 Fatty Acids</div>
+    <div class="flow-step">1 Glycerol molecule + 3 Fatty Acid chains</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Condensation Reaction (releases 3 H₂O)</div>
+    <div class="flow-step alt">Condensation Reaction (esterification, releases 3 H₂O)</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step"><strong>Triglyceride</strong> (Fat/Oil)</div>
   </div>
   
-  <div class="tip"><strong>Note:</strong> In a phospholipid, one fatty acid is replaced by a phosphate group, changing its properties entirely!</div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Ester Bond</h3>
+        <p>Hover to reveal definition</p>
+      </div>
+      <div class="flip-card-back">
+        The type of covalent bond formed during the condensation of a fatty acid and glycerol. It links the hydroxyl (-OH) group of glycerol with the carboxyl (-COOH) group of the fatty acid.
+      </div>
+    </div>
+  </div>
+
+  <div class="tip"><strong>Note:</strong> A phospholipid is remarkably similar to a triglyceride, but one of the three fatty acid tails is replaced by a highly polar, hydrophilic phosphate group. This dual-nature (amphipathic) completely alters its chemical behavior, allowing membrane formation.</div>
 </div>
 
 <!-- SLIDE 6 — B1.1.10 -->
@@ -181,28 +248,35 @@
   <div class="section-tag">B1.1.10</div>
   <h2>Types of Fatty Acids</h2>
   
+  <p>Fatty acids are long hydrocarbon chains with a carboxyl group (-COOH) at one end. They differ in length and, crucially, in the degree of hydrogen saturation along the chain.</p>
+
   <table class="tbl">
-    <tr><th>Type</th><th>Structure</th><th>Properties at Room Temp</th></tr>
+    <tr><th>Type</th><th>Structural Characteristics</th><th>Properties at Room Temperature</th></tr>
     <tr>
       <td><strong>Saturated</strong></td>
-      <td>No double bonds between carbon atoms (max hydrogen). Straight chains.</td>
-      <td>Solid (e.g., butter, animal fat). Pack tightly together.</td>
+      <td>Contain no double bonds between carbon atoms in the chain. The carbons are "saturated" with the maximum possible number of hydrogen atoms, resulting in a straight, linear shape.</td>
+      <td>Solid (e.g., butter, lard, animal fat). Their straight shape allows them to pack tightly together, increasing intermolecular forces and melting point.</td>
     </tr>
     <tr>
       <td><strong>Monounsaturated</strong></td>
-      <td>One double bond (C=C). Causes a "kink" in the chain.</td>
-      <td>Liquid (e.g., olive oil). Do not pack tightly.</td>
+      <td>Contain exactly one carbon-carbon double bond (C=C). This double bond usually occurs in the 'cis' configuration, causing a distinct 120° "kink" or bend in the hydrocarbon chain.</td>
+      <td>Liquid (e.g., olive oil). The kinks prevent tight packing, lowering the melting point.</td>
     </tr>
     <tr>
       <td><strong>Polyunsaturated</strong></td>
-      <td>Two or more double bonds (C=C). Multiple kinks.</td>
-      <td>Liquid (e.g., sunflower oil, fish oil).</td>
+      <td>Contain two or more double bonds (C=C), resulting in multiple kinks along the chain.</td>
+      <td>Liquid (e.g., sunflower oil, fish oil). Extremely difficult to pack tightly.</td>
     </tr>
   </table>
 
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80" alt="Olive oil - unsaturated fat">
+    <img src="https://images.unsplash.com/photo-1589134712411-eec7307cc144?w=600&q=80" alt="Butter - saturated fat">
+  </div>
+
   <div class="skill-box">
     <strong>Skill: Molecular Identification</strong>
-    You must be able to visually identify saturated vs. unsaturated fatty acids from molecular diagrams based on the presence of double carbon bonds.
+    You must be able to visually identify saturated, monounsaturated, and polyunsaturated fatty acids from 2D molecular diagrams by counting the number of double carbon bonds. Furthermore, distinguishing between cis (hydrogens on same side of double bond) and trans (hydrogens on opposite sides) isomers is a critical IB expectation.
   </div>
 </div>
 
@@ -210,14 +284,15 @@
 <div class="slide" id="slide-7">
   <div class="section-tag">B1.1.11</div>
   <h2>Energy Storage: Lipids vs Carbohydrates</h2>
-  <div class="kt"><strong>Key Understanding</strong> Triglycerides in adipose tissue act as long-term energy storage and insulation.</div>
+  <div class="kt"><strong>Key Understanding</strong> Triglycerides in adipose tissue act as optimal long-term energy storage and thermal insulation in animals.</div>
   
-  <p>Triglycerides are stored in specialized cells called <strong>adipose tissue</strong> in animals. Why use lipids instead of carbohydrates for long-term storage?</p>
+  <p>Animals utilize both carbohydrates (glycogen) and lipids (triglycerides) for energy storage, but they serve different physiological purposes. Triglycerides are stored in specialized cells called <strong>adipose tissue</strong>. Why are lipids preferred for long-term storage, while glycogen is used for short-term?</p>
   
   <ul class="bullets">
-    <li><strong>Energy Density:</strong> Lipids contain roughly twice the amount of energy per gram ($\sim 38 \text{ kJ/g}$) compared to carbohydrates ($\sim 17 \text{ kJ/g}$).</li>
-    <li><strong>Weight:</strong> Lipids are stored pure, without associated water. Carbohydrates are stored with large amounts of water, making them heavy. This is crucial for mobile animals!</li>
-    <li><strong>Insulation:</strong> Adipose tissue acts as a thermal insulator against heat loss (e.g., blubber in whales).</li>
+    <li><strong>Energy Density:</strong> Lipids are far more energy-dense. The cellular respiration of lipids yields roughly twice the amount of ATP per gram ($\sim 38 \text{ kJ/g}$) compared to the breakdown of carbohydrates ($\sim 17 \text{ kJ/g}$).</li>
+    <li><strong>Storage Weight (Mass):</strong> Lipids are hydrophobic, so they are stored pure (without associated water). Carbohydrates are hydrophilic and associate with approximately 2 grams of water for every gram of glycogen. Storing energy as lipid is therefore drastically lighter—a critical evolutionary advantage for mobile animals and flying birds.</li>
+    <li><strong>Thermal Insulation:</strong> Subcutaneous adipose tissue is a poor conductor of heat, acting as a highly effective thermal insulator against heat loss in cold environments (e.g., blubber in whales and seals).</li>
+    <li><strong>Shock Absorption:</strong> Fat layers provide a cushioning effect, protecting delicate vital organs (like kidneys) from physical trauma.</li>
   </ul>
 </div>
 
@@ -227,22 +302,50 @@
   <h2>Phospholipids and Steroids</h2>
   
   <h3>The Phospholipid Bilayer (B1.1.12)</h3>
-  <p>Phospholipids are <strong>amphipathic</strong>—they have a hydrophilic (water-loving) phosphate head and two hydrophobic (water-fearing) fatty acid tails. In water, they spontaneously arrange into a bilayer:</p>
+  <p>Phospholipids exhibit a dual chemical personality—they are <strong>amphipathic</strong>. They possess a hydrophilic (water-loving, polar) phosphate head and two hydrophobic (water-fearing, non-polar) fatty acid tails. When exposed to an aqueous environment (like the inside and outside of a cell), they spontaneously self-assemble into a bilayer:</p>
   <ul class="bullets">
-    <li>Heads face outward towards the aqueous environment.</li>
-    <li>Tails face inward, shielded from the water.</li>
-    <li>This creates the fundamental structure of all cell membranes!</li>
+    <li>The hydrophilic heads orient outward to interact with the aqueous solutions (cytosol and extracellular fluid).</li>
+    <li>The hydrophobic tails point inward, shielding themselves from water via hydrophobic interactions.</li>
+    <li>This spontaneous arrangement creates the fundamental, semi-permeable structural foundation of all cellular membranes.</li>
   </ul>
 
   <h3>Steroid Hormones (B1.1.13)</h3>
+  <p>Steroids are a distinct class of lipids characterized by a carbon skeleton consisting of four fused rings (three 6-sided, one 5-sided). Cholesterol is a primary steroid that serves as a precursor for many vital steroid hormones, including testosterone, estrogen, and cortisol.</p>
   <div class="app-box">
     <strong>Application</strong>
-    Because steroid hormones (like testosterone and estrogen) are lipids and inherently hydrophobic, they can pass directly through the hydrophobic core of the phospholipid bilayer to enter target cells.
+    Because steroid hormones are lipid-based and non-polar, they are inherently hydrophobic. This allows them to effortlessly diffuse directly through the hydrophobic core of the phospholipid bilayer. Once inside the cell, they bind to intracellular receptors to directly influence gene expression, bypassing the need for membrane surface receptors.
   </div>
 </div>
 
-<!-- SLIDE 9 — COMPLETION -->
+<!-- SLIDE 9 — CHECK YOUR UNDERSTANDING -->
 <div class="slide" id="slide-9">
+  <div class="section-tag">Review</div>
+  <h2>Check Your Understanding</h2>
+  <p>Test your knowledge of Carbohydrates & Lipids by expanding the questions below.</p>
+  
+  <details>
+    <summary>1. Describe the difference between a condensation reaction and a hydrolysis reaction.</summary>
+    <p>A condensation reaction is an anabolic process where two smaller molecules (monomers) join to form a larger molecule, with the removal and release of a water molecule. Hydrolysis is a catabolic process where a large molecule is broken down into smaller components through the addition of a water molecule, which breaks the covalent bonds.</p>
+  </details>
+
+  <details>
+    <summary>2. Explain why plant cell walls are primarily composed of cellulose rather than starch.</summary>
+    <p>Cellulose is composed of $\beta$-glucose molecules, resulting in straight, unbranched chains that can form strong hydrogen bonds with adjacent chains to create rigid microfibrils. This provides the immense tensile strength needed for a cell wall. Starch is made of $\alpha$-glucose, forming helical or branched structures ideal for compact energy storage, but lacking structural rigidity.</p>
+  </details>
+
+  <details>
+    <summary>3. Why do animals rely predominantly on lipids for long-term energy storage instead of carbohydrates?</summary>
+    <p>Lipids store roughly twice the energy per gram (~38 kJ/g) compared to carbohydrates (~17 kJ/g). Furthermore, because lipids are hydrophobic, they are stored without water, making them significantly lighter to carry. This high energy-to-mass ratio is essential for animal mobility. Additionally, stored lipids provide thermal insulation and physical protection.</p>
+  </details>
+
+  <details>
+    <summary>4. State the structural difference between saturated and monounsaturated fatty acids.</summary>
+    <p>Saturated fatty acids possess no double bonds between carbon atoms in their hydrocarbon chain; they have the maximum possible number of hydrogen atoms and form straight chains. Monounsaturated fatty acids contain exactly one carbon-carbon double bond, which typically creates a bend or kink in the chain.</p>
+  </details>
+</div>
+
+<!-- SLIDE 10 — COMPLETION -->
+<div class="slide" id="slide-10">
   <div class="completion">
     <div class="check">✅</div>
     <h1>B1.1 Complete!</h1>
@@ -254,7 +357,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 10</div>
+  <div class="nav-counter" id="slideCounter">1 / 11</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

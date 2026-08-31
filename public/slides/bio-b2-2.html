@@ -35,6 +35,28 @@
   .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
   .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
 
+  /* Interactive Elements */
+  .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .flip-card { background-color: transparent; width: 100%; height: 140px; perspective: 1000px; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 8px; padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); font-weight: bold; font-size: 1.1rem; border: 2px solid var(--blue); }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); font-size: 0.9rem; border: 2px solid var(--blue-dark); padding: 1rem; line-height: 1.4; }
+  
+  .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .img-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+  .img-grid img:hover { transform: scale(1.02); }
+
+  .qa-container { margin: 2rem 0; }
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; margin-bottom: 1rem; padding: 0.5rem 1rem; transition: background 0.2s; }
+  details:hover { background: var(--gray-100); }
+  summary { font-weight: 600; cursor: pointer; padding: 0.8rem 0; color: var(--blue-dark); outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between; font-size: 1.05rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 1.5rem; line-height: 1; color: var(--blue); transition: transform 0.3s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--gray-200); font-size: 0.95rem; color: var(--gray-800); }
+
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
   .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
@@ -59,7 +81,7 @@
 <!-- SLIDE 0 — COVER -->
 <div class="slide active" id="slide-0">
   <div class="cover">
-    <img src="https://images.unsplash.com/photo-1614030612668-35be066d9b9a?w=900&q=80" alt="Microscopic cells" class="cover-img">
+    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=900&q=80" alt="Microscopic cells" class="cover-img">
     <div class="section-tag">IB DP Biology 2025: Form and Function</div>
     <h1>B2.2 — Organelles and Compartmentalization</h1>
     <p class="subtitle">Theme B: Form and Function · Standard & Higher Level</p>
@@ -76,7 +98,30 @@
   <h2>Organelles as Discrete Subunits</h2>
   <div class="kt"><strong>Key Understanding</strong>Organelles are discrete, specialized subunits within a cell that are adapted for particular functions.</div>
   
-  <p>Cells are incredibly complex, resembling microscopic cities. To function efficiently, they rely on <strong>compartmentalization</strong>—separating different processes into specialized membrane-bound structures called organelles.</p>
+  <p>Cells are incredibly complex and dynamic, resembling highly organized, microscopic cities. To function efficiently, they rely on <strong>compartmentalization</strong>—the evolutionary adaptation of separating different biochemical processes into distinct, specialized, membrane-bound structures called organelles.</p>
+  
+  <p>This allows for optimized microenvironments within the larger cell cytoplasm, driving metabolic efficiency and protecting the cell from potentially destructive internal reactions.</p>
+
+  <div class="flip-grid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Organelle</div>
+        <div class="flip-card-back">A specialized subcellular structure with a specific function (e.g., mitochondria, nucleus). Usually membrane-bound.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Compartmentalization</div>
+        <div class="flip-card-back">The division of the cell into discrete regions, allowing specialized environments for incompatible processes.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Metabolites</div>
+        <div class="flip-card-back">Substances formed in or necessary for metabolism, concentrated within organelles to increase reaction rates.</div>
+      </div>
+    </div>
+  </div>
   
   <div class="css-flow">
     <div class="flow-step">Isolate incompatible biochemical processes (e.g., destructive enzymes in lysosomes)</div>
@@ -86,7 +131,7 @@
     <div class="flow-step alt">Concentrate metabolites and enzymes to increase the rate of reactions</div>
   </div>
   
-  <div class="tip"><strong>Note:</strong> Not all cellular structures are organelles. The cell wall, cytoskeleton, and the cytoplasm itself are generally not classified as organelles, but rather as cellular components.</div>
+  <div class="tip"><strong>Note:</strong> Not all cellular structures are organelles. The cell wall, cytoskeleton, and the cytoplasm itself are generally not classified as organelles, but rather as supportive cellular components.</div>
 </div>
 
 <!-- SLIDE 2 — B2.2.2 -->
@@ -95,11 +140,18 @@
   <h2>Nucleus and Cytoplasm Separation</h2>
   <div class="kt"><strong>Key Understanding</strong>Separation of the nucleus and cytoplasm allows post-transcriptional modification of mRNA in eukaryotes.</div>
   
-  <p>Unlike prokaryotes where transcription and translation happen simultaneously, eukaryotes have a nuclear envelope separating the DNA from the cytoplasm.</p>
+  <p>In prokaryotes, DNA is free-floating in the nucleoid region, meaning that transcription (making mRNA) and translation (building proteins) occur almost simultaneously. In contrast, eukaryotes feature a <strong>nuclear envelope</strong>—a massive evolutionary leap that physically separates genetic instructions from the cytoplasmic machinery.</p>
   
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f1?w=600&q=80" alt="DNA representation">
+    <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=600&q=80" alt="Microscopic structure">
+  </div>
+
+  <p>This physical separation grants eukaryotes the critical time and space required to modify raw mRNA before it is translated into a protein. Introns can be spliced out, and caps/tails added, providing a layer of genetic control not seen in prokaryotes.</p>
+
   <div class="skill-box">
     <strong>Skill: Analyzing Spatial Control</strong>
-    By separating transcription (in the nucleus) from translation (at the ribosomes in the cytoplasm), eukaryotic cells can regulate and modify mRNA (e.g., splicing out introns) before proteins are synthesized. This spatial control is crucial for complex life.
+    By separating transcription (in the nucleus) from translation (at the ribosomes in the cytoplasm), eukaryotic cells can regulate and modify mRNA. This spatial control allows a single gene to produce multiple protein variants through alternative splicing.
   </div>
 </div>
 
@@ -109,16 +161,16 @@
   <h2>Advantages of Compartmentalization</h2>
   <div class="kt"><strong>Key Understanding</strong>Advantages of compartmentalization in the cytoplasm, focusing on lysosomes and phagocytic vacuoles.</div>
   
-  <p>Compartmentalization provides safe spaces for dangerous cellular operations.</p>
+  <p>Compartmentalization is most obviously advantageous when cellular operations are intrinsically dangerous. A prime example is intracellular digestion. Without a barrier, digestive enzymes would blindly destroy the cell's own structural proteins and DNA.</p>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Lysosomes</h4>
-      <p>Contain hydrolytic enzymes for intracellular digestion. The acidic environment inside (pH ~4.5-5.0) is optimal for these enzymes, protecting the rest of the cell from autodigestion.</p>
+      <p>Contain powerful hydrolytic enzymes for intracellular digestion. The acidic environment inside (pH ~4.5-5.0) is optimal for these enzymes. The specialized membrane keeps this acidity safely away from the neutral cytoplasm (pH ~7.2), protecting the cell from autodigestion.</p>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--green)">Phagocytic Vacuoles</h4>
-      <p>Formed when cells engulf large particles or pathogens (e.g., by white blood cells). They fuse with lysosomes to safely digest the contents.</p>
+      <p>Formed when cells, such as macrophages (white blood cells), engulf large particles or pathogens via endocytosis. These vacuoles seamlessly fuse with lysosomes to safely digest the pathogenic contents within a closed, secure system.</p>
     </div>
   </div>
 </div>
@@ -129,13 +181,17 @@
   <h2>Mitochondrial Structure and Function</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Structural adaptations of mitochondria for aerobic respiration.</div>
   
-  <p>Mitochondria generate ATP through cellular respiration. Their double-membrane structure is highly adapted to this function.</p>
+  <p>Mitochondria are the powerhouses of eukaryotic cells, generating ATP through aerobic respiration. Their double-membrane architecture is a masterful example of structure defining function.</p>
   
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Abstract energy representation">
+  </div>
+
   <ul class="bullets">
-    <li><strong>Outer Membrane:</strong> Contains transport proteins for moving pyruvate into the organelle.</li>
-    <li><strong>Inner Membrane:</strong> Folded into <em>cristae</em> to increase surface area for the electron transport chain (ETC) and ATP synthase.</li>
-    <li><strong>Intermembrane Space:</strong> Small volume allows rapid accumulation of protons ($H^+$) to create a high concentration gradient.</li>
-    <li><strong>Matrix:</strong> Contains enzymes for the Krebs cycle and mitochondrial DNA.</li>
+    <li><strong>Outer Membrane:</strong> Highly permeable. Contains transport proteins (porins) for seamlessly moving pyruvate and fatty acids into the organelle.</li>
+    <li><strong>Inner Membrane:</strong> Impermeable to most ions. Extensively folded into <em>cristae</em> to vastly increase surface area for the electron transport chain (ETC) and embedded ATP synthase complexes.</li>
+    <li><strong>Intermembrane Space:</strong> Exceptionally small volume allows the rapid accumulation of protons ($H^+$) pumped by the ETC, establishing a steep electrochemical gradient vital for ATP production.</li>
+    <li><strong>Matrix:</strong> The dense internal fluid containing the specialized enzymes for the Krebs cycle, alongside unique mitochondrial DNA and 70S ribosomes (evidence of endosymbiotic origins).</li>
   </ul>
 </div>
 
@@ -145,7 +201,7 @@
   <h2>Chloroplast Structure and Function</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Structural adaptations of chloroplasts for photosynthesis.</div>
   
-  <p>Chloroplasts are the site of photosynthesis in plant cells. The overall reaction transforms CO₂ and H₂O into glucose and oxygen.</p>
+  <p>Chloroplasts are the primary sites of photosynthesis in plant cells and algae. They transform solar energy, carbon dioxide, and water into chemical energy stored as glucose. Like mitochondria, their complex membrane system is optimized for biochemical efficiency.</p>
   
   <div class="app-box">
     <strong>Application: Photosynthesis Equation</strong>
@@ -153,9 +209,9 @@
   </div>
   
   <ul class="bullets">
-    <li><strong>Thylakoids:</strong> Flattened discs with a small internal volume to rapidly build up proton gradients for ATP synthesis.</li>
-    <li><strong>Granum:</strong> Stacks of thylakoids increase surface area for photosystems (light absorption).</li>
-    <li><strong>Stroma:</strong> Fluid containing enzymes like Rubisco for the light-independent reactions (Calvin cycle).</li>
+    <li><strong>Thylakoids:</strong> Flattened, interconnected membranous sacs. They have an extremely small internal volume (the lumen), enabling the rapid build-up of proton gradients required for photophosphorylation (ATP synthesis).</li>
+    <li><strong>Granum (pl. Grana):</strong> Dense stacks of thylakoids. This stacking dramatically increases the surface area for the photosystems, maximizing light absorption.</li>
+    <li><strong>Stroma:</strong> The aqueous fluid surrounding the thylakoids. It is rich in enzymes, notably Rubisco, providing the perfect chemical environment for the light-independent reactions (Calvin cycle) to synthesize carbohydrates.</li>
   </ul>
 </div>
 
@@ -165,7 +221,9 @@
   <h2>The Nuclear Double Membrane</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> The role of the double membrane of the nucleus.</div>
   
-  <p>The nuclear envelope consists of two lipid bilayers. It protects the cell's genetic material from the chemical reactions occurring in the cytoplasm and regulates the flow of molecules (like mRNA and proteins) through <strong>nuclear pores</strong>.</p>
+  <p>The nuclear envelope is entirely unique as it consists of two distinct lipid bilayers (an inner and an outer membrane). The outer membrane is physically continuous with the rough endoplasmic reticulum.</p>
+  
+  <p>This massive barrier protects the delicate chromatin (DNA) from the dynamic and sometimes harsh chemical reactions occurring in the cytoplasm. It relies entirely on highly regulated <strong>nuclear pore complexes</strong> to carefully manage the import of proteins and the export of synthesized mRNA and ribosomal subunits.</p>
 </div>
 
 <!-- SLIDE 7 — B2.2.7 - B2.2.9 (HL) -->
@@ -174,23 +232,54 @@
   <h2>The Endomembrane System</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Roles of ribosomes, Golgi apparatus, and vesicles in the endomembrane system.</div>
   
-  <img src="/images/bio_endomembrane_system.jpg" alt="Endomembrane System Diagram" class="slide-img">
-  
-  <p>The endomembrane system works together to produce, modify, and transport proteins and lipids.</p>
+  <p>The endomembrane system is a massive, coordinated network of membranes within the eukaryotic cell that works in perfect sync to manufacture, modify, package, and transport complex proteins and lipids.</p>
   
   <div class="css-flow">
-    <div class="flow-step hl"><strong>Rough ER:</strong> Ribosomes bound to the ER synthesize proteins for secretion or membranes</div>
+    <div class="flow-step hl"><strong>Rough ER:</strong> Ribosomes bound to the ER synthesize proteins specifically destined for secretion or membrane integration.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl"><strong>Transport Vesicles:</strong> Bud off the ER to transport proteins to the Golgi</div>
+    <div class="flow-step hl"><strong>Transport Vesicles:</strong> Small membrane sacs bud off the rough ER to physically carry immature proteins to the Golgi.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl"><strong>Golgi Apparatus:</strong> Modifies, sorts, and packages proteins into new vesicles</div>
+    <div class="flow-step hl"><strong>Golgi Apparatus:</strong> A stack of flattened sacs that structurally modifies (e.g., adding carbohydrates), sorts, and correctly packages proteins.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl"><strong>Secretory Vesicles:</strong> Transport finished products to the plasma membrane (exocytosis)</div>
+    <div class="flow-step hl"><strong>Secretory Vesicles:</strong> Transport the finished, polished products to the plasma membrane for exocytosis.</div>
   </div>
 </div>
 
-<!-- SLIDE 8 — COMPLETION -->
+<!-- SLIDE 8 — CHECK YOUR UNDERSTANDING -->
 <div class="slide" id="slide-8">
+  <div class="section-tag">Review</div>
+  <h2>Check Your Understanding</h2>
+  <p>Test your knowledge of B2.2 concepts before finishing the module.</p>
+  
+  <div class="qa-container">
+    <details>
+      <summary>Why is compartmentalization beneficial for a cell containing lysosomes?</summary>
+      <p>Compartmentalization isolates the highly destructive hydrolytic enzymes inside the lysosome. It also allows the lysosome to maintain a distinct, highly acidic internal pH (around 4.5-5.0) which is required for the enzymes to function properly, without affecting the neutral pH of the rest of the cytoplasm.</p>
+    </details>
+    
+    <details>
+      <summary>How does the separation of the nucleus and cytoplasm advantage eukaryotic cells over prokaryotes?</summary>
+      <p>It physically separates transcription and translation. This gives the cell time and space to regulate gene expression and perform post-transcriptional modifications on the mRNA (like splicing out introns) before the mRNA reaches the ribosomes in the cytoplasm.</p>
+    </details>
+    
+    <details>
+      <summary>What structural feature of the mitochondria allows for the rapid generation of a proton gradient? <span class="hl-badge">HL</span></summary>
+      <p>The highly folded inner membrane (cristae) paired with an extremely small intermembrane space. The small volume of the intermembrane space means that as the electron transport chain pumps protons into it, a steep concentration gradient is built up very quickly to drive ATP synthase.</p>
+    </details>
+
+    <details>
+      <summary>Outline the pathway of a secreted protein through the endomembrane system. <span class="hl-badge">HL</span></summary>
+      <p>1. Synthesized by ribosomes on the Rough ER.<br>
+         2. Packaged into a transport vesicle budding from the ER.<br>
+         3. Travels to and fuses with the Golgi apparatus for modification.<br>
+         4. Packaged into a secretory vesicle budding from the Golgi.<br>
+         5. Travels to the plasma membrane and is released via exocytosis.</p>
+    </details>
+  </div>
+</div>
+
+<!-- SLIDE 9 — COMPLETION -->
+<div class="slide" id="slide-9">
   <div class="completion">
     <div class="check">✅</div>
     <h1>B2.2 Organelles Complete!</h1>
@@ -202,7 +291,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 8</div>
+  <div class="nav-counter" id="slideCounter">1 / 9</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

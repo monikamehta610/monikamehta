@@ -32,6 +32,30 @@
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
   
+  /* Image Grid */
+  .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .image-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+  /* Flip Card */
+  .flip-cards-container { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+  .flip-card { background-color: transparent; width: calc(50% - 0.5rem); height: 180px; perspective: 1000px; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.2rem; border: 1px solid var(--gray-200); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); font-weight: 700; font-size: 1.2rem; }
+  .flip-card-back { background-color: var(--hl-light); color: var(--gray-800); transform: rotateY(180deg); font-size: 0.95rem; }
+  
+  @media(max-width: 640px) { .flip-card { width: 100%; } }
+
+  /* Details & Summary */
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; transition: background 0.2s; }
+  details:hover { background: var(--gray-100); }
+  summary { font-weight: 600; cursor: pointer; outline: none; list-style: none; display: flex; align-items: center; justify-content: space-between; font-size: 1.05rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 1.4rem; color: var(--blue); font-weight: 300; }
+  details[open] summary::after { content: '−'; }
+  details p { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-200); font-size: 0.95rem; line-height: 1.6; }
+
   /* CSS Flow Diagrams */
   .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
   .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
@@ -71,29 +95,34 @@
 <div class="slide" id="slide-1">
   <div class="section-tag hl-tag">B3.3.1 <span class="hl-badge">HL Only</span></div>
   <h2>Adaptations for Movement</h2>
-  <div class="kt"><strong>Key Understanding</strong> Movement is a universal feature of living organisms, with adaptations in both motile and sessile species.</div>
+  <div class="kt"><strong>Key Understanding</strong> Movement is a universal feature of living organisms, with complex and varied adaptations emerging in both motile and sessile species to optimize their survival and reproduction.</div>
   
-  <p>Movement can be considered a defining characteristic of life. However, it takes very different forms depending on an organism's lifestyle.</p>
+  <p>Movement is considered a fundamental, defining characteristic of life itself. However, the exact physiological mechanisms, anatomical structures, and energetic pathways involved depend dramatically on the organism's lifestyle and evolutionary niche. Movement can be macroscopic (whole-body locomotion) or microscopic (cellular streaming, transport of materials).</p>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Motile Organisms</h4>
-      <p>Organisms capable of independent locomotion (moving from place to place).</p>
+      <p>Organisms capable of independent locomotion—moving their entire body from one place to another.</p>
       <ul>
-        <li>Rely on musculoskeletal systems (muscles acting on skeletons).</li>
-        <li>Specialized adaptations for swimming, walking, flying.</li>
-        <li>Requires significant energy ($ATP$).</li>
+        <li>Extensively rely on highly structured musculoskeletal systems (muscles acting on rigid skeletal levers).</li>
+        <li>Specialized morphological adaptations for specific fluid dynamics: swimming (streamlining), walking (bipedalism or quadrupedalism), flying (aerodynamic wings).</li>
+        <li>Requires massive and continuous energy expenditure ($ATP$) generated through cellular respiration.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--green)">Sessile Organisms</h4>
-      <p>Organisms that are fixed in one place (e.g., barnacles, corals, plants).</p>
+      <p>Organisms that are permanently attached or fixed in one place (e.g., barnacles, corals, plants, sponges).</p>
       <ul>
-        <li>They still move! Think of plants growing towards light (phototropism).</li>
-        <li>Movement of internal fluids or tentacles for filter feeding.</li>
-        <li>Often have motile larval stages for dispersal.</li>
+        <li>They still exhibit movement! Plants grow towards directional light (phototropism) or gravity (gravitropism).</li>
+        <li>Movement of internal fluids (sap in plants) or specialized feeding appendages (tentacles or cilia for filter feeding).</li>
+        <li>Frequently feature highly motile larval stages for geographical dispersal.</li>
       </ul>
     </div>
+  </div>
+
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1549480017-d76466a4b7e8?auto=format&fit=crop&w=500&q=80" alt="Cheetah running - highly motile">
+    <img src="https://images.unsplash.com/photo-1582236894371-92b0c4103135?auto=format&fit=crop&w=500&q=80" alt="Coral reef - sessile organisms">
   </div>
 </div>
 
@@ -101,20 +130,33 @@
 <div class="slide" id="slide-2">
   <div class="section-tag hl-tag">B3.3.2 <span class="hl-badge">HL Only</span></div>
   <h2>The Sarcomere and Sliding Filament Model</h2>
-  <div class="kt"><strong>Key Understanding</strong> Muscle contraction is explained by the sliding filament model, involving the interactions of actin and myosin within the sarcomere.</div>
+  <div class="kt"><strong>Key Understanding</strong> Muscle contraction is explained by the sliding filament model, involving the precise, ATP-dependent interactions of actin and myosin within the structural limits of the sarcomere.</div>
   
-  <img src="/images/bio_sarcomere.jpg" alt="A detailed educational diagram of a sarcomere structure, showing Z-lines, actin, myosin, and M-line" class="slide-img">
+  <p>Skeletal muscles are highly organized tissues composed of repeating functional units called <strong>sarcomeres</strong>, which are bordered by dark bands known as Z-lines. The entire contraction of a macroscopic muscle is the cumulative result of millions of these microscopic sarcomeres shortening simultaneously.</p>
   
-  <p>Skeletal muscles are composed of repeating functional units called <strong>sarcomeres</strong>, bordered by Z-lines. The contraction of a muscle occurs as these sarcomeres shorten.</p>
-  
+  <div class="flip-cards-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Actin</div>
+        <div class="flip-card-back">The thin filament in the sarcomere. It contains binding sites for myosin heads, which are blocked by tropomyosin when the muscle is relaxed.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Myosin</div>
+        <div class="flip-card-back">The thick filament in the sarcomere. It has bulbous heads that bind to actin and perform the power stroke, pulling actin towards the center.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="css-flow">
-    <div class="flow-step hl">Myosin heads bind to binding sites on the actin filaments (forming cross-bridges)</div>
+    <div class="flow-step hl">Myosin heads, energized by ATP, bind to exposed binding sites on the actin filaments (forming <strong>cross-bridges</strong>)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Using $ATP$ hydrolysis, the myosin heads pivot (the "power stroke")</div>
+    <div class="flow-step hl">Through $ATP$ hydrolysis to $ADP + P_i$, the myosin heads pivot (the "power stroke")</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Actin filaments are pulled towards the M-line (center of the sarcomere)</div>
+    <div class="flow-step hl">Actin filaments are forcefully pulled towards the M-line (the center of the sarcomere)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">The sarcomere shortens, but the filaments themselves <em>do not</em> change length!</div>
+    <div class="flow-step alt">The sarcomere shortens (Z-lines move closer together), but the actin and myosin filaments themselves <em>do not</em> change length!</div>
   </div>
 </div>
 
@@ -122,21 +164,21 @@
 <div class="slide" id="slide-3">
   <div class="section-tag hl-tag">B3.3.3 / B3.3.8 <span class="hl-badge">HL Only</span></div>
   <h2>Titin, Relaxation, and Antagonistic Muscles</h2>
-  <div class="kt"><strong>B3.3.3</strong> The role of the protein titin in elastic recoil, and the necessity of antagonistic muscles for relaxation.</div>
+  <div class="kt"><strong>B3.3.3</strong> The role of the protein titin in elastic recoil, and the physiological necessity of antagonistic muscles to achieve muscle relaxation.</div>
   
-  <p>Muscles can only <em>pull</em> (contract); they cannot actively <em>push</em> themselves back to their original length. Therefore, muscles must work in <strong>antagonistic pairs</strong>.</p>
+  <p>Muscles possess a fundamental limitation: they can only actively <em>pull</em> (contract); they cannot actively <em>push</em> themselves back to their original extended length. Therefore, to reverse a movement, muscles must work in <strong>antagonistic pairs</strong>—when one contracts, the other must relax and be passively stretched.</p>
   
   <div class="app-box">
-    <strong>Application (B3.3.8)</strong>
-    <p>The <strong>internal and external intercostal muscles</strong> are an antagonistic pair crucial for ventilation. When the external intercostals contract, they pull the ribs up and out (inspiration). The internal intercostals contract to pull the ribs down and in (forced expiration).</p>
+    <strong>Application (B3.3.8): Intercostal Muscles</strong>
+    <p>The <strong>internal and external intercostal muscles</strong> (located between the ribs) are a classic antagonistic pair crucial for ventilation. When the external intercostals contract, they pull the ribcage upwards and outwards (inspiration), while the internal intercostals relax. During forced expiration, the internal intercostals contract to forcefully pull the ribs downwards and inwards.</p>
   </div>
   
   <div class="card">
-    <strong style="color:var(--hl)">The Role of Titin</strong>
+    <strong style="color:var(--hl)">The Role of Titin in Sarcomere Integrity</strong>
     <ul class="bullets">
-      <li><strong>Titin</strong> is a massive, spring-like protein in the sarcomere (connecting the Z-line to the M-line).</li>
-      <li>It prevents overstretching of the muscle and provides <strong>elastic recoil</strong> when the muscle relaxes.</li>
-      <li>When an antagonistic muscle pulls the original muscle back to its starting length, titin helps restore the sarcomere's resting structure.</li>
+      <li><strong>Titin</strong> is a massive, spring-like protein situated within the sarcomere, physically connecting the Z-line to the M-line.</li>
+      <li>It prevents disastrous overstretching of the muscle fiber and provides critical <strong>elastic recoil</strong> when the muscle relaxes.</li>
+      <li>When an antagonistic muscle pulls the original contracted muscle back to its starting length, titin helps accurately restore the sarcomere's highly ordered resting structure.</li>
     </ul>
   </div>
 </div>
@@ -145,53 +187,58 @@
 <div class="slide" id="slide-4">
   <div class="section-tag hl-tag">B3.3.4 <span class="hl-badge">HL Only</span></div>
   <h2>Motor Units and Neuromuscular Junctions</h2>
-  <div class="kt"><strong>Key Understanding</strong> The structure and function of motor units, including motor neurons, muscle fibers, and neuromuscular junctions.</div>
+  <div class="kt"><strong>Key Understanding</strong> The structure and function of motor units, emphasizing the synaptic communication between motor neurons, muscle fibers, and specialized neuromuscular junctions.</div>
   
-  <p>A single motor neuron does not just connect to one muscle fiber; it branches to innervate multiple fibers. This entire complex is called a <strong>motor unit</strong>.</p>
+  <p>To coordinate muscle contraction efficiently, a single motor neuron does not connect to just one muscle fiber. Instead, its axon branches out to innervate multiple muscle fibers simultaneously. This entire functional complex—the motor neuron and all the muscle fibers it innervates—is called a <strong>motor unit</strong>.</p>
   
   <div class="css-flow">
-    <div class="flow-step hl">Action potential arrives at the end of a motor neuron</div>
+    <div class="flow-step hl">Action potential arrives at the synaptic terminal of a motor neuron</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Neurotransmitter (Acetylcholine, $ACh$) is released across the <strong>neuromuscular junction</strong></div>
+    <div class="flow-step hl">Neurotransmitter (Acetylcholine, $ACh$) is released via exocytosis across the <strong>neuromuscular junction</strong></div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Receptors on the muscle fiber membrane (sarcolemma) trigger depolarization</div>
+    <div class="flow-step hl">ACh binds to receptors on the muscle fiber membrane (sarcolemma), triggering depolarization and an action potential in the muscle</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Calcium ions ($Ca^{2+}$) are released, initiating the sliding filament mechanism</div>
+    <div class="flow-step alt">Calcium ions ($Ca^{2+}$) are released from the sarcoplasmic reticulum, binding to troponin and initiating the sliding filament mechanism</div>
   </div>
   
-  <div class="tip"><strong>Exam Tip:</strong> Fine motor control (like in your fingers) relies on small motor units (1 neuron to ~10 fibers), while powerful movements (like in your thigh) use large motor units (1 neuron to ~1000 fibers).</div>
+  <div class="tip"><strong>Exam Tip:</strong> The size of the motor unit dictates the precision of movement. Fine, precise motor control (like the muscles controlling eye movement or fingers) relies on very small motor units (1 neuron to ~10 fibers). Conversely, powerful, gross movements (like in your quadriceps) utilize massively large motor units (1 neuron to ~1000+ fibers).</div>
 </div>
 
 <!-- SLIDE 5 — B3.3.5 & B3.3.6 -->
 <div class="slide" id="slide-5">
   <div class="section-tag hl-tag">B3.3.5 / B3.3.6 <span class="hl-badge">HL Only</span></div>
   <h2>Skeletons and Synovial Joints</h2>
-  <div class="kt"><strong>B3.3.5</strong> Skeletons provide anchorage points for muscles and act as levers.</div>
-  <div class="kt"><strong>B3.3.6</strong> Movement at synovial joints (e.g., the human hip).</div>
+  <div class="kt"><strong>B3.3.5</strong> Skeletons provide essential rigid anchorage points for muscles and act as levers to magnify force or speed.</div>
+  <div class="kt"><strong>B3.3.6</strong> Movement dynamics at synovial joints, such as the human hip and knee.</div>
   
-  <p>Skeletons (whether <strong>endoskeletons</strong> in vertebrates or <strong>exoskeletons</strong> in arthropods) provide rigid anchorage points. When muscles contract, they pull on bones via tendons, acting as levers to produce movement.</p>
+  <p>Skeletons—whether internal <strong>endoskeletons</strong> (in humans and other vertebrates) or external <strong>exoskeletons</strong> (in insects and crustaceans)—provide a rigid structural framework. When muscles contract, they transmit force to bones via tendons, utilizing the bones as mechanical levers to produce movement across joints.</p>
   
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1574514578161-0427845baad9?auto=format&fit=crop&w=500&q=80" alt="X-ray of joints showing skeletal structure">
+    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80" alt="Athletic movement requiring complex synovial joints">
+  </div>
+
   <table class="tbl">
     <tr><th>Component</th><th>Function in Synovial Joints</th></tr>
     <tr>
       <td><strong>Bones</strong></td>
-      <td>Provide a rigid framework and act as levers.</td>
+      <td>Provide a rigid structural framework, protect internal organs, and act as mechanical levers.</td>
     </tr>
     <tr>
       <td><strong>Cartilage</strong></td>
-      <td>Covers the ends of bones to reduce friction and absorb shock.</td>
+      <td>Smooth, resilient tissue covering the ends of bones to reduce friction and absorb compressive shock during movement.</td>
     </tr>
     <tr>
       <td><strong>Synovial Fluid</strong></td>
-      <td>Lubricates the joint, further reducing friction and supplying nutrients to cartilage.</td>
+      <td>A viscous fluid secreted by the synovial membrane that lubricates the joint cavity, minimizing friction and supplying vital nutrients to avascular cartilage.</td>
     </tr>
     <tr>
       <td><strong>Ligaments</strong></td>
-      <td>Connect bone to bone, providing stability and restricting excessive movement.</td>
+      <td>Strong, fibrous bands of connective tissue linking bone to bone, providing joint stability and strictly restricting excessive or abnormal movement.</td>
     </tr>
     <tr>
       <td><strong>Tendons</strong></td>
-      <td>Connect muscle to bone, transmitting the force of contraction.</td>
+      <td>Tough cords connecting muscle to bone, effectively transmitting the mechanical force of muscle contraction to the skeleton.</td>
     </tr>
   </table>
 </div>
@@ -203,24 +250,47 @@
   
   <div class="skill-box">
     <strong>Skill (B3.3.7): Joint Range of Motion</strong>
-    <p>Biologists and physiotherapists use tools like <strong>goniometers</strong> or computer-assisted motion analysis to quantify the range of motion of joints. For example, comparing the multi-axial movement of the hip (a ball-and-socket joint) to the uni-axial movement of the knee (a hinge joint).</p>
+    <p>Biologists, biomechanists, and physiotherapists utilize precise tools like <strong>goniometers</strong> or computer-assisted motion capture to quantify the angular range of motion of different joints. This allows for comparing the extensive multi-axial movement of the hip (a ball-and-socket joint, capable of flexion/extension, abduction/adduction, and rotation) against the restrictive uni-axial movement of the knee (primarily a hinge joint limited to flexion/extension).</p>
   </div>
   
-  <div class="kt"><strong>B3.3.9</strong> Reasons for locomotion in animals.</div>
-  <p>Animals expend massive amounts of energy ($ATP$) to move. The evolutionary benefits must outweigh the costs: finding food, escaping predators, finding mates, and dispersing to new habitats.</p>
+  <div class="kt"><strong>B3.3.9</strong> Evolutionary reasons for locomotion in animals.</div>
+  <p>Locomotion is incredibly metabolically expensive. Animals expend massive amounts of energy ($ATP$) to move against gravity, friction, and environmental resistance. Evolution dictates that the benefits of movement must radically outweigh the energetic costs. Primary reasons include: foraging for food, escaping active predators, locating suitable mates for reproduction, and dispersing to colonize new, optimal habitats.</p>
   
   <div class="app-box">
     <strong>Application (B3.3.10): Marine Mammals</strong>
-    <p>Marine mammals (like whales or seals) exhibit striking adaptations for swimming. This includes a streamlined body shape to reduce water viscosity drag (as seen in A1.1), modified limbs (flippers), and specialized ventilation behaviors to minimize surfacing time.</p>
+    <p>Marine mammals (such as whales, dolphins, and seals) exhibit striking, convergent evolutionary adaptations for aquatic locomotion. This includes an extremely streamlined (fusiform) body shape to minimize water viscosity drag, forelimbs modified into highly efficient flippers, the loss of hind limbs (in cetaceans) to reduce drag, and powerful tail flukes for propulsion.</p>
   </div>
 </div>
 
-<!-- SLIDE 7 — COMPLETION -->
+<!-- SLIDE 7 — Check Your Understanding -->
 <div class="slide" id="slide-7">
+  <div class="section-tag hl-tag">Assessment <span class="hl-badge">Check Your Understanding</span></div>
+  <h2>Self-Assessment Questions</h2>
+  <p>Test your knowledge of B3.3 Muscle and Motility. Click the questions below to reveal the detailed answers.</p>
+
+  <details>
+    <summary>1. Describe the precise sequence of events during the sliding filament mechanism.</summary>
+    <p>When calcium ions are released, they bind to troponin, causing tropomyosin to shift and expose myosin-binding sites on the actin filament. Myosin heads, energized by ATP hydrolysis, bind to these sites forming cross-bridges. The myosin heads then execute a power stroke, pivoting and pulling the actin filaments toward the center of the sarcomere (M-line). ATP then binds to the myosin head, causing it to detach from actin, and the cycle repeats.</p>
+  </details>
+
+  <details>
+    <summary>2. Why are antagonistic muscle pairs absolutely necessary for animal locomotion?</summary>
+    <p>Muscle tissue is only capable of active contraction (pulling); it cannot actively lengthen (push). Therefore, to reverse a movement or return a limb to its original resting position, an opposing muscle must contract to pull the bone in the opposite direction while the original muscle relaxes. For example, the biceps flex the arm, while the antagonistic triceps extend it.</p>
+  </details>
+
+  <details>
+    <summary>3. Differentiate between ligaments and tendons in a synovial joint.</summary>
+    <p><strong>Ligaments</strong> are bands of tough, fibrous connective tissue that connect bone to bone. Their primary function is to stabilize the joint and prevent excessive or abnormal movements. <strong>Tendons</strong>, on the other hand, are cords of dense connective tissue that attach muscle to bone, serving to transmit the mechanical force of muscle contraction to the skeleton to initiate movement.</p>
+  </details>
+</div>
+
+
+<!-- SLIDE 8 — COMPLETION -->
+<div class="slide" id="slide-8">
   <div class="completion">
     <div class="check">✅</div>
     <h1>B3.3 Muscle and Motility Complete!</h1>
-    <p>You have successfully reviewed all HL understandings for Biology Theme B3.3.</p>
+    <p>You have successfully reviewed all HL understandings for Biology Theme B3.3, including detailed biomechanics and ecological adaptations.</p>
   </div>
 </div>
 
@@ -228,7 +298,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 7</div>
+  <div class="nav-counter" id="slideCounter">1 / 8</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

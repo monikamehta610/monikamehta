@@ -39,6 +39,27 @@ window.MathJax = {
   .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
   .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
 
+  /* Flip Card CSS */
+  .flip-card-container { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0; justify-content: center; }
+  .flip-card { background-color: transparent; width: 200px; height: 160px; perspective: 1000px; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue); border: 2px solid var(--blue); font-weight: 600; font-size: 1.05rem; }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); font-size: 0.85rem; padding: 1.2rem; }
+
+  /* Details / Summary CSS */
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; margin-bottom: 1rem; padding: 0.5rem 1rem; }
+  summary { font-weight: 600; cursor: pointer; padding: 0.5rem 0; outline: none; list-style-type: none; position: relative; padding-left: 1.5rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶"; position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--blue); transition: transform 0.3s ease; }
+  details[open] summary::before { transform: translateY(-50%) rotate(90deg); }
+  details p { margin-top: 0.5rem; color: var(--gray-600); border-top: 1px solid var(--gray-200); padding-top: 0.8rem; font-size: 0.9rem; }
+
+  /* Image Grid CSS */
+  .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .img-grid img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid var(--gray-200); }
+
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
   .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
@@ -73,19 +94,49 @@ window.MathJax = {
   <h2>Differentiation and Gene Expression</h2>
   <div class="kt"><strong>Key Understanding</strong> Specialized tissues can develop by cell differentiation in multicellular organisms, which involves the expression of some genes and not others in a cell's genome.</div>
   
-  <p>All diploid cells in a multicellular organism share an identical genome. However, they develop into distinct, specialized cell types (like neurons, muscle cells, and skin cells) through a process called <strong>differentiation</strong>.</p>
+  <p>In a multicellular organism, every diploid somatic cell originates from a single fertilized egg (zygote) and therefore contains the exact same genetic material—an identical genome. Despite sharing the same genetic instructions, the body is composed of hundreds of distinctly different cell types, such as neurons, erythrocytes, muscle fibers, and pancreatic cells.</p>
   
+  <p>This remarkable diversity is achieved through <strong>differentiation</strong>. Differentiation is the process whereby an unspecialized cell acquires specific morphological and physiological properties to perform a specialized function.</p>
+
+  <p>At the molecular level, differentiation is driven by <strong>differential gene expression</strong>. While a cell possesses the entire genome, it only "turns on" or expresses a specific subset of genes relevant to its intended function, while keeping the rest "turned off" or repressed. For instance, the gene for insulin production is present in every cell, but it is only expressed by the beta cells in the pancreas.</p>
+  
+  <div class="flip-card-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Genome</div>
+        <div class="flip-card-back">The complete set of DNA or genetic material present in a cell or organism.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Differentiation</div>
+        <div class="flip-card-back">The process by which an unspecialized cell becomes specialized in structure and function.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Gene Expression</div>
+        <div class="flip-card-back">The process where information from a gene is used to synthesize functional gene products (often proteins).</div>
+      </div>
+    </div>
+  </div>
+
   <div class="css-flow">
     <div class="flow-step hl">Fertilized egg (Zygote) divides via mitosis</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step hl">Cells begin to receive different chemical signals based on their position</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt"><strong>Differential Gene Expression:</strong> Certain genes are turned ON, while others are turned OFF</div>
+    <div class="flow-step alt"><strong>Differential Gene Expression:</strong> Certain genes are activated, others repressed</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step alt">Cells become specialized in their form and function (Differentiation)</div>
   </div>
   
-  <p>Morphogens and chemical gradients play a crucial role in regulating which genes are expressed during early embryonic development, ensuring tissues form in the correct locations.</p>
+  <p><strong>The Role of Morphogens:</strong> During embryonic development, the position of a cell within the embryo largely determines its fate. Signaling molecules called <strong>morphogens</strong> are secreted from source tissues and diffuse outward, creating concentration gradients. Cells detect these morphogens, and their specific concentration triggers different pathways of gene expression, ensuring tissues form in their correct spatial locations.</p>
+  
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&q=80" alt="Embryonic development">
+    <img src="https://images.unsplash.com/photo-1530213786676-4187f59d5f75?w=600&q=80" alt="Cell differentiation visual representation">
+  </div>
 </div>
 
 <!-- SLIDE 2 — B2.3.2 -->
@@ -94,31 +145,45 @@ window.MathJax = {
   <h2>Stem Cells</h2>
   <div class="kt"><strong>Key Understanding</strong> Stem cells are unspecialized cells that can divide continuously and have the capacity to differentiate into specialized cell types.</div>
   
-  <img src="/images/stem_cell_differentiation.svg" alt="Stem cell differentiation diagram" class="slide-img" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?w=900&q=80'">
+  <p>Stem cells are extraordinary because they possess two key defining properties that distinguish them from specialized cells:</p>
+  <ul class="bullets">
+    <li><strong>Self-renewal:</strong> They can divide extensively by mitosis to produce more stem cells, continuously maintaining their population.</li>
+    <li><strong>Potency:</strong> They have the capacity to differentiate into various specialized cell types under the right chemical stimuli.</li>
+  </ul>
   
-  <p>Stem cells retain the capacity to divide and have the unique ability to differentiate along different pathways.</p>
-  
+  <p>As development progresses from the early embryo to a fully formed adult, the potency of stem cells progressively decreases.</p>
+
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--hl)">Totipotent</h4>
-      <p>Can differentiate into any cell type, including extra-embryonic tissues (placenta).</p>
-      <ul><li>Example: The early zygote.</li></ul>
+      <p>Can differentiate into any embryonic cell type, as well as extra-embryonic tissues like the placenta.</p>
+      <ul><li>Example: The zygote and cells of the early morula.</li></ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--hl)">Pluripotent</h4>
-      <p>Can differentiate into any cell type in the body, but not extra-embryonic tissues.</p>
+      <p>Can differentiate into any of the three germ layers (endoderm, mesoderm, ectoderm) forming any cell in the body, but cannot form the placenta.</p>
       <ul><li>Example: Inner cell mass of a blastocyst.</li></ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--blue)">Multipotent</h4>
-      <p>Can differentiate into a limited number of related cell types.</p>
-      <ul><li>Example: Hematopoietic (blood) stem cells in bone marrow.</li></ul>
+      <p>Can differentiate into a limited number of closely related, specialized cell types.</p>
+      <ul><li>Example: Hematopoietic stem cells in bone marrow (forming only blood cells).</li></ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--green)">Unipotent</h4>
+      <p>Can only produce one specific cell type, but retain the property of self-renewal.</p>
+      <ul><li>Example: Muscle stem cells (satellite cells).</li></ul>
     </div>
   </div>
 
   <div class="app-box">
-    <strong>Application</strong>
-    Stem cell niches (like bone marrow or hair follicles) maintain stem cell populations, allowing for continuous tissue repair and regeneration throughout an organism's life.
+    <strong>Application: Stem Cell Therapy</strong>
+    <p>Because of their regenerative abilities, stem cells offer enormous potential for treating degenerative diseases. For instance, in <strong>Stargardt's macular dystrophy</strong>, a genetic disease causing progressive vision loss, researchers are utilizing pluripotent embryonic stem cells to generate retinal pigment epithelium cells, which are then injected into the eye to restore vision.</p>
+  </div>
+  
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80" alt="Laboratory stem cell research">
+    <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=600&q=80" alt="Microscope view of cells">
   </div>
 </div>
 
@@ -126,10 +191,14 @@ window.MathJax = {
 <div class="slide" id="slide-3">
   <div class="section-tag hl-tag">B2.3.3 <span class="hl-badge">HL Only</span></div>
   <h2>Surface Area-to-Volume Ratio Constraints</h2>
-  <div class="kt"><strong>Key Understanding</strong> The surface area-to-volume ratio (SA:V) acts as a constraint on cell size.</div>
+  <div class="kt"><strong>Key Understanding</strong> The surface area-to-volume ratio (SA:V) acts as a severe constraint on cell size, dictating physiological limits.</div>
   
-  <p>As a cell grows larger, its volume increases faster than its surface area. This mathematical relationship places a strict limit on how large a cell can become while remaining functional.</p>
+  <p>The metabolic rate of a cell—the sum of all chemical reactions occurring within it—is proportional to the cell's <strong>volume</strong>. The larger the volume, the more nutrients (like glucose and oxygen) are required and the more metabolic waste (like carbon dioxide and heat) is produced.</p>
   
+  <p>However, the rate at which these essential materials can be exchanged with the environment depends strictly on the cell's <strong>surface area</strong> (the plasma membrane).</p>
+  
+  <p>As a cell grows, its volume increases at a cubic rate ($r^3$), while its surface area increases at a slower squared rate ($r^2$). This means that the <strong>SA:V ratio decreases as a cell grows larger.</strong></p>
+
   <div class="card">
     <strong style="color:var(--hl)">Mathematical Relationship:</strong>
     <p>For a spherical cell of radius $r$:</p>
@@ -137,57 +206,90 @@ window.MathJax = {
       <li>Surface Area ($SA$) = $4\pi r^2$</li>
       <li>Volume ($V$) = $\frac{4}{3}\pi r^3$</li>
     </ul>
-    <p>The SA:V ratio simplifies to: $\frac{SA}{V} = \frac{3}{r}$. Thus, as $r$ increases, the ratio decreases.</p>
+    <p>The SA:V ratio simplifies to: $\frac{SA}{V} = \frac{3}{r}$. Therefore, as $r$ increases, the overall ratio drops.</p>
   </div>
   
+  <p><strong>The Consequence:</strong> If a cell grows too large, its surface area becomes insufficient to meet the metabolic demands of its immense volume. Waste products will accumulate, heat will not dissipate efficiently, and nutrient uptake will lag, ultimately threatening cell survival. This constraint explains why most cells are microscopic and why large organisms are multicellular rather than being single massive cells.</p>
+
   <div class="skill-box">
     <strong>Skill: Models in Science</strong>
-    Using cubes of different sizes to model cells is a practical way to calculate and visualize how increasing size dramatically lowers the SA:V ratio. A 1cm cube has a SA:V of 6:1, whereas a 3cm cube has a SA:V of only 2:1.
+    Using agar cubes of different sizes saturated with phenolphthalein indicator, dropped into an acidic solution, provides an excellent model. The acid diffuses in, turning the cube clear. The smallest cube will turn clear the fastest, modeling how smaller cells with a high SA:V ratio exchange materials much more efficiently.
   </div>
-
-  <p>A low SA:V ratio means the cell's membrane (surface area) cannot efficiently exchange enough resources (like O$_2$ and glucose) or excrete enough waste (like CO$_2$) to support the metabolic demands of its large internal volume.</p>
+  
+  <p>To overcome SA:V limitations, some cells evolve specific morphological adaptations, such as becoming highly flattened, developing long thin extensions (e.g., neurons), or folding their membranes into microvilli (e.g., intestinal epithelial cells) to maximize surface area without drastically increasing volume.</p>
 </div>
 
 <!-- SLIDE 4 — B2.3.4 -->
 <div class="slide" id="slide-4">
   <div class="section-tag hl-tag">B2.3.4 <span class="hl-badge">HL Only</span></div>
-  <h2>Structural Adaptations of Cells</h2>
-  <div class="kt"><strong>Key Understanding</strong> Specialized cells have structural adaptations that facilitate their specific functions.</div>
+  <h2>Structural Adaptations of Specialized Cells</h2>
+  <div class="kt"><strong>Key Understanding</strong> Specialized cells have highly specific structural adaptations that facilitate their designated physiological functions.</div>
   
-  <img src="/images/specialized_cells_comparison.svg" alt="Specialized cells comparison diagram" class="slide-img" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=900&q=80'">
+  <p>Through differentiation, cells undergo profound morphological alterations. Every organelle and structural feature is optimized for a specific task. Below are detailed examples of highly specialized cells.</p>
 
   <table class="tbl">
-    <tr><th>Cell Type</th><th>Key Structural Adaptations</th><th>Function</th></tr>
+    <tr><th>Cell Type</th><th>Key Structural Adaptations</th><th>Function / Rationale</th></tr>
     <tr>
       <td><strong>Type I Pneumocytes</strong></td>
-      <td>Extremely thin, flattened shape. Increases SA:V ratio and minimizes diffusion distance.</td>
-      <td>Rapid gas exchange (O$_2$ and CO$_2$) in the alveoli.</td>
+      <td>Extremely thin, flattened (squamous) shape. Highly expansive membrane area.</td>
+      <td>Optimizes rapid gas exchange (O$_2$ and CO$_2$) in the alveoli by minimizing diffusion distance and maximizing the SA:V ratio.</td>
     </tr>
     <tr>
       <td><strong>Type II Pneumocytes</strong></td>
-      <td>Cuboidal shape with secretory vesicles (lamellar bodies).</td>
-      <td>Secrete pulmonary surfactant to reduce alveolar surface tension.</td>
+      <td>Cuboidal shape containing specialized secretory vesicles known as lamellar bodies.</td>
+      <td>Secrete pulmonary surfactant (a phospholipid monolayer) to reduce alveolar surface tension, preventing alveolar collapse during exhalation.</td>
     </tr>
     <tr>
       <td><strong>Sperm Cell (Male Gamete)</strong></td>
-      <td>Highly streamlined, possesses a flagellum, packed with mitochondria, and contains an acrosome.</td>
-      <td>Motility to reach the egg; penetrating the egg's zona pellucida.</td>
+      <td>Highly streamlined shape; possesses a flagellum; tightly packed with helical mitochondria in the midpiece; anterior acrosome containing hydrolytic enzymes.</td>
+      <td>The flagellum and mitochondria provide motility to reach the egg; the acrosome enzymes digest the egg's zona pellucida for successful fertilization.</td>
     </tr>
     <tr>
       <td><strong>Egg Cell (Female Gamete)</strong></td>
-      <td>Very large volume, containing abundant cytoplasm, nutrient stores (yolk), and cortical granules.</td>
-      <td>Supports early embryonic development after fertilization.</td>
+      <td>Exceptionally large volume; abundant cytoplasm packed with nutrient stores (yolk); outer glycoprotein matrix (zona pellucida) and cortical granules.</td>
+      <td>The large volume and nutrients support early embryonic development pre-implantation. Cortical granules execute the cortical reaction to prevent polyspermy.</td>
     </tr>
     <tr>
       <td><strong>Striated Muscle Fiber</strong></td>
-      <td>Long, cylindrical, multinucleated, and packed with contractile myofibrils (actin and myosin).</td>
-      <td>Powerful, coordinated voluntary contractions.</td>
+      <td>Elongated, cylindrical structure; multinucleated (syncytium); packed tightly with contractile myofibrils composed of actin and myosin filaments; extensive sarcoplasmic reticulum.</td>
+      <td>Multinucleation supports high protein synthesis demands; myofibrils enable powerful, synchronized, voluntary contractions for body movement.</td>
     </tr>
   </table>
+
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1614935151651-0bea6508abb0?w=600&q=80" alt="Scientific illustration of a sperm cell">
+    <img src="https://images.unsplash.com/photo-1559811814-e2c59a5bf3ec?w=600&q=80" alt="Muscle tissue microscopic view">
+  </div>
 </div>
 
-<!-- SLIDE 5 — COMPLETION -->
+<!-- SLIDE 5 — CHECK YOUR UNDERSTANDING -->
 <div class="slide" id="slide-5">
+  <h2>Check Your Understanding</h2>
+  <p>Test your knowledge on the core concepts of B2.3 Cell Specialization.</p>
+
+  <details>
+    <summary>Why must an organism be multicellular to grow large, rather than consisting of one massive cell?</summary>
+    <p>Due to the Surface Area-to-Volume ratio constraint. If a single cell grows too large, its volume outpaces its surface area. The cell membrane would not have enough surface area to rapidly exchange the required nutrients and excrete the massive amounts of waste produced by the large internal volume.</p>
+  </details>
+  
+  <details>
+    <summary>Explain how differential gene expression leads to differentiation.</summary>
+    <p>All diploid cells contain the exact same genome. However, during development, chemical signals (like morphogens) trigger cells to turn on (express) certain genes and turn off others. The specific combination of expressed genes dictates what proteins the cell synthesizes, thereby altering its physical structure and physiological function—this is differentiation.</p>
+  </details>
+
+  <details>
+    <summary>Contrast Pluripotent and Multipotent stem cells.</summary>
+    <p>Pluripotent stem cells can differentiate into any of the body's cell types (all three germ layers), but cannot form extra-embryonic tissues like the placenta. Multipotent stem cells have a more restricted potential and can only differentiate into a limited, closely related lineage of cell types (e.g., bone marrow stem cells only forming different types of blood cells).</p>
+  </details>
+  
+  <details>
+    <summary>How is the structure of a Type I Pneumocyte adapted to its function?</summary>
+    <p>Type I pneumocytes are incredibly thin and flattened (squamous). This morphology creates an extremely short diffusion distance and a very high surface area-to-volume ratio, making the passive diffusion of oxygen and carbon dioxide highly efficient across the alveoli.</p>
+  </details>
+</div>
+
+<!-- SLIDE 6 — COMPLETION -->
+<div class="slide" id="slide-6">
   <div class="completion">
     <div class="check">✅</div>
     <h1>B2.3 Complete!</h1>
@@ -199,7 +301,7 @@ window.MathJax = {
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 6</div>
+  <div class="nav-counter" id="slideCounter">1 / 7</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

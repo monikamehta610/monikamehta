@@ -49,6 +49,26 @@
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  
+  /* NEW INTERACTIVE CSS */
+  .flip-card { background-color: transparent; width: 100%; height: 120px; perspective: 1000px; margin: 1rem 0; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 8px; padding: 1rem; border: 1px solid var(--gray-200); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue); font-weight: 600; font-size: 1.1rem; }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); font-size: 0.95rem; }
+  
+  .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .image-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 1.5rem; margin: 1rem 0; transition: all 0.3s ease; }
+  details[open] { background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+  summary { font-weight: 600; font-size: 1.05rem; cursor: pointer; color: var(--blue); outline: none; list-style: none; display: flex; align-items: center; gap: 0.5rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; font-size: 0.8rem; transition: transform 0.3s; }
+  details[open] summary::before { transform: rotate(90deg); }
+  details p, details ul { margin-top: 1rem; color: var(--gray-800); }
+  
   @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
 </style>
 </head>
@@ -75,22 +95,39 @@
   <h2>Neurons & The Nervous System</h2>
   <div class="kt"><strong>Key Understanding</strong>Neurons transmit electrical impulses.</div>
   
-  <p>The nervous system allows organisms to interact with their environment by transmitting signals rapidly across the body. The fundamental unit of this system is the <strong>neuron</strong>.</p>
+  <p>The nervous system represents one of the most remarkable evolutionary adaptations, allowing organisms to dynamically interact with their rapidly changing environment. At the core of this system is the <strong>neuron</strong>—a highly specialized cell adapted for transmitting electrical impulses at immense speeds across the body. The nervous system acts as the body's primary control and communication center.</p>
   
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=600&q=80" alt="Science abstract">
+    <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=600&q=80" alt="Microscopic glowing neurons">
+  </div>
+
+  <p>Neurons possess distinct structural adaptations that align directly with their function of signal transmission:</p>
   <ul class="bullets">
-    <li><strong>Dendrites:</strong> Short-branched nerve fibres that convert chemical information from other neurons or receptor cells into electrical signals.</li>
-    <li><strong>Soma (Cell Body):</strong> Contains the nucleus and most organelles, where metabolic processes occur.</li>
-    <li><strong>Axon:</strong> An elongated nerve fibre that transmits electrical signals (action potentials) to terminal regions for communication with other neurons or effectors.</li>
+    <li><strong>Dendrites:</strong> Short, heavily branched nerve fibres that protrude from the cell body. They act as the primary reception point, converting chemical information from other neurons or receptor cells into electrical signals.</li>
+    <li><strong>Soma (Cell Body):</strong> The metabolic heart of the neuron. It houses the nucleus, endoplasmic reticulum, and mitochondria required to produce the vast amounts of ATP and proteins needed for maintaining cellular function and generating neurotransmitters.</li>
+    <li><strong>Axon:</strong> An elongated, cylindrical nerve fibre designed for long-distance communication. It transmits electrical signals (action potentials) away from the soma toward terminal regions where it connects with other neurons or effector organs (like muscles and glands).</li>
   </ul>
   
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        Myelin Sheath
+      </div>
+      <div class="flip-card-back">
+        A fatty insulating layer formed by Schwann cells that wraps around the axon, dramatically accelerating the conduction of electrical impulses.
+      </div>
+    </div>
+  </div>
+
   <div class="css-flow">
-    <div class="flow-step">Receptors detect a stimulus</div>
+    <div class="flow-step">Receptors detect an external or internal stimulus</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">Sensory neurons conduct signals to CNS</div>
+    <div class="flow-step">Sensory neurons conduct signals to the Central Nervous System (CNS)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Relay neurons process info in CNS</div>
+    <div class="flow-step alt">Relay neurons (interneurons) process the information within the brain or spinal cord</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">Motor neurons conduct signals to effectors</div>
+    <div class="flow-step">Motor neurons conduct signals from the CNS to effectors (muscles or glands) for a response</div>
   </div>
 </div>
 
@@ -100,16 +137,28 @@
   <h2>The Resting Potential</h2>
   <div class="kt"><strong>Key Understanding</strong>Neurons pump sodium and potassium ions across their membranes to generate a resting potential.</div>
   
-  <p>When a neuron is not transmitting a signal, it has a resting potential of about <strong>$-70\text{ mV}$</strong>. The inside of the neuron is negative relative to the outside.</p>
+  <p>Neurons are excitable cells, meaning they can change their membrane potential to conduct signals. When a neuron is at rest—not actively transmitting an impulse—it maintains a stable baseline charge difference across its plasma membrane. This state is known as the <strong>resting potential</strong>.</p>
+  <p>The resting potential is approximately <strong>$-70\text{ mV}$</strong>, indicating that the intracellular environment of the neuron is significantly more negative compared to the extracellular fluid.</p>
   
   <div class="card">
-    <strong style="color:var(--blue)">How is it maintained?</strong>
-    <p>The sodium-potassium pump (Na⁺/K⁺ pump) uses ATP to actively transport ions:</p>
+    <strong style="color:var(--blue)">How is the resting potential maintained?</strong>
+    <p>Maintaining this unequal distribution of ions is an active process that requires a continuous supply of metabolic energy (ATP). The primary mechanisms involve:</p>
     <ul class="bullets">
-      <li>Expels 3 <strong>Na⁺</strong> ions out of the cell.</li>
-      <li>Brings 2 <strong>K⁺</strong> ions into the cell.</li>
-      <li>This creates an electrochemical gradient, with more Na⁺ outside and more K⁺ inside, maintaining a net negative charge inside.</li>
+      <li><strong>The Sodium-Potassium Pump (Na⁺/K⁺ ATPase):</strong> This integral membrane protein acts as an active transport antiport. For every molecule of ATP hydrolyzed, the pump expels 3 <strong>Na⁺</strong> ions out of the cell and brings 2 <strong>K⁺</strong> ions into the cell against their concentration gradients.</li>
+      <li><strong>Electrochemical Gradients:</strong> The unequal exchange creates a chemical gradient (high Na⁺ outside, high K⁺ inside) and an electrical gradient (net loss of one positive charge per cycle makes the inside more negative).</li>
+      <li><strong>Membrane Permeability:</strong> The membrane contains potassium leak channels, making it up to 50 times more permeable to K⁺ than Na⁺. As K⁺ ions leak back out down their concentration gradient, they leave large, negatively charged proteins and organic phosphates trapped inside, further contributing to the negative interior.</li>
     </ul>
+  </div>
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        Resting Potential Value
+      </div>
+      <div class="flip-card-back">
+        Typically around -70 mV. The negative sign signifies that the inside of the cell is negatively charged relative to the outside.
+      </div>
+    </div>
   </div>
 </div>
 
@@ -120,23 +169,24 @@
   <div class="kt"><strong>Key Understanding</strong>An action potential consists of depolarization and repolarization of the neuron.</div>
   
   <img src="/images/c2-2-action-potential.jpg" alt="Action Potential Graph" class="slide-img">
+  <p><em>(Replace with actual graph showing mV vs time for an action potential)</em></p>
   
-  <p>An action potential is a rapid change in membrane potential, consisting of two main phases:</p>
+  <p>An action potential is a rapid, transient, and self-propagating electrical signal that travels along the axon of a neuron. It involves a massive, temporary disruption to the resting potential. This process is orchestrated by the precise opening and closing of <strong>voltage-gated ion channels</strong> in response to changes in membrane potential.</p>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--orange)">1. Depolarization</h4>
-      <p>Voltage-gated Na⁺ channels open. Na⁺ rushes into the cell down its concentration gradient. Membrane potential changes from $-70\text{ mV}$ to $+30\text{ mV}$.</p>
+      <p>When a stimulus reaches the threshold potential, voltage-gated Na⁺ channels rapidly open. Na⁺ ions rush into the cell driven by both their concentration and electrical gradients. The sudden influx of positive ions reverses the membrane potential, shooting it from $-70\text{ mV}$ up to approximately $+30\text{ mV}$. The inside of the cell briefly becomes positive relative to the outside.</p>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--blue)">2. Repolarization</h4>
-      <p>Na⁺ channels close. Voltage-gated K⁺ channels open. K⁺ rushes out of the cell. Membrane potential drops back below resting potential (hyperpolarization) before resetting.</p>
+      <p>Almost immediately after opening, Na⁺ channels automatically close and inactivate. Simultaneously, voltage-gated K⁺ channels open. K⁺ ions rush out of the cell down their electrochemical gradient. The efflux of positive charge rapidly restores the negative internal potential, dropping it back below the resting state (a phase called <em>hyperpolarization</em>) before the Na⁺/K⁺ pump ultimately restores the $-70\text{ mV}$ resting baseline.</p>
     </div>
   </div>
   
   <div class="skill-box">
     <strong>Skill</strong>
-    <p>Analysis of oscilloscope traces showing resting potentials and action potentials.</p>
+    <p>Analysis of oscilloscope traces showing resting potentials and action potentials. You must be able to identify resting potential, threshold potential, depolarization, repolarization, and hyperpolarization on a graph of membrane potential over time.</p>
   </div>
 </div>
 
@@ -146,17 +196,19 @@
   <h2>Propagation of Action Potentials</h2>
   <div class="kt"><strong>Key Understanding</strong>Nerve impulses are action potentials propagated along the axons of neurons.</div>
   
-  <p>An action potential in one part of the axon triggers an action potential in the next part. This is called <strong>propagation</strong>.</p>
+  <p>An action potential is a localized event. For a signal to travel from the brain to a muscle, the action potential must be <strong>propagated</strong> (transmitted) along the entire length of the axon without losing strength. This process is essentially a chain reaction.</p>
   
   <ul class="bullets">
-    <li>The influx of Na⁺ during depolarization diffuses inside the axon, triggering adjacent voltage-gated Na⁺ channels to open.</li>
-    <li>This results in a wave of depolarization moving along the axon in one direction.</li>
-    <li>Impulses only travel in one direction because the recently depolarized area enters a <em>refractory period</em> where channels are temporarily inactive.</li>
+    <li>The massive influx of Na⁺ ions during depolarization at one region of the axon diffuses laterally inside the cell (local currents).</li>
+    <li>These local currents depolarize the adjacent, resting region of the axon membrane, bringing it to the threshold potential.</li>
+    <li>This triggers the voltage-gated Na⁺ channels in the adjacent section to open, generating a new action potential in that region.</li>
+    <li>This continuous regeneration of the action potential results in a wave of depolarization sweeping down the axon.</li>
+    <li><strong>Unidirectional Flow:</strong> Impulses only travel in one direction (towards the axon terminals) because the immediately preceding region of the axon is in a <em>refractory period</em>. Its Na⁺ channels are temporarily inactivated, preventing the signal from travelling backward.</li>
   </ul>
   
   <div class="app-box">
     <strong>Application</strong>
-    <p>Understanding threshold potentials. An action potential is only initiated if the threshold potential (approx. $-55\text{ mV}$) is reached. It is an "all-or-nothing" response.</p>
+    <p>Understanding threshold potentials. An action potential is strictly an "all-or-nothing" response. A stimulus must depolarize the membrane to a critical threshold (approx. $-55\text{ mV}$) to trigger the opening of voltage-gated channels. Stimuli below this threshold will not produce an action potential, regardless of their intensity. Once triggered, all action potentials have the same magnitude (up to $+30\text{ mV}$).</p>
   </div>
 </div>
 
@@ -166,12 +218,17 @@
   <h2>Myelination & Saltatory Conduction</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Myelination of nerve fibres allows for saltatory conduction.</div>
   
-  <p>Some axons are coated with a myelin sheath (formed by Schwann cells), which acts as an insulating layer.</p>
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1614935151651-0bea6508abb0?w=600&q=80" alt="Abstract speeding light">
+  </div>
+
+  <p>In vertebrates, many axons are coated with a myelin sheath, a multi-layered lipid and protein covering produced by specialized glial cells (Schwann cells in the peripheral nervous system and oligodendrocytes in the CNS). Myelin acts as a powerful electrical insulator.</p>
   
   <ul class="bullets">
-    <li><strong>Nodes of Ranvier:</strong> The myelin sheath is punctuated by small gaps called nodes of Ranvier.</li>
-    <li><strong>Saltatory Conduction:</strong> The action potential "jumps" from node to node, because voltage-gated ion channels are only concentrated at the nodes.</li>
-    <li>This makes impulse transmission significantly faster (up to $100\text{ m/s}$) compared to unmyelinated axons (approx. $1\text{ m/s}$).</li>
+    <li><strong>Nodes of Ranvier:</strong> The myelin sheath is not continuous. It is punctuated by microscopic, unmyelinated gaps called nodes of Ranvier, spaced approximately 1 mm apart.</li>
+    <li><strong>Saltatory Conduction:</strong> Because the myelin sheath prevents ion flow, action potentials cannot occur in myelinated regions. Voltage-gated ion channels are exclusively clustered at the nodes of Ranvier.</li>
+    <li>As a result, the action potential "jumps" discretely from one node to the next (from the Latin <em>saltare</em>, meaning to jump). The local currents flow rapidly through the cytoplasm between nodes.</li>
+    <li><strong>Advantages:</strong> Saltatory conduction significantly increases the speed of electrical impulse transmission (from ~1 m/s in unmyelinated fibres up to 100 m/s in myelinated fibres). It also reduces ATP consumption because the Na⁺/K⁺ pumps only need to restore resting potentials at the nodes, rather than along the entire axon length.</li>
   </ul>
 </div>
 
@@ -183,16 +240,19 @@
   
   <img src="/images/c2-2-synapse.jpg" alt="Chemical Synapse Structure" class="slide-img">
   
-  <p>Since electrical impulses cannot cross the physical gap (synaptic cleft) between cells, the signal must be converted into a chemical message called a <strong>neurotransmitter</strong>.</p>
+  <p>Neurons do not physically touch each other. There is a microscopic gap called the <strong>synaptic cleft</strong> (approx. 20 nm wide) separating the presynaptic neuron from the postsynaptic cell (which can be another neuron, a muscle fibre, or a gland cell). Electrical impulses cannot cross this physical gap.</p>
+  <p>To overcome this, electrical signals must be transduced into a chemical message. The signaling molecules responsible for this are called <strong>neurotransmitters</strong>.</p>
   
   <div class="css-flow">
-    <div class="flow-step">Action potential arrives at presynaptic terminal</div>
+    <div class="flow-step">1. An action potential arrives at the presynaptic terminal (synaptic knob).</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">Calcium ions (Ca²⁺) rush in, causing vesicles to fuse with membrane</div>
+    <div class="flow-step">2. The depolarization triggers voltage-gated Calcium (Ca²⁺) channels to open. Ca²⁺ ions rush into the presynaptic terminal.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Neurotransmitters are released into the synaptic cleft by exocytosis</div>
+    <div class="flow-step alt">3. The influx of Ca²⁺ causes synaptic vesicles containing neurotransmitters to mobilize and fuse with the presynaptic membrane.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Neurotransmitters bind to specific receptors on postsynaptic membrane</div>
+    <div class="flow-step alt">4. Neurotransmitters are released into the synaptic cleft via exocytosis.</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">5. Neurotransmitters diffuse across the cleft and bind to specific receptor proteins on the postsynaptic membrane.</div>
   </div>
 </div>
 
@@ -202,27 +262,62 @@
   <h2>Synaptic Transmission</h2>
   <div class="kt"><strong>Key Understanding</strong>When presynaptic neurons are depolarized they release a neurotransmitter into the synapse.</div>
   
-  <p>Once neurotransmitters bind to the postsynaptic receptors, they cause ion channels to open, which can either excite or inhibit the postsynaptic neuron.</p>
+  <p>The binding of neurotransmitters to postsynaptic receptors triggers a localized change in the postsynaptic membrane potential by opening ligand-gated ion channels. The effect can be either excitatory or inhibitory, depending on the specific neurotransmitter and receptor type.</p>
   
   <div class="compare-grid">
     <div class="compare-card">
-      <h4 style="color:var(--green)">Excitatory (EPSP)</h4>
-      <p>Causes opening of Na⁺ channels, leading to depolarization. Increases the chance of firing an action potential.</p>
+      <h4 style="color:var(--green)">Excitatory Postsynaptic Potential (EPSP)</h4>
+      <p>Binding of the neurotransmitter causes the opening of Na⁺ channels. The influx of positive sodium ions leads to a localized depolarization. This pushes the membrane closer to the threshold potential, increasing the likelihood that an action potential will be generated in the postsynaptic neuron.</p>
     </div>
     <div class="compare-card">
-      <h4 style="color:var(--red)">Inhibitory (IPSP)</h4>
-      <p>Causes opening of K⁺ or Cl⁻ channels, leading to hyperpolarization. Decreases the chance of firing an action potential.</p>
+      <h4 style="color:var(--red)">Inhibitory Postsynaptic Potential (IPSP)</h4>
+      <p>Binding of the neurotransmitter causes the opening of K⁺ or Cl⁻ channels. K⁺ flows out or Cl⁻ flows in, leading to localized hyperpolarization. This pushes the membrane further away from the threshold potential, decreasing the likelihood of firing an action potential.</p>
     </div>
   </div>
+
+  <p>To ensure that the signal does not persist indefinitely, the neurotransmitter must be rapidly removed from the synaptic cleft shortly after release. This is achieved via enzymatic degradation (e.g., acetylcholinesterase breaking down acetylcholine) or via reuptake pumps on the presynaptic membrane.</p>
   
   <div class="app-box">
     <strong>Application</strong>
-    <p>Secretion and reabsorption of acetylcholine by neurons at synapses. Neonicotinoid pesticides block synaptic transmission in insects by binding to acetylcholine receptors.</p>
+    <p>Secretion and reabsorption of acetylcholine by neurons at synapses. Acetylcholine (ACh) is a widespread neurotransmitter. After binding, it is broken down into acetate and choline. Neonicotinoid pesticides are synthetic compounds that bind irreversibly to acetylcholine receptors in the central nervous system of insects. Because they cannot be broken down by acetylcholinesterase, they cause continuous synaptic transmission, leading to paralysis and death. They are widely used as insecticides.</p>
   </div>
 </div>
 
 <!-- SLIDE 8 -->
 <div class="slide" id="slide-8">
+  <div class="section-tag">Review</div>
+  <h2>Check Your Understanding</h2>
+  <div class="kt"><strong>Self-Assessment</strong> Use these questions to review the key concepts from this module.</div>
+  
+  <details>
+    <summary>1. What role does the Na⁺/K⁺ pump play in the resting potential?</summary>
+    <p>It actively transports 3 Na⁺ ions out of the cell and 2 K⁺ ions into the cell using ATP. This maintains the electrochemical gradients and the negative internal charge (resting potential of approx -70 mV) necessary for the cell to be excitable.</p>
+  </details>
+  
+  <details>
+    <summary>2. Describe what happens during the depolarization phase of an action potential.</summary>
+    <p>When the threshold potential is reached, voltage-gated Na⁺ channels open. Sodium ions rush into the axon down their concentration gradient, causing the membrane potential to rapidly rise from negative (approx -70 mV) to positive (approx +30 mV).</p>
+  </details>
+  
+  <details>
+    <summary>3. Why do nerve impulses travel in only one direction?</summary>
+    <p>The region of the axon that just generated an action potential enters a refractory period where its voltage-gated Na⁺ channels are temporarily inactivated. Therefore, local currents can only trigger depolarization in the forward, resting segment of the axon.</p>
+  </details>
+
+  <details>
+    <summary>4. (HL) Explain the mechanism and advantage of saltatory conduction.</summary>
+    <p>In myelinated axons, the myelin sheath insulates the membrane. Action potentials can only occur at the unmyelinated nodes of Ranvier. The electrical impulse "jumps" from node to node, which greatly increases the speed of transmission and reduces energy expenditure.</p>
+  </details>
+  
+  <details>
+    <summary>5. How does a signal cross the synaptic cleft?</summary>
+    <p>An arriving action potential triggers Ca²⁺ influx in the presynaptic knob. This causes synaptic vesicles to fuse with the membrane, releasing neurotransmitters via exocytosis. The neurotransmitters diffuse across the cleft and bind to receptors on the postsynaptic membrane, opening ion channels.</p>
+  </details>
+
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide" id="slide-9">
   <div class="completion">
     <div class="check">✅</div>
     <h1>C2.2 Neural Signalling Complete!</h1>
@@ -234,7 +329,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 9</div>
+  <div class="nav-counter" id="slideCounter">1 / 10</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

@@ -45,6 +45,91 @@
   .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
   .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
 
+  /* Interactive Elements */
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 150px;
+    perspective: 1000px;
+    margin: 1rem 0;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .flip-card-front {
+    background-color: var(--blue-light);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+  }
+  .flip-card-front h3 { margin: 0; font-size: 1.5rem; }
+  .flip-card-back {
+    background-color: var(--blue);
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .img-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .img-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  details.cyu {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+  }
+  details.cyu:hover {
+    border-color: var(--blue);
+  }
+  details.cyu summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--blue-dark);
+    font-size: 1.05rem;
+  }
+  details.cyu p {
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--gray-200);
+    color: var(--gray-800);
+  }
+
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
   .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
@@ -79,38 +164,59 @@
   <h2>Primary Defenses: The First Line</h2>
   <div class="kt"><strong>Key Understanding</strong>Pathogens cause infectious diseases. The skin and mucous membranes form primary barriers against these pathogens. Blood clotting seals cuts to prevent entry.</div>
   
-  <p>Our bodies are constantly exposed to <strong>pathogens</strong>—microorganisms that cause disease (like bacteria, viruses, fungi, and protists). Our first line of defense is purely physical and chemical.</p>
+  <p>Our bodies are constantly exposed to <strong>pathogens</strong>—microorganisms that cause disease (such as bacteria, viruses, fungi, and protozoa). These infectious agents seek to exploit human tissues for their own reproduction. However, our primary defense mechanisms act as formidable, continuous barriers preventing their entry.</p>
+
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=500&q=80" alt="Skin Cells">
+    <img src="https://images.unsplash.com/photo-1583912265927-8c59364b9b9c?w=500&q=80" alt="Microbiology pathogens">
+  </div>
   
   <div class="compare-grid">
     <div class="compare-card">
-      <h4 style="color:var(--blue)">Skin</h4>
-      <p>A tough, continuous physical barrier.</p>
+      <h4 style="color:var(--blue)">The Skin</h4>
+      <p>A tough, continuous physical and chemical barrier.</p>
       <ul>
-        <li>Contains sebaceous glands that secrete sebum (lowers pH to inhibit bacterial growth).</li>
-        <li>Tough outer layers of dead cells.</li>
+        <li><strong>Stratum Corneum:</strong> The outermost layer is made of dead, highly keratinized cells that are constantly shed, taking pathogens with them.</li>
+        <li><strong>Sebaceous Glands:</strong> These secrete sebum onto the skin surface, lowering the pH (making it acidic) and inhibiting the growth of harmful bacteria.</li>
+        <li><strong>Dryness:</strong> The relatively dry environment of the skin restricts the moisture that many pathogens need to survive.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--orange)">Mucous Membranes</h4>
-      <p>Sticky traps in vulnerable areas.</p>
+      <p>Sticky biological traps defending our vulnerable openings.</p>
       <ul>
-        <li>Found in airways, nose, and digestive tract.</li>
-        <li>Secretes mucus which physically traps pathogens.</li>
-        <li>Contains lysozyme (an antibacterial enzyme).</li>
+        <li><strong>Locations:</strong> Lining the respiratory, digestive, and urogenital tracts.</li>
+        <li><strong>Mucus:</strong> Goblet cells secrete this thick, sticky glycoprotein layer that physically traps airborne or ingested pathogens.</li>
+        <li><strong>Lysozyme:</strong> Mucus, tears, and saliva contain lysozyme—an antibacterial enzyme that breaks down bacterial cell walls.</li>
+        <li><strong>Cilia:</strong> Hair-like projections sweep trapped pathogens up the respiratory tract to be swallowed and destroyed by stomach acid.</li>
       </ul>
     </div>
   </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Pathogen</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Any living organism or virus that is capable of causing a disease in a host organism. Examples include bacteria, viruses, fungi, and parasites.</p>
+      </div>
+    </div>
+  </div>
   
+  <h3 style="margin-top:2rem;">Blood Clotting: The Emergency Seal</h3>
+  <p>When the skin is breached, the body must immediately seal the wound to prevent blood loss and the ingress of pathogens. This relies on a rapid cascade of enzymatic reactions.</p>
+
   <div class="css-flow">
-    <div class="flow-step">Cut occurs in the skin, exposing the blood to pathogens</div>
+    <div class="flow-step">1. Tissue damage exposes blood vessels to pathogens and air.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">Platelets gather and release clotting factors</div>
+    <div class="flow-step">2. Platelets (cellular fragments) accumulate at the site and release <strong>clotting factors</strong>.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Prothrombin converts to active Thrombin</div>
+    <div class="flow-step alt">3. Clotting factors catalyze the conversion of inactive <strong>Prothrombin</strong> into the active enzyme <strong>Thrombin</strong>.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Thrombin catalyzes soluble Fibrinogen into insoluble Fibrin fibers</div>
+    <div class="flow-step alt">4. Thrombin rapidly converts soluble plasma protein <strong>Fibrinogen</strong> into an insoluble network of <strong>Fibrin</strong> fibers.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Fibrin mesh forms, trapping RBCs to create a clot (scab)</div>
+    <div class="flow-step hl">5. The Fibrin mesh forms across the wound, trapping erythrocytes (red blood cells) and platelets to form a solid clot (scab).</div>
   </div>
 </div>
 
@@ -118,136 +224,211 @@
 <div class="slide" id="slide-2">
   <div class="section-tag">C3.2.4 - C3.2.5</div>
   <h2>Innate vs. Adaptive Immunity</h2>
-  <div class="kt"><strong>Key Understanding</strong>The innate immune system is non-specific and constant. The adaptive immune system is specific and builds memory.</div>
+  <div class="kt"><strong>Key Understanding</strong>The innate immune system is non-specific and constant. The adaptive immune system is highly specific and builds immunological memory over time.</div>
   
-  <p>If a pathogen breaches the primary barriers, the internal immune system takes over. It is split into two broad categories:</p>
+  <p>When pathogens successfully breach the primary defenses (skin or mucous membranes), the body initiates an internal immune response. This internal defense is divided into two distinct but deeply cooperative subsystems.</p>
   
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=500&q=80" alt="White blood cells in blood">
+    <img src="https://images.unsplash.com/photo-1618015359908-7f40fb13066a?w=500&q=80" alt="Scientific research">
+  </div>
+
   <table class="tbl">
-    <tr><th>Property</th><th>Innate Immune System</th><th>Adaptive Immune System</th></tr>
+    <tr><th>Property</th><th>Innate Immune System (2nd Line)</th><th>Adaptive Immune System (3rd Line)</th></tr>
     <tr>
       <td><strong>Specificity</strong></td>
-      <td>Non-specific (treats all pathogens roughly the same)</td>
-      <td>Highly specific (targets individual pathogen strains)</td>
+      <td>Non-specific; relies on recognizing broad molecular patterns common to many pathogens.</td>
+      <td>Highly specific; tailored to recognize unique molecular signatures (antigens) of a specific pathogen strain.</td>
+    </tr>
+    <tr>
+      <td><strong>Response Time</strong></td>
+      <td>Rapid response (immediate to hours).</td>
+      <td>Slower response (days to weeks) upon first exposure.</td>
     </tr>
     <tr>
       <td><strong>Memory</strong></td>
-      <td>No memory (response is exactly the same every time)</td>
-      <td>Builds memory (response gets faster/stronger upon reinfection)</td>
+      <td>No immunological memory. The response is identical regardless of how many times the pathogen is encountered.</td>
+      <td>Develops immunological memory. Subsequent exposures trigger a dramatically faster and more potent response.</td>
     </tr>
     <tr>
-      <td><strong>Key Players</strong></td>
-      <td>Phagocytes (Macrophages, Neutrophils)</td>
-      <td>Lymphocytes (B-cells, T-cells)</td>
+      <td><strong>Key Cellular Players</strong></td>
+      <td>Phagocytes (Macrophages, Neutrophils), Natural Killer Cells.</td>
+      <td>Lymphocytes (B-cells, Helper T-cells, Cytotoxic T-cells).</td>
     </tr>
   </table>
   
-  <h3 style="margin-top:1.5rem">Phagocytosis (Innate Response)</h3>
-  <p>White blood cells called phagocytes engulf pathogens via endocytosis. Once inside the phagocyte, the pathogen is trapped in a vesicle which fuses with a <strong>lysosome</strong>. Digestive enzymes completely destroy the pathogen.</p>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Phagocytosis</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>The cellular process of engulfing solid particles (like pathogens) by the cell membrane to form an internal phagosome, which is then destroyed by lysosomes.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:1.5rem">The Innate Response: Phagocytosis</h3>
+  <p>Phagocytic white blood cells (like macrophages) constantly patrol the bloodstream and tissues. When they encounter a pathogen, they recognize it as foreign. The phagocyte extends its membrane to engulf the pathogen via endocytosis, encapsulating it in a vesicle (phagosome). This vesicle then fuses with a <strong>lysosome</strong>, a cellular organelle packed with powerful hydrolytic enzymes, which digests and completely destroys the pathogen.</p>
 </div>
 
 <!-- SLIDE 3 -->
 <div class="slide" id="slide-3">
   <div class="section-tag">C3.2.6 - C3.2.10</div>
   <h2>The Adaptive Response: Clonal Selection</h2>
-  <div class="kt"><strong>Key Understanding</strong>Lymphocytes mount a specific adaptive immune response. B-cells multiply by clonal selection to form antibody-secreting plasma cells and memory cells.</div>
+  <div class="kt"><strong>Key Understanding</strong>Lymphocytes mount a specific adaptive immune response. B-cells multiply by clonal selection to form massive numbers of antibody-secreting plasma cells and long-lived memory cells.</div>
   
-  <p>When the innate system cannot handle an infection, the adaptive system steps in. This process relies on <strong>antigens</strong>—foreign molecules (usually proteins on the surface of a pathogen) that trigger an immune response.</p>
+  <p>The adaptive immune response is the most sophisticated biological defense mechanism. It is fundamentally driven by the recognition of <strong>antigens</strong>—any foreign molecule (usually proteins or large polysaccharides on the surface of pathogens, pollen, or mismatched blood cells) that elicits an immune response.</p>
   
-  <img src="/images/bio_clonal_selection.jpg" alt="Clonal Selection Diagram" class="slide-img">
-  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Antigen</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>A molecule (usually a protein or glycoprotein) recognized as non-self by the immune system, triggering the production of specific antibodies.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:1.5rem">The Clonal Selection Cascade</h3>
   <div class="css-flow">
-    <div class="flow-step">1. Macrophage engulfs pathogen and presents its antigen</div>
+    <div class="flow-step">1. <strong>Antigen Presentation:</strong> A macrophage engulfs a pathogen, digests it, and displays its antigens on the macrophage's outer cell membrane.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">2. Helper T-cell binds to the presented antigen and activates</div>
+    <div class="flow-step">2. <strong>T-Cell Activation:</strong> A specific Helper T-cell with a receptor matching the presented antigen binds to the macrophage and becomes activated.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">3. Helper T-cell activates a specific B-cell that matches the antigen</div>
+    <div class="flow-step alt">3. <strong>B-Cell Activation:</strong> The activated Helper T-cell searches for and binds to a specific B-cell that has receptors matching the exact same antigen. The T-cell releases cytokines to activate the B-cell.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">4. <strong>Clonal Selection:</strong> The B-cell rapidly divides by mitosis</div>
+    <div class="flow-step hl">4. <strong>Clonal Expansion:</strong> The activated B-cell undergoes rapid mitosis, creating thousands of identical clones (clonal selection).</div>
   </div>
   
-  <p>The cloned B-cells differentiate into two types:</p>
+  <p>Once the massive army of cloned B-cells is generated, they differentiate into two specialized types:</p>
   <ul class="bullets">
-    <li><strong>Plasma Cells:</strong> Short-lived cell factories that pump out massive amounts of specific antibodies.</li>
-    <li><strong>Memory Cells:</strong> Long-lived cells that remain in the blood. If the same pathogen attacks again, they trigger a rapid and overwhelming secondary response (this is <strong>immunity</strong>).</li>
+    <li><strong>Plasma Cells:</strong> These are short-lived, highly active cellular factories loaded with rough endoplasmic reticulum. They pump out massive quantities of specific <strong>antibodies</strong> (immunoglobulins) into the bloodstream. These antibodies bind to the pathogens, neutralizing them and marking them for destruction by macrophages.</li>
+    <li><strong>Memory Cells:</strong> These long-lived cells remain in the circulation for years or decades. If the exact same pathogen is encountered again, memory cells bypass the initial activation steps, dividing rapidly to produce a massive antibody response before symptoms can even develop. This is the biological basis of <strong>immunity</strong>.</li>
   </ul>
 </div>
 
 <!-- SLIDE 4 -->
 <div class="slide" id="slide-4">
   <div class="section-tag">C3.2.13 - C3.2.14</div>
-  <h2>Antibiotics & Resistance</h2>
-  <div class="kt"><strong>Key Understanding</strong>Antibiotics block processes that occur in prokaryotic cells but not in eukaryotic cells. Evolution of resistance is a major problem.</div>
+  <h2>Antibiotics & Bacterial Resistance</h2>
+  <div class="kt"><strong>Key Understanding</strong>Antibiotics block processes that occur in prokaryotic cells but not in eukaryotic cells. The rapid evolution of antibiotic resistance in bacteria is a critical global health crisis.</div>
   
-  <p>Antibiotics are chemicals that kill or inhibit the growth of bacteria (prokaryotes). They work by targeting metabolic processes unique to bacteria, such as:</p>
+  <p>Antibiotics are naturally occurring or synthetic chemicals designed to kill (bactericidal) or inhibit the reproduction (bacteriostatic) of bacteria. They are highly effective because they exploit the biochemical differences between prokaryotic (bacterial) and eukaryotic (human) cells.</p>
+  
+  <p>Antibiotics target structures and metabolic pathways unique to bacteria:</p>
   <ul class="bullets">
-    <li>Cell wall synthesis (e.g., Penicillin targeting peptidoglycan).</li>
-    <li>Protein synthesis via 70S ribosomes.</li>
-    <li>DNA replication enzymes specific to bacteria.</li>
+    <li><strong>Cell Wall Synthesis:</strong> Drugs like Penicillin inhibit the formation of the peptidoglycan cell wall, causing the bacteria to burst due to osmotic pressure. Humans lack cell walls entirely.</li>
+    <li><strong>Protein Synthesis:</strong> Bacteria possess 70S ribosomes, whereas humans have 80S ribosomes. Certain antibiotics bind exclusively to 70S ribosomes, halting bacterial translation.</li>
+    <li><strong>Nucleic Acid Synthesis:</strong> Targeting specific bacterial enzymes used in DNA replication and RNA transcription.</li>
   </ul>
   
   <div class="app-box">
-    <strong>Application: Viral Infections</strong>
-    <p>Viruses are non-living and rely entirely on the host's (eukaryotic) cellular machinery to reproduce. Because antibiotics only target prokaryotic features, <strong>antibiotics cannot be used to treat viral infections!</strong></p>
+    <strong>Application: The Viral Immunity to Antibiotics</strong>
+    <p>Viruses are acellular and non-living. They do not possess their own metabolism, ribosomes, or cell walls. Instead, they hijack the eukaryotic machinery of their human host cells to replicate. Because antibiotics exclusively target prokaryotic structures, <strong>antibiotics are entirely ineffective against viral infections</strong> (e.g., the common cold, flu, HIV, COVID-19). Prescribing antibiotics for viral infections contributes heavily to unnecessary resistance.</p>
   </div>
   
   <div class="skill-box">
-    <strong>Skill: Natural Selection & Resistance</strong>
-    <p>Due to genetic variation (from mutation or plasmid transfer), some bacteria may possess natural resistance to an antibiotic. When an antibiotic is used, it acts as a selective pressure. Susceptible bacteria die, while resistant bacteria survive, reproduce, and pass on the resistance trait. Over time, the entire strain becomes resistant (e.g., MRSA).</p>
+    <strong>Skill: Natural Selection & The Rise of Superbugs</strong>
+    <p>Bacterial populations possess immense genetic variation due to rapid reproduction, random mutations, and horizontal gene transfer (swapping plasmids). Occasionally, a random mutation grants a bacterium resistance to a specific antibiotic (e.g., producing an enzyme like penicillinase that destroys the drug).</p>
+    <p>When antibiotics are applied (often unnecessarily or improperly), they act as a severe environmental selective pressure. Susceptible bacteria are eradicated, but the resistant variant survives, reproduces rapidly without competition, and passes on the resistance gene. Over time, the entire population becomes highly resistant. Strains like MRSA (Methicillin-resistant Staphylococcus aureus) are now largely untreatable by standard antibiotics.</p>
   </div>
 </div>
 
 <!-- SLIDE 5 -->
 <div class="slide" id="slide-5">
   <div class="section-tag">C3.2.11 - C3.2.12</div>
-  <h2>HIV and the Immune System</h2>
-  <div class="kt"><strong>Key Understanding</strong>Transmission of HIV occurs through body fluids. HIV destroys helper T-lymphocytes, leading to AIDS.</div>
+  <h2>HIV and the Immune System Breakdown</h2>
+  <div class="kt"><strong>Key Understanding</strong>Transmission of HIV occurs through the exchange of bodily fluids. HIV specifically infects and destroys helper T-lymphocytes, ultimately leading to AIDS.</div>
   
-  <p>The Human Immunodeficiency Virus (HIV) is a retrovirus that directly attacks the immune system, leading to a catastrophic breakdown of the body's defense.</p>
+  <p>The Human Immunodeficiency Virus (HIV) is a deadly retrovirus. Retroviruses carry their genetic code as RNA and use the enzyme reverse transcriptase to convert it into DNA once inside a host cell, permanently integrating it into the host's genome.</p>
   
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=500&q=80" alt="Microscopic pathogen view">
+    <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=500&q=80" alt="Blood test">
+  </div>
+
   <div class="compare-grid">
     <div class="compare-card">
-      <h4 style="color:var(--red)">Mechanism of Attack</h4>
-      <p>HIV specifically targets and infects <strong>Helper T-cells</strong>. Over time, as the virus replicates, it destroys these cells. Without Helper T-cells, B-cells cannot be activated to produce antibodies.</p>
+      <h4 style="color:var(--red)">Mechanism of Viral Attack</h4>
+      <p>HIV does not attack all cells. It uses specific surface glycoproteins to bind to receptors found exclusively on the surface of <strong>Helper T-cells</strong>. The virus enters these critical immune cells, uses them to replicate millions of viral particles, and eventually destroys the T-cell when the new viruses burst out to infect other cells.</p>
+      <p>Because Helper T-cells are the "generals" of the immune system responsible for activating B-cells (for antibodies) and Cytotoxic T-cells, their destruction severely cripples the entire adaptive immune response.</p>
     </div>
     <div class="compare-card">
-      <h4 style="color:var(--hl)">AIDS</h4>
-      <p>When the number of active Helper T-cells drops below a critical threshold, the patient develops Acquired Immunodeficiency Syndrome (AIDS). The patient loses the ability to fight off even mild opportunistic infections.</p>
+      <h4 style="color:var(--hl)">Progression to AIDS</h4>
+      <p>HIV infection can remain clinically dormant for years as the immune system fights a losing battle of replacing destroyed Helper T-cells. Eventually, the T-cell count plummets below a critical threshold.</p>
+      <p>At this point, the patient is diagnosed with <strong>Acquired Immunodeficiency Syndrome (AIDS)</strong>. The patient's immune system is so compromised that they lose the ability to fight off mild, everyday pathogens. Death is typically caused by these secondary "opportunistic infections" (like Kaposi's sarcoma or pneumonia), not the HIV virus itself.</p>
     </div>
   </div>
   
-  <div class="tip"><strong>Transmission:</strong> HIV is transmitted through the exchange of bodily fluids, primarily unprotected sexual intercourse, sharing of hypodermic needles, blood transfusions, or from mother to child across the placenta/breast milk.</div>
+  <div class="tip"><strong>Pathways of Transmission:</strong> HIV cannot survive long outside the body. It is transmitted exclusively through the direct exchange of infected bodily fluids (blood, semen, vaginal secretions, breast milk). Common pathways include unprotected sexual intercourse, sharing contaminated hypodermic needles, receiving unscreened blood transfusions, or transmission from an infected mother to child across the placenta during pregnancy or childbirth.</div>
 </div>
 
 <!-- SLIDE 6 -->
 <div class="slide" id="slide-6">
   <div class="section-tag">C3.2.16 - C3.2.18</div>
-  <h2>Vaccines and Public Health</h2>
-  <div class="kt"><strong>Key Understanding</strong>Vaccines induce immunity without causing the disease. Herd immunity protects the vulnerable.</div>
+  <h2>Vaccines and Public Health Epidemiology</h2>
+  <div class="kt"><strong>Key Understanding</strong>Vaccines induce artificial active immunity without causing the disease. Herd immunity provides crucial protection to vulnerable demographics.</div>
   
-  <p>Vaccines contain antigens (attenuated pathogens, dead pathogens, or purified surface proteins) that trigger an immune response without causing the actual disease. This leads to the production of <strong>memory cells</strong>, granting immunity.</p>
+  <p>Vaccination represents one of the greatest triumphs of modern medicine. Vaccines are biological preparations that safely expose the body to a pathogen's antigens, intentionally triggering the primary adaptive immune response without the risk of contracting the severe disease.</p>
+  
+  <p>Vaccines may contain:</p>
+  <ul class="bullets">
+    <li>Live attenuated (weakened) pathogens that reproduce slowly.</li>
+    <li>Killed or inactivated pathogens.</li>
+    <li>Purified subunits (specific antigenic proteins extracted from the pathogen).</li>
+    <li>mRNA that instructs human cells to temporarily produce the viral antigen (e.g., modern COVID-19 vaccines).</li>
+  </ul>
+  <p>The immune system undergoes standard clonal selection, culminating in the massive production of <strong>memory cells</strong>. If the vaccinated individual later encounters the live, virulent pathogen, the secondary response is so rapid and overwhelming that the pathogen is destroyed before it can cause symptoms.</p>
   
   <div class="app-box">
-    <strong>Application: Herd Immunity</strong>
-    <p>When a sufficiently high percentage of a population is immunized (typically $>80\%$ or $>90\%$, depending on the disease's $R_0$), the chain of transmission is broken. This provides indirect protection to individuals who cannot be vaccinated (e.g., newborns, immunocompromised individuals).</p>
+    <strong>Application: The Power of Herd Immunity</strong>
+    <p>Herd immunity occurs when a sufficiently high proportion of a population is immune to a disease (usually achieved via mass vaccination). Because there are so few susceptible hosts available, the pathogen cannot establish a continuous chain of transmission and outbreaks rapidly die out.</p>
+    <p>This is crucial because it provides indirect protection to vulnerable individuals who cannot be vaccinated (e.g., newborn infants, elderly individuals with weakened immunity, or patients undergoing chemotherapy).</p>
   </div>
   
   <div class="skill-box">
-    <strong>Skill: Evaluating COVID-19 Data</strong>
-    <p>Students should be able to analyze epidemiological data, graphs, and statistics regarding the spread of SARS-CoV-2. Look for trends like $R_t$ (effective reproduction number), the impact of vaccination rollouts on hospitalization rates, and the emergence of variants over time.</p>
+    <strong>Skill: Evaluating Epidemiological Data (e.g., COVID-19)</strong>
+    <p>Epidemiology involves analyzing the incidence and distribution of diseases. Students must be prepared to evaluate data tables, logarithmic graphs, and statistics related to pandemics like SARS-CoV-2. You should understand concepts like $R_0$ (the basic reproduction number—how many people an infected person will transmit the disease to in a totally susceptible population) and how vaccination rollouts directly correlate with steep declines in hospitalization and mortality rates.</p>
   </div>
   
   <div class="case">
-    <strong>Zoonoses (C3.2.15)</strong>
-    <p>Many major human diseases originated as zoonoses—pathogens that cross the species barrier from animals to humans. Examples include COVID-19 (bats/pangolins), HIV (chimpanzees), and Ebola (fruit bats).</p>
+    <strong>Zoonoses: Pathogens Jumping the Species Barrier (C3.2.15)</strong>
+    <p>A zoonosis is an infectious disease that has jumped from a non-human animal to humans. Many of history's deadliest diseases originated this way. The closer humans encroach on wild habitats (through deforestation or wet markets), the higher the risk of transmission. Well-known zoonoses include COVID-19 (likely originating in bats), HIV (from chimpanzees), Ebola, and Avian Influenza.</p>
   </div>
 </div>
 
-<!-- SLIDE 7 — COMPLETION -->
+<!-- SLIDE 7 — COMPLETION & REVIEW -->
 <div class="slide" id="slide-7">
-  <div class="completion">
+  <div class="completion" style="padding-top: 2rem;">
     <div class="check">✅</div>
     <h1>C3.2 Defense Against Disease Complete!</h1>
     <p>You have successfully reviewed all SL and HL understandings for Biology Theme C3.2.</p>
+    
+    <div style="text-align:left; max-width:600px; margin: 3rem auto;">
+      <h3 style="text-align:center; color:var(--blue-dark); margin-bottom:1rem;">Check Your Understanding</h3>
+      
+      <details class="cyu">
+        <summary>Why are antibiotics ineffective against viruses?</summary>
+        <p>Antibiotics work by targeting metabolic processes or structures unique to prokaryotic bacterial cells (e.g., 70S ribosomes or peptidoglycan cell walls). Viruses are acellular, non-living, and lack these structures. They rely entirely on eukaryotic host cell machinery to replicate, which antibiotics do not affect.</p>
+      </details>
+      
+      <details class="cyu">
+        <summary>Describe the role of memory cells in immunity.</summary>
+        <p>Memory cells are long-lived lymphocytes produced during the primary immune response. They circulate in the body for years. Upon re-exposure to the exact same antigen, memory cells rapidly divide and differentiate to produce a massive, immediate antibody response, neutralizing the pathogen before symptoms develop.</p>
+      </details>
+
+      <details class="cyu">
+        <summary>Outline the cascade of blood clotting.</summary>
+        <p>Tissue damage causes platelets to release clotting factors. These factors catalyze inactive prothrombin into active thrombin. Thrombin then acts as an enzyme to convert soluble fibrinogen into insoluble fibrin strands. Fibrin forms a mesh that traps red blood cells and platelets, sealing the wound.</p>
+      </details>
+
+      <details class="cyu">
+        <summary>How does HIV compromise the immune system?</summary>
+        <p>HIV selectively infects and destroys Helper T-cells. Because Helper T-cells are required to activate B-cells (which produce antibodies), their loss cripples the adaptive immune response. When T-cell levels fall low enough, the patient develops AIDS and is vulnerable to opportunistic infections.</p>
+      </details>
+    </div>
   </div>
 </div>
 

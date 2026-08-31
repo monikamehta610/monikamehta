@@ -40,7 +40,27 @@
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
-  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+  
+  /* NEW CSS Elements */
+  .flip-card { background-color: transparent; width: 100%; height: 200px; perspective: 1000px; margin: 1rem 0; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border-radius: 10px; border: 1px solid var(--gray-200); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); font-weight: 700; font-size: 1.4rem; flex-direction: column; }
+  .flip-card-front span { font-size: 0.85rem; font-weight: 400; color: var(--blue); margin-top: 0.5rem; }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); font-size: 1rem; line-height: 1.6; }
+  
+  .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .img-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+  .img-grid img:hover { transform: scale(1.02); }
+
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+  summary { font-weight: 600; cursor: pointer; color: var(--blue); outline: none; font-size: 1.05rem; }
+  details p { margin-top: 1rem; margin-bottom: 0; padding-left: 1rem; border-left: 3px solid var(--green); color: var(--gray-800); }
+
+  .flip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.flip-grid {grid-template-columns:1fr;}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
 </style>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -68,191 +88,292 @@
   <h2>Blood Vessels: Arteries, Veins, and Capillaries</h2>
   <div class="kt"><strong>Key Understanding</strong> Arteries convey blood at high pressure from the ventricles to the tissues. Veins return blood to the atria. Capillaries exchange materials.</div>
   
-  <p>The mammalian transport system relies on three distinct types of blood vessels, each structurally adapted to its function.</p>
+  <p>The mammalian transport system relies on three distinct types of blood vessels, each structurally and functionally adapted to ensure the efficient transport of respiratory gases, nutrients, and waste products across the body.</p>
   
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80" alt="Microscopic view of blood vessels">
+    <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&q=80" alt="Red blood cells flowing">
+  </div>
+
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--red)">Arteries</h4>
       <ul>
-        <li>Transport blood <strong>away</strong> from the heart.</li>
-        <li>Thick muscular and elastic walls to withstand high pressure.</li>
-        <li>Narrow lumen helps maintain high pressure.</li>
+        <li>Transport oxygenated blood (except pulmonary artery) <strong>away</strong> from the heart.</li>
+        <li>Possess thick, highly muscular, and elastic walls containing elastin fibers to withstand and maintain high hydrostatic pressure.</li>
+        <li>Narrow lumen ensures the high pressure of the blood is sustained between heartbeats.</li>
+        <li>Elastic recoil helps propel blood forward in pulses.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--blue)">Veins</h4>
       <ul>
-        <li>Transport blood <strong>towards</strong> the heart.</li>
-        <li>Thin walls, large lumen for low-pressure flow.</li>
-        <li>Contain valves to prevent backflow of blood.</li>
+        <li>Transport deoxygenated blood (except pulmonary vein) <strong>towards</strong> the heart.</li>
+        <li>Have relatively thin walls with fewer muscle and elastic fibers, accommodating lower pressure blood flow.</li>
+        <li>Feature a much larger lumen to reduce resistance to flow.</li>
+        <li>Contain pocket valves to prevent the backflow of blood, especially against gravity (e.g., in the legs).</li>
       </ul>
     </div>
   </div>
 
   <div class="card">
     <strong style="color:var(--green)">Capillaries</strong>
-    <p>Capillaries are the site of material exchange (e.g., O₂, CO₂, nutrients). Adaptations include:</p>
+    <p>Capillaries are the microscopic site of material exchange (e.g., O₂, CO₂, glucose, urea). Their extraordinary adaptations include:</p>
     <ul class="bullets">
-      <li>Extremely narrow (around $10 \, \mu m$) allowing only one red blood cell to pass at a time.</li>
-      <li>Wall is only one cell thick (endothelium) minimizing diffusion distance.</li>
-      <li>Pores or fenestrations to allow tissue fluid to leak out.</li>
+      <li>Extremely narrow lumen (around $10 \, \mu m$) allowing only one red blood cell to pass at a time, slowing flow and maximizing exchange time.</li>
+      <li>Wall consists of a single layer of squamous endothelial cells, minimizing the diffusion distance for gases and nutrients.</li>
+      <li>Highly branched networks (capillary beds) enormously increase the total surface area available for diffusion.</li>
+      <li>Presence of pores or fenestrations allowing plasma fluid (tissue fluid) to leak out and bathe surrounding cells.</li>
     </ul>
   </div>
 </div>
 
-<!-- SLIDE 2 — Skills and Applications -->
+<!-- SLIDE 2 — Vocabulary Flip Cards -->
 <div class="slide" id="slide-2">
+  <div class="section-tag">Vocabulary Check</div>
+  <h2>Essential Terms: Human Transport</h2>
+  <p>Hover over (or tap) each card to reveal the definition of these crucial cardiovascular terms.</p>
+  
+  <div class="flip-grid">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          Lumen
+          <span>(Hover to flip)</span>
+        </div>
+        <div class="flip-card-back">
+          The central cavity or opening within a tubular structure, such as a blood vessel, through which blood flows.
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          Endothelium
+          <span>(Hover to flip)</span>
+        </div>
+        <div class="flip-card-back">
+          The single layer of flattened cells lining the inner surface of all blood vessels, providing a smooth surface that reduces friction.
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          Systole
+          <span>(Hover to flip)</span>
+        </div>
+        <div class="flip-card-back">
+          The phase of the heartbeat when the heart muscle contracts and pumps blood from the chambers into the arteries.
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          Diastole
+          <span>(Hover to flip)</span>
+        </div>
+        <div class="flip-card-back">
+          The phase of the heartbeat when the heart muscle relaxes, allowing the chambers to fill with blood.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 — Skills and Applications -->
+<div class="slide" id="slide-3">
   <div class="section-tag">B3.2.4 & B3.2.6</div>
   <h2>Pulse Rates and Coronary Heart Disease</h2>
   
   <div class="skill-box">
     <strong>Skill: B3.2.4 Measurement of Pulse Rates</strong>
-    <p>The pulse can be felt in arteries (e.g., radial artery in the wrist or carotid artery in the neck) due to the elastic recoil of arterial walls after blood is pumped from the heart. Pulse rate is measured in beats per minute (bpm). You should be able to measure it accurately using fingers or digital sensors.</p>
+    <p>The pulse can be palpated in superficial arteries (e.g., the radial artery in the wrist or the carotid artery in the neck). It is a direct result of the elastic recoil of arterial walls immediately following the ejection of blood from the left ventricle. Pulse rate is quantitatively measured in beats per minute (bpm). Students should master measuring it manually over a defined time interval or by utilizing modern digital plethysmography sensors to analyze heart rate variability.</p>
   </div>
   
   <div class="app-box">
     <strong>Application: B3.2.6 Occlusion of Coronary Arteries</strong>
-    <p>Coronary arteries supply the heart muscle with O₂ and nutrients. Occlusion (blockage) can cause coronary heart disease (CHD).</p>
+    <p>The heart muscle (myocardium) requires its own dedicated blood supply via the coronary arteries. When these arteries become occluded (blocked), it leads to coronary heart disease (CHD).</p>
     <ul class="bullets">
-      <li><strong>Causes:</strong> Atherosclerosis (buildup of cholesterol/plaque), leading to blood clots (thrombosis).</li>
-      <li><strong>Consequences:</strong> Lack of O₂ (ischemia) leads to anaerobic respiration, lactic acid buildup, and eventually muscle death (myocardial infarction or heart attack).</li>
+      <li><strong>Pathogenesis:</strong> Atherosclerosis begins with endothelial damage, followed by the deposition of LDL cholesterol, forming an atheroma (plaque). This narrows the lumen and hardens the artery.</li>
+      <li><strong>Thrombosis:</strong> Plaque rupture triggers platelet aggregation and the coagulation cascade, forming a blood clot (thrombus) that can completely occlude the vessel.</li>
+      <li><strong>Consequences:</strong> The lack of oxygen delivery (ischemia) forces cardiac muscle cells into anaerobic respiration, resulting in a localized buildup of lactic acid, pain (angina), and eventually irreversible cell death, clinically known as a myocardial infarction (heart attack).</li>
+      <li><strong>Risk Factors:</strong> Hypertension, smoking, high saturated fat diets, genetics, and sedentary lifestyles dramatically increase CHD risks.</li>
     </ul>
   </div>
 </div>
 
-<!-- SLIDE 3 — Transpiration (Plant Transport) -->
-<div class="slide" id="slide-3">
+<!-- SLIDE 4 — Transpiration (Plant Transport) -->
+<div class="slide" id="slide-4">
   <div class="section-tag">B3.2.7 - B3.2.8</div>
   <h2>Transpiration and Xylem Adaptations</h2>
-  <div class="kt"><strong>Key Understanding</strong> Water is transported from roots to leaves during transpiration due to cohesion, tension, and adhesion.</div>
+  <div class="kt"><strong>Key Understanding</strong> Water is continuously transported from roots to leaves during transpiration due to the combined forces of cohesion, tension, and adhesion.</div>
   
-  <!-- Placeholder for transpiration diagram (would normally be generated via API) -->
-  <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=900&q=80" alt="Plant biology diagram context" class="slide-img">
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80" alt="Plant biology diagram context">
+    <img src="https://images.unsplash.com/photo-1444312645910-ffa973656eba?w=800&q=80" alt="Forest canopy showing transpiration context">
+  </div>
   
-  <p><strong>The Transpiration Stream:</strong></p>
+  <p><strong>The Transpiration Stream:</strong> This process describes the uninterrupted flow of water through a plant, driven primarily by solar energy causing evaporation.</p>
   <div class="css-flow">
-    <div class="flow-step">Water evaporates from spongy mesophyll and exits stomata</div>
+    <div class="flow-step">Solar heat causes water to evaporate from spongy mesophyll cell surfaces and diffuse out of stomata as water vapor.</div>
     <div class="flow-arrow">↑</div>
-    <div class="flow-step">Creates tension (negative pressure, $\Psi < 0$) pulling water up xylem</div>
+    <div class="flow-step">This evaporation creates a strong pulling force (tension or negative pressure, $\Psi < 0$) that draws water out of leaf xylem vessels.</div>
     <div class="flow-arrow">↑</div>
-    <div class="flow-step alt"><strong>Cohesion:</strong> Hydrogen bonds hold H₂O molecules together</div>
+    <div class="flow-step alt"><strong>Cohesion:</strong> Hydrogen bonds tightly associate H₂O molecules, maintaining a continuous, unbroken column of water down to the roots.</div>
     <div class="flow-arrow">↑</div>
-    <div class="flow-step alt"><strong>Adhesion:</strong> H₂O binds to hydrophilic xylem walls</div>
+    <div class="flow-step alt"><strong>Adhesion:</strong> H₂O molecules form hydrogen bonds with the hydrophilic cellulose and lignin in xylem walls, resisting gravity.</div>
   </div>
 
   <div class="card">
-    <strong style="color:var(--green)">Xylem Adaptations (B3.2.8)</strong>
+    <strong style="color:var(--green)">Xylem Vessel Adaptations (B3.2.8)</strong>
+    <p>Xylem vessels are exquisitely adapted for efficient, unidirectional mass flow of water under immense negative pressure:</p>
     <ul class="bullets">
-      <li>Dead cells with no cytoplasm/organelles reduce resistance to flow.</li>
-      <li>Thickened with lignin (helical or ringed) to withstand tension and prevent collapse.</li>
-      <li>Pits in walls allow lateral movement of water.</li>
+      <li><strong>Empty Tubes:</strong> They are composed of dead cells entirely devoid of cytoplasm, organelles, and plasma membranes, which minimizes resistance to bulk water flow.</li>
+      <li><strong>Lignification:</strong> The cell walls are heavily thickened with rigid lignin (often in spiral, annular, or reticulate patterns). This extreme structural reinforcement prevents the tubes from collapsing inward under tension.</li>
+      <li><strong>Pits:</strong> Non-lignified areas (pits) in the lateral walls allow water to move horizontally between adjacent xylem vessels, bypassing blockages like air bubbles (cavitation).</li>
+      <li><strong>End Walls:</strong> The end walls between sequential cells are completely broken down, forming continuous microscopic pipes.</li>
     </ul>
   </div>
 </div>
 
-<!-- SLIDE 4 — Dicot Stems and Roots -->
-<div class="slide" id="slide-4">
+<!-- SLIDE 5 — Dicot Stems and Roots -->
+<div class="slide" id="slide-5">
   <div class="section-tag">B3.2.9 - B3.2.10</div>
   <h2>Tissue Distribution in Dicotyledonous Plants</h2>
-  <div class="kt"><strong>Key Understanding</strong> Be able to identify the distribution of tissues in transverse sections of dicot stems and roots.</div>
+  <div class="kt"><strong>Key Understanding</strong> Students must confidently identify the characteristic distribution of tissues in transverse micrographs of dicot stems and roots.</div>
+
+  <p>The spatial arrangement of vascular tissue (xylem and phloem) is distinctly adapted to resist the specific mechanical stresses experienced by different plant organs.</p>
 
   <div class="compare-grid">
     <div class="compare-card">
-      <h4 style="color:var(--green)">Dicot Stem</h4>
+      <h4 style="color:var(--green)">Dicotyledonous Stem</h4>
       <ul>
-        <li>Vascular bundles are arranged in a <strong>ring</strong> near the outer edge.</li>
-        <li>Xylem is located on the inside, phloem on the outside.</li>
-        <li>Provides structural support to the stem.</li>
+        <li>Vascular bundles are systematically arranged in a <strong>ring</strong> situated near the outer periphery (epidermis).</li>
+        <li>Within each bundle, the thick-walled xylem is located on the inside, while the phloem is positioned on the outside. A layer of cambium typically separates them.</li>
+        <li><strong>Function:</strong> This peripheral ring structure provides maximum resistance to bending forces caused by wind, acting much like a hollow structural cylinder.</li>
       </ul>
     </div>
     <div class="compare-card">
-      <h4 style="color:var(--orange)">Dicot Root</h4>
+      <h4 style="color:var(--orange)">Dicotyledonous Root</h4>
       <ul>
-        <li>Vascular tissue is in a central cylinder (stele).</li>
-        <li>Xylem typically forms a central star shape.</li>
-        <li>Phloem is located between the arms of the xylem star.</li>
-        <li>Withstands pulling forces.</li>
+        <li>Vascular tissue is condensed into a tight central cylinder known as the stele.</li>
+        <li>The xylem typically forms a central, robust star or cross shape.</li>
+        <li>The phloem is strategically located in the spaces between the arms of the xylem star.</li>
+        <li>An endodermis surrounds the stele, controlling water entry.</li>
+        <li><strong>Function:</strong> The central arrangement is optimized to withstand strong vertical pulling forces, anchoring the plant firmly against upward tension.</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 5 — HL: Tissue Fluid & Circulation -->
-<div class="slide" id="slide-5">
+<!-- SLIDE 6 — HL: Tissue Fluid & Circulation -->
+<div class="slide" id="slide-6">
   <div class="section-tag hl-tag">B3.2.11 - B3.2.14 <span class="hl-badge">HL Only</span></div>
   <h2>Tissue Fluid and Circulation Types</h2>
   
   <div class="card">
-    <strong style="color:var(--hl)">Tissue Fluid Formation (B3.2.11 - B3.2.13)</strong>
+    <strong style="color:var(--hl)">Tissue Fluid Formation and Reabsorption (B3.2.11 - B3.2.13)</strong>
+    <p>Capillaries exchange materials not directly with cells, but via an intermediary called tissue (interstitial) fluid.</p>
     <ul class="bullets">
-      <li>High hydrostatic pressure at the arteriole end forces plasma (minus large proteins) out of capillaries, forming tissue fluid.</li>
-      <li>At the venule end, lower hydrostatic pressure and higher solute concentration draw water back in via osmosis.</li>
-      <li>Excess fluid is drained by the lymphatic system.</li>
+      <li><strong>Ultrafiltration:</strong> At the arteriole end of a capillary bed, the hydrostatic blood pressure generated by the heart is extremely high. This forces water, dissolved ions, glucose, and oxygen out through fenestrations. Large plasma proteins and red blood cells are too large to pass and remain in the blood.</li>
+      <li><strong>Reabsorption:</strong> As fluid leaves, the concentration of plasma proteins inside the capillary increases, significantly lowering the blood's solute potential. At the venule end, where hydrostatic pressure has dissipated, the net osmotic pull draws water and dissolved cellular wastes (CO₂) back into the capillary.</li>
+      <li><strong>Lymphatic System:</strong> Roughly 10% of the fluid is not reabsorbed. It enters blind-ended lymphatic capillaries, becoming lymph, and is eventually returned to the venous circulation via the subclavian veins.</li>
     </ul>
   </div>
 
   <div class="compare-grid">
     <div class="compare-card">
-      <h4 style="color:var(--hl)">Single Circulation (Fish)</h4>
+      <h4 style="color:var(--hl)">Single Circulation (e.g., Fish)</h4>
       <ul>
-        <li>Blood passes through the heart <strong>once</strong> per circuit.</li>
-        <li>Heart $\rightarrow$ Gills $\rightarrow$ Body $\rightarrow$ Heart.</li>
-        <li>Lower blood pressure for systemic circulation.</li>
+        <li>Blood completes <strong>one full circuit</strong> through a two-chambered heart per systemic trip.</li>
+        <li>Pathway: Heart $\rightarrow$ Gills (oxygenation) $\rightarrow$ Systemic Capillaries (body) $\rightarrow$ Heart.</li>
+        <li>Passing through the delicate gill capillaries drastically reduces blood pressure, meaning blood flows relatively slowly to the rest of the body.</li>
       </ul>
     </div>
     <div class="compare-card">
-      <h4 style="color:var(--hl)">Double Circulation (Mammals)</h4>
+      <h4 style="color:var(--hl)">Double Circulation (e.g., Mammals)</h4>
       <ul>
-        <li>Blood passes through the heart <strong>twice</strong> per circuit.</li>
-        <li>Pulmonary (lungs) and Systemic (body) circuits are separate.</li>
-        <li>Maintains high pressure for efficient O₂ delivery.</li>
+        <li>Blood passes through a four-chambered heart <strong>twice</strong> per circuit, completely separating oxygenated and deoxygenated blood.</li>
+        <li><strong>Pulmonary Circuit:</strong> Right ventricle $\rightarrow$ Lungs (low pressure, prevents lung damage).</li>
+        <li><strong>Systemic Circuit:</strong> Left ventricle $\rightarrow$ Body (high pressure, ensuring rapid and efficient O₂ delivery to metabolically highly active tissues).</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 6 — HL: The Mammalian Heart & Cardiac Cycle -->
-<div class="slide" id="slide-6">
+<!-- SLIDE 7 — HL: The Mammalian Heart & Cardiac Cycle -->
+<div class="slide" id="slide-7">
   <div class="section-tag hl-tag">B3.2.15 - B3.2.16 <span class="hl-badge">HL Only</span></div>
   <h2>The Cardiac Cycle and Heart Adaptations</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> Adaptations of the heart and stages of the cardiac cycle (systole and diastole).</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Deeply understand the anatomical adaptations of the heart chambers and the pressure/volume changes during the cardiac cycle.</div>
   
   <div class="skill-box">
-    <strong>Skill: B3.2.16 Cardiac Cycle and ECG</strong>
-    <p>Understand the roles of systole (contraction) and diastole (relaxation). An Electrocardiogram (ECG) records the electrical activity of the heart (P wave, QRS complex, T wave).</p>
+    <strong>Skill: B3.2.16 Cardiac Cycle and ECG Interpretation</strong>
+    <p>The cardiac cycle comprises carefully coordinated phases of contraction (systole) and relaxation (diastole). An Electrocardiogram (ECG) visualizes the electrical depolarization and repolarization triggering these phases: the P wave (atrial depolarization), the QRS complex (ventricular depolarization), and the T wave (ventricular repolarization).</p>
   </div>
 
   <div class="css-flow">
-    <div class="flow-step hl"><strong>Atrial Systole:</strong> Atria contract, pushing blood into ventricles (AV valves open)</div>
+    <div class="flow-step hl"><strong>1. Atrial Systole:</strong> Atria contract simultaneously. Pressure in the atria momentarily exceeds ventricular pressure, forcing the remaining blood through open atrioventricular (AV) valves into the relaxed ventricles. Semilunar valves are closed.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl"><strong>Ventricular Systole:</strong> Ventricles contract, pressure rises, AV valves close (lub), semilunar valves open, blood ejected into arteries</div>
+    <div class="flow-step hl"><strong>2. Ventricular Systole:</strong> Ventricles contract forcefully from the apex upwards. Ventricular pressure rapidly spikes, snapping the AV valves shut (the first heart sound, "lub", preventing backflow). When ventricular pressure exceeds aortic/pulmonary pressure, the semilunar valves are forced open, ejecting blood into the arteries.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step hl"><strong>Diastole:</strong> Ventricles relax, pressure drops, semilunar valves close (dup), blood flows passively into atria and ventricles</div>
+    <div class="flow-step hl"><strong>3. General Diastole:</strong> Ventricles and atria relax. Ventricular pressure plummets below arterial pressure, causing semilunar valves to snap shut ("dup"). Once ventricular pressure drops below atrial pressure, AV valves passively open, and blood flowing from veins begins refilling the heart.</div>
   </div>
 </div>
 
-<!-- SLIDE 7 — HL: Root Pressure & Phloem -->
-<div class="slide" id="slide-7">
+<!-- SLIDE 8 — HL: Root Pressure & Phloem -->
+<div class="slide" id="slide-8">
   <div class="section-tag hl-tag">B3.2.17 - B3.2.18 <span class="hl-badge">HL Only</span></div>
   <h2>Root Pressure and Phloem Translocation</h2>
   
   <div class="app-box" style="border-left-color: var(--hl); background: var(--hl-light);">
     <strong style="color: var(--hl);">B3.2.17 Root Pressure</strong>
-    <p>Active transport of mineral ions into the root xylem lowers the water potential ($\Psi$). Water enters by osmosis, generating a positive pressure (root pressure) that pushes water up the stem.</p>
+    <p>In certain conditions (high humidity, low transpiration), plants can still push water upwards. Root cells utilize ATP to actively transport mineral ions from the soil into the root xylem. This massive solute accumulation drastically lowers the water potential ($\Psi$) inside the xylem. Consequently, water rapidly enters from the surrounding root cortex via osmosis, generating a strong positive hydrostatic pressure (root pressure) that physically pushes the sap column up the stem, occasionally manifesting as guttation (water droplets on leaf margins).</p>
   </div>
 
   <div class="card">
-    <strong style="color:var(--hl)">Phloem Adaptations (B3.2.18)</strong>
-    <p>Phloem transports organic compounds (like sucrose) via translocation.</p>
+    <strong style="color:var(--hl)">Phloem Adaptations for Translocation (B3.2.18)</strong>
+    <p>The phloem actively transports dissolved organic compounds (primarily sucrose and amino acids) from sources (e.g., mature leaves) to sinks (e.g., growing roots, fruits) via a mechanism explained by the pressure-flow hypothesis.</p>
     <ul class="bullets">
-      <li><strong>Sieve Tube Elements:</strong> Lack a nucleus and have reduced organelles to maximize space for sap flow; sieve plates have pores to allow flow between cells.</li>
-      <li><strong>Companion Cells:</strong> Contain many mitochondria to provide ATP for the active loading of sucrose into the sieve tubes.</li>
+      <li><strong>Sieve Tube Elements:</strong> These primary conducting cells are elongated and joined end-to-end. They famously lack a nucleus, vacuoles, and most organelles at maturity, maximizing the internal volume and minimizing resistance for the flow of phloem sap.</li>
+      <li><strong>Sieve Plates:</strong> The perforated transverse walls between sieve elements allow sap to flow relatively unimpeded between adjacent cells.</li>
+      <li><strong>Companion Cells:</strong> Living alongside every sieve element, these cells retain their nuclei and are packed with mitochondria. They provide the metabolic energy (ATP) required for the active transport (loading and unloading) of sucrose into the sieve tubes.</li>
+      <li><strong>Plasmodesmata:</strong> Microscopic channels deeply connect the cytoplasm of companion cells to sieve tube elements, facilitating the rapid transfer of loaded sucrose.</li>
     </ul>
   </div>
 </div>
 
-<!-- SLIDE 8 — COMPLETION -->
-<div class="slide" id="slide-8">
+<!-- SLIDE 9 — Check Your Understanding -->
+<div class="slide" id="slide-9">
+  <div class="section-tag">Self-Assessment</div>
+  <h2>Check Your Understanding</h2>
+  <p>Expand the questions below to verify your mastery of the B3.2 Transport module concepts.</p>
+  
+  <details>
+    <summary>1. Contrast the structural adaptations of arteries and veins and explain how they relate to their functions.</summary>
+    <p>Arteries possess thick, highly muscular walls with abundant elastic fibers. This allows them to withstand and actively maintain the high hydrostatic pressure of blood freshly pumped from the heart. Their narrow lumen aids in maintaining this pressure. In contrast, veins have thinner walls with fewer muscle and elastic fibers, accommodating lower pressure blood returning to the heart. They feature a larger lumen to reduce resistance to flow and incorporate pocket valves along their length to prevent the backflow of blood against gravity.</p>
+  </details>
+
+  <details>
+    <summary>2. Explain the mechanism by which water is transported against gravity from roots to leaves in a tall tree.</summary>
+    <p>Water transport is driven by transpiration. Solar heat causes water to evaporate from the spongy mesophyll and exit via stomata. This creates a negative pressure (tension) in the leaf xylem. Because water molecules are highly polar, they exhibit cohesion (bonding to each other via hydrogen bonds) and adhesion (bonding to the hydrophilic lignin in xylem walls). The tension from the leaves pulls the continuous, unbroken column of water up the xylem vessels from the roots to replace the lost water.</p>
+  </details>
+
+  <details>
+    <summary>3. Describe how tissue fluid is formed at the capillary bed and how it is reabsorbed. [HL Only]</summary>
+    <p>At the arteriole end of a capillary, high hydrostatic pressure from the heart forces water and small solutes (like glucose and oxygen) out through the endothelial fenestrations (ultrafiltration), forming tissue fluid. Large proteins remain in the blood. As blood reaches the venule end, the hydrostatic pressure is much lower. However, the concentrated plasma proteins create a high osmotic pressure. This osmotic pull draws water and cellular waste products back into the capillary. Any excess fluid is drained by the lymphatic system.</p>
+  </details>
+
+  <details>
+    <summary>4. Outline the events of ventricular systole in the mammalian cardiac cycle. [HL Only]</summary>
+    <p>Ventricular systole begins when the electrical signal from the AV node spreads through the Purkinje fibers, causing the thick muscular walls of the ventricles to contract powerfully from the apex upwards. The pressure inside the ventricles rapidly increases, exceeding the pressure in the atria, which snaps the atrioventricular (AV) valves shut (preventing backflow and creating the "lub" sound). As pressure continues to rise above the pressure in the aorta and pulmonary artery, the semilunar valves are forced open, and blood is ejected forcefully into the systemic and pulmonary circulations.</p>
+  </details>
+</div>
+
+<!-- SLIDE 10 — COMPLETION -->
+<div class="slide" id="slide-10">
   <div class="completion">
     <div class="check">✅</div>
     <h1>B3.2 Transport Complete!</h1>
@@ -264,7 +385,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 8</div>
+  <div class="nav-counter" id="slideCounter">1 / 10</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

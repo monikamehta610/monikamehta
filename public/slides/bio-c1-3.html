@@ -33,12 +33,35 @@
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(46, 139, 87, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
   
+  /* Image Grid */
+  .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .image-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+  .image-grid img:hover { transform: scale(1.02); }
+
   /* CSS Flow Diagrams */
   .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
   .flow-step { background: var(--gray-50); border: 2px solid var(--green); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
   .flow-arrow { color: var(--green); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
   .flow-step.alt { border-color: var(--blue); background: var(--blue-light); color: var(--blue); }
   .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
+
+  /* Flip Cards */
+  .flip-card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .flip-card { background-color: transparent; width: 100%; height: 180px; perspective: 1000px; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; padding: 1rem; border-radius: 10px; }
+  .flip-card-front { background-color: var(--green-light); color: var(--green); font-weight: 600; font-size: 1.1rem; border: 2px solid var(--green); }
+  .flip-card-back { background-color: var(--green); color: white; transform: rotateY(180deg); font-size: 0.95rem; }
+
+  /* Details and Summary for quiz */
+  .quiz-container { margin: 2rem 0; }
+  .quiz-item { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; }
+  .quiz-item summary { font-weight: 600; padding: 1rem; cursor: pointer; background: var(--gray-100); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .quiz-item summary::-webkit-details-marker { display: none; }
+  .quiz-item summary::after { content: '+'; font-size: 1.5rem; color: var(--green); transition: transform 0.3s ease; }
+  .quiz-item[open] summary::after { transform: rotate(45deg); }
+  .quiz-item .answer { padding: 1rem; border-top: 1px solid var(--gray-200); background: #fff; font-size: 0.95rem; }
 
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--green);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
@@ -68,69 +91,98 @@
   </div>
 </div>
 
-<!-- SLIDE 1 — C1.3.1 - C1.3.3 -->
+<!-- SLIDE 1 — Energy Transformation -->
 <div class="slide" id="slide-1">
   <div class="section-tag">C1.3.1 &ndash; C1.3.3</div>
   <h2>Energy Transformation</h2>
   <div class="kt"><strong>Key Understanding</strong>Photosynthesis is the conversion of light energy into chemical energy stored in carbon compounds.</div>
   
-  <p>Plants, algae, and some bacteria convert light energy into chemical energy through a series of metabolic pathways. The overall balanced chemical equation is:</p>
+  <p>Plants, algae, and certain groups of bacteria (like cyanobacteria) possess the remarkable ability to capture energy from sunlight and convert it into chemical energy. This energy transformation involves complex metabolic pathways that take place within specialized cellular structures.</p>
+  <p>This process is foundational to almost all life on Earth, as it provides the organic compounds needed by heterotrophs for cellular respiration and building biomass. The overall balanced chemical equation summarizes the net transformation of reactants into products:</p>
   
   <div class="card" style="text-align:center; font-size: 1.2rem;">
-    <strong>6CO₂ + 6H₂O &rarr; C₆H₁₂O₆ + 6O₂</strong>
+    <strong>6CO₂ + 6H₂O + Light Energy &rarr; C₆H₁₂O₆ + 6O₂</strong>
+  </div>
+
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1416879598555-2244a0b22a0a?w=400&q=80" alt="Sunlight shining on green leaves">
+    <img src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?w=400&q=80" alt="Algae in a marine environment">
   </div>
   
+  <p>The transformation occurs in fundamentally distinct but interconnected stages:</p>
   <div class="css-flow">
-    <div class="flow-step">Light energy is absorbed by photosynthetic pigments</div>
+    <div class="flow-step">Light energy is absorbed by photosynthetic pigments (like chlorophyll)</div>
     <div class="flow-arrow">&darr;</div>
-    <div class="flow-step">Water is split (photolysis) releasing O₂</div>
+    <div class="flow-step">Water molecules are split (photolysis) to provide electrons, releasing O₂ as a byproduct</div>
     <div class="flow-arrow">&darr;</div>
-    <div class="flow-step alt">Carbon dioxide is fixed to synthesize carbohydrates</div>
+    <div class="flow-step alt">Carbon dioxide is fixed and reduced to synthesize carbohydrates (sugars)</div>
+  </div>
+
+  <div class="flip-card-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Photolysis</div>
+        <div class="flip-card-back">The splitting of a molecule using light energy. In photosynthesis, water is split to yield electrons, protons, and oxygen gas.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Carbon Fixation</div>
+        <div class="flip-card-back">The conversion of inorganic carbon (CO₂) into organic compounds by living organisms, typically driven by photosynthesis.</div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- SLIDE 2 — C1.3.4 & C1.3.5 -->
+<!-- SLIDE 2 — Pigments -->
 <div class="slide" id="slide-2">
-  <div class="section-tag">C1.3.4 / C1.3.5</div>
+  <div class="section-tag">C1.3.4 & C1.3.5</div>
   <h2>Photosynthetic Pigments & Spectra</h2>
-  <div class="kt"><strong>Key Understanding</strong>Different pigments absorb specific wavelengths of light, exciting their electrons.</div>
+  <div class="kt"><strong>Key Understanding</strong>Different pigments absorb specific wavelengths of light, exciting their electrons to drive photosynthetic reactions.</div>
   
-  <p>Chlorophyll is the main photosynthetic pigment, primarily absorbing red and blue light, while reflecting green light (which is why plants appear green). Accessory pigments like carotenoids absorb different wavelengths to broaden the spectrum of usable light.</p>
+  <p>Light from the sun appears white, but it is actually composed of a spectrum of different wavelengths (colors). Photosynthetic organisms contain specialized molecules called pigments that absorb some wavelengths and reflect others.</p>
+  <p>Chlorophyll <i>a</i> and <i>b</i> are the primary photosynthetic pigments. They strongly absorb in the blue (around 430-450 nm) and red (around 640-680 nm) regions of the visible spectrum. They reflect green light (around 500-550 nm), which is why most leaves appear green to our eyes.</p>
+  <p>To maximize light absorption, organisms also possess accessory pigments like carotenoids (which absorb blue/green light and appear yellow/orange) and xanthophylls. This broadens the total spectrum of light that can be utilized for photosynthesis.</p>
   
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1579294212952-4752c03977ef?w=400&q=80" alt="Autumn leaves showing accessory pigments">
+    <img src="https://images.unsplash.com/photo-1542317148-8b4bddebe5a8?w=400&q=80" alt="Green leaf detail showing chlorophyll dominance">
+  </div>
+
   <div class="skill-box">
     <strong>Skill: Chromatography</strong>
-    <p>Photosynthetic pigments can be separated using paper or thin-layer chromatography. The retention factor ($R_f$) can be calculated using the formula:</p>
+    <p>Photosynthetic pigments can be extracted and separated using paper or thin-layer chromatography. A solvent moves up the paper, carrying different pigments at different speeds based on their solubility and size. The retention factor ($R_f$) is calculated as:</p>
     <p style="text-align: center; margin-top: 0.5rem;">$$ R_f = \frac{\text{distance travelled by pigment}}{\text{distance travelled by solvent}} $$</p>
   </div>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--green)">Absorption Spectrum</h4>
-      <p>A graph showing the specific wavelengths of light absorbed by different pigments.</p>
+      <p>A graph that displays the specific wavelengths of light absorbed by different individual pigments (e.g., chlorophyll a, chlorophyll b, carotenoids).</p>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--blue)">Action Spectrum</h4>
-      <p>A graph showing the overall rate of photosynthesis across different wavelengths of light.</p>
+      <p>A graph that shows the overall physiological rate of photosynthesis of the whole organism across different wavelengths of light. It closely matches the combined absorption spectrum.</p>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 3 — C1.3.7 & C1.3.8 -->
+<!-- SLIDE 3 — Limiting Factors -->
 <div class="slide" id="slide-3">
   <div class="section-tag">C1.3.7 & C1.3.8</div>
   <h2>Limiting Factors of Photosynthesis</h2>
-  <div class="kt"><strong>Key Understanding</strong>The rate of photosynthesis is determined by the factor nearest its minimum value.</div>
+  <div class="kt"><strong>Key Understanding</strong>The rate of photosynthesis is determined by the specific factor that is nearest to its minimum value, known as the limiting factor.</div>
   
-  <p>Three main environmental factors limit the rate of photosynthesis:</p>
+  <p>Photosynthesis is a complex pathway involving many steps. According to Blackman's Law of Limiting Factors, if a chemical process is affected by more than one factor, its rate is limited by the pace of the slowest factor. The three main environmental limiting factors are:</p>
   <ul class="bullets">
-    <li><strong>Light Intensity:</strong> Increases the rate of ATP and reduced NADP production up to a plateau.</li>
-    <li><strong>CO₂ Concentration:</strong> Increases the rate of carbon fixation up to a plateau.</li>
-    <li><strong>Temperature:</strong> Affects enzyme activity (e.g., Rubisco). Rate increases to an optimum, then decreases due to denaturation.</li>
+    <li><strong>Light Intensity:</strong> Initially, as light intensity increases, the rate of photosynthesis increases linearly because more ATP and reduced NADP are produced. Eventually, the rate plateaus when all available pigments are saturated, or another factor becomes limiting.</li>
+    <li><strong>CO₂ Concentration:</strong> Carbon dioxide is a raw material for the Calvin cycle. Increasing its concentration increases the rate of carbon fixation up to a plateau, beyond which the enzymes processing the CO₂ are working at maximum capacity.</li>
+    <li><strong>Temperature:</strong> Photosynthesis relies on enzymes (especially Rubisco). As temperature increases, molecular collisions increase, raising the rate to an optimum point (often 25-35°C). Above this optimum, enzymes begin to denature, and the rate drops rapidly.</li>
   </ul>
   
   <div class="app-box">
     <strong>Application: FACE Experiments</strong>
-    <p>Free-Air Concentration Enrichment (FACE) experiments artificially elevate CO₂ levels in open-air natural environments to study how plants will respond to future atmospheric changes.</p>
+    <p>Free-Air Concentration Enrichment (FACE) experiments are large-scale ecological studies. Researchers artificially elevate CO₂ levels in open-air natural environments without altering other factors like sunlight or rain. This allows scientists to study how different plant ecosystems will respond to future predicted atmospheric CO₂ changes without the artificial constraints of a greenhouse.</p>
   </div>
 </div>
 
@@ -139,23 +191,29 @@
   <div class="section-tag hl-tag">C1.3.9 <span class="hl-badge">HL Only</span></div>
   <h2>Chloroplast Structure & Function</h2>
   
-  <p>The structure of the chloroplast is perfectly adapted to its function in photosynthesis.</p>
+  <p>The chloroplast is a highly compartmentalized organelle. Its complex internal structure is perfectly adapted to optimize the efficiency of the two main stages of photosynthesis: the light-dependent and light-independent reactions.</p>
   
-  <img src="/images/chloroplast_diagram.jpg" alt="Diagram showing the structure of a chloroplast" class="slide-img">
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1530932585223-f32f311c08e5?w=400&q=80" alt="Microscopic view of plant cells showing chloroplasts">
+  </div>
   
   <table class="tbl">
-    <tr><th>Structure</th><th>Function</th></tr>
+    <tr><th>Structure</th><th>Adaptive Function</th></tr>
     <tr>
       <td><strong>Thylakoid Membrane</strong></td>
-      <td>Large surface area for light absorption and embedded with photosystems and ATP synthase for the light-dependent reactions.</td>
+      <td>Highly folded into stacks (grana) to provide a massive surface area for light absorption. It is densely embedded with photosystems, electron carriers, and ATP synthase needed for the light-dependent reactions.</td>
     </tr>
     <tr>
-      <td><strong>Thylakoid Space</strong></td>
-      <td>Small volume allows for rapid accumulation of protons to create a concentration gradient for chemiosmosis.</td>
+      <td><strong>Thylakoid Space (Lumen)</strong></td>
+      <td>Has a very small internal volume. This allows a steep proton (H⁺) gradient to be established rapidly after photolysis and proton pumping, which is essential for chemiosmosis and ATP generation.</td>
     </tr>
     <tr>
       <td><strong>Stroma</strong></td>
-      <td>Contains appropriate enzymes (like Rubisco) and optimal pH for the light-independent reactions (Calvin cycle).</td>
+      <td>A fluid-filled matrix surrounding the thylakoids. It contains a high concentration of the enzymes required for the Calvin cycle (like Rubisco), as well as optimal pH, naked DNA, and 70S ribosomes for synthesizing essential chloroplast proteins.</td>
+    </tr>
+    <tr>
+      <td><strong>Double Membrane</strong></td>
+      <td>The outer and inner membranes isolate the working enzymes and substrates of the chloroplast from the rest of the cytoplasm, compartmentalizing the reactions.</td>
     </tr>
   </table>
 </div>
@@ -164,18 +222,20 @@
 <div class="slide" id="slide-5">
   <div class="section-tag hl-tag">C1.3.10 &ndash; C1.3.14 <span class="hl-badge">HL Only</span></div>
   <h2>Light-Dependent Reactions</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> Light energy is used to produce ATP and reduced NADP in the thylakoids.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Light energy is utilized in the thylakoid membranes to generate ATP and reduced NADP, which carry energy and reducing power to the next stage.</div>
   
+  <p>The light-dependent reactions occur within and across the thylakoid membrane. They utilize light energy to create the biochemical energy carriers required for synthesizing sugar later.</p>
+
   <div class="css-flow">
-    <div class="flow-step hl"><strong>1. Photoactivation:</strong> Photosystems II and I absorb light, exciting electrons.</div>
+    <div class="flow-step hl"><strong>1. Photoactivation:</strong> Photosystem II (PSII) and Photosystem I (PSI) absorb photons of light, exciting electrons in their chlorophyll reaction centers to a higher energy state.</div>
     <div class="flow-arrow">&darr;</div>
-    <div class="flow-step hl"><strong>2. Photolysis:</strong> PSII replaces lost electrons by splitting water: 2H₂O &rarr; 4H⁺ + 4e⁻ + O₂</div>
+    <div class="flow-step hl"><strong>2. Photolysis of Water:</strong> To replace the electrons lost by PSII, an enzyme splits water molecules: <br>2H₂O &rarr; 4H⁺ + 4e⁻ + O₂. Oxygen is released as a waste gas.</div>
     <div class="flow-arrow">&darr;</div>
-    <div class="flow-step hl"><strong>3. Electron Transport:</strong> Excited electrons move through an ETC, pumping H⁺ into the thylakoid space.</div>
+    <div class="flow-step hl"><strong>3. Electron Transport Chain (ETC):</strong> The excited electrons from PSII are passed down a chain of electron carriers in the membrane, losing energy. This energy is used to pump H⁺ ions from the stroma into the thylakoid space.</div>
     <div class="flow-arrow">&darr;</div>
-    <div class="flow-step hl"><strong>4. Chemiosmosis:</strong> Protons diffuse back to the stroma through ATP Synthase, producing ATP.</div>
+    <div class="flow-step hl"><strong>4. Chemiosmosis & Photophosphorylation:</strong> The accumulation of H⁺ in the thylakoid space creates an electrochemical gradient. Protons diffuse back into the stroma through the enzyme ATP Synthase, driving the phosphorylation of ADP into ATP.</div>
     <div class="flow-arrow">&darr;</div>
-    <div class="flow-step hl"><strong>5. NADP Reduction:</strong> Electrons from PSI are transferred to NADP⁺ to form reduced NADP (NADPH).</div>
+    <div class="flow-step hl"><strong>5. NADP Reduction:</strong> Electrons re-excited in PSI are passed to a final electron acceptor, NADP⁺, combining with a proton to form reduced NADP (NADPH).</div>
   </div>
 </div>
 
@@ -183,20 +243,65 @@
 <div class="slide" id="slide-6">
   <div class="section-tag hl-tag">C1.3.15 &ndash; C1.3.19 <span class="hl-badge">HL Only</span></div>
   <h2>The Calvin Cycle</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> ATP and reduced NADP from the light-dependent reactions are used to fix carbon into organic molecules in the stroma.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> The energy (ATP) and reducing power (reduced NADP) generated by the light-dependent reactions are used to fix carbon dioxide into complex organic molecules within the stroma.</div>
   
+  <p>The light-independent reactions, often called the Calvin Cycle, do not require light directly but rely absolutely on the products of the light-dependent reactions. The cycle consists of three main phases:</p>
+
   <ul class="bullets">
-    <li><strong>Carbon Fixation:</strong> The enzyme Rubisco catalyzes the attachment of CO₂ to a 5-carbon compound, RuBP.</li>
-    <li><strong>Reduction:</strong> The resulting unstable 6-carbon compound splits into two 3-carbon molecules (glycerate 3-phosphate). These are reduced using ATP and reduced NADP to form triose phosphate (TP).</li>
-    <li><strong>Regeneration:</strong> Most of the TP is used to regenerate RuBP (using more ATP) so the cycle can continue.</li>
-    <li><strong>Product Synthesis:</strong> Some TP leaves the cycle to synthesize glucose, amino acids, and other complex carbon compounds.</li>
+    <li><strong>Carbon Fixation (Carboxylation):</strong> The crucial enzyme Rubisco (ribulose bisphosphate carboxylase) catalyzes the attachment of a CO₂ molecule to a 5-carbon compound called RuBP (ribulose bisphosphate).</li>
+    <li><strong>Reduction:</strong> The resulting 6-carbon compound is highly unstable and immediately splits into two 3-carbon molecules called glycerate 3-phosphate (GP). These GP molecules are then reduced using ATP (for energy) and reduced NADP (for hydrogen/electrons) to form triose phosphate (TP), a 3-carbon sugar.</li>
+    <li><strong>Regeneration:</strong> For every six molecules of TP produced, one exits the cycle to be used in synthesizing larger carbohydrates (like glucose, starch, and cellulose), while the remaining five TP molecules are utilized to regenerate three molecules of RuBP, consuming more ATP in the process so the cycle can continue.</li>
   </ul>
   
-  <div class="tip"><strong>Exam Tip:</strong> Always emphasize the interdependence: The Calvin cycle needs ATP and NADPH from the light-dependent reactions, and the light-dependent reactions need ADP and NADP⁺ regenerated by the Calvin cycle.</div>
+  <div class="tip"><strong>Exam Tip:</strong> Be sure to emphasize the cyclical interdependence of these reactions. The Calvin cycle will rapidly halt in the dark because it runs out of ATP and NADPH. Conversely, the light-dependent reactions will halt if the Calvin cycle isn't running to return ADP and NADP⁺ back to the thylakoid.</div>
+
+  <div class="flip-card-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Rubisco</div>
+        <div class="flip-card-back">Arguably the most abundant enzyme on Earth, responsible for fixing CO₂ onto RuBP in the first step of the Calvin Cycle.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Triose Phosphate (TP)</div>
+        <div class="flip-card-back">A 3-carbon sugar product of the Calvin cycle. Used to regenerate RuBP and to synthesize glucose, lipids, and amino acids.</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- SLIDE 7 — COMPLETION -->
+<!-- SLIDE 7 — Check Your Understanding -->
 <div class="slide" id="slide-7">
+  <div class="section-tag">Self-Assessment</div>
+  <h2>Check Your Understanding</h2>
+  <p>Test your knowledge of Topic C1.3 Photosynthesis by answering the questions below. Click to reveal the correct answers.</p>
+
+  <div class="quiz-container">
+    <details class="quiz-item">
+      <summary>What is the primary function of the photolysis of water in the light-dependent reactions?</summary>
+      <div class="answer">The photolysis of water splits H₂O molecules using light energy to provide a source of replacement electrons for Photosystem II. It also generates protons (H⁺) that contribute to the chemiosmotic gradient and releases oxygen gas (O₂) as a byproduct.</div>
+    </details>
+    
+    <details class="quiz-item">
+      <summary>How does an action spectrum differ from an absorption spectrum?</summary>
+      <div class="answer">An absorption spectrum shows the specific wavelengths of light absorbed by individual pigments (like chlorophyll a). An action spectrum shows the overall rate of photosynthesis of the whole plant at different wavelengths. They typically mirror each other, indicating that the absorbed light is what drives photosynthesis.</div>
+    </details>
+
+    <details class="quiz-item">
+      <summary>Explain why temperature is a limiting factor for photosynthesis.</summary>
+      <div class="answer">Photosynthesis involves many enzyme-catalyzed reactions, particularly the Calvin cycle which relies heavily on Rubisco. As temperature increases, reaction rates increase up to an optimum due to more kinetic energy and collisions. Beyond the optimum, the enzymes denature, altering their active sites, and the rate of photosynthesis sharply declines.</div>
+    </details>
+    
+    <details class="quiz-item">
+      <summary>(HL) Outline the relationship between the structure of the thylakoid space and its function.</summary>
+      <div class="answer">The thylakoid space (or lumen) has a very small internal volume. This is an adaptation that allows a small number of protons (H⁺) pumped across the membrane to rapidly create a steep concentration gradient. This gradient is essential for driving chemiosmosis and generating ATP via ATP synthase.</div>
+    </details>
+  </div>
+</div>
+
+<!-- SLIDE 8 — COMPLETION -->
+<div class="slide" id="slide-8">
   <div class="completion">
     <div class="check">✅</div>
     <h1>C1.3 Photosynthesis Complete!</h1>
@@ -208,7 +313,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 7</div>
+  <div class="nav-counter" id="slideCounter">1 / 8</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

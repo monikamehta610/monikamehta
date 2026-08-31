@@ -21,7 +21,7 @@
   body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
   .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
   h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
-  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  p{margin-bottom:1rem;font-size:.95rem}strong{font-weight:600}
   .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
   .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
   .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
@@ -31,14 +31,15 @@
   .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
   .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
   
-  /* Skills and Applications Boxes */
   .skill-box{background:var(--yellow-light);border-left:4px solid var(--yellow);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem;}.skill-box strong{color:var(--yellow);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
   .app-box{background:var(--red-light);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem;}.app-box strong{color:var(--red);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
   
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
   
-  /* CSS Flow Diagrams */
+  .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+  .image-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  
   .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
   .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
   .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
@@ -53,7 +54,22 @@
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
-  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+  
+  /* Flip Card Styles */
+  .flip-cards-container { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; justify-content: center; }
+  .flip-card { background-color: transparent; width: 200px; height: 120px; perspective: 1000px; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); font-weight: 600; font-size: 1.1rem; border: 2px solid var(--blue); }
+  .flip-card-back { background-color: var(--blue-dark); color: white; transform: rotateY(180deg); font-size: 0.85rem; border: 2px solid var(--blue-dark); }
+
+  /* Details Summary Styles for Self-Assessment */
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; margin-bottom: 1rem; padding: 0.5rem 1rem; }
+  summary { font-weight: 600; cursor: pointer; outline: none; padding: 0.5rem 0; color: var(--blue-dark); }
+  details p { margin-top: 0.5rem; padding-left: 1rem; border-left: 3px solid var(--green); font-size: 0.9rem; color: var(--gray-800); }
+
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid,.image-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
 </style>
 </head>
 <body>
@@ -79,21 +95,47 @@
   <h2>Populations and Sampling</h2>
   <div class="kt"><strong>Key Understanding</strong> Populations are interacting groups of organisms of the same species. Their size is estimated using random sampling.</div>
   
-  <p>A population is defined as a group of organisms of the same species living in the same area at the same time. Since counting every individual is usually impossible, ecologists use sampling techniques.</p>
+  <p>A population is defined as a group of organisms of the same species living in the same area at the same time. These individuals are capable of interbreeding and are effectively isolated from other populations of the same species. Since counting every single individual in a wild ecosystem is usually impossible due to time, resources, and the mobility of organisms, ecologists use statistical sampling techniques to estimate population sizes and density.</p>
+  
+  <div class="flip-cards-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Population</div>
+        <div class="flip-card-back">Organisms of the same species living in the same area at the same time.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Sessile</div>
+        <div class="flip-card-back">Organisms that are fixed in one place; immobile (e.g., plants, barnacles).</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Quadrat</div>
+        <div class="flip-card-back">A square frame used to isolate a standard unit of area for study of the distribution of sessile organisms.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=500&q=80" alt="Sessile organisms on rocks">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&q=80" alt="Forest ecosystem for sampling">
+  </div>
   
   <div class="skill-box">
     <strong>Skill</strong>
-    <p>Using random quadrat sampling to estimate population size for sessile (non-moving) organisms.</p>
+    <p>Using random quadrat sampling to estimate population size for sessile (non-moving) organisms. It is vital that the sampling locations are entirely random to prevent sampling bias. The quadrats should also be representative of the entire study area.</p>
   </div>
   
   <div class="css-flow">
-    <div class="flow-step">Place a quadrat randomly in an area</div>
+    <div class="flow-step">1. Place a quadrat randomly in a defined area using a grid and random number generator.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">Count the number of individuals of a species within the quadrat</div>
+    <div class="flow-step">2. Count the number of individuals of the target species within the quadrat.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Repeat multiple times and calculate the average per quadrat</div>
+    <div class="flow-step alt">3. Repeat this process multiple times and calculate the average number of individuals per quadrat.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Multiply by the total area to estimate total population size</div>
+    <div class="flow-step alt">4. Multiply the average by the total area (divided by quadrat area) to estimate total population size.</div>
   </div>
 </div>
 
@@ -103,17 +145,24 @@
   <h2>The Lincoln Index (Capture-Mark-Release-Recapture)</h2>
   <div class="kt"><strong>Key Understanding</strong> The Lincoln index is used to estimate the population size of motile organisms.</div>
   
-  <p>For animals that move, quadrats are ineffective. Instead, a portion of the population is captured, marked, and released. Later, another sample is captured, and the number of marked individuals is recorded.</p>
+  <p>For animals that move (motile organisms), placing static quadrats is completely ineffective. Instead, ecologists use the Capture-Mark-Release-Recapture method. A portion of the population is captured safely, marked in a way that doesn't harm them or make them more visible to predators, and released back into the wild. After they have had time to fully mix with the uncaptured population, a second sample is captured. The proportion of marked individuals in the second sample is used to estimate the total population.</p>
+  
+  <p>This method relies on several critical assumptions: the population is closed (no immigration or emigration), marking does not affect survival rates, marks are not lost, and marked individuals mix homogeneously with the rest of the population.</p>
+
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1588612502804-037190d6e80b?w=500&q=80" alt="Bird banding and tagging">
+    <img src="https://images.unsplash.com/photo-1549480017-d76466a4b8e8?w=500&q=80" alt="Wildlife research tracking">
+  </div>
   
   <div class="skill-box">
-    <strong>Skill</strong>
-    <p>Calculate population size using the Lincoln Index formula.</p>
+    <strong>Skill: Calculate population size</strong>
+    <p>Using the Lincoln Index formula.</p>
     <p>$$N = \frac{n_1 \times n_2}{n_3}$$</p>
     <ul class="bullets">
       <li><strong>N</strong>: Total population estimate</li>
       <li><strong>$n_1$</strong>: Number caught and marked in first sample</li>
       <li><strong>$n_2$</strong>: Total number caught in second sample</li>
-      <li><strong>$n_3$</strong>: Number of marked individuals caught in second sample</li>
+      <li><strong>$n_3$</strong>: Number of marked individuals caught in second sample (recaptured)</li>
     </ul>
   </div>
 </div>
@@ -124,13 +173,28 @@
   <h2>Population Growth Curves</h2>
   <div class="kt"><strong>Key Understanding</strong> Populations exhibit exponential and sigmoidal growth curves, controlled by carrying capacity and resources.</div>
   
-  <img src="/images/bio_sigmoid_curve.jpg" alt="Sigmoid Population Growth Curve" class="slide-img">
+  <p>When resources are unlimited and environmental conditions are ideal, populations tend to grow exponentially (a J-shaped curve). However, in reality, resources are finite. As population size increases, environmental resistance (such as food scarcity, disease, and predation) increases. The population growth slows down and eventually stabilizes around the environment's <strong>carrying capacity ($K$)</strong>, creating a sigmoid (S-shaped) curve.</p>
   
-  <p>Populations tend to grow exponentially until they reach the <strong>carrying capacity ($K$)</strong> of their environment, at which point density-dependent factors slow the growth, creating a sigmoid (S-shaped) curve.</p>
+  <div class="flip-cards-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Carrying Capacity ($K$)</div>
+        <div class="flip-card-back">The maximum population size that a particular environment can sustain indefinitely.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Exponential Growth</div>
+        <div class="flip-card-back">Growth whose rate becomes ever more rapid in proportion to the growing total number or size.</div>
+      </div>
+    </div>
+  </div>
+
+  <img src="/images/bio_sigmoid_curve.jpg" alt="Sigmoid Population Growth Curve" class="slide-img" onerror="this.src='https://images.unsplash.com/photo-1550837060-e44b93fb6d22?w=900&q=80';">
   
   <div class="app-box">
     <strong>Application</strong>
-    <p>Modeling sigmoid population growth curves.</p>
+    <p>Modeling sigmoid population growth curves. It features an exponential phase, a transitional phase (where growth slows), and a plateau phase (fluctuating around carrying capacity).</p>
   </div>
 </div>
 
@@ -140,39 +204,44 @@
   <h2>Communities and Interspecific Relationships</h2>
   <div class="kt"><strong>Key Understanding</strong> A community consists of all the interacting organisms within an ecosystem.</div>
   
-  <p>Species within a community interact in various ways. These interspecific interactions shape community structure and dynamics.</p>
+  <p>A community is composed of multiple interacting populations of different species in a given area. Species within a community do not live in isolation; they interact in a multitude of ways. These interspecific interactions are fundamental in shaping community structure, biodiversity, and ecosystem dynamics. The ecological niche of a species—its role and position in the environment—is heavily influenced by these interactions.</p>
   
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500&q=80" alt="Bees pollinating flowers showing mutualism">
+    <img src="https://images.unsplash.com/photo-1549479328-971ec26a42a0?w=500&q=80" alt="Lion hunting in the savanna showing predation">
+  </div>
+
   <table class="tbl">
-    <tr><th>Interaction</th><th>Species 1</th><th>Species 2</th><th>Example</th></tr>
+    <tr><th>Interaction</th><th>Species 1</th><th>Species 2</th><th>Description & Example</th></tr>
     <tr>
       <td><strong>Mutualism</strong></td>
       <td>+ (Benefits)</td>
       <td>+ (Benefits)</td>
-      <td>Bees and flowers</td>
+      <td>Both species benefit from the relationship. (e.g., Bees and flowers, clownfish and anemones)</td>
     </tr>
     <tr>
       <td><strong>Herbivory</strong></td>
       <td>+ (Benefits)</td>
       <td>- (Harmed)</td>
-      <td>Caterpillar eating leaves</td>
+      <td>An animal consumes plant material. (e.g., Caterpillar eating leaves, koalas eating eucalyptus)</td>
     </tr>
     <tr>
       <td><strong>Predation</strong></td>
       <td>+ (Benefits)</td>
       <td>- (Harmed)</td>
-      <td>Lion hunting zebra</td>
+      <td>A predator kills and consumes prey. (e.g., Lion hunting zebra, owl catching a mouse)</td>
     </tr>
     <tr>
       <td><strong>Parasitism</strong></td>
       <td>+ (Benefits)</td>
       <td>- (Harmed)</td>
-      <td>Tick feeding on a dog</td>
+      <td>A parasite lives on or in a host, deriving nutrients at the host's expense. (e.g., Tick feeding on a dog)</td>
     </tr>
     <tr>
       <td><strong>Competition</strong></td>
       <td>- (Harmed)</td>
       <td>- (Harmed)</td>
-      <td>Two species of barnacles competing for space</td>
+      <td>Organisms compete for the same limited resource, negatively impacting both. (e.g., Barnacles competing for rock space)</td>
     </tr>
   </table>
 </div>
@@ -183,18 +252,18 @@
   <h2>Predator-Prey Relationships</h2>
   <div class="kt"><strong>Key Understanding</strong> Predator–prey relationships serve as a key example of density-dependent population control.</div>
   
-  <img src="/images/bio_predator_prey.jpg" alt="Predator-Prey Cycle Graph" class="slide-img">
+  <p>Predator and prey populations often fluctuate in highly coupled, repeating cycles. As prey populations increase, predators have an abundant food source, leading to an increase in predator numbers. This higher predation pressure then causes the prey population to crash. With less food available, the predator population subsequently declines, which then relieves pressure on the prey, allowing them to recover, and the cycle repeats. The predator cycle typically lags slightly behind the prey cycle temporally.</p>
   
-  <p>Predator and prey populations often fluctuate in coupled cycles. The predator cycle typically lags slightly behind the prey cycle.</p>
+  <img src="/images/bio_predator_prey.jpg" alt="Predator-Prey Cycle Graph" class="slide-img" onerror="this.src='https://images.unsplash.com/photo-1582500008392-805fc43d0434?w=900&q=80';">
   
   <div class="css-flow">
-    <div class="flow-step">Prey population increases (abundant food for predators)</div>
+    <div class="flow-step">1. Prey population increases (abundant food for predators)</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Predator population increases due to more food</div>
+    <div class="flow-step alt">2. Predator population increases due to more food availability</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">High predation causes prey population to decrease</div>
+    <div class="flow-step">3. High predation causes prey population to crash rapidly</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Less food causes predator population to decrease, allowing prey to recover</div>
+    <div class="flow-step alt">4. Less food causes predator population to decrease, allowing prey to recover</div>
   </div>
 </div>
 
@@ -204,21 +273,23 @@
   <h2>Top-Down and Bottom-Up Control</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Community populations are regulated by either top-down or bottom-up control mechanisms.</div>
   
+  <p>Ecosystems are complex webs of interactions, but their overall structure and population dynamics are generally governed by forces originating from either the top of the food chain or the bottom. Understanding these mechanisms is crucial for ecosystem management and conservation efforts.</p>
+
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Top-Down Control</h4>
-      <p>Population size is regulated by predation at higher trophic levels.</p>
+      <p>Population size and community structure are regulated by predation at higher trophic levels. The apex predators exert pressure downwards.</p>
       <ul>
-        <li>Predators control herbivore populations.</li>
-        <li>Example: Wolves in Yellowstone controlling elk populations.</li>
+        <li>Predators control herbivore populations, preventing them from overgrazing and destroying plant communities (a trophic cascade).</li>
+        <li>Example: The reintroduction of wolves (apex predator) in Yellowstone National Park controlled elk populations, which allowed willow and aspen trees to recover along riverbanks.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--green)">Bottom-Up Control</h4>
-      <p>Population size is regulated by the availability of resources at lower trophic levels.</p>
+      <p>Population size is primarily regulated by the availability of resources at lower trophic levels, particularly nutrients and primary producers.</p>
       <ul>
-        <li>Nutrients and producers limit herbivores.</li>
-        <li>Example: Algal blooms driven by nutrient availability, dictating zooplankton levels.</li>
+        <li>Nutrients, sunlight, and primary producers dictate the carrying capacity of herbivores, which in turn limits carnivores.</li>
+        <li>Example: In marine ecosystems, upwelling provides nutrients that cause algal blooms (phytoplankton), which support massive populations of zooplankton, fish, and eventually whales.</li>
       </ul>
     </div>
   </div>
@@ -230,20 +301,40 @@
   <h2>Allelopathy and Antibiotic Secretion</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Allelopathy and the secretion of antibiotics are processes used to deter potential competitors by releasing chemical substances.</div>
   
-  <p>Organisms can engage in chemical warfare to reduce interspecific competition.</p>
+  <p>Organisms frequently engage in forms of biochemical warfare to secure their own survival by reducing interspecific competition for space, light, and nutrients. These chemical secretions can severely inhibit the growth, survival, or reproduction of competing species nearby.</p>
   
   <ul class="bullets">
-    <li><strong>Allelopathy:</strong> Plants release specific chemicals (allelochemicals) into the soil to inhibit the growth or germination of competing plant species. Example: The Black Walnut tree ($Juglans$ $nigra$) secretes juglone.</li>
-    <li><strong>Antibiotic Secretion:</strong> Microorganisms (like fungi and bacteria) secrete antibiotics to kill or inhibit competing microbes. Example: $Penicillium$ fungus secretes penicillin to kill bacteria.</li>
+    <li><strong>Allelopathy in Plants:</strong> Many plants release specific biochemicals (allelochemicals) into the soil through their roots or fallen leaves. These chemicals inhibit the germination or growth of competing plant species in the vicinity. <br><em>Example:</em> The Black Walnut tree ($Juglans$ $nigra$) secretes a toxic compound called juglone, which heavily stunts or kills many nearby plants like tomatoes and apples, ensuring the walnut tree has exclusive access to soil resources.</li>
+    <li><strong>Antibiotic Secretion in Microbes:</strong> Microorganisms (such as fungi and bacteria) compete intensely for resources in their microenvironments. To gain an advantage, they secrete antibiotics to kill or inhibit competing microbial species.<br><em>Example:</em> The $Penicillium$ fungus secretes penicillin, a potent antibiotic that kills sensitive bacteria by interfering with their cell wall synthesis, freeing up nutrients for the fungus.</li>
   </ul>
 </div>
 
-<!-- SLIDE 8 — COMPLETION -->
+<!-- SLIDE 8 — COMPLETION & ASSESSMENT -->
 <div class="slide" id="slide-8">
   <div class="completion">
     <div class="check">✅</div>
     <h1>C4.1 Populations & Communities Complete!</h1>
     <p>You have successfully reviewed all SL and HL understandings for Biology Theme C4.1.</p>
+  </div>
+  
+  <div style="margin-top: 3rem;">
+    <h2>Check Your Understanding</h2>
+    <details>
+      <summary>1. Why is random sampling crucial when estimating a population of daisies in a field?</summary>
+      <p>Random sampling ensures that every area of the field has an equal chance of being selected. This removes human bias (such as selectively choosing areas with more or fewer daisies), ensuring the sample accurately represents the entire population density.</p>
+    </details>
+    <details>
+      <summary>2. A researcher catches 40 mice, marks them, and releases them. A week later, they catch 50 mice, of which 10 are marked. Estimate the population.</summary>
+      <p>Using the Lincoln Index: $N = \frac{n_1 \times n_2}{n_3}$. $N = \frac{40 \times 50}{10} = \frac{2000}{10} = 200$. The estimated population is 200 mice.</p>
+    </details>
+    <details>
+      <summary>3. What is the difference between top-down and bottom-up control in an ecosystem?</summary>
+      <p>Top-down control occurs when an apex predator regulates the population dynamics of the trophic levels below it. Bottom-up control occurs when the availability of primary producers (driven by nutrients) dictates the population sizes of all subsequent higher trophic levels.</p>
+    </details>
+    <details>
+      <summary>4. Explain how allelopathy gives a plant a competitive advantage.</summary>
+      <p>By releasing toxic allelochemicals into the soil, a plant can inhibit the growth of surrounding plant species. This reduces competition for vital resources like water, soil nutrients, and sunlight, giving the allelopathic plant a distinct survival advantage.</p>
+    </details>
   </div>
 </div>
 

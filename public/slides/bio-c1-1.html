@@ -52,7 +52,134 @@
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
-  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+  
+  /* FLIP CARDS */
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 140px;
+    perspective: 1000px;
+    margin: 1.5rem 0;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .flip-card-front {
+    background-color: var(--blue-light);
+    color: var(--blue-dark);
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: 2px solid var(--blue);
+  }
+  .flip-card-front small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .flip-card-back {
+    background-color: var(--blue);
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 0.95rem;
+    border: 2px solid var(--blue-dark);
+  }
+
+  /* IMAGE GRID */
+  .img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .img-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .img-grid figure {
+    margin: 0;
+  }
+  .img-grid figcaption {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  /* DETAILS / SUMMARY for Quiz */
+  details {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+  details[open] {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-color: var(--blue-light);
+  }
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--blue-dark);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    color: var(--blue);
+  }
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+  details p {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-200);
+    color: var(--gray-800);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid,.img-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
 </style>
 </head>
 <body>
@@ -77,22 +204,37 @@
   <h2>Metabolism as the Web of Life</h2>
   <div class="kt"><strong>Key Understanding</strong>Metabolism is the web of all enzyme-catalysed reactions in a cell or organism.</div>
   
-  <p>Inside every cell, a vast network of chemical reactions is constantly taking place. This complex web is collectively referred to as <strong>metabolism</strong>. Without enzymes acting as biological catalysts, these reactions would occur too slowly to sustain life.</p>
+  <p>Inside every single living cell, a vast, highly coordinated network of chemical reactions is constantly taking place. This complex web is collectively referred to as <strong>metabolism</strong>. Without enzymes acting as highly specific biological catalysts, these biochemical reactions would occur far too slowly to sustain life under normal physiological conditions.</p>
   
-  <div class="css-flow">
-    <div class="flow-step">Substrate (Reactant) enters the active site</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step">Enzyme-Substrate Complex forms</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Catalysis occurs (Activation energy is lowered)</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Product(s) are released</div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        Metabolism
+        <small>Hover to reveal definition</small>
+      </div>
+      <div class="flip-card-back">
+        The totality of all enzyme-catalysed chemical reactions that occur within a living organism in order to maintain life, comprising both anabolic and catabolic pathways.
+      </div>
+    </div>
   </div>
   
+  <p>Metabolic pathways are broadly divided into two opposing but complementary categories:</p>
+
   <ul class="bullets">
-    <li><strong>Anabolism:</strong> Building up complex molecules from simpler ones (requires energy). Example: Protein synthesis.</li>
-    <li><strong>Catabolism:</strong> Breaking down complex molecules into simpler ones (releases energy). Example: Cellular respiration (C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Energy).</li>
+    <li><strong>Anabolism:</strong> The synthesis of complex molecules from simpler constituent monomers. This process is endergonic, meaning it <em>requires</em> an input of energy (usually in the form of ATP). A key example is protein synthesis via condensation reactions on ribosomes, or photosynthesis.</li>
+    <li><strong>Catabolism:</strong> The breakdown of complex macromolecules into simpler components. This process is exergonic, meaning it <em>releases</em> energy, which can be captured to synthesize ATP. A primary example is cellular respiration (C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP) and digestion via hydrolysis reactions.</li>
   </ul>
+
+  <div class="img-grid">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Plant Anabolism">
+      <figcaption>Photosynthesis is a prime example of anabolism, building glucose from CO2 and water.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=600&q=80" alt="Exercise Catabolism">
+      <figcaption>Cellular respiration is a catabolic process, breaking down glucose to fuel muscle contraction.</figcaption>
+    </figure>
+  </div>
 </div>
 
 <!-- SLIDE 2 — Induced-Fit Model & Collision Theory -->
@@ -101,15 +243,30 @@
   <h2>Enzyme Specificity & The Induced-Fit Model</h2>
   <div class="kt"><strong>Key Understanding</strong>Enzyme specificities are explained by the complementary shape and chemical properties of the active site.</div>
   
-  <p>Enzymes are globular proteins with a highly specific region called the <strong>active site</strong>. Only a specific substrate can bind to it. The modern understanding of this interaction is the <strong>Induced-Fit Model</strong>.</p>
+  <p>Enzymes are globular proteins that possess a highly specialized cleft or pocket on their surface known as the <strong>active site</strong>. Because of the unique folding of the polypeptide chain (tertiary structure), the active site has a very specific shape and distinct chemical properties (polar, non-polar, acidic, or basic amino acid residues). Consequently, only a specific substrate (or a small group of chemically similar substrates) can successfully bind to it.</p>
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        Activation Energy ($E_A$)
+        <small>Hover to reveal definition</small>
+      </div>
+      <div class="flip-card-back">
+        The initial energy input required to destabilize existing chemical bonds in the substrate(s) and initiate a chemical reaction. Enzymes function by significantly lowering this energy barrier.
+      </div>
+    </div>
+  </div>
+
+  <p>While the older "Lock and Key" hypothesis suggested a rigid active site, modern biochemistry relies on the <strong>Induced-Fit Model</strong>. As the substrate enters the active site, it induces a slight conformational (shape) change in the enzyme. This moldable embrace grips the substrate more tightly, placing physical strain on its chemical bonds. This strain destabilizes the substrate, reducing the activation energy required to reach the transition state.</p>
   
   <div class="card">
-    <strong style="color:var(--blue)">How Catalysis Happens:</strong>
+    <strong style="color:var(--blue)">Step-by-step Catalysis:</strong>
     <ul class="bullets">
-      <li><strong>Random Collision:</strong> The substrate and enzyme collide due to random molecular motion (kinetic energy).</li>
-      <li><strong>Binding:</strong> The substrate binds to the active site.</li>
-      <li><strong>Induced Fit:</strong> The enzyme undergoes a slight conformational change to mold itself around the substrate more tightly, stressing the substrate's bonds.</li>
-      <li><strong>Lowered $E_A$:</strong> This physical stress lowers the activation energy ($E_A$) required for the reaction, rapidly converting substrate into product.</li>
+      <li><strong>Random Collision:</strong> The substrate and enzyme collide in an aqueous environment due to random thermal molecular motion (kinetic energy).</li>
+      <li><strong>Binding:</strong> The substrate binds to the active site forming an Enzyme-Substrate Complex.</li>
+      <li><strong>Induced Fit:</strong> The enzyme undergoes a conformational change to mold itself around the substrate, physically stressing its bonds.</li>
+      <li><strong>Lowered $E_A$:</strong> The reaction proceeds rapidly, converting the substrate into product(s).</li>
+      <li><strong>Release:</strong> Products are released, and the enzyme returns to its original conformation, ready to be reused.</li>
     </ul>
   </div>
 </div>
@@ -120,28 +277,38 @@
   <h2>Environmental Effects on Enzyme Rate</h2>
   <div class="kt"><strong>Key Understanding</strong>Temperature, pH, and substrate concentration affect the rate of enzyme activity.</div>
   
-  <p>Enzyme activity is highly sensitive to environmental conditions. Extreme changes can cause <strong>denaturation</strong>, a structural change in the enzyme's active site making it unable to bind substrate.</p>
+  <p>Because enzymes are proteins relying on fragile intra-molecular bonds (like hydrogen bonds and ionic interactions) to maintain their 3D shape, their activity is extremely sensitive to changes in their external environment. Extreme conditions can cause <strong>denaturation</strong>—a permanent, irreversible structural distortion of the active site that renders the enzyme completely inactive.</p>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Temperature</h4>
       <ul>
-        <li>Higher temperature increases kinetic energy, leading to more successful collisions.</li>
-        <li>Above the optimum temperature, hydrogen bonds break, denaturing the enzyme and dropping the reaction rate sharply.</li>
+        <li>As temperature rises, molecules gain kinetic energy, moving faster and colliding more frequently, increasing the reaction rate.</li>
+        <li>At the <strong>optimum temperature</strong>, the reaction rate is at its peak (e.g., ~37°C for human enzymes).</li>
+        <li>Above the optimum, increased thermal agitation breaks the delicate hydrogen bonds holding the protein structure together. The enzyme rapidly denatures, causing a steep plunge in activity.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--orange)">pH Level</h4>
       <ul>
-        <li>Each enzyme has an optimum pH.</li>
-        <li>Deviating from the optimum alters the active site's charge and shape, reducing activity or causing denaturation.</li>
+        <li>Enzymes possess an <strong>optimum pH</strong> (e.g., Pepsin at pH 2, Trypsin at pH 8) where their activity is maximized.</li>
+        <li>Deviating from this optimum alters the H+ or OH- ion concentrations in solution.</li>
+        <li>These ions interfere with the ionic bonds and charge distribution of the active site's amino acids, changing its shape and preventing substrate binding, leading to denaturation.</li>
       </ul>
     </div>
   </div>
+
+  <p><strong>Substrate Concentration:</strong> As substrate concentration increases, the rate of reaction initially rises steeply because more frequent successful collisions occur between substrate and enzyme. However, the curve eventually plateaus (levels off). At this maximum rate ($V_{max}$), all active sites are continuously occupied; the enzymes are saturated, and adding more substrate cannot accelerate the reaction further.</p>
   
-  <div class="skill-box">
-    <strong>Data Analysis Skill:</strong>
-    You should be able to interpret or sketch graphs of enzyme activity. A temperature graph is asymmetrical (gradual rise, sharp drop), while a pH graph is typically a symmetrical bell curve.
+  <div class="img-grid">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=600&q=80" alt="Laboratory Heating">
+      <figcaption>Heat increases kinetic energy but eventually breaks protein bonds.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80" alt="Chemistry solutions">
+      <figcaption>Enzymes operate optimally within specific pH ranges.</figcaption>
+    </figure>
   </div>
 </div>
 
@@ -151,23 +318,33 @@
   <h2>Competitive vs Non-Competitive Inhibition</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Enzyme inhibitors can be competitive or non-competitive, affecting kinetics differently.</div>
   
-  <img src="/images/bio_enzyme_inhibition.jpg" alt="Enzyme Kinetics Graph showing Competitive and Non-Competitive Inhibition" class="slide-img">
+  <p>Inhibitors are chemical substances that bind to an enzyme and significantly reduce its catalytic rate ($V_0$). They are vital in pharmacology and cellular regulation. Inhibitors are broadly categorized by the exact location they bind to the enzyme and how they interact with it.</p>
   
-  <p>Inhibitors reduce the rate of enzymatic reactions ($V_0$). They are categorized by how they interact with the enzyme.</p>
-  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        Allosteric Site
+        <small>Hover to reveal definition</small>
+      </div>
+      <div class="flip-card-back">
+        A distinct receptor site on the enzyme situated far away from the active site. Binding of a molecule here induces a global conformational change in the enzyme.
+      </div>
+    </div>
+  </div>
+
   <table class="tbl">
-    <tr><th>Type</th><th>Binding Site</th><th>Effect on $V_{max}$</th><th>Effect on $K_m$ (Affinity)</th></tr>
+    <tr><th>Type</th><th>Mechanism of Action</th><th>Effect on $V_{max}$</th><th>Effect on $K_m$ (Affinity)</th></tr>
     <tr>
       <td><strong>Competitive</strong></td>
-      <td>Active Site (competes with substrate)</td>
-      <td>Unchanged (can be overcome by adding more substrate)</td>
-      <td>Increases (apparent affinity decreases)</td>
+      <td>Structurally resembles the substrate and binds directly to the active site, physically blocking the actual substrate.</td>
+      <td><strong>Unchanged:</strong> Can be completely overcome by flooding the system with excess substrate.</td>
+      <td><strong>Increases:</strong> Apparent affinity for the substrate decreases because higher substrate concentration is needed to achieve $V_{max}/2$.</td>
     </tr>
     <tr>
       <td><strong>Non-Competitive</strong></td>
-      <td>Allosteric Site (causes conformational change)</td>
-      <td>Decreases (cannot be overcome by more substrate)</td>
-      <td>Unchanged</td>
+      <td>Binds to an allosteric site (away from the active site), causing a conformational change that alters the active site's shape so it can no longer bind the substrate effectively.</td>
+      <td><strong>Decreases:</strong> Maximum rate drops permanently because functional enzymes are effectively removed. Cannot be overcome by adding substrate.</td>
+      <td><strong>Unchanged:</strong> The functional enzymes that remain still have the same affinity for the substrate.</td>
     </tr>
   </table>
 </div>
@@ -178,28 +355,57 @@
   <h2>Metabolic Pathways & Feedback Inhibition</h2>
   <div class="kt"><strong>Key Understanding (HL)</strong> Metabolic pathways consist of chains and cycles of enzyme-catalysed reactions, often regulated by end-product inhibition.</div>
   
-  <p>Metabolism doesn't happen in a single step. It involves multiple steps, where the product of one reaction becomes the substrate for the next. This can form a linear chain (like glycolysis) or a cycle (like the Krebs cycle).</p>
+  <p>Metabolism rarely occurs in a single dramatic step. Instead, it proceeds via highly structured, multi-step sequences known as <strong>metabolic pathways</strong>. The product of one specific enzyme-catalyzed reaction immediately becomes the reactant (substrate) for the subsequent enzyme in the sequence. These pathways can form linear chains (e.g., glycolysis or the coagulation cascade) or complex repeating cycles (e.g., the Krebs Cycle or the Calvin Cycle).</p>
   
   <div class="css-flow">
-    <div class="flow-step hl">Substrate → (Enzyme 1) → Intermediate A</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step hl">Intermediate A → (Enzyme 2) → Intermediate B</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Intermediate B → (Enzyme 3) → End Product</div>
+    <div class="flow-step hl">Threonine (Initial Substrate)</div>
+    <div class="flow-arrow">↓ <em>Threonine deaminase (Enzyme 1)</em></div>
+    <div class="flow-step hl">Intermediate A</div>
+    <div class="flow-arrow">↓ <em>Enzyme 2, 3, 4</em></div>
+    <div class="flow-step alt">Isoleucine (End Product)</div>
   </div>
   
   <div class="app-box">
-    <strong>Application: End-Product Inhibition</strong>
-    To prevent the cell from wasting resources, the final <strong>End Product</strong> often acts as a non-competitive inhibitor for <strong>Enzyme 1</strong>. When the end product accumulates, it binds to the allosteric site of Enzyme 1, halting the entire pathway. This is a classic example of <strong>negative feedback</strong>.
+    <strong>Application: End-Product Inhibition (Negative Feedback)</strong>
+    Cells must conserve energy and chemical resources. If a pathway continuously runs unchecked, the cell will over-produce a substance it does not immediately need. To prevent this, the final <strong>End Product</strong> of the pathway often acts as a non-competitive inhibitor for the very first enzyme in the chain (often called the allosteric or pacemaker enzyme). 
+    <br><br>
+    <em>Classic IB Example:</em> In bacteria, the amino acid Threonine is converted into Isoleucine in a 5-step pathway. When Isoleucine accumulates to high levels, it binds to the allosteric site of Threonine deaminase, halting the entire pathway and preventing further unnecessary production of Isoleucine.
   </div>
 </div>
 
-<!-- SLIDE 6 — COMPLETION -->
+<!-- SLIDE 6 — Check Your Understanding -->
 <div class="slide" id="slide-6">
+  <div class="section-tag">Review & Assessment</div>
+  <h2>Check Your Understanding</h2>
+  <p>Expand the sections below to test your grasp of the concepts covered in this module.</p>
+  
+  <details>
+    <summary>1. Distinguish between anabolism and catabolism.</summary>
+    <p><strong>Anabolism</strong> is the synthesis of complex molecules from simpler ones, requiring an input of energy (ATP) (e.g., protein synthesis). <strong>Catabolism</strong> is the breakdown of complex molecules into simpler ones, which releases energy (e.g., cellular respiration).</p>
+  </details>
+
+  <details>
+    <summary>2. Explain how temperature affects enzyme activity.</summary>
+    <p>As temperature increases, molecular kinetic energy increases, leading to more frequent collisions between enzymes and substrates, raising the reaction rate. At the optimum temperature, activity is highest. Above the optimum, thermal energy breaks the hydrogen bonds maintaining the enzyme's tertiary structure, causing denaturation and a rapid drop in activity.</p>
+  </details>
+
+  <details>
+    <summary>3. HL Only: How does a competitive inhibitor affect $V_{max}$ and $K_m$?</summary>
+    <p>A competitive inhibitor structurally mimics the substrate and binds to the active site. It does not change $V_{max}$, as its effects can be overcome by vastly increasing the substrate concentration. However, it increases the apparent $K_m$, meaning the enzyme's apparent affinity for the substrate decreases, requiring more substrate to reach half the maximal velocity.</p>
+  </details>
+
+  <details>
+    <summary>4. Describe the mechanism of end-product inhibition.</summary>
+    <p>In end-product inhibition, the final product of a metabolic pathway acts as a non-competitive inhibitor for an enzyme earlier in the pathway (often the first enzyme). It binds to an allosteric site, altering the shape of the active site. This stops the pathway when sufficient product has been synthesized, preventing the wastage of cellular resources.</p>
+  </details>
+</div>
+
+<!-- SLIDE 7 — COMPLETION -->
+<div class="slide" id="slide-7">
   <div class="completion">
     <div class="check">✅</div>
     <h1>C1.1 Complete!</h1>
-    <p>You have successfully reviewed all SL and HL understandings for Biology Theme C1.1 — Enzymes and Metabolism.</p>
+    <p>You have successfully reviewed all SL and HL understandings, including deep-dive concepts on Enzyme Kinetics, Metabolic Pathways, and End-Product inhibition for Biology Theme C1.1.</p>
   </div>
 </div>
 
@@ -207,7 +413,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 6</div>
+  <div class="nav-counter" id="slideCounter">1 / 7</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

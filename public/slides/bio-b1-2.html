@@ -40,6 +40,25 @@
   .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
   .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
 
+  /* Interactive Elements */
+  .flip-card { background-color: transparent; width: 100%; height: 150px; perspective: 1000px; margin: 1rem 0; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1); border-radius: 10px; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 1rem; box-sizing: border-box; }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); font-weight: bold; font-size: 1.2rem; }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); font-size: 0.95rem; }
+  
+  .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .image-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; transition: background 0.3s; }
+  details:hover { background: var(--gray-100); }
+  summary { font-weight: 600; cursor: pointer; color: var(--blue); outline: none; list-style: none; font-size: 1.05rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▶'; display: inline-block; margin-right: 0.5rem; transition: transform 0.3s; font-size: 0.8rem; }
+  details[open] summary::before { transform: rotate(90deg); }
+  details p { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--gray-200); }
+
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
   .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
@@ -60,6 +79,7 @@
     <img src="https://images.unsplash.com/photo-1618042164219-62c820f10723?w=900&q=80" alt="3D abstract protein structure" class="cover-img">
     <div class="section-tag">IB DP Biology 2025: Form and Function</div>
     <h1>B1.2 — Proteins</h1>
+    <div class="subtitle">The Building Blocks of Life: Structure, Function, and Diversity</div>
     <div class="stats">
       <div class="stat"><div class="stat-num">5</div><div class="stat-label">Core Understandings</div></div>
       <div class="stat"><div class="stat-num">7</div><div class="stat-label">HL Extensions</div></div>
@@ -71,71 +91,87 @@
 <div class="slide" id="slide-1">
   <div class="section-tag">B1.2.1</div>
   <h2>Amino Acid Structure</h2>
-  <div class="kt"><strong>Key Understanding</strong> Generalized structure of an amino acid.</div>
+  <div class="kt"><strong>Key Understanding</strong> Generalized structure of an amino acid and the significance of its functional groups.</div>
   
-  <p>Amino acids are the monomers (building blocks) of proteins. There are 20 different amino acids used by ribosomes to make polypeptides.</p>
+  <p>Amino acids are the fundamental monomers (building blocks) of proteins. There are 20 different standard amino acids that are encoded directly by the universal genetic code and used by ribosomes to synthesize polypeptides. While diverse, all amino acids share a highly conserved structural foundation.</p>
   
   <div class="card" style="text-align: center;">
     <h3>Generalized Formula</h3>
-    <p>All amino acids share a common central core but differ in their R-group.</p>
+    <p>Every amino acid features a central carbon atom, known as the $\alpha$-carbon, which acts as the structural hub.</p>
     <p style="font-size: 1.2rem; margin: 1rem 0;">
       H₂N&mdash;CH(R)&mdash;COOH
     </p>
-    <p>Central Carbon ($\alpha$-carbon) bonded to:</p>
   </div>
   
+  <p>The central $\alpha$-carbon is covalently bonded to four distinct chemical groups:</p>
   <ul class="bullets">
-    <li><strong>Amine Group:</strong> (-NH₂)</li>
-    <li><strong>Carboxyl Group:</strong> (-COOH)</li>
-    <li><strong>Hydrogen Atom:</strong> (-H)</li>
-    <li><strong>Variable R-group:</strong> Determines the specific properties of the amino acid.</li>
+    <li><strong>Amine Group (-NH₂):</strong> A basic group that can accept a proton to become -NH₃⁺.</li>
+    <li><strong>Carboxyl Group (-COOH):</strong> An acidic group that can donate a proton to become -COO⁻.</li>
+    <li><strong>Hydrogen Atom (-H):</strong> A simple hydrogen atom filling the third valence bond.</li>
+    <li><strong>Variable R-group (Side Chain):</strong> The unique functional group that distinguishes each of the 20 amino acids. The R-group dictates the size, charge, and polarity of the amino acid, ultimately driving protein folding.</li>
   </ul>
   
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Hover: Amphoteric Property</div>
+      <div class="flip-card-back">Amino acids can act as both an acid and a base (amphoteric) due to their carboxyl and amine groups. At physiological pH, they exist as zwitterions (dipolar ions).</div>
+    </div>
+  </div>
+
   <div class="skill-box">
     <strong>Skill</strong>
-    <p>Draw the generalized structure of an amino acid, clearly labeling the amine group, carboxyl group, and R-group.</p>
+    <p>Draw the generalized structure of an amino acid, clearly labeling the amine group, carboxyl group, and R-group. Ensure accurate valency for carbon, nitrogen, and oxygen.</p>
   </div>
 </div>
 
 <!-- SLIDE 2 — B1.2.2 -->
 <div class="slide" id="slide-2">
   <div class="section-tag">B1.2.2</div>
-  <h2>Condensation Reactions</h2>
-  <div class="kt"><strong>Key Understanding</strong> Condensation reactions form dipeptides and longer polypeptide chains.</div>
+  <h2>Condensation Reactions & Peptide Bonds</h2>
+  <div class="kt"><strong>Key Understanding</strong> Condensation reactions form dipeptides and longer polypeptide chains by creating peptide bonds.</div>
   
-  <p>Amino acids are linked together on the ribosome to form polypeptides through <strong>condensation reactions</strong>. This involves the removal of a water molecule (H₂O).</p>
+  <p>To build proteins, cells must link amino acids together. This process occurs on the ribosome during translation. The chemical mechanism used to join amino acids is a <strong>condensation reaction</strong> (also called dehydration synthesis). This is a quintessential anabolic reaction requiring energy, typically in the form of ATP.</p>
   
   <div class="css-flow">
     <div class="flow-step">Carboxyl group (-COOH) of amino acid 1</div>
     <div class="flow-arrow">+</div>
     <div class="flow-step">Amine group (-NH₂) of amino acid 2</div>
-    <div class="flow-arrow">↓</div>
+    <div class="flow-arrow">↓ (ATP required, catalyzed by rRNA)</div>
     <div class="flow-step alt">Peptide bond (-C-N-) forms + Water (H₂O) released</div>
   </div>
   
-  <p>The resulting covalent bond between the amino acids is called a <strong>peptide bond</strong>. Multiple amino acids linked together form a <em>polypeptide</em>.</p>
+  <p>During this reaction, the hydroxyl (-OH) is lost from the carboxyl group of the first amino acid, and a hydrogen (-H) is lost from the amine group of the second. Together, these form a water molecule (H₂O) which is expelled. The resulting covalent bond between the carbon and nitrogen is a <strong>peptide bond</strong>.</p>
   
-  <div class="app-box">
-    <strong>Application</strong>
-    <p>Understanding that anabolic reactions, such as protein synthesis, require an input of energy (ATP) and release water.</p>
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&q=80" alt="Chemistry lab representing synthesis">
+    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=500&q=80" alt="Microscope view representing cellular processes">
   </div>
+
+  <p>A chain of two amino acids is a <em>dipeptide</em>. A long, unbranched chain of many amino acids is a <em>polypeptide</em>. The reverse of a condensation reaction is <strong>hydrolysis</strong>, which breaks peptide bonds by adding water (e.g., during digestion).</p>
 </div>
 
 <!-- SLIDE 3 — B1.2.3 & B1.2.4 -->
 <div class="slide" id="slide-3">
   <div class="section-tag">B1.2.3 / B1.2.4</div>
-  <h2>Diet & Diversity</h2>
+  <h2>Diet, Diversity, and the Proteome</h2>
   <div class="kt"><strong>B1.2.3</strong> Dietary requirements for amino acids.</div>
   <div class="kt"><strong>B1.2.4</strong> The infinite variety of possible peptide chains.</div>
   
   <div class="compare-grid">
     <div class="compare-card">
-      <h4 style="color:var(--blue)">Essential Amino Acids</h4>
-      <p>Out of the 20 common amino acids, 9 cannot be synthesized by the human body and must be obtained from the diet. These are <strong>essential amino acids</strong>. A lack of these leads to protein deficiency diseases.</p>
+      <h4 style="color:var(--blue)">Essential vs Non-Essential</h4>
+      <p>Humans require all 20 standard amino acids to build proteins. However, our bodies lack the enzymatic pathways to synthesize 9 of them. These 9 are termed <strong>essential amino acids</strong> because it is essential they are obtained from the diet. The remaining 11 are <strong>non-essential</strong> (we can synthesize them from other molecules). A diet lacking essential amino acids leads to protein deficiency conditions like Kwashiorkor.</p>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--orange)">Infinite Variety</h4>
-      <p>Ribosomes can link the 20 amino acids together in any sequence. For a polypeptide of length $n$, there are $20^n$ possible sequences. This allows for virtually infinite diversity of protein structures and functions.</p>
+      <p>Ribosomes link amino acids in specific sequences dictated by mRNA. Because any of the 20 amino acids can appear at any position, the diversity is staggering. For a polypeptide of length $n$, there are $20^n$ possible sequences. Even a small polypeptide of 400 amino acids has $20^{400}$ potential sequences, a number vastly greater than the atoms in the observable universe!</p>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">Hover: Proteome</div>
+      <div class="flip-card-back">The proteome is the entire set of proteins expressed by a genome, cell, tissue, or organism at a certain time. It is uniquely larger than the genome.</div>
     </div>
   </div>
 </div>
@@ -143,17 +179,17 @@
 <!-- SLIDE 4 — B1.2.5 -->
 <div class="slide" id="slide-4">
   <div class="section-tag">B1.2.5</div>
-  <h2>Denaturation</h2>
-  <div class="kt"><strong>Key Understanding</strong> The effect of pH and temperature on protein structure.</div>
+  <h2>Denaturation: Losing the Shape</h2>
+  <div class="kt"><strong>Key Understanding</strong> The destructive effect of pH and temperature extremes on protein structure and function.</div>
   
-  <p><strong>Denaturation</strong> is a structural change in a protein that results in the loss (usually permanent) of its biological properties. Because protein function depends heavily on its 3D shape, losing this shape destroys functionality.</p>
+  <p>A protein's function is exquisitely dependent on its highly specific 3D shape (conformation). <strong>Denaturation</strong> is a structural change in a protein that results in the loss (usually permanent) of its biological properties. When a protein denatures, it unravels and loses its functional shape, though the primary amino acid sequence remains intact.</p>
   
   <ul class="bullets">
-    <li><strong>Temperature:</strong> High thermal energy breaks the weak hydrogen bonds holding the secondary and tertiary structures together. The protein unfolds.</li>
-    <li><strong>pH Extremes:</strong> Strong acids or alkalis alter the charge of R-groups, breaking ionic bonds within the protein structure and causing it to denature.</li>
+    <li><strong>Temperature (Thermal Denaturation):</strong> High heat increases kinetic energy, causing the atoms in the protein to vibrate violently. These vibrations break the relatively weak intermolecular bonds (like hydrogen bonds and hydrophobic interactions) that hold the secondary, tertiary, and quaternary structures together. The protein unfolds. This is why cooking an egg solidifies the egg white (albumin).</li>
+    <li><strong>pH Extremes:</strong> Every protein has an optimal pH. Strong acids (low pH) or alkalis (high pH) alter the charge of the amino acid R-groups. This disrupts the delicate balance of ionic bonds and hydrogen bonds within the folded protein, causing it to unfold and precipitate.</li>
   </ul>
   
-  <div class="tip"><strong>Exam Tip:</strong> Denaturation does <em>not</em> break peptide bonds (primary structure). It only disrupts the folding (secondary, tertiary, quaternary structures).</div>
+  <div class="tip"><strong>Exam Tip:</strong> Denaturation does <em>not</em> break peptide bonds. The primary structure (the linear sequence of amino acids) remains entirely unaffected by denaturation. Only the higher-level folding is destroyed.</div>
 </div>
 
 <!-- SLIDE 5 — B1.2.6 & B1.2.7 (HL) -->
@@ -163,29 +199,28 @@
   <div class="kt"><strong>B1.2.6 (HL)</strong> Chemical diversity in R-groups as the basis for diversity in protein form/function.</div>
   <div class="kt"><strong>B1.2.7 (HL)</strong> Impact of primary structure on conformation.</div>
   
-  <p>The properties of a protein are ultimately determined by its primary structure (the exact sequence of amino acids) and their diverse R-groups.</p>
+  <p>The primary structure is the specific, linear sequence of amino acids in a polypeptide, determined by the DNA gene sequence. The properties of a protein are ultimately determined by this primary structure because the sequence dictates the order of diverse R-groups.</p>
   
   <table class="tbl">
-    <tr><th>R-Group Type</th><th>Interaction Behavior</th></tr>
+    <tr><th>R-Group Type</th><th>Chemical Property</th><th>Structural Impact</th></tr>
     <tr>
       <td><strong>Polar (Hydrophilic)</strong></td>
-      <td>Form hydrogen bonds; usually found on the exterior of soluble proteins.</td>
+      <td>Contain -OH, -SH, or amide groups. Uncharged but uneven electron distribution.</td>
+      <td>Form hydrogen bonds; usually found on the exterior of soluble globular proteins, facing water.</td>
     </tr>
     <tr>
       <td><strong>Non-Polar (Hydrophobic)</strong></td>
-      <td>Cluster in the core of globular proteins, avoiding water.</td>
+      <td>Contain hydrocarbon chains or rings.</td>
+      <td>Cluster in the core of globular proteins, avoiding water, driving the folding process. Found in membrane-spanning regions.</td>
     </tr>
     <tr>
       <td><strong>Charged (Acidic/Basic)</strong></td>
-      <td>Form ionic bonds with oppositely charged R-groups.</td>
-    </tr>
-    <tr>
-      <td><strong>Sulfur-containing</strong></td>
-      <td>Can form strong covalent disulfide bonds (bridges) for stability.</td>
+      <td>Contain carboxyl (-COO⁻) or amine (-NH₃⁺) groups.</td>
+      <td>Form strong ionic bonds (salt bridges) with oppositely charged R-groups, stabilizing tertiary structure.</td>
     </tr>
   </table>
   
-  <p>Because the primary structure defines the sequence of these specific R-groups, it entirely dictates how the protein will fold into its 3D conformation.</p>
+  <p>Because the primary structure defines the exact order of these R-groups, it entirely dictates the intramolecular interactions that cause the protein to spontaneously fold into its unique, functional 3D conformation.</p>
 </div>
 
 <!-- SLIDE 6 — B1.2.8, B1.2.9, B1.2.10 (HL) -->
@@ -193,20 +228,23 @@
   <div class="section-tag hl-tag">B1.2.8 - B1.2.10 <span class="hl-badge">HL Only</span></div>
   <h2>Secondary & Tertiary Structure (HL)</h2>
   
-  <img src="/images/bio_protein_folding.jpg" alt="The four levels of protein folding" class="slide-img">
-  
-  <div class="css-flow">
-    <div class="flow-step hl"><strong>Secondary Structure (B1.2.8):</strong> Pleating and coiling. Hydrogen bonds form between the main peptide backbone (not R-groups) to create $\alpha$-helices or $\beta$-pleated sheets.</div>
-    <div class="flow-arrow">↓</div>
-    <div class="flow-step hl"><strong>Tertiary Structure (B1.2.9/10):</strong> 3D folding driven by R-group interactions.</div>
+  <div class="image-grid">
+    <img src="https://images.unsplash.com/photo-1550080628-984092b774a3?w=500&q=80" alt="Abstract 3D rendering representing protein folds">
+    <img src="https://images.unsplash.com/photo-1586520301037-3729906d4e41?w=500&q=80" alt="Molecular structure visual">
   </div>
   
-  <p><strong>Bonds in Tertiary Structure:</strong></p>
+  <div class="css-flow">
+    <div class="flow-step hl"><strong>Secondary Structure (B1.2.8):</strong> Regular folding patterns (coils or pleats). Hydrogen bonds form specifically between the main peptide backbone components (C=O of one amino acid and N-H of another), NOT between R-groups. Common structures are $\alpha$-helices and $\beta$-pleated sheets.</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl"><strong>Tertiary Structure (B1.2.9/10):</strong> The comprehensive 3D folding of the entire polypeptide chain. This is driven entirely by interactions between the variable R-groups.</div>
+  </div>
+  
+  <p><strong>Bonds stabilizing Tertiary Structure:</strong></p>
   <ul class="bullets">
-    <li>Hydrogen bonds (between polar R-groups)</li>
-    <li>Ionic bonds (between charged R-groups)</li>
-    <li>Disulfide covalent bonds (between cysteines)</li>
-    <li>Hydrophobic interactions (non-polar R-groups clustering in the center)</li>
+    <li><strong>Hydrogen bonds:</strong> Between polar R-groups.</li>
+    <li><strong>Ionic bonds:</strong> Between acidic and basic (charged) R-groups.</li>
+    <li><strong>Disulfide bridges:</strong> Strong covalent bonds between the sulfur atoms of two Cysteine amino acids. Highly stabilizes the protein.</li>
+    <li><strong>Hydrophobic interactions:</strong> Non-polar R-groups clumping together away from water.</li>
   </ul>
 </div>
 
@@ -216,32 +254,51 @@
   <h2>Quaternary Structure & Protein Types (HL)</h2>
   
   <div class="kt"><strong>B1.2.11 (HL)</strong> Quaternary structure of non-conjugated and conjugated proteins.</div>
-  <p>Some proteins consist of more than one polypeptide chain linked together. A <strong>conjugated protein</strong> contains a non-protein prosthetic group (e.g., the heme group in hemoglobin). Non-conjugated proteins consist only of polypeptides (e.g., collagen).</p>
+  <p>Quaternary structure exists only in proteins composed of two or more polypeptide chains (subunits). These subunits interact to form a single functional macro-molecule. Furthermore, some proteins incorporate non-polypeptide components called <strong>prosthetic groups</strong>; these are <strong>conjugated proteins</strong> (e.g., Hemoglobin contains four polypeptide chains and four iron-containing heme prosthetic groups). <strong>Non-conjugated proteins</strong> consist exclusively of polypeptides (e.g., Collagen, Insulin).</p>
   
   <div class="kt"><strong>B1.2.12 (HL)</strong> Relationship of form and function in globular and fibrous proteins.</div>
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--hl)">Globular Proteins</h4>
-      <p>Folded into spherical shapes. Generally soluble in water.</p>
+      <p>Highly folded into compact, roughly spherical shapes. They are generally soluble in water.</p>
       <ul>
-        <li>Non-polar amino acids in core, polar on exterior.</li>
-        <li>Active roles: Enzymes, antibodies, hormones (e.g., Insulin, Hemoglobin).</li>
+        <li><strong>Structure:</strong> Hydrophobic R-groups tucked into the core; hydrophilic R-groups exposed on the surface.</li>
+        <li><strong>Function:</strong> Active, dynamic roles in metabolism. They act as enzymes (Rubisco), antibodies (Immunoglobulins), hormones (Insulin), and transport molecules (Hemoglobin).</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--hl)">Fibrous Proteins</h4>
-      <p>Long, narrow strands. Generally insoluble in water.</p>
+      <p>Form long, narrow, extended strands. They are generally insoluble in water.</p>
       <ul>
-        <li>Highly repetitive sequences.</li>
-        <li>Structural roles: Support, strength (e.g., Collagen, Keratin).</li>
+        <li><strong>Structure:</strong> Highly repetitive primary amino acid sequences leading to tough, rope-like secondary/tertiary structures.</li>
+        <li><strong>Function:</strong> Structural roles providing support, shape, and tensile strength. Examples include Collagen (skin, tendons), Keratin (hair, nails), and Actin/Myosin (muscle fibers).</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 8 — COMPLETION -->
+<!-- SLIDE 8 — ASSESSMENT -->
 <div class="slide" id="slide-8">
-  <div class="completion">
+  <div class="section-tag">Self-Assessment</div>
+  <h2>Check Your Understanding</h2>
+  <p>Test your knowledge on the concepts covered in this module.</p>
+  
+  <details>
+    <summary>What is the difference between a polypeptide and a protein?</summary>
+    <p>A polypeptide is a single, linear chain of amino acids linked by peptide bonds. A protein is the final functional molecule, which may consist of a single folded polypeptide (tertiary structure) or multiple interacting polypeptides and prosthetic groups (quaternary structure) properly folded into their functional conformation.</p>
+  </details>
+  
+  <details>
+    <summary>Why does altering the pH of an enzyme's environment cause it to stop working?</summary>
+    <p>Enzymes are globular proteins. Changing the pH alters the charge on the amino acid R-groups. This disrupts the ionic bonds and hydrogen bonds that maintain the enzyme's specific 3D tertiary structure. As the enzyme denatures, its active site changes shape, and it can no longer bind its substrate, ceasing its catalytic function.</p>
+  </details>
+
+  <details>
+    <summary>HL: Distinguish between the types of bonds that maintain secondary versus tertiary structure.</summary>
+    <p>Secondary structure ($\alpha$-helices, $\beta$-pleated sheets) is maintained exclusively by hydrogen bonds between the C=O and N-H groups of the peptide backbone itself. Tertiary structure is maintained by interactions between the variable R-groups, which include hydrogen bonds, ionic bonds, hydrophobic interactions, and covalent disulfide bridges.</p>
+  </details>
+
+  <div class="completion" style="padding-top: 2rem;">
     <div class="check">✅</div>
     <h1>B1.2 Proteins Complete!</h1>
     <p>You have successfully reviewed all SL and HL understandings for Biology Theme B1.2.</p>
@@ -252,7 +309,7 @@
 <div class="nav">
   <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
   <div class="nav-dots" id="dotsContainer"></div>
-  <div class="nav-counter" id="slideCounter">1 / 8</div>
+  <div class="nav-counter" id="slideCounter">1 / 9</div>
   <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
 </div>
 

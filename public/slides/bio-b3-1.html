@@ -29,7 +29,7 @@
   .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
   .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
   
-  /* New explicit boxes */
+  /* Explicit boxes */
   .skill-box{background:var(--skill-light);border-left:4px solid var(--skill);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.skill-box strong{color:var(--skill);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
   .app-box{background:var(--app-light);border-left:4px solid var(--app);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.app-box strong{color:var(--app);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
 
@@ -42,6 +42,24 @@
   .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
   .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
   .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
+
+  /* Interactive Elements */
+  .flip-card { background-color: transparent; width: 100%; height: 180px; perspective: 1000px; margin: 1rem 0; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 10px; padding: 1.2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); border: 1px solid var(--blue); flex-direction: column; }
+  .flip-card-front h3 { margin: 0; font-size: 1.3rem; }
+  .flip-card-front p { font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem; }
+  .flip-card-back { background-color: var(--blue-dark); color: white; transform: rotateY(180deg); border: 1px solid var(--blue-dark); }
+  .flip-card-back p { margin: 0; font-size: 0.95rem; }
+
+  .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .img-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; margin: 1rem 0; padding: 0.5rem 1rem; }
+  summary { font-weight: 600; cursor: pointer; padding: 0.5rem 0; color: var(--blue-dark); outline: none; font-size: 1.05rem; }
+  details p { padding-top: 0.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; }
 
   .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
   .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
@@ -77,18 +95,36 @@
   <h2>Gas Exchange and Surface Area</h2>
   <div class="kt"><strong>Key Understanding</strong> Gas exchange is vital for living organisms. Evolving larger bodies poses a challenge due to decreasing surface area-to-volume ratio ($SA:V$).</div>
   
-  <p>For efficient diffusion, respiratory surfaces must maximize their $SA:V$ ratio. We can express the rate of diffusion using Fick's Law of Diffusion:</p>
+  <p>For efficient diffusion to meet the metabolic demands of complex multicellular organisms, respiratory surfaces must maximize their $SA:V$ ratio. Small, single-celled organisms can rely entirely on simple diffusion across their outer membrane, but as organisms grow larger, their volume (which dictates metabolic rate and thus oxygen demand) increases much faster than their surface area (which dictates the rate of gas exchange).</p>
+  <p>To compensate, evolutionary adaptations have resulted in specialized respiratory structures like gills in fish or alveoli in mammalian lungs. We can express the rate of diffusion using Fick's Law of Diffusion:</p>
   
   <div class="card" style="text-align: center; font-size: 1.1rem;">
     $Rate \propto \frac{Surface Area \times \Delta Concentration}{Distance}$
   </div>
   
   <ul class="bullets">
-    <li><strong>Permeability:</strong> Surfaces must allow O₂ and CO₂ to pass through easily.</li>
-    <li><strong>Thin tissue layers:</strong> Reduces the diffusion distance.</li>
-    <li><strong>Moisture:</strong> Gases must dissolve in liquid to diffuse across cell membranes.</li>
-    <li><strong>Large Surface Area:</strong> Essential for absorbing and releasing sufficient volumes of gas to support metabolism.</li>
+    <li><strong>Permeability:</strong> Surfaces must allow O₂ and CO₂ to pass through easily without significant resistance.</li>
+    <li><strong>Thin tissue layers:</strong> Reduces the diffusion distance, maximizing the rate of diffusion. E.g. alveolar walls are just one cell thick (squamous epithelium).</li>
+    <li><strong>Moisture:</strong> Gases must dissolve in a thin liquid film in order to diffuse across the phospholipid bilayers of cell membranes.</li>
+    <li><strong>Large Surface Area:</strong> Essential for absorbing and releasing sufficient volumes of gas to support a high metabolism.</li>
   </ul>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Surface Area to Volume Ratio (SA:V)</h3>
+        <p>Hover to reveal definition</p>
+      </div>
+      <div class="flip-card-back">
+        <p>A crucial geometric relationship in biology. As an object increases in size, its volume grows faster than its surface area. A high SA:V ratio is required for efficient material exchange.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1549488344-c6eb722bd4ba?w=500&q=80" alt="Small organism">
+    <img src="https://images.unsplash.com/photo-1563212035-7729227003bf?w=500&q=80" alt="Large mammal showing necessity for lungs">
+  </div>
 </div>
 
 <!-- SLIDE 2 — B3.1.3 & B3.1.4 -->
@@ -97,26 +133,41 @@
   <h2>Mammalian Lungs & Concentration Gradients</h2>
   <div class="kt"><strong>Key Understanding</strong> Mammalian lungs are adapted for gas exchange via alveoli, and maintain steep concentration gradients.</div>
   
-  <p>Ventilation (breathing) and continuous blood flow ensure that concentration gradients of O₂ and CO₂ are maintained.</p>
+  <p>To maximize the numerator in Fick's Law, not only do we need a massive surface area (provided by millions of tiny air sacs called alveoli), but we also need a steep concentration gradient ($\Delta Concentration$).</p>
+  <p>Ventilation (breathing) and continuous, rapid blood flow ensure that concentration gradients of O₂ and CO₂ are maintained across the alveolar membrane. If air in the alveoli became stagnant, it would quickly reach equilibrium with the blood, and diffusion of oxygen into the blood would cease.</p>
   
-  <!-- Image Generation Quota limit hit: Placeholding with requested path name for when limit resets -->
-  <img src="/images/alveoli_diagram.jpg" alt="Educational diagram of human alveoli showing gas exchange with capillaries" class="slide-img">
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" alt="Medical scan of lungs">
+    <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=500&q=80" alt="Microscopic capillary network">
+  </div>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Adaptations of Lungs</h4>
       <ul>
-        <li>Branched bronchioles increase surface area.</li>
-        <li>Extensive capillary beds wrap around alveoli.</li>
-        <li>Surfactant prevents alveolar collapse by reducing surface tension.</li>
+        <li>Highly branched bronchioles ending in alveoli drastically increase surface area.</li>
+        <li>An extensive, dense capillary bed wraps around each alveolus, minimizing diffusion distance.</li>
+        <li>Type II pneumocytes secrete pulmonary surfactant, a lipid-protein complex that reduces surface tension, preventing alveolar collapse during exhalation.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--orange)">Maintaining Gradients</h4>
       <ul>
-        <li>Ventilation continuously replaces stale air with fresh air.</li>
-        <li>Blood flow quickly removes oxygenated blood, replacing it with deoxygenated blood.</li>
+        <li>Ventilation continuously replaces stale, CO₂-rich air with fresh, O₂-rich air.</li>
+        <li>Continuous blood flow rapidly transports oxygenated blood away and brings in deoxygenated blood, keeping the O₂ concentration in the capillary lower than in the alveolus.</li>
       </ul>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Type II Pneumocytes</h3>
+        <p>Hover to reveal definition</p>
+      </div>
+      <div class="flip-card-back">
+        <p>Specialized alveolar cells responsible for secreting pulmonary surfactant. This lowers the surface tension of the moist inner lining of the alveoli, preventing them from adhering to each other and collapsing.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -127,19 +178,33 @@
   <h2>Ventilation of the Lungs</h2>
   <div class="kt"><strong>Key Understanding</strong> Ventilation relies on muscle contractions creating pressure changes.</div>
   
-  <p>Breathing follows Boyle's Law: $P \propto \frac{1}{V}$. Changing the volume of the thoracic cavity inversely changes the pressure, drawing air in or pushing it out.</p>
+  <p>Breathing operates on the principles of Boyle's Law: $P \propto \frac{1}{V}$, which states that pressure is inversely proportional to volume in a closed system. By changing the volume of the sealed thoracic cavity, the body inversely changes the pressure inside the lungs, drawing air in (inspiration) or pushing it out (expiration).</p>
   
   <div class="css-flow">
-    <div class="flow-step">Inhalation: Diaphragm contracts (flattens), external intercostal muscles pull ribs up and out.</div>
+    <div class="flow-step">Inhalation: Diaphragm contracts (moves downward/flattens), external intercostal muscles contract (pulling ribs up and out).</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">Thoracic cavity volume increases $\rightarrow$ pressure decreases below atmospheric pressure.</div>
+    <div class="flow-step">Thoracic cavity volume increases $\rightarrow$ internal pressure drops below atmospheric pressure.</div>
     <div class="flow-arrow">↓</div>
     <div class="flow-step alt">Air flows INTO the lungs down the pressure gradient.</div>
   </div>
   
+  <p>During normal expiration, these muscles simply relax, and the elastic recoil of the lungs reduces the volume, pushing air out. Forced expiration (like blowing out candles) requires the contraction of the internal intercostal muscles and abdominal muscles.</p>
+
   <div class="app-box">
     <strong>Application: Antagonistic Muscle Action</strong>
-    <p>Inhalation and exhalation require antagonistic muscle pairs. For example, the external and internal intercostal muscles work opposite each other.</p>
+    <p>Muscles can only do work by contracting (pulling). They cannot actively push. Therefore, inhalation and exhalation require antagonistic muscle pairs. The external intercostal muscles contract to expand the rib cage, while the internal intercostal muscles contract to pull it in during forced exhalation.</p>
+  </div>
+  
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Antagonistic Muscles</h3>
+        <p>Hover to reveal definition</p>
+      </div>
+      <div class="flip-card-back">
+        <p>Pairs of muscles that work in opposition to one another. When one contracts, the other relaxes. Examples include the external and internal intercostals, and the diaphragm and abdominal muscles.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -149,17 +214,25 @@
   <h2>Measurement of Lung Volumes</h2>
   <div class="kt"><strong>Key Understanding</strong> Lung volumes can be measured to analyze physiological parameters.</div>
   
-  <p>Spirometry is used to measure the amount of air inhaled and exhaled.</p>
+  <p>Spirometry is the standard method used to measure the volume of air an individual inhales and exhales. A spirometer produces a spirogram, a graph showing volume changes over time. This is a critical diagnostic tool for assessing lung function and diagnosing respiratory diseases like asthma or COPD.</p>
   
   <ul class="bullets">
-    <li><strong>Tidal Volume ($V_T$):</strong> Volume of air breathed in and out during a normal resting breath.</li>
-    <li><strong>Vital Capacity:</strong> The maximum volume of air that can be exhaled after a maximum inhalation.</li>
-    <li><strong>Inspiratory/Expiratory Reserves:</strong> Extra volume that can be inhaled/exhaled beyond the tidal volume.</li>
+    <li><strong>Tidal Volume ($V_T$):</strong> The volume of air breathed in and out during a normal, unforced resting breath (typically ~500 mL in adults).</li>
+    <li><strong>Vital Capacity (VC):</strong> The maximum volume of air that can be forcibly exhaled after taking the deepest possible breath.</li>
+    <li><strong>Inspiratory Reserve Volume (IRV):</strong> The extra volume of air that can be inhaled with maximal effort after a normal tidal inhalation.</li>
+    <li><strong>Expiratory Reserve Volume (ERV):</strong> The extra volume of air that can be forcibly exhaled after a normal tidal exhalation.</li>
+    <li><strong>Residual Volume (RV):</strong> The air remaining in the lungs even after a maximal exhalation, which keeps the alveoli inflated.</li>
   </ul>
+
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=500&q=80" alt="Person running, highlighting increased ventilation">
+    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=500&q=80" alt="Medical professional reviewing a graph">
+  </div>
   
   <div class="skill-box">
     <strong>Skill: Data Analysis</strong>
-    <p>Be prepared to calculate ventilation rate using the formula: $Ventilation \ Rate = Tidal \ Volume \times Breathing \ Rate$.</p>
+    <p>Be prepared to calculate ventilation rate using a spirogram. The formula is:<br> 
+    $Ventilation \ Rate \ (L/min) = Tidal \ Volume \ (L/breath) \times Breathing \ Rate \ (breaths/min)$.</p>
   </div>
 </div>
 
@@ -167,22 +240,24 @@
 <div class="slide" id="slide-5">
   <div class="section-tag">B3.1.7 / B3.1.8</div>
   <h2>Leaf Adaptations for Gas Exchange</h2>
-  <div class="kt"><strong>Key Understanding</strong> Leaves are adapted for photosynthesis and gas exchange.</div>
+  <div class="kt"><strong>Key Understanding</strong> Leaves are highly adapted structures optimized for both photosynthesis and gas exchange.</div>
   
-  <p>Gas exchange in plants involves CO₂ entering for photosynthesis and O₂ exiting as a byproduct. Water vapor also exits via transpiration.</p>
+  <p>Unlike animals, plants do not have a dedicated active ventilation system (no breathing). Gas exchange in plants relies entirely on diffusion. CO₂ must enter the leaf for the Calvin cycle of photosynthesis, while O₂ produced during the light-dependent reactions must exit. This occurs primarily through microscopic pores on the underside of the leaf called stomata.</p>
   
-  <!-- Image Generation Quota limit hit: Placeholding with requested path name for when limit resets -->
-  <img src="/images/stomata_diagram.jpg" alt="Educational diagram of leaf stomata showing guard cells and gas exchange" class="slide-img">
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500&q=80" alt="Close up of a green leaf texture">
+    <img src="https://images.unsplash.com/photo-1550987342-9a3b6329c368?w=500&q=80" alt="Microscopic plant cellular structure">
+  </div>
   
   <ul class="bullets">
-    <li><strong>Waxy Cuticle:</strong> Prevents excessive water loss across the epidermis.</li>
-    <li><strong>Spongy Mesophyll:</strong> Contains air spaces for rapid diffusion of gases within the leaf.</li>
-    <li><strong>Stomatal Guard Cells:</strong> Open and close stomatal pores to regulate gas exchange and limit water loss.</li>
+    <li><strong>Waxy Cuticle:</strong> A hydrophobic layer on the upper and lower epidermis that prevents excessive transpirational water loss.</li>
+    <li><strong>Spongy Mesophyll:</strong> Loosely packed cells in the lower half of the leaf containing extensive air spaces. This creates a huge internal surface area for the rapid diffusion of gases to the palisade mesophyll cells above.</li>
+    <li><strong>Stomatal Guard Cells:</strong> Pairs of specialized cells flanking each stoma. They change turgor pressure to open and close the stomatal pores, regulating gas exchange and carefully limiting water loss.</li>
   </ul>
   
   <div class="skill-box">
     <strong>Skill: Plan Diagrams</strong>
-    <p>You must be able to draw and label a plan diagram of a transverse section of a dicotyledonous leaf, showing tissue layers (epidermis, palisade mesophyll, spongy mesophyll, and veins/vascular bundles).</p>
+    <p>You must be able to draw and label a plan diagram of a transverse section of a dicotyledonous leaf. Ensure you accurately depict the relative thicknesses of the upper epidermis, the tightly packed palisade mesophyll, the loosely packed spongy mesophyll, the vascular bundles (xylem on top, phloem on bottom), and the lower epidermis with stomata.</p>
   </div>
 </div>
 
@@ -190,21 +265,35 @@
 <div class="slide" id="slide-6">
   <div class="section-tag">B3.1.9 / B3.1.10</div>
   <h2>Transpiration and Stomatal Density</h2>
-  <div class="kt"><strong>Key Understanding</strong> Transpiration is an inevitable consequence of gas exchange.</div>
+  <div class="kt"><strong>Key Understanding</strong> Transpiration is an inevitable consequence of gas exchange in terrestrial plants.</div>
   
-  <p>When stomata open to allow CO₂ in, water vapor inevitably escapes. This creates the transpirational pull that draws water up the xylem.</p>
+  <p>To acquire CO₂ for photosynthesis, plants must open their stomata. Because the internal air spaces of the spongy mesophyll are saturated with water vapor (100% relative humidity) and the outside air is usually drier, water vapor inevitably diffuses out of the leaf down its concentration gradient. This loss of water vapor is called transpiration.</p>
   
   <div class="css-flow">
-    <div class="flow-step">Stomata open for carbon dioxide diffusion.</div>
+    <div class="flow-step">Stomata open to allow inward diffusion of carbon dioxide.</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step">Water vapor diffuses out of the moist air spaces (Transpiration).</div>
+    <div class="flow-step">Water vapor evaporates from mesophyll cells and diffuses out of the leaf (Transpiration).</div>
     <div class="flow-arrow">↓</div>
-    <div class="flow-step alt">Water is drawn from xylem into mesophyll cells to replace lost water.</div>
+    <div class="flow-step alt">This creates negative pressure (tension), drawing water from the xylem into mesophyll cells.</div>
   </div>
+
+  <p>While transpiration represents a loss of water that can lead to wilting, it is also the driving force (transpirational pull) that brings water and dissolved minerals up from the roots to the rest of the plant via the xylem.</p>
   
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Stomatal Density</h3>
+        <p>Hover to reveal definition</p>
+      </div>
+      <div class="flip-card-back">
+        <p>The number of stomata per unit area on a leaf surface. Plants in arid environments often have lower stomatal densities to conserve water, while those in humid environments may have higher densities to maximize CO₂ uptake.</p>
+      </div>
+    </div>
+  </div>
+
   <div class="skill-box">
-    <strong>Skill: Stomatal Density</strong>
-    <p>You should be able to measure stomatal density from leaf peels or micrographs. Higher density typically correlates with higher rates of gas exchange (and potential water loss).</p>
+    <strong>Skill: Stomatal Density Calculation</strong>
+    <p>You should be able to measure stomatal density from epidermal leaf peels under a microscope or from micrographs. Count the number of stomata in the field of view and divide by the area of the field of view (using $\pi r^2$ if the field is circular). Higher density typically correlates with higher maximum rates of gas exchange.</p>
   </div>
 </div>
 
@@ -212,18 +301,23 @@
 <div class="slide" id="slide-7">
   <div class="section-tag hl-tag">B3.1.11 / B3.1.12 <span class="hl-badge">HL Only</span></div>
   <h2>Haemoglobin and the Bohr Shift</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> Structural differences in haemoglobin match functional requirements for oxygen transport.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Structural differences in the quaternary protein structure of haemoglobin match functional requirements for oxygen transport.</div>
   
-  <p>Haemoglobin (Hb) binds to oxygen forming oxyhaemoglobin. The affinity for oxygen changes based on the environment.</p>
+  <p>Haemoglobin (Hb) is a tetrameric globular protein found in erythrocytes (red blood cells). Each of its four polypeptide chains contains a haem group with an iron ion ($Fe^{2+}$) that can reversibly bind to one oxygen molecule, forming oxyhaemoglobin. The affinity (stickiness) for oxygen changes dynamically based on the local biochemical environment.</p>
+  
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1618015359908-01037593c72b?w=500&q=80" alt="Abstract rendering of red blood cells">
+    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500&q=80" alt="Laboratory testing of blood parameters">
+  </div>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--hl)">Foetal vs Adult Haemoglobin</h4>
-      <p>Foetal Hb has a higher affinity for O₂ than adult Hb. This allows the foetus to pull O₂ away from the mother's blood across the placenta.</p>
+      <p>Foetal Hb is structurally distinct (it has gamma chains instead of beta chains). This gives it a naturally higher affinity for O₂ than adult Hb at the same partial pressure. This crucial adaptation allows the foetus to pull O₂ away from the mother's haemoglobin across the placental barrier.</p>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--hl)">The Bohr Shift</h4>
-      <p>High CO₂ lowers blood pH. This causes an allosteric change in Hb, decreasing its affinity for O₂, leading to more O₂ unloading in respiring tissues.</p>
+      <p>Actively respiring tissues produce high levels of CO₂. CO₂ lowers blood pH by forming carbonic acid. This increased acidity causes an allosteric conformational change in Hb, effectively decreasing its affinity for O₂. As a result, Hb automatically unloads more O₂ exactly where it is needed most (e.g., heavily working muscles).</p>
     </div>
   </div>
 </div>
@@ -232,24 +326,66 @@
 <div class="slide" id="slide-8">
   <div class="section-tag hl-tag">B3.1.13 <span class="hl-badge">HL Only</span></div>
   <h2>Oxygen Dissociation Curves</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> Oxygen dissociation curves represent haemoglobin's affinity for oxygen.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Oxygen dissociation curves graphically represent haemoglobin's changing affinity for oxygen at different partial pressures.</div>
   
-  <p>The curve is sigmoidal (S-shaped) due to cooperative binding—as one O₂ molecule binds, the affinity for subsequent O₂ molecules increases.</p>
+  <p>The curve plotting percentage saturation of haemoglobin against partial pressure of oxygen ($pO_2$) is not linear; it is sigmoidal (S-shaped). This is due to <strong>cooperative binding</strong>: as the first O₂ molecule binds to Hb, it induces a conformational change that makes it much easier for the second and third molecules to bind. The curve flattens at the top as Hb becomes saturated.</p>
   
   <ul class="bullets">
-    <li><strong>Right Shift (Bohr Effect):</strong> Caused by high CO₂/low pH. Hb releases more O₂ to tissues.</li>
-    <li><strong>Left Shift:</strong> Caused by low CO₂ or in foetal Hb. Hb holds onto O₂ more tightly.</li>
+    <li><strong>Right Shift (The Bohr Effect):</strong> Caused by high $pCO_2$, low pH, or high temperature (conditions typical of exercising muscle). Hb has lower affinity and releases more O₂ to tissues.</li>
+    <li><strong>Left Shift:</strong> Caused by low $pCO_2$, high pH, or lower temperature. Also characterizes Foetal Haemoglobin and Myoglobin. Hb has a higher affinity and holds onto O₂ more tightly at lower partial pressures.</li>
   </ul>
   
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Cooperative Binding</h3>
+        <p>Hover to reveal definition</p>
+      </div>
+      <div class="flip-card-back">
+        <p>An allosteric effect where the binding of a ligand (oxygen) to one subunit of a multi-subunit protein (haemoglobin) increases the binding affinity of the remaining subunits for the same ligand.</p>
+      </div>
+    </div>
+  </div>
+
   <div class="app-box">
     <strong>Application: High Altitude</strong>
-    <p>At high altitudes, lower $pO_2$ leads to reduced oxygen saturation. Acclimatization involves increased red blood cell production and a right shift in the dissociation curve to enhance O₂ delivery to tissues.</p>
+    <p>At high altitudes, the total atmospheric pressure is lower, meaning the $pO_2$ is significantly reduced. This leads to lower oxygen saturation in the blood. Long-term acclimatization involves producing more red blood cells (erythropoietin release), increasing ventilation rate, and a right shift in the dissociation curve to enhance O₂ unloading at the tissues.</p>
   </div>
 </div>
 
-<!-- SLIDE 9 — COMPLETION -->
+<!-- SLIDE 9 — CHECK YOUR UNDERSTANDING & COMPLETION -->
 <div class="slide" id="slide-9">
-  <div class="completion">
+  <div class="section-tag">Self Assessment</div>
+  <h2>Check Your Understanding</h2>
+  
+  <p>Test your knowledge of B3.1 before moving on. Click on the questions to reveal the answers.</p>
+
+  <details>
+    <summary>Q1: According to Fick's Law, what three variables influence the rate of diffusion?</summary>
+    <p><strong>Answer:</strong> The rate of diffusion is proportional to the Surface Area and the Concentration Gradient, and inversely proportional to the Diffusion Distance (thickness of the membrane).</p>
+  </details>
+
+  <details>
+    <summary>Q2: What is the specific role of Type II pneumocytes in the human alveolus?</summary>
+    <p><strong>Answer:</strong> They secrete pulmonary surfactant, which reduces surface tension within the alveoli. This prevents the moist alveolar walls from sticking together and collapsing during exhalation.</p>
+  </details>
+
+  <details>
+    <summary>Q3: How do the external intercostal muscles contribute to inhalation?</summary>
+    <p><strong>Answer:</strong> They contract, pulling the ribcage upwards and outwards. This increases the volume of the thoracic cavity, decreasing internal pressure below atmospheric pressure, causing air to rush in.</p>
+  </details>
+
+  <details>
+    <summary>Q4: Why must a plant continuously transpire during the day?</summary>
+    <p><strong>Answer:</strong> During the day, a plant must open its stomata to take in CO₂ for photosynthesis. Because the internal air spaces are moist, water vapor inevitably diffuses out (transpires) through these open stomata down its concentration gradient.</p>
+  </details>
+
+  <details class="hl-tag">
+    <summary>Q5 (HL Only): Explain the mechanism and physiological benefit of the Bohr shift.</summary>
+    <p><strong>Answer:</strong> High CO₂ levels (from active respiration) lower blood pH. This acidity alters the quaternary structure of haemoglobin, reducing its affinity for oxygen. This causes the oxygen dissociation curve to shift to the right, meaning more oxygen unloads exactly at the tissues that are actively respiring and need it most.</p>
+  </details>
+
+  <div class="completion" style="padding-top: 2rem;">
     <div class="check">✅</div>
     <h1>B3.1 Gas Exchange Complete!</h1>
     <p>You have successfully reviewed all SL and HL understandings for Biology Theme B3.1.</p>

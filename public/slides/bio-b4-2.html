@@ -14,7 +14,7 @@
   };
 </script>
 <style>
-  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC;--white:#FFFFFF}
   *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
   body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
   .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
@@ -29,14 +29,12 @@
   .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
   .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
   
-  /* Added specific boxes for B4.2 */
   .skill-box{background:var(--yellow-light);border-left:4px solid var(--yellow);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.skill-box strong{color:var(--yellow);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
   .app-box{background:var(--hl-light);border-left:4px solid var(--hl);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.app-box strong{color:var(--hl);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
   
   .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
   .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
   
-  /* CSS Flow Diagrams */
   .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
   .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
   .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
@@ -52,6 +50,28 @@
   .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
   @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+
+  /* Flip Card CSS */
+  .flip-card { background-color: transparent; width: 100%; height: 160px; perspective: 1000px; margin: 1.5rem 0; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; }
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+  .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .flip-card-front { background-color: var(--blue-light); color: var(--blue-dark); border: 2px solid var(--blue); }
+  .flip-card-front h3 { margin: 0; font-size: 1.3rem; }
+  .flip-card-back { background-color: var(--blue); color: white; transform: rotateY(180deg); border: 2px solid var(--blue); }
+  .flip-card-back p { margin: 0; font-size: 1rem; font-weight: 500; }
+
+  /* Image Grid */
+  .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .img-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .img-grid-caption { font-size: 0.8rem; color: var(--gray-600); text-align: center; margin-top: 0.5rem; font-style: italic; }
+
+  /* Details and Summary for Quiz */
+  details { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; transition: all 0.3s ease; }
+  details[open] { background: var(--white); border-color: var(--blue); box-shadow: 0 2px 10px rgba(10, 110, 189, 0.1); }
+  summary { font-weight: 600; cursor: pointer; color: var(--gray-800); outline: none; font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem; }
+  summary:hover { color: var(--blue); }
+  details p { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-200); color: var(--gray-800); font-weight: 500; }
 </style>
 </head>
 <body>
@@ -67,6 +87,7 @@
     <div class="stats">
       <div class="stat"><div class="stat-num">7</div><div class="stat-label">Understandings</div></div>
       <div class="stat"><div class="stat-num">2</div><div class="stat-label">Skills & Apps</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Check Questions</div></div>
     </div>
   </div>
 </div>
@@ -77,7 +98,20 @@
   <h2>Defining the Ecological Niche</h2>
   <div class="kt"><strong>Key Understanding</strong>The ecological niche is the functional role of a species within an ecosystem, determined by its adaptations and interactions.</div>
   
-  <p>A niche is not simply a physical location (which is the <em>habitat</em>), but rather a comprehensive description of how a species lives and interacts within its environment.</p>
+  <p>A niche is not simply a physical location—which is the <em>habitat</em>—but rather a comprehensive description of how a species lives, behaves, and interacts within its environment. It defines the organism's total sum of abiotic and biotic requirements.</p>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Habitat vs. Niche</h3>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--gray-600);">(Hover to flip)</p>
+      </div>
+      <div class="flip-card-back">
+        <p><strong>Habitat:</strong> The organism's physical address (e.g., tropical rainforest canopy).</p>
+        <p style="margin-top:0.5rem;"><strong>Niche:</strong> The organism's profession and lifestyle (e.g., diurnal frugivore dispersing seeds and serving as prey for harpy eagles).</p>
+      </div>
+    </div>
+  </div>
   
   <div class="css-flow">
     <div class="flow-step"><strong>Abiotic Requirements:</strong> Temperature, moisture, pH, and sunlight tolerances</div>
@@ -87,10 +121,11 @@
     <div class="flow-step hl"><strong>The Ecological Niche:</strong> The multi-dimensional space a species occupies in an ecosystem</div>
   </div>
   
+  <p>To successfully fulfill a niche, organisms rely on three distinct classes of adaptations:</p>
   <ul class="bullets">
-    <li><strong>Structural Adaptations:</strong> Physical features (e.g., beak shape) that allow resource exploitation.</li>
-    <li><strong>Behavioral Adaptations:</strong> Hunting patterns, diurnal vs nocturnal activity.</li>
-    <li><strong>Metabolic Adaptations:</strong> Biochemical pathways for survival (e.g., anaerobic respiration).</li>
+    <li><strong>Structural Adaptations:</strong> Physical features, such as beak shape in birds, allowing for specialized resource exploitation.</li>
+    <li><strong>Behavioral Adaptations:</strong> Hunting patterns, diurnal vs nocturnal activity, and mating rituals that reduce competition.</li>
+    <li><strong>Metabolic Adaptations:</strong> Biochemical pathways for survival under stress, such as anaerobic respiration or specialized digestive enzymes.</li>
   </ul>
 </div>
 
@@ -98,23 +133,33 @@
 <div class="slide" id="slide-2">
   <div class="section-tag">B4.2.2</div>
   <h2>Fundamental vs. Realized Niche</h2>
-  <div class="kt"><strong>Key Understanding</strong>Species rarely occupy their full fundamental niche due to competition.</div>
+  <div class="kt"><strong>Key Understanding</strong>Species rarely occupy their full fundamental niche due to competition and environmental constraints.</div>
   
-  <!-- Image placeholder since generation failed -->
-  <img src="/images/fundamental_realized_niche.jpg" alt="Graph showing Fundamental vs Realized Niche as overlapping bell curves" class="slide-img">
+  <div class="img-grid">
+    <div>
+      <img src="https://images.unsplash.com/photo-1590422749902-6169c9b5b2db?w=600&q=80" alt="Rocky shoreline">
+      <div class="img-grid-caption">Intertidal zones show clear niche boundaries.</div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1534044569584-3c4033621cc7?w=600&q=80" alt="Barnacles on a rock">
+      <div class="img-grid-caption">Competition restricts barnacle placement.</div>
+    </div>
+  </div>
   
+  <p>In ecology, we distinguish between the potential lifestyle an organism could have and the actual lifestyle it is forced into by its neighbors.</p>
+
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--blue)">Fundamental Niche</h4>
-      <p>The entire theoretical range of conditions a species <em>could</em> survive in, assuming no competition.</p>
+      <p>The entire theoretical range of conditions a species <em>could</em> survive in, assuming absolutely no competition.</p>
       <ul>
         <li>Determined solely by physiological limits (tolerance ranges).</li>
-        <li>Often broader and larger.</li>
+        <li>Often broader and larger space.</li>
       </ul>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--orange)">Realized Niche</h4>
-      <p>The actual, restricted conditions a species occupies due to biotic interactions.</p>
+      <p>The actual, restricted conditions a species occupies due to complex biotic interactions.</p>
       <ul>
         <li>Constrained by competition, predation, or disease.</li>
         <li>Often much narrower than the fundamental niche.</li>
@@ -123,8 +168,8 @@
   </div>
   
   <div class="app-box">
-    <strong>Application: Barnacle Zonation</strong>
-    In the intertidal zone, <em>Chthamalus</em> barnacles have a broad fundamental niche but are restricted to the upper high-tide zone (realized niche) because they are outcompeted in the lower zones by <em>Balanus</em> barnacles.
+    <strong>Application: Barnacle Zonation (Joseph Connell's Experiment)</strong>
+    In the Scottish intertidal zone, <em>Chthamalus</em> barnacles have a broad fundamental niche (they can survive high and low on the rocks). However, they are restricted to the upper high-tide zone (their realized niche) because they are actively outcompeted and crushed in the lower zones by the faster-growing <em>Balanus</em> barnacles.
   </div>
 </div>
 
@@ -132,12 +177,9 @@
 <div class="slide" id="slide-3">
   <div class="section-tag">B4.2.3</div>
   <h2>The Competitive Exclusion Principle</h2>
-  <div class="kt"><strong>Key Understanding</strong>Two species competing for the exact same limiting resource cannot coexist at constant population values.</div>
+  <div class="kt"><strong>Key Understanding</strong>Two species competing for the exact same limiting resource cannot stably coexist at constant population values.</div>
   
-  <!-- Image placeholder since generation failed -->
-  <img src="/images/competitive_exclusion.jpg" alt="Graph showing competitive exclusion and population shifts" class="slide-img">
-  
-  <p>First proposed by G.F. Gause, this principle dictates that if two species have identical niches, one will have a slight reproductive advantage and will eventually drive the other to local extinction.</p>
+  <p>First proposed by the Russian ecologist G.F. Gause, this principle dictates that if two species have perfectly identical niches, one will inevitably have a slight reproductive or survival advantage. Over time, this advantage compounds, driving the weaker competitor to local extinction.</p>
   
   <div class="css-flow">
     <div class="flow-step">Species A and Species B occupy the exact same niche</div>
@@ -148,10 +190,24 @@
     <div class="flow-arrow">↓</div>
     <div class="flow-step hl">Competitive Exclusion: The weaker species goes extinct locally</div>
   </div>
+
+  <div class="flip-card" style="height: 180px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Gause's Paramecium Experiment</h3>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--gray-600);">(Hover to flip)</p>
+      </div>
+      <div class="flip-card-back">
+        <p>Gause grew <em>Paramecium aurelia</em> and <em>Paramecium caudatum</em> together. <em>P. aurelia</em> grew slightly faster and consistently drove <em>P. caudatum</em> to extinction in the culture tube, proving the exclusion principle.</p>
+      </div>
+    </div>
+  </div>
   
   <div class="skill-box">
     <strong>Skill: Mathematical Modeling of Competition</strong>
-    When modeling population dynamics under competition, the logistic growth equation can be modified to include competition coefficients. E.g., $\frac{dN_1}{dt} = r_1 N_1 \left(1 - \frac{N_1 + \alpha N_2}{K_1}\right)$
+    When modeling population dynamics under competition, the logistic growth equation can be modified to include competition coefficients ($\alpha$ and $\beta$). 
+    <br><br>
+    $\frac{dN_1}{dt} = r_1 N_1 \left(1 - \frac{N_1 + \alpha N_2}{K_1}\right)$
   </div>
 </div>
 
@@ -159,16 +215,27 @@
 <div class="slide" id="slide-4">
   <div class="section-tag">B4.2.4</div>
   <h2>Niche Partitioning</h2>
-  <div class="kt"><strong>Key Understanding</strong>Species can avoid competitive exclusion by partitioning (dividing up) resources.</div>
+  <div class="kt"><strong>Key Understanding</strong>Species avoid competitive exclusion by partitioning (dividing up) resources, allowing coexistence.</div>
   
-  <p>To coexist, species evolve behavioral or morphological adaptations that minimize direct competition by altering their realized niches.</p>
+  <p>To coexist in nature without driving one another to extinction, competing species evolve behavioral or morphological adaptations that minimize direct competition. This is called resource partitioning, and it effectively shrinks their realized niches to minimize overlap.</p>
+  
+  <div class="img-grid">
+    <div>
+      <img src="https://images.unsplash.com/photo-1555169062-0133285c5319?w=600&q=80" alt="Bird in a tree canopy">
+      <div class="img-grid-caption">Spatial Partitioning: Warblers feeding in different tree zones.</div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1582298634861-580796bde033?w=600&q=80" alt="Owl flying at night">
+      <div class="img-grid-caption">Temporal Partitioning: Nocturnal owls vs diurnal hawks.</div>
+    </div>
+  </div>
   
   <div class="card">
     <strong style="color:var(--green)">Forms of Partitioning:</strong>
     <ul class="bullets">
-      <li><strong>Spatial Partitioning:</strong> Using different areas of a habitat (e.g., Anole lizards occupying different parts of a tree canopy).</li>
-      <li><strong>Temporal Partitioning:</strong> Being active at different times (e.g., hawks hunt during the day, owls hunt at night).</li>
-      <li><strong>Dietary/Morphological Partitioning:</strong> Evolving different physical structures to exploit different food sources (e.g., Darwin's finches developing different beak sizes to eat different seeds).</li>
+      <li><strong>Spatial Partitioning:</strong> Using different geographic areas or microhabitats of a habitat. (e.g., MacArthur’s warblers occupying different levels of spruce tree canopies, or Anole lizards occupying different branch thicknesses).</li>
+      <li><strong>Temporal Partitioning:</strong> Being active at different times of the day or year. (e.g., Hawks hunt identical prey as owls, but hawks hunt by day while owls hunt by night).</li>
+      <li><strong>Dietary/Morphological Partitioning:</strong> Evolving different physical structures to exploit different subsets of a food source. (e.g., Darwin's finches developing varied beak depths to crack different-sized seeds).</li>
     </ul>
   </div>
 </div>
@@ -177,63 +244,92 @@
 <div class="slide" id="slide-5">
   <div class="section-tag">B4.2.5</div>
   <h2>Metabolic & Nutritional Adaptations</h2>
-  <div class="kt"><strong>Key Understanding</strong>Organisms adapt metabolically to different environmental availability of resources like oxygen and carbon.</div>
+  <div class="kt"><strong>Key Understanding</strong>Organisms adapt metabolically to extreme or varied environmental availabilities of oxygen, carbon, and energy.</div>
   
-  <p>Microorganisms show immense niche diversity based on oxygen tolerance and chemical metabolism.</p>
+  <p>Microorganisms showcase immense niche diversity. While animals are largely restricted by the need for oxygen and organic food, bacteria and archaea have evolved incredible metabolic flexibility.</p>
   
   <table class="tbl">
-    <tr><th>Category</th><th>Metabolic Adaptation</th><th>Equation / Notes</th></tr>
+    <tr><th>Category</th><th>Metabolic Adaptation</th><th>Ecological Context</th></tr>
     <tr>
       <td><strong>Obligate Aerobes</strong></td>
-      <td>Require O₂ for cellular respiration.</td>
-      <td>C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O</td>
+      <td>Require O₂ for cellular respiration. Cannot survive without it.</td>
+      <td>Occupy oxygen-rich niches (surface waters, topsoil).</td>
     </tr>
     <tr>
       <td><strong>Obligate Anaerobes</strong></td>
-      <td>O₂ is toxic. They rely on fermentation or anaerobic respiration.</td>
-      <td>E.g., methanogenesis: CO₂ + 4H₂ → CH₄ + 2H₂O</td>
+      <td>O₂ is highly toxic. Rely exclusively on fermentation or anaerobic respiration.</td>
+      <td>Occupy deep mud, hydrothermal vents, or animal intestines.</td>
     </tr>
     <tr>
       <td><strong>Facultative Anaerobes</strong></td>
-      <td>Can switch between aerobic respiration and fermentation depending on O₂ availability.</td>
-      <td>Adaptable to fluctuating environmental niches.</td>
+      <td>Can seamlessly switch between aerobic respiration and fermentation depending on O₂ availability.</td>
+      <td>Highly adaptable to fluctuating environmental niches (e.g., yeast, <em>E. coli</em>).</td>
     </tr>
   </table>
   
-  <p>Similarly, organisms fall into varied nutritional modes such as <em>holozoic</em> (ingesting solid food), <em>mixotrophic</em> (both autotrophic and heterotrophic), and <em>saprotrophic</em> (extracellular digestion of dead matter).</p>
+  <p>Beyond respiration, organisms fill varied nutritional modes:</p>
+  <ul class="bullets">
+    <li><strong>Holozoic:</strong> Ingesting solid organic food internally (most animals).</li>
+    <li><strong>Mixotrophic:</strong> Combining autotrophic (photosynthesis) and heterotrophic (consuming) behaviors based on light availability (e.g., <em>Euglena</em>).</li>
+    <li><strong>Saprotrophic:</strong> Secreting extracellular enzymes to digest dead organic matter externally, then absorbing the nutrients (fungi, bacteria).</li>
+  </ul>
 </div>
 
 <!-- SLIDE 6 — B4.2.6 (HL) -->
 <div class="slide" id="slide-6">
   <div class="section-tag hl-tag">B4.2.6 <span class="hl-badge">HL Only</span></div>
   <h2>Evolutionary Arms Races</h2>
-  <div class="kt"><strong>Key Understanding (HL)</strong> Predator-prey and herbivore-plant interactions lead to reciprocal evolutionary adaptations.</div>
+  <div class="kt"><strong>Key Understanding (HL)</strong> Predator-prey and herbivore-plant interactions lead to intense, reciprocal evolutionary adaptations (coevolution).</div>
   
-  <p>Species constantly exert selective pressure on one another, shaping their respective niches over evolutionary time.</p>
+  <p>Species do not exist in a vacuum; they constantly exert selective pressure on one another. This coevolutionary dynamic actively shapes their respective niches over vast evolutionary timescales, often resulting in biological "arms races."</p>
   
   <div class="compare-grid">
     <div class="compare-card">
       <h4 style="color:var(--hl)">Herbivore vs. Plant</h4>
-      <p>Plants evolve defenses (toxins, thorns, thick cuticles) while herbivores evolve countermeasures (detoxifying liver enzymes, specialized teeth).</p>
+      <p>Plants evolve robust defenses (chemical toxins, sharp thorns, thick waxy cuticles) to avoid being eaten. In response, herbivores evolve countermeasures (detoxifying liver enzymes in koalas, specialized grinding teeth, long tongues in giraffes).</p>
     </div>
     <div class="compare-card">
       <h4 style="color:var(--hl)">Predator vs. Prey</h4>
-      <p>Prey evolve camouflage, speed, or toxicity, prompting predators to evolve better vision, ambush tactics, or venom resistance.</p>
+      <p>Prey continuously evolve camouflage, rapid speed, or toxic warning colors (aposematism). This prompts predators to evolve acute vision, stealthy ambush tactics, cooperative pack hunting, or venom resistance.</p>
     </div>
   </div>
   
   <div class="app-box">
-    <strong>Application: Hominid Dentition</strong>
-    By examining fossilized teeth of early hominids (e.g., <em>Paranthropus boisei</em> vs <em>Homo habilis</em>), paleontologists can infer their dietary niche. Large, flat molars indicate a diet of tough, fibrous plants, while smaller, versatile teeth point to a mixotrophic or omnivorous diet.
+    <strong>Application: Hominid Dentition & Dietary Niches</strong>
+    By examining fossilized teeth of early hominids, paleontologists can deduce their realized dietary niche. 
+    <br><br>
+    <em>Paranthropus boisei</em> possessed massive, flat molars and heavy jaw musculature, indicating a highly specialized diet of tough, fibrous plants and nuts. Conversely, <em>Homo habilis</em> featured smaller, versatile teeth, pointing to a broader, omnivorous dietary niche that included scavenging meat—a critical adaptation for brain development.
   </div>
 </div>
 
-<!-- SLIDE 7 — COMPLETION -->
+<!-- SLIDE 7 — COMPLETION & QUIZ -->
 <div class="slide" id="slide-7">
   <div class="completion">
     <div class="check">✅</div>
     <h1>B4.2 Ecological Niches Complete!</h1>
-    <p>You have successfully reviewed all SL and HL understandings for this subtopic.</p>
+    <p style="margin-bottom: 2rem;">You have successfully reviewed all SL and HL understandings for this subtopic.</p>
+    
+    <h3 style="text-align: left; margin-bottom: 1rem; color: var(--blue);">Check Your Understanding</h3>
+    
+    <details>
+      <summary>📝 1. What is the difference between a fundamental and realized niche?</summary>
+      <p>The fundamental niche is the total theoretical range of conditions a species can survive in without competition. The realized niche is the narrower, actual space it occupies due to biotic pressures like competition and predation.</p>
+    </details>
+
+    <details>
+      <summary>📝 2. According to the competitive exclusion principle, what happens when two species share an identical niche?</summary>
+      <p>They cannot coexist indefinitely. The slightly superior competitor will eventually drive the weaker competitor to local extinction.</p>
+    </details>
+
+    <details>
+      <summary>📝 3. Provide an example of temporal niche partitioning.</summary>
+      <p>Hawks and owls hunting the same type of rodent prey in the same forest, but doing so at different times of day (diurnal vs. nocturnal) to avoid direct competition.</p>
+    </details>
+
+    <details>
+      <summary>📝 4. (HL Only) How does an evolutionary arms race affect ecological niches?</summary>
+      <p>It causes continuous reciprocal adaptation between interacting species (like predator and prey), forcing them to continuously evolve new traits and refine their niches just to maintain their current survival rates (often referred to as the Red Queen Hypothesis).</p>
+    </details>
   </div>
 </div>
 
