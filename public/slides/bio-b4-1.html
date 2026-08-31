@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB DP Biology B4.1 — Adaptation to Environment</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- MathJax for LaTeX rendering -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  
+  /* Custom Boxes for B4.1 */
+  .skill-box{background:#f4f0ff;border-left:4px solid var(--hl);border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin:1.2rem 0;font-size:.92rem}
+  .skill-box strong{color:var(--hl);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .app-box{background:var(--yellow-light);border-left:4px solid var(--yellow);border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin:1.2rem 0;font-size:.92rem}
+  .app-box strong{color:#b37d2d;display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+
+  .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
+  
+  /* CSS Flow Diagrams */
+  .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
+  .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
+  .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
+  .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
+
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--blue);width:20px;border-radius:4px}.nav-dot.hl-dot.active{background:var(--hl)}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1543325603-99d8dcd36e52?w=900&q=80" alt="Desert landscape" class="cover-img">
+    <div class="section-tag">IB DP Biology 2025: Form and Function</div>
+    <h1>B4.1 — Adaptation to Environment</h1>
+    <p class="subtitle">Theme B: Form and Function · Standard & Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Understandings</div></div>
+      <div class="stat"><div class="stat-num">0</div><div class="stat-label">HL Extensions</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — B4.1.1 & B4.1.2 -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">B4.1.1 / B4.1.2</div>
+  <h2>Habitat and Adaptation</h2>
+  <div class="kt"><strong>Key Understanding</strong>Organisms are adapted to the abiotic factors of their habitats.</div>
+  
+  <p>A <strong>habitat</strong> is the specific place where a community, species, population, or organism lives, characterized by distinct physical conditions.</p>
+  
+  <div class="app-box">
+    <strong>Application: Specific Adaptations</strong>
+    <p>Organisms have specialized adaptations to survive in extreme abiotic conditions:</p>
+    <ul class="bullets">
+      <li><strong>Sand Dunes (Marram Grass):</strong> Highly rolled leaves to trap moisture, thick waxy cuticle, and extensive root networks to prevent uprooting in loose sand.</li>
+      <li><strong>Mangrove Swamps (Mangrove Trees):</strong> Aerial roots (pneumatophores) to obtain oxygen in waterlogged, anaerobic mud, and specialized glands to excrete excess salt (NaCl).</li>
+    </ul>
+  </div>
+  
+  <div class="css-flow">
+    <div class="flow-step">Environmental Constraint (e.g. High Salinity)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">Natural Selection</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Organism develops specific physiological/structural adaptation</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 — B4.1.3 & B4.1.4 -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">B4.1.3 / B4.1.4</div>
+  <h2>Abiotic Variables and Range of Tolerance</h2>
+  <div class="kt"><strong>Key Understanding</strong>Abiotic variables affect species distribution and determine an organism's range of tolerance.</div>
+  
+  <p>Every species has a <strong>range of tolerance</strong> for every abiotic factor (such as temperature, pH, or light intensity) within which it can survive.</p>
+  
+  <div class="skill-box">
+    <strong>Skill: Using Transect Data</strong>
+    <p>Biologists use transect data and data loggers to correlate the distribution of an organism with abiotic variables. If an abiotic factor falls outside the tolerance range, the species cannot survive there. For a standard normal distribution of tolerance, most individuals are found within $\pm 1 \sigma$ (one standard deviation) of the optimum, and few survive near the extreme limits ($> \pm 2 \sigma$).</p>
+  </div>
+  
+  <p>The distribution can often be modelled mathematically using standard bell-curve equations, where the optimum corresponds to the peak frequency.</p>
+  
+</div>
+
+<!-- SLIDE 3 — B4.1.5 -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">B4.1.5</div>
+  <h2>Conditions for Coral Reef Formation</h2>
+  <div class="kt"><strong>Key Understanding</strong>Specific abiotic conditions are required for coral reef formation.</div>
+  
+  <p>Coral reefs are built by colonies of tiny animals called polyps that secrete calcium carbonate (CaCO₃). They have extremely narrow ranges of tolerance.</p>
+  
+  <table class="tbl">
+    <tr><th>Abiotic Factor</th><th>Optimal Range/Requirement</th></tr>
+    <tr>
+      <td><strong>Water Depth</strong></td>
+      <td>Generally shallow (less than 50m) to allow sufficient light penetration for symbiotic zooxanthellae.</td>
+    </tr>
+    <tr>
+      <td><strong>Temperature</strong></td>
+      <td>Optimal between $23^\circ \text{C}$ and $29^\circ \text{C}$. Too high causes coral bleaching.</td>
+    </tr>
+    <tr>
+      <td><strong>Salinity</strong></td>
+      <td>High salinity (approx 35 ppt); corals cannot survive near river mouths where fresh water dilutes the ocean.</td>
+    </tr>
+    <tr>
+      <td><strong>Clarity</strong></td>
+      <td>Clear water is essential. High turbidity (silt/sediment) blocks light and clogs coral polyps.</td>
+    </tr>
+    <tr>
+      <td><strong>pH</strong></td>
+      <td>Slightly alkaline (pH $\approx$ 8.0 - 8.3) to allow precipitation of CaCO₃ skeletons. Ocean acidification (increasing CO₂) threatens this.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- SLIDE 4 — B4.1.6 & B4.1.7 -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">B4.1.6 / B4.1.7</div>
+  <h2>Biomes and Convergent Evolution</h2>
+  <div class="kt"><strong>Key Understanding</strong>Biomes are groups of ecosystems with similar communities dictated by abiotic factors and convergent evolution.</div>
+  
+  <p>The distribution of terrestrial biomes (e.g., tropical rainforest, hot desert, taiga) is primarily determined by two abiotic factors: <strong>temperature</strong> and <strong>precipitation</strong>.</p>
+  
+  <div class="css-flow">
+    <div class="flow-step">Similar Abiotic Conditions across different continents</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Unrelated species face similar selective pressures</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step hl">Convergent Evolution: They evolve similar structural adaptations</div>
+  </div>
+  
+  <div class="tip"><strong>Example:</strong> Cacti in the Americas and Euphorbias in Africa are completely unrelated plant families, but both evolved thick, fleshy stems and spines to survive in hot deserts.</div>
+</div>
+
+<!-- SLIDE 5 — B4.1.8 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">B4.1.8</div>
+  <h2>Adaptations in Specific Biomes</h2>
+  <div class="kt"><strong>Key Understanding</strong>Organisms show distinct adaptations to life in hot deserts and tropical rainforests.</div>
+  
+  <p>Organisms in <strong>hot deserts</strong> (xerophytes) face severe water shortages, while those in <strong>tropical rainforests</strong> must compete intensely for light.</p>
+  
+  <!-- Image Note: The generated image was not copied due to sandbox restrictions, so it is linked from its original path or we could use a placeholder. Using the original path directly. -->
+  <img src="/images/xerophyte_adaptations.jpg" onerror="this.src='https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=900&q=80'" alt="Xerophyte adaptations to dry environments" class="slide-img">
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--orange)">Hot Desert Adaptations</h4>
+      <ul>
+        <li><strong>Xerophytes:</strong> Deep roots, reduced leaves (spines), thick waxy cuticles, CAM physiology to fix CO₂ at night.</li>
+        <li><strong>Animals:</strong> Nocturnal behavior to avoid heat, water conservation mechanisms (e.g., concentrated urine).</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--green)">Tropical Rainforest Adaptations</h4>
+      <ul>
+        <li><strong>Plants:</strong> Broad leaves to capture light, drip tips to shed excess rain, buttress roots for stability in shallow soil, epiphytes climbing to reach the canopy.</li>
+        <li><strong>Animals:</strong> Specialized diets, highly adapted for arboreal (tree-living) lifestyle.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 — COMPLETION -->
+<div class="slide" id="slide-6">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>B4.1 Adaptation Complete!</h1>
+    <p>You have successfully reviewed all understandings for Biology Theme B4.1.</p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
+  <div class="nav-dots" id="dotsContainer"></div>
+  <div class="nav-counter" id="slideCounter">1 / 6</div>
+  <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const counter = document.getElementById('slideCounter');
+  const progressBar = document.getElementById('progressBar');
+  const dotsContainer = document.getElementById('dotsContainer');
+  
+  // Initialize dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    // Mark HL dots
+    if(slide.querySelector('.hl-badge')) dot.classList.add('hl-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => jumpTo(i);
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  function updateNav() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    btnPrev.disabled = currentSlide === 0;
+    btnNext.disabled = currentSlide === totalSlides - 1;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function goTo(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    updateNav();
+  }
+  
+  function jumpTo(index) {
+    currentSlide = index;
+    updateNav();
+  }
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) goTo(1);
+    if (e.key === 'ArrowLeft' && currentSlide > 0) goTo(-1);
+  });
+  
+  updateNav();
+</script>
+</body>
+</html>

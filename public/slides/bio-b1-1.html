@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB DP Biology B1.1 — Carbohydrates & Lipids</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Load MathJax for LaTeX support -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root{--blue:#0A6EBD;--blue-light:#E8F4FD;--blue-dark:#064A7A;--orange:#FF6B35;--orange-light:#FFF3ED;--green:#2E8B57;--green-light:#EAF7F0;--red:#C0392B;--red-light:#FDECEB;--yellow:#F0AD4E;--yellow-light:#FFF9E6;--gray-50:#FAFBFC;--gray-100:#F4F5F7;--gray-200:#E8EAED;--gray-400:#9AA0A6;--gray-600:#5F6368;--gray-800:#202124;--hl:#7B2D8E;--hl-light:#F5EAF8;--hl-border:#C9A0DC}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Sora',-apple-system,sans-serif;background:#fff;color:var(--gray-800);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .slide{display:none;min-height:100vh;padding:3rem 2rem 6rem;max-width:900px;margin:0 auto}.slide.active{display:block}
+  h1{font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:.5rem}h2{font-size:1.65rem;font-weight:600;line-height:1.3;margin-bottom:1rem}h3{font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+  p{margin-bottom:.9rem;font-size:.95rem}strong{font-weight:600}
+  .section-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;margin-bottom:.8rem;background:var(--blue-light);color:var(--blue)}
+  .hl-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px;background:var(--hl);color:#fff;margin-left:.5rem;vertical-align:middle}
+  .kt{background:var(--gray-100);border-left:4px solid var(--blue);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;font-size:.92rem}.kt strong{color:var(--blue);display:block;margin-bottom:.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .tbl{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem}.tbl th{background:var(--gray-100);font-weight:600;text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--gray-200);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray-600)}.tbl td{padding:.55rem .8rem;border-bottom:1px solid var(--gray-200);vertical-align:top}.tbl tr:last-child td{border-bottom:none}
+  .bullets{list-style:none;padding:0;margin:.8rem 0}.bullets li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;font-size:.92rem}.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  .tip{background:var(--orange-light);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.88rem}.tip strong{color:var(--orange)}
+  .case{background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:.9rem 1.2rem;margin:1rem 0;font-size:.88rem}.case strong{color:var(--green)}
+  
+  /* Skills & Applications Boxes */
+  .skill-box { background: var(--hl-light); border-left: 4px solid var(--hl); border-radius: 0 8px 8px 0; padding: 0.9rem 1.2rem; margin: 1.2rem 0; font-size: 0.88rem; }
+  .skill-box strong { color: var(--hl); display:block; margin-bottom: 0.3rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .app-box { background: var(--blue-light); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 0.9rem 1.2rem; margin: 1.2rem 0; font-size: 0.88rem; }
+  .app-box strong { color: var(--blue); display:block; margin-bottom: 0.3rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .slide-img{width:100%;max-height: 500px; border-radius:10px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(10, 110, 189, 0.15);object-fit:contain; background: #fff;}
+  .cover-img{width:100%;height:35vh;object-fit:cover;border-radius:16px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.15);object-position:center 40%}
+  
+  /* CSS Flow Diagrams */
+  .css-flow { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem auto; align-items: center; max-width: 600px; }
+  .flow-step { background: var(--gray-50); border: 2px solid var(--blue); border-radius: 8px; padding: 1rem; width: 100%; text-align: center; font-weight: 500; color: var(--gray-800); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .flow-arrow { color: var(--blue); font-size: 1.5rem; font-weight: bold; line-height: 1; margin: 0.2rem 0; }
+  .flow-step.alt { border-color: var(--green); background: var(--green-light); color: var(--green); }
+  .flow-step.hl { border-color: var(--hl); background: var(--hl-light); color: var(--hl); }
+
+  .progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--blue);z-index:1000;transition:width .3s ease}
+  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--gray-200);padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;z-index:999}
+  .nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--gray-200);border-radius:8px;background:#fff;color:var(--gray-800);font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .15s}.nav-btn:hover{background:var(--gray-100);border-color:var(--gray-400)}.nav-btn:disabled{opacity:.3;cursor:default}
+  .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:60%}.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-200);border:none;cursor:pointer;padding:0;transition:all .2s}.nav-dot.active{background:var(--blue);width:20px;border-radius:4px}.nav-dot.hl-dot.active{background:var(--hl)}
+  .nav-counter{font-size:.72rem;color:var(--gray-400);white-space:nowrap;margin:0 .5rem}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:90vh;text-align:center}.cover h1{font-size:2.6rem;margin-bottom:.3rem}.cover .subtitle{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem}.cover .stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}.cover .stat{text-align:center}.cover .stat-num{font-size:2rem;font-weight:700;color:var(--blue)}.cover .stat-label{font-size:.75rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:.08em}
+  .completion{text-align:center;padding-top:4rem}.completion .check{font-size:4rem;margin-bottom:1rem}.completion h1{font-size:2rem;margin-bottom:.5rem}.completion .point-count{font-size:3rem;font-weight:700;color:var(--blue);margin:1rem 0}.completion .point-label{font-size:.85rem;color:var(--gray-600)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}.compare-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1rem}.compare-card h4{font-size:.9rem;margin-bottom:.4rem}.compare-card p{font-size:.85rem;margin:0}.compare-card ul{font-size:.85rem;padding-left:1.2rem;margin:.4rem 0 0}
+  @media(max-width:640px){.slide{padding:2rem 1.2rem 6rem}h1{font-size:1.7rem}h2{font-size:1.3rem}.cover h1{font-size:1.9rem}.cover .stat-num{font-size:1.5rem}.compare-grid{grid-template-columns:1fr}.tbl{font-size:.8rem}.tbl th,.tbl td{padding:.45rem .5rem}.nav-dots{max-width:45%}.nav-dot{width:6px;height:6px}.nav-dot.active{width:14px}.cover-img{height:28vh}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE 0 — COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1549420078-43d939e6a0d2?w=900&q=80" alt="Molecular structure representation" class="cover-img">
+    <div class="section-tag">IB DP Biology 2025: Unity and Diversity</div>
+    <h1>B1.1 — Carbohydrates & Lipids</h1>
+    <p class="subtitle">Theme B: Form and Function · Standard & Higher Level</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">13</div><div class="stat-label">Understandings</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Skills/Apps</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 1 — B1.1.1 & B1.1.2 -->
+<div class="slide" id="slide-1">
+  <div class="section-tag">B1.1.1 / B1.1.2</div>
+  <h2>Carbon and Condensation Reactions</h2>
+  <div class="kt"><strong>Key Understanding</strong> Carbon atoms can form four stable covalent bonds, allowing for the formation of diverse macromolecules. These are built via condensation reactions.</div>
+  
+  <p>Carbon is the backbone of biological molecules. Because it has four valence electrons, it can form up to four covalent bonds with other elements (such as H, O, N, P), creating complex chains, rings, and branches.</p>
+  
+  <div class="css-flow">
+    <div class="flow-step"><strong>Monomers</strong>: Single subunits (e.g., monosaccharides)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt"><strong>Condensation Reaction</strong>: Enzymes link monomers together</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step"><strong>Polymer</strong> + H₂O is released</div>
+  </div>
+  
+  <div class="app-box">
+    <strong>Application</strong>
+    Condensation reactions are anabolic (build up complex molecules). A water molecule (H₂O) is always a byproduct when two monomers join.
+  </div>
+</div>
+
+<!-- SLIDE 2 — B1.1.3 -->
+<div class="slide" id="slide-2">
+  <div class="section-tag">B1.1.3</div>
+  <h2>Hydrolysis: Breaking Down Polymers</h2>
+  <div class="kt"><strong>Key Understanding</strong> Digestion of polymers into monomers occurs via hydrolysis reactions.</div>
+  
+  <p>When organisms consume food, the large macromolecules (polymers) must be broken down into smaller monomers to be absorbed and used by cells. This process is called <strong>hydrolysis</strong> (<em>hydro</em> = water, <em>lysis</em> = to break).</p>
+  
+  <ul class="bullets">
+    <li>Requires the <strong>addition of water (H₂O)</strong> to break the covalent bonds.</li>
+    <li>Catalyzed by specific digestive enzymes (e.g., amylase for starch, lipase for lipids).</li>
+    <li>This is a <strong>catabolic</strong> reaction (breaking down).</li>
+  </ul>
+  
+  <div class="skill-box">
+    <strong>Skill: Drawing Reactions</strong>
+    Be able to identify and draw simplified models of condensation and hydrolysis reactions, clearly showing where H and OH are removed or added to form H₂O.
+  </div>
+</div>
+
+<!-- SLIDE 3 — B1.1.4 & B1.1.5 -->
+<div class="slide" id="slide-3">
+  <div class="section-tag">B1.1.4 / B1.1.5</div>
+  <h2>Carbohydrates: Energy and Structure</h2>
+  
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4 style="color:var(--blue)">Monosaccharides (B1.1.4)</h4>
+      <p>Single sugar units, primarily used as an immediate energy source for cellular respiration.</p>
+      <ul>
+        <li><strong>Examples:</strong> Glucose (C₆H₁₂O₆), Fructose, Galactose, Ribose.</li>
+        <li>Highly soluble in water, easily transported in blood.</li>
+      </ul>
+    </div>
+    <div class="compare-card">
+      <h4 style="color:var(--orange)">Polysaccharides (B1.1.5)</h4>
+      <p>Long chains of monosaccharides, used for energy storage.</p>
+      <ul>
+        <li><strong>Starch:</strong> Energy storage in plants (amylose & amylopectin).</li>
+        <li><strong>Glycogen:</strong> Energy storage in animals (highly branched).</li>
+      </ul>
+    </div>
+  </div>
+  
+  <p>By storing glucose as large, insoluble polysaccharides, cells prevent osmosis issues (water entering the cell and causing it to burst) while keeping energy reserves dense.</p>
+</div>
+
+<!-- SLIDE 4 — B1.1.6 & B1.1.7 -->
+<div class="slide" id="slide-4">
+  <div class="section-tag">B1.1.6 / B1.1.7</div>
+  <h2>Structural Carbohydrates & Glycoproteins</h2>
+  
+  <h3>Cellulose in Plants (B1.1.6)</h3>
+  <p>Cellulose is a polysaccharide made of $\beta$-glucose. Because the glucose units alternate their orientation, cellulose forms straight, unbranched chains.</p>
+  <ul class="bullets">
+    <li>These chains hydrogen bond together to form rigid <strong>microfibrils</strong>.</li>
+    <li>Provides immense tensile strength to plant <strong>cell walls</strong>, preventing them from bursting under high water pressure (turgor).</li>
+  </ul>
+
+  <h3>Glycoproteins in Cell Recognition (B1.1.7)</h3>
+  <p>Proteins embedded in cell membranes often have short carbohydrate chains attached (glycoproteins). These are critical for:</p>
+  <ul class="bullets">
+    <li><strong>Cell-Cell Recognition:</strong> Allowing the immune system to identify "self" vs. "non-self" cells.</li>
+    <li><strong>Receptors:</strong> Acting as binding sites for hormones or other signalling molecules.</li>
+  </ul>
+</div>
+
+<!-- SLIDE 5 — B1.1.8 & B1.1.9 -->
+<div class="slide" id="slide-5">
+  <div class="section-tag">B1.1.8 / B1.1.9</div>
+  <h2>Lipids: Hydrophobic Molecules</h2>
+  <div class="kt"><strong>Key Understanding</strong> Lipids are a diverse group of carbon compounds characterized by their hydrophobic properties. Triglycerides and phospholipids form via condensation.</div>
+  
+  <p>Unlike carbohydrates, lipids do not dissolve in water (they are hydrophobic/non-polar). They include fats, oils, waxes, and steroids.</p>
+
+  <div class="css-flow">
+    <div class="flow-step">1 Glycerol + 3 Fatty Acids</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step alt">Condensation Reaction (releases 3 H₂O)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step"><strong>Triglyceride</strong> (Fat/Oil)</div>
+  </div>
+  
+  <div class="tip"><strong>Note:</strong> In a phospholipid, one fatty acid is replaced by a phosphate group, changing its properties entirely!</div>
+</div>
+
+<!-- SLIDE 6 — B1.1.10 -->
+<div class="slide" id="slide-6">
+  <div class="section-tag">B1.1.10</div>
+  <h2>Types of Fatty Acids</h2>
+  
+  <table class="tbl">
+    <tr><th>Type</th><th>Structure</th><th>Properties at Room Temp</th></tr>
+    <tr>
+      <td><strong>Saturated</strong></td>
+      <td>No double bonds between carbon atoms (max hydrogen). Straight chains.</td>
+      <td>Solid (e.g., butter, animal fat). Pack tightly together.</td>
+    </tr>
+    <tr>
+      <td><strong>Monounsaturated</strong></td>
+      <td>One double bond (C=C). Causes a "kink" in the chain.</td>
+      <td>Liquid (e.g., olive oil). Do not pack tightly.</td>
+    </tr>
+    <tr>
+      <td><strong>Polyunsaturated</strong></td>
+      <td>Two or more double bonds (C=C). Multiple kinks.</td>
+      <td>Liquid (e.g., sunflower oil, fish oil).</td>
+    </tr>
+  </table>
+
+  <div class="skill-box">
+    <strong>Skill: Molecular Identification</strong>
+    You must be able to visually identify saturated vs. unsaturated fatty acids from molecular diagrams based on the presence of double carbon bonds.
+  </div>
+</div>
+
+<!-- SLIDE 7 — B1.1.11 -->
+<div class="slide" id="slide-7">
+  <div class="section-tag">B1.1.11</div>
+  <h2>Energy Storage: Lipids vs Carbohydrates</h2>
+  <div class="kt"><strong>Key Understanding</strong> Triglycerides in adipose tissue act as long-term energy storage and insulation.</div>
+  
+  <p>Triglycerides are stored in specialized cells called <strong>adipose tissue</strong> in animals. Why use lipids instead of carbohydrates for long-term storage?</p>
+  
+  <ul class="bullets">
+    <li><strong>Energy Density:</strong> Lipids contain roughly twice the amount of energy per gram ($\sim 38 \text{ kJ/g}$) compared to carbohydrates ($\sim 17 \text{ kJ/g}$).</li>
+    <li><strong>Weight:</strong> Lipids are stored pure, without associated water. Carbohydrates are stored with large amounts of water, making them heavy. This is crucial for mobile animals!</li>
+    <li><strong>Insulation:</strong> Adipose tissue acts as a thermal insulator against heat loss (e.g., blubber in whales).</li>
+  </ul>
+</div>
+
+<!-- SLIDE 8 — B1.1.12 & B1.1.13 -->
+<div class="slide" id="slide-8">
+  <div class="section-tag">B1.1.12 / B1.1.13</div>
+  <h2>Phospholipids and Steroids</h2>
+  
+  <h3>The Phospholipid Bilayer (B1.1.12)</h3>
+  <p>Phospholipids are <strong>amphipathic</strong>—they have a hydrophilic (water-loving) phosphate head and two hydrophobic (water-fearing) fatty acid tails. In water, they spontaneously arrange into a bilayer:</p>
+  <ul class="bullets">
+    <li>Heads face outward towards the aqueous environment.</li>
+    <li>Tails face inward, shielded from the water.</li>
+    <li>This creates the fundamental structure of all cell membranes!</li>
+  </ul>
+
+  <h3>Steroid Hormones (B1.1.13)</h3>
+  <div class="app-box">
+    <strong>Application</strong>
+    Because steroid hormones (like testosterone and estrogen) are lipids and inherently hydrophobic, they can pass directly through the hydrophobic core of the phospholipid bilayer to enter target cells.
+  </div>
+</div>
+
+<!-- SLIDE 9 — COMPLETION -->
+<div class="slide" id="slide-9">
+  <div class="completion">
+    <div class="check">✅</div>
+    <h1>B1.1 Complete!</h1>
+    <p>You have successfully reviewed all understandings for Biology Theme B1.1 (Carbohydrates & Lipids).</p>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="btnPrev" onclick="goTo(-1)">◀ Prev</button>
+  <div class="nav-dots" id="dotsContainer"></div>
+  <div class="nav-counter" id="slideCounter">1 / 10</div>
+  <button class="nav-btn" id="btnNext" onclick="goTo(1)">Next ▶</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const counter = document.getElementById('slideCounter');
+  const progressBar = document.getElementById('progressBar');
+  const dotsContainer = document.getElementById('dotsContainer');
+  
+  // Initialize dots
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    // Mark HL dots
+    if(slide.querySelector('.hl-badge')) dot.classList.add('hl-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => jumpTo(i);
+    dotsContainer.appendChild(dot);
+  });
+  
+  const dots = document.querySelectorAll('.nav-dot');
+  
+  function updateNav() {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    
+    btnPrev.disabled = currentSlide === 0;
+    btnNext.disabled = currentSlide === totalSlides - 1;
+    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function goTo(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    updateNav();
+  }
+  
+  function jumpTo(index) {
+    currentSlide = index;
+    updateNav();
+  }
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) goTo(1);
+    if (e.key === 'ArrowLeft' && currentSlide > 0) goTo(-1);
+  });
+  
+  updateNav();
+</script>
+</body>
+</html>
