@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IB Biology D4.2: Stability and Change</title>
+  <!-- Basic styling for requested classes -->
+  <style>
+    .flip-card { background-color: transparent; width: 300px; height: 200px; perspective: 1000px; display: inline-block; margin: 10px; }
+    .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); }
+    .flip-card-front { background-color: #f8f9fa; color: #333; border: 1px solid #ddd; }
+    .flip-card-back { background-color: #0d6efd; color: white; transform: rotateY(180deg); }
+    .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .img-grid img { width: 100%; height: auto; border-radius: 8px; object-fit: cover; aspect-ratio: 16/9; }
+    .skill-box { background-color: #e8f5e9; border-left: 5px solid #4caf50; padding: 15px; margin: 15px 0; border-radius: 4px; }
+    .app-box { background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin: 15px 0; border-radius: 4px; }
+    details { background-color: #f8f9fa; padding: 10px; border-radius: 5px; margin-bottom: 10px; border: 1px solid #dee2e6; text-align: left; }
+    summary { font-weight: bold; cursor: pointer; color: #0056b3; outline: none; }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: Title -->
+      <section>
+        <h1>D4.2 Stability & Change</h1>
+        <h3>IB Biology (2025 Syllabus)</h3>
+        <p>Exploring ecosystem dynamics, keystone species, succession, and tipping points.</p>
+      </section>
+
+      <!-- Slide 2: Ecosystem Stability -->
+      <section>
+        <h2>Ecosystem Stability</h2>
+        <p>Ecosystem stability involves two main components:</p>
+        <ul style="text-align: left; display: inline-block;">
+          <li><strong>Resistance:</strong> The ability of an ecosystem to remain unchanged when subjected to a disturbance.</li>
+          <li><strong>Resilience:</strong> The ability and rate of an ecosystem to recover from a disturbance and return to its pre-disturbed state.</li>
+        </ul>
+        <div class="img-grid">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stable forest ecosystem">
+          <img src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ecosystem recovering from fire">
+        </div>
+      </section>
+
+      <!-- Slide 3: Keystone Species -->
+      <section>
+        <h2>Keystone Species</h2>
+        <p>A keystone species is a species that has a disproportionately large effect on its natural environment relative to its abundance.</p>
+        <div class="app-box" style="text-align: left;">
+          <h4>Application: Sea Otters</h4>
+          <p>Sea otters in the kelp forests of the Pacific Northwest are classic keystone species. By preying on sea urchins, they prevent the urchins from overgrazing and destroying the kelp forests, which are vital habitats for many other species.</p>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Trophic Cascade</h3>
+            </div>
+            <div class="flip-card-back">
+              <p>Indirect interactions that can control entire ecosystems, occurring when a trophic level in a food web is suppressed.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Succession Introduction -->
+      <section>
+        <h2>Ecological Succession</h2>
+        <p>Succession is the process by which the structure of a biological community evolves over time. Two main types exist: primary and secondary.</p>
+        <div class="skill-box" style="text-align: left;">
+          <h4>Skill: Analyzing Data</h4>
+          <p>You must be able to analyze data showing changes in species diversity and biomass during succession. Biomass typically increases as succession progresses, leveling off at the climax community.</p>
+        </div>
+      </section>
+
+      <!-- Slide 5: Primary Succession -->
+      <section>
+        <h2>Primary Succession</h2>
+        <p style="text-align: left;">Occurs in lifeless areas where there is no soil (e.g., after a volcanic eruption or glacial retreat).</p>
+        <ul style="text-align: left; display: inline-block;">
+          <li><strong>Pioneer Species:</strong> The first organisms to colonize a barren environment, typically lichens and mosses.</li>
+          <li>They break down rock to create soil, altering the abiotic environment.</li>
+          <li>Chemical formula for rock weathering by carbonic acid: <br> $H_2O + CO_2 \rightleftharpoons H_2CO_3 \rightleftharpoons H^+ + HCO_3^-$</li>
+        </ul>
+        <div class="img-grid">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bare rock landscape">
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lichens on rock">
+        </div>
+      </section>
+
+      <!-- Slide 6: Secondary Succession -->
+      <section>
+        <h2>Secondary Succession</h2>
+        <p style="text-align: left;">Occurs in areas where a community has been removed but the soil remains intact (e.g., after a forest fire or agricultural abandonment).</p>
+        <ul style="text-align: left; display: inline-block;">
+          <li>Proceeds much faster than primary succession due to the pre-existing soil and seed bank.</li>
+          <li>Pioneer species here might be fast-growing weeds and grasses.</li>
+        </ul>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Climax Community</h3>
+            </div>
+            <div class="flip-card-back">
+              <p>A stable, mature community that undergoes little or no change in species over time, marking the final stage of succession.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Tipping Points (HL) -->
+      <section>
+        <h2>Tipping Points (HL)</h2>
+        <p>A tipping point is a critical threshold at which a small change in human activity or environmental conditions can push an ecosystem into a fundamentally different state.</p>
+        <div class="app-box" style="text-align: left;">
+          <h4>Application: Amazon Rainforest</h4>
+          <p>Deforestation and climate change may push the Amazon past a tipping point where it no longer generates enough self-sustaining rainfall, transitioning it irreversibly into a savanna ecosystem.</p>
+        </div>
+        <p>Mathematical modeling of tipping points often involves studying system equilibria where $ \frac{dN}{dt} = 0 $.</p>
+      </section>
+
+      <!-- Slide 8: Check Your Understanding -->
+      <section>
+        <h2>Check Your Understanding</h2>
+        
+        <details>
+          <summary>Question 1: What is the main difference between primary and secondary succession?</summary>
+          <p style="margin-top: 10px;">Primary succession occurs in completely barren areas without soil (e.g., after a volcanic eruption), while secondary succession occurs in areas where soil is already present but the previous community was disturbed (e.g., after a fire).</p>
+        </details>
+        
+        <details>
+          <summary>Question 2: How does a keystone species affect ecosystem stability?</summary>
+          <p style="margin-top: 10px;">A keystone species maintains ecosystem stability by exerting strong control on community structure disproportionate to its abundance. Removing it can cause a drastic shift or collapse of the ecosystem.</p>
+        </details>
+        
+        <details>
+          <summary>Question 3 (HL): Describe the concept of a tipping point with an example.</summary>
+          <p style="margin-top: 10px;">A tipping point is a threshold where a small change causes a rapid, often irreversible, shift to a new ecosystem state. An example is coral bleaching due to a slight rise in ocean temperature, changing a vibrant reef into a dead, algae-dominated area.</p>
+        </details>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>

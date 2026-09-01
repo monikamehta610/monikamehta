@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>IB Biology D3.2: Inheritance (2025 Syllabus)</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 20px; color: #333; max-width: 1200px; margin: 0 auto; }
+    h1, h2, h3 { color: #2c3e50; }
+    
+    /* Flip Card CSS */
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      margin: 10px;
+      display: inline-block;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 8px;
+    }
+    .flip-card-front {
+      background-color: #ecf0f1;
+      color: #2c3e50;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: 1px solid #bdc3c7;
+    }
+    .flip-card-back {
+      background-color: #3498db;
+      color: white;
+      transform: rotateY(180deg);
+      font-size: 1em;
+    }
+
+    /* Image Grid CSS */
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .img-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* Skill & App Boxes */
+    .skill-box {
+      border-left: 5px solid #e67e22;
+      background-color: #fcf3eb;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .app-box {
+      border-left: 5px solid #27ae60;
+      background-color: #eafaf1;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Details / Summary */
+    details {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.1em;
+    }
+    details > p {
+      margin-top: 10px;
+    }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+  <h1>IB Biology D3.2: Inheritance (2025 Syllabus)</h1>
+
+  <h2>1. Introduction to Mendelian Genetics</h2>
+  <p>Mendelian genetics forms the foundation of classical genetics. Gregor Mendel's experiments on pea plants established the fundamental laws of inheritance. He observed that traits were inherited as discrete units, which we now know as genes.</p>
+  
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400" alt="Pea plants representing Mendel's experiments">
+    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400" alt="Laboratory research genetics">
+  </div>
+
+  <h3>Key Vocabulary</h3>
+  <div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Gene</div>
+        <div class="flip-card-back">A heritable factor that consists of a length of DNA and influences a specific characteristic.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Allele</div>
+        <div class="flip-card-back">One specific form of a gene, differing from other alleles by one or a few bases only and occupying the same gene locus as other alleles of the gene.</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Genotype</div>
+        <div class="flip-card-back">The alleles of an organism (e.g., TT, Tt, tt).</div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Phenotype</div>
+        <div class="flip-card-back">The characteristics or traits of an organism.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>2. Punnett Squares and Monohybrid Crosses</h2>
+  <p>Punnett squares are a tool used to predict the genotypic and phenotypic ratios of offspring from a specific cross. They show all possible combinations of gametes.</p>
+  
+  <div class="skill-box">
+    <strong>Skill: Constructing Punnett Squares</strong><br>
+    To construct a Punnett square for a monohybrid cross, determine the alleles of the parents. Place one parent's alleles along the top and the other parent's alleles down the side. Fill in the boxes to find the possible genotypes of the offspring.
+  </div>
+
+  <p>For example, in a cross between two heterozygous pea plants (Tt x Tt), the genotypic ratio will be 1 TT : 2 Tt : 1 tt, and the phenotypic ratio will be 3 Tall : 1 Short.</p>
+
+  <h2>3. Sex Linkage</h2>
+  <p>Sex linkage refers to genes located on sex chromosomes. In humans, the X chromosome is much larger than the Y chromosome and carries many more genes. Traits associated with genes on the X chromosome are said to be X-linked.</p>
+  <p>Because males have only one X chromosome (XY), they are more susceptible to recessive X-linked conditions like red-green color blindness and hemophilia.</p>
+
+  <div class="app-box">
+    <strong>Application: Hemophilia and Color Blindness</strong><br>
+    Hemophilia is a blood-clotting disorder caused by a recessive X-linked allele. Let $X^H$ be the normal allele and $X^h$ be the hemophilia allele. A female carrier ($X^H X^h$) and a normal male ($X^H Y$) have a 50% chance of their sons having hemophilia ($X^h Y$).
+  </div>
+
+  <h2>4. Pedigrees</h2>
+  <p>Pedigree charts are used to trace the inheritance of a trait through multiple generations of a family. They can help determine whether a trait is dominant or recessive, autosomal or sex-linked.</p>
+  
+  <div class="img-grid">
+    <img src="https://images.unsplash.com/photo-1596766453185-5b5e7d4d4dc0?auto=format&fit=crop&q=80&w=400" alt="Family tree representing pedigree concepts">
+  </div>
+
+  <div class="skill-box">
+    <strong>Skill: Analyzing Pedigrees</strong><br>
+    - If a trait skips a generation, it is likely recessive.<br>
+    - If two unaffected parents have an affected child, the trait must be recessive.<br>
+    - If an affected father has an unaffected daughter, the trait cannot be X-linked recessive.
+  </div>
+
+  <h2>5. Population Genetics: Hardy-Weinberg (HL Only)</h2>
+  <p>The Hardy-Weinberg principle states that allele and genotype frequencies in a population will remain constant from generation to generation in the absence of other evolutionary influences.</p>
+
+  <p>The Hardy-Weinberg equations are:</p>
+  <p style="text-align: center; font-size: 1.2em;">
+    $p + q = 1$<br>
+    $p^2 + 2pq + q^2 = 1$
+  </p>
+  <p>Where:</p>
+  <ul>
+    <li>$p$ = frequency of the dominant allele</li>
+    <li>$q$ = frequency of the recessive allele</li>
+    <li>$p^2$ = frequency of the homozygous dominant genotype</li>
+    <li>$2pq$ = frequency of the heterozygous genotype</li>
+    <li>$q^2$ = frequency of the homozygous recessive genotype</li>
+  </ul>
+
+  <h2>6. Check Your Understanding</h2>
+  <details>
+    <summary>Question 1: What is the phenotypic ratio of a dihybrid cross between two individuals heterozygous for both traits (AaBb x AaBb)?</summary>
+    <p>The phenotypic ratio is 9:3:3:1 (9 showing both dominant traits, 3 showing one dominant and one recessive, 3 showing the other dominant and recessive, and 1 showing both recessive traits).</p>
+  </details>
+
+  <details>
+    <summary>Question 2: Why are X-linked recessive diseases more common in males than in females?</summary>
+    <p>Males only have one X chromosome ($XY$), so if they inherit the recessive allele, they will express the trait. Females have two X chromosomes ($XX$), so they must inherit two copies of the recessive allele to express the trait. If they inherit one, they are carriers but usually asymptomatic.</p>
+  </details>
+
+  <details>
+    <summary>Question 3: In a population in Hardy-Weinberg equilibrium, the frequency of the recessive phenotype is 0.16. What is the frequency of the dominant allele?</summary>
+    <p>The frequency of the recessive phenotype ($q^2$) is 0.16. Therefore, the frequency of the recessive allele ($q$) is the square root of 0.16, which is 0.4. Since $p + q = 1$, the frequency of the dominant allele ($p$) is $1 - 0.4 = 0.6$.</p>
+  </details>
+
+</body>
+</html>

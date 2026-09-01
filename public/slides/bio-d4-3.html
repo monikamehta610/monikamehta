@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB Biology D4.3: Climate Change</title>
+    <!-- Include MathJax for LaTeX support -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* CSS elements for interactivity and layout */
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #2c3e50; }
+        
+        /* Flip Card */
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 20px auto;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .flip-card-front {
+            background-color: #3498db;
+            color: white;
+        }
+        .flip-card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* Image Grid */
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .img-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Boxes */
+        .skill-box, .app-box {
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 5px solid;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+        }
+        .skill-box { border-left-color: #e67e22; }
+        .app-box { border-left-color: #27ae60; }
+        .skill-box::before { content: "🔬 Skill: "; font-weight: bold; color: #e67e22; }
+        .app-box::before { content: "🌍 Application: "; font-weight: bold; color: #27ae60; }
+
+        /* Details / Summary */
+        details {
+            background: #f1f2f6;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        details p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>D4.3 Climate Change (2025 Syllabus)</h1>
+    
+    <section>
+        <h2>1. Global Warming & The Greenhouse Effect (SL & HL)</h2>
+        <p>The Earth's climate is highly dynamic, but human activities have accelerated changes unprecedented in the historical record. The core driver is the enhanced greenhouse effect. Greenhouse gases (GHGs) such as Carbon Dioxide (CO₂), Methane (CH₄), Nitrous Oxide (N₂O), and Water Vapor (H₂O) trap long-wave infrared radiation reflecting off the Earth's surface.</p>
+        <p>Short-wave radiation from the sun penetrates the atmosphere, but the re-emitted long-wave radiation is absorbed by bonds in GHG molecules, leading to atmospheric warming. This global warming drives profound shifts in global weather patterns, ocean currents, and biomes.</p>
+        
+        <div class="app-box">
+            Assessing claims that human activities are not causing climate change. Evidence shows an undeniable correlation between industrial activities (combustion of fossil fuels) and atmospheric CO₂ spikes.
+        </div>
+
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industrial Emissions">
+            <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Melting Glaciers">
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Greenhouse Gas (GHG)</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>A gas in the atmosphere that absorbs and emits radiation within the thermal infrared range.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Carbon Cycling Shifts (SL & HL)</h2>
+        <p>The biogeochemical carbon cycle involves carbon fluxes between lithosphere, hydrosphere, atmosphere, and biosphere. Anthropogenic activities disrupt these equilibria. The burning of fossil fuels (coal, oil, natural gas) converts sequestered organic carbon into atmospheric CO₂.</p>
+        <p>Deforestation limits photosynthesis, reducing the biospheric carbon sink. Additionally, melting permafrost releases ancient reservoirs of methane (CH₄). Methane undergoes oxidation to CO₂ and H₂O in the stratosphere, but not before exerting a warming potential $\approx 25$ times greater than CO₂ over a 100-year period.</p>
+        
+        <div class="skill-box">
+            Constructing a diagram of the carbon cycle to illustrate fluxes between sinks and sources. Be sure to use standard units like gigatonnes of carbon (GtC).
+        </div>
+
+        <p>Chemical reaction of methane combustion:</p>
+        <p>$$CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O + \text{energy}$$</p>
+    </section>
+
+    <section>
+        <h2>3. Ocean Acidification (SL & HL)</h2>
+        <p>The oceans act as a massive carbon sink, absorbing approximately 25-30% of anthropogenic CO₂ emissions. When CO₂ dissolves in seawater, it forms carbonic acid (H₂CO₃), a weak acid that dissociates to yield bicarbonate ions (HCO₃⁻) and hydrogen ions (H⁺).</p>
+        
+        <p>The pertinent chemical equilibria are:</p>
+        <p>$$CO_2(aq) + H_2O(l) \rightleftharpoons H_2CO_3(aq)$$</p>
+        <p>$$H_2CO_3(aq) \rightleftharpoons HCO_3^-(aq) + H^+(aq)$$</p>
+        
+        <p>The increase in H⁺ concentration decreases ocean pH. This shift in equilibrium also consumes carbonate ions (CO₃²⁻), which marine calcifying organisms (like corals and molluscs) desperately need to build their calcium carbonate (CaCO₃) shells and exoskeletons.</p>
+
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Healthy Coral Reef">
+            <img src="https://images.unsplash.com/photo-1621360811062-84155fb2f7fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ocean Acidification impacts">
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>Ocean Acidification</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p>The ongoing decrease in the pH of the Earth's oceans, caused by the uptake of CO₂ from the atmosphere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Check Your Understanding</h2>
+        
+        <details>
+            <summary>Why do greenhouse gases absorb long-wave radiation but not short-wave radiation?</summary>
+            <p>Greenhouse gases have molecular structures that resonate at the frequencies of long-wave (infrared) radiation. Short-wave (UV and visible light) from the sun passes through because its frequency is too high to be absorbed by these specific chemical bonds.</p>
+        </details>
+
+        <details>
+            <summary>How does ocean acidification directly harm marine calcifiers?</summary>
+            <p>Increased hydrogen ions (H⁺) bind with free carbonate ions (CO₃²⁻) to form bicarbonate (HCO₃⁻). This reduces the availability of carbonate, forcing calcifiers to expend more energy to build calcium carbonate (CaCO₃) shells, and in extreme cases, causes existing shells to dissolve.</p>
+        </details>
+
+        <details>
+            <summary>What is the significance of melting permafrost in the context of positive feedback loops?</summary>
+            <p>As global temperatures rise, permafrost melts, releasing trapped methane (CH₄) and CO₂. Since these are greenhouse gases, their release further enhances the greenhouse effect, leading to more warming and subsequently more permafrost melting.</p>
+        </details>
+    </section>
+
+</body>
+</html>

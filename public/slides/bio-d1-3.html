@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IB Biology D1.3: Mutations & Gene Editing</title>
+  <style>
+    /* CSS for interactive elements */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      margin: 20px auto;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+    .flip-card-front {
+      background-color: #ecf0f1;
+      color: #2c3e50;
+      border: 1px solid #bdc3c7;
+    }
+    .flip-card-back {
+      background-color: #3498db;
+      color: white;
+      transform: rotateY(180deg);
+    }
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .img-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .skill-box, .app-box {
+      border-left: 5px solid #27ae60;
+      background: #f1f8e9;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .app-box {
+      border-left-color: #e67e22;
+      background: #fdf2e9;
+    }
+    .skill-box h4, .app-box h4 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    details {
+      margin-bottom: 15px;
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #2c3e50;
+      font-size: 1.1em;
+    }
+    details p {
+      margin-top: 15px;
+      padding-left: 20px;
+      border-left: 3px solid #3498db;
+    }
+    section {
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #eee;
+    }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<div class="presentation-content">
+
+  <!-- Title Slide -->
+  <section class="title-slide">
+    <h1>D1.3 Mutations & Gene Editing</h1>
+    <h3>IB Biology (2025 Syllabus)</h3>
+    <p>Exploring the molecular basis of genetic variation, DNA amplification, and genetic engineering.</p>
+  </section>
+
+  <!-- Mutations Concept -->
+  <section>
+    <h2>Gene Mutations (SL)</h2>
+    <p>A gene mutation is a permanent alteration in the DNA sequence that makes up a gene. Mutations range in size; they can affect anywhere from a single DNA building block (base pair) to a large segment of a chromosome that includes multiple genes. Mutations are the original source of all genetic variation.</p>
+    
+    <div class="img-grid">
+      <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&w=800&q=80" alt="DNA Double Helix illustrating genetic code">
+      <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=800&q=80" alt="Laboratory test tubes representing genetic analysis">
+    </div>
+
+    <div class="app-box">
+      <h4>Application: Sickle Cell Anemia</h4>
+      <p>A classic example of a base substitution mutation. A single change (A &rarr; T) in the HBB gene results in the substitution of valine for glutamic acid in the &beta;-globin chain of hemoglobin. This alters the protein's 3D conformation, causing red blood cells to become sickle-shaped under low oxygen conditions.</p>
+      <p>Chemical composition representation of wild-type vs mutant: $Hb^A \rightarrow Hb^S$</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Types of Point Mutations</h2>
+    <p>Point mutations affect one or a very small number of nucleotides in a gene sequence:</p>
+    <ul>
+      <li><strong>Substitution:</strong> One base is replaced by another. Can lead to:
+        <ul>
+          <li><em>Silent mutations:</em> No change in the amino acid sequence due to genetic code degeneracy.</li>
+          <li><em>Missense mutations:</em> Results in a different amino acid being incorporated.</li>
+          <li><em>Nonsense mutations:</em> Creates a premature stop codon, halting translation early.</li>
+        </ul>
+      </li>
+      <li><strong>Insertion:</strong> Addition of one or more nucleotide base pairs into a DNA sequence.</li>
+      <li><strong>Deletion:</strong> Removal of one or more nucleotide base pairs from a DNA sequence.</li>
+    </ul>
+    <p>Insertions and deletions (unless in multiples of three) result in <strong>frameshift mutations</strong>, fundamentally altering the entire reading frame of the mRNA downstream of the mutation, typically leading to a completely non-functional protein.</p>
+  </section>
+
+  <section>
+    <h2>Vocabulary: Interactive Flashcards</h2>
+    <p>Hover over the cards to review key terminology.</p>
+    <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Mutagen</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>An environmental agent, such as UV radiation, X-rays, or reactive chemical substances, which increases the rate of genetic mutation above the spontaneous background level.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Frameshift Mutation</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>A genetic mutation caused by indels (insertions or deletions) of a number of nucleotides in a DNA sequence that is not divisible by three, changing the reading frame.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PCR Concept -->
+  <section>
+    <h2>Polymerase Chain Reaction (PCR) (SL)</h2>
+    <p>PCR is an essential, highly sensitive technique used in molecular biology to exponentially amplify a single copy or a few copies of a specific segment of DNA across several orders of magnitude, generating thousands to millions of copies.</p>
+    
+    <div class="skill-box">
+      <h4>Skill: Understanding the PCR Thermal Cycle</h4>
+      <p>PCR relies on thermal cycling, consisting of cycles of repeated heating and cooling:</p>
+      <ol>
+        <li><strong>Denaturation (94-96&deg;C):</strong> Heat breaks the hydrogen bonds between base pairs, separating the double-stranded DNA into single strands.</li>
+        <li><strong>Annealing (50-65&deg;C):</strong> Temperature is lowered to allow custom DNA primers to bind (anneal) to their complementary sequences on the single-stranded template DNA. The optimal melting temperature ($T_m$) for a primer can be estimated using the Wallace rule: 
+          <br><br>
+          <div style="text-align: center;">$T_m = 4(G+C) + 2(A+T)$ &deg;C</div>
+          <br>
+        </li>
+        <li><strong>Extension (72&deg;C):</strong> Temperature is raised to the optimum working temperature for Taq polymerase, which synthesizes a new DNA strand complementary to the DNA template strand by adding dNTPs in the 5' to 3' direction.</li>
+      </ol>
+      <p>Note: <em>Taq polymerase</em> is derived from <em>Thermus aquaticus</em>, a thermophilic bacterium found in hot springs, making the enzyme heat-stable.</p>
+    </div>
+
+    <div class="img-grid">
+      <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" alt="Thermal cycler machine used for PCR">
+      <img src="https://images.unsplash.com/photo-1614947027878-2953258db225?auto=format&fit=crop&w=800&q=80" alt="Scientist carefully pipetting reagents for a PCR master mix">
+    </div>
+  </section>
+
+  <!-- CRISPR Concept -->
+  <section>
+    <h2>CRISPR-Cas9 Gene Editing (HL)</h2>
+    <p>CRISPR-Cas9 is a revolutionary, precise gene-editing technology adapted from the natural antiviral defense mechanisms of bacteria and archaea. It acts like molecular scissors, allowing scientists to make directed changes to genomic DNA.</p>
+    
+    <ul>
+      <li><strong>sgRNA (single guide RNA):</strong> A synthetic RNA molecule constructed by fusing a tracrRNA and a crRNA. It contains a customizable ~20 nucleotide sequence that binds to Cas9 and guides the complex to the complementary target DNA sequence.</li>
+      <li><strong>Cas9 (CRISPR associated protein 9):</strong> An endonuclease enzyme that makes a double-stranded break in DNA at a specific sequence directed by the sgRNA.</li>
+      <li><strong>PAM (Protospacer Adjacent Motif):</strong> A short DNA sequence (typically 2-6 base pairs, e.g., 5'-NGG-3' for Streptococcus pyogenes Cas9) that immediately follows the target sequence in the host DNA. It is absolutely essential for Cas9 to bind and cleave the target DNA.</li>
+    </ul>
+
+    <div class="app-box">
+      <h4>Application: Therapeutic Potential and Ethical Considerations</h4>
+      <p>While CRISPR offers immense potential for curing monogenic genetic diseases (e.g., Cystic Fibrosis, Huntington's disease) and advancing agriculture, it raises profound ethical concerns. These include the potential for off-target effects, the morality of germline editing (which passes changes to future generations), and the societal implications of creating "designer babies."</p>
+    </div>
+    
+    <div class="img-grid">
+      <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Abstract visualization of CRISPR-Cas9 DNA editing">
+    </div>
+  </section>
+
+  <!-- Assessment -->
+  <section>
+    <h2>Check Your Understanding</h2>
+    <p>Test your knowledge of the D1.3 concepts by clicking on the questions below to reveal the answers.</p>
+    
+    <details>
+      <summary>1. Differentiate between the functional consequences of a missense mutation and a nonsense mutation.</summary>
+      <p>A <strong>missense mutation</strong> results in the substitution of a single amino acid in the resulting polypeptide chain. Depending on the chemical properties of the new amino acid and its location in the protein (e.g., in the active site), this may have little effect or drastically alter protein function (like in sickle cell anemia). A <strong>nonsense mutation</strong> creates a premature stop codon in the mRNA transcript, leading to early termination of translation. This usually results in a truncated and completely non-functional protein.</p>
+    </details>
+
+    <details>
+      <summary>2. Explain the necessity of using Taq polymerase in the Polymerase Chain Reaction.</summary>
+      <p>Taq polymerase is used because it is highly thermostable. During the first step of each PCR cycle (denaturation), the reaction mixture is heated to 94-96&deg;C to separate the DNA strands. Most standard enzymes, including human DNA polymerase, would permanently denature (lose their 3D structure and active site shape) at these temperatures. Taq polymerase, isolated from thermophilic bacteria, survives these high temperatures, allowing the PCR cycle to be repeated numerous times without needing to add fresh enzyme every cycle.</p>
+    </details>
+
+    <details>
+      <summary>3. Describe the dual role of the sgRNA in the CRISPR-Cas9 system.</summary>
+      <p>The single guide RNA (sgRNA) has two primary structural components that reflect its dual function: 1) The <em>scaffold</em> region (derived from tracrRNA) binds tightly to the Cas9 endonuclease, forming the active ribonucleoprotein complex. 2) The <em>spacer</em> region (derived from crRNA) consists of a ~20 nucleotide sequence designed to be perfectly complementary to the target DNA sequence. This region guides the Cas9 enzyme to the precise genomic location where the double-stranded cut should be made.</p>
+    </details>
+    
+  </section>
+
+</div>
+
+</body>
+</html>

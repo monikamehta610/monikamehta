@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB Biology D3.3: Homeostasis</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 20px; max-width: 1200px; margin: 0 auto; color: #333; }
+        section { margin-bottom: 50px; }
+        h1, h2, h3 { color: #2c3e50; }
+        .slide { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #f9f9f9; }
+        
+        /* Interactive Elements */
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        .flip-card-front { background-color: #3498db; color: white; font-weight: bold; font-size: 1.2em; }
+        .flip-card-back { background-color: #2ecc71; color: white; transform: rotateY(180deg); }
+        
+        /* Image Grid */
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .img-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Special Boxes */
+        .skill-box {
+            background-color: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .app-box {
+            background-color: #fcf3cf;
+            border-left: 5px solid #f1c40f;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        /* Check Your Understanding */
+        details {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+        }
+        details[open] summary ~ * {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+    <!-- MathJax for LaTeX math -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section class="slide">
+                <h1>D3.3 Homeostasis</h1>
+                <h3>IB Biology (2025 Syllabus)</h3>
+                <p>Maintaining the Internal Environment</p>
+            </section>
+
+            <!-- Concept 1: Introduction to Homeostasis -->
+            <section class="slide">
+                <h2>1. Principles of Homeostasis</h2>
+                <p>Homeostasis is the maintenance of a stable internal environment within physiological limits despite changes in the external environment. This involves complex interactions of various regulatory systems.</p>
+                <div class="app-box">
+                    <strong>Key Parameters Controlled:</strong>
+                    <ul>
+                        <li>Core body temperature</li>
+                        <li>Blood pH (e.g., buffering with H₂CO₃ ⇌ H⁺ + HCO₃⁻)</li>
+                        <li>Blood glucose concentration</li>
+                        <li>Water balance (Osmoregulation)</li>
+                    </ul>
+                </div>
+                <div class="img-grid">
+                    <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=500" alt="Balance">
+                    <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=500" alt="System">
+                </div>
+            </section>
+
+            <!-- Vocabulary Cards -->
+            <section class="slide">
+                <h2>Key Vocabulary</h2>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">Negative Feedback</div>
+                        <div class="flip-card-back">A mechanism where a deviation from the set point triggers a response that reverses the change.</div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">Set Point</div>
+                        <div class="flip-card-back">The target value or range at which a physiological parameter is maintained.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Concept 2: Thermoregulation -->
+            <section class="slide">
+                <h2>2. Thermoregulation</h2>
+                <p>Endotherms maintain a constant core body temperature, essential for optimal enzyme activity. The hypothalamus acts as the coordinating center.</p>
+                <div class="skill-box">
+                    <strong>Responses to Heat:</strong>
+                    <ul>
+                        <li>Vasodilation: Arterioles dilate, increasing blood flow to the skin surface for heat loss via radiation.</li>
+                        <li>Sweating: Evaporation of water from sweat glands absorbs latent heat of vaporization.</li>
+                    </ul>
+                    <strong>Responses to Cold:</strong>
+                    <ul>
+                        <li>Vasoconstriction: Reduces heat loss.</li>
+                        <li>Shivering thermogenesis: Involuntary muscle contractions generate heat.</li>
+                        <li>Uncoupled respiration in brown adipose tissue (BAT).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Concept 3: Osmoregulation (HL / Core) -->
+            <section class="slide">
+                <h2>3. Osmoregulation</h2>
+                <p>Maintaining the balance of water and solutes (electrolytes) in the body fluids. This is crucial to prevent cells from lysing or crenating due to osmotic pressure.</p>
+                <div class="img-grid">
+                    <img src="https://images.unsplash.com/photo-1527066236129-8ba149514788?w=500" alt="Water">
+                    <img src="https://images.unsplash.com/photo-1629904853716-f0cb541af224?w=500" alt="Cells">
+                </div>
+                <p>Water moves by osmosis from a region of lower solute concentration to a region of higher solute concentration.</p>
+            </section>
+
+            <!-- Concept 4: The Kidney (HL Focus) -->
+            <section class="slide">
+                <h2>4. The Kidney and Nephron (HL)</h2>
+                <p>The kidney functions in both excretion of nitrogenous waste (urea, $CO(NH_2)_2$) and osmoregulation.</p>
+                <div class="app-box">
+                    <strong>Key Nephron Processes:</strong>
+                    <ol>
+                        <li><strong>Ultrafiltration:</strong> Occurs in the Bowman's capsule. High hydrostatic pressure forces water and small solutes out of the glomerulus.</li>
+                        <li><strong>Selective Reabsorption:</strong> Proximal convoluted tubule (PCT) reabsorbs all glucose, amino acids, and most $Na^+$ and $H_2O$.</li>
+                        <li><strong>Loop of Henle:</strong> Creates a hypertonic gradient in the medulla. The descending limb is permeable to water, ascending limb to salts.</li>
+                        <li><strong>Osmoregulation (Collecting Duct):</strong> ADH (Antidiuretic Hormone) increases the permeability of the collecting duct to water by inserting aquaporins.</li>
+                    </ol>
+                </div>
+                <div class="skill-box">
+                    <strong>Mathematical Application:</strong><br>
+                    Calculating solute concentration: $C = \frac{n}{V}$ where $C$ is concentration, $n$ is moles of solute, and $V$ is volume.
+                </div>
+            </section>
+
+            <!-- Assessment -->
+            <section class="slide">
+                <h2>Check Your Understanding</h2>
+                <details>
+                    <summary>Question 1: Explain the role of the Loop of Henle in osmoregulation.</summary>
+                    <p>The Loop of Henle functions as a countercurrent multiplier. It actively transports salts out of the ascending limb into the medulla, creating a hypertonic environment. This allows water to be passively reabsorbed from the descending limb and later from the collecting duct (if ADH is present), concentrating the urine.</p>
+                </details>
+                <details>
+                    <summary>Question 2: What is the effect of ADH on the collecting duct?</summary>
+                    <p>ADH binds to receptors on the collecting duct cells, triggering a cascade that causes vesicles containing aquaporins to fuse with the apical membrane. This increases water permeability, leading to more water reabsorption and a smaller volume of concentrated urine.</p>
+                </details>
+                <details>
+                    <summary>Question 3: How is blood pH regulated through homeostasis?</summary>
+                    <p>Blood pH is regulated via buffers (like the bicarbonate buffer system), respiratory compensation (altering ventilation rate to expire $CO_2$), and renal compensation (excretion or reabsorption of $H^+$ and $HCO_3^-$).</p>
+                </details>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>

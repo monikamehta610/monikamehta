@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IB Biology D4.1: Natural Selection</title>
+  <style>
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; padding: 20px; max-width: 1200px; margin: 0 auto; }
+    section { margin-bottom: 50px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.05); }
+    h1, h2, h3 { color: #2c3e50; }
+    
+    /* Flip Card */
+    .flip-card {
+      background-color: transparent;
+      width: 320px;
+      height: 220px;
+      perspective: 1000px;
+      margin: 30px auto;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+      border-radius: 12px;
+    }
+    .flip-card-front { background: linear-gradient(135deg, #3498db, #2980b9); color: white; font-size: 1.4em; font-weight: bold; }
+    .flip-card-back { background: linear-gradient(135deg, #2c3e50, #34495e); color: white; transform: rotateY(180deg); font-size: 1.05em; }
+    
+    /* Grid for Images */
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin: 30px 0;
+    }
+    .img-grid img { width: 100%; border-radius: 12px; object-fit: cover; aspect-ratio: 16/9; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+    .img-grid img:hover { transform: scale(1.02); }
+    
+    /* Boxes */
+    .skill-box, .app-box {
+      padding: 20px 24px;
+      border-left: 6px solid;
+      margin: 24px 0;
+      background: #fdfdfd;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .skill-box { border-color: #e67e22; background-color: #fdf3e9; }
+    .app-box { border-color: #27ae60; background-color: #e9f7ef; }
+    
+    /* Details/Summary */
+    details { background: #ecf0f1; padding: 16px 20px; border-radius: 10px; margin-bottom: 12px; transition: background 0.3s ease; }
+    details:hover { background: #e2e8ea; }
+    summary { font-weight: bold; font-size: 1.1em; cursor: pointer; color: #2c3e50; outline: none; list-style-position: inside; }
+    details > p { margin-top: 12px; padding-left: 20px; color: #444; border-left: 3px solid #bdc3c7; margin-left: 4px; }
+  </style>
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+  <section>
+    <h1>D4.1 Natural Selection</h1>
+    <p>Natural selection is the central engine of evolution, driving adaptation and speciation across the tree of life. This module explores the profound mechanisms by which environmental pressures sift through biological variation, ultimately shaping the genetic makeup of populations over countless generations.</p>
+  </section>
+
+  <section>
+    <h2>1. Variation and Its Origins</h2>
+    <p>Variation is a fundamental prerequisite for natural selection. Without phenotypic and genotypic differences among individuals within a population, there can be no differential survival and reproduction. This variation arises from several key sources:</p>
+    <ul>
+      <li><strong>Mutation:</strong> Random errors in DNA replication or structural alterations in chromosomes generate new alleles. This is the ultimate source of all novel genetic variation in the biosphere.</li>
+      <li><strong>Meiosis:</strong> During gametogenesis, crossing over (prophase I) and independent assortment (metaphase I) shuffle existing alleles into virtually infinite new combinations.</li>
+      <li><strong>Sexual Reproduction:</strong> The fusion of haploid gametes from two distinct parents brings together disparate genetic lineages, maximizing offspring heterozygosity and phenotypic diversity.</li>
+    </ul>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Allele Frequency</div>
+        <div class="flip-card-back">The proportion of a particular allele among all allele copies at a given locus in a population, often represented mathematically as \( p \) and \( q \).</div>
+      </div>
+    </div>
+
+    <div class="img-grid">
+      <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=800&q=80" alt="Genetics Concept">
+      <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80" alt="Microscopy Cells">
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Overproduction of Offspring</h2>
+    <p>Biological organisms possess a remarkable capacity for exponential population growth. Species tend to produce far more offspring than the environment can sustainably support. Thomas Malthus originally posited this concept, noting that populations grow geometrically while resources grow arithmetically, leading inevitably to competition.</p>
+    <div class="skill-box">
+      <strong>Skill:</strong> Deduce the consequences of overpopulation in a confined environment. Consider carrying capacity ($K$), intra-specific competition, and density-dependent limiting factors (e.g., disease transmission, nutrient depletion, space limitation).
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Differential Survival and Reproduction</h2>
+    <p>The "struggle for existence" emerges directly from overproduction and limited resources. In this struggle, individuals with heritable traits better suited to the local environment—adaptations—are more likely to survive and successfully reproduce, passing their advantageous traits to the next generation.</p>
+    <ul>
+      <li><strong>Selective Pressures:</strong> Environmental factors (predators, climate, diseases, resource availability) act as filters on the population.</li>
+      <li><strong>Fitness:</strong> An organism's relative ability to survive and pass on its genes. Crucially, fitness is context-dependent. An allele that confers high fitness in one environment (e.g., high melanin production under intense UV radiation) may be neutral or deleterious in another.</li>
+    </ul>
+    
+    <div class="app-box">
+      <strong>Application:</strong> Antibiotic resistance in bacteria. When populations of bacteria are exposed to antibiotics (e.g., Penicillin, structurally inhibiting peptidoglycan cross-linking in the cell wall), susceptible cells die. However, those bearing resistance alleles (e.g., encoding $\beta$-lactamase enzymes) survive, reproducing to form a highly resistant strain.
+    </div>
+    
+    <div class="img-grid">
+      <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80" alt="Bacteria under microscope">
+      <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=800&q=80" alt="Antibiotics and Medicine">
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Types of Selection (HL Focus)</h2>
+    <p>Natural selection can alter phenotypic distributions in a population in three primary ways:</p>
+    
+    <h3>Directional Selection</h3>
+    <p>One extreme phenotype is favored over all others. The allele frequency shifts steadily in one direction. This typically occurs in changing environments. E.g., the peppered moth (<em>Biston betularia</em>) during the industrial revolution.</p>
+    
+    <h3>Stabilizing Selection</h3>
+    <p>Intermediate phenotypes are favored; both extremes are selected against. This reduces variance and maintains the status quo in stable environments. E.g., human birth weights—extremely small infants lose heat rapidly and succumb to infections, while excessively large infants face complications during childbirth.</p>
+    
+    <h3>Disruptive Selection</h3>
+    <p>Both extreme phenotypes are favored at the expense of intermediate forms. This bimodal trait distribution can eventually lead to sympatric speciation. E.g., seedcracker finches where large beaks crack hard seeds and small beaks handle soft seeds, but intermediate beaks are inefficient for both resources.</p>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">Speciation</div>
+        <div class="flip-card-back">The evolutionary process by which populations evolve to become distinct species, often catalyzed by prolonged disruptive selection and reproductive isolation.</div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <h2>5. The Hardy-Weinberg Principle (HL Math Application)</h2>
+    <p>The Hardy-Weinberg equation models the relationship between allele and genotype frequencies in a non-evolving, mathematically idealized population.</p>
+    <p>Key Formulae:</p>
+    <p>$$ p + q = 1 $$</p>
+    <p>$$ p^2 + 2pq + q^2 = 1 $$</p>
+    <p>Where $p$ and $q$ represent the frequencies of the dominant and recessive alleles, respectively. H-W equilibrium operates under strict assumptions: no mutations, random mating, no gene flow, an infinitely large population size, and no natural selection.</p>
+  </section>
+
+  <section>
+    <h2>Check Your Understanding</h2>
+    <details>
+      <summary>Q1: How does meiosis contribute to genetic variation?</summary>
+      <p><strong>Answer:</strong> Meiosis generates genetic variation through two primary mechanisms: crossing over during Prophase I, where homologous chromosomes exchange genetic material, and independent assortment during Metaphase I, where homologous pairs align randomly at the equator, creating unique combinations of maternal and paternal chromosomes in the resulting gametes.</p>
+    </details>
+    <details>
+      <summary>Q2: Contrast directional and stabilizing selection using examples.</summary>
+      <p><strong>Answer:</strong> Directional selection favors one extreme of a trait distribution, shifting the population average over time (e.g., increasing beak size in Galápagos finches during a prolonged drought). Stabilizing selection favors the intermediate phenotype, narrowing the trait distribution (e.g., human birth weights, where extremes face higher mortality risks).</p>
+    </details>
+    <details>
+      <summary>Q3: If the frequency of a recessive disease (e.g., Cystic Fibrosis) is 1 in 2500, what is the carrier frequency ($2pq$)?</summary>
+      <p><strong>Answer:</strong> First, find $q^2$: $q^2 = 1/2500 = 0.0004$. Thus, $q = \sqrt{0.0004} = 0.02$. Since $p + q = 1$, $p = 0.98$. The carrier frequency is $2pq = 2 \times 0.98 \times 0.02 = 0.0392$, meaning roughly 3.92% of the population are carriers.</p>
+    </details>
+  </section>
+
+</body>
+</html>
