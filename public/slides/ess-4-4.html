@@ -27,6 +27,9 @@
     }
   </style>
 
+  <!-- Interactive simulations (ESS 4.4 labs) -->
+  <link rel="stylesheet" href="/slides/ess-4-4-sims.css?v=1" />
+
   <!-- Reson widget bridge (must load before body) -->
   <script src="/slides/reson-init.js"></script>
 </head>
@@ -70,6 +73,10 @@
     <li>How do different perspectives affect how pollution is managed?</li>
   </ul>
   <div class="tip">Time allocation: minimum 4 hours SL + additional 4 hours HL. Final subtopic in Topic 4: Water.</div>
+  <div class="card" style="margin-top:14px;border-left:4px solid #4f8a7b">
+    <h3 style="color:#4f8a7b">🧪 6 Interactive Labs in this deck</h3>
+    <p style="font-size:13px;color:var(--muted)">Look for the <strong>“Interactive”</strong> tag: Source Sorter · Ocean Gyre Plastic Simulator · BOD Virtual Lab · Eutrophication Lab (cause → cure) · Build-a-Sewage-Works (HL) · Kick-Sampling Biotic Index (HL). Play with the sliders — you learn the cause-and-effect chains faster by breaking and fixing the system.</p>
+  </div>
 </div>
 
 <!-- ==================== SLIDE 3: 4.4.1 ==================== -->
@@ -93,6 +100,13 @@
     <tr><td><strong>Industrial</strong></td><td>Factories, mining operations</td><td>Heavy metals (mercury, lead), acid mine drainage</td></tr>
     <tr><td><strong>Municipal</strong></td><td>Domestic sewage, urban roads</td><td>Organic waste, microplastics, oil, detergent surfactants</td></tr>
   </table>
+</div>
+
+<!-- ==================== LAB 1: SOURCE SORTER ==================== -->
+<div class="slide" data-sec="sources">
+  <div class="section-tag">4.4.1 · Interactive</div>
+  <h2>Lab: Point or Non-Point Source?</h2>
+  <div class="sim" data-sim="sorter"></div>
 </div>
 
 <!-- ==================== SLIDE 4: 4.4.2 ==================== -->
@@ -120,6 +134,13 @@
   </div>
 </div>
 
+<!-- ==================== LAB 2: OCEAN GYRE ==================== -->
+<div class="slide" data-sec="sources">
+  <div class="section-tag">4.4.2 · Interactive</div>
+  <h2>Lab: Why Does Plastic Pile Up in Gyres?</h2>
+  <div class="sim" data-sim="gyre"></div>
+</div>
+
 <!-- ==================== SLIDE 5: 4.4.3 & 4.4.4 ==================== -->
 <div class="slide" data-sec="quality">
   <div class="section-tag">4.4.3 &amp; 4.4.4</div>
@@ -139,6 +160,13 @@
   </table>
 </div>
 
+<!-- ==================== LAB 3: BOD LAB ==================== -->
+<div class="slide" data-sec="quality">
+  <div class="section-tag">4.4.3 &amp; 4.4.4 · Interactive</div>
+  <h2>Lab: Measure BOD Yourself</h2>
+  <div class="sim" data-sim="bod"></div>
+</div>
+
 <!-- ==================== SLIDE 6: 4.4.5 & 4.4.6 ==================== -->
 <div class="slide" data-sec="eutrophication">
   <div class="section-tag">4.4.5 &amp; 4.4.6</div>
@@ -156,6 +184,13 @@
     <div class="flow-arrow">→</div>
     <div class="flow-node" style="background:#fee2e2;border-color:#b91c1c">☠️ Hypoxic Dead Zone</div>
   </div>
+</div>
+
+<!-- ==================== LAB 4: EUTROPHICATION ==================== -->
+<div class="slide" data-sec="eutrophication">
+  <div class="section-tag">4.4.5 – 4.4.8 · Interactive</div>
+  <h2>Lab: Eutrophication — Cause, Effect &amp; Cure</h2>
+  <div class="sim" data-sim="eut"></div>
 </div>
 
 <!-- ==================== SLIDE 7: 4.4.7 & 4.4.8 ==================== -->
@@ -212,6 +247,13 @@
   </table>
 </div>
 
+<!-- ==================== LAB 5: SEWAGE WORKS ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.4.12 · Interactive</div>
+  <h2>Lab: Build a Sewage Treatment Plant<span class="hl-badge">HL</span></h2>
+  <div class="sim" data-sim="sewage"></div>
+</div>
+
 <!-- ==================== SLIDE 10: HL 4.4.13 & 4.4.14 ==================== -->
 <div class="slide" data-sec="hl">
   <div class="section-tag hl">HL — 4.4.13 &amp; 4.4.14</div>
@@ -224,6 +266,13 @@
     <tr><td><strong>Intermediate Tolerance</strong></td><td>Freshwater shrimp (<em>Gammarus</em>), Damselfly nymph</td><td>Moderately polluted / Fair water quality</td></tr>
     <tr><td><strong>Pollution-Tolerant</strong></td><td>Sludge worm (<em>Tubifex</em>), Rat-tailed maggot, Leech</td><td>Heavily polluted, hypoxic water (Low Biotic Score)</td></tr>
   </table>
+</div>
+
+<!-- ==================== LAB 6: BIOTIC INDEX ==================== -->
+<div class="slide" data-sec="hl">
+  <div class="section-tag hl">HL — 4.4.13 &amp; 4.4.14 · Interactive</div>
+  <h2>Lab: Kick-Sample a River &amp; Calculate the Biotic Index<span class="hl-badge">HL</span></h2>
+  <div class="sim" data-sim="biotic"></div>
 </div>
 
 <!-- ==================== SLIDE 11: HL 4.4.15 – 4.4.17 ==================== -->
@@ -306,10 +355,13 @@ function goTo(idx) {
 }
 function go(dir) { goTo(current + dir); }
 document.addEventListener('keydown', e => {
+  // Let sliders / form controls inside interactive labs use the arrow keys
+  if (e.target && e.target.closest && e.target.closest('.sim input, .sim select, .sim textarea')) return;
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
   if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
 });
 goTo(0);
 </script>
+<script src="/slides/ess-4-4-sims.js?v=1"></script>
 </body>
 </html>
